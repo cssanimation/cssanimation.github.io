@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>localhost:4000/</loc>
+    <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+    <url>
+      <loc>localhost:4000/post/welcome-to-jekyll</loc>
+      
+        <lastmod>2014-03-03T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>localhost:4000/post/introducing-poole</loc>
+      
+        <lastmod>2014-03-02T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>localhost:4000/post/2014-03-01-example-content</loc>
+      
+        <lastmod>2014-03-01T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+  
+  <url>
+    <loc>localhost:4000/404.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/about.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/atom.xml</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/index.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/confirm/index.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/sitemap.xml</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/page2/index.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>localhost:4000/page3/index.html</loc>
+    
+      <lastmod>2015-01-15T08:54:32+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+</urlset>
