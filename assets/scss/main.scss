@@ -43,8 +43,11 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "vendor/normalize.css",
+        "vendor/skeleton.css",
         "base",
         "layout",
+        "text",
         "components/all",
         "syntax-highlighting"
 ;
