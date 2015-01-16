@@ -24,7 +24,16 @@ $content-width:    940px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
+@import
+  "vendor/normalize.scss",
+  "vendor/skeleton.scss",
+  "base",
+  "layout",
+  "text",
+  "components/all",
+  "pages/all",
+  "syntax-highlighting"
+;
 
 // Using media queries with like this:
 // @include media-query($on-palm) {
@@ -38,16 +47,3 @@ $on-laptop:        800px;
         @content;
     }
 }
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "vendor/normalize.css",
-        "vendor/skeleton.css",
-        "base",
-        "layout",
-        "text",
-        "components/all",
-        "syntax-highlighting"
-;
