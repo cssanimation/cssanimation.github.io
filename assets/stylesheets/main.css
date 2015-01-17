@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.content-box, .post-content img, .post-content .demo-container, pre code {
+.content-box, pre code {
   border: 2px solid rgba(30, 174, 219, 0.8);
   border-radius: .5em; }
 
@@ -884,6 +884,7 @@ img {
     margin-top: 0; }
 
 .post-content img, .post-content .demo-container {
+  border-radius: 0.5em;
   margin: 1em 0; }
 
 img {
