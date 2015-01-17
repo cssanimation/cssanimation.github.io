@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Twitter's "fave" animation</title>
+  <meta name="description" content="Twitter recently updated the design of their &ldquo;fave&rdquo; button, introducing a new animation. Rather than rely on CSS transitions, the animation makes...">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Days+One:Varela+Round' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/twitter_fave.css">
+
+  <link rel="canonical" href="localhost:4000/post/twitter-fave">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="localhost:4000/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Twitter&#39;s &quot;fave&quot; animation" />
+    <meta property="og:description" content="Find out how Twitter&#39;s fancy new &#39;fave&#39; animation works, using the CSS steps() timing function." />
+    <meta property="og:image" content="http://cssanimation.rocks/something/something.png" />
+    <meta property="og:url" content="http://cssanimation/post/twitter-fave" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+
+    <section class="container page-content">
+
+  <section class="row">
+    <section class="three columns">
+      <header class="site-header">
+
+  <section class="content">
+    <a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a>
+  </section>
+
+</header>
+
+    </section>
+
+    <article class="post-content nine columns">
+      <h1 class="post-title">Twitter's "fave" animation</h1>
+      <p>Twitter recently updated the design of their &ldquo;fave&rdquo; button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&rsquo;s how to recreate the animation using the CSS animation <code>steps</code> timing function.</p>
+
+<!--more-->
+
+<h2>Illusion of movement</h2>
+
+<p>The effect is similar to the old <a href="http://en.wikipedia.org/wiki/Zoetrope">zeotrope</a> devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.</p>
+
+<h2>Demo</h2>
+
+<p>Hover the star to see the animation:</p>
+
+<section class="fave demo-container"></section>
+
+<h2>Twitter fave</h2>
+
+<p>In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&rsquo;s fave icon animation:</p>
+
+<p><img src="/assets/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px"></p>
+
+<p>To animate these frames, we&rsquo;ll need to put them into a single line. <a href="/assets/images/posts/steps/twitter_fave_rectangle.png">This file</a> has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:</p>
+
+<p><img src="/assets/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px"></p>
+
+<h2>Steps() timing function</h2>
+
+<p>With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The <code>steps</code> timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.</p>
+
+<p><img src="/assets/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px"></p>
+
+<p>To begin we set up the HTML:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;section class=&quot;fave&quot;&gt;&lt;/section&gt;</code></pre></div>
+
+<p>With that in place we can add a little styling and position the background image:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css">.fave {
+  width: 70px;
+  height: 50px;
+  background: url(images/twitter_fave.png) no-repeat;
+  background-position: 0 0;
+}</code></pre></div>
+
+<p>The <code>hover</code> state is added, which is when we specify that the background position be moved to the end of the series of images:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css">.fave:hover {
+  background-position: -3519px 0;
+  transition: background 2s steps(55);
+}</code></pre></div>
+
+<p>Note the second rule, specifying the <code>transition</code>. In this case we want to transition the background property, run the transition for a duration of two seconds, make use of the <code>steps</code> timing function. The <code>steps</code> part includes the value <code>55</code>, as there are 55 frames in the animation.</p>
+
+<p>The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.</p>
+
+<h2>Why not a gif?</h2>
+
+<p>Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.</p>
+
+<h2>Other uses of &ldquo;steps()&rdquo;</h2>
+
+<p>Animating background sprites is just one use of the <code>steps</code> timing function. Anything that needs to be animated in a series of discrete steps is a good fit for it. You could use it to create a ticking clock for example.</p>
+
+<h2>Cheatsheet</h2>
+
+<p>If you enjoyed this article, you can <a href="https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation%20http://cssanimation.rocks/post/twitter/fave/%20&amp;url=http://cssanimation.rocks/tips/twitter-fave.png&amp;original_referer=http://cssanimation.rocks">share it on Twitter</a> or save this handy summary cheatsheet:</p>
+
+<p><img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px"></p>
+
+      <section class="content-box">
+        <div class="email-signup">
+  <h2>Animation tips in your email!</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="eight columns">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+      </section>
+      <section class="four columns">
+        <input type="submit" value="Add me" name="subscribe" class="button-primary">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation tips advice delivered to your email.</p>
+</div>
+
+      </section>
+    </article>
+  </section>
+
+</section>
+
+
+    <footer>
+  <ul class="icons">
+    <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+    <li>
+      <a class="footer-icon" href="https://twitter.com/">
+        <span class="icon  icon--twitter">
+          <svg viewBox="0 0 16 16">
+            <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+            c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+          </svg>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+</footer>
+
+
+  </body>
+
+</html>

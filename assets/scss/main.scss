@@ -12,7 +12,7 @@ $spacing-unit:     30px;
 
 $text-color:       #2E2729;
 $background-color: #F8E9E1;
-$brand-color:      #CB543B;
+$brand-color:      #1EAEDB;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -24,15 +24,20 @@ $content-width:    940px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+%bordered {
+  border: 2px solid rgba($brand-color, 0.8);
+  border-radius: .5em;
+}
+
 @import
-  "vendor/normalize.scss",
-  "vendor/skeleton.scss",
+  "vendor/normalize",
+  "vendor/skeleton",
+  "vendor/syntax-highlighting",
   "base",
   "layout",
   "text",
   "components/all",
-  "pages/all",
-  "syntax-highlighting"
+  "pages/all"
 ;
 
 // Using media queries with like this:

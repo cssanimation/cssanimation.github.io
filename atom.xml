@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="localhost:4000/atom.xml" rel="self"/>
  <link href="localhost:4000/"/>
- <updated>2015-01-16T08:51:09+00:00</updated>
+ <updated>2015-01-17T21:42:48+00:00</updated>
  <id>localhost:4000</id>
  <author>
    <name>Donovan</name>
@@ -13,46 +13,77 @@
 
  
  <entry>
-   <title>Welcome to Jekyll!</title>
-   <link href="localhost:4000/post/welcome-to-jekyll"/>
-   <updated>2014-03-03T00:00:00+00:00</updated>
-   <id>localhost:4000/post/welcome-to-jekyll</id>
-   <content type="html">&lt;p&gt;You&amp;rsquo;ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build
-(or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes! To add new posts, simply add
-a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention:
-YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+   <title>Twitter's "fave" animation</title>
+   <link href="localhost:4000/post/twitter-fave"/>
+   <updated>2015-01-17T00:00:00+00:00</updated>
+   <id>localhost:4000/post/twitter-fave</id>
+   <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;We&amp;rsquo;ve also added a lot of different settings for &lt;a href=&quot;https://github.com/vmg/redcarpet&quot;&gt;Redcarpet&lt;/a&gt;,
-including being able to &lt;sup&gt;superscript,&lt;/sup&gt; &lt;u&gt;underline&lt;/u&gt;, &lt;mark&gt;highlight&lt;/mark&gt;,
-&lt;del&gt;strikethrough&lt;/del&gt;, and footnotes.&lt;sup id=&quot;fnref1&quot;&gt;&lt;a href=&quot;#fn1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; It even automatically makes links into
-URLs: &lt;a href=&quot;http://www.jekyllrb.com&quot;&gt;www.jekyllrb.com&lt;/a&gt; and you can put multiple underscores in words without
-them leaning all over the place: this_word_has_underscores. It&amp;rsquo;ll also make your
-quotes look nice, like this: &amp;ldquo;hoho&amp;rdquo;, your dashes and hypens will be dashing too:
-&amp;mdash;/&amp;ndash;.&lt;/p&gt;
+&lt;h2&gt;Illusion of movement&lt;/h2&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;The effect is similar to the old &lt;a href=&quot;http://en.wikipedia.org/wiki/Zoetrope&quot;&gt;zeotrope&lt;/a&gt; devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;def print_hi(name)
-  puts &amp;quot;Hi, #{name}&amp;quot;
-end
-print_hi(&amp;#39;Tom&amp;#39;)
-#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Demo&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of
-Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&amp;rsquo;s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hover the star to see the animation:&lt;/p&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
+&lt;section class=&quot;fave demo-container&quot;&gt;&lt;/section&gt;
 
-&lt;li id=&quot;fn1&quot;&gt;
-&lt;p&gt;Who are quite handy&amp;nbsp;&lt;a href=&quot;#fnref1&quot; rev=&quot;footnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;h2&gt;Twitter fave&lt;/h2&gt;
 
-&lt;/ol&gt;
-&lt;/div&gt;
+&lt;p&gt;In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&amp;rsquo;s fave icon animation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot; alt=&quot;Frames from Twitter&#39;s fave icon animation&quot; style=&quot;max-width:256px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To animate these frames, we&amp;rsquo;ll need to put them into a single line. &lt;a href=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot;&gt;This file&lt;/a&gt; has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/frames.png&quot; alt=&quot;How the background images are positioned within an element&quot; style=&quot;max-width:514px&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Steps() timing function&lt;/h2&gt;
+
+&lt;p&gt;With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The &lt;code&gt;steps&lt;/code&gt; timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/steps.png&quot; alt=&quot;How the steps function is illustrated on a graph, as a series of discrete steps&quot; style=&quot;max-width:362px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To begin we set up the HTML:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;section class=&amp;quot;fave&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With that in place we can add a little styling and position the background image:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave {
+  width: 70px;
+  height: 50px;
+  background: url(images/twitter_fave.png) no-repeat;
+  background-position: 0 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;hover&lt;/code&gt; state is added, which is when we specify that the background position be moved to the end of the series of images:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave:hover {
+  background-position: -3519px 0;
+  transition: background 2s steps(55);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the second rule, specifying the &lt;code&gt;transition&lt;/code&gt;. In this case we want to transition the background property, run the transition for a duration of two seconds, make use of the &lt;code&gt;steps&lt;/code&gt; timing function. The &lt;code&gt;steps&lt;/code&gt; part includes the value &lt;code&gt;55&lt;/code&gt;, as there are 55 frames in the animation.&lt;/p&gt;
+
+&lt;p&gt;The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.&lt;/p&gt;
+
+&lt;h2&gt;Why not a gif?&lt;/h2&gt;
+
+&lt;p&gt;Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.&lt;/p&gt;
+
+&lt;h2&gt;Other uses of &amp;ldquo;steps()&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;Animating background sprites is just one use of the &lt;code&gt;steps&lt;/code&gt; timing function. Anything that needs to be animated in a series of discrete steps is a good fit for it. You could use it to create a ticking clock for example.&lt;/p&gt;
+
+&lt;h2&gt;Cheatsheet&lt;/h2&gt;
+
+&lt;p&gt;If you enjoyed this article, you can &lt;a href=&quot;https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation%20http://cssanimation.rocks/post/twitter/fave/%20&amp;amp;url=http://cssanimation.rocks/tips/twitter-fave.png&amp;amp;original_referer=http://cssanimation.rocks&quot;&gt;share it on Twitter&lt;/a&gt; or save this handy summary cheatsheet:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/tips/twitter-fave.png&quot; alt=&quot;Share this summary on Twitter&quot; style=&quot;max-width:375px&quot;&gt;&lt;/p&gt;
 </content>
  </entry>
  
