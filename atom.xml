@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>CSS Animation</title>
- <link href="localhost:4000/atom.xml" rel="self"/>
- <link href="localhost:4000/"/>
- <updated>2015-01-17T22:52:37+00:00</updated>
- <id>localhost:4000</id>
+ <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
+ <link href="http://cssanimation.rocks/"/>
+ <updated>2015-01-17T22:56:57+00:00</updated>
+ <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Twitter's "fave" animation</title>
-   <link href="localhost:4000/post/twitter-fave"/>
+   <link href="http://cssanimation.rocks/post/twitter-fave"/>
    <updated>2015-01-17T00:00:00+00:00</updated>
-   <id>localhost:4000/post/twitter-fave</id>
+   <id>http://cssanimation.rocks/post/twitter-fave</id>
    <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
 
 &lt;!--more--&gt;
