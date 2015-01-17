@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>localhost:4000/</loc>
-    <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+    <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -37,7 +37,7 @@
   <url>
     <loc>localhost:4000/404.html</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -50,7 +50,7 @@
   <url>
     <loc>localhost:4000/about.html</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -63,7 +63,7 @@
   <url>
     <loc>localhost:4000/atom.xml</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -76,7 +76,7 @@
   <url>
     <loc>localhost:4000/confirm/index.html</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -89,7 +89,7 @@
   <url>
     <loc>localhost:4000/index.html</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -102,7 +102,7 @@
   <url>
     <loc>localhost:4000/sitemap.xml</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -115,7 +115,7 @@
   <url>
     <loc>localhost:4000/page2/index.html</loc>
     
-      <lastmod>2015-01-17T21:51:40+00:00</lastmod>
+      <lastmod>2015-01-17T22:06:32+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>

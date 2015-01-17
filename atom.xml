@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="localhost:4000/atom.xml" rel="self"/>
  <link href="localhost:4000/"/>
- <updated>2015-01-17T21:51:40+00:00</updated>
+ <updated>2015-01-17T22:06:32+00:00</updated>
  <id>localhost:4000</id>
  <author>
    <name>Donovan</name>
@@ -81,7 +81,7 @@
 
 &lt;h2&gt;Cheatsheet&lt;/h2&gt;
 
-&lt;p&gt;If you enjoyed this article, you can &lt;a href=&quot;https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation%20http://cssanimation.rocks/post/twitter/fave/%20&amp;amp;url=http://cssanimation.rocks/tips/twitter-fave.png&amp;amp;original_referer=http://cssanimation.rocks&quot;&gt;share it on Twitter&lt;/a&gt; or save this handy summary cheatsheet:&lt;/p&gt;
+&lt;p&gt;If you enjoyed this article, you can &lt;a href=&quot;https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;amp;url=http://cssanimation.rocks/post/twitter/fave/&amp;amp;original_referer=http://cssanimation.rocks&quot;&gt;share it on Twitter&lt;/a&gt; or save this handy summary cheatsheet:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/tips/twitter-fave.png&quot; alt=&quot;Share this summary on Twitter&quot; style=&quot;max-width:375px&quot;&gt;&lt;/p&gt;
 </content>
