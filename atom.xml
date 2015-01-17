@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="localhost:4000/atom.xml" rel="self"/>
  <link href="localhost:4000/"/>
- <updated>2015-01-17T22:35:48+00:00</updated>
+ <updated>2015-01-17T22:39:07+00:00</updated>
  <id>localhost:4000</id>
  <author>
    <name>Donovan</name>
@@ -37,7 +37,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot; alt=&quot;Frames from Twitter&#39;s fave icon animation&quot; style=&quot;max-width:256px&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;To animate these frames, we&amp;rsquo;ll need to put them into a single line. &lt;a href=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot;&gt;This file&lt;/a&gt; has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:&lt;/p&gt;
+&lt;p&gt;To animate these frames, we&amp;rsquo;ll need to put them into a single line. &lt;a href=&quot;/assets/images/posts/steps/twitter_fave.png&quot;&gt;This file&lt;/a&gt; has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/frames.png&quot; alt=&quot;How the background images are positioned within an element&quot; style=&quot;max-width:514px&quot;&gt;&lt;/p&gt;
 
