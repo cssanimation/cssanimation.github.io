@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="localhost:4000/atom.xml" rel="self"/>
  <link href="localhost:4000/"/>
- <updated>2015-01-17T22:39:07+00:00</updated>
+ <updated>2015-01-17T22:41:22+00:00</updated>
  <id>localhost:4000</id>
  <author>
    <name>Donovan</name>
@@ -31,8 +31,6 @@
 
 &lt;section class=&quot;fave demo-container&quot;&gt;&lt;/section&gt;
 
-&lt;h2&gt;Twitter fave&lt;/h2&gt;
-
 &lt;p&gt;In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&amp;rsquo;s fave icon animation:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot; alt=&quot;Frames from Twitter&#39;s fave icon animation&quot; style=&quot;max-width:256px&quot;&gt;&lt;/p&gt;
@@ -41,7 +39,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/frames.png&quot; alt=&quot;How the background images are positioned within an element&quot; style=&quot;max-width:514px&quot;&gt;&lt;/p&gt;
 
-&lt;h2&gt;Steps() timing function&lt;/h2&gt;
+&lt;h3&gt;Steps() timing function&lt;/h3&gt;
 
 &lt;p&gt;With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The &lt;code&gt;steps&lt;/code&gt; timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.&lt;/p&gt;
 
@@ -51,7 +49,11 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;section class=&amp;quot;fave&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;h3&gt;Background image&lt;/h3&gt;
+
 &lt;p&gt;With that in place we can add a little styling and position the background image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave.png&quot; alt=&quot;Image sprite for the animation&quot;&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave {
   width: 70px;
@@ -71,7 +73,7 @@
 
 &lt;p&gt;The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.&lt;/p&gt;
 
-&lt;h2&gt;Why not a gif?&lt;/h2&gt;
+&lt;h3&gt;Why not a gif?&lt;/h3&gt;
 
 &lt;p&gt;Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.&lt;/p&gt;
 

@@ -77,8 +77,6 @@
 
 <section class="fave demo-container"></section>
 
-<h2>Twitter fave</h2>
-
 <p>In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&rsquo;s fave icon animation:</p>
 
 <p><img src="/assets/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px"></p>
@@ -87,7 +85,7 @@
 
 <p><img src="/assets/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px"></p>
 
-<h2>Steps() timing function</h2>
+<h3>Steps() timing function</h3>
 
 <p>With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The <code>steps</code> timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.</p>
 
@@ -97,7 +95,11 @@
 
 <div class="highlight"><pre><code class="language-html" data-lang="html">&lt;section class=&quot;fave&quot;&gt;&lt;/section&gt;</code></pre></div>
 
+<h3>Background image</h3>
+
 <p>With that in place we can add a little styling and position the background image:</p>
+
+<p><img src="/assets/images/posts/steps/twitter_fave.png" alt="Image sprite for the animation"></p>
 
 <div class="highlight"><pre><code class="language-css" data-lang="css">.fave {
   width: 70px;
@@ -117,7 +119,7 @@
 
 <p>The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.</p>
 
-<h2>Why not a gif?</h2>
+<h3>Why not a gif?</h3>
 
 <p>Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.</p>
 
