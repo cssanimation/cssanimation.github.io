@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://cssanimation.rocks/</loc>
-    <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+    <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,7 +24,7 @@
   <url>
     <loc>http://cssanimation.rocks/404.html</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -37,7 +37,7 @@
   <url>
     <loc>http://cssanimation.rocks/about.html</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -50,7 +50,7 @@
   <url>
     <loc>http://cssanimation.rocks/atom.xml</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -61,9 +61,9 @@
   </url>
   
   <url>
-    <loc>http://cssanimation.rocks/confirm/index.html</loc>
+    <loc>http://cssanimation.rocks/feed.xml</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -76,7 +76,20 @@
   <url>
     <loc>http://cssanimation.rocks/index.html</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://cssanimation.rocks/confirm/index.html</loc>
+    
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -89,7 +102,7 @@
   <url>
     <loc>http://cssanimation.rocks/sitemap.xml</loc>
     
-      <lastmod>2015-01-17T22:56:57+00:00</lastmod>
+      <lastmod>2015-01-18T10:04:51+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
