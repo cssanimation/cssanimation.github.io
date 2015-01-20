@@ -4,6 +4,10 @@ $( document ).ready(function() {
       'touchstart':
       function() {
         $(this).toggleClass('active');
+      },
+      'blur':
+      function() {
+        $(this).toggleClass('active');
       }
     });
   }
