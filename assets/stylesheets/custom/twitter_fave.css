@@ -7,7 +7,7 @@
   -webkit-animation: fave 2s steps(55);
           animation: fave 2s steps(55); }
 
-.fave:hover {
+.fave:hover, .fave.active {
   background-position: -3519px 0;
   -webkit-transition: background 2s steps(55);
           transition: background 2s steps(55); }

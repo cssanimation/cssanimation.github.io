@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-01-18T10:04:51+00:00</updated>
+ <updated>2015-01-20T09:02:13+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -29,7 +29,7 @@
 
 &lt;p&gt;Hover the star to see the animation:&lt;/p&gt;
 
-&lt;section class=&quot;fave demo-container&quot;&gt;&lt;/section&gt;
+&lt;section class=&quot;fave demo-container tap-to-activate&quot;&gt;&lt;/section&gt;
 
 &lt;p&gt;In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&amp;rsquo;s fave icon animation:&lt;/p&gt;
 
