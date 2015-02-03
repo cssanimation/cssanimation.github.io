@@ -909,7 +909,7 @@ form {
   margin-bottom: 0; }
 
 .svg-logo {
-  max-width: 400px; }
+  max-width: 260px; }
 
 .logo-group {
   -webkit-transform-origin: 100px 50px;
@@ -1136,7 +1136,3 @@ form {
   .icons svg {
     height: 1.5em;
     width: 1.5em; }
-
-.home.wrapper {
-  max-width: 35em;
-  margin: 0 auto; }
