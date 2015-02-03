@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-03T21:57:48+00:00</updated>
+ <updated>2015-02-03T23:56:30+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -70,11 +70,11 @@
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5) 50%, transparent);
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0.1), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0.1));
   transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The sheen effect is now sitting outside the button.&lt;/p&gt;
+&lt;p&gt;The sheen effect is made up of a gradient from the button colour to white and back again. At this point it is now sitting outside the button.&lt;/p&gt;
 
 &lt;p&gt;We&amp;rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&amp;rsquo;ll set the button&amp;rsquo;s &lt;code&gt;overflow&lt;/code&gt; property to &lt;code&gt;hidden&lt;/code&gt;. Since the pseudo-element is within the button, this means it&amp;rsquo;s positioning outside the button won&amp;rsquo;t be visible.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button {

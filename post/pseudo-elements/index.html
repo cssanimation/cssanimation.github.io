@@ -23,7 +23,7 @@
     <meta property="twitter:creator" content="@donovanh" />
     <meta property="og:title" content="Animating pseudo-elements" />
     <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
-    <meta property="og:image" content="http://cssanimation.rocks/assets/images/posts/shiny/shiny_button.png" />
+    <meta property="og:image" content="http://cssanimation.rocks/assets/images/posts/sheen/sheen.gif" />
     <meta property="og:url" content="http://cssanimation/post/pseudo-elements" />
   
 
@@ -116,11 +116,11 @@
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5) 50%, transparent);
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0.1), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0.1));
   transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
 </code></pre></div>
-<p>The sheen effect is now sitting outside the button.</p>
+<p>The sheen effect is made up of a gradient from the button colour to white and back again. At this point it is now sitting outside the button.</p>
 
 <p>We&rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&rsquo;ll set the button&rsquo;s <code>overflow</code> property to <code>hidden</code>. Since the pseudo-element is within the button, this means it&rsquo;s positioning outside the button won&rsquo;t be visible.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">button {
