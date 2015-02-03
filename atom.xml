@@ -4,13 +4,122 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-01-20T09:19:20+00:00</updated>
+ <updated>2015-02-03T20:45:01+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Animating pseudo-elements</title>
+   <link href="http://cssanimation.rocks/post/pseudo-elements"/>
+   <updated>2015-02-03T00:00:00+00:00</updated>
+   <id>http://cssanimation.rocks/post/pseudo-elements</id>
+   <content type="html">&lt;p&gt;Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&amp;rsquo;ll use a pseudo-element to add a little visual flair to a button.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Pseudo-elements&lt;/h2&gt;
+
+&lt;p&gt;Within CSS, we can specify a pseudo-element using &lt;code&gt;:before&lt;/code&gt; or &lt;code&gt;:after&lt;/code&gt;. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&amp;rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.pebble:before {
+  ...
+}
+.pebble:after {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this point, our &lt;code&gt;.pebble&lt;/code&gt; element has two virtual elements attached, and we can style them as needed.&lt;/p&gt;
+
+&lt;h3&gt;Don&amp;rsquo;t forget &amp;ldquo;content&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;When adding pseudo-elements, one thing to keep in mind is the need to specify the &lt;code&gt;content&lt;/code&gt; property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty &lt;code&gt;content&lt;/code&gt; like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.pebble:before {
+  content: &amp;quot;&amp;quot;
+  ... more styling goes here...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This should make sure the element is visible on screen.&lt;/p&gt;
+
+&lt;h2&gt;Example: Shiny button&lt;/h2&gt;
+
+&lt;p&gt;For this example we&amp;rsquo;ll use a pseudo-element to create a shiny effect on hovering over a button. Here&amp;rsquo;s an example of it in action (hover or tap to see effect).&lt;/p&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To begin, some HTML:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;button&amp;gt;Oooh SHINY&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since we&amp;rsquo;re using pseudo-elements, we won&amp;rsquo;t need any more HTML than this to get going. You may want to add a class to the button if styling more than one type on a page, but for now we&amp;rsquo;ll use the generic element for simplicity.&lt;/p&gt;
+
+&lt;h3&gt;Adding the sheen effect&lt;/h3&gt;
+
+&lt;p&gt;The shiny sheen effect is a linear gradient that passes across the button. To create this we&amp;rsquo;ll use the &lt;code&gt;:after&lt;/code&gt; pseudo-element, and position it in a beginning position outside the button:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button:after {
+  content: &amp;#39;&amp;#39;;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5) 50%, transparent);
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sheen effect is now sitting outside the button.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&amp;rsquo;ll set the button&amp;rsquo;s &lt;code&gt;overflow&lt;/code&gt; property to &lt;code&gt;hidden&lt;/code&gt;. Since the pseudo-element is within the button, this means it&amp;rsquo;s positioning outside the button won&amp;rsquo;t be visible.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border: 4px solid #e5ac8e;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I&amp;rsquo;ve put in some other styling also to give the button it&amp;rsquo;s own look. One thing to point out, is the use of &lt;code&gt;position: relative&lt;/code&gt;. I&amp;rsquo;ve added this property so that the absolutely positioned pseudo-element will exist within the button. Without specifying the position, an absolutely positioned item will position within a parent element.&lt;/p&gt;
+
+&lt;h2&gt;Adding the animation&lt;/h2&gt;
+
+&lt;p&gt;Since we&amp;rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&amp;rsquo;ll set out exactly what that animation is using &lt;code&gt;keyframes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Adding the hover state can be done by stacking the &lt;code&gt;after&lt;/code&gt; onto the &lt;code&gt;hover&lt;/code&gt; like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button:hover:after {
+  animation: sheen 1s forwards;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we are telling the browser than on hover, the &lt;code&gt;:after&lt;/code&gt; pseudo-element is to have an &lt;code&gt;animation&lt;/code&gt;. The animation, called sheen, lasts one second and stops at the end without repeating.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s specify &lt;code&gt;keyframes&lt;/code&gt; for this animation:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We only need one keyframe in this case. Since the starting position (0%) is implied by the pseudo-element&amp;rsquo;s starting position, we only describe the end position. In this case the end position is across at the top-right of the button. The browser will then animate the sheen effect across for us.&lt;/p&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Browser considerations&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://caniuse.com/#feat=css-animation&quot;&gt;animation property is well supported&lt;/a&gt;, as are &lt;a href=&quot;http://caniuse.com/#feat=css-gencontent&quot;&gt;pseudo-elements&lt;/a&gt;. It&amp;rsquo;s always good to make sure and include &lt;code&gt;-webkit&lt;/code&gt; and &lt;code&gt;-moz&lt;/code&gt; prefixes for the &lt;code&gt;keyframes&lt;/code&gt; and any transforms.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Twitter's "fave" animation</title>

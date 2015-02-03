@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Animating pseudo-elements</title>
+  <meta name="description" content="Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML,...">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Days+One:Varela+Round' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/shiny_button.css">
+
+  <link rel="canonical" href="http://cssanimation.rocks/post/pseudo-elements">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="http://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Animating pseudo-elements" />
+    <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
+    <meta property="og:image" content="http://cssanimation.rocks/assets/images/posts/shiny/shiny_button.png" />
+    <meta property="og:url" content="http://cssanimation/post/pseudo-elements" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+</head>
+
+
+  <body>
+
+    <section class="container page-content">
+
+  <section class="row">
+    <section class="three columns">
+      <header class="site-header">
+
+  <section class="content">
+    <a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a>
+  </section>
+
+</header>
+
+    </section>
+
+    <article class="post-content nine columns">
+      <h1 class="post-title">Animating pseudo-elements</h1>
+      <p>Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&rsquo;ll use a pseudo-element to add a little visual flair to a button.</p>
+
+<!--more-->
+
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+
+<h2>Pseudo-elements</h2>
+
+<p>Within CSS, we can specify a pseudo-element using <code>:before</code> or <code>:after</code>. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble:before {
+  ...
+}
+.pebble:after {
+  ...
+}
+</code></pre></div>
+<p>At this point, our <code>.pebble</code> element has two virtual elements attached, and we can style them as needed.</p>
+
+<h3>Don&rsquo;t forget &ldquo;content&rdquo;</h3>
+
+<p>When adding pseudo-elements, one thing to keep in mind is the need to specify the <code>content</code> property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty <code>content</code> like so:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble:before {
+  content: &quot;&quot;
+  ... more styling goes here...
+}
+</code></pre></div>
+<p>This should make sure the element is visible on screen.</p>
+
+<h2>Example: Shiny button</h2>
+
+<p>For this example we&rsquo;ll use a pseudo-element to create a shiny effect on hovering over a button. Here&rsquo;s an example of it in action (hover or tap to see effect).</p>
+
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+
+<p>To begin, some HTML:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;button&gt;Oooh SHINY&lt;/button&gt;
+</code></pre></div>
+<p>Since we&rsquo;re using pseudo-elements, we won&rsquo;t need any more HTML than this to get going. You may want to add a class to the button if styling more than one type on a page, but for now we&rsquo;ll use the generic element for simplicity.</p>
+
+<h3>Adding the sheen effect</h3>
+
+<p>The shiny sheen effect is a linear gradient that passes across the button. To create this we&rsquo;ll use the <code>:after</code> pseudo-element, and position it in a beginning position outside the button:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">button:after {
+  content: &#39;&#39;;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5) 50%, transparent);
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+</code></pre></div>
+<p>The sheen effect is now sitting outside the button.</p>
+
+<p>We&rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&rsquo;ll set the button&rsquo;s <code>overflow</code> property to <code>hidden</code>. Since the pseudo-element is within the button, this means it&rsquo;s positioning outside the button won&rsquo;t be visible.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border: 4px solid #e5ac8e;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre></div>
+<p>I&rsquo;ve put in some other styling also to give the button it&rsquo;s own look. One thing to point out, is the use of <code>position: relative</code>. I&rsquo;ve added this property so that the absolutely positioned pseudo-element will exist within the button. Without specifying the position, an absolutely positioned item will position within a parent element.</p>
+
+<h2>Adding the animation</h2>
+
+<p>Since we&rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&rsquo;ll set out exactly what that animation is using <code>keyframes</code>.</p>
+
+<p>Adding the hover state can be done by stacking the <code>after</code> onto the <code>hover</code> like so:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover:after {
+  animation: sheen 1s forwards;
+}
+</code></pre></div>
+<p>Here we are telling the browser than on hover, the <code>:after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
+
+<p>Let&rsquo;s specify <code>keyframes</code> for this animation:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+</code></pre></div>
+<p>We only need one keyframe in this case. Since the starting position (0%) is implied by the pseudo-element&rsquo;s starting position, we only describe the end position. In this case the end position is across at the top-right of the button. The browser will then animate the sheen effect across for us.</p>
+
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+
+<h2>Browser considerations</h2>
+
+<p>The <a href="http://caniuse.com/#feat=css-animation">animation property is well supported</a>, as are <a href="http://caniuse.com/#feat=css-gencontent">pseudo-elements</a>. It&rsquo;s always good to make sure and include <code>-webkit</code> and <code>-moz</code> prefixes for the <code>keyframes</code> and any transforms.</p>
+
+      <section class="content-box">
+        <div class="email-signup">
+  <h2>Animation tips in your email!</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="eight columns">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+      </section>
+      <section class="four columns">
+        <input type="submit" value="Add me" name="subscribe" class="button-primary">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation tips advice delivered to your email.</p>
+</div>
+
+      </section>
+    </article>
+  </section>
+
+</section>
+
+
+    <footer class="container">
+  <section class="row">
+    <ul class="icons">
+      <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+      <li>
+        <a class="footer-icon" href="https://twitter.com/">
+          <span class="icon  icon--twitter">
+            <svg viewBox="0 0 16 16">
+              <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="row">
+    <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+  </section>
+</footer>
+<script src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>
