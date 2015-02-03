@@ -18,7 +18,7 @@ button:hover {
       -ms-transform: scale(1.5);
           transform: scale(1.5); }
 
-button:hover:after, .demo-container.active button {
+button:hover:after, .demo-container.active button:after {
   -webkit-animation: sheen 1s 0.5s forwards;
           animation: sheen 1s 0.5s forwards; }
 
