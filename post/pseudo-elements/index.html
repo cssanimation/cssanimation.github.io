@@ -73,20 +73,24 @@
 
 <h2>Pseudo-elements</h2>
 
-<p>Within CSS, we can specify a pseudo-element using <code>:before</code> or <code>:after</code>. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble:before {
+<p>Within CSS, we can specify a pseudo-element using <code>::before</code> or <code>::after</code>. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
   ...
 }
-.pebble:after {
+.pebble::after {
   ...
 }
 </code></pre></div>
 <p>At this point, our <code>.pebble</code> element has two virtual elements attached, and we can style them as needed.</p>
 
+<h3>Note on &ldquo;::&rdquo; versus &ldquo;:&rdquo;</h3>
+
+<p>It&rsquo;s generally accepted that we use the double colon <code>::</code> to denote pseudo-elements. However they will also work with one, and if you&rsquo;re looking for IE8 support, you should use one. However all other browsers and newer versions of IE support the double.</p>
+
 <h3>Don&rsquo;t forget &ldquo;content&rdquo;</h3>
 
 <p>When adding pseudo-elements, one thing to keep in mind is the need to specify the <code>content</code> property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty <code>content</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble:before {
+<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
   content: &quot;&quot;
   ... more styling goes here...
 }
@@ -108,8 +112,8 @@
 
 <h3>Adding the sheen effect</h3>
 
-<p>The shiny sheen effect is a linear gradient that passes across the button. To create this we&rsquo;ll use the <code>:after</code> pseudo-element, and position it in a beginning position outside the button:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button:after {
+<p>The shiny sheen effect is a linear gradient that passes across the button. To create this we&rsquo;ll use the <code>after</code> pseudo-element, and position it in a beginning position outside the button:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">button::after {
   content: &#39;&#39;;
   position: absolute;
   top: -50%;
@@ -142,11 +146,13 @@
 <p>Since we&rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&rsquo;ll set out exactly what that animation is using <code>keyframes</code>.</p>
 
 <p>Adding the hover state can be done by stacking the <code>after</code> onto the <code>hover</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover:after {
+<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover::after {
   animation: sheen 1s forwards;
 }
 </code></pre></div>
-<p>Here we are telling the browser than on hover, the <code>:after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
+<p>Here we are telling the browser than on hover, the <code>after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
+
+<p>The order matters here. Using <code>::after:hover</code> won&rsquo;t work as it&rsquo;ll be telling the browser to react to the hover state of the pseudo-element itself.</p>
 
 <p>Let&rsquo;s specify <code>keyframes</code> for this animation:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes sheen {
@@ -211,6 +217,7 @@
 </footer>
 <script src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
 <script src='/assets/javascript/site.js'></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -219,6 +226,8 @@
   ga('create', 'UA-3481417-30', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
   </body>
