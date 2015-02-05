@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-05T13:18:12+00:00</updated>
+ <updated>2015-02-05T16:43:59+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -132,7 +132,7 @@
    <link href="http://cssanimation.rocks/post/twitter-fave"/>
    <updated>2015-01-17T00:00:00+00:00</updated>
    <id>http://cssanimation.rocks/post/twitter-fave</id>
-   <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; (also known as &amp;ldquo;fav&amp;rdquo;) button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -181,7 +181,7 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave:hover {
   background-position: -3519px 0;
-  transition: background 2s steps(55);
+  transition: background 1s steps(55);
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Note the second rule, specifying the &lt;code&gt;transition&lt;/code&gt;. In this case we want to transition the background property, run the transition for a duration of two seconds, make use of the &lt;code&gt;steps&lt;/code&gt; timing function. The &lt;code&gt;steps&lt;/code&gt; part includes the value &lt;code&gt;55&lt;/code&gt;, as there are 55 frames in the animation.&lt;/p&gt;
