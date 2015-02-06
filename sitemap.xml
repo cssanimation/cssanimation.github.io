@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://cssanimation.rocks/</loc>
-    <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+    <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
     <url>
-      <loc>http://cssanimation.rocks/post/pseudo-elements</loc>
+      <loc>http://cssanimation.rocks/pseudo-elements</loc>
       
         <lastmod>2015-02-03T00:00:00+00:00</lastmod>
       
@@ -21,7 +21,7 @@
     </url>
   
     <url>
-      <loc>http://cssanimation.rocks/post/twitter-fave</loc>
+      <loc>http://cssanimation.rocks/twitter-fave</loc>
       
         <lastmod>2015-01-17T00:00:00+00:00</lastmod>
       
@@ -37,7 +37,7 @@
   <url>
     <loc>http://cssanimation.rocks/404.html</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -50,7 +50,7 @@
   <url>
     <loc>http://cssanimation.rocks/about.html</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -63,7 +63,7 @@
   <url>
     <loc>http://cssanimation.rocks/atom.xml</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -76,20 +76,7 @@
   <url>
     <loc>http://cssanimation.rocks/feed.xml</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
-    
-    
-      <changefreq>monthly</changefreq>
-    
-    
-      <priority>0.3</priority>
-    
-  </url>
-  
-  <url>
-    <loc>http://cssanimation.rocks/index.html</loc>
-    
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -102,7 +89,46 @@
   <url>
     <loc>http://cssanimation.rocks/confirm/index.html</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://cssanimation.rocks/index.html</loc>
+    
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://cssanimation.rocks/post/pseudo-elements/index.html</loc>
+    
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://cssanimation.rocks/post/twitter-fave/index.html</loc>
+    
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -115,7 +141,7 @@
   <url>
     <loc>http://cssanimation.rocks/sitemap.xml</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -128,7 +154,7 @@
   <url>
     <loc>http://cssanimation.rocks/page2/index.html</loc>
     
-      <lastmod>2015-02-06T22:28:29+00:00</lastmod>
+      <lastmod>2015-02-06T23:10:09+00:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
