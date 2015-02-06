@@ -912,9 +912,9 @@ form {
   max-width: 260px; }
 
 .logo-group {
-  -webkit-transform-origin: 100px 50px;
-      -ms-transform-origin: 100px 50px;
-          transform-origin: 100px 50px; }
+  -webkit-transform-origin: 40% 20%;
+      -ms-transform-origin: 40% 20%;
+          transform-origin: 40% 20%; }
 
 .large-rock {
   -webkit-animation: show-large-rock 0.3s 1s forwards linear;
