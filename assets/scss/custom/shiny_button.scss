@@ -17,7 +17,7 @@
   button:hover {
     border-color: $button-color;
     color: #fff;
-    transform: scale(1.5);
+    transform: scale(1.5) translateX(1.5em);
   }
 
   button:hover::after, .demo-container.active button::after {
