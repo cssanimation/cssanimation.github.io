@@ -10,13 +10,13 @@
   line-height: 32px;
   -webkit-transition: all 0.5s cubic-bezier(.67, -0.51, .42, 1.43);
           transition: all 0.5s cubic-bezier(.67, -0.51, .42, 1.43); }
-.shiny button:hover {
+.shiny button:hover, .shiny button:focus {
   border-color: #d1703c;
   color: #fff;
   -webkit-transform: scale(1.5) translateX(1.5em);
       -ms-transform: scale(1.5) translateX(1.5em);
           transform: scale(1.5) translateX(1.5em); }
-.shiny button:hover::after, .shiny .demo-container.active button::after {
+.shiny button:hover::after, .shiny button:focus::after, .shiny .demo-container.active button::after {
   -webkit-animation: sheen 1s 0.5s forwards;
           animation: sheen 1s 0.5s forwards; }
 .shiny button::after {
