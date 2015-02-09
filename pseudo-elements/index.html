@@ -145,13 +145,15 @@
 <p>Since we&rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&rsquo;ll set out exactly what that animation is using <code>keyframes</code>.</p>
 
 <p>Adding the hover state can be done by stacking the <code>after</code> onto the <code>hover</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover::after {
+<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover::after, button:focus::after {
   animation: sheen 1s forwards;
 }
 </code></pre></div>
 <p>Here we are telling the browser than on hover, the <code>after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
 
 <p>The order matters here. Using <code>::after:hover</code> won&rsquo;t work as it&rsquo;ll be telling the browser to react to the hover state of the pseudo-element itself.</p>
+
+<p>I&rsquo;ve also added the focus state. This means that viewers tabbing through the page will see the sheen effect as well, without needing to hover. (Thank you, <a href="https://twitter.com/simevidas">Šime Vidas</a>, for the tip)</p>
 
 <p>Let&rsquo;s specify <code>keyframes</code> for this animation:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes sheen {
