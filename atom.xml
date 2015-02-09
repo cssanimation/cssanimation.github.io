@@ -4,13 +4,82 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-09T08:59:55+00:00</updated>
+ <updated>2015-02-09T09:10:41+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Transitions vs Animations</title>
+   <link href="http://cssanimation.rocks/animations-transitions"/>
+   <updated>2015-02-09T00:00:00+00:00</updated>
+   <id>http://cssanimation.rocks/animations-transitions</id>
+   <content type="html">&lt;p&gt;When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&amp;rsquo;s discuss the differences.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;What are Transitions?&lt;/h2&gt;
+
+&lt;p&gt;A transition occurs when an element changes from one state to another, and the browser fills in that state change with a sequence of in-between frames. It has a beginning and an end state.&lt;/p&gt;
+
+&lt;p&gt;We most often see transitions used on hover states, or when information on a page is added or removed. The hover states might be a subtle change in font color, and information on the page might fade from invisible to visible.&lt;/p&gt;
+
+&lt;p&gt;Since transitions are limited to these two stages, they can lack the nuance of animations but at the same time are easier to use.&lt;/p&gt;
+
+&lt;h3&gt;When to use them&lt;/h3&gt;
+
+&lt;p&gt;If you want to change an element from one state to another but make the change less jarring, a transition is the best bet. Simple changes can usually be handled with only transitions, and timing functions such as cubic bezier can be used to customize the way the transition occurs.&lt;/p&gt;
+
+&lt;p&gt;A transition would work well when someone hovers or taps a button:&lt;/p&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Or when an item is added to a page:&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list swing demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;A list item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;A list item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;What are Animations?&lt;/h2&gt;
+
+&lt;p&gt;CSS Animations are a more powerful alternative to transitions. Rather than rely on a change from one beginning state to an end state, animations can be made up of as many in-between states as you like, and offer more control over how the states are animated.&lt;/p&gt;
+
+&lt;p&gt;Where a transition only goes from A to B, an animation can go from A, B, C to D. Or any number of stages as needed.&lt;/p&gt;
+
+&lt;p&gt;Animations achieve this by using sets of &lt;code&gt;keyframes&lt;/code&gt;. Where a transition can be specified with one line in the class, an animation works by referencing a set of keyframes that are described separately in the CSS.&lt;/p&gt;
+
+&lt;h3&gt;When to use them&lt;/h3&gt;
+
+&lt;p&gt;If an animation needs to run when the page loads, or is more complex than a simple A to B state change, a CSS animation might be more appropriate.&lt;/p&gt;
+
+&lt;p&gt;Examples of this might be if you want to have an animation on the page that plays after a certain amount of time, like this blink effect on this Baymax character:&lt;/p&gt;
+
+&lt;section class=&quot;baymax demo-container&quot;&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/section&gt;
+
+&lt;p&gt;An animation might also be a good choice if an item has to move across multiple places on the page, such as an instruction overlay with a mouse cursor point out various areas of interest on a screen.&lt;/p&gt;
+
+&lt;p&gt;Or, if an animation needs to run continuously, such as a clock. In this example, the second hand moves around the clock continuously. In this case it&amp;rsquo;s using the &lt;a href=&quot;http://cssanimation.rocks/post/twitter-fave/&quot;&gt;steps timing function&lt;/a&gt;.&lt;/p&gt;
+
+&lt;article class=&quot;clock demo-container&quot;&gt;
+  &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
+&lt;/article&gt;
+
+&lt;h2&gt;In short&lt;/h2&gt;
+
+&lt;p&gt;Transitions are generally easier to create and manage, and apply to the majority of situations. If you need more control over animating an element through a series of steps, or if the animation needs to begin on load, then keyframes might be the better choice.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Animating pseudo-elements</title>

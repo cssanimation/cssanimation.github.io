@@ -13,9 +13,9 @@
 .shiny button:hover {
   border-color: #d1703c;
   color: #fff;
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5); }
+  -webkit-transform: scale(1.5) translateX(1.5em);
+      -ms-transform: scale(1.5) translateX(1.5em);
+          transform: scale(1.5) translateX(1.5em); }
 .shiny button:hover::after, .shiny .demo-container.active button::after {
   -webkit-animation: sheen 1s 0.5s forwards;
           animation: sheen 1s 0.5s forwards; }
