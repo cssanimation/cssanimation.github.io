@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-09T16:00:35+00:00</updated>
+ <updated>2015-02-09T16:40:02+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -74,7 +74,7 @@
   right: -50%;
   bottom: -50%;
   left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0.1), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0.1));
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
   transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
