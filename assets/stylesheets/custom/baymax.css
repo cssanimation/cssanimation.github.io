@@ -1,0 +1,77 @@
+.baymax {
+  background: -webkit-radial-gradient(center, #fff, #fff 50%, #ededed);
+  background: radial-gradient(center, #fff, #fff 50%, #ededed);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50% 50% 40% 40% !important;
+  max-width: 24em;
+  height: 10em;
+  position: relative; }
+
+.baymax span {
+  border-bottom: 0.4em solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35%;
+  -webkit-transform: translate(-50%, -40%);
+      -ms-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%); }
+  .baymax span::before {
+    -webkit-animation: blink 6s infinite;
+            animation: blink 6s infinite;
+    content: "";
+    background: #000;
+    background: -webkit-linear-gradient(top, #fafafa, #fafafa 50%, #000 50%, #000);
+    background: linear-gradient(to bottom, #fafafa, #fafafa 50%, #000 50%, #000);
+    background-size: 200%;
+    background-position: 0 -100%;
+    border-radius: 50%;
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    left: -2.5em;
+    top: -2.25em;
+    -webkit-transform: skewX(-4deg);
+        -ms-transform: skewX(-4deg);
+            transform: skewX(-4deg); }
+  .baymax span::after {
+    -webkit-animation: blink 6s 0.1s infinite;
+            animation: blink 6s 0.1s infinite;
+    content: "";
+    background: #000;
+    background: -webkit-linear-gradient(top, #fafafa, #fafafa 50%, #000 50%, #000);
+    background: linear-gradient(to bottom, #fafafa, #fafafa 50%, #000 50%, #000);
+    background-size: 200%;
+    background-position: 0 -100%;
+    border-radius: 50%;
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    right: -2.5em;
+    top: -2.25em;
+    -webkit-transform: skewX(4deg);
+        -ms-transform: skewX(4deg);
+            transform: skewX(4deg); }
+
+@-webkit-keyframes blink {
+
+  0%, 50% {
+    background-position: 0 -100%; }
+
+  85%, 95% {
+    background-position: 0 -125%; }
+
+  100% {
+    background-position: 0 -100%; } }
+
+@keyframes blink {
+  0%, 50% {
+    background-position: 0 -100%; }
+
+  85%, 95% {
+    background-position: 0 -125%; }
+
+  100% {
+    background-position: 0 -100%; } }

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.content-box, pre code {
+.content-box, pre {
   border: 2px solid rgba(30, 174, 219, 0.8);
   border-radius: .5em; }
 
@@ -455,7 +455,6 @@ body {
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300; }
 
@@ -853,6 +852,7 @@ body {
  * Set `margin-bottom` to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
+  margin-top: 15px;
   margin-bottom: 15px; }
 
 /**
@@ -893,10 +893,9 @@ img {
 
 code {
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(30, 174, 219, 0.25);
   border-radius: 0.5em; }
 
-pre code {
+pre {
   background: #fff; }
 
 footer p {
@@ -907,6 +906,12 @@ a {
 
 form {
   margin-bottom: 0; }
+
+button:active, button:focus {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+
+.hljs {
+  background-color: #fff !important; }
 
 .svg-logo {
   max-width: 260px; }
@@ -1136,3 +1141,6 @@ form {
   .icons svg {
     height: 1.5em;
     width: 1.5em; }
+
+.post-content h2, .post-content h3, .post-content h4, .post-content h5 {
+  margin-top: 3rem !important; }

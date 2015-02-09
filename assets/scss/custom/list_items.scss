@@ -1,0 +1,94 @@
+.add-to-list {
+  // Basic LI items initially, then customise with animations
+  background: #fff;
+  border-radius: 0.5em;
+  padding: 1em 1em;
+  display: inline-block;
+  width: auto;
+
+
+  li {
+    list-style: none;
+    background: darken(#F8E9E1, 40%);
+    border-bottom: 0 solid #fff;
+    color: #fff;
+    height: 0;
+    padding: 0 0.5em;
+    margin: 0;
+    overflow: hidden;
+    line-height: 2em;
+    width: 10em;
+
+    &:hover {
+      cursor: crosshair;
+    }
+
+    &.show {
+      height: 2em;
+      border-width: 2px;
+    }
+  }
+
+  &.fade {
+    li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+      height: 2em;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.slide-fade {
+    li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.swing {
+    ul {
+      transform-style: preserve-3d;
+      perspective: 500px;
+    }
+
+    li {
+      opacity: 0;
+      transform: rotateX(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+
+      &.show {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+      }
+    }
+
+  }
+
+  &.swing-side {
+    ul {
+      transform-style: preserve-3d;
+      perspective: 500px;
+    }
+
+    li {
+      opacity: 0;
+      transform: rotateY(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+
+      &.show {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+      }
+    }
+
+  }
+}
