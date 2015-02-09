@@ -907,9 +907,6 @@ a {
 form {
   margin-bottom: 0; }
 
-button:active, button:focus {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
-
 .hljs {
   background-color: #fff !important; }
 
