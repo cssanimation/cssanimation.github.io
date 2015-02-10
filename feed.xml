@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-09T16:40:02+00:00</updated>
+ <updated>2015-02-10T21:10:02+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -139,7 +139,7 @@
 
 &lt;h2&gt;Illusion of movement&lt;/h2&gt;
 
-&lt;p&gt;The effect is similar to the old &lt;a href=&quot;http://en.wikipedia.org/wiki/Zoetrope&quot;&gt;zeotrope&lt;/a&gt; devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.&lt;/p&gt;
+&lt;p&gt;The effect is similar to the old &lt;a href=&quot;http://en.wikipedia.org/wiki/Zoetrope&quot;&gt;Zoetrope&lt;/a&gt; devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.&lt;/p&gt;
 
 &lt;h2&gt;Demo&lt;/h2&gt;
 
