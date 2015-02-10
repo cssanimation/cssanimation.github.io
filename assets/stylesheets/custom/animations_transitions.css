@@ -10,17 +10,17 @@
     font-size: 14px;
     border: none;
     border-radius: 0.5em;
+    height: 3em;
     padding: 0 1em;
     position: relative;
     overflow: hidden;
-    line-height: 32px;
+    line-height: 2em;
     -webkit-transition: all 0.5s cubic-bezier(.67, -0.51, .42, 1.43);
             transition: all 0.5s cubic-bezier(.67, -0.51, .42, 1.43); }
   .shiny button:hover, .shiny button:focus {
     border-color: #d1703c;
     color: #fff;
-    -webkit-transform: translate3d(0, 0, 7.5em);
-            transform: translate3d(0, 0, 7.5em); }
+    font-size: 24px; }
   .shiny button:hover::after, .shiny button:focus::after, .shiny .demo-container.active button::after {
     -webkit-animation: sheen 1s 0.5s forwards;
             animation: sheen 1s 0.5s forwards; }
@@ -42,13 +42,13 @@
 
 @-webkit-keyframes sheen {
   100% {
-    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
-            transform: rotateZ(60deg) translate(1em, -9em); } }
+    -webkit-transform: rotateZ(60deg) translate(1em, -14em);
+            transform: rotateZ(60deg) translate(1em, -14em); } }
 
 @keyframes sheen {
   100% {
-    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
-            transform: rotateZ(60deg) translate(1em, -9em); } }
+    -webkit-transform: rotateZ(60deg) translate(1em, -14em);
+            transform: rotateZ(60deg) translate(1em, -14em); } }
 
 .add-to-list {
   background: #fff;
