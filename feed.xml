@@ -4,13 +4,203 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-10T21:10:02+00:00</updated>
+ <updated>2015-02-11T22:22:10+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Animating List Items</title>
+   <link href="http://cssanimation.rocks/list-items"/>
+   <updated>2015-02-16T00:00:00+00:00</updated>
+   <id>http://cssanimation.rocks/list-items</id>
+   <content type="html">&lt;p&gt;When parts of a web page change, adding some animation is a good way to help your viewers understand what&amp;rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&amp;rsquo;s in the process of being removed. In this article we&amp;rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;section class=&quot;add-to-list swing-side demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Introducing content&lt;/h2&gt;
+
+&lt;p&gt;Animation can be useful when helping visitors understand when things change on your site. When content is added or removed without any animation, they can miss sudden changes and be confused. Adding subtle animations can avoid this and help by &amp;ldquo;announcing&amp;rdquo; that something is going to leave the page or be introduced to it.&lt;/p&gt;
+
+&lt;p&gt;One example of adding or removing content is managing the content of a list. Most of the animations can be used for other sorts of content. If you find them useful, or have other ideas to add, do &lt;a href=&quot;mailto:hello@cssanimation.rocks&quot;&gt;get in touch&lt;/a&gt;, we love to hear your thoughts.&lt;/p&gt;
+
+&lt;h2&gt;Setting up the HTML&lt;/h2&gt;
+
+&lt;p&gt;To get started we&amp;rsquo;ll use a pre-filled list and a button to add new items to the list.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul id=&amp;quot;list&amp;quot;&amp;gt;
+  &amp;lt;li class=&amp;quot;show&amp;quot;&amp;gt;List item&amp;lt;/li&amp;gt;
+  &amp;lt;li class=&amp;quot;show&amp;quot;&amp;gt;List item&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;button id=&amp;quot;add-to-list&amp;quot;&amp;gt;Add a list item&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A few things to note. Firstly we have two IDs in the HTML. Generally we don&amp;rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&amp;rsquo;re useful when using JavaScript. &lt;/p&gt;
+
+&lt;p&gt;The initial items have the class &amp;ldquo;show&amp;rdquo;, as this is a class we&amp;rsquo;ll use later to add the animation effect.&lt;/p&gt;
+
+&lt;h2&gt;A little JavaScript&lt;/h2&gt;
+
+&lt;p&gt;For the purpose of the demo we&amp;rsquo;ll create a little JavaScript to add a new item to the list, then add the &amp;ldquo;show&amp;rdquo; class so that the animation can take place. There&amp;rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&amp;rsquo;t be any time for the transition to take place.&lt;/p&gt;
+
+&lt;p&gt;We could get around this by using an animation on the &lt;code&gt;li&lt;/code&gt; elements, but this would be more difficult to override [CHECK THIS] when removing the elements with another animation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;document.getElementById(&amp;#39;add-to-list&amp;#39;).onclick = function() {
+  var list = document.getElementById(&amp;#39;list&amp;#39;);
+  var newLI = document.createElement(&amp;#39;li&amp;#39;);
+  newLI.innerHTML = &amp;#39;A new item&amp;#39;;
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.addClass(&amp;#39;show&amp;#39;);
+  }, 10);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;No animation&lt;/h2&gt;
+
+&lt;p&gt;At it&amp;rsquo;s most basic we can write some CSS to show the list items. We&amp;rsquo;re using the &lt;code&gt;show&lt;/code&gt; class as a way of setting them as visible, so removing the &lt;code&gt;show&lt;/code&gt; class should also cause them to disappear.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+
+li.show {
+  height: 2em;
+  margin: 2px 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In these styles we&amp;rsquo;re setting up the &lt;code&gt;li&lt;/code&gt; elements to look like rectangles, without the bullet points and giving them a &lt;code&gt;height&lt;/code&gt; of 0, a &lt;code&gt;margin&lt;/code&gt; of 0 and set &lt;code&gt;overflow&lt;/code&gt; to hidden. This is so that they will appear invisible until we apply a &lt;code&gt;show&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;show&lt;/code&gt; class then apples a height and margin. Since we&amp;rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h3&gt;Fade&lt;/h3&gt;
+
+&lt;p&gt;As a first animation we&amp;rsquo;ll add a simple fade effect. The list items appear a little more gradually than before. Visually this still looks a little clunky but has the benefit of giving viewers longer to notice that something is happening.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list fade demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To add the effect I&amp;rsquo;ve created a separate snippet of CSS. To have this apply to the list, apply the class &lt;code&gt;fade&lt;/code&gt; to a container surrounding your list.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  height: 2em;
+}
+.fade li.show {
+  opacity: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Slide down &amp;amp; Fade&lt;/h3&gt;
+
+&lt;p&gt;The sudden jump each time an item is added or removed is a litle jarring. Let&amp;rsquo;s have the height adjust as well, to create a smoother sliding effect.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list slide-fade demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;The difference between this and the &lt;code&gt;fade&lt;/code&gt; class above is only that the &lt;code&gt;height: 2em&lt;/code&gt; has been removed. Since the &lt;code&gt;show&lt;/code&gt; class contains a set height (inherited from the first CSS snippet), it will transition the height automatically.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.slide-fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slide-fade li.show {
+  opacity: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Swinging in&lt;/h3&gt;
+
+&lt;p&gt;Along with fading and sliding, we can go further by adding a little 3D effect. Browser can transform elements in more than the X or Y directions, useful for adding depth to scenes.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list swing demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To set this up, we need to define the &lt;code&gt;ul&lt;/code&gt; as a stage within which the 3D transitions take place. We do this by telling it to use the &lt;code&gt;preserve-3d&lt;/code&gt; transform style, and giving it a &lt;code&gt;perspective&lt;/code&gt; value.&lt;/p&gt;
+
+&lt;p&gt;Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&amp;rsquo;s worth playing with this value to find a look that works for you.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing ul {
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next we set up the &lt;code&gt;li&lt;/code&gt; elements to transform into place. We&amp;rsquo;ll use &lt;code&gt;opacity&lt;/code&gt; to create a fade effect as before, but add in a &lt;code&gt;transform&lt;/code&gt; to rotate the &lt;code&gt;li&lt;/code&gt; into place.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing li {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.swing li.show {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this example we&amp;rsquo;re beginning with the &lt;code&gt;li&lt;/code&gt; rotated back by 90 degrees. When the &lt;code&gt;show&lt;/code&gt; class it added, this &lt;code&gt;transform&lt;/code&gt; is set to &lt;code&gt;none&lt;/code&gt;, allowing it to transition into place. To give it a swinging effect I&amp;rsquo;ve used the &lt;code&gt;cubic-bezier&lt;/code&gt; timing function.&lt;/p&gt;
+
+&lt;h3&gt;Swinging from side&lt;/h3&gt;
+
+&lt;p&gt;We can tweak this effect to create different styles quite easily. Here&amp;rsquo;s an example where the items swing in from the side.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list swing-side demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To create this effect we only need change the axis of rotation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing li {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All we&amp;rsquo;ve changed is &lt;code&gt;rotateX&lt;/code&gt; to &lt;code&gt;rotateY&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Prefixes and browser testing&lt;/h2&gt;
+
+&lt;p&gt;The code included above does not include any prefixes, for readability. It&amp;rsquo;s strongly recommended to add prefixes to support browsers that need the &lt;code&gt;-webkit&lt;/code&gt; prefix or others. I use &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;Autoprefixer&lt;/a&gt; to save worrying about these things.&lt;/p&gt;
+
+&lt;p&gt;As these animations are layered on top of the basic show / hide mechanism, they should degrade gracefully on browsers that don&amp;rsquo;t support the animations. Testing on various devices and browsers is important but most modern browsers should be able to support these animations.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Animating pseudo-elements</title>

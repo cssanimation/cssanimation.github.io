@@ -835,9 +835,6 @@ there.
 /**
  * Basic styling
  */
-* + * {
-  margin-bottom: 15px; }
-
 body {
   font-family: 'Varela Round', Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -878,14 +875,17 @@ img {
 
 .content-box {
   background: #fff;
-  padding: 0.75em 1em 0.01em;
+  padding: 1em;
   margin: 1em 0; }
-  .content-box *:first-child {
-    margin-top: 0; }
+  .content-box h2:first-child {
+    margin-top: 0 !important; }
 
 .post-content img, .post-content .demo-container {
   border-radius: 0.5em;
   margin: 1em 0; }
+
+.rocky {
+  min-width: 120px; }
 
 img {
   width: 100%;
@@ -1056,12 +1056,14 @@ form {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  max-width: 540px;
+  margin: 0 auto; }
   .quote-container *:first-child {
     margin-top: 0; }
   .quote-container .rocky {
     width: 148px;
-    margin-right: 1em; }
+    margin-right: -2em; }
   .quote-container blockquote {
     background: #fff;
     border: solid 4px #2E2729;
@@ -1115,11 +1117,11 @@ form {
     border-radius: 50%;
     color: #fff;
     display: block;
-    line-height: 2em;
+    line-height: 1em;
     padding: 0.5em;
     margin-right: 0.5em;
-    height: 2em;
-    width: 2em;
+    height: 1em;
+    width: 1em;
     -webkit-transition: all 0.75s cubic-bezier(.54, -0.25, .34, 1.33);
             transition: all 0.75s cubic-bezier(.54, -0.25, .34, 1.33); }
     .icons a:hover {
@@ -1136,8 +1138,8 @@ form {
     -webkit-transition: all 0.75s ease-out;
             transition: all 0.75s ease-out; }
   .icons svg {
-    height: 1.5em;
-    width: 1.5em; }
+    height: 1em;
+    width: 1em; }
 
 .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
   margin-top: 3rem !important; }

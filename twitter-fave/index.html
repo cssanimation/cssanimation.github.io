@@ -133,6 +133,16 @@
 
 <p><img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px"></p>
 
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Twitter's "fave" animation&url=http%3A%2F%2Fcssanimation.rocks%2Ftwitter-fave&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+
       <section class="content-box">
         <div class="email-signup">
   <h2>Animation tips in your email!</h2>
@@ -191,6 +201,22 @@
   ga('create', 'UA-3481417-30', 'auto');
   ga('send', 'pageview');
 </script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 

@@ -106,6 +106,13 @@
       <h2>Latest from the blog</h2>
       
         <article class="post">
+          <h3><a class="post-link" href="/list-items">Animating List Items</a></h3>
+          <p><p>When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&rsquo;s in the process of being removed. In this article we&rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.</p>
+</p>
+          <p><a href="/list-items">Read more...</a></p>
+        </article>
+      
+        <article class="post">
           <h3><a class="post-link" href="/pseudo-elements">Animating pseudo-elements</a></h3>
           <p><p>Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&rsquo;ll use a pseudo-element to add a little visual flair to a button.</p>
 </p>
@@ -121,26 +128,13 @@
       
     </section>
   </section>
-  <section class="row">
+  <section class="row centered">
     <section class="quote-container">
       <section class="rocky">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 263.8 213.2" enable-background="new 0 0 263.8 213.2" xml:space="preserve">
-          <g id="Face1_3_">
-            <polygon id="Outline_25_" fill="#E6E7E8" points="39 50.7 72 12.7 160 0.7 184 39.7 221 59.7 258 190.7 204 209.7 117 199.7 15 203.7 0 143.7 22 130.7 29 52.7 "/>
-            <polygon id="Shade1_3_" fill="#A7A9AC" points="18.6 205.6 6.1 156.1 24.9 171.7 69.9 166.2 91 203.4 "/>
-            <polygon id="Shade2_3_" fill="#BCBEC0" points="69.9 166.2 160.4 166.2 214.9 166.2 234.6 97.3 261.4 192.2 196.9 212.7 109.9 202.7 91 203.4 "/>
-            <circle fill="#F1F2F2" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="74.6" cy="76.6" r="20.7"/>
-            <circle fill="#F1F2F2" stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="139.5" cy="61" r="26"/>
-            <path fill="#F1F2F2" d="M182.4 95.7c-2.7-8.8-1.4 3.4-42.2 16.3 -48.5 15.3-46 6.5-42.2 16.3 3.8 9.8 25.7 10.4 49 1.5S185.5 105.7 182.4 95.7z"/>
-            <path fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M182.4 95.7c-2.7-8.8-1.4 3.4-42.2 16.3 -48.5 15.3-46 6.5-42.2 16.3 3.8 9.8 25.7 10.4 49 1.5S185.5 105.7 182.4 95.7z"/>
-            <circle stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="77" cy="76.6" r="7.1"/>
-            <circle stroke="#000000" stroke-width="4" stroke-miterlimit="10" cx="139.5" cy="61" r="7.1"/>
-            <polygon id="Outline_24_" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="42.4 52.2 75.4 14.2 163.4 2.2 187.4 41.2 224.4 61.2 261.4 192.2 207.4 211.2 120.4 201.2 18.4 205.2 3.4 145.2 25.4 132.2 32.4 54.2 "/>
-          </g>
-        </svg>
+        <img src="/assets/images/rocky.svg" class="rocky">
       </section>
       <blockquote>
-        <p>On Twitter? You should <a href="https://twitter.com/cssanimation">follow me</a>!</p>
+        <p>On Twitter? You should <a href="https://twitter.com/intent/follow?screen_name=cssanimation">follow me</a>!</p>
       </blockquote>
     </section>
   </section>
@@ -184,6 +178,22 @@
   ga('create', 'UA-3481417-30', 'auto');
   ga('send', 'pageview');
 </script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 
