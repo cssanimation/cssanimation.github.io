@@ -53,10 +53,7 @@
   }
 
   &.swing {
-    ul {
-      transform-style: preserve-3d;
-      perspective: 500px;
-    }
+    perspective: 100px;
 
     li {
       opacity: 0;
@@ -73,13 +70,9 @@
   }
 
   &.swing-side {
-    ul {
-      transform-style: preserve-3d;
-      perspective: 500px;
-    }
+    perspective: 200px;
 
     li {
-      opacity: 0;
       transform: rotateY(-90deg);
       transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 

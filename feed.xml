@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-11T22:22:10+00:00</updated>
+ <updated>2015-02-12T09:58:59+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -52,8 +52,11 @@
 
 &lt;p&gt;For the purpose of the demo we&amp;rsquo;ll create a little JavaScript to add a new item to the list, then add the &amp;ldquo;show&amp;rdquo; class so that the animation can take place. There&amp;rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&amp;rsquo;t be any time for the transition to take place.&lt;/p&gt;
 
-&lt;p&gt;We could get around this by using an animation on the &lt;code&gt;li&lt;/code&gt; elements, but this would be more difficult to override [CHECK THIS] when removing the elements with another animation.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;document.getElementById(&amp;#39;add-to-list&amp;#39;).onclick = function() {
+&lt;p&gt;We could get around this by using an animation on the &lt;code&gt;li&lt;/code&gt; elements, but this would be more difficult to override when removing the elements with another animation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById(&amp;#39;add-to-list&amp;#39;).onclick = function() {
   var list = document.getElementById(&amp;#39;list&amp;#39;);
   var newLI = document.createElement(&amp;#39;li&amp;#39;);
   newLI.innerHTML = &amp;#39;A new item&amp;#39;;
@@ -150,12 +153,11 @@ li.show {
   &lt;button&gt;Add a list item&lt;/button&gt;
 &lt;/section&gt;
 
-&lt;p&gt;To set this up, we need to define the &lt;code&gt;ul&lt;/code&gt; as a stage within which the 3D transitions take place. We do this by telling it to use the &lt;code&gt;preserve-3d&lt;/code&gt; transform style, and giving it a &lt;code&gt;perspective&lt;/code&gt; value.&lt;/p&gt;
+&lt;p&gt;To set this up, we need to define the containing &lt;code&gt;section&lt;/code&gt; as a stage within which the 3D transitions take place. We do this by giving it a &lt;code&gt;perspective&lt;/code&gt; value.&lt;/p&gt;
 
 &lt;p&gt;Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&amp;rsquo;s worth playing with this value to find a look that works for you.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing ul {
-  transform-style: preserve-3d;
-  perspective: 500px;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing {
+  perspective: 100px;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next we set up the &lt;code&gt;li&lt;/code&gt; elements to transform into place. We&amp;rsquo;ll use &lt;code&gt;opacity&lt;/code&gt; to create a fade effect as before, but add in a &lt;code&gt;transform&lt;/code&gt; to rotate the &lt;code&gt;li&lt;/code&gt; into place.&lt;/p&gt;

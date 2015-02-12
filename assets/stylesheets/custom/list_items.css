@@ -33,39 +33,34 @@
     opacity: 0; }
     .add-to-list.slide-fade li.show {
       opacity: 1; }
-  .add-to-list.swing ul {
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-perspective: 500px;
-            perspective: 500px; }
-  .add-to-list.swing li {
-    opacity: 0;
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-    -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
-            transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
-    .add-to-list.swing li.show {
-      opacity: 1;
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none;
+  .add-to-list.swing {
+    -webkit-perspective: 100px;
+            perspective: 100px; }
+    .add-to-list.swing li {
+      opacity: 0;
+      -webkit-transform: rotateX(-90deg);
+              transform: rotateX(-90deg);
       -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
               transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
-  .add-to-list.swing-side ul {
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-perspective: 500px;
-            perspective: 500px; }
-  .add-to-list.swing-side li {
-    opacity: 0;
-    -webkit-transform: rotateY(-90deg);
-            transform: rotateY(-90deg);
-    -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
-            transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
-    .add-to-list.swing-side li.show {
-      opacity: 1;
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none;
+      .add-to-list.swing li.show {
+        opacity: 1;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+                transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
+  .add-to-list.swing-side {
+    -webkit-perspective: 200px;
+            perspective: 200px; }
+    .add-to-list.swing-side li {
+      -webkit-transform: rotateY(-90deg);
+              transform: rotateY(-90deg);
       -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
               transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
+      .add-to-list.swing-side li.show {
+        opacity: 1;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+                transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }

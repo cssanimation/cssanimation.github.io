@@ -98,8 +98,11 @@
 
 <p>For the purpose of the demo we&rsquo;ll create a little JavaScript to add a new item to the list, then add the &ldquo;show&rdquo; class so that the animation can take place. There&rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&rsquo;t be any time for the transition to take place.</p>
 
-<p>We could get around this by using an animation on the <code>li</code> elements, but this would be more difficult to override [CHECK THIS] when removing the elements with another animation.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">document.getElementById(&#39;add-to-list&#39;).onclick = function() {
+<p>We could get around this by using an animation on the <code>li</code> elements, but this would be more difficult to override when removing the elements with another animation.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById(&#39;add-to-list&#39;).onclick = function() {
   var list = document.getElementById(&#39;list&#39;);
   var newLI = document.createElement(&#39;li&#39;);
   newLI.innerHTML = &#39;A new item&#39;;
@@ -196,12 +199,11 @@ li.show {
   <button>Add a list item</button>
 </section>
 
-<p>To set this up, we need to define the <code>ul</code> as a stage within which the 3D transitions take place. We do this by telling it to use the <code>preserve-3d</code> transform style, and giving it a <code>perspective</code> value.</p>
+<p>To set this up, we need to define the containing <code>section</code> as a stage within which the 3D transitions take place. We do this by giving it a <code>perspective</code> value.</p>
 
 <p>Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&rsquo;s worth playing with this value to find a look that works for you.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.swing ul {
-  transform-style: preserve-3d;
-  perspective: 500px;
+<div class="highlight"><pre><code class="language-text" data-lang="text">.swing {
+  perspective: 100px;
 }
 </code></pre></div>
 <p>Next we set up the <code>li</code> elements to transform into place. We&rsquo;ll use <code>opacity</code> to create a fade effect as before, but add in a <code>transform</code> to rotate the <code>li</code> into place.</p>
