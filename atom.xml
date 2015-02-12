@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-12T09:58:59+00:00</updated>
+ <updated>2015-02-12T11:38:33+00:00</updated>
  <id>http://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Animating List Items</title>
    <link href="http://cssanimation.rocks/list-items"/>
-   <updated>2015-02-16T00:00:00+00:00</updated>
+   <updated>2015-02-12T00:00:00+00:00</updated>
    <id>http://cssanimation.rocks/list-items</id>
    <content type="html">&lt;p&gt;When parts of a web page change, adding some animation is a good way to help your viewers understand what&amp;rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&amp;rsquo;s in the process of being removed. In this article we&amp;rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.&lt;/p&gt;
 
