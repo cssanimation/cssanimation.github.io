@@ -117,26 +117,26 @@
         -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
                 transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
 
-.baymax {
-  background: -webkit-radial-gradient(center, #fff, #fff 50%, #ededed);
-  background: radial-gradient(center, #fff, #fff 50%, #ededed);
+.demo-container.baymax-container {
+  background: -webkit-radial-gradient(center, #fff, #fff 50%, #efefef);
+  background: radial-gradient(center, #fff, #fff 50%, #efefef);
   background-size: 100%;
   background-repeat: no-repeat;
-  max-width: 24em;
+  max-width: 22em;
   margin: 2em 0 !important;
   height: 10em;
   position: relative; }
 
-.baymax span {
-  border-bottom: 0.4em solid #000;
+.baymax {
+  border-bottom: 0.5em solid #000;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 35%;
+  width: 55%;
   -webkit-transform: translate(-50%, -40%);
       -ms-transform: translate(-50%, -40%);
           transform: translate(-50%, -40%); }
-  .baymax span::before {
+  .baymax::before {
     -webkit-animation: blink 6s infinite;
             animation: blink 6s infinite;
     content: "";
@@ -154,7 +154,7 @@
     -webkit-transform: skewX(-4deg);
         -ms-transform: skewX(-4deg);
             transform: skewX(-4deg); }
-  .baymax span::after {
+  .baymax::after {
     -webkit-animation: blink 6s 0.1s infinite;
             animation: blink 6s 0.1s infinite;
     content: "";
@@ -172,6 +172,13 @@
     -webkit-transform: skewX(4deg);
         -ms-transform: skewX(4deg);
             transform: skewX(4deg); }
+
+.baymax.no-pseudo-elements::before, .baymax.no-pseudo-elements::after {
+  display: none; }
+
+.baymax.no-animation::before, .baymax.no-animation::after {
+  -webkit-animation: none;
+          animation: none; }
 
 @-webkit-keyframes blink {
   0%, 50% {

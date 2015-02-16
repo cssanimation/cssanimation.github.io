@@ -1,19 +1,19 @@
-.baymax {
-  background: radial-gradient(center, #fff, #fff 50%, #ededed);
+.demo-container.baymax-container {
+  background: radial-gradient(center, #fff, #fff 50%, #efefef);
   background-size: 100%;
   background-repeat: no-repeat;
-  max-width: 24em;
+  max-width: 22em;
   margin: 2em 0 !important;
   height: 10em;
   position: relative;
 }
 
-.baymax span {
-  border-bottom: 0.4em solid #000;
+.baymax {
+  border-bottom: 0.5em solid #000;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 35%;
+  width: 55%;
   transform: translate(-50%, -40%);
 
   &::before {
@@ -46,6 +46,18 @@
     right: -2.5em;
     top: -2.25em;
     transform: skewX(4deg);
+  }
+}
+
+.baymax.no-pseudo-elements {
+  &::before, &::after {
+    display: none;
+  }
+}
+
+.baymax.no-animation {
+  &::before, &::after {
+    animation: none;
   }
 }
 
