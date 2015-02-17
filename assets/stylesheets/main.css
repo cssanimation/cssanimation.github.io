@@ -1049,8 +1049,8 @@ form {
             transform: none; } }
 
 .quote-container {
-  display: -webkit-flex;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
@@ -1093,6 +1093,11 @@ form {
     border-width: 9px 21px 9px 0;
     border-color: transparent #fff;
     content: ""; }
+
+@media (max-width: 460px) {
+  .rocky {
+    margin: 0;
+    width: 100%; } }
 
 .email-signup form {
   display: -webkit-flex;
