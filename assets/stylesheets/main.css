@@ -1163,6 +1163,7 @@ form {
   .post img {
     display: block;
     max-width: 180px;
+    height: 180px;
     margin: 0 auto;
     width: 100%; }
   .post h3 {
