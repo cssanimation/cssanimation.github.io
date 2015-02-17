@@ -837,7 +837,7 @@ there.
  */
 body {
   font-family: 'Varela Round', Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
   color: #2E2729;
@@ -1140,6 +1140,46 @@ form {
   .icons svg {
     height: 1em;
     width: 1em; }
+
+.post-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.post {
+  text-align: center;
+  padding: 1em 0;
+  width: 33%;
+  max-width: 320px; }
+  .post img {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto;
+    width: 100%; }
+  .post h3 {
+    font-size: 1.5em; }
+
+.image-link {
+  display: block; }
+
+@media (max-width: 800px) {
+  .post {
+    width: 50%; } }
+
+@media (max-width: 460px) {
+  .post {
+    padding: 0.5em 0;
+    width: 100%; } }
+
+.menu.home {
+  float: right; }
+  .menu.home li {
+    display: inline-block;
+    list-style: none; }
 
 .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
   margin-top: 3rem !important; }
