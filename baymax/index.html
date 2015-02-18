@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Baymax in CSS</title>
+  <meta name="description" content="Let&rsquo;s use CSS to create the Baymax character from the movie Big Hero 6.">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/baymax.css">
+
+  <link rel="canonical" href="https://cssanimation.rocks/baymax">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Baymax in CSS - CSS Animation" />
+    <meta property="og:description" content="A single-element animated version of the Baymax character&#39;s face from Big Hero 6." />
+    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/baymax/baymax.gif" />
+    <meta property="og:url" content="https://cssanimation.rocks/baymax" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+</head>
+
+
+  <body>
+
+    <section class="container page-content">
+
+  <section class="row">
+    <section class="three columns">
+      <header class="site-header">
+
+  <section class="content">
+    <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+  </section>
+
+</header>
+
+    </section>
+
+    <article class="post-content nine columns">
+      <h1 class="post-title">Baymax in CSS</h1>
+      <p>Let&rsquo;s use CSS to create the Baymax character from the movie Big Hero 6.</p>
+
+<!--more-->
+
+<p>In this post we&rsquo;ll cover <a href="/pseudo-elements/">animating pseudo-elements</a>, as well as a subtle animation timing effect, and make a CSS demo out of one single HTML element.</p>
+
+<section class="demo-container baymax-container">
+  <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
+</section>
+
+<p>You can <a href="http://codepen.io/donovanh/full/ZYaMjw/">see it full screen here</a>.</p>
+
+<h2>Single element</h2>
+
+<p>By making use of pseudo-elements, we&rsquo;ll be able to create the face parts using one HTML element. </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;baymax&quot;&gt;&lt;/div&gt;
+</code></pre></div>
+<h2>Styling</h2>
+
+<p>To set the stage we&rsquo;ll add a subtle gradient to the screen to make it look like a curved, white head. For this we&rsquo;ll use a radial gradient on the <code>body</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">body {
+  background: radial-gradient(center, #fff, #fff 50%, #aaa);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+</code></pre></div>
+<p>Next we position the face in the centre of the page. The mouth is a simple black line, and we&rsquo;ll create that using a border.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.baymax {
+  border-bottom: 1.5em solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -40%);
+}
+</code></pre></div>
+<p>The first property sets a black border of width <code>1.5em</code>. It then positions the line using absolute positioning, pushing it down 50% and across from the left 50%. These 50% values relate to the size of the container (<code>body</code>) element.</p>
+
+<p>The problem we now have is that the element now starts halfway down and halfway across the screen. It&rsquo;s off center.</p>
+
+<p>To offset this, we use a transform to pull the element left 50% of it&rsquo;s width, and up 40% of it&rsquo;s width.</p>
+
+<p>At this stage the mouth is centered like so:</p>
+
+<section class="demo-container baymax-container">
+  <span class="baymax no-pseudo-elements"></span>
+</section>
+
+<h2>Adding the eyes</h2>
+
+<p>We&rsquo;ll make use of the <code>before</code> and <code>after</code> pseudo-elements to add eyes to the face. This won&rsquo;t need any extra HTML and is entirely handled by the CSS.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.baymax::before {
+  background: #000;
+  border-radius: 50%;
+  content: &quot;&quot;;
+  position: absolute;
+  width: 12em;
+  height: 12em;
+  left: -9em;
+  top: -6em;
+  transform: skewX(-4deg);
+}
+
+.baymax::after {
+  background: #000;
+  border-radius: 50%;
+  content: &quot;&quot;;
+  position: absolute;
+  width: 12em;
+  height: 12em;
+  right: -9em;
+  top: -6em;
+  transform: skewX(4deg);
+}
+</code></pre></div>
+<p>Each of these pseudo-elements have a black background, and a border-radius of 50% to make them circular. Each is positioned at an end of the mouth, and lastly have a <code>skew</code> transform to make them look like they&rsquo;re tilted back a little. The result should look like this:</p>
+
+<section class="demo-container baymax-container">
+  <span class="baymax no-animation"></span>
+</section>
+
+<h2>Low battery</h2>
+
+<p>There&rsquo;s a funny scene in the movie where Baymax&rsquo;s battery runs low. He staggers around and his eyelids droop. We can use a combination of background gradients and animation to create the effect.</p>
+
+<p>First we want to give the background two colours. Black for the part of the eye that&rsquo;s open, and white for the eyelid. The white part needs to be positioned outside the eyes at first, then we will animate it in to make the eyelids droop.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.baymax::before {
+  background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
+  background-position: 0 -100%;
+  background-size: 200%;
+  ...
+}
+
+.baymax::after {
+  background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
+  background-position: 0 -100%;
+  background-size: 200%;
+  ...
+}
+</code></pre></div>
+<p>We&rsquo;re adding a background linear gradient, made it twice the height of the container, and then position it so that the top half is outside the container.</p>
+
+<p>With the two background gradients in place, we can add animation <code>keyframes</code> to control the eyelids movement.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes blink {
+  0%, 50% {
+    background-position: 0 100%;
+  }
+  85%, 95% {
+    background-position: 0 75%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+</code></pre></div>
+<p>Animation <code>keyframes</code> are a way of describing a series of frames, using a percentage. The percentage relates to how long the animation has gone on for. So a percentage of 50% means half-way through the animation.</p>
+
+<p>In this way we can set the background to stay up till half-way through, then between 50% and 85%, it moves down, and then snaps back at the end of the animation.</p>
+
+<p>The next step is to tell the pseudo-elements to use these animation keyframes. Add the <code>animation</code> property to the existing styles.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.baymax::before {
+  animation: blink 6s infinite;
+  ...
+}
+
+.baymax::after {
+  animation: blink 6s 0.1s infinite;
+  ...
+}
+</code></pre></div>
+<p>Here we&rsquo;ve told the browser to use the <code>blink</code> animation on each element. The animation duration is set to six seconds and will loop infinitely.</p>
+
+<p>One extra property is in the second example. The <code>0.1s</code> after the <code>6s</code> tells the browser to delay that animation by 0.1 seconds. This creates the effect of the second eye closing slightly later than the first. It adds to the tired, droopy effect and makes it look a little more human. The end result should look like this:</p>
+
+<section class="demo-container baymax-container">
+  <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
+</section>
+
+<p>You can <a href="http://codepen.io/donovanh/full/ZYaMjw/">see the effect full screen</a>.</p>
+
+<h2>Browsers</h2>
+
+<p>In the code examples, I&rsquo;ve omitted any of the usual <code>-webkit</code> and <code>-moz</code> prefixes. The <code>transform</code> and <code>animation</code> properties should be prefixed, and I&rsquo;d recommend using something like Autoprefixer for this. </p>
+
+<h2>Shareable gif version</h2>
+
+<p>Here&rsquo;s an animated gif version you can more easily share online.</p>
+
+<p><a href="/assets/images/posts/baymax/baymax.gif"><img src="/assets/images/posts/baymax/baymax.gif" style="max-width:225px"></a></p>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Baymax in CSS&url=https%3A%2F%2Fcssanimation.rocks%2Fbaymax&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+
+      <section class="content-box">
+        <div class="email-signup">
+  <h2>Animation tips in your email!</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="eight columns">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+      </section>
+      <section class="four columns">
+        <input type="submit" value="Add me" name="subscribe" class="button-primary">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+    </article>
+  </section>
+
+</section>
+
+
+    <footer class="container">
+  <section class="row">
+    <ul class="icons">
+      <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+      <li>
+        <a class="footer-icon" href="https://twitter.com/cssanimation">
+          <span class="icon  icon--twitter">
+            <svg viewBox="0 0 16 16">
+              <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="row">
+    <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-1.10.1.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>
