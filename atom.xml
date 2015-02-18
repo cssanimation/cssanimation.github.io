@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-02-18T23:16:19+00:00</updated>
+ <updated>2015-02-18T23:18:39+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -21,7 +21,7 @@
 
 &lt;!--more--&gt;
 
-&lt;p&gt;In this post we&amp;rsquo;ll cover &lt;a href=&quot;/pseudo-elements/&quot;&gt;animating pseudo-elements&lt;/a&gt;, as well as a subtle animation timing effect, and make a CSS demo out of one single HTML element.&lt;/p&gt;
+&lt;p&gt;In this post we&amp;rsquo;ll be animating a background image, as well as a subtle animation timing effect, and make a CSS demo out of one single HTML element.&lt;/p&gt;
 
 &lt;section class=&quot;demo-container baymax-container&quot;&gt;
   &lt;a href=&quot;http://codepen.io/donovanh/full/ZYaMjw/&quot; class=&quot;baymax&quot;&gt;&lt;/a&gt;
