@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Animating List Items</title>
+  <meta name="description" content="When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arriv...">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/list_items.css">
+
+  <link rel="canonical" href="cssanimation.rocks/list-items">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Animating List Items - CSS Animation" />
+    <meta property="og:description" content="Some tricks to help announce list items through animation." />
+    <meta property="og:image" content="cssanimation.rocks/assets/images/posts/list_items/list_items.png" />
+    <meta property="og:url" content="cssanimation.rocks/list-items" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+</head>
+
+
+  <body>
+
+    <section class="container page-content">
+
+  <section class="row">
+    <section class="three columns">
+      <header class="site-header">
+
+  <section class="content">
+    <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+  </section>
+
+</header>
+
+    </section>
+
+    <article class="post-content nine columns">
+      <h1 class="post-title">Animating List Items</h1>
+      <p>When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&rsquo;s in the process of being removed. In this article we&rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.</p>
+
+<!--more-->
+
+<section class="add-to-list swing-side demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<h2>Introducing content</h2>
+
+<p>Animation can be useful when helping visitors understand when things change on your site. When content is added or removed without any animation, they can miss sudden changes and be confused. Adding subtle animations can avoid this and help by &ldquo;announcing&rdquo; that something is going to leave the page or be introduced to it.</p>
+
+<p>One example of adding or removing content is managing the content of a list. Most of the animations can be used for other sorts of content. If you find them useful, or have other ideas to add, do <a href="mailto:hello@cssanimation.rocks">get in touch</a>, we love to hear your thoughts.</p>
+
+<h2>Setting up the HTML</h2>
+
+<p>To get started we&rsquo;ll use a pre-filled list and a button to add new items to the list.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul id=&quot;list&quot;&gt;
+  &lt;li class=&quot;show&quot;&gt;List item&lt;/li&gt;
+  &lt;li class=&quot;show&quot;&gt;List item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;button id=&quot;add-to-list&quot;&gt;Add a list item&lt;/button&gt;
+</code></pre></div>
+<p>A few things to note. Firstly we have two IDs in the HTML. Generally we don&rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&rsquo;re useful when using JavaScript. </p>
+
+<p>The initial items have the class &ldquo;show&rdquo;, as this is a class we&rsquo;ll use later to add the animation effect.</p>
+
+<h2>A little JavaScript</h2>
+
+<p>For the purpose of the demo we&rsquo;ll create a little JavaScript to add a new item to the list, then add the &ldquo;show&rdquo; class so that the animation can take place. There&rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&rsquo;t be any time for the transition to take place.</p>
+
+<p>We could get around this by using an animation on the <code>li</code> elements, but this would be more difficult to override when removing the elements with another animation.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById(&#39;add-to-list&#39;).onclick = function() {
+  var list = document.getElementById(&#39;list&#39;);
+  var newLI = document.createElement(&#39;li&#39;);
+  newLI.innerHTML = &#39;A new item&#39;;
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.addClass(&#39;show&#39;);
+  }, 10);
+}
+</code></pre></div>
+<h2>No animation</h2>
+
+<p>At it&rsquo;s most basic we can write some CSS to show the list items. We&rsquo;re using the <code>show</code> class as a way of setting them as visible, so removing the <code>show</code> class should also cause them to disappear.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+
+li.show {
+  height: 2em;
+  margin: 2px 0;
+}
+</code></pre></div>
+<p>In these styles we&rsquo;re setting up the <code>li</code> elements to look like rectangles, without the bullet points and giving them a <code>height</code> of 0, a <code>margin</code> of 0 and set <code>overflow</code> to hidden. This is so that they will appear invisible until we apply a <code>show</code> class.</p>
+
+<p>The <code>show</code> class then apples a height and margin. Since we&rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.</p>
+
+<section class="add-to-list demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<h3>Fade</h3>
+
+<p>As a first animation we&rsquo;ll add a simple fade effect. The list items appear a little more gradually than before. Visually this still looks a little clunky but has the benefit of giving viewers longer to notice that something is happening.</p>
+
+<section class="add-to-list fade demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<p>To add the effect I&rsquo;ve created a separate snippet of CSS. To have this apply to the list, apply the class <code>fade</code> to a container surrounding your list.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  height: 2em;
+}
+.fade li.show {
+  opacity: 1;
+}
+</code></pre></div>
+<h3>Slide down &amp; Fade</h3>
+
+<p>The sudden jump each time an item is added or removed is a litle jarring. Let&rsquo;s have the height adjust as well, to create a smoother sliding effect.</p>
+
+<section class="add-to-list slide-fade demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<p>The difference between this and the <code>fade</code> class above is only that the <code>height: 2em</code> has been removed. Since the <code>show</code> class contains a set height (inherited from the first CSS snippet), it will transition the height automatically.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.slide-fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slide-fade li.show {
+  opacity: 1;
+}
+</code></pre></div>
+<h3>Swinging in</h3>
+
+<p>Along with fading and sliding, we can go further by adding a little 3D effect. Browser can transform elements in more than the X or Y directions, useful for adding depth to scenes.</p>
+
+<section class="add-to-list swing demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<p>To set this up, we need to define the containing <code>section</code> as a stage within which the 3D transitions take place. We do this by giving it a <code>perspective</code> value.</p>
+
+<p>Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&rsquo;s worth playing with this value to find a look that works for you.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.swing {
+  perspective: 100px;
+}
+</code></pre></div>
+<p>Next we set up the <code>li</code> elements to transform into place. We&rsquo;ll use <code>opacity</code> to create a fade effect as before, but add in a <code>transform</code> to rotate the <code>li</code> into place.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.swing li {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.swing li.show {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+</code></pre></div>
+<p>In this example we&rsquo;re beginning with the <code>li</code> rotated back by 90 degrees. When the <code>show</code> class it added, this <code>transform</code> is set to <code>none</code>, allowing it to transition into place. To give it a swinging effect I&rsquo;ve used the <code>cubic-bezier</code> timing function.</p>
+
+<h3>Swinging from side</h3>
+
+<p>We can tweak this effect to create different styles quite easily. Here&rsquo;s an example where the items swing in from the side.</p>
+
+<section class="add-to-list swing-side demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">List item</li>
+    <li class="show" style="background-color: #3cd19e;">List item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<p>To create this effect we only need change the axis of rotation.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.swing li {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+</code></pre></div>
+<p>All we&rsquo;ve changed is <code>rotateX</code> to <code>rotateY</code>.</p>
+
+<h2>Prefixes and browser testing</h2>
+
+<p>The code included above does not include any prefixes, for readability. It&rsquo;s strongly recommended to add prefixes to support browsers that need the <code>-webkit</code> prefix or others. I use <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to save worrying about these things.</p>
+
+<p>As these animations are layered on top of the basic show / hide mechanism, they should degrade gracefully on browsers that don&rsquo;t support the animations. Testing on various devices and browsers is important but most modern browsers should be able to support these animations.</p>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating List Items&url=cssanimation.rocks%2Flist-items&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+
+      <section class="content-box">
+        <div class="email-signup">
+  <h2>Animation tips in your email!</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="eight columns">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+      </section>
+      <section class="four columns">
+        <input type="submit" value="Add me" name="subscribe" class="button-primary">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+    </article>
+  </section>
+
+</section>
+
+
+    <footer class="container">
+  <section class="row">
+    <ul class="icons">
+      <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+      <li>
+        <a class="footer-icon" href="https://twitter.com/cssanimation">
+          <span class="icon  icon--twitter">
+            <svg viewBox="0 0 16 16">
+              <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="row">
+    <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-1.10.1.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+<script src='/assets/javascript/custom/list_items.js'></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>

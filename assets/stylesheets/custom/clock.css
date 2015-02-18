@@ -1,0 +1,103 @@
+.clock {
+  border: 0.5em solid #000;
+  border-radius: 50% !important;
+  background: -webkit-radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff);
+  background: radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff);
+  position: relative;
+  height: 12em;
+  width: 12em; }
+
+.clock::before {
+  -webkit-animation: minutes 3600s infinite linear;
+          animation: minutes 3600s infinite linear;
+  content: "";
+  background: #000;
+  width: 4px;
+  height: 5em;
+  position: absolute;
+  left: calc(50% - 2px);
+  top: 1em;
+  -webkit-transform-origin: 2px 5em;
+      -ms-transform-origin: 2px 5em;
+          transform-origin: 2px 5em;
+  -webkit-transform: rotateZ(67deg);
+          transform: rotateZ(67deg); }
+
+.clock::after {
+  -webkit-animation: hours 43200s infinite linear;
+          animation: hours 43200s infinite linear;
+  content: "";
+  background: #000;
+  width: 4px;
+  height: 3em;
+  position: absolute;
+  left: calc(50% - 2px);
+  top: 3em;
+  -webkit-transform-origin: 2px 3em;
+      -ms-transform-origin: 2px 3em;
+          transform-origin: 2px 3em;
+  -webkit-transform: rotateZ(-30deg);
+          transform: rotateZ(-30deg); }
+
+.seconds {
+  -webkit-animation: seconds 60s infinite steps(60);
+          animation: seconds 60s infinite steps(60);
+  background: red;
+  width: 2px;
+  height: 5em;
+  position: absolute;
+  left: calc(50% - 1px);
+  top: 1em;
+  -webkit-transform-origin: 1px 5em;
+      -ms-transform-origin: 1px 5em;
+          transform-origin: 1px 5em;
+  -webkit-transform: rotateZ(10deg);
+          transform: rotateZ(10deg);
+  z-index: 10; }
+
+@-webkit-keyframes seconds {
+
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); }
+
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
+
+@keyframes seconds {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0); }
+
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg); } }
+
+@-webkit-keyframes hours {
+
+  0% {
+    -webkit-transform: rotateZ(35deg);
+            transform: rotateZ(35deg); }
+
+  100% {
+    -webkit-transform: rotateZ(395deg);
+            transform: rotateZ(395deg); } }
+
+@keyframes hours {
+  0% {
+    -webkit-transform: rotateZ(35deg);
+            transform: rotateZ(35deg); }
+
+  100% {
+    -webkit-transform: rotateZ(395deg);
+            transform: rotateZ(395deg); } }
+
+@keyframes hours {
+  0% {
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg); }
+
+  100% {
+    -webkit-transform: rotateZ(315deg);
+            transform: rotateZ(315deg); } }

@@ -1,0 +1,66 @@
+.add-to-list {
+  background: #fff;
+  border-radius: 0.5em;
+  padding: 1em 1em;
+  display: inline-block;
+  width: auto; }
+  .add-to-list li {
+    list-style: none;
+    background: #d1703c;
+    border-bottom: 0 solid #fff;
+    color: #fff;
+    height: 0;
+    padding: 0 0.5em;
+    margin: 0;
+    overflow: hidden;
+    line-height: 2em;
+    width: 10em; }
+    .add-to-list li:hover {
+      cursor: crosshair; }
+    .add-to-list li.show {
+      height: 2em;
+      border-width: 2px; }
+  .add-to-list.fade li {
+    -webkit-transition: all 0.4s ease-out;
+            transition: all 0.4s ease-out;
+    opacity: 0;
+    height: 2em; }
+    .add-to-list.fade li.show {
+      opacity: 1; }
+  .add-to-list.slide-fade li {
+    -webkit-transition: all 0.4s ease-out;
+            transition: all 0.4s ease-out;
+    opacity: 0; }
+    .add-to-list.slide-fade li.show {
+      opacity: 1; }
+  .add-to-list.swing {
+    -webkit-perspective: 100px;
+            perspective: 100px; }
+    .add-to-list.swing li {
+      opacity: 0;
+      -webkit-transform: rotateX(-90deg);
+              transform: rotateX(-90deg);
+      -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+              transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
+      .add-to-list.swing li.show {
+        opacity: 1;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+                transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
+  .add-to-list.swing-side {
+    -webkit-perspective: 200px;
+            perspective: 200px; }
+    .add-to-list.swing-side li {
+      -webkit-transform: rotateY(-90deg);
+              transform: rotateY(-90deg);
+      -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+              transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }
+      .add-to-list.swing-side li.show {
+        opacity: 1;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        -webkit-transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+                transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76); }

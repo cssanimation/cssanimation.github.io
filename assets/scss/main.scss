@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+// Our variables
+$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+$alternate-font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+
+$text-color:       #2E2729;
+$background-color: lighten(#F8E9E1, 4%);
+$brand-color:      #1EAEDB;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+%bordered {
+  border: 2px solid rgba($brand-color, 0.8);
+  border-radius: .5em;
+}
+
+@import
+  "vendor/normalize",
+  "vendor/skeleton",
+  "vendor/syntax-highlighting",
+  "base",
+  "layout",
+  "text",
+  "components/all",
+  "pages/all"
+;
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}

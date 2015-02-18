@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>CSS Animation</title>
+ <link href="cssanimation.rocks/atom.xml" rel="self"/>
+ <link href="cssanimation.rocks/"/>
+ <updated>2015-02-18T20:36:28+00:00</updated>
+ <id>cssanimation.rocks</id>
+ <author>
+   <name>Donovan</name>
+   <email>hello@cssanimation.rocks</email>
+ </author>
+
+ 
+ <entry>
+   <title>Animating List Items</title>
+   <link href="cssanimation.rocks/list-items"/>
+   <updated>2015-02-12T00:00:00+00:00</updated>
+   <id>cssanimation.rocks/list-items</id>
+   <content type="html">&lt;p&gt;When parts of a web page change, adding some animation is a good way to help your viewers understand what&amp;rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&amp;rsquo;s in the process of being removed. In this article we&amp;rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;section class=&quot;add-to-list swing-side demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Introducing content&lt;/h2&gt;
+
+&lt;p&gt;Animation can be useful when helping visitors understand when things change on your site. When content is added or removed without any animation, they can miss sudden changes and be confused. Adding subtle animations can avoid this and help by &amp;ldquo;announcing&amp;rdquo; that something is going to leave the page or be introduced to it.&lt;/p&gt;
+
+&lt;p&gt;One example of adding or removing content is managing the content of a list. Most of the animations can be used for other sorts of content. If you find them useful, or have other ideas to add, do &lt;a href=&quot;mailto:hello@cssanimation.rocks&quot;&gt;get in touch&lt;/a&gt;, we love to hear your thoughts.&lt;/p&gt;
+
+&lt;h2&gt;Setting up the HTML&lt;/h2&gt;
+
+&lt;p&gt;To get started we&amp;rsquo;ll use a pre-filled list and a button to add new items to the list.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;ul id=&amp;quot;list&amp;quot;&amp;gt;
+  &amp;lt;li class=&amp;quot;show&amp;quot;&amp;gt;List item&amp;lt;/li&amp;gt;
+  &amp;lt;li class=&amp;quot;show&amp;quot;&amp;gt;List item&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;button id=&amp;quot;add-to-list&amp;quot;&amp;gt;Add a list item&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A few things to note. Firstly we have two IDs in the HTML. Generally we don&amp;rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&amp;rsquo;re useful when using JavaScript. &lt;/p&gt;
+
+&lt;p&gt;The initial items have the class &amp;ldquo;show&amp;rdquo;, as this is a class we&amp;rsquo;ll use later to add the animation effect.&lt;/p&gt;
+
+&lt;h2&gt;A little JavaScript&lt;/h2&gt;
+
+&lt;p&gt;For the purpose of the demo we&amp;rsquo;ll create a little JavaScript to add a new item to the list, then add the &amp;ldquo;show&amp;rdquo; class so that the animation can take place. There&amp;rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&amp;rsquo;t be any time for the transition to take place.&lt;/p&gt;
+
+&lt;p&gt;We could get around this by using an animation on the &lt;code&gt;li&lt;/code&gt; elements, but this would be more difficult to override when removing the elements with another animation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById(&amp;#39;add-to-list&amp;#39;).onclick = function() {
+  var list = document.getElementById(&amp;#39;list&amp;#39;);
+  var newLI = document.createElement(&amp;#39;li&amp;#39;);
+  newLI.innerHTML = &amp;#39;A new item&amp;#39;;
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.addClass(&amp;#39;show&amp;#39;);
+  }, 10);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;No animation&lt;/h2&gt;
+
+&lt;p&gt;At it&amp;rsquo;s most basic we can write some CSS to show the list items. We&amp;rsquo;re using the &lt;code&gt;show&lt;/code&gt; class as a way of setting them as visible, so removing the &lt;code&gt;show&lt;/code&gt; class should also cause them to disappear.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+
+li.show {
+  height: 2em;
+  margin: 2px 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In these styles we&amp;rsquo;re setting up the &lt;code&gt;li&lt;/code&gt; elements to look like rectangles, without the bullet points and giving them a &lt;code&gt;height&lt;/code&gt; of 0, a &lt;code&gt;margin&lt;/code&gt; of 0 and set &lt;code&gt;overflow&lt;/code&gt; to hidden. This is so that they will appear invisible until we apply a &lt;code&gt;show&lt;/code&gt; class.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;show&lt;/code&gt; class then apples a height and margin. Since we&amp;rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h3&gt;Fade&lt;/h3&gt;
+
+&lt;p&gt;As a first animation we&amp;rsquo;ll add a simple fade effect. The list items appear a little more gradually than before. Visually this still looks a little clunky but has the benefit of giving viewers longer to notice that something is happening.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list fade demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To add the effect I&amp;rsquo;ve created a separate snippet of CSS. To have this apply to the list, apply the class &lt;code&gt;fade&lt;/code&gt; to a container surrounding your list.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  height: 2em;
+}
+.fade li.show {
+  opacity: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Slide down &amp;amp; Fade&lt;/h3&gt;
+
+&lt;p&gt;The sudden jump each time an item is added or removed is a litle jarring. Let&amp;rsquo;s have the height adjust as well, to create a smoother sliding effect.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list slide-fade demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;The difference between this and the &lt;code&gt;fade&lt;/code&gt; class above is only that the &lt;code&gt;height: 2em&lt;/code&gt; has been removed. Since the &lt;code&gt;show&lt;/code&gt; class contains a set height (inherited from the first CSS snippet), it will transition the height automatically.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.slide-fade li {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+}
+.slide-fade li.show {
+  opacity: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Swinging in&lt;/h3&gt;
+
+&lt;p&gt;Along with fading and sliding, we can go further by adding a little 3D effect. Browser can transform elements in more than the X or Y directions, useful for adding depth to scenes.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list swing demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To set this up, we need to define the containing &lt;code&gt;section&lt;/code&gt; as a stage within which the 3D transitions take place. We do this by giving it a &lt;code&gt;perspective&lt;/code&gt; value.&lt;/p&gt;
+
+&lt;p&gt;Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&amp;rsquo;s worth playing with this value to find a look that works for you.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing {
+  perspective: 100px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next we set up the &lt;code&gt;li&lt;/code&gt; elements to transform into place. We&amp;rsquo;ll use &lt;code&gt;opacity&lt;/code&gt; to create a fade effect as before, but add in a &lt;code&gt;transform&lt;/code&gt; to rotate the &lt;code&gt;li&lt;/code&gt; into place.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing li {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.swing li.show {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this example we&amp;rsquo;re beginning with the &lt;code&gt;li&lt;/code&gt; rotated back by 90 degrees. When the &lt;code&gt;show&lt;/code&gt; class it added, this &lt;code&gt;transform&lt;/code&gt; is set to &lt;code&gt;none&lt;/code&gt;, allowing it to transition into place. To give it a swinging effect I&amp;rsquo;ve used the &lt;code&gt;cubic-bezier&lt;/code&gt; timing function.&lt;/p&gt;
+
+&lt;h3&gt;Swinging from side&lt;/h3&gt;
+
+&lt;p&gt;We can tweak this effect to create different styles quite easily. Here&amp;rsquo;s an example where the items swing in from the side.&lt;/p&gt;
+
+&lt;section class=&quot;add-to-list swing-side demo-container&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #d13c9e;&quot;&gt;List item&lt;/li&gt;
+    &lt;li class=&quot;show&quot; style=&quot;background-color: #3cd19e;&quot;&gt;List item&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button&gt;Add a list item&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To create this effect we only need change the axis of rotation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.swing li {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All we&amp;rsquo;ve changed is &lt;code&gt;rotateX&lt;/code&gt; to &lt;code&gt;rotateY&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Prefixes and browser testing&lt;/h2&gt;
+
+&lt;p&gt;The code included above does not include any prefixes, for readability. It&amp;rsquo;s strongly recommended to add prefixes to support browsers that need the &lt;code&gt;-webkit&lt;/code&gt; prefix or others. I use &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;Autoprefixer&lt;/a&gt; to save worrying about these things.&lt;/p&gt;
+
+&lt;p&gt;As these animations are layered on top of the basic show / hide mechanism, they should degrade gracefully on browsers that don&amp;rsquo;t support the animations. Testing on various devices and browsers is important but most modern browsers should be able to support these animations.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Animating pseudo-elements</title>
+   <link href="cssanimation.rocks/pseudo-elements"/>
+   <updated>2015-02-03T00:00:00+00:00</updated>
+   <id>cssanimation.rocks/pseudo-elements</id>
+   <content type="html">&lt;p&gt;Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&amp;rsquo;ll use a pseudo-element to add a little visual flair to a button.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Pseudo-elements&lt;/h2&gt;
+
+&lt;p&gt;Within CSS, we can specify a pseudo-element using &lt;code&gt;::before&lt;/code&gt; or &lt;code&gt;::after&lt;/code&gt;. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&amp;rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.pebble::before {
+  ...
+}
+.pebble::after {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this point, our &lt;code&gt;.pebble&lt;/code&gt; element has two virtual elements attached, and we can style them as needed.&lt;/p&gt;
+
+&lt;h3&gt;Note on &amp;ldquo;::&amp;rdquo; versus &amp;ldquo;:&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s generally accepted that we use the double colon &lt;code&gt;::&lt;/code&gt; to denote pseudo-elements (as opposed to pseudo-classes like :hover, :first-child). If you&amp;rsquo;re adding IE8 support, it&amp;rsquo;s best to use the single &lt;code&gt;:&lt;/code&gt; instead. All other browsers and newer versions of IE support the double.&lt;/p&gt;
+
+&lt;h3&gt;Don&amp;rsquo;t forget &amp;ldquo;content&amp;rdquo;&lt;/h3&gt;
+
+&lt;p&gt;When adding pseudo-elements, one thing to keep in mind is the need to specify the &lt;code&gt;content&lt;/code&gt; property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty &lt;code&gt;content&lt;/code&gt; like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.pebble::before {
+  content: &amp;quot;&amp;quot;
+  ... more styling goes here...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This should make sure the element is visible on screen.&lt;/p&gt;
+
+&lt;h2&gt;Example: Shiny button&lt;/h2&gt;
+
+&lt;p&gt;For this example we&amp;rsquo;ll use a pseudo-element to create a shiny effect on hovering over a button. Here&amp;rsquo;s an example of it in action (hover or tap to see effect).&lt;/p&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;p&gt;To begin, some HTML:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;button&amp;gt;Oooh SHINY&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since we&amp;rsquo;re using pseudo-elements, we won&amp;rsquo;t need any more HTML than this to get going. You may want to add a class to the button if styling more than one type on a page, but for now we&amp;rsquo;ll use the generic element for simplicity.&lt;/p&gt;
+
+&lt;h3&gt;Adding the sheen effect&lt;/h3&gt;
+
+&lt;p&gt;The shiny sheen effect is a linear gradient that passes across the button. To create this we&amp;rsquo;ll use the &lt;code&gt;after&lt;/code&gt; pseudo-element, and position it in a beginning position outside the button:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button::after {
+  content: &amp;#39;&amp;#39;;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The sheen effect is made up of a gradient from the button colour to white and back again. At this point it is now sitting outside the button.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&amp;rsquo;ll set the button&amp;rsquo;s &lt;code&gt;overflow&lt;/code&gt; property to &lt;code&gt;hidden&lt;/code&gt;. Since the pseudo-element is within the button, this means it&amp;rsquo;s positioning outside the button won&amp;rsquo;t be visible.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I&amp;rsquo;ve put in some other styling also to give the button it&amp;rsquo;s own look. One thing to point out, is the use of &lt;code&gt;position: relative&lt;/code&gt;. I&amp;rsquo;ve added this property so that the absolutely positioned pseudo-element will exist within the button. Without specifying the position, an absolutely positioned item will position within a parent element.&lt;/p&gt;
+
+&lt;h2&gt;Adding the animation&lt;/h2&gt;
+
+&lt;p&gt;Since we&amp;rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&amp;rsquo;ll set out exactly what that animation is using &lt;code&gt;keyframes&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Adding the hover state can be done by stacking the &lt;code&gt;after&lt;/code&gt; onto the &lt;code&gt;hover&lt;/code&gt; like so:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;button:hover::after, button:focus::after {
+  animation: sheen 1s forwards;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we are telling the browser than on hover, the &lt;code&gt;after&lt;/code&gt; pseudo-element is to have an &lt;code&gt;animation&lt;/code&gt;. The animation, called sheen, lasts one second and stops at the end without repeating.&lt;/p&gt;
+
+&lt;p&gt;The order matters here. Using &lt;code&gt;::after:hover&lt;/code&gt; won&amp;rsquo;t work as it&amp;rsquo;ll be telling the browser to react to the hover state of the pseudo-element itself.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also added the focus state. This means that viewers tabbing through the page will see the sheen effect as well, without needing to hover. (Thank you, &lt;a href=&quot;https://twitter.com/simevidas&quot;&gt;Šime Vidas&lt;/a&gt;, for the tip)&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s specify &lt;code&gt;keyframes&lt;/code&gt; for this animation:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We only need one keyframe in this case. Since the starting position (0%) is implied by the pseudo-element&amp;rsquo;s starting position, we only describe the end position. In this case the end position is across at the top-right of the button. The browser will then animate the sheen effect across for us.&lt;/p&gt;
+
+&lt;section class=&quot;shiny demo-container tap-to-activate&quot;&gt;
+  &lt;button&gt;Shiny effect&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Browser considerations&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://caniuse.com/#feat=css-animation&quot;&gt;animation property is well supported&lt;/a&gt;, as are &lt;a href=&quot;http://caniuse.com/#feat=css-gencontent&quot;&gt;pseudo-elements&lt;/a&gt;. It&amp;rsquo;s always good to make sure and include &lt;code&gt;-webkit&lt;/code&gt; and &lt;code&gt;-moz&lt;/code&gt; prefixes for the &lt;code&gt;keyframes&lt;/code&gt; and any transforms.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Twitter's "fave" animation</title>
+   <link href="cssanimation.rocks/twitter-fave"/>
+   <updated>2015-01-17T00:00:00+00:00</updated>
+   <id>cssanimation.rocks/twitter-fave</id>
+   <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; (also known as &amp;ldquo;fav&amp;rdquo;) button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;Illusion of movement&lt;/h2&gt;
+
+&lt;p&gt;The effect is similar to the old &lt;a href=&quot;http://en.wikipedia.org/wiki/Zoetrope&quot;&gt;Zoetrope&lt;/a&gt; devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.&lt;/p&gt;
+
+&lt;h2&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;Hover the star to see the animation:&lt;/p&gt;
+
+&lt;section class=&quot;fave demo-container tap-to-activate&quot;&gt;&lt;/section&gt;
+
+&lt;p&gt;In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&amp;rsquo;s fave icon animation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave_rectangle.png&quot; alt=&quot;Frames from Twitter&#39;s fave icon animation&quot; style=&quot;max-width:256px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To animate these frames, we&amp;rsquo;ll need to put them into a single line. &lt;a href=&quot;/assets/images/posts/steps/twitter_fave.png&quot;&gt;This file&lt;/a&gt; has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/frames.png&quot; alt=&quot;How the background images are positioned within an element&quot; style=&quot;max-width:514px&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Steps() timing function&lt;/h3&gt;
+
+&lt;p&gt;With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The &lt;code&gt;steps&lt;/code&gt; timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/steps.png&quot; alt=&quot;How the steps function is illustrated on a graph, as a series of discrete steps&quot; style=&quot;max-width:362px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;To begin we set up the HTML:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;section class=&amp;quot;fave&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Background image&lt;/h3&gt;
+
+&lt;p&gt;With that in place we can add a little styling and position the background image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/steps/twitter_fave.png&quot; alt=&quot;Image sprite for the animation&quot;&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave {
+  width: 70px;
+  height: 50px;
+  background: url(images/twitter_fave.png) no-repeat;
+  background-position: 0 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;hover&lt;/code&gt; state is added, which is when we specify that the background position be moved to the end of the series of images:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;.fave:hover {
+  background-position: -3519px 0;
+  transition: background 1s steps(55);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the second rule, specifying the &lt;code&gt;transition&lt;/code&gt;. In this case we want to transition the background property, run the transition for a duration of two seconds, make use of the &lt;code&gt;steps&lt;/code&gt; timing function. The &lt;code&gt;steps&lt;/code&gt; part includes the value &lt;code&gt;55&lt;/code&gt;, as there are 55 frames in the animation.&lt;/p&gt;
+
+&lt;p&gt;The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.&lt;/p&gt;
+
+&lt;h3&gt;Why not a gif?&lt;/h3&gt;
+
+&lt;p&gt;Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.&lt;/p&gt;
+
+&lt;h2&gt;Other uses of &amp;ldquo;steps()&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;Animating background sprites is just one use of the &lt;code&gt;steps&lt;/code&gt; timing function. Anything that needs to be animated in a series of discrete steps is a good fit for it. You could use it to create a ticking clock for example.&lt;/p&gt;
+
+&lt;h2&gt;Cheatsheet&lt;/h2&gt;
+
+&lt;p&gt;If you enjoyed this article, you can &lt;a href=&quot;https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;amp;url=http://cssanimation.rocks/post/twitter-fave/&amp;amp;original_referer=http://cssanimation.rocks&quot;&gt;share it on Twitter&lt;/a&gt; or save this handy summary cheatsheet:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/tips/twitter-fave.png&quot; alt=&quot;Share this summary on Twitter&quot; style=&quot;max-width:375px&quot;&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

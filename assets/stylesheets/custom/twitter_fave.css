@@ -1,0 +1,28 @@
+.fave {
+  width: 65px;
+  height: 50px;
+  background: #fff url(/assets/images/posts/steps/twitter_fave.png) no-repeat;
+  background-position: 0 2px;
+  cursor: pointer;
+  -webkit-animation: fave 1s steps(55);
+          animation: fave 1s steps(55); }
+
+.fave:hover, .fave.active {
+  background-position: -3519px 2px;
+  -webkit-transition: background 1s steps(55);
+          transition: background 1s steps(55); }
+
+@-webkit-keyframes fave {
+
+  0% {
+    background-position: 0 2px; }
+
+  100% {
+    background-position: -3519px 2px; } }
+
+@keyframes fave {
+  0% {
+    background-position: 0 2px; }
+
+  100% {
+    background-position: -3519px 2px; } }
