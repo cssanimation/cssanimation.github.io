@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>CSS Animation</title>
- <link href="http://cssanimation.rocks/atom.xml" rel="self"/>
- <link href="http://cssanimation.rocks/"/>
- <updated>2015-02-18T22:13:06+00:00</updated>
- <id>http://cssanimation.rocks</id>
+ <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
+ <link href="https://cssanimation.rocks/"/>
+ <updated>2015-02-18T22:19:36+00:00</updated>
+ <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Animating List Items</title>
-   <link href="http://cssanimation.rocks/list-items"/>
+   <link href="https://cssanimation.rocks/list-items"/>
    <updated>2015-02-12T00:00:00+00:00</updated>
-   <id>http://cssanimation.rocks/list-items</id>
+   <id>https://cssanimation.rocks/list-items</id>
    <content type="html">&lt;p&gt;When parts of a web page change, adding some animation is a good way to help your viewers understand what&amp;rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&amp;rsquo;s in the process of being removed. In this article we&amp;rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -206,9 +206,9 @@ li.show {
  
  <entry>
    <title>Animating pseudo-elements</title>
-   <link href="http://cssanimation.rocks/pseudo-elements"/>
+   <link href="https://cssanimation.rocks/pseudo-elements"/>
    <updated>2015-02-03T00:00:00+00:00</updated>
-   <id>http://cssanimation.rocks/pseudo-elements</id>
+   <id>https://cssanimation.rocks/pseudo-elements</id>
    <content type="html">&lt;p&gt;Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&amp;rsquo;ll use a pseudo-element to add a little visual flair to a button.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -322,9 +322,9 @@ li.show {
  
  <entry>
    <title>Twitter's "fave" animation</title>
-   <link href="http://cssanimation.rocks/twitter-fave"/>
+   <link href="https://cssanimation.rocks/twitter-fave"/>
    <updated>2015-01-17T00:00:00+00:00</updated>
-   <id>http://cssanimation.rocks/twitter-fave</id>
+   <id>https://cssanimation.rocks/twitter-fave</id>
    <content type="html">&lt;p&gt;Twitter recently updated the design of their &amp;ldquo;fave&amp;rdquo; (also known as &amp;ldquo;fav&amp;rdquo;) button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&amp;rsquo;s how to recreate the animation using the CSS animation &lt;code&gt;steps&lt;/code&gt; timing function.&lt;/p&gt;
 
 &lt;!--more--&gt;
