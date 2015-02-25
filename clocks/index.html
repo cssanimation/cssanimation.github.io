@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Clocks - CSS Animation</title>
+  <meta name="description" content="It&rsquo;s about time. In this article we&rsquo;ll take on the challenge of creating and animating a clock, using simple CSS animations as well as JavaScript...">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/clocks.css">
+
+  <link rel="canonical" href="https://cssanimation.rocks/clocks">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Clocks - CSS Animation" />
+    <meta property="og:description" content="It&rsquo;s about time. In this article we&rsquo;ll take on the challenge of creating and animating a clock, using simple CSS animations as well as JavaScript..." />
+    <meta property="og:url" content="https://cssanimation.rocks/clocks" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+</head>
+
+
+  <body class="">
+
+    
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container clocks single local bounce">
+  <article class="clock ios7">
+    <span class="extrude1">
+      <section class="hours-container">
+        <section class="hours angled"></section>
+      </section>
+    </span>
+    <span class="extrude2">
+      <section class="minutes-container">
+        <section class="minutes angled"></section>
+      </section>
+    </span>
+    <span class="extrude3">
+      <section class="seconds-container">
+        <section class="seconds"></section>
+      </section>
+    </span>
+  </article>
+</div>
+
+      </section>
+    
+    </section>
+  </section>
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns">
+      <h1 class="post-title">Clocks</h1>
+      <p>It&rsquo;s about time. In this article we&rsquo;ll take on the challenge of creating and animating a clock, using simple CSS animations as well as JavaScript to trigger them.</p>
+
+<!--more-->
+
+<p>This is the clock we&rsquo;ll create using HTML, CSS, an SVG background and a little JavaScript. We&rsquo;ll use CSS animations or transitions for any movement, and rely on JavaScript to set the initial time and adding basic CSS transforms.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<h3>HTML</h3>
+
+<p>To get started we&rsquo;ll need some HTML. </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;article class=&quot;clock&quot;&gt;
+  &lt;section class=&quot;hours-container&quot;&gt;
+    &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;minutes-container&quot;&gt;
+    &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;seconds-container&quot;&gt;
+    &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+</code></pre></div>
+<p>My initial approach was to use three <code>sections</code> for each of the hands. I then went back and wrapped each in a container element. While the simpler HTML worked as far as the basic CSS animations, we&rsquo;ll need containing elements when we want to position the hands and  animate them also.</p>
+
+<h2>Clock face</h2>
+
+<p>We&rsquo;ll begin with a basic clock design has a round face, with simple hours, minutes and seconds hands. Let&rsquo;s begin with the clock face.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.clock {
+  border-radius: 50%;
+  background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 20em;
+  padding-bottom: 31%;
+  position: relative;
+  width: 20em;
+}
+
+.clock.simple:after {
+  background: #000;
+  border-radius: 50%;
+  content: &quot;&quot;;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+</code></pre></div>
+<p>You can <a href="/assets/images/posts/clocks/ios_clock.svg">get the SVG background here</a>. I&rsquo;ve also added a pseudo-element to add a solid black circle to the center. The hands of the clock can then be placed behind this pseudo-element as needed.</p>
+
+<p>We should now have something like this.</p>
+
+<div class="demo-container clocks single">
+  <article class="clock simple"></article>
+</div>
+
+<p>Before adding the hands, we need to place the containers.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</code></pre></div>
+<p>This stacks each container on top of the clock. Next we create the hands.</p>
+
+<h3>Hour hand</h3>
+
+<p>Each hand is given the position property of <code>absolute</code> and placed in the twelve o&#39;clock position. We&rsquo;ll begin with the hour hand.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+</code></pre></div>
+<p>I&rsquo;m using percentages to make scaling the clocks easier. It&rsquo;s a bit more work but makes it easier to have them fit the view or shrink down for mobiles. We also set the <code>transform-origin</code> property to the bottom of the hand so that it can be rotated later.</p>
+
+<div class="demo-container clocks single">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours"></section>
+    </section>
+  </article>
+</div>
+
+<h3>Minute hand</h3>
+
+<p>The minute hand is similar, but taller and thinner.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.minutes {
+  background: #000;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+</code></pre></div>
+<div class="demo-container clocks single">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes"></section>
+    </section>
+  </article>
+</div>
+
+<h3>Second hand</h3>
+
+<p>The second hand is thinner again, but also set further down so that it extends further than the center. To allow for this the <code>transform-origin</code> to 80%. This leaves 20% of the hand extending past the center.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.seconds {
+  background: #000;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+}
+</code></pre></div>
+<div class="demo-container clocks single">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<h3>Animation</h3>
+
+<p>A stopped clock is only going to be right twice a day. Let&rsquo;s add some animations to make the clock behave more like the real thing.</p>
+
+<p>Some clocks jump along with each second, usually making a ticking sound. Some clocks purr along with the hands moving smoothly. We&rsquo;ll try both. First, we&rsquo;ll make the hands move smoothly.</p>
+
+<p>We can use one <code>keyframe</code> to tell the hands to move around 360 degrees (the 0% starting position is implied).</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+</code></pre></div>
+<p>This keyframe tells the element to animate around 360 degrees, if applied to the element using the <code>animation</code> property. We&rsquo;ll use a <code>linear</code> timing function on the hand to make the hands move smoothly.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+}
+.seconds-container {
+  animation: rotate 60s infinite linear;
+}
+</code></pre></div>
+<p>The <code>hours</code> hand is set to rotate once every 12 hours (43,200 seconds). The minute hand rotates once per hour, and the second hand once every second.</p>
+
+<p>Put it together and we now have movement!</p>
+
+<div class="demo-container clocks single linear">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<p>If you are very sharp-eyed, you might be able to even make out the minute hand moving. It would take an hour for it to complete a rotation, and twelve hours for the hour hand to complete it&rsquo;s circuit.</p>
+
+<p>The second hand takes 60 seconds, so it easier to notice.</p>
+
+<h3>Adding steps</h3>
+
+<p>We can make the hands behave more like a normal clock by having the second hand move around the clock in 60 separate movements. A simple way to achieve this is using the <code>steps</code> timing function. The <code>animation</code> property for each hand them becomes:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
+</code></pre></div>
+<p>Both the minute and seconds hand now move around in sixty steps. The browser automatically calculates how far each of these 60 steps move. </p>
+
+<div class="demo-container clocks single steps">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<h3>The correct time</h3>
+
+<p>It&rsquo;s all very well having the time look good, but how about being accurate? With a little JavaScript we can have the time be correct for our visitors. Here&rsquo;s the code.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
+ * Starts any clocks using the user&#39;s local time
+ * From: cssanimation.rocks/clocks
+ */
+function initLocalClocks() {
+  // Get the local time using JS
+  var date = new Date;
+  var seconds = date.getSeconds();
+  var minutes = date.getMinutes();
+  var hours = date.getHours();
+
+  // Create an object with each hand and it&#39;s angle in degrees
+  var hands = [
+    {
+      hand: &#39;hours&#39;,
+      angle: (hours * 30) + (minutes / 2)
+    },
+    {
+      hand: &#39;minutes&#39;,
+      angle: (minutes * 6)
+    },
+    {
+      hand: &#39;seconds&#39;,
+      angle: (seconds * 6)
+    }
+  ];
+  // Loop through each of these hands to set their angle
+  for (var j = 0; j &lt; hands.length; j++) {
+    var elements = document.querySelectorAll(&#39;.&#39; + hands[j].hand);
+    for (var k = 0; k &lt; elements.length; k++) {
+        elements[k].style.webkitTransform = &#39;rotateZ(&#39;+ hands[j].angle +&#39;deg)&#39;;
+        elements[k].style.transform = &#39;rotateZ(&#39;+ hands[j].angle +&#39;deg)&#39;;
+        // If this is a minute hand, note the seconds position (to calculate minute position later)
+        if (hands[j].hand === &#39;minutes&#39;) {
+          elements[k].parentNode.setAttribute(&#39;data-second-angle&#39;, hands[j + 1].angle);
+        }
+    }
+  }
+}
+</code></pre></div>
+<p>This function converts the time (hours, minutes and seconds) into the corresponding angle for each hand. It then loops through each hand and applies that angle using the <code>style.transform</code> property of <code>rotateZ</code>.</p>
+
+<p>This will work on most browsers, except Safari or other browsers needing a prefix. To allow for this we also use the <code>style.webkitTransform</code> property.</p>
+
+<p>This then sets the clock to the current system time.</p>
+
+<div class="demo-container clocks single steps local no-bounce">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<h3>Aligning second and minute hands</h3>
+
+<p>We need to make sure that the minute hand moves when the second hand hits the twelve o&#39;clock position.</p>
+
+<p><img src="/assets/images/posts/clocks/twelve.gif" alt="Minute hand moving when second hand hits 12" style="max-width: 180px"></p>
+
+<p>When the clock is first drawn on screen there is less than one minute before the minute hand needs to move. To allow for this, we can calculate how long until this first minute ends and manually nudge the hand along. Since we&rsquo;re using JavaScript to make this first movement, we can continue rotating it by six degrees every minute using <code>setInterval</code>.</p>
+
+<p>Before we move the minute hand we need to communicate how far into the current minute we are. You may have noticed these lines.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">if (degrees[j].hand === &#39;minutes&#39;) {
+  elements[k].parentNode.setAttribute(&#39;data-second-angle&#39;, degrees[j + 1].degree);
+}
+</code></pre></div>
+<p>These extra lines check to see if the hand is the &ldquo;minutes&rdquo; hand, and if so, sets a data attribute with the current angle of the seconds hand.</p>
+
+<p>With this data attribute set, we can then use this data to work out when to move the minute hand.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
+ * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
+ */
+function setUpMinuteHands() {
+  // Find out how far into the minute we are
+  var containers = document.querySelectorAll(&#39;.minutes-container&#39;);
+  var secondAngle = containers[0].getAttribute(&quot;data-second-angle&quot;);
+  if (secondAngle &gt; 0) {
+    // Set a timeout until the end of the current minute, to move the hand
+    var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
+    setTimeout(function() {
+      moveMinuteHands(containers);
+    }, delay);
+  }
+  // Then continue with a 60 second interval
+  setInterval(function() {
+    for (var i = 0; i &lt; containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 12;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = &#39;rotateZ(&#39;+ containers[i].angle +&#39;deg)&#39;;
+      containers[i].style.transform = &#39;rotateZ(&#39;+ containers[i].angle +&#39;deg)&#39;;
+    }
+  }, 60000);
+}
+
+/*
+ * Do the first minute&#39;s rotation
+ */
+function moveMinuteHands(containers) {
+  for (var i = 0; i &lt; containers.length; i++) {
+    containers[i].style.webkitTransform = &#39;rotateZ(6deg)&#39;;
+    containers[i].style.transform = &#39;rotateZ(6deg)&#39;;
+  }
+}
+</code></pre></div>
+<h3>Adding bounce</h3>
+
+<p>Since we&rsquo;re now using JavaScript to move the minute hand, we should remove the animation property. Rather than simply remove it, we can replace it with a transition. This is an opportunity to add a bit more character to the animation.</p>
+
+<p>When the JavaScript sets a new angle for the hand, a CSS transition on the element will tell the browser to animate this new position. This means that the JavaScript only deals with the simple angle changes and the browser can take care of animating it.</p>
+
+<p>Before we do that, we should update the code to use JavaScript to move the seconds hand also. Let&rsquo;s use this code to animate the seconds hands containers sixty times per minute.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/*
+ * Move the second containers
+ */
+function moveSecondHands() {
+  var containers = document.querySelectorAll(&#39;.seconds-container&#39;);
+  setInterval(function() {
+    for (var i = 0; i &lt; containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 6;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = &#39;rotateZ(&#39;+ containers[i].angle +&#39;deg)&#39;;
+      containers[i].style.transform = &#39;rotateZ(&#39;+ containers[i].angle +&#39;deg)&#39;;
+    }
+  }, 1000);
+}
+</code></pre></div>
+<p>With both the seconds and minute hands handled by JavaScript, update the CSS to replace the <code>animation</code> properties with <code>transitions</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.minutes-container {
+  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+}
+.seconds-container {
+  transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+</code></pre></div>
+<p>These transitions apply to the <code>transform</code> property and use the <code>cubic-bezier</code> timing function. This timing function gives the hands some bounce.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock simple">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<h3>iOS 7 Style</h3>
+
+<p>I&rsquo;m a big fan of the simplicity of the clock used in Apple&rsquo;s iOS 7. They&rsquo;ve since elongated the hands, but I prefer the shorter version.</p>
+
+<p>By styling the hands and adding a background image with the numbers, we can easily create this look.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock ios7">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<p>This design is itself an evolution of the <a href="https://www.youtube.com/watch?v=IvIvKiDWDks">Swiss Railway Clock</a> by Hans Hilfiker. By changing a few styles and adding a new background image we can adapt our clock to this style.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock station">
+    <section class="hours-container">
+      <section class="hours angled"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes angled"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<p>If you come up with other designs, do <a href="mailto:hello@cssanimation.rocks">let me know</a>.</p>
+
+<h2>Using Moment.js</h2>
+
+<p>One of my first ideas when planning this post was to recreate the hotel clocks scene, with three clocks showing different time zones.</p>
+
+<p>The easiest way to adjust for different time zones is by using the amazing <a href="http://momentjs.com/timezone/">Moment.js Timezone</a> library.</p>
+
+<div class="demo-container clocks multiple active bounce">
+  <article class="clock station js-new-york">
+    <section class="label">New York</section>
+    <section class="hours-container">
+      <section class="hours"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+  <article class="clock station js-london">
+    <section class="label">London</section>
+    <section class="hours-container">
+      <section class="hours"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+  <article class="clock station js-tokyo">
+    <section class="label">Tokyo</section>
+    <section class="hours-container">
+      <section class="hours"></section>
+    </section>
+    <section class="minutes-container">
+      <section class="minutes"></section>
+    </section>
+    <section class="seconds-container">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
+
+<p>You can see the code in action <a href="http://codepen.io/donovanh/full/vEjywy/">on this Codepen</a>.</p>
+
+<h2>Browser compatibility</h2>
+
+<p>Modern browsers can handle the CSS transitions and animations involved. IE10+, recent Chrome and Firefox support them without prefixes, and Safari requires the <code>-webkit</code> prefix.</p>
+
+<p>Don&rsquo;t forget to use the prefixed properties within JavaScript too.</p>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Clocks&url=https%3A%2F%2Fcssanimation.rocks%2Fclocks&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+    </article>
+    <aside class="post-aside three columns">
+      <section class="author-details">
+        <a href="http://hop.ie"><img src="https://avatars3.githubusercontent.com/u/853536?v=3&s=200">
+        <span>Donovan&nbsp;Hutchinson</span></a>
+      </section>
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/donovanh/full/vEjywy/" class="button primary-button">Demo</a>
+        </section>
+      
+      <section class="sidebar-email-signup">
+        <h4>Get weekly updates</h4>
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
+      </section>
+    </aside>
+  </section>
+</section>
+
+
+    <footer class="footer">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <div class="email-signup">
+  <h2>Weekly updates</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="centered">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+      <ul class="icons">
+        <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+        <li>
+          <a class="follow-button" href="https://twitter.com/cssanimation">
+            <span class="icon  icon--twitter">
+              <svg viewBox="0 0 16 16">
+                <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+              </svg>
+            </span>
+            @cssanimation
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+    </section>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-1.10.1.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+
+  
+    <script src='/assets/javascript/vendor/moment.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone-with-data-2010-2020.min.js'></script>
+  
+
+<script src='/assets/javascript/custom/clocks.js'></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>

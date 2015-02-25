@@ -68,6 +68,8 @@ function initInternationalClocks() {
     for (var j = 0; j < degrees.length; j++) {
       var elements = document.querySelectorAll('.active .' + times[i].jsclass + ' .' + degrees[j].hand);
       for (var k = 0; k < elements.length; k++) {
+          // Always include the webkit prefix
+          elements[k].style.webkitTransform = 'rotateZ('+ degrees[j].degree +'deg)';
           elements[k].style.transform = 'rotateZ('+ degrees[j].degree +'deg)';
           // If this is a minute hand, note the seconds position (to calculate minute position later)
           if (degrees[j].hand === 'minutes') {
@@ -112,6 +114,7 @@ function initLocalClocks() {
   for (var j = 0; j < hands.length; j++) {
     var elements = document.querySelectorAll('.local .' + hands[j].hand);
     for (var k = 0; k < elements.length; k++) {
+        elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
         elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
         // If this is a minute hand, note the seconds position (to calculate minute position later)
         if (hands[j].hand === 'minutes') {
@@ -133,12 +136,14 @@ function moveSecondHands() {
       } else {
         containers[i].angle += 6;
       }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
       containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
     }
   }, 1000);
   for (var i = 0; i < containers.length; i++) {
     // Add in a little delay to make them feel more natural
     var randomOffset = Math.floor(Math.random() * (100 - 10 + 1)) + 10;
+    containers[i].style.webkitTransitionDelay = '0.0'+ randomOffset +'s';
     containers[i].style.transitionDelay = '0.0'+ randomOffset +'s';
   }
 }
@@ -149,12 +154,10 @@ function moveSecondHands() {
 function setUpMinuteHands() {
   // More tricky, this needs to move the minute hand when the second hand hits zero
   var containers = document.querySelectorAll('.minutes-container');
-  var secondAngle = containers[containers.length - 1].getAttribute('data-second-angle');
-  console.log(secondAngle);
+  var secondAngle = containers[0].getAttribute('data-second-angle');
   if (secondAngle > 0) {
     // Set a timeout until the end of the current minute, to move the hand
     var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
-    console.log(delay);
     setTimeout(function() {
       moveMinuteHands(containers);
     }, delay);
@@ -166,6 +169,7 @@ function setUpMinuteHands() {
  */
 function moveMinuteHands(containers) {
   for (var i = 0; i < containers.length; i++) {
+    containers[i].style.webkitTransform = 'rotateZ(6deg)';
     containers[i].style.transform = 'rotateZ(6deg)';
   }
   // Then continue with a 60 second interval
@@ -176,6 +180,7 @@ function moveMinuteHands(containers) {
       } else {
         containers[i].angle += 6;
       }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
       containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
     }
   }, 60000);

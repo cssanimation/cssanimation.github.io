@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Animating List Items</title>
+  <title>Animating List Items - CSS Animation</title>
   <meta name="description" content="When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arriv...">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
@@ -22,8 +22,7 @@
     <meta property="twitter:site" content="@cssanimation" />
     <meta property="twitter:creator" content="@donovanh" />
     <meta property="og:title" content="Animating List Items - CSS Animation" />
-    <meta property="og:description" content="Some tricks to help announce list items through animation." />
-    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/list_items/list_items.png" />
+    <meta property="og:description" content="When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arriv..." />
     <meta property="og:url" content="https://cssanimation.rocks/list-items" />
   
 
@@ -47,22 +46,21 @@
 </head>
 
 
-  <body>
+  <body class="shorter">
 
-    <section class="container page-content">
+    
+  <section class="post-header shorter">
 
-  <section class="row">
-    <section class="three columns">
-      <header class="site-header">
-
-  <section class="content">
-    <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
-  </section>
-
-</header>
-
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+      </a>
     </section>
-
+    
+    </section>
+  </section>
+<section class="container page-content">
+  <section class="row">
     <article class="post-content nine columns">
       <h1 class="post-title">Animating List Items</h1>
       <p>When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&rsquo;s in the process of being removed. In this article we&rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.</p>
@@ -259,18 +257,36 @@ li.show {
           <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating List Items&url=https%3A%2F%2Fcssanimation.rocks%2Flist-items&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
-
-      <section class="content-box">
-        <div class="email-signup">
-  <h2>Animation tips in your email!</h2>
-  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
-    <section class="row">
-      <section class="eight columns">
+    </article>
+    <aside class="post-aside three columns">
+      <section class="author-details">
+        <a href="http://hop.ie"><img src="https://avatars3.githubusercontent.com/u/853536?v=3&s=200">
+        <span>Donovan&nbsp;Hutchinson</span></a>
+      </section>
+      
+      <section class="sidebar-email-signup">
+        <h4>Get weekly updates</h4>
         <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
         <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
       </section>
-      <section class="four columns">
-        <input type="submit" value="Add me" name="subscribe" class="button-primary">
+    </aside>
+  </section>
+</section>
+
+
+    <footer class="footer">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <div class="email-signup">
+  <h2>Weekly updates</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="centered">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
       </section>
     </section>
   </form>
@@ -278,29 +294,24 @@ li.show {
 </div>
 
       </section>
-    </article>
-  </section>
-</section>
-
-
-    <footer class="container">
-  <section class="row">
-    <ul class="icons">
-      <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
-      <li>
-        <a class="footer-icon" href="https://twitter.com/cssanimation">
-          <span class="icon  icon--twitter">
-            <svg viewBox="0 0 16 16">
-              <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
-              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
-            </svg>
-          </span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section class="row">
-    <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+      <ul class="icons">
+        <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+        <li>
+          <a class="follow-button" href="https://twitter.com/cssanimation">
+            <span class="icon  icon--twitter">
+              <svg viewBox="0 0 16 16">
+                <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+              </svg>
+            </span>
+            @cssanimation
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+    </section>
   </section>
 </footer>
 <script src='//code.jquery.com/jquery-1.10.1.min.js'></script>
