@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-02-26T09:45:00+00:00</updated>
+ <updated>2015-02-26T09:46:45+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -52,7 +52,7 @@
   &amp;lt;/div&amp;gt;
 &amp;lt;/article&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;My initial approach was to use three &lt;code&gt;sections&lt;/code&gt; for each of the hands. I then went back and wrapped each in a container element. While the simpler HTML worked as far as the basic CSS animations, we&amp;rsquo;ll need containing elements when we want to position the hands and  animate them also.&lt;/p&gt;
+&lt;p&gt;My initial approach was to use three elements for each of the hands. I then went back and wrapped each in a container element. While the simpler HTML worked as far as the basic CSS animations, we&amp;rsquo;ll need containing elements when we want to position the hands and  animate them also.&lt;/p&gt;
 
 &lt;h2&gt;Clock face&lt;/h2&gt;
 
