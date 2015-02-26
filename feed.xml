@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-02-25T22:44:16+00:00</updated>
+ <updated>2015-02-26T09:45:00+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -25,15 +25,15 @@
 
 &lt;div class=&quot;demo-container clocks single local bounce&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -41,22 +41,22 @@
 
 &lt;p&gt;To get started we&amp;rsquo;ll need some HTML. &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;article class=&amp;quot;clock&amp;quot;&amp;gt;
-  &amp;lt;section class=&amp;quot;hours-container&amp;quot;&amp;gt;
-    &amp;lt;section class=&amp;quot;hours&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;
-  &amp;lt;/section&amp;gt;
-  &amp;lt;section class=&amp;quot;minutes-container&amp;quot;&amp;gt;
-    &amp;lt;section class=&amp;quot;minutes&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;
-  &amp;lt;/section&amp;gt;
-  &amp;lt;section class=&amp;quot;seconds-container&amp;quot;&amp;gt;
-    &amp;lt;section class=&amp;quot;seconds&amp;quot;&amp;gt;&amp;lt;/section&amp;gt;
-  &amp;lt;/section&amp;gt;
+  &amp;lt;div class=&amp;quot;hours-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;hours&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;minutes-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;minutes&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;seconds-container&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;seconds&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
 &amp;lt;/article&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;My initial approach was to use three &lt;code&gt;sections&lt;/code&gt; for each of the hands. I then went back and wrapped each in a container element. While the simpler HTML worked as far as the basic CSS animations, we&amp;rsquo;ll need containing elements when we want to position the hands and  animate them also.&lt;/p&gt;
 
 &lt;h2&gt;Clock face&lt;/h2&gt;
 
-&lt;p&gt;We&amp;rsquo;ll begin with a basic clock design has a round face, with simple hours, minutes and seconds hands. Let&amp;rsquo;s begin with the clock face.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll begin with a basic clock design has a round face, with simple hours, minutes and seconds hands.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.clock {
   border-radius: 50%;
   background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -116,9 +116,9 @@
 
 &lt;div class=&quot;demo-container clocks single&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -137,12 +137,12 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;demo-container clocks single&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -162,15 +162,15 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;demo-container clocks single&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -204,15 +204,15 @@
 
 &lt;div class=&quot;demo-container clocks single linear&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -234,15 +234,15 @@
 
 &lt;div class=&quot;demo-container clocks single steps&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -297,15 +297,15 @@ function initLocalClocks() {
 
 &lt;div class=&quot;demo-container clocks single steps local no-bounce&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -400,15 +400,15 @@ function moveSecondHands() {
 
 &lt;div class=&quot;demo-container clocks single local bounce&quot;&gt;
   &lt;article class=&quot;clock simple&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -420,15 +420,15 @@ function moveSecondHands() {
 
 &lt;div class=&quot;demo-container clocks single local bounce&quot;&gt;
   &lt;article class=&quot;clock ios7&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -436,15 +436,15 @@ function moveSecondHands() {
 
 &lt;div class=&quot;demo-container clocks single local bounce&quot;&gt;
   &lt;article class=&quot;clock station&quot;&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes angled&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes angled&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 
@@ -458,40 +458,40 @@ function moveSecondHands() {
 
 &lt;div class=&quot;demo-container clocks multiple active bounce&quot;&gt;
   &lt;article class=&quot;clock station js-new-york&quot;&gt;
-    &lt;section class=&quot;label&quot;&gt;New York&lt;/section&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;label&quot;&gt;New York&lt;/div&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
   &lt;article class=&quot;clock station js-london&quot;&gt;
-    &lt;section class=&quot;label&quot;&gt;London&lt;/section&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;label&quot;&gt;London&lt;/div&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
   &lt;article class=&quot;clock station js-tokyo&quot;&gt;
-    &lt;section class=&quot;label&quot;&gt;Tokyo&lt;/section&gt;
-    &lt;section class=&quot;hours-container&quot;&gt;
-      &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;minutes-container&quot;&gt;
-      &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;seconds-container&quot;&gt;
-      &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-    &lt;/section&gt;
+    &lt;div class=&quot;label&quot;&gt;Tokyo&lt;/div&gt;
+    &lt;div class=&quot;hours-container&quot;&gt;
+      &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;minutes-container&quot;&gt;
+      &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;seconds-container&quot;&gt;
+      &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;
 

@@ -94,15 +94,15 @@
 
 <div class="demo-container clocks single local bounce">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -110,22 +110,22 @@
 
 <p>To get started we&rsquo;ll need some HTML. </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;article class=&quot;clock&quot;&gt;
-  &lt;section class=&quot;hours-container&quot;&gt;
-    &lt;section class=&quot;hours&quot;&gt;&lt;/section&gt;
-  &lt;/section&gt;
-  &lt;section class=&quot;minutes-container&quot;&gt;
-    &lt;section class=&quot;minutes&quot;&gt;&lt;/section&gt;
-  &lt;/section&gt;
-  &lt;section class=&quot;seconds-container&quot;&gt;
-    &lt;section class=&quot;seconds&quot;&gt;&lt;/section&gt;
-  &lt;/section&gt;
+  &lt;div class=&quot;hours-container&quot;&gt;
+    &lt;div class=&quot;hours&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;minutes-container&quot;&gt;
+    &lt;div class=&quot;minutes&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;seconds-container&quot;&gt;
+    &lt;div class=&quot;seconds&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/article&gt;
 </code></pre></div>
 <p>My initial approach was to use three <code>sections</code> for each of the hands. I then went back and wrapped each in a container element. While the simpler HTML worked as far as the basic CSS animations, we&rsquo;ll need containing elements when we want to position the hands and  animate them also.</p>
 
 <h2>Clock face</h2>
 
-<p>We&rsquo;ll begin with a basic clock design has a round face, with simple hours, minutes and seconds hands. Let&rsquo;s begin with the clock face.</p>
+<p>We&rsquo;ll begin with a basic clock design has a round face, with simple hours, minutes and seconds hands.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.clock {
   border-radius: 50%;
   background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -185,9 +185,9 @@
 
 <div class="demo-container clocks single">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours"></div>
+    </div>
   </article>
 </div>
 
@@ -206,12 +206,12 @@
 </code></pre></div>
 <div class="demo-container clocks single">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes"></div>
+    </div>
   </article>
 </div>
 
@@ -231,15 +231,15 @@
 </code></pre></div>
 <div class="demo-container clocks single">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -273,15 +273,15 @@
 
 <div class="demo-container clocks single linear">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -303,15 +303,15 @@
 
 <div class="demo-container clocks single steps">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -366,15 +366,15 @@ function initLocalClocks() {
 
 <div class="demo-container clocks single steps local no-bounce">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -469,15 +469,15 @@ function moveSecondHands() {
 
 <div class="demo-container clocks single local bounce">
   <article class="clock simple">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -489,15 +489,15 @@ function moveSecondHands() {
 
 <div class="demo-container clocks single local bounce">
   <article class="clock ios7">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -505,15 +505,15 @@ function moveSecondHands() {
 
 <div class="demo-container clocks single local bounce">
   <article class="clock station">
-    <section class="hours-container">
-      <section class="hours angled"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes angled"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -527,40 +527,40 @@ function moveSecondHands() {
 
 <div class="demo-container clocks multiple active bounce">
   <article class="clock station js-new-york">
-    <section class="label">New York</section>
-    <section class="hours-container">
-      <section class="hours"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="label">New York</div>
+    <div class="hours-container">
+      <div class="hours"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
   <article class="clock station js-london">
-    <section class="label">London</section>
-    <section class="hours-container">
-      <section class="hours"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="label">London</div>
+    <div class="hours-container">
+      <div class="hours"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
   <article class="clock station js-tokyo">
-    <section class="label">Tokyo</section>
-    <section class="hours-container">
-      <section class="hours"></section>
-    </section>
-    <section class="minutes-container">
-      <section class="minutes"></section>
-    </section>
-    <section class="seconds-container">
-      <section class="seconds"></section>
-    </section>
+    <div class="label">Tokyo</div>
+    <div class="hours-container">
+      <div class="hours"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
   </article>
 </div>
 
@@ -594,9 +594,11 @@ function moveSecondHands() {
       
       <section class="sidebar-email-signup">
         <h4>Get weekly updates</h4>
-        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
-        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
-        <input type="submit" value="Add me" name="subscribe" class="button">
+        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+          <input type="submit" value="Add me" name="subscribe" class="button">
+        </form>
       </section>
     </aside>
   </section>
