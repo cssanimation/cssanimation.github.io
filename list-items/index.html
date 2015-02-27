@@ -108,7 +108,7 @@ document.getElementById(&#39;add-to-list&#39;).onclick = function() {
   newLI.innerHTML = &#39;A new item&#39;;
   list.appendChild(newLI);
   setTimeout(function() {
-    newLI.addClass(&#39;show&#39;);
+    newLI.className = newLI.className + &quot; show&quot;;
   }, 10);
 }
 </code></pre></div>

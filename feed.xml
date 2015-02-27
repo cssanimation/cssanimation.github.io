@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-02-26T09:46:45+00:00</updated>
+ <updated>2015-02-27T08:58:13+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -713,7 +713,7 @@ document.getElementById(&amp;#39;add-to-list&amp;#39;).onclick = function() {
   newLI.innerHTML = &amp;#39;A new item&amp;#39;;
   list.appendChild(newLI);
   setTimeout(function() {
-    newLI.addClass(&amp;#39;show&amp;#39;);
+    newLI.className = newLI.className + &amp;quot; show&amp;quot;;
   }, 10);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
