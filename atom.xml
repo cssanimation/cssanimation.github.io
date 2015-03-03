@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-03T17:21:07+00:00</updated>
+ <updated>2015-03-03T22:54:17+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -198,7 +198,7 @@
   animation: rotate 60s infinite linear;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The &lt;code&gt;hours&lt;/code&gt; hand is set to rotate once every 12 hours (43,200 seconds). The minute hand rotates once per hour, and the second hand once every second.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;hours&lt;/code&gt; hand is set to rotate once every 12 hours (43,200 seconds). The minute hand rotates once per hour, and the second hand once every minute.&lt;/p&gt;
 
 &lt;p&gt;Put it together and we now have movement!&lt;/p&gt;
 
