@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Transitions vs Animations - CSS Animation</title>
+  <meta name="description" content="When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the...">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/animations_transitions.css">
+
+  <link rel="canonical" href="https://cssanimation.rocks/transition-vs-animation">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Transitions vs Animations - CSS Animation" />
+    <meta property="og:description" content="A description of the differences between transitions and animations in web animation." />
+    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/transitions-animations/transitions-animations.gif" />
+    <meta property="og:url" content="https://cssanimation.rocks/transition-vs-animation" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+</head>
+
+
+  <body class="">
+
+    
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container transitions" id="demo">
+  <div class="shape"></div>
+  <div class="transition-label label1">Transition</div>
+  <div class="transition-label label2">Animation</div>
+</div>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li class="new"><a href="/courses/">Courses</a></li>
+    <li><a href="https://twitter.com/cssanimation">Twitter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns">
+      <h1 class="post-title">Transitions vs Animations</h1>
+      <p>When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the differences.</p>
+
+<!--more-->
+
+<h2>What are Transitions?</h2>
+
+<p>A transition occurs when an element changes from one state to another, and the browser fills in that state change with a sequence of in-between frames. It has a beginning and an end state.</p>
+
+<p>We most often see transitions used on hover states, or when information on a page is added or removed. The hover states might be a subtle change in font color, and information on the page might fade from invisible to visible.</p>
+
+<p>Since transitions are limited to these two stages, they can lack the nuance of animations but at the same time be easier to use.</p>
+
+<h3>When to use them</h3>
+
+<p>If you want to change an element from one state to another smoothly, a transition is a good choice. Simple changes can usually be handled with transitions and timing functions can be used to customize the way the transition occurs.</p>
+
+<p>A transition would work well when someone hovers or taps a button:</p>
+
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+
+<p>Or when an item is added to a page:</p>
+
+<section class="add-to-list swing demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">A list item</li>
+    <li class="show" style="background-color: #3cd19e;">A list item</li>
+  </ul>
+  <button>Add a list item</button>
+</section>
+
+<h2>What are Animations?</h2>
+
+<p>CSS Animations are a more powerful alternative to transitions. Rather than rely on a change from one beginning state to an end state, animations can be made up of as many in-between states as you like, and offer more control over how the states are animated.</p>
+
+<p>Where a transition only goes from A to B, an animation can go from A, B, C to D. Or any number of stages as needed.</p>
+
+<p>Animations achieve this by using sets of <code>keyframes</code>. Where a transition can be specified with one line in the class, an animation works by referencing a set of keyframes that are described separately in the CSS.</p>
+
+<h3>When to use them</h3>
+
+<p>If an animation needs to run when the page loads, or is more complex than a simple A to B state change, a CSS animation might be more appropriate.</p>
+
+<p>Examples of this might be if you want to have an animation on the page that plays after a certain amount of time, like this blink effect on this Baymax character:</p>
+
+<section class="demo-container baymax-container">
+  <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
+</section>
+
+<p>An animation might also be a good choice if an item has to move across multiple places on the page, such as an instruction overlay with a mouse cursor point out various areas of interest on a screen.</p>
+
+<h2>Sometimes it&rsquo;s not obvious</h2>
+
+<p>A recent post began as an animation, but then became a case for transitions.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock station">
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
+  </article>
+</div>
+
+<p>When I began designing this clock, I had the hands move continuously on load. This was a good case for using the <code>animation</code> property. It was to animate on load and continue forever. When I started adding more complexity, I found it made more sense to have the hands&rsquo; angles set using JavaScript.</p>
+
+<p>As the hands were being moved by JavaScript, <code>transitions</code> became a better choice. When the JavaScript changes the angle of a hand, the CSS <code>transition</code> handles the change (from state A to state B) more elegantly than an animation would.</p>
+
+<p>Check out this <a href="/clocks/">CSS clock tutorial</a> for more detail.</p>
+
+<h2>In summary</h2>
+
+<p>Transitions for creating a smooth transition from one state to another, and animations for more complex series of movements.</p>
+
+<p>Transitions are generally easier to create and manage, and apply to the majority of situations. If you need more control over animating an element through a series of steps, or if the animation needs to begin on load, then an animation with keyframes might be the better choice.</p>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Transitions vs Animations&url=https%3A%2F%2Fcssanimation.rocks%2Ftransition-vs-animation&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+      <h3>Want to learn more about CSS animation?</h3>
+      <article class="content-box wow bounceIn">
+        <section class="course">
+          <div class="course-image four columns">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
+          </div>
+          <div class="course-details eight columns">
+            <h2><a href="/courses/animation-101/">Animation 101</a></h2>
+            <p>An email course to get you started learning all about transitions, animations and how to apply them to your work.</p>
+            <p class="button"><a href="/courses/animation-101/">More details</a></p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </article>
+
+    </article>
+    <aside class="post-aside three columns">
+      <section class="author-details">
+        <a href="http://hop.ie"><img src="https://avatars3.githubusercontent.com/u/853536?v=3&s=200">
+        <span>Donovan&nbsp;Hutchinson</span></a>
+      </section>
+      
+      <section class="sidebar-email-signup">
+        <h4>Get weekly updates</h4>
+        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+          <input type="submit" value="Add me" name="subscribe" class="button">
+        </form>
+      </section>
+      <section class="course-sidebar wow bounceIn">
+        <h3>Enrolling now!</h3>
+        <section class="course">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
+            <h3><a href="/courses/animation-101/">Animation 101</a></h3>
+            <p>Learn the essentials of CSS animation with an email and a few minutes each day</p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </section>
+    </aside>
+  </section>
+</section>
+
+
+    <footer class="footer">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <div class="email-signup">
+  <h2>Weekly updates</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="centered">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+      <ul class="icons">
+        <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+        <li>
+          <a class="follow-button" href="https://twitter.com/cssanimation">
+            <span class="icon icon--twitter">
+              <svg viewBox="0 0 16 16">
+                <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+              </svg>
+            </span>
+            @cssanimation
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        <a href="/">Home</a> |
+        <a href="/courses/">CSS Courses</a> |
+        <a href="mailto:hello@cssanimation.rocks">hello@cssanimation.rocks</a>
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+    </section>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+
+  
+    <script src='/assets/javascript/vendor/moment.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone-with-data-2010-2020.min.js'></script>
+  
+    <script src='/assets/javascript/custom/list_items.js'></script>
+  
+    <script src='/assets/javascript/custom/clocks.js'></script>
+  
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/assets/javascript/vendor/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>
