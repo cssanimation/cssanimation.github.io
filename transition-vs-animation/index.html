@@ -6,25 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Animating pseudo-elements - CSS Animation</title>
-  <meta name="description" content="Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML,...">
+  <title>Transitions vs Animations - CSS Animation</title>
+  <meta name="description" content="When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the...">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="/assets/stylesheets/custom/shiny_button.css">
+  <link rel="stylesheet" href="/assets/stylesheets/custom/animations_transitions.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/pseudo-elements">
+  <link rel="canonical" href="https://cssanimation.rocks/transition-vs-animation">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@cssanimation" />
     <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="Animating pseudo-elements - CSS Animation" />
-    <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
-    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/sheen/sheen.gif" />
-    <meta property="og:url" content="https://cssanimation.rocks/pseudo-elements" />
+    <meta property="og:title" content="Transitions vs Animations - CSS Animation" />
+    <meta property="og:description" content="A description of the differences between transitions and animations in web animation." />
+    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/transitions-animations/transitions-animations.png" />
+    <meta property="og:url" content="https://cssanimation.rocks/transition-vs-animation" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -47,16 +47,25 @@
 </head>
 
 
-  <body class="shorter">
+  <body class="">
 
     
-  <section class="post-header shorter">
+  <section class="post-header">
 
     <section class="logo">
       <a href="/">
         <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
       </a>
     </section>
+    
+      <section class="demo">
+        <div class="post-header-container transitions" id="demo">
+  <div class="shape"></div>
+  <div class="transition-label label1">Transition</div>
+  <div class="transition-label label2">Animation</div>
+</div>
+
+      </section>
     
     <div class="absolute-nav">
       <nav>
@@ -71,115 +80,88 @@
 <section class="container page-content">
   <section class="row">
     <article class="post-content nine columns">
-      <h1 class="post-title">Animating pseudo-elements</h1>
-      <p>Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&rsquo;ll use a pseudo-element to add a little visual flair to a button.</p>
+      <h1 class="post-title">Transitions vs Animations</h1>
+      <p>When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the differences.</p>
 
 <!--more-->
 
-<section class="shiny demo-container tap-to-activate">
-  <button>Shiny effect</button>
-</section>
+<h2>What are Transitions?</h2>
 
-<h2>Pseudo-elements</h2>
+<p>A transition occurs when an element changes from one state to another, and the browser fills in that state change with a sequence of in-between frames. It has a beginning and an end state.</p>
 
-<p>Within CSS, we can specify a pseudo-element using <code>::before</code> or <code>::after</code>. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-</code></pre></div>
-<p>At this point, our <code>.pebble</code> element has two virtual elements attached, and we can style them as needed.</p>
+<p>We most often see transitions used on hover states, or when information on a page is added or removed. The hover states might be a subtle change in font color, and information on the page might fade from invisible to visible.</p>
 
-<h3>Note on &ldquo;::&rdquo; versus &ldquo;:&rdquo;</h3>
+<p>Since transitions are limited to these two stages, they can lack the nuance of animations but at the same time be easier to use.</p>
 
-<p>It&rsquo;s generally accepted that we use the double colon <code>::</code> to denote pseudo-elements (as opposed to pseudo-classes like :hover, :first-child). If you&rsquo;re adding IE8 support, it&rsquo;s best to use the single <code>:</code> instead. All other browsers and newer versions of IE support the double.</p>
+<h3>When to use them</h3>
 
-<h3>Don&rsquo;t forget &ldquo;content&rdquo;</h3>
+<p>If you want to change an element from one state to another smoothly, a transition is a good choice. Simple changes can usually be handled with transitions and timing functions can be used to customize the way the transition occurs.</p>
 
-<p>When adding pseudo-elements, one thing to keep in mind is the need to specify the <code>content</code> property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty <code>content</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
-  content: &quot;&quot;
-  ... more styling goes here...
-}
-</code></pre></div>
-<p>This should make sure the element is visible on screen.</p>
-
-<h2>Example: Shiny button</h2>
-
-<p>For this example we&rsquo;ll use a pseudo-element to create a shiny effect on hovering over a button. Here&rsquo;s an example of it in action (hover or tap to see effect).</p>
+<p>A transition would work well when someone hovers or taps a button:</p>
 
 <section class="shiny demo-container tap-to-activate">
   <button>Shiny effect</button>
 </section>
 
-<p>To begin, some HTML:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;button&gt;Oooh SHINY&lt;/button&gt;
-</code></pre></div>
-<p>Since we&rsquo;re using pseudo-elements, we won&rsquo;t need any more HTML than this to get going. You may want to add a class to the button if styling more than one type on a page, but for now we&rsquo;ll use the generic element for simplicity.</p>
+<p>Or when an item is added to a page:</p>
 
-<h3>Adding the sheen effect</h3>
-
-<p>The shiny sheen effect is a linear gradient that passes across the button. To create this we&rsquo;ll use the <code>after</code> pseudo-element, and position it in a beginning position outside the button:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button::after {
-  content: &#39;&#39;;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-</code></pre></div>
-<p>The sheen effect is made up of a gradient from the button colour to white and back again. At this point it is now sitting outside the button.</p>
-
-<p>We&rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&rsquo;ll set the button&rsquo;s <code>overflow</code> property to <code>hidden</code>. Since the pseudo-element is within the button, this means it&rsquo;s positioning outside the button won&rsquo;t be visible.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-</code></pre></div>
-<p>I&rsquo;ve put in some other styling also to give the button it&rsquo;s own look. One thing to point out, is the use of <code>position: relative</code>. I&rsquo;ve added this property so that the absolutely positioned pseudo-element will exist within the button. Without specifying the position, an absolutely positioned item will position within a parent element.</p>
-
-<h2>Adding the animation</h2>
-
-<p>Since we&rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&rsquo;ll set out exactly what that animation is using <code>keyframes</code>.</p>
-
-<p>Adding the hover state can be done by stacking the <code>after</code> onto the <code>hover</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-</code></pre></div>
-<p>Here we are telling the browser than on hover, the <code>after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
-
-<p>The order matters here. Using <code>::after:hover</code> won&rsquo;t work as it&rsquo;ll be telling the browser to react to the hover state of the pseudo-element itself.</p>
-
-<p>I&rsquo;ve also added the focus state. This means that viewers tabbing through the page will see the sheen effect as well, without needing to hover. (Thank you, <a href="https://twitter.com/simevidas">Šime Vidas</a>, for the tip)</p>
-
-<p>Let&rsquo;s specify <code>keyframes</code> for this animation:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-</code></pre></div>
-<p>We only need one keyframe in this case. Since the starting position (0%) is implied by the pseudo-element&rsquo;s starting position, we only describe the end position. In this case the end position is across at the top-right of the button. The browser will then animate the sheen effect across for us.</p>
-
-<section class="shiny demo-container tap-to-activate">
-  <button>Shiny effect</button>
+<section class="add-to-list swing demo-container">
+  <ul>
+    <li class="show" style="background-color: #d13c9e;">A list item</li>
+    <li class="show" style="background-color: #3cd19e;">A list item</li>
+  </ul>
+  <button>Add a list item</button>
 </section>
 
-<h2>Browser considerations</h2>
+<h2>What are Animations?</h2>
 
-<p>The <a href="http://caniuse.com/#feat=css-animation">animation property is well supported</a>, as are <a href="http://caniuse.com/#feat=css-gencontent">pseudo-elements</a>. It&rsquo;s always good to make sure and include <code>-webkit</code> and <code>-moz</code> prefixes for the <code>keyframes</code> and any transforms.</p>
+<p>CSS Animations are a more powerful alternative to transitions. Rather than rely on a change from one beginning state to an end state, animations can be made up of as many in-between states as you like, and offer more control over how the states are animated.</p>
+
+<p>Where a transition only goes from A to B, an animation can go from A, B, C to D. Or any number of stages as needed.</p>
+
+<p>Animations achieve this by using sets of <code>keyframes</code>. Where a transition can be specified with one line in the class, an animation works by referencing a set of keyframes that are described separately in the CSS.</p>
+
+<h3>When to use them</h3>
+
+<p>If an animation needs to run when the page loads, or is more complex than a simple A to B state change, a CSS animation might be more appropriate.</p>
+
+<p>Examples of this might be if you want to have an animation on the page that plays after a certain amount of time, like this blink effect on this Baymax character:</p>
+
+<section class="demo-container baymax-container">
+  <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
+</section>
+
+<p>An animation might also be a good choice if an item has to move across multiple places on the page, such as an instruction overlay with a mouse cursor point out various areas of interest on a screen.</p>
+
+<h2>Sometimes it&rsquo;s not obvious</h2>
+
+<p>A recent post began as an animation, but then became a case for transitions.</p>
+
+<div class="demo-container clocks single local bounce">
+  <article class="clock station">
+    <div class="hours-container">
+      <div class="hours angled"></div>
+    </div>
+    <div class="minutes-container">
+      <div class="minutes angled"></div>
+    </div>
+    <div class="seconds-container">
+      <div class="seconds"></div>
+    </div>
+  </article>
+</div>
+
+<p>When I began designing this clock, I had the hands move continuously on load. This was a good case for using the <code>animation</code> property. It was to animate on load and continue forever. When I started adding more complexity, I found it made more sense to have the hands&rsquo; angles set using JavaScript.</p>
+
+<p>As the hands were being moved by JavaScript, <code>transitions</code> became a better choice. When the JavaScript changes the angle of a hand, the CSS <code>transition</code> handles the change (from state A to state B) more elegantly than an animation would.</p>
+
+<p>Check out this <a href="/clocks/">CSS clock tutorial</a> for more detail.</p>
+
+<h2>In summary</h2>
+
+<p>Transitions for creating a smooth transition from one state to another, and animations for more complex series of movements.</p>
+
+<p>Transitions are generally easier to create and manage, and apply to the majority of situations. If you need more control over animating an element through a series of steps, or if the animation needs to begin on load, then an animation with keyframes might be the better choice.</p>
 
 
       <section class="quote-container">
@@ -187,7 +169,7 @@
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating pseudo-elements&url=https%3A%2F%2Fcssanimation.rocks%2Fpseudo-elements&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Transitions vs Animations&url=https%3A%2F%2Fcssanimation.rocks%2Ftransition-vs-animation&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -283,6 +265,18 @@
 </footer>
 <script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
 <script src='/assets/javascript/site.js'></script>
+
+  
+    <script src='/assets/javascript/vendor/moment.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone.min.js'></script>
+  
+    <script src='/assets/javascript/vendor/moment-timezone-with-data-2010-2020.min.js'></script>
+  
+    <script src='/assets/javascript/custom/list_items.js'></script>
+  
+    <script src='/assets/javascript/custom/clocks.js'></script>
+  
 
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
