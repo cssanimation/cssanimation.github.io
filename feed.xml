@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-07T07:57:06+00:00</updated>
+ <updated>2015-03-07T22:06:36+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -428,6 +428,16 @@ function setUpMinuteHands() {
       moveMinuteHands(containers);
     }, delay);
   }
+}
+
+/*
+ * Do the first minute&amp;#39;s rotation
+ */
+function moveMinuteHands(containers) {
+  for (var i = 0; i &amp;lt; containers.length; i++) {
+    containers[i].style.webkitTransform = &amp;#39;rotateZ(6deg)&amp;#39;;
+    containers[i].style.transform = &amp;#39;rotateZ(6deg)&amp;#39;;
+  }
   // Then continue with a 60 second interval
   setInterval(function() {
     for (var i = 0; i &amp;lt; containers.length; i++) {
@@ -440,16 +450,6 @@ function setUpMinuteHands() {
       containers[i].style.transform = &amp;#39;rotateZ(&amp;#39;+ containers[i].angle +&amp;#39;deg)&amp;#39;;
     }
   }, 60000);
-}
-
-/*
- * Do the first minute&amp;#39;s rotation
- */
-function moveMinuteHands(containers) {
-  for (var i = 0; i &amp;lt; containers.length; i++) {
-    containers[i].style.webkitTransform = &amp;#39;rotateZ(6deg)&amp;#39;;
-    containers[i].style.transform = &amp;#39;rotateZ(6deg)&amp;#39;;
-  }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Adding bounce&lt;/h3&gt;

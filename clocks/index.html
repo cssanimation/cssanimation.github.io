@@ -417,6 +417,16 @@ function setUpMinuteHands() {
       moveMinuteHands(containers);
     }, delay);
   }
+}
+
+/*
+ * Do the first minute&#39;s rotation
+ */
+function moveMinuteHands(containers) {
+  for (var i = 0; i &lt; containers.length; i++) {
+    containers[i].style.webkitTransform = &#39;rotateZ(6deg)&#39;;
+    containers[i].style.transform = &#39;rotateZ(6deg)&#39;;
+  }
   // Then continue with a 60 second interval
   setInterval(function() {
     for (var i = 0; i &lt; containers.length; i++) {
@@ -429,16 +439,6 @@ function setUpMinuteHands() {
       containers[i].style.transform = &#39;rotateZ(&#39;+ containers[i].angle +&#39;deg)&#39;;
     }
   }, 60000);
-}
-
-/*
- * Do the first minute&#39;s rotation
- */
-function moveMinuteHands(containers) {
-  for (var i = 0; i &lt; containers.length; i++) {
-    containers[i].style.webkitTransform = &#39;rotateZ(6deg)&#39;;
-    containers[i].style.transform = &#39;rotateZ(6deg)&#39;;
-  }
 }
 </code></pre></div>
 <h3>Adding bounce</h3>
