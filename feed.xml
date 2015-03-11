@@ -4,13 +4,369 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-11T23:07:03+00:00</updated>
+ <updated>2015-03-11T23:19:33+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Apple Watch Activity Dials</title>
+   <link href="https://cssanimation.rocks/watch"/>
+   <updated>2015-03-09T00:00:00+00:00</updated>
+   <id>https://cssanimation.rocks/watch</id>
+   <content type="html">&lt;p&gt;With the announcement of Apple&amp;rsquo;s new watch this week, I thought I&amp;rsquo;d take a look at creating the activity dials using CSS.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;In this post we&amp;rsquo;ll make use of CSS keyframe animations and a bit of &lt;code&gt;overflow&lt;/code&gt; trickery to create the radial progress bars shown in the activities section of Apple&amp;rsquo;s new watch.&lt;/p&gt;
+
+&lt;h2&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example of the final effect.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container watch-container&quot;&gt;
+  &lt;article class=&quot;watch&quot;&gt;
+    &lt;div class=&quot;bg-image&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;screen&quot;&gt;
+      &lt;header&gt;
+        &lt;span class=&quot;title&quot;&gt;Activity&lt;/span&gt;
+        &lt;span class=&quot;time&quot;&gt;10:09&lt;/span&gt;
+      &lt;/header&gt;
+      &lt;section class=&quot;dials&quot;&gt;
+        &lt;div class=&quot;dial move&quot;&gt;
+          &lt;div class=&quot;dial-background one&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;dial-container container2&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dial exercise&quot;&gt;
+          &lt;div class=&quot;dial-background two&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dial stand&quot;&gt;
+          &lt;div class=&quot;dial-background three&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;pips&quot;&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Radial progress bars&lt;/h2&gt;
+
+&lt;p&gt;The watch&amp;rsquo;s activity display is made up of 3 dials. Each is a kind of progress bar, shaped to curve around a circle. It&amp;rsquo;s a little tricky to create this shape, but it can be done using two animations.&lt;/p&gt;
+
+&lt;p&gt;To explain how it&amp;rsquo;s done, we&amp;rsquo;ll begin with a simple half-circle wedge shape.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example0&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the HTML for this wedge:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;dial-container&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We set up the wedge to be a half-moon shape using the &lt;code&gt;border-radius&lt;/code&gt; property and rotate it using a &lt;code&gt;keyframe&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.wedge {
+  animation: rotate 4s infinite linear;
+  border-radius: 0 4em 4em 0;
+  background: red;
+  width: 2em;
+  height: 4em;
+  transform-origin: 0% 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Masking&lt;/h2&gt;
+
+&lt;p&gt;In earlier experiments, I&amp;rsquo;d tried creating this effect using the CSS &lt;code&gt;clip&lt;/code&gt; property. This did work in some browsers, but it&amp;rsquo;s a deprecated property and tricky to use. Instead, we can create a similar effect by using &lt;code&gt;overflow: hidden&lt;/code&gt; on the container.&lt;/p&gt;
+
+&lt;p&gt;There are two elements in play here. The &lt;code&gt;dial-container&lt;/code&gt; is half as wide as the &lt;code&gt;wedge&lt;/code&gt;, and has it&amp;rsquo;s &lt;code&gt;overflow&lt;/code&gt; property set to &lt;code&gt;hidden&lt;/code&gt;. By placing it outside the container, we can rotate it into view.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example1&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.dial-container {
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 2em;
+  height: 4em;
+  overflow: hidden;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The container is positioned to the right of where the wedge is positioned, and the wedge is then rotated into view.&lt;/p&gt;
+
+&lt;p&gt;To create the full circle we need to create a second wedge. We can create this by creating a second container, placed on the left and rotating a wedge into it from the right.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example2&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;We can then put these together and create a circular dial. We&amp;rsquo;ll also add some animation to have the second half of the dial start moving after the first dial.&lt;/p&gt;
+
+&lt;h2&gt;Full circle&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the HTML for these two parts. I&amp;rsquo;ve added a wrapper so that I can position both the containers on top of each other.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container1&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container2&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And the CSS to handle the wrapper, containers and the two wedges.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.wrapper {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  left: calc(50% - 2em);
+}
+.dial-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 2em;
+}
+.wedge {
+  background: red;
+  height: 4em;
+  width: 2em;
+}
+.container1 {
+  left: 2em;
+}
+.container1 .wedge {
+  animation: rotate-bg-1 4s infinite linear;
+  border-radius: 0 4em 4em 0;
+  left: 0;
+  transform-origin: 0 50%;
+}
+.container2 {
+  left: 0;
+}
+.container2 .wedge {
+  animation: rotate-bg-2 4s infinite linear;
+  border-radius: 4em 0 0 4em;
+  transform-origin: 2em 2em;
+}
+/* First animation moves 180 degrees in the first 2 seconds */
+@keyframes rotate-bg-1 {
+  50%, 100% {
+    transform: rotateZ(180deg);
+  }
+}
+/* Second animation moves 180 degrees in the last 2 seconds */
+@keyframes rotate-bg-2 {
+  0%, 50% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The result should look like this:&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example3&quot;&gt;
+    &lt;div class=&quot;dial-container container1&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dial-container container2&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Progress&lt;/h2&gt;
+
+&lt;p&gt;The next step is to make the wedge into a bar. We can do this by masking the middle. Adding a circular &lt;a href=&quot;/pseudo-elements/&quot;&gt;pseudo-element&lt;/a&gt; to a container, set to the background colour, has the desired effect.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container1&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container2&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.wrapper::after {
+  content: &amp;quot;&amp;quot;;
+  background: #fff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We now have something that looks more like Apple&amp;rsquo;s activity radial progress bars.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example4&quot;&gt;
+    &lt;div class=&quot;dial-container container1&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dial-container container2&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Rounding the edges&lt;/h2&gt;
+
+&lt;p&gt;The Apple Watch demo features nicely rounded ends on its progress bars. To recreate this we&amp;rsquo;ll add and animate some elements on each end of the bar. To begin we add the extra elements.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;wrapper&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container1&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;dial-container container2&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;wedge&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;marker start&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;marker end&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;start&lt;/code&gt; marker will remain at the beginning, and the &lt;code&gt;end&lt;/code&gt; marker needs to be animated to keep pace with the front of the progress bar. We can handle that with some CSS.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.marker {
+  background: green;
+  border-radius: 50%;
+  height: 0.5em;
+  width: 0.5em;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0.25em);
+}
+.end {
+  animation: rotate-marker 4s infinite linear;
+  transform-origin: 50% 2em;
+}
+@keyframes rotate-marker {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This CSS sets up the two markers to be green circles, and positions them at the top middle of the screen. The &lt;code&gt;end&lt;/code&gt; marker then gets the &lt;code&gt;rotate-marker&lt;/code&gt; animation and has its &lt;code&gt;transform-origin&lt;/code&gt; set to the centre of the container. This means than when it rotates, it will spin around an arc.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example5&quot;&gt;
+    &lt;div class=&quot;dial-container container1&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dial-container container2&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Changing the colour of the markers to red lets them blend in with the bar and give it a rounded effect. Adding a little cubic-bezier tweaking to the animation can give it a bit more character also.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container&quot;&gt;
+  &lt;div class=&quot;example example6&quot;&gt;
+    &lt;div class=&quot;dial-container container1&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;dial-container container2&quot;&gt;
+      &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2&gt;Putting it all together&lt;/h2&gt;
+
+&lt;p&gt;Three of these radial progress bars together creates the Apple Watch activity dials. If you want to see more of this code, a full demo &lt;a href=&quot;http://codepen.io/donovanh/full/GgYEBZ/&quot;&gt;is available on Codepen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container watch-container&quot;&gt;
+  &lt;article class=&quot;watch&quot;&gt;
+    &lt;div class=&quot;bg-image&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;screen&quot;&gt;
+      &lt;header&gt;
+        &lt;span class=&quot;title&quot;&gt;Activity&lt;/span&gt;
+        &lt;span class=&quot;time&quot;&gt;10:09&lt;/span&gt;
+      &lt;/header&gt;
+      &lt;section class=&quot;dials&quot;&gt;
+        &lt;div class=&quot;dial move&quot;&gt;
+          &lt;div class=&quot;dial-background one&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;dial-container container2&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dial exercise&quot;&gt;
+          &lt;div class=&quot;dial-background two&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dial stand&quot;&gt;
+          &lt;div class=&quot;dial-background three&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;dial-container container1&quot;&gt;
+            &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;pips&quot;&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Transitions vs Animations</title>

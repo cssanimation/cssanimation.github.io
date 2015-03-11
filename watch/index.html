@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Apple Watch Activity Dials - CSS Animation</title>
+  <meta name="description" content="With the announcement of Apple&rsquo;s new watch this week, I thought I&rsquo;d take a look at creating the activity dials using CSS.">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/watch.css">
+
+  <link rel="canonical" href="https://cssanimation.rocks/watch">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="Apple Watch Activity Dials - CSS Animation" />
+    <meta property="og:description" content="Recreate the Apple Watch radial activity dials using CSS." />
+    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/watch/watch.gif" />
+    <meta property="og:url" content="https://cssanimation.rocks/watch" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+</head>
+
+
+  <body class="">
+
+    
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <article class="watch play-once">
+  <div class="screen">
+    <header>
+      <span class="title">Activity</span>
+      <span class="time">10:09</span>
+    </header>
+    <section class="dials">
+      <div class="dial move">
+        <div class="dial-background one"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+      <div class="dial exercise">
+        <div class="dial-background two"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+      <div class="dial stand">
+        <div class="dial-background three"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+    </section>
+    <section class="pips">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </div>
+</article>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li class="new"><a href="/courses/">Courses</a></li>
+    <li><a href="https://twitter.com/cssanimation">Twitter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns">
+      <h1 class="post-title">Apple Watch Activity Dials</h1>
+      <p>With the announcement of Apple&rsquo;s new watch this week, I thought I&rsquo;d take a look at creating the activity dials using CSS.</p>
+
+<!--more-->
+
+<p>In this post we&rsquo;ll make use of CSS keyframe animations and a bit of <code>overflow</code> trickery to create the radial progress bars shown in the activities section of Apple&rsquo;s new watch.</p>
+
+<h2>Demo</h2>
+
+<p>Here&rsquo;s an example of the final effect.</p>
+
+<section class="demo-container watch-container">
+  <article class="watch">
+    <div class="bg-image"></div>
+    <div class="screen">
+      <header>
+        <span class="title">Activity</span>
+        <span class="time">10:09</span>
+      </header>
+      <section class="dials">
+        <div class="dial move">
+          <div class="dial-background one"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="dial-container container2">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+        <div class="dial exercise">
+          <div class="dial-background two"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+        <div class="dial stand">
+          <div class="dial-background three"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+      </section>
+      <section class="pips">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+    </div>
+  </article>
+</section>
+
+<h2>Radial progress bars</h2>
+
+<p>The watch&rsquo;s activity display is made up of 3 dials. Each is a kind of progress bar, shaped to curve around a circle. It&rsquo;s a little tricky to create this shape, but it can be done using two animations.</p>
+
+<p>To explain how it&rsquo;s done, we&rsquo;ll begin with a simple half-circle wedge shape.</p>
+
+<section class="demo-container">
+  <div class="example example0">
+    <div class="wedge"></div>
+  </div>
+</section>
+
+<p>Here&rsquo;s the HTML for this wedge:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;dial-container&quot;&gt;
+  &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>We set up the wedge to be a half-moon shape using the <code>border-radius</code> property and rotate it using a <code>keyframe</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.wedge {
+  animation: rotate 4s infinite linear;
+  border-radius: 0 4em 4em 0;
+  background: red;
+  width: 2em;
+  height: 4em;
+  transform-origin: 0% 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+</code></pre></div>
+<h2>Masking</h2>
+
+<p>In earlier experiments, I&rsquo;d tried creating this effect using the CSS <code>clip</code> property. This did work in some browsers, but it&rsquo;s a deprecated property and tricky to use. Instead, we can create a similar effect by using <code>overflow: hidden</code> on the container.</p>
+
+<p>There are two elements in play here. The <code>dial-container</code> is half as wide as the <code>wedge</code>, and has it&rsquo;s <code>overflow</code> property set to <code>hidden</code>. By placing it outside the container, we can rotate it into view.</p>
+
+<section class="demo-container">
+  <div class="example example1">
+    <div class="wedge"></div>
+  </div>
+</section>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.dial-container {
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 2em;
+  height: 4em;
+  overflow: hidden;
+}
+</code></pre></div>
+<p>The container is positioned to the right of where the wedge is positioned, and the wedge is then rotated into view.</p>
+
+<p>To create the full circle we need to create a second wedge. We can create this by creating a second container, placed on the left and rotating a wedge into it from the right.</p>
+
+<section class="demo-container">
+  <div class="example example2">
+    <div class="wedge"></div>
+  </div>
+</section>
+
+<p>We can then put these together and create a circular dial. We&rsquo;ll also add some animation to have the second half of the dial start moving after the first dial.</p>
+
+<h2>Full circle</h2>
+
+<p>Here&rsquo;s the HTML for these two parts. I&rsquo;ve added a wrapper so that I can position both the containers on top of each other.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;dial-container container1&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;dial-container container2&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>And the CSS to handle the wrapper, containers and the two wedges.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.wrapper {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  left: calc(50% - 2em);
+}
+.dial-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 2em;
+}
+.wedge {
+  background: red;
+  height: 4em;
+  width: 2em;
+}
+.container1 {
+  left: 2em;
+}
+.container1 .wedge {
+  animation: rotate-bg-1 4s infinite linear;
+  border-radius: 0 4em 4em 0;
+  left: 0;
+  transform-origin: 0 50%;
+}
+.container2 {
+  left: 0;
+}
+.container2 .wedge {
+  animation: rotate-bg-2 4s infinite linear;
+  border-radius: 4em 0 0 4em;
+  transform-origin: 2em 2em;
+}
+/* First animation moves 180 degrees in the first 2 seconds */
+@keyframes rotate-bg-1 {
+  50%, 100% {
+    transform: rotateZ(180deg);
+  }
+}
+/* Second animation moves 180 degrees in the last 2 seconds */
+@keyframes rotate-bg-2 {
+  0%, 50% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
+}
+</code></pre></div>
+<p>The result should look like this:</p>
+
+<section class="demo-container">
+  <div class="example example3">
+    <div class="dial-container container1">
+      <div class="wedge"></div>
+    </div>
+    <div class="dial-container container2">
+      <div class="wedge"></div>
+    </div>
+  </div>
+</section>
+
+<h2>Progress</h2>
+
+<p>The next step is to make the wedge into a bar. We can do this by masking the middle. Adding a circular <a href="/pseudo-elements/">pseudo-element</a> to a container, set to the background colour, has the desired effect.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;dial-container container1&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;dial-container container2&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">.wrapper::after {
+  content: &quot;&quot;;
+  background: #fff;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+} 
+</code></pre></div>
+<p>We now have something that looks more like Apple&rsquo;s activity radial progress bars.</p>
+
+<section class="demo-container">
+  <div class="example example4">
+    <div class="dial-container container1">
+      <div class="wedge"></div>
+    </div>
+    <div class="dial-container container2">
+      <div class="wedge"></div>
+    </div>
+  </div>
+</section>
+
+<h2>Rounding the edges</h2>
+
+<p>The Apple Watch demo features nicely rounded ends on its progress bars. To recreate this we&rsquo;ll add and animate some elements on each end of the bar. To begin we add the extra elements.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;dial-container container1&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;dial-container container2&quot;&gt;
+    &lt;div class=&quot;wedge&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;marker start&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;marker end&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>The <code>start</code> marker will remain at the beginning, and the <code>end</code> marker needs to be animated to keep pace with the front of the progress bar. We can handle that with some CSS.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.marker {
+  background: green;
+  border-radius: 50%;
+  height: 0.5em;
+  width: 0.5em;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0.25em);
+}
+.end {
+  animation: rotate-marker 4s infinite linear;
+  transform-origin: 50% 2em;
+}
+@keyframes rotate-marker {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+</code></pre></div>
+<p>This CSS sets up the two markers to be green circles, and positions them at the top middle of the screen. The <code>end</code> marker then gets the <code>rotate-marker</code> animation and has its <code>transform-origin</code> set to the centre of the container. This means than when it rotates, it will spin around an arc.</p>
+
+<section class="demo-container">
+  <div class="example example5">
+    <div class="dial-container container1">
+      <div class="wedge"></div>
+    </div>
+    <div class="dial-container container2">
+      <div class="wedge"></div>
+    </div>
+    <div class="marker start"></div>
+    <div class="marker end"></div>
+  </div>
+</section>
+
+<p>Changing the colour of the markers to red lets them blend in with the bar and give it a rounded effect. Adding a little cubic-bezier tweaking to the animation can give it a bit more character also.</p>
+
+<section class="demo-container">
+  <div class="example example6">
+    <div class="dial-container container1">
+      <div class="wedge"></div>
+    </div>
+    <div class="dial-container container2">
+      <div class="wedge"></div>
+    </div>
+    <div class="marker start"></div>
+    <div class="marker end"></div>
+  </div>
+</section>
+
+<h2>Putting it all together</h2>
+
+<p>Three of these radial progress bars together creates the Apple Watch activity dials. If you want to see more of this code, a full demo <a href="http://codepen.io/donovanh/full/GgYEBZ/">is available on Codepen</a>.</p>
+
+<section class="demo-container watch-container">
+  <article class="watch">
+    <div class="bg-image"></div>
+    <div class="screen">
+      <header>
+        <span class="title">Activity</span>
+        <span class="time">10:09</span>
+      </header>
+      <section class="dials">
+        <div class="dial move">
+          <div class="dial-background one"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="dial-container container2">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+        <div class="dial exercise">
+          <div class="dial-background two"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+        <div class="dial stand">
+          <div class="dial-background three"></div>
+          <div class="dial-container container1">
+            <div class="wedge"></div>
+          </div>
+          <div class="marker start"></div>
+          <div class="marker end"></div>
+        </div>
+      </section>
+      <section class="pips">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+    </div>
+  </article>
+</section>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Apple Watch Activity Dials&url=https%3A%2F%2Fcssanimation.rocks%2Fwatch&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+      <h3>Want to learn more about CSS animation?</h3>
+      <article class="content-box wow bounceIn">
+        <section class="course">
+          <div class="course-image four columns">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
+          </div>
+          <div class="course-details eight columns">
+            <h2><a href="/courses/animation-101/">Animation 101</a></h2>
+            <p>An email course to get you started learning all about transitions, animations and how to apply them to your work.</p>
+            <p class="button"><a href="/courses/animation-101/">More details</a></p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </article>
+
+    </article>
+    <aside class="post-aside three columns">
+      
+      <section class="sidebar-email-signup">
+        <h4>Get weekly updates</h4>
+        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+          <input type="submit" value="Add me" name="subscribe" class="button">
+        </form>
+      </section>
+      <section class="course-sidebar wow bounceIn">
+        <h3>Enrolling now!</h3>
+        <section class="course">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
+            <h3><a href="/courses/animation-101/">Animation 101</a></h3>
+            <p>Learn the essentials of CSS animation with an email and a few minutes each day</p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </section>
+    </aside>
+  </section>
+</section>
+
+
+    <footer class="footer">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <div class="email-signup">
+  <h2>Weekly updates</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="centered">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+      <ul class="icons">
+        <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+        <li>
+          <a class="follow-button" href="https://twitter.com/cssanimation">
+            <span class="icon icon--twitter">
+              <svg viewBox="0 0 16 16">
+                <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+              </svg>
+            </span>
+            @cssanimation
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        <a href="/">Home</a> |
+        <a href="/courses/">CSS Courses</a> |
+        <a href="mailto:hello@cssanimation.rocks">hello@cssanimation.rocks</a>
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+    </section>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/assets/javascript/vendor/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>
