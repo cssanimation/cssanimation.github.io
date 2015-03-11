@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-11T23:24:14+00:00</updated>
+ <updated>2015-03-11T23:40:48+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -76,9 +76,9 @@
 
 &lt;h2&gt;Radial progress bars&lt;/h2&gt;
 
-&lt;p&gt;The watch&amp;rsquo;s activity display is made up of 3 dials. Each is a kind of progress bar, shaped to curve around a circle. It&amp;rsquo;s a little tricky to create this shape, but it can be done using two animations.&lt;/p&gt;
+&lt;p&gt;The watch&amp;rsquo;s activity display is made up of 3 dials. Each is a kind of progress bar, shaped to curve around a circle. It&amp;rsquo;s a little tricky to create this shape, but it can be done using two wedges and some carefully timed animation.&lt;/p&gt;
 
-&lt;p&gt;To explain how it&amp;rsquo;s done, we&amp;rsquo;ll begin with a simple half-circle wedge shape.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll begin with a simple half-circle wedge shape.&lt;/p&gt;
 
 &lt;section class=&quot;demo-container&quot;&gt;
   &lt;div class=&quot;example example0&quot;&gt;
