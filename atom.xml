@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-12T15:35:27+00:00</updated>
+ <updated>2015-03-12T18:39:57+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -1184,7 +1184,7 @@ li.show {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In these styles we&amp;rsquo;re setting up the &lt;code&gt;li&lt;/code&gt; elements to look like rectangles, without the bullet points and giving them a &lt;code&gt;height&lt;/code&gt; of 0, a &lt;code&gt;margin&lt;/code&gt; of 0 and set &lt;code&gt;overflow&lt;/code&gt; to hidden. This is so that they will appear invisible until we apply a &lt;code&gt;show&lt;/code&gt; class.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;show&lt;/code&gt; class then apples a height and margin. Since we&amp;rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;show&lt;/code&gt; class applies a height and margin. Since we&amp;rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.&lt;/p&gt;
 
 &lt;section class=&quot;add-to-list demo-container&quot;&gt;
   &lt;ul&gt;
@@ -1490,6 +1490,315 @@ li.show {
 &lt;p&gt;If you enjoyed this article, you can &lt;a href=&quot;https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;amp;url=https://cssanimation.rocks/post/twitter-fave/&amp;amp;original_referer=https://cssanimation.rocks&quot;&gt;share it on Twitter&lt;/a&gt; or save this handy summary cheatsheet:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/tips/twitter-fave.png&quot; alt=&quot;Share this summary on Twitter&quot; style=&quot;max-width:375px&quot;&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Zelda: A link to the CSS</title>
+   <link href="https://cssanimation.rocks/zelda"/>
+   <updated>2013-04-20T00:00:00+01:00</updated>
+   <id>https://cssanimation.rocks/zelda</id>
+   <content type="html">&lt;p&gt;The Zelda games have always been close to my heart. In this post, we&amp;rsquo;ll try to recreate the iconic introduction to what might be the best game ever, A Link to the Past.&lt;/p&gt;
+
+&lt;h2&gt;Zelda: Linked to the Past&lt;/h2&gt;
+
+&lt;p&gt;The idea is to create something that would look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hop.ie/zelda&quot;&gt;&lt;img src=&quot;/images/posts/zelda.jpg&quot; alt=&quot;Zelda: A link to the CSS&quot; style=&quot;max-width:100%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re running a modern version of Chrome, Safari or Firefox, check out the &lt;a href=&quot;http://hop.ie/zelda&quot;&gt;live demo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Getting started: HTML&lt;/h2&gt;
+
+&lt;p&gt;To get started, I created the HTML structure to which I&amp;rsquo;d be applying the styles. The layout requires three 3D triangles, and some text to sit on top. I began with a single triangle:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;stage&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;triangle&amp;quot;&amp;gt;
+    &amp;lt;figure class=&amp;quot;front&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;back&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;side1&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;side2&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;side3&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The front and back pieces needed to be triangular, with 3 rectangles covering the left, right and bottom sides.&lt;/p&gt;
+
+&lt;p&gt;As luck would have it, I happened across a great &lt;a href=&quot;http://minimalmonkey.com/sass-triangle-mixin/&quot;&gt;triangle SASS mixin&lt;/a&gt; recently. It works by applying borders the full width of the object and where the borders intersect, they create a 45% line. Handy. Applying this to the &lt;code&gt;front&lt;/code&gt; figure above, we get something like this:&lt;/p&gt;
+
+&lt;div class=&quot;example-with-code clearfix&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;
+    &lt;div class=&quot;stage example example1&quot;&gt;
+      &lt;div class=&quot;triangle&quot;&gt;
+        &lt;figure class=&quot;front&quot;&gt;&lt;/figure&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;
+&lt;pre&gt;&lt;code&gt;SASS:
++arrow(150px, 150px, up, #ffe403)
+
+CSS:
+{
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-bottom: 150px solid #ffe403;
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I&amp;rsquo;ve included the processed CSS in the above example to illustrate how borders are being used to generate the shape.&lt;/p&gt;
+
+&lt;h2&gt;Setting the stage&lt;/h2&gt;
+
+&lt;p&gt;Once we have the shape in place, we&amp;rsquo;ll need to place a back piece and position them both in 3D space. A containing &amp;ldquo;stage&amp;rdquo; div is needed to achieve this. We can apply a perspective value to the stage and any objects on it will be then drawn in relation to each other.&lt;/p&gt;
+
+&lt;div class=&quot;example-with-code clearfix&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;
+    &lt;div class=&quot;stage example example2&quot;&gt;
+      &lt;div class=&quot;triangle&quot;&gt;
+        &lt;figure class=&quot;front&quot;&gt; &lt;/figure&gt;
+        &lt;figure class=&quot;back&quot;&gt; &lt;/figure&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;
+&lt;pre&gt;&lt;code&gt;.stage
+  @include perspective(800px)
+  @include perspective-origin(120% -200px)
+
+figure.front
+  +arrow(150px, 150px, up, #ffe403)
+  @include transform(translateZ(80px))
+
+figure.back
+  +arrow(150px, 150px, up, #ffd200)
+  @include transform(translateZ(-80px))
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The 3D positioning is achieved by using the &lt;a href=&quot;http://docs.webplatform.org/wiki/css/properties/transform&quot;&gt;translateZ transform&lt;/a&gt;. The front face is brought forward 80 pixels and the back face pushed back 80px.&lt;/p&gt;
+
+&lt;p&gt;I also rotated the back panel 180 degrees on the Y axis so that it now faces out toward the back.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;perspective&lt;/em&gt; value relates to the depth of the scene, and larger values produce more extreme distortion. Similar to this, the &lt;em&gt;perspective-origin&lt;/em&gt; value is used to move the viewpoint. In this case, the viewpoint is looking down from 200 pixels up, and from off to the right side of the stage.&lt;/p&gt;
+
+&lt;h2&gt;Sides&lt;/h2&gt;
+
+&lt;p&gt;With the front and back in place, there are gaps to fill on the sides. To fill these, rectangular divs can be positioned like so:&lt;/p&gt;
+
+&lt;div class=&quot;example-with-code clearfix&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;
+    &lt;div class=&quot;stage example example3&quot;&gt;
+      &lt;div class=&quot;triangle&quot;&gt;
+        &lt;figure class=&quot;front&quot;&gt; &lt;/figure&gt;
+        &lt;figure class=&quot;back&quot;&gt; &lt;/figure&gt;
+        &lt;figure class=&quot;side1&quot;&gt; &lt;/figure&gt;
+        &lt;figure class=&quot;side2&quot;&gt; &lt;/figure&gt;
+        &lt;figure class=&quot;side3&quot;&gt; &lt;/figure&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;
+&lt;pre&gt;&lt;code&gt;figure
+  &amp;amp;.side1
+    content: &quot; &quot;
+    display: block
+    position: absolute
+    height: 168px
+    width: 40px
+    background-color: #ffd200
+    @include transform(translateY(-9px) translateX(18px) rotateY(-90deg) rotateX(26.5deg))
+
+  &amp;amp;.side2
+    content: &quot; &quot;
+    display: block
+    position: absolute
+    height: 168px
+    width: 40px
+    background-color: #ffd200
+    @include transform(translateY(-9px) translateX(92px) rotateY(90deg) rotateX(26.5deg))
+
+  &amp;amp;.side3
+    content: &quot; &quot;
+    background-color: #ffd200
+    width: 150px
+    height: 40px
+    @include transform(translateY(130px) rotateX(-90deg))
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One small adjustment made in this example was to rotate the back panel 180 degrees to ensure it was facing outwards. With the back-faces hidden, it would have been invisible otherwise. &lt;/p&gt;
+
+&lt;h2&gt;Three triangles&lt;/h2&gt;
+
+&lt;p&gt;With one triangle done, it was straightforward to position three of them on the stage. I copied the div called &amp;ldquo;triangle&amp;rdquo; above, and replicated it three times. I then added a class &amp;ldquo;one&amp;rdquo;, &amp;ldquo;two&amp;rdquo; and &amp;ldquo;three&amp;rdquo; to each so they could be referenced individually:&lt;/p&gt;
+
+&lt;div class=&quot;example-with-code clearfix&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;
+    &lt;div class=&quot;stage example example4&quot;&gt;
+      &lt;div class=&quot;scaler&quot;&gt;
+        &lt;div class=&quot;triangle one&quot;&gt;
+          &lt;figure class=&quot;front&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;back&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side1&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side2&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side3&quot;&gt; &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;triangle two&quot;&gt;
+          &lt;figure class=&quot;front&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;back&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side1&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side2&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side3&quot;&gt; &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;triangle three&quot;&gt;
+          &lt;figure class=&quot;front&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;back&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side1&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side2&quot;&gt; &lt;/figure&gt;
+          &lt;figure class=&quot;side3&quot;&gt; &lt;/figure&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;
+&lt;pre&gt;&lt;code&gt;.triangle
+  @include animation(rotate 5s infinite linear)
+
+  &amp;amp;.two
+    top: 150px
+    left: 0
+
+  &amp;amp;.three
+    top: 150px
+    left: 150px
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Styling the text&lt;/h2&gt;
+
+&lt;p&gt;To create the proper Zelda atmosphere, the right fonts were needed. For the main font, &lt;a href=&quot;http://www.google.com/fonts/specimen/EB+Garamond&quot;&gt;EB Garamond&lt;/a&gt; seemed a decent choice. The smaller text looks good with &lt;a href=&quot;http://www.google.com/fonts/specimen/Old+Standard+TT&quot;&gt;Old Standard TT&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Including these fonts involves referencing them in the head of your HTML:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;link href=&amp;#39;http://fonts.googleapis.com/css?family=EB+Garamond&amp;#39; rel=&amp;#39;stylesheet&amp;#39; type=&amp;#39;text/css&amp;#39;&amp;gt;
+&amp;lt;link href=&amp;#39;http://fonts.googleapis.com/css?family=Old+Standard+TT&amp;#39; rel=&amp;#39;stylesheet&amp;#39; type=&amp;#39;text/css&amp;#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can then use them in your CSS:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;h1
+  font-family: &amp;quot;EB Garamond&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The finishing touch was to add a border around the text:&lt;/p&gt;
+
+&lt;div class=&quot;example-with-code clearfix&quot;&gt;
+  &lt;div class=&quot;left&quot;&gt;
+    &lt;div class=&quot;stage&quot;&gt;
+      &lt;link href=&#39;http://fonts.googleapis.com/css?family=Old+Standard+TT&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;&lt;/link&gt;
+      &lt;h1 class=&quot;zelda-style&quot;&gt;ZELDA&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;right&quot;&gt;
+&lt;pre&gt;&lt;code&gt;.zelda-style
+  font-family: &quot;EB Garamond&quot;
+  @include text-fill-color(#b62f22)
+  @include text-stroke-color(#8b3536)
+  @include text-stroke-width(2px)
+  margin: 10px auto
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Bringing it together&lt;/h2&gt;
+
+&lt;p&gt;To achieve the animation I put together a few different animations and timed them so that they all worked together. Using keyframe animation in CSS is made much easier by using SASS, and I used a few basic mixins to make the process easier. I’m using Sass with the &lt;a href=&quot;http://compass-style.org/&quot;&gt;Compass&lt;/a&gt; framework, but to add support for animation and keyframes to Compass, you’ll need &lt;a href=&quot;https://gist.github.com/donovanh/5426633&quot;&gt;this gist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Animation 1: Rotating&lt;/h3&gt;
+
+&lt;p&gt;The spinning effect is creating using the following keyframes:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include keyframes(rotate)
+  0%
+    @include transform(rotateY(0))
+  100%
+    @include transform(rotateY(360deg))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To apply this animation to the figures, the following SASS is used. Note, it makes use of the &amp;ldquo;animation&amp;rdquo; mixin &lt;a href=&quot;https://gist.github.com/donovanh/5426633&quot;&gt;found here&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;figure
+  @include animation(rotate 5s infinite linear)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This calls the &amp;ldquo;animation&amp;rdquo; mixin and passes in the name of the keyframes (rotate), the duration of 5 seconds, repeated forever. It also specifies that the animation easing be &amp;ldquo;linear&amp;rdquo;, which maintains a constant speed throughout the animation.&lt;/p&gt;
+
+&lt;h3&gt;Animation 2: Tumbling triangles&lt;/h3&gt;
+
+&lt;p&gt;The introduction of the figures sees them tumble into place. This is done by transitioning them from an initial position offset to the top, left or right, while applying 360 degrees of rotation. These combine in the following keyframes:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include keyframes(introduce-1)
+  0%
+    top: -200px
+    opacity: 0
+  45%
+    top: -100px
+    @include transform(rotateY(180deg) rotateX(-180deg))
+    opacity: 1
+  90%, 100%
+    top: 0
+    @include transform(rotateY(360deg) rotateX(-360deg))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By putting the ending position of the animation at both 90% and 100%, it ensures that the animation stays still for a moment at the end of it&amp;rsquo;s tumbling.&lt;/p&gt;
+
+&lt;p&gt;Applying both these to the figures at the same time looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include animation(rotate 5s infinite linear, introduce-1 5s linear)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Animation 3: Text&lt;/h3&gt;
+
+&lt;p&gt;The text overlay is invisible at first, and I wanted it to wait until after the tumbling animation had finished before fading into place. To achieve this, the following keyframes apply to the text:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include keyframes(showZeldaText)
+  0%, 80%
+    @include transform(scale(0.6) translateZ(-100px))
+    opacity: 0
+    -webkit-filter: blur(2px)
+  90%
+    -webkit-filter: blur(0)
+  100%
+    @include transform(scale(1) translateZ(0))
+    opacity: 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For 90% of the time, the text is invisible. Then in the last 10% the text scales up from 60% scale to 100%, while the opacity changes from invisible to visible.&lt;/p&gt;
+
+&lt;p&gt;Since the text animation starts at the same time as the tumbling, it needs a longer time to run so that it lines up properly. In this case, I set it to run for 6.5 seconds:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include animation(showZeldaText 6.5s linear)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With these in place, the last animation is the flash of background colour when the tumbling stops.&lt;/p&gt;
+
+&lt;h3&gt;Animation 4: Background flash&lt;/h3&gt;
+
+&lt;p&gt;The background starts black, then when the tumbling finishes, briefly flashes white before the background image is shown. This colour sequence is also timed to coincide with the appearance of the text. The keyframes:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@include keyframes(animate-background)
+  0%
+    background: #000
+  83%
+    background: #000
+  84%
+    background: #fff
+  87%, 100%
+    background: #000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A similar set of keyframes is used to show the background image after the screen flashes.&lt;/p&gt;
+
+&lt;h2&gt;See it in action&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a &lt;a href=&quot;http://hop.ie/zelda&quot;&gt;live demo&lt;/a&gt;. It works reasonably in recent versions of Chrome, Safari and Firefox. &lt;/p&gt;
+
+&lt;h2&gt;Have a go&lt;/h2&gt;
+
+&lt;p&gt;The HTML and CSS is &lt;a href=&quot;https://github.com/donovanh/zelda&quot;&gt;available on Github&lt;/a&gt;. Please fork, share, and have a play with it. If you&amp;rsquo;d like to add to or fix something, pull requests are a fast way to becoming one of my favourite people. Do it!&lt;/p&gt;
+
+&lt;h2&gt;Issues&lt;/h2&gt;
+
+&lt;p&gt;IE10 support is basic, so any browser support improvements would be a good thing. There&amp;rsquo;s also a bit of a glitch where the tumbling animation on the elements doesn&amp;rsquo;t always start. It seems to happen in all browsers. Any suggestions on fixing that would be appreciated.&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoyed this post. I am more than happy to respond to questions and suggestions on Twitter at &lt;a href=&quot;http://twitter.com/donovanh&quot;&gt;@donovanh&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
