@@ -4,13 +4,237 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-20T15:14:42+00:00</updated>
+ <updated>2015-03-21T16:50:02+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Animation Principles for the Web</title>
+   <link href="https://cssanimation.rocks/principles"/>
+   <updated>2015-03-21T00:00:00+00:00</updated>
+   <id>https://cssanimation.rocks/principles</id>
+   <content type="html">&lt;p&gt;As front-end designers and developers, we use CSS to style, position and create great looking sites. We often use CSS to add movement to pages in the form of transitions or even animations, but we don&amp;rsquo;t usually go much beyond that.&lt;/p&gt;
+
+&lt;p&gt;Animation can be a powerful tool to help our visitors and customers understand and benefit from our designs. There are principles we can apply to our work to make the most of this power.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Long established as fundamental working practices at Disney, the &lt;a href=&quot;http://en.wikipedia.org/wiki/12_basic_principles_of_animation&quot;&gt;12 Principles of Animation&lt;/a&gt; were published as &amp;ldquo;The Illusion of Life: Disney Animation&amp;rdquo; in 1981. These principles describe how animation can be used to immerse viewers in a believable   world.&lt;/p&gt;
+
+&lt;p&gt;In this article I&amp;rsquo;ll go through each of the 12 principles, and discuss how they might apply when making web pages.&lt;/p&gt;
+
+&lt;h2&gt;Squash and stretch&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-one&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;surface&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;This is the notion that an object has a physical mass, and when it moves this mass stays the same. A ball will widen as it hits the ground when bouncing, but also get shorter as its mass is redistributed.&lt;/p&gt;
+
+&lt;p&gt;This is most useful when creating objects that we want to be considered physical, such as people, clocks or bouncing balls.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s possible to ignore this rule when working with elements of a web page. DOM elements aren&amp;rsquo;t necessarily associated with physical objects, and can grow or shrink on screen as needed. For example, a button could grow and morph into an information box, or error messages can appear and disappear. &lt;/p&gt;
+
+&lt;p&gt;Still, the squash and stretch techniques can be used to give an object the feeling of physical mass. Even small changes in shape can create subtle but eye-catching effects.&lt;/p&gt;
+
+&lt;h2&gt;Anticipation&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-two&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;surface&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Movements don&amp;rsquo;t tend to happen suddenly. In real life,  motion is usually preceded by some kind of build-up, whether it&amp;rsquo;s a ball beginning to roll before it falls off a table, or a person bending their knees in preparation to jump.&lt;/p&gt;
+
+&lt;p&gt;We can use this to make our transitions and animations feel more life-like. Anticipation could be in the form of a subtle bounciness that helps people understand what is changing and keep track of the objects on-screen.&lt;/p&gt;
+
+&lt;p&gt;For example, an element could shrink slightly before growing larger on hover; adding extra items to a list could be introduced by having other items move out of the way first.&lt;/p&gt;
+
+&lt;h2&gt;Staging&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-three&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape b&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape c&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Staging is making sure an object is the focus of a scene, when other objects or aspects of the scene make way for where the main action is taking place. This means either placing the main action in a prominent position, or masking other elements to focus on what the user needs to see.&lt;/p&gt;
+
+&lt;p&gt;In web terms, one approach is to use a modal overlay for certain content. Adding a dark layer over the existing page and then placing the content in front stages it and shows it as the main point of focus.&lt;/p&gt;
+
+&lt;p&gt;Another approach is to use movement. When many objects are moving, it&amp;rsquo;s hard to know which is worthy of attention. If all other movement is stopped and one object moves, even slightly, it will be much easier to spot.&lt;/p&gt;
+
+&lt;p&gt;One technique is to make a &amp;ldquo;Save&amp;rdquo; button wobble or flash briefly to suggest to the user that they might want to save a document. With the rest of the screen held static and motionless, even subtle movement will stand out.&lt;/p&gt;
+
+&lt;h2&gt;Straight-Ahead Action and Pose-to-Pose&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-four&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape b&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Straight-ahead action is when every frame of an animation is drawn. Pose-to-pose is when a series of keyframes are defined and the intervals filled in later, usually by an assistant.&lt;/p&gt;
+
+&lt;p&gt;Most web animation uses pose-to-pose animation: the transition between keyframes can be handled by the browser, which interpolates the difference between each and draws in as many frames as it can to make the animation smooth.&lt;/p&gt;
+
+&lt;p&gt;One exception to this is the &lt;code&gt;steps&lt;/code&gt; timing function. With this function, the browser &amp;ldquo;steps&amp;rdquo; through as many discrete frames as defined. This way you could draw out a series of images and have the browser display each in sequence, creating a &amp;ldquo;Straight Ahead Action&amp;rdquo; style.&lt;/p&gt;
+
+&lt;h2&gt;Follow Through and Overlapping Action&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-five&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape-container&quot;&gt;
+    &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Things don&amp;rsquo;t always happen at the same time. When a car stops suddenly it tilts forward, with smoke from the tires and the driver inside continuing the forward motion until they are stopped or dissapate.&lt;/p&gt;
+
+&lt;p&gt;These details are examples of follow through and overlapping action. They can be used on the web to help emphasise that something is stopping, and hasn&amp;rsquo;t merely forgotten to animate. For example, an item added to a list might be slide in, proceed slightly too far, and then correct itself to the right position.&lt;/p&gt;
+
+&lt;p&gt;To create a feeling of overlapping action, we can make elements move at a slightly different pace to each other. It&amp;rsquo;s a technique used well in the iOS operating system when transitioning between views. Some buttons and elements move at different rates, and the combined effect is much more lifelike and less flat than if everything moved at the same rate. The combined movements give the viewer time to properly understand the change.&lt;/p&gt;
+
+&lt;p&gt;In web terms this might mean stacking transitions or animations, creating effects that work at different speeds.&lt;/p&gt;
+
+&lt;h2&gt;Slow In and Slow Out&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-six&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Objects rarely go from a standstill to maximum speed immediately. They tend to speed up gradually and slow before stopping. Without acceleration and deceleration, movements feel robotic.&lt;/p&gt;
+
+&lt;p&gt;In CSS terms, slow in and slow out are known as &lt;code&gt;easing&lt;/code&gt;. Easing is what is known as a timing function, a way of describing the rate of change through the course of an animation.&lt;/p&gt;
+
+&lt;p&gt;Using timing functions, animations can start slow and speed up (ease-in), start fast and slow down (ease-out) or more complex effects using the &lt;code&gt;cubic-bezier&lt;/code&gt; timing function.&lt;/p&gt;
+
+&lt;h2&gt;Arc&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-sevena&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape-container&quot;&gt;
+    &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;While objects are more lifelike when they follow the &amp;ldquo;Slow In and Slow Out&amp;rdquo;, objects rarely move in straight lines: they tend to follow curved arcs.&lt;/p&gt;
+
+&lt;p&gt;We can achieve arcing movements with CSS in a couple of ways. One is to combine multiple animations. A bouncing ball animation, for example could be made up a ball moving up and down, while a second moves it to the right at the same time. The ball would then arc across the screen.&lt;/p&gt;
+
+&lt;section class=&quot;demo-container principle principle-sevenb&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape b&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Another option is to rotate an element. We can adjust an object&amp;rsquo;s center of rotation by setting its transform origin outside the element. When we  rotate the object, it will rotate in an arc.&lt;/p&gt;
+
+&lt;h2&gt;Secondary Action&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-eight&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape b&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape c&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;While a primary action is taking place, a secondary animation can help emphasise or augment it. This could be the swinging arms of someone walking or the tilt of their head. Or a bouncing ball kicking up a little dust.&lt;/p&gt;
+
+&lt;p&gt;On web sites, secondary actions could see elements moving out of the way when the main focus of attention is introduced, such as dragging an item and placing it in the middle of a list.&lt;/p&gt;
+
+&lt;h2&gt;Timing&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-nine&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape a&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;shape b&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;An animation&amp;rsquo;s timing is how long it takes to complete. Timing can be used to make weighty objects look heavy in their motion, or to add character to movement.&lt;/p&gt;
+
+&lt;p&gt;On the web this might be as simple as adjusting the &lt;code&gt;animation-duration&lt;/code&gt; or &lt;code&gt;transition-duration&lt;/code&gt; values.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s easy to let animations take longer than they need to. Adjusting timing can help get the animation out of the way of the content or interaction.&lt;/p&gt;
+
+&lt;h2&gt;Exaggeration&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-ten&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Most commonly used in cartoons, exaggeration can draw attention to certain actions and make them more dramatic. A wolf making an attempt to bite might have its jaws open wider than is normal to make the effect more scary or humorous.&lt;/p&gt;
+
+&lt;p&gt;In a web page, objects can be scaled up and down to emphasise them and draw attention. For example when filling a form, the active section could grow while the others shrink or fade.&lt;/p&gt;
+
+&lt;h2&gt;Solid drawing&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-eleven&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;span class=&quot;front&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;back&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;left&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;right&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;top&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bottom&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;When animating objects in three dimensions, care should be taken to ensure they follow the rules of perspective. People are used to living in a three dimensional world, so when objects don&amp;rsquo;t behave as expected they look wrong.&lt;/p&gt;
+
+&lt;p&gt;Modern browsers have decent support for three dimensional transforms. This means that we can rotate and place objects in a scene and the browser can handle the transitions automatically.&lt;/p&gt;
+
+&lt;h2&gt;Appeal&lt;/h2&gt;
+
+&lt;section class=&quot;demo-container principle principle-twelve&quot;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;shape&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;span class=&quot;item one&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;item two&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;item three&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;item four&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Appeal is the character of the artwork and how it can make us connect with the intention of the artist. Like charisma in an actor, it&amp;rsquo;s the attention to detail and movement combined that creates an appealing result.&lt;/p&gt;
+
+&lt;p&gt;Carefully crafted animations on the web can create appeal. Companies such as Stripe have made great use of animation to add credibility to their checkout process.&lt;/p&gt;
+
+&lt;h2&gt;Try it yourself!&lt;/h2&gt;
+
+&lt;p&gt;Making use of the other principles is a good way to improve animations. Animations that maintain the physical weight of objects, anticipate changes, make use of secondary actions and good timing will be valuable and helpful additions to your content.&lt;/p&gt;
+
+&lt;p&gt;When you have the chance to add some animation to your pages, making use of one or more of these principles will make them more effective and appealing.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Apple Watch Dials</title>
