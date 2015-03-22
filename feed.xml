@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-22T13:26:09+00:00</updated>
+ <updated>2015-03-22T15:45:51+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;Long established as fundamental working practices at Disney, the &lt;a href=&quot;http://en.wikipedia.org/wiki/12_basic_principles_of_animation&quot;&gt;12 Principles of Animation&lt;/a&gt; were published as &amp;ldquo;The Illusion of Life: Disney Animation&amp;rdquo; in 1981. These principles describe how animation can be used to immerse viewers in a believable   world.&lt;/p&gt;
 
-&lt;p&gt;In this article I&amp;rsquo;ll go through each of the 12 principles, and discuss how they might apply when making web pages.&lt;/p&gt;
+&lt;p&gt;In this article I&amp;rsquo;ll go through each of the 12 principles, and discuss how they might apply when making web pages. You can find the &lt;a href=&quot;http://codepen.io/collection/AxKOdY/&quot;&gt;source HTML and CSS on Codepen for them all here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Squash and stretch&lt;/h2&gt;
 
