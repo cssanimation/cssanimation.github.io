@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-03-26T20:08:01+00:00</updated>
+ <updated>2015-03-26T21:50:30+00:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -233,6 +233,10 @@
 &lt;p&gt;Making use of the other principles is a good way to improve animations. Animations that maintain the physical weight of objects, anticipate changes, make use of secondary actions and good timing will be valuable and helpful additions to your content.&lt;/p&gt;
 
 &lt;p&gt;When you have the chance to add some animation to your pages, making use of one or more of these principles will make them more effective and appealing.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update: Many thanks &lt;a href=&quot;https://twitter.com/ethonlau&quot;&gt;Ethon Lau&lt;/a&gt; to for translating this article &lt;a href=&quot;http://www.jianshu.com/p/1858a8733ba3&quot;&gt;into Chinese&lt;/a&gt;!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you&amp;rsquo;d like to translate this or any article into another language, &lt;a href=&quot;mailto:hello@cssanimation.rocks&quot;&gt;let me know&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 </content>
  </entry>
  
