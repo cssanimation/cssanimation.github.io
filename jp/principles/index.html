@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！ - CSS Animation</title>
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/stylesheets/custom/principles.css">
+
+  <link rel="canonical" href="https://cssanimation.rocks/jp/principles/">
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
+
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@cssanimation" />
+    <meta property="twitter:creator" content="@donovanh" />
+    <meta property="og:title" content="ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！ - CSS Animation" />
+    <meta property="og:description" content="How Disney&#39;s 12 Principles of Animation can be applied to web designs" />
+    <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/principles/principles.png" />
+    <meta property="og:url" content="https://cssanimation.rocks/jp/principles/" />
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+
+</head>
+
+
+  <body class="">
+
+    
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <section class="demo-container principle principle-twelve">
+  <div class="demo-angler">
+    <div class="shape">
+      <div class="container">
+        <span class="item one"></span>
+        <span class="item two"></span>
+        <span class="item three"></span>
+        <span class="item four"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li class="new"><a href="/courses/">Courses</a></li>
+    <li><a href="https://twitter.com/cssanimation">Twitter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns">
+      <h1 class="post-title">ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！</h1>
+      <p>フロントエンド・デザイナーやデベロッパーは、スタイリングや配置、またデザイン性の良いサイトを作成するためにCSS（Cascading Style Sheets、カスケーディング・スタイル・シート）を利用します。しばしばページに変化（英: Transition）やアニメーション（英: Animation）を加えるためにCSSを利用しますが、まだまだ開発する余地がありそうです。 </p>
+
+<p>アニメーションは、訪問ユーザーにとってデザインをよリ理解しやすく、ためになる情報を伝える強力なツールとなるでしょう。ウェブサイト制作で活用でき、よりパワフルな使い方ができる基本原則を今回はご紹介します。 </p>
+
+<p>ディズニー社の現場で長年培われた、<a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation">アニメーションの基本原則12個（英: 12 Principles of Animation）</a>は、「生命を吹き込むイリュージョン: ディズニーアニメーション（英: The Illusion of Life: Disney Animation）」として1981年に出版されました。</p>
+
+<p>この記事ではこれら12個の基本原則を、どのようにそれぞれウェブページに適用できるのか解説します。<a href="http://codepen.io/collection/AxKOdY/">すべてのHTML/CSSソースはCodePenコレクションよりダウンロード</a>することができます。</p>
+
+<h2>押し潰しと伸縮 (Squash and stretch)</h2>
+
+<section class="demo-container principle principle-one">
+  <div class="wrapper">
+  <div class="shape"></div>
+  <div class="surface"></div>
+  </div>
+</section>
+
+<p>物質的質量のある物体が動くとき、その質量は同じという概念です。ボールが地面に跳ねるとき伸びるだけでなく、元に戻る時間も短くなります。</p>
+
+<p>これは人や時計、跳ねるボールなど物質を考慮したデザインを作成するときに、もっとも役立つテクニックです。</p>
+
+<p>ウェブページの要素に適用するときは、このルールを無視することも可能です。DOM（英: Document Object Model）要素は、物質的ものと関連付ける必要はなく、スクリーン上で必要に応じて光ったり、縮んだりすることができます。たとえば、ボタンをクリックすると光ったり、インフォメーションボックスがモーフィングしながら表示されたり、エラーメッセージが表示/非表示になるなどです。</p>
+
+<p>それでも押し潰しと伸縮（英: the Squash and Stretch）テクニックは、重力や落下の衝撃を表現したいときに使うことができます。たとえシェイプがほんの少し変化するだけでも、ユーザーの注目をめることができるエフェクトとなります。</p>
+
+<h2>予備動作 (Anticipation)</h2>
+
+<section class="demo-container principle principle-two">
+  <div class="wrapper">
+  <div class="shape"></div>
+  <div class="surface"></div>
+  </div>
+</section>
+
+<p>動作はいきなりはじまらないものです。実際の生活でも動きはなにかしらのことが起こることで、連鎖的に引き起こされます。たとえば、ボールがテーブルから落ちる前に転がりはじめ、人がジャンプするためにひざを曲げます。</p>
+
+<p>このテクニックは、変化（英: Transition）やアニメーション（英: Animation）をより日常生活のような動きに魅せるときに利用できます。予備動作（英: Anticipation）は少しだけ跳ねるだけでも、ユーザーが何が変化し、スクリーン上でどの要素を追うのか理解させることができます。</p>
+
+<p>たとえばデザイン要素にマウスホバーしたとき、光って大きくなる前に、ちょっとだけ縮めてみましょう。リストに新しいアイテムを追加するときに、まず他のアイテムを移動している様子を表現することができます。</p>
+
+<h2>演出 (Staging)</h2>
+
+<section class="demo-container principle principle-three">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  <div class="shape c"></div>
+  </div>
+</section>
+
+<p>演出（英: Staging）は、さまざまなデザイン要素のなかでメイン動作が起こるとき、他の要素を動かすことで、伝えたいアイデアにユーザーの注目がきちんと集まっているのか確認します。もっとも目立つ場所にメイン動作を追加するか、ユーザーが本当に必要な要素に着目できるように、他の要素をマスキングすることを意味します。</p>
+
+<p>ウェブページにおける活用アプローチのひとつが、オーバーレイによるモーダルコンテンツ表示です。現在閲覧しているページの上に、暗い半透明レイヤーを配置し、着目してほしいメインポイントを表示してみましょう。</p>
+
+<p>もうひとつのアプローチは、動き（英: Movement）を利用する方法です。たくさんの要素が動いているとき、どれに注意したらよいかわかりづらくなります。もしすべて他の動作が停止している状態で、ひとつだけほんのすこし動うことで、より着目しやすくなります。</p>
+
+<p>ひとつのテクニックとして、ユーザーにドキュメントの保存を促すため、保存ボタンにアニメーションを加えてみましょう。スクリーン上の他の要素には動きがないので、より動きを強調することができます。</p>
+
+<h2>逐次描きと原画による設計 (Straight-Ahead Action and Pose-to-Pose)</h2>
+
+<section class="demo-container principle principle-four">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+
+<p>逐次描き（英: Straight-ahead）は、アニメーションのカットを逐次描いていくテクニックで、パラパラ漫画を連想するとよいでしょう。原画による設計（Pose-to-Pose）はポイントとなるキーフレームをいくつか決めておき、その間をあとから補完していくテクニック。</p>
+
+<p>ウェブアニメーションのほとんどは、原画による設計（Pose-to-Pose）が利用されており、キーフレームの間の動きはブラウザー毎に設定でき、フレーム数を多くすればするほどアニメーションが滑らかになります。</p>
+
+<p>ひとつの例外が、stepsタイミング機能です。この機能を利用することで、独立したフレームをステップ数で定義することができるので、ブラウザー上で逐次描き（英: Straight-ahead）を実現することができます。</p>
+
+<h2>継続する動きと後追いの動き (Follow Through and Overlapping Action)</h2>
+
+<section class="demo-container principle principle-five">
+  <div class="wrapper">
+  <div class="shape-container">
+    <div class="shape"></div>
+  </div>
+  </div>
+</section>
+
+<p>動きは同じタイミングではじまることはありません。車が突然止まったとき、タイヤから煙が出しながら、運転手は車が止まるまで前に進む動作が、継続して行われます。これらの詳しい描写は、継続する動きと後追いの動き（英: Follow Through and Overlapping Action）の具体例です。</p>
+
+<p>ウェブページ上では、なにかデザイン要素が止まるのを強調する手助けをしてくれ、アニメーションを忘れることはできません。たとえば、リストにアイテムを追加するとき、スライドイン・エフェクトをほんの少し長めに加え、正常のポジションに移動させましょう。</p>
+
+<p>後追いの動き（英: Overlapping Action）を表現するには、すこしずつ変化するスピードを変えてみましょう。これはiOSシステムなどでも、表示を変更するときに良く利用されているテクニックです。いくつかのボタンやデザイン要素は異なる速度で移動することで、よりリアルなアニメーションを実現します。もしすべての要素が同じ速さで動いたら、よりフラットで単純になりがちです。動きを組み合わせることで、ユーザーにきちんと変化しているのを理解する時間を与えます。</p>
+
+<p>ウェブページでは動きやアニメーション、エフェクトの作成を異なるスピードで行いましょう。</p>
+
+<h2>スローインとスローアウト (Slow In and Slow Out)</h2>
+
+<section class="demo-container principle principle-six">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  </div>
+</section>
+
+<p>物が止まった状態から最高速度まですぐに到達することはあまりありません。加速しはじめはゆっくり、速度がついてからはすばやく、減速するときは再びゆっくりな動きとなるように調整しましょう。加速と減速を加えないと、機会的な動きとなってしまいます。</p>
+
+<p>CSSではスローインとスローアウト（英: Slow in and Slow Out）は、easingとして知られています。easingはタイミング機能として活用され、アニメーション速度の変化を表現します。</p>
+
+<p>タイミング機能を利用し、アニメーションをゆっくりから加速（Ease-in）するか、速い速度から減速（Ease-out）する、またはより複雑なエフェクトにはcubic-bezier機能を利用してみましょう。</p>
+
+<h2>運動曲線 (Arc)</h2>
+
+<section class="demo-container principle principle-sevena">
+  <div class="wrapper">
+  <div class="shape-container">
+    <div class="shape a"></div>
+  </div>
+  </div>
+</section>
+
+<p>物体が動くときに「スローインとスローアウト（英: Slow in and Slow Out）」テクニックを加えるたとき、直線ではなく曲線を動くように移動します。</p>
+
+<p>曲線運動（英: Arc）は、CSSを使っていくつか方法で再現することができます。まず複数のアニメーションを組み合わせる方法です。たとえばボールが跳ねるようなアニメーションは、ボールが上下運動しながら、右方向に移動していきます。こうすることで、ボールが曲線を描きながら、スクリーン上を横切ります。</p>
+
+<section class="demo-container principle principle-sevenb">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+
+<p>もう一つのオプションは、デザイン要素を回転させる方法です。外側の要素の変化をベースに、回転の中心を調整することができます。物体が回転するときに、曲線を描いて回転します。</p>
+
+<h2>副次アクション (Secondary Action)</h2>
+
+<section class="demo-container principle principle-eight">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  <div class="shape c"></div>
+  </div>
+</section>
+
+<p>副次アクション（英: Secondary Action）は、メイン動作が起こるときに分かりやすく強調する手助けをします。これは人が手を振りながら歩いたり、首をかしげたりする動作と同じです。またはボールを蹴りあげたときに舞い上がるホコリも同様です。</p>
+
+<p>ウェブサイトでは、副次アクション（英: Secondary Action）はアイテムをドラッグしたり、リストの真ん中に配置するときなどに、もっとも注目して欲しい要素以外を移動させることができます。</p>
+
+<h2>タイミング (Timing)</h2>
+
+<section class="demo-container principle principle-nine">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+
+<p>アニメーションのタイミングは、動作が完了するまでの時間を表します。タイミング（英: Timing）は、動きを付けることで重そうに見せたり、動きに独自性を持たせたいときに便利なテクニックです。</p>
+
+<p>ウェブページではanimation-durationまたはtransition-durationを利用することで、シンプルに調整することができます。タイミングを調整することで、コンテンツの表示アニメーションを合わせる手助けをしてくれます。</p>
+
+<h2>誇張 (Exaggeration)</h2>
+
+<section class="demo-container principle principle-ten">
+  <div class="wrapper">
+  <div class="shape"></div>
+  </div>
+</section>
+
+<p>アニメ漫画などでよく使われるテクニッく誇張（英: Exaggeration）は注目をあつめるだけでなく、ドラマチックや動きを演出します。たとえばオオカミが噛み付こうとするときに、いつもより大きく口をあけることでより怖そうで、滑稽にみえるでしょう。</p>
+
+<p>ウェブページでは、デザイン要素を拡大、縮小することで強調でき、注目を集めることができます。たとえばフォームを入力するときに、記入している要素が光り、不要な部分を縮ませたり、フェードアウトで非表示にしたりしてみましょう。</p>
+
+<h2>立体感のある描画 (Solid drawing)</h2>
+
+<section class="demo-container principle principle-eleven">
+  <div class="wrapper">
+  <div class="shape">
+    <div class="container">
+      <span class="front"></span>
+      <span class="back"></span>
+      <span class="left"></span>
+      <span class="right"></span>
+      <span class="top"></span>
+      <span class="bottom"></span>
+    </div>
+  </div>
+  </div>
+</section>
+
+<p>アニメーション要素が3Dの場合、遠近法を使っているか確認しましょう。人々は3次元の世界に住んでいる私たちは、デザイン要素にも同じ動きが求められます。</p>
+
+<p>モダンブラウザは3D変形にもばっちり対応しています。回転させたり、自由に配置したりできるのはもちろん、ブラウザーは自動的にアニメーション変化を扱うことができます。</p>
+
+<h2>アピール力 (Appeal)</h2>
+
+<section class="demo-container principle principle-twelve">
+  <div class="wrapper">
+  <div class="shape">
+    <div class="container">
+      <span class="item one"></span>
+      <span class="item two"></span>
+      <span class="item three"></span>
+      <span class="item four"></span>
+    </div>
+  </div>
+  </div>
+</section>
+
+<p>アピール力（英: Appeal）は、アートワークの性質で、アーティストの意図とユーザーを結びつけることができます。カリスマ性のある俳優は、細部まで気を配り、動きを組み合わせることでアピール力を作り出しています。</p>
+
+<p>ウェブページにおいて注意深く作成されたアニメーションは、アピール力たっぷりです。Stripeなどのアプリでは、チェックアウトプロセスに、優れたアニメーションを利用しています。</p>
+
+<h2>最後に、、。</h2>
+
+<p>今回ご紹介した12個の基本原則テクニックを利用することで、アニメーションを改善することができます。アニメーションに物質的な重さを表現し、予備動作を加え、副次アクションや絶妙なタイミングを加えることで、コンテンツをより価値のある、役立つものに仕上げてくれるでしょう。</p>
+
+<p>ウェブサイトにアニメーションを加えるときは、複数のアニメーションテクニックを組み合わせることで、より効果的でアピール力の高いデザインをきっと演出してくれるでしょう。</p>
+
+<p><a href="http://webdesign.tutsplus.com/tutorials/adding-appeal-to-your-animations-on-the-web--cms-23649">Adding Appeal to Your Animations on the Web</a></p>
+
+<p>「アピール力（Appeal）」を利用したボタンエフェクトの作り方が紹介されていました。今後のプロジェクトへ採用してみてはいかがでしょう。</p>
+
+
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/assets/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！&url=https%3A%2F%2Fcssanimation.rocks%2Fjp%2Fprinciples%2F&via=cssanimation" target="_blank">share it</a>!</p>
+        </blockquote>
+      </section>
+      <h3>Want to learn more about CSS animation?</h3>
+      <article class="content-box wow bounceIn">
+        <section class="course">
+          <div class="course-image four columns">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" class="footer-signup-badge" alt="CSS Animation 101"></a>
+          </div>
+          <div class="course-details eight columns">
+            <h2><a href="/courses/animation-101/">Animation 101</a></h2>
+            <p>An email course to get you started learning all about transitions, animations and how to apply them to your work.</p>
+            <p class="button"><a href="/courses/animation-101/">More details</a></p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </article>
+
+    </article>
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/collection/AxKOdY/" class="button primary-button">Demo</a>
+        </section>
+      
+      
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/photoshopvip">Shohei Yamazaki</a>. (<a href="/principles/">See original</a>)</p>
+        </section>
+      
+      <section class="sidebar-email-signup">
+        <h4>Get weekly updates</h4>
+        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+          <input type="submit" value="Add me" name="subscribe" class="button">
+        </form>
+      </section>
+      <section class="course-sidebar wow bounceIn">
+        <h3>Enrolling now!</h3>
+        <section class="course">
+            <a href="/courses/animation-101/"><img src="/assets/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
+            <h3><a href="/courses/animation-101/">Animation 101</a></h3>
+            <p>Learn the essentials of CSS animation with an email and a few minutes each day</p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </section>
+    </aside>
+  </section>
+</section>
+
+
+    <footer class="footer">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <div class="email-signup">
+  <h2>Weekly updates</h2>
+  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+    <section class="row">
+      <section class="centered">
+        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+        <input type="submit" value="Add me" name="subscribe" class="button">
+      </section>
+    </section>
+  </form>
+  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
+</div>
+
+      </section>
+      <ul class="icons">
+        <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
+        <li>
+          <a class="follow-button" href="https://twitter.com/cssanimation">
+            <span class="icon icon--twitter">
+              <svg viewBox="0 0 16 16">
+                <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
+              </svg>
+            </span>
+            @cssanimation
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        <a href="/">Home</a> |
+        <a href="/courses/">CSS Courses</a> |
+        <a href="mailto:hello@cssanimation.rocks">hello@cssanimation.rocks</a>
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+    </section>
+  </section>
+</footer>
+<script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='/assets/javascript/site.js'></script>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/assets/javascript/vendor/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3481417-30', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+
+
+  </body>
+
+</html>

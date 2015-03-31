@@ -6,25 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Animation Principles for the Web - CSS Animation</title>
-  <meta name="description" content="As front-end designers and developers, we use CSS to style, position and create great looking sites. We often use CSS to add movement to pages in the form of...">
+  <title>Reguły animacji w sieci - CSS Animation</title>
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/assets/stylesheets/custom/principles.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/principles">
+  <link rel="canonical" href="https://cssanimation.rocks/pl/principles/">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@cssanimation" />
     <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="Animation Principles for the Web - CSS Animation" />
+    <meta property="og:title" content="Reguły animacji w sieci - CSS Animation" />
     <meta property="og:description" content="How Disney&#39;s 12 Principles of Animation can be applied to web designs" />
     <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/principles/principles.png" />
-    <meta property="og:url" content="https://cssanimation.rocks/principles" />
+    <meta property="og:url" content="https://cssanimation.rocks/pl/principles/" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -89,18 +89,16 @@
 <section class="container page-content">
   <section class="row">
     <article class="post-content nine columns">
-      <h1 class="post-title">Animation Principles for the Web</h1>
-      <p>As front-end designers and developers, we use CSS to style, position and create great looking sites. We often use CSS to add movement to pages in the form of transitions or even animations, but we don&rsquo;t usually go much beyond that.</p>
+      <h1 class="post-title">Reguły animacji w sieci</h1>
+      <p>Jako projektanci oraz deweloperzy front-endowi, wykorzystujemy CSS do stylizacji, pozycjonowania oraz tworzenia świetnie wyglądających stron. Bardzo często, CSS służy Nam również w celu dodania ruchu na naszej stronie w formie przejść oraz animacji, niestety najczęściej nie wykraczamy poza ów obszar.</p>
 
-<p>Animation can be a powerful tool to help our visitors and customers understand and benefit from our designs. There are principles we can apply to our work to make the most of this power.</p>
+<p>Animacje potrafią być bardzo potężnym narzędziem dla Naszych klientów i gości aby pomóc im zrozumieć oraz docenić Nasz design. Istnieje szereg reguł które możemy wcielić w Nasze prace aby wykorzystać maksimum ich możliwości.</p>
 
-<!--more-->
+<p>Dawno utwierdzone, fundamentalne zasady pracy w Disney, <a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation">12 Reguł Animacji</a> zostały opublikowane jako &ldquo;The Illusion of Life: Disney Animation&rdquo; w 1981. Reguły które mówią w jaki sposób animacja może być wykorzystana aby pomóc widzowi pogrążyć się w realistycznie przedstawionym świecie.</p>
 
-<p>Long established as fundamental working practices at Disney, the <a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation">12 Principles of Animation</a> were published as &ldquo;The Illusion of Life: Disney Animation&rdquo; in 1981. These principles describe how animation can be used to immerse viewers in a believable   world.</p>
+<p>W tym artykule omówię każdą z 12stu reguł oraz przedyskutuję w jaki sposób można je wykorzystać na stronie internetowej. <a href="http://codepen.io/collection/AxKOdY/">Link do kodu możecie znaleźć tutaj</a>.</p>
 
-<p>In this article I&rsquo;ll go through each of the 12 principles, and discuss how they might apply when making web pages. You can find the <a href="http://codepen.io/collection/AxKOdY/">source HTML and CSS on Codepen for them all here</a>.</p>
-
-<h2>Squash and stretch</h2>
+<h2>Squash and stretch (Zgnieć i rozciągnij)</h2>
 
 <section class="demo-container principle principle-one">
   <div class="wrapper">
@@ -109,15 +107,15 @@
   </div>
 </section>
 
-<p>This is the notion that an object has a physical mass, and when it moves this mass stays the same. A ball will widen as it hits the ground when bouncing, but also get shorter as its mass is redistributed.</p>
+<p>Wyobrażenie że każdy obiekt posiada swoją masę która pozostaje taka sama w momencie ruchu. Piłka się rozszerzy podczas odbijania się od ziemi, ale też stanie się niższa kiedy jej masa się rozłoży.</p>
 
-<p>This is most useful when creating objects that we want to be considered physical, such as people, clocks or bouncing balls.</p>
+<p>Jest to bardzo pomocne podczas tworzenia obiektów które chcemy aby uważano je za cos fizycznego i prawdziwego - jak ludzie, zegarki lub odbijające się piłki.</p>
 
-<p>It&rsquo;s possible to ignore this rule when working with elements of a web page. DOM elements aren&rsquo;t necessarily associated with physical objects, and can grow or shrink on screen as needed. For example, a button could grow and morph into an information box, or error messages can appear and disappear. </p>
+<p>Możliwe jest pominięcie ów zasady podczas tworzenia stron internetowych. Elementy DOM nie są koniecznie powiązane z obiektami fizycznymi i mogą się zwiększać oraz zmniejszać na ekranie kiedy jest wymagane. Na przykład - przycisk może się zwiększyć i zmienić w okno dialogowe lub mogą się pojawiać i znikać informacje o błędach.</p>
 
-<p>Still, the squash and stretch techniques can be used to give an object the feeling of physical mass. Even small changes in shape can create subtle but eye-catching effects.</p>
+<p>Jednak wciąż reguła &ldquo;Squash and stretch&rdquo; może być wykorzystana aby nadać obiektowi wrażenia posiadania masy fizycznej. Nawet małe zmiany w kształcie mogą być subtelne ale przyciągające wrażenie.</p>
 
-<h2>Anticipation</h2>
+<h2>Anticipation (Oczekiwanie)</h2>
 
 <section class="demo-container principle principle-two">
   <div class="wrapper">
@@ -126,13 +124,13 @@
   </div>
 </section>
 
-<p>Movements don&rsquo;t tend to happen suddenly. In real life,  motion is usually preceded by some kind of build-up, whether it&rsquo;s a ball beginning to roll before it falls off a table, or a person bending their knees in preparation to jump.</p>
+<p>Ruch na ogół nie wydarzy się błyskawicznie. W prawdziwym życiu ruch jest poprzedzany przygotowaniem jak na przykład piłka która dopiero zaczyna się staczać zanim spadnie ze stołu lub osoba która ugina kolana aby przygotować się do skoku.</p>
 
-<p>We can use this to make our transitions and animations feel more life-like. Anticipation could be in the form of a subtle bounciness that helps people understand what is changing and keep track of the objects on-screen.</p>
+<p>Możemy to wykorzystać aby Nasze przejścia i animacje były bardziej żywe. Oczekiwanie może być w formie subtelnej sprężystości która pomoże widzom zrozumieć zmiany i bacznie obserwować obiekty na ekranie.</p>
 
-<p>For example, an element could shrink slightly before growing larger on hover; adding extra items to a list could be introduced by having other items move out of the way first.</p>
+<p>Na przykład, element mógłby się trochę zmniejszyć przed powiększeniem kiedy najedziemy na niego kursorem; dodawania dodatkowych przedmiotów do listy mogłoby być przedstawione w taki sposób że starsze przedmioty robiłyby miejsce dla nowych.</p>
 
-<h2>Staging</h2>
+<h2>Staging (Inscenizacja)</h2>
 
 <section class="demo-container principle principle-three">
   <div class="wrapper">
@@ -142,15 +140,13 @@
   </div>
 </section>
 
-<p>Staging is making sure an object is the focus of a scene, when other objects or aspects of the scene make way for where the main action is taking place. This means either placing the main action in a prominent position, or masking other elements to focus on what the user needs to see.</p>
+<p>Inscenizacja polega na tym aby obiekt był w centrum uwagi w momencie kiedy inne obiekty grają rolę drugoplanową. Można to osiągnąć pozycjonując główne wydarzenie w widocznym miejscu lub maskując inne elementy aby uwidocznić na czym użytkownik musi skupić swoją uwagę.</p>
 
-<p>In web terms, one approach is to use a modal overlay for certain content. Adding a dark layer over the existing page and then placing the content in front stages it and shows it as the main point of focus.</p>
+<p>Kolejnym podejściem jest wykorzystanie ruchu. Kiedy w tym samym momencie porusza się bardzo dużo obiektów, trudno jest Nam skupić uwagę na tym na czym powinniśmy. Jeżeli wszystkie inne obiekty przestaną się poruszać a tylko jeden będzie się wciąż poruszał, nawet odrobinę - będzie to o wiele łatwiejsze do spostrzeżenia.</p>
 
-<p>Another approach is to use movement. When many objects are moving, it&rsquo;s hard to know which is worthy of attention. If all other movement is stopped and one object moves, even slightly, it will be much easier to spot.</p>
+<p>Jedną z technik jest sprawienie aby przycisk &ldquo;Save&rdquo; zadrżał lub błysną chwilowo aby zasugerować użytkownikowi chęć zapisania dokumentu. Kiedy cała reszta ekranu jest statyczna, nawet subtelny ruch będzie się wyróżniał.</p>
 
-<p>One technique is to make a &ldquo;Save&rdquo; button wobble or flash briefly to suggest to the user that they might want to save a document. With the rest of the screen held static and motionless, even subtle movement will stand out.</p>
-
-<h2>Straight-Ahead Action and Pose-to-Pose</h2>
+<h2>Straight-Ahead Action and Pose-to-Pose (Rysowanie Progresywne i według Klatek Kluczowych oraz od Pozy do Pozy)</h2>
 
 <section class="demo-container principle principle-four">
   <div class="wrapper">
@@ -159,13 +155,13 @@
   </div>
 </section>
 
-<p>Straight-ahead action is when every frame of an animation is drawn. Pose-to-pose is when a series of keyframes are defined and the intervals filled in later, usually by an assistant.</p>
+<p>Straight-Ahead Action jest wtedy kiedy każda klatka animacji jest narysowana. Od pozy do pozy występuje kiedy seria klatek kluczowych jest wykonana a później uzupełniona, najczęściej przez asystenta.</p>
 
-<p>Most web animation uses pose-to-pose animation: the transition between keyframes can be handled by the browser, which interpolates the difference between each and draws in as many frames as it can to make the animation smooth.</p>
+<p>Większość animacji wykorzystuje styl od pozy do pozy: przejściami między klatkami może się zając przeglądarka która dodaje zmiany wśród klatek i wyciąga tyle klatek ile może aby animacja była płynna.</p>
 
-<p>One exception to this is the <code>steps</code> timing function. With this function, the browser &ldquo;steps&rdquo; through as many discrete frames as defined. This way you could draw out a series of images and have the browser display each in sequence, creating a &ldquo;Straight Ahead Action&rdquo; style.</p>
+<p>Jednym z wyjątków do tego jest funkcja czasowa &lsquo;steps&rsquo;(kroki). Dzięki ów funkcji, przeglądarka &#39;steps&rsquo;(wykonuje kroki) przez tyle klatek ile jest zdefiniowanych. W ten sposób możemy pokazać serię obrazków i sprawić aby przeglądarka wyświetlała je jedno po drugim, tworząc w ten sposób animację w stylu &ldquo;Straight-Ahead Action&rdquo;.</p>
 
-<h2>Follow Through and Overlapping Action</h2>
+<h2>Follow Through and Overlapping Action (Nakładanie się i podążanie za akcją)</h2>
 
 <section class="demo-container principle principle-five">
   <div class="wrapper">
@@ -175,15 +171,16 @@
   </div>
 </section>
 
-<p>Things don&rsquo;t always happen at the same time. When a car stops suddenly it tilts forward, with smoke from the tires and the driver inside continuing the forward motion until they are stopped or dissapate.</p>
+<p>Wszystko nie dzieje się w tym samym momencie. Kiedy samochód niespodziewanie się zatrzymuje, przechyla się do przodu, z dymem spod kół oraz kierowcą który kontynuuje ruch aż do momentu zatrzymania.</p>
 
-<p>These details are examples of follow through and overlapping action. They can be used on the web to help emphasise that something is stopping, and hasn&rsquo;t merely forgotten to animate. For example, an item added to a list might be slide in, proceed slightly too far, and then correct itself to the right position.</p>
+<p>Takie detale są przykładem nakładania się i podążania za akcją.
+Mogą być wykorzystane w sieci aby podkreślić fakt ze coś się zatrzymuje. Na przykład, przedmiot w liście może się wsunąć trochę za daleko, skorygować swoje położenie i ustawić się w odpowiednim miejscu.</p>
 
-<p>To create a feeling of overlapping action, we can make elements move at a slightly different pace to each other. It&rsquo;s a technique used well in the iOS operating system when transitioning between views. Some buttons and elements move at different rates, and the combined effect is much more lifelike and less flat than if everything moved at the same rate. The combined movements give the viewer time to properly understand the change.</p>
+<p>Do stworzenia wrażenia nakładania się akcji, możemy sprawić aby elementy poruszały się z różnymi prędkościami względem siebie.
+Jest to technika wykorzystywana w systemach operacyjnych iOS kiedy następuje przejście między widokami.
+Niektóre przyciski i guziki poruszają się w różnych odstępach, efekt jest bardziej realistyczny i mniej płaski niż kiedy wszystko porusza się w tym samym momencie. Połączone efekty dają użytkownikowi czas aby dokładnie zrozumieli zmianę.</p>
 
-<p>In web terms this might mean stacking transitions or animations, creating effects that work at different speeds.</p>
-
-<h2>Slow In and Slow Out</h2>
+<h2>Slow In and Slow Out (Rozpędzania i zwolnienie)</h2>
 
 <section class="demo-container principle principle-six">
   <div class="wrapper">
@@ -191,13 +188,13 @@
   </div>
 </section>
 
-<p>Objects rarely go from a standstill to maximum speed immediately. They tend to speed up gradually and slow before stopping. Without acceleration and deceleration, movements feel robotic.</p>
+<p>Obiekty bardzo rzadko uzyskują maksymalną prędkość ze stanu spoczynku, stopniowo zwiększają swoja prędkość lub ją wytrącają przed zatrzymaniem. Bez przyspieszenia i zwolnienia, ruch sprawia wrażenie mechanicznego.</p>
 
-<p>In CSS terms, slow in and slow out are known as <code>easing</code>. Easing is what is known as a timing function, a way of describing the rate of change through the course of an animation.</p>
+<p>W CSS, rozpędzania i zwolnienie jest znane nam jako &#39;easing&rsquo;. Easing jest funkcja czasową, sposobem zdefiniowania prędkości zmian podczas animacji.</p>
 
-<p>Using timing functions, animations can start slow and speed up (ease-in), start fast and slow down (ease-out) or more complex effects using the <code>cubic-bezier</code> timing function.</p>
+<p>Przy wykorzystaniu funkcji czasowej, animacja może się rozpocząć powoli i stopniowo zwiększać swoją prędkość(ease-in), rozpocząć szybko a potem zwolnić swoje tempo(ease-out) lub bardziej kompleksowe efekty dzięki wykorzystaniu &#39;cubic-bezier&rsquo;.</p>
 
-<h2>Arc</h2>
+<h2>Arc (Łuki)</h2>
 
 <section class="demo-container principle principle-sevena">
   <div class="wrapper">
@@ -207,9 +204,9 @@
   </div>
 </section>
 
-<p>While objects are more lifelike when they follow the &ldquo;Slow In and Slow Out&rdquo;, objects rarely move in straight lines: they tend to follow curved arcs.</p>
+<p>Obiekty są bardziej realistyczne kiedy poruszają się wedle zasady &#39;Rozpędzenia i Zwolnienia&rsquo;, bardzo rzadko podążają wzdłuż linii prostej: mają one również tendencję do ruchu w trajektorii łuku.</p>
 
-<p>We can achieve arcing movements with CSS in a couple of ways. One is to combine multiple animations. A bouncing ball animation, for example could be made up a ball moving up and down, while a second moves it to the right at the same time. The ball would then arc across the screen.</p>
+<p>W CSS możemy ów efekt ruchu uzyskać na różne sposoby. Jednym z nich jest połączenie ze sobą kilku animacji. Animacja odbijającej się piłki, na przykład, może być połączeniem dwóch animacji, jednej która wprawia piłkę w ruch poziomy a druga animacja w ruch pionowy. Piłka poruszała by się wtedy na ekranie po trajektorii łuku.</p>
 
 <section class="demo-container principle principle-sevenb">
   <div class="wrapper">
@@ -218,9 +215,9 @@
   </div>
 </section>
 
-<p>Another option is to rotate an element. We can adjust an object&rsquo;s center of rotation by setting its transform origin outside the element. When we  rotate the object, it will rotate in an arc.</p>
+<p>Inną opcją jest obrócenie obiektu. Możemy dostosować środek rotacji obiektu poprzez ustawienie opcji &#39;transform&rsquo; poza obszar elementu. Kiedy obrócimy obiekt, będzie się on obracał po trajektorii łuku.</p>
 
-<h2>Secondary Action</h2>
+<h2>Secondary Action (Akcja drugoplanowa)</h2>
 
 <section class="demo-container principle principle-eight">
   <div class="wrapper">
@@ -230,11 +227,11 @@
   </div>
 </section>
 
-<p>While a primary action is taking place, a secondary animation can help emphasise or augment it. This could be the swinging arms of someone walking or the tilt of their head. Or a bouncing ball kicking up a little dust.</p>
+<p>W momencie kiedy dzieje się główna akcja, akcja drugoplanowa może ją wzbogacić lub podkreślić. Może to być ruch rękami podczas spaceru lub przechylenie głowy. Lub odbijająca się piłka która wznieca tuman kurzu.</p>
 
-<p>On web sites, secondary actions could see elements moving out of the way when the main focus of attention is introduced, such as dragging an item and placing it in the middle of a list.</p>
+<p>Na stronie internetowej, akcja drugoplanowa może polegać na tym że elementy ustępują miejsce głównemu elementowi który jest przedstawiony, jak na przykład, przeciągnięcie przedmiotu na środek listy.</p>
 
-<h2>Timing</h2>
+<h2>Timing (Taktowanie/Czas trawania)</h2>
 
 <section class="demo-container principle principle-nine">
   <div class="wrapper">
@@ -243,13 +240,13 @@
   </div>
 </section>
 
-<p>An animation&rsquo;s timing is how long it takes to complete. Timing can be used to make weighty objects look heavy in their motion, or to add character to movement.</p>
+<p>Taktowanie/Czas trwania może być wykorzystany aby pokazać ciężar poruszającego się obiektu, lub by dodać poruszającemu się obiektowi charakteru.</p>
 
-<p>On the web this might be as simple as adjusting the <code>animation-duration</code> or <code>transition-duration</code> values.</p>
+<p>W sieci jest to proste dzięki dostosowaniu wartości &#39;animation-duration&rsquo; oraz &#39;transition-duration&rsquo;.</p>
 
-<p>It&rsquo;s easy to let animations take longer than they need to. Adjusting timing can help get the animation out of the way of the content or interaction.</p>
+<p>Sprawienie że animacja trwa dłużej niż powinna jest proste. Dostosowanie czasu trwania może być pomocne aby pozbyć się animacji z treści lub interakcji.</p>
 
-<h2>Exaggeration</h2>
+<h2>Exaggeration (Wyolbrzymienie)</h2>
 
 <section class="demo-container principle principle-ten">
   <div class="wrapper">
@@ -257,11 +254,11 @@
   </div>
 </section>
 
-<p>Most commonly used in cartoons, exaggeration can draw attention to certain actions and make them more dramatic. A wolf making an attempt to bite might have its jaws open wider than is normal to make the effect more scary or humorous.</p>
+<p>Najczęściej wykorzystywane w kreskówkach, wyolbrzymienie może przyciągnąć uwagę na niektóre zachowania i sprawić że wyglądają bardziej dramatycznie. Wilk chcąc ugryźć może otworzyć szczęki szerzej niż normalnie aby efekt był przerażający albo śmieszny.</p>
 
-<p>In a web page, objects can be scaled up and down to emphasise them and draw attention. For example when filling a form, the active section could grow while the others shrink or fade.</p>
+<p>Na stronie internetowej, obiekt może być zmniejszony i powiększony aby przyciągnąć uwagę. Na przykład podczas wypełniania formy, sekcja która jest aktywna może się powiększyć a reszta zmniejszyć lub zniknąć.</p>
 
-<h2>Solid drawing</h2>
+<h2>Solid drawing (Rysunek przestrzenny)</h2>
 
 <section class="demo-container principle principle-eleven">
   <div class="wrapper">
@@ -278,11 +275,11 @@
   </div>
 </section>
 
-<p>When animating objects in three dimensions, care should be taken to ensure they follow the rules of perspective. People are used to living in a three dimensional world, so when objects don&rsquo;t behave as expected they look wrong.</p>
+<p>Podczas animowania obiektu w trzech wymiarach należy mieć na uwadze fakt aby dany obiekt przestrzegał zasad perspektywy. Ludzie są przyzwyczajeni do życia w świecie trój wymiarowym, więc kiedy obiekt zachowuje się nie tak jak powinien - wygląda to źle.</p>
 
-<p>Modern browsers have decent support for three dimensional transforms. This means that we can rotate and place objects in a scene and the browser can handle the transitions automatically.</p>
+<p>Nowoczesne przeglądarki mają przyzwoite wsparcie dla trój wymiarowych transformacji. Oznacza to ze możemy obracać oraz ustawiać obiekt w scenie a przeglądarka zajmie się przejściem automatycznie.</p>
 
-<h2>Appeal</h2>
+<h2>Appeal (Urok)</h2>
 
 <section class="demo-container principle principle-twelve">
   <div class="wrapper">
@@ -297,19 +294,15 @@
   </div>
 </section>
 
-<p>Appeal is the character of the artwork and how it can make us connect with the intention of the artist. Like charisma in an actor, it&rsquo;s the attention to detail and movement combined that creates an appealing result.</p>
+<p>Urok jest charakterem szaty graficznej i może pomóc Nam nawiązać połączenie z intencjami artysty. Jak charyzma u aktora, kombinacja uwagi na detal i ruch tworzy atrakcyjny efekt.</p>
 
-<p>Carefully crafted animations on the web can create appeal. Companies such as Stripe have made great use of animation to add credibility to their checkout process.</p>
+<p>Starannie przygotowane animacje na stronach internetowych mogą stworzyć urok. Firmy jak na przykład Stripe wykorzystały animacje aby dodać wiarygodności do swojego procesu płatności.</p>
 
-<h2>Try it yourself!</h2>
+<h2>Spróbuj!</h2>
 
-<p>Making use of the other principles is a good way to improve animations. Animations that maintain the physical weight of objects, anticipate changes, make use of secondary actions and good timing will be valuable and helpful additions to your content.</p>
+<p>Wykorzystanie innych reguł jest dobrym sposobem na poprawienie animacji. Animacje które utrzymują fizyczny ciężar obiektów, oczekują zmian, dobrze wykorzystują akcje drugoplanowe oraz wyczucie czasu będą świetnym dodatkiem do treści Twojej strony.</p>
 
-<p>When you have the chance to add some animation to your pages, making use of one or more of these principles will make them more effective and appealing.</p>
-
-<p><em>Update: Many thanks <a href="https://twitter.com/ethonlau">Ethon Lau</a> to for translating this article <a href="http://www.jianshu.com/p/1858a8733ba3">into Chinese</a>!</em></p>
-
-<p><em>If you&rsquo;d like to translate this or any article into another language, <a href="mailto:hello@cssanimation.rocks">let me know</a>.</em></p>
+<p>Kiedy masz szansę dodać kilka animacji na swoją stronę, wykorzystanie jednej lub więcej wyżej wymienionych reguł sprawi że będą bardziej efektywne oraz lepiej wyglądały.</p>
 
 
       <section class="quote-container">
@@ -317,7 +310,7 @@
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animation Principles for the Web&url=https%3A%2F%2Fcssanimation.rocks%2Fprinciples&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Reguły animacji w sieci&url=https%3A%2F%2Fcssanimation.rocks%2Fpl%2Fprinciples%2F&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -343,19 +336,11 @@
         </section>
       
       
-        <section class="translations">
-          <h3>Translations</h3>
-          <ul>
-            
-              <li><a href="/cn/principles/">中国 (Chinese)</a></li>
-            
-              <li><a href="/jp/principles/">日本人 (Japanese)</a></li>
-            
-              <li><a href="/pl/principles/">Polski (Polish)</a></li>
-            
-          </ul>
-        </section>
       
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/MatChabros">Mat Chabros</a>. (<a href="/principles/">See original</a>)</p>
+        </section>
       
       <section class="sidebar-email-signup">
         <h4>Get weekly updates</h4>
