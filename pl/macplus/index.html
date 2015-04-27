@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Mac Plus CSS - CSS Animation</title>
-  <meta name="description" content="I will always remember the moment I got to use the Apple Mac Plus. In this post I will try to pay tribute to this lovely computer by creating it in CSS.">
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/assets/stylesheets/custom/macplus.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/macplus">
+  <link rel="canonical" href="https://cssanimation.rocks/pl/macplus/">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
@@ -24,7 +24,7 @@
     <meta property="og:title" content="Mac Plus CSS - CSS Animation" />
     <meta property="og:description" content="Creating a 3D model of the classic Mac Plus with CSS" />
     <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/macplus/macplus.png" />
-    <meta property="og:url" content="https://cssanimation.rocks/macplus" />
+    <meta property="og:url" content="https://cssanimation.rocks/pl/macplus/" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -112,100 +112,98 @@
   <section class="row">
     <article class="post-content nine columns">
       <h1 class="post-title">Mac Plus CSS</h1>
-      <p>I will always remember the moment I got to use the Apple Mac Plus. In this post I will try to pay tribute to this lovely computer by creating it in CSS.</p>
+      <p>Zawsze będę pamiętał dzień w którym poraz pierwszy przyszło mi korzystać z Apple Mac Plus. W tym poście postaram się oddać hołd temu komputerowi odtwarzając go w CSS.</p>
 
-<!--more-->
+<h2>W stylu retro</h2>
 
-<h2>Retro style</h2>
-
-<p>Let&rsquo;s build (virtually) a computer. Not just any old computer, but a computer that was, for many of us, an introduction into the world of Apple. The Macintosh Plus, codename Mr. T, was first introduced in 1986 and packed a whopping 1MB of RAM and an 8 MHz processor. Aside from all that raw power, it was a seriously cute design, which made the computer more fun to use. </p>
+<p>Zbudujmy teraz (wirtualnie) komputer. Nie byle jaki komputer, ale komputer który dla większości z nas był wstępem do świata Apple. Macintosh Plus, kryptonim Mr. T, poraz pierwszy został przedstawiony w roku 1986 z szalenie pojemną pamięcią RAM 1MB oraz procesorem 8Mhz. Oprócz całej tej dzikiej mocy obliczeniowej posiadał również uroczy design, co sprawiało że był jeszcze ciekawszy w użyciu.</p>
 
 <p><img src="/assets/images/posts/macplus/mac.jpg" alt="Credit: Vectronic&#39;s Apple World"></p>
 
-<p>In this project I will build a 3D model of the Macintosh Plus and display it in a three dimensional setting. Using CSS Keyframe animation we&rsquo;ll make it move on screen to show off the 3D effect better.</p>
+<p>W tym projekcie zbuduję model 3D Macintosha Plus i wyświetlę go w plaszczyźnie trójwymiarowej. Wykorzystując animację CSS Keyframe sprawimy że będzie się poruszał aby lepiej ukazać efekt 3D.</p>
 
-<h2>Why use CSS?</h2>
+<h2>Dlaczego CSS ?</h2>
 
-<p>With Cascading Style Sheets are the standard way to style web page content. Everything from fonts, colors, positioning and background images is handled by CSS, and it is an essential tool for making modern web pages. It&rsquo;s not just for two-dimensional content. With the use of 3D transforms and positioning, you can use CSS to add depth too.</p>
+<p>CSS jest standardem stylizowania stron internetowych. Zajmuje się wszystkim - od fontów, kolorów, pozycjonowania aż do tła, dzięki temu stał się niezbędnym narzędziem tworzenia stron internetowych. Nie jest tylko dla treści dwuwymiarowej. Z wykorzystaniem przemian 3D oraz pozycjonowania można również nadać głębi używając CSS.</p>
 
-<p>Creating scenes in CSS results in smaller file sizes than images. In this example, the CSS compresses to just 4KB and the HTML less than 1KB. An equivalent image would be 100KB or more.</p>
+<p>Tworzenie scen w CSS skutkuje mniejszym rozmiarem niż gdybyśmy używali obrazów. Na tym przykładzie, CSS jest skompresowany do 4KB a HTML do mniej niż 1KB. Ekwiwalent w postaci zdjęcia zajmowałby 100KB albo i więcej.</p>
 
-<h2>Live demo and source code</h2>
+<h2>Wersja demonstracyjna i kod źródłowy</h2>
 
-<p>See the <a href="http://hop.ie/mac/">CSS Mac Plus online</a>.</p>
+<p>Sprawdź <a href="http://hop.ie/mac/">CSS Mac Plus online</a>.</p>
 
-<p>Full source code <a href="https://github.com/donovanh/mac/archive/master.zip">can be downloaded here</a>, and you can view the full <a href="https://github.com/donovanh/mac/blob/master/stylesheets/screen.css">CSS file on Github</a>.</p>
+<p>Pełny kod źródłowy <a href="https://github.com/donovanh/mac/archive/master.zip">może być ściągnięty tutaj</a>, a cały plik CSS możecie zobaczyć na <a href="https://github.com/donovanh/mac/blob/master/stylesheets/screen.css">Github</a>.</p>
 
-<p>You can also follow along the various stages by looking up the <code>examples</code> folder in <a href="https://github.com/donovanh/mac/archive/master.zip">the project files</a>.</p>
+<p>Możesz śledzić <code>przykłady</code> w folderze <a href="https://github.com/donovanh/mac/archive/master.zip">projektu</a>.</p>
 
-<h2>On Prefixes</h2>
+<h2>Prefixy</h2>
 
-<p>I have omitted any CSS prefixes from the code examples to make the code easier to read. When working on this yourself make sure to include prefixes for the other browsers, such as the <code>webkit</code>, <code>moz</code>, <code>ms</code>, and <code>o</code>.</p>
+<p>Pominąłem prefixy z tego względu aby kod był lepiej czytelny. Pracując sam, pamiętaj aby dodać ów prefixy dla innych przeglądarek, jak <code>webkit</code>, <code>moz</code>, <code>ms</code>, i <code>o</code>.</p>
 
-<h2>Setting the stage</h2>
+<h2>Przygotowanie sceny</h2>
 
-<p>When creating 3D using HTML we need a scene within which to build it. Start with a container HTML element:</p>
+<p>Tworząc 3D przy wykorzystaniu HTML, musimy mieć scenę na której będziemy budować. Rozpocznij od kontenera HTML:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;stage&quot;&gt;&lt;/div&gt;
 </code></pre></div>
-<p>This is a simple div with the class stage, and it acts as a container for our 3D object.</p>
+<p>Prosty div z klasą stage który służy jako kontener dla naszego obiektu 3D.</p>
 
-<p>To establish it as a 3D container, we set some CSS properties, <code>perspective</code> and <code>perspective-origin</code>. The perspective property is similar to a scene&rsquo;s vanishing point. The smaller the value, the shorter the vanishing point and more extreme the effect. This image shows how changing the value changes the shape on a scene:</p>
+<p>Aby założyć go jako kontener 3D, ustanawiamy kilka właściwości CSS <code>perspective (perspektywa)</code> i <code>perspective-origin (punkt wyjściowy perspektywy)</code>. Perspective jest podobne do znikającego punktu sceny w perspektywnie graficznej. Im mniejsza wartość tym punkt znikający jest krótszy a efekt bardziej wyrazisty. Zdjęcie poniżej przedstawia jak zmiany wartości zmieniają kształt sceny:</p>
 
 <p><img src="/assets/images/posts/macplus/01-perspective.png" alt="Different perspectives: 500px vs 2500px - examples/01-Perspective/index.html"></p>
 
-<h3>Try it yourself</h3>
+<h3>Spróbuj</h3>
 
-<p>If you&rsquo;d like to have a go, look for the <code>screen.css</code> file in the <code>examples/01-Perspective</code> folder in the project files. You&rsquo;ll be able to update the perspective value and see the effect by opening the <code>index.html</code> file from the same folder in your browser.</p>
+<p>Jeżeli chcesz spróbować, znajdź <code>screen.css</code> w folderze <code>examples/01-Perspective</code>. Będziesz w stanie aktualizować wartość perspective i zobaczyć efekt otwierając plik <code>index.html</code> w swojej przeglądarce.</p>
 
-<p>The <code>perspective-origin</code> property sets the viewing position. Changing it allows you to look down onto the scene from above, up from below or in from the side.</p>
+<p><code>perspective-origin</code> ustawia pozycję oglądania. Zmiany powodują że możemy obserwować scenę patrząc z góry, z dołu lub z boku.</p>
 
-<p>In this example I&rsquo;ve gone for a perspective value of 1,600 pixels. The CSS looks like this:</p>
+<p>Na tym przykładzie, wartość perspective wynosi 1,600 pixeli. CSS wygląda tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.stage {
   perspective: 1600px;
   perspective-origin: 50% 100px;
 }
 </code></pre></div>
-<p>The <code>stylesheets</code> folder within the project ZIP file contains the full CSS rules for setting the various other properties on the stage, including a background, width and height.</p>
+<p>Folder <code>stylesheets</code> który znajduje się w pliku ZIP projektu zawiera całą gamę wartości sceny, między innymi tło, szerokość oraz wysokość.</p>
 
-<h2>Planning the structure</h2>
+<h2>Planowanie struktury</h2>
 
-<p>With a stage in place we&rsquo;ll use some HTML elements to create the computer. Rather than try to include every last detail, we&rsquo;ll focus on the front detailing for the most part.</p>
+<p>Z gotową już sceną, wykorzystamy kilka elementów HTML do stworzenia komputera. Zamiast próbować zawrzeć każdy najmniejszy szczegół, skupimy się bardziej na froncie.</p>
 
-<p>The main body of the Mac is a box, tilted slightly back at an angle and sitting on a flat base. </p>
+<p>Obudowa Maca jest pudełkiem, lekko przechylonym w tył stojącym na płaskiej podstawie.</p>
 
-<p>This will mean making two boxes, one tilted back a little and sitting on a flatter box. To create this effect, we&rsquo;ll make use of the CSS <code>transform</code> property.</p>
+<p>Oznacza to stworzenie dwóch pudełek, jednego przechylonego lekko w tył, stojącego na drugim, niższym. Aby uzyskać ów efekt, wykorzystamy <code>transform (transformacja)</code>.</p>
 
-<p>If you&rsquo;d like to see the full HTML, it can be found in the project files within the <code>index.html</code> file.</p>
+<p>Jeżeli chciałbys przeanalizować cały kod HTML, znajduje sie w pliku <code>index.html</code> który mieści się w folderze projektu.</p>
 
 <h2>Transforms</h2>
 
-<p>The CSS <code>transform</code> property allows us to rotate, skew, position and even scale elements on the page. We can make use of the positioning and rotation to create our scene.</p>
+<p><code>transform</code> pozwala nam na rotację, pochylenie oraz na zmniejszanie i powiększanie elementów na stronie. Możemy wykorzystać rotację oraz pozycjonowanie aby stworzyć naszą scenę.</p>
 
-<p>A <code>transform</code> property might look like this:</p>
+<p>Własność <code>transform</code> może wyglądać tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.example {
   transform: rotateY(45deg) translateZ(-100px);
 }
 </code></pre></div>
-<p>You build a transform by chaining a series of statements. In this example, the example element is rotated 45 degrees around the Y-axis, and then pushed back 100px along the Z-axis.</p>
+<p>Budujesz transform łącząc serię instrukcji. W tym przykładzie element jest obrócony o 45 stopnii wzdłóż osi Y oraz wgłędbiony o 100px wdłóż osi Z</p>
 
-<p>It should look something like this:</p>
+<p>Powinno to wyglądać mniej więcej tak:</p>
 
-<p><img src="/assets/images/posts/macplus/02-Transforms.png" alt="Front and back panels transformed into place - examples/02-Transforms/index.html"> </p>
+<p><img src="/assets/images/posts/macplus/02-Transforms.png" alt="Front and back panels transformed into place - examples/02-Transforms/index.html"></p>
 
-<p>An example of CSS transforms can be found in the <code>examples/02-Transforms</code> folder within the project files. Two elements are positioned in the example, and their position can be changed by editing the includes <code>02-Transforms/css/screen.css</code> file. </p>
+<p>Przykłady CSS transform mogą być znalezione w folderze <code>examples/02-Transforms</code>. Znajdują się tam dwa elementy których pozycję można zmienić modyfikując wartości w pliku <code>02-Transform/css/screen.css</code>.</p>
 
-<h3>Transform-origin</h3>
+<h3>Transform-origin (Punky Wyjściowy Transformacji)</h3>
 
-<p>When rotating elements around the place, it’s worth keeping in mind that the transforms have an origin that can be set. The transform origin is a point referred to by specifying the X, Y and Z values. This is the default:</p>
+<p>Podczas obracania elementów warto mieć na uwadze fakt że transforms mają wartość wyjsciową którą można zdefiniować. Wartość wyjściowa transform jest punktem do którego można nawiązać precyzując wartosci osi X, Y oraz Z. Tak wygląda domyślnie:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.default-origin {
   transform-origin: 50% 50% 0;
 }
 </code></pre></div>
-<p>When building this example I kept the default but it’s worth knowing that it’s there.</p>
+<p>Budując ten przykład zostawiłem wartości domyślne, ale dobrze jest wiedzieć, że można je zmienić.</p>
 
-<h2>Making the boxes</h2>
+<h2>Tworzenie obudowy</h2>
 
-<p>We can use some transforms to set up the main body of the computer. The HTML looks like this:</p>
+<p>Możemy wykorzystać transforms aby zbudować obudowę komputera. HTML wygląda mniej wiecej tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class=&quot;stage&quot;&gt;
   &lt;div class=&quot;positioning animated&quot;&gt;
     &lt;div class=&quot;mac&quot;&gt;
@@ -223,19 +221,19 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre></div>
-<p>Within the stage, there&rsquo;s a <code>div</code> I&rsquo;ll use to position the computer on the page. Within that is the Mac itself. The two boxes are themselves made up of <code>figure</code> elements. These elements represent the sides, top, front and back of the two boxes.</p>
+<p><code>div</code> który znajduje się wewnątrz sceny zostanie wykorzystany do pozycjonowania komputera na stronie. Wewnątrz znajduje sie Mac. Dwie skrzynki tymczasowo zbudowane są z elementów <code>figure</code>. Ów elementy reprezentują boki, górę, front oraz tył dwóch skrzynek.</p>
 
-<p>There is also a <code>figure</code> to represent the shadow.</p>
+<p>Znajduje się tam również element <code>figure</code> reprezentujący cień.</p>
 
-<p>This example can be found in the <code>examples/03-Boxes</code> folder.</p>
+<p>Przykład może być znaleziony w folderze <code>examples/03-Boxes</code></p>
 
-<p>The result we&rsquo;ll be going for looks like this:</p>
+<p>Efekt końcowy który chcemy uzyskać będzie wyglądał właśnie tak:</p>
 
-<p><img src="/assets/images/posts/macplus/04-Boxes.png" alt="CSS Boxes - examples/03-Boxes/index.html"> </p>
+<p><img src="/assets/images/posts/macplus/04-Boxes.png" alt="CSS Boxes - examples/03-Boxes/index.html"></p>
 
-<p>Each of the boxes are transformed into place using the CSS <code>transform</code> property, and CSS <code>gradients</code> are used to add depth to the scene.</p>
+<p>Każda ze skrzynek jest przeobrażona przy pomocy własności CSS <code>transform</code> oraz <code>gradients</code> któro nadaje scenie głębi.</p>
 
-<p>The CSS looks like this:</p>
+<p>CSS wygląda tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.front {
   height: 11.5em;
   width: 9.6em;
@@ -299,19 +297,19 @@
   box-shadow: -20.2em 0 1.8em rgba(100, 90, 100, 0.4);
 }
 </code></pre></div>
-<p>Each of the figures has been given a width and height, and a CSS background gradient or color. The figures are then each positioned using the <strong>transform</strong> property. For example, the left side is rotated 90 degrees before being translated (moved) back half the width of the computer.</p>
+<p>Każda z <code>figure</code> posiada szerokość, wysokość, tło CSS z gradientem lub kolorem. <code>figure</code> są później ustawione przy pomocy własności <strong>transform</strong>. Na przykład, strona lewa jest obrócona o 90 stopnii zanim zostanie przesunięta do tyłu o połowę szerokości komputera.</p>
 
-<p>The front figure is translated forwards, along the Z-axis, half the length of the computer and the back is rotated 180 degrees before being translated back.</p>
+<p>Przednia <code>figure</code> jest przesunięta do przodu wzdłóż osi Z o połowę długości komputera a tył obrócony o 180 stopni zanim zostaje przesunięty do tyłu.</p>
 
-<p>For the pieces of the top box, each of the figures is rotated 5 degrees back around the X-axis. This means that the main body of the Macintosh Plus is tilted back.</p>
+<p>Dla górnej części obudowy każda z <code>figure</code> jest obrócona o 5 stopni w tył wzdłóż osi X. Oznacza to, że główna część Macintosha Plus jest odchylona.</p>
 
-<p>Finally the shadow <code>figure</code> makes use of the CSS <code>box-shadow</code> property to create a shadow that makes it look like the box is sitting on a flat surface.</p>
+<p>W końcu <code>figure</code> odpowiedzialna za cień wykorzystuje własność CSS <code>box-shadow</code> do stworzenia wrażenia że obudowa stoi na płaskiej powierzchni.</p>
 
-<h2>Bezels</h2>
+<h2>Bezels (Ramki)</h2>
 
-<p>A feature of this computer is the sloped edges around the front. These edges, which I&rsquo;ll refer to as bezels, help soften the hard corners of the box and make it look less boxy.</p>
+<p>Cechą tego komputera są nachylone krawędzie z przodu. Krawędzie, do których będę nawiązywał od tej pory jako ramki, pomagają wygładzić twarde rogi obudowy i sprawić aby wyglądała mniej jak pudełko.</p>
 
-<p>To achieve this I added some extra elements to the front <code>figure</code>, like so:</p>
+<p>Aby to osiągnąć dodam kilka dodatkowych elementów do frontowych <code>figure</code>, w taki sposób:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;figure class=&quot;front&quot;&gt;
   &lt;span class=&quot;bezel-top&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;bezel-left&quot;&gt;&lt;/span&gt;
@@ -319,13 +317,13 @@
   &lt;span class=&quot;bezel-bottom&quot;&gt;&lt;/span&gt;
 &lt;/figure&gt;
 </code></pre></div>
-<p>The <code>span</code> elements within the front figure each represent one of these bezels. With some styles added, they will look like this:</p>
+<p>Elementy <code>span</code> w środku frontowych <code>figure</code> reprezentują jedną z ramek. Po stylizacji będą wyglądały tak:</p>
 
-<p><img src="/assets/images/posts/macplus/04b-Bezels.png" alt="Bezels added to front - examples/04-Bezels/index.html"> </p>
+<p><img src="/assets/images/posts/macplus/04b-Bezels.png" alt="Bezels added to front - examples/04-Bezels/index.html"></p>
 
-<p>This example can be found in the <code>examples/04-Bezels</code> folder.</p>
+<p>Przykład może być znaleziony w folderze <code>examples/04-Bezels</code></p>
 
-<p>The following CSS positions each, and makes use of a border-width trick to create sloped edges.</p>
+<p>Następujący CSS pozycjonuje każdą z nich oraz dzięki wykrozystaniu sztuczki z <code>border-width</code> tworzymy nachylone krawędzie.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.front .bezel-top {
   border-top: 0.75em solid #f2f2f2;
   border-right: 0.5em solid transparent;
@@ -354,17 +352,17 @@
   transform: rotateZ(180deg) translateY(-10.76em);
 }
 </code></pre></div>
-<p>Each bezel has 3 borders. For the top bezel, we set a colored border on the top. We then set two <em>transparent</em> borders on the left and right sides. In CSS, when a border meets a border of another color, the line where they meet is diagonal. This means that the transparent borders result in diagonal edges to the colored border.</p>
+<p>Każda ramka ma 3 obramowania. Dla górnej ramki, ustawiliśmy pokolorwane obramowanie. Potem ustanawiamy dwie <u>przezroczyste</u> obramowania po stronie lewej i prawej. W CSS, kiedy spotkają się obramowania w dwóch kolorach, linia, w której się łączą, jest ukośna. Oznacza to, że przezroczyste obramowanie doda widoczną ukośną krawędż przy łączeniach obramowań.</p>
 
-<p>This technique is applied to each of the bezels, creating the appearance of sloped edges on each.</p>
+<p>Wykorzystujemy ów technikę przy każdej z ramek, tworząc dzieki temu efekt pochylonych krawędzi.</p>
 
-<p>The bezels also have a transform applied to rotate and position them at the side of the front figure.</p>
+<p>Ramki mają również transform aby je obrócic oraz ustawić z boku przedniej części.</p>
 
-<h2>More Details</h2>
+<h2>Więcej detali</h2>
 
-<p>With the main boxes of the computer in place we can add the various details that make it look like a Macintosh Plus, such as the screen, icon and disk drive. </p>
+<p>Z gotową główną obudową komputera możemy dodać kilka szczegółów które sprawią, że będzie wyglądał jak Macintosh Plus jak na przykład ekran, ikonka oraz stacja dyskietek.</p>
 
-<p>The front figure contains the following HTML:</p>
+<p>Przednia część zawiera ten HTML:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;figure class=&quot;front&quot;&gt;
   &lt;span class=&quot;bezel-top&quot;&gt;&lt;/span&gt;
   &lt;span class=&quot;bezel-left&quot;&gt;&lt;/span&gt;
@@ -383,19 +381,19 @@
   &lt;figure class=&quot;floppy&quot;&gt;&lt;/figure&gt;
 &lt;/figure&gt;
 </code></pre></div>
-<p>A working example can be found in the <code>examples/05-Completed</code> folder.</p>
+<p>Działający przykład znajduje się w <code>examples/05-Completed</code></p>
 
-<h3>Screen</h3>
+<h3>Ekran</h3>
 
-<p>The screen is made up of several elements, including a container, the screen itself and a &ldquo;sheen&rdquo; layer on top.</p>
+<p>Ekran zbudowany jest z kilku elementów, zawiera kontener, sam ekran oraz połyskujący efekt ekranu.</p>
 
-<p>The CSS for this makes use of CSS <code>gradients</code> to make it look inset into the front of the computer and the sheen <code>span</code> uses an almost-transparent gradient to give the screen some shininess.</p>
+<p>Efekt uzyskujemy dzięki <code>gradients</code> aby sprawić wrażenie że jest włożony w komputer a połysk jest uzyskany dzięki prawie przezroczystemu gradientowi na elemencie <code>span</code>.</p>
 
 <h3>Logo</h3>
 
-<p>The logo is made up of two parts, an image and some text. The image <code>span</code> contains a background image of the old colorful Apple logo, and the text is positioned next to it. The CSS for these can be found in the source files.</p>
+<p>Logo składa się z dwóch części: obrazka i tekstu. <code>span</code> zawiera tło z obrazkiem dawnego kolorowego loga Apple, a tekst jest ustawiony obok. CSS do ów elementów może być znaleziony w plikach źródłowych.</p>
 
-<p>To create the right look, an embedded font is added. This uses the CSS <code>font-face</code> property. There are many ways to do this, but perhaps the easiest is to use a service such as <a href="http://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel&rsquo;s @font-face generator</a> to create the following CSS:</p>
+<p>Aby stworzyć ten wygląd dodany jest wbudowany font. Wykorzustujemy własność <code>font-face</code>. Jest wiele sposobów na uzyskanie tego efektu, bodajże najłatwiejszym sposobem jest wykorzystanie serwisu <a href="http://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel’s @font-face generator</a> aby stworzyć następujący CSS:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">@font-face {
   font-family: &quot;apple_garamondregular&quot;;
   src: url(&quot;../fonts/apple_garamond-webfont.eot&quot;);
@@ -404,13 +402,13 @@
   font-style: normal;
 }
 </code></pre></div>
-<p>Font Squirrel helps by generating the various files (eot, woff, etc) that can then be placed in the project and called in within the CSS as shown.</p>
+<p>Font Squirrel pomaga nam generować różne pliki(eot, woff itd.) które mogą być umieszczone w naszym projekcie i wykorzystane w CSS jak pokazano powyżej.</p>
 
-<p>The result is a font that closely matches the original.</p>
+<p>Rezultat przypomina oryginał.</p>
 
-<h3>Floppy drive</h3>
+<h3>Stacja dyskietek</h3>
 
-<p>The floppy drive is a single element, and uses CSS borders to make it look like it&rsquo;s set into the front. The CSS that creates the effect looks like this:</p>
+<p>Stacja dyskietek jest pojedynczym elementem, wykorzystujemy obramowania CSS aby nadać jej charakterystyczny wygląd. CSS który tworzy ów efekt wygląda tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.floppy {
   height: 0.2em;
   width: 2.8em;
@@ -423,21 +421,21 @@
   border-radius: 0.25em;
 }
 </code></pre></div>
-<p>The floppy drive has a solid grey background color, and four borders. The top border is the darkest, with the bottom border being brighter to make it seem lit from above. Finally, a border-radius rounds the corners.</p>
+<p>Stacja dyskietek ma stałe szare tło oraz cztery obramowania. Górne jest najciemniejsze, dolne nieco jaśniejsze aby wyglądało na oświetlone z góry. Na koniec, <code>border-radius</code> zaokrągla krawędzie.</p>
 
-<h2>Putting the pieces together</h2>
+<h2>Składanie wszystkiego do kupy</h2>
 
-<p>Each of the pieces, when put together, look like this:</p>
+<p>Każda z części kiedy złożona w całość wygląda tak:</p>
 
-<p><img src="/assets/images/posts/macplus/05-Completed.png" alt="Completed Mac Plus - examples/05-Completed/index.html"> </p>
+<p><img src="/assets/images/posts/macplus/05-Completed.png" alt="Completed Mac Plus - examples/05-Completed/index.html"></p>
 
-<h2>Adding animation</h2>
+<h2>Dodawanie animacji</h2>
 
-<p>While what we have looks pretty good, we can properly show off the fact that it&rsquo;s a 3D object by making it move. To do this we&rsquo;ll make use of CSS <code>keyframe</code> animation.</p>
+<p>Na razie to co mamy wygląda dobrze, teraz wprawimy komputer w ruch aby podkreślić jego właściwości 3D. Aby to uzyskać wykorzystamy własność animacji CSS <code>keyframe</code>.</p>
 
-<p>In CSS, there are two types of animation. <code>Transitions</code>, in which elements on the page animate from one style or position to another, and <code>keyframes</code>, which represent a more complex series of animated steps.</p>
+<p>W CSS są dwa typy animacji. <code>Transitions (przejścia)</code>, w której elementy na stronie są animowane z jednego stylu na inny lub z jednej pozycji na drugą, <code>keyframes</code> reprezentuje bardziej złożone kroki animacji.</p>
 
-<p>A series of <code>keyframes</code> can be described as a series of percentages, with CSS describing each step. It could look something like this:</p>
+<p>Seria <code>keyframes</code> może być opisana w procentach a CSS zajmującym się opisaniem wyglądu każdego kroku. Mogłoby to wyglądać tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes back-and-forth {
   0% {
     transform: rotateY(40deg);
@@ -450,38 +448,38 @@
   }
 }
 </code></pre></div>
-<p>In this example the animation is called <strong>back-and-forth</strong>, and is made up of 3 steps. It begins rotated to an angle of 40 degrees. Then by the 40% mark, is rotated to <em>minus</em> 40 degrees. It stays at this rotation until 50%, then at 90% has returned to the original position.</p>
+<p>W tym przykładzie, animacja jest nazwana <strong>back-and-forth</strong> i składa się z trzech kroków. Rozpoczyna się od obrócenia o 40 stopni. Przy 40% jest obracane o <u>minus</u> 40 stopni. Pozostaje w tej pozycji aż do 50%, potem przy 90% wraca do pozycji wyjściowej.</p>
 
-<p>The browser automatically fills in the gaps by animating the properties. In this case it will animate the angle of rotation.</p>
+<p>Przeglądarka automatycznie wypełnia luki animując właściwości. W tym wypadku animuje stopnie rotacji.</p>
 
-<h3>Applying animation</h3>
+<h3>Zastosowanie animacji</h3>
 
-<p>To apply this animation we can use the CSS <strong>animation</strong> tag.</p>
+<p>Aby zastosować ów animację wykorzystujemy znacznik CSS <strong>animation (animacja)</strong>.</p>
 
-<p>The <code>animation</code> tag looks like this:</p>
+<p>Znacznik <code>animation</code> wygląda tak:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">animation: back-and-forth 14s ease-in-out infinite;
 </code></pre></div>
-<p>A few things are combined into one line here. It references the animation by name (&ldquo;back-and-forth&rdquo;), sets a <code>duration</code> of 14 seconds, and tells the animation to repeat indefinitely. The <code>ease-in-out</code> value refers to <code>easing</code>, which tells the browser to have the animation start and end gradually.</p>
+<p>Kilka rzeczy jest połączone w jednej linijce kodu. Nawiązuje do animacji po jej nazwie (“back-and-forth”), wyznacza <code>duration (czas trwania)</code> 14 sekund oraz mówi aby animacja trwała w nieskonczoność. <code>ease-in-out</code> nawiązuje do <code>easing</code> któro mówi przeglądarce aby animacja się stopniowo rozpoczynała oraz kończyła.</p>
 
-<p>Applying this animation to the &ldquo;positioning&rdquo; div results in something like this:</p>
+<p>Zastosowanie animacji w divie “positioning” wygląda tak:</p>
 
 <div class="codepen" data-height="680" data-type="result" data-href="HGqjp" data-user="donovanh" data-safe="true"> </div>
 
-<h2>What we learned</h2>
+<h2>Czego się nauczyliśmy</h2>
 
-<p>In creating and animating a 3D object in CSS, we covered quite a few techniques. We set the <code>perspective</code> and <code>perspective-origin</code>. We then made use of <code>transforms</code> to rotate, move and position elements, added <code>gradients</code> to give a more realistic 3D effect, and used some CSS <code>border</code> tricks to create bevels and depth. Finally we made use of <code>keyframes</code> and CSS <code>animation</code> to give the scene life.</p>
+<p>Pokryliśmy kilka technik tworząc obiekt 3D w CSS. Ustanowiliśmy <code>perspective</code> oraz <code>perspective-origin</code>. Następnie do obracania, poruszania i pozycjonowania elementów wykorzystaliśmy <code>transforms</code>, dodaliśmy <code>gradients</code> aby nadać bardziej realistyczny efekt 3D i do dodania głębi ramkom użyliśmy <code>border</code>. W końcu wykorzystaliśmy <code>keyframes</code> oraz <code>animation</code> aby tchnąć życie w naszą scenę.</p>
 
-<h3>Browser compatibility</h3>
+<h3>Kompatybilność przeglądarek</h3>
 
-<p>Not all browsers can yet handle CSS transforms. Internet Explorer will struggle, but there is hope that support will be <a href="http://caniuse.com/transforms3d">arriving in IE 11</a>. All recent versions of Chrome, Safari and Firefox will do ok. </p>
+<p>Nie wszystkie przeglądarki obsługują transformacje CSS. Internet Explorer będzie sobie słabo radził, ale jest szansa aby obsługa <a href="http://caniuse.com/transforms3d">została wprowadzona wraz z IE 11</a>. Wszystkie ówczesne wersje Chrome, Safari oraz Firefox poradzą sobie bez problemu.</p>
 
-<p><a href="http://modernizr.com/">Modernizr</a> provides a set of JavaScript tools to detect browser capabilities and can be used to show alternate content in cases where the browser cannot support a certain CSS property. In the example code, you&rsquo;ll find I&rsquo;ve made use of Modernizr to detect the presence of 3D transforms. In cases where they don&rsquo;t exist, an image is shown instead.</p>
+<p><a href="http://modernizr.com/">Modernizr</a> zawiera kilka narzędzi JavaScript do wykrywania możliwości przeglądarek i w razie konieczności pokazywania materiału zastępczego kiedy przeglądarka nie może wspierać pewnych własności CSS. W przykładowym kodzie powyżej dowiesz się, że wykorzystałem Modernizr do wykrywania obecności obsługiwanych własności 3D. W razie jakby sie nie pojawiły, pokazywane jest zdjęcie.</p>
 
-<h2>Going forward</h2>
+<h2>Brnąc do przodu</h2>
 
-<p>While the example might not seem like something you&rsquo;d use in the average web site, the techniques can be applies to all sorts of scenarios.</p>
+<p>Pomimo tego, że przykłady powyżej wydają się nieprzydatne na normalnej stronie internetowej są to jednak techniki które mogą być zastosowane w różnych scenariuszach.</p>
 
-<p>For example, CSS transforms can be used to add depth to page transitions, image carousels, logos and buttons, to name a few. CSS animations can be used to add more interesting movement and finesse to your transitions, and CSS gradients can add depth to pages without a need to use images.</p>
+<p>Na przykład, transformacje CSS mogą być wykorzystane aby nadać głębi przejsciom na stronie, karuzelom zdjęć, logom oraz przyciskom. Animacje CSS mogą być zastosowane w celu dodania interesującego ruchu oraz finezji Twoim przejściom a gradienty CSS mogą nadać głębi Twojej stronie bez konieczności wykorzystywania zdjęć.</p>
 
 <script src="http://codepen.io/assets/embed/ei.js"> </script>
 
@@ -491,7 +489,7 @@
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Mac Plus CSS&url=https%3A%2F%2Fcssanimation.rocks%2Fmacplus&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Mac Plus CSS&url=https%3A%2F%2Fcssanimation.rocks%2Fpl%2Fmacplus%2F&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -517,15 +515,11 @@
         </section>
       
       
-        <section class="translations">
-          <h3>Translations</h3>
-          <ul>
-            
-              <li><a href="/pl/macplus/">Polski (Polish)</a></li>
-            
-          </ul>
-        </section>
       
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/matchabros">Matt Chabros</a>. (<a href="/macplus/">See original</a>)</p>
+        </section>
       
       <section class="sidebar-email-signup">
         <h4>Get weekly updates</h4>
