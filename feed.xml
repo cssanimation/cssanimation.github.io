@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-04-27T21:56:09+01:00</updated>
+ <updated>2015-04-27T22:06:47+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -37,7 +37,7 @@
 
 &lt;h2&gt;Live demo and source code&lt;/h2&gt;
 
-&lt;p&gt;See the &lt;a href=&quot;http://hop.ie/mac/&quot;&gt;CSS Mac Plus online&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See the &lt;a href=&quot;https://cssanimation.rocks/mac/&quot;&gt;CSS Mac Plus online&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Full source code &lt;a href=&quot;https://github.com/donovanh/mac/archive/master.zip&quot;&gt;can be downloaded here&lt;/a&gt;, and you can view the full &lt;a href=&quot;https://github.com/donovanh/mac/blob/master/stylesheets/screen.css&quot;&gt;CSS file on Github&lt;/a&gt;.&lt;/p&gt;
 
