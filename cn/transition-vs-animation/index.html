@@ -6,25 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Transitions vs Animations - CSS Animation</title>
-  <meta name="description" content="When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the...">
+  <title>[译文]过渡效果 vs 动效 - CSS Animation</title>
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/assets/stylesheets/custom/animations_transitions.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/transition-vs-animation">
+  <link rel="canonical" href="https://cssanimation.rocks/cn/transition-vs-animation/">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@cssanimation" />
     <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="Transitions vs Animations - CSS Animation" />
+    <meta property="og:title" content="[译文]过渡效果 vs 动效 - CSS Animation" />
     <meta property="og:description" content="A description of the differences between transitions and animations in web animation." />
     <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/transitions-animations/transitions-animations.gif" />
-    <meta property="og:url" content="https://cssanimation.rocks/transition-vs-animation" />
+    <meta property="og:url" content="https://cssanimation.rocks/cn/transition-vs-animation/" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -82,30 +82,26 @@
 <section class="container page-content">
   <section class="row">
     <article class="post-content nine columns">
-      <h1 class="post-title">Transitions vs Animations</h1>
-      <p>When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let&rsquo;s discuss the differences.</p>
+      <h1 class="post-title">[译文]过渡效果 vs 动效</h1>
+      <p>当你在网页上做动画时，你会选用过渡效果还是动态效果？这是你作出选择的时候了，现在让我们来探讨一下它们的不同之处。</p>
 
-<!--more-->
+<h2>什么是过渡效果？</h2>
 
-<h2>What are Transitions?</h2>
+<p>当一个控件从一个状态过渡到另一个状态时，浏览器会在状态改变的过程中填充一连串的过渡帧。这时候控件会有一个初始状态和一个结束状态。</p>
 
-<p>A transition occurs when an element changes from one state to another, and the browser fills in that state change with a sequence of in-between frames. It has a beginning and an end state.</p>
+<p>我们最常见的过渡效果是在鼠标悬停时和页面信息展现或移出时的状态。悬停可能会在字体颜色上做一些细微的变化，而页面信息可能会从不可见渐现至可见。</p>
 
-<p>We most often see transitions used on hover states, or when information on a page is added or removed. The hover states might be a subtle change in font color, and information on the page might fade from invisible to visible.</p>
+<p>过渡效果被限制在始末两个状态，这决定了它们会缺少动效那样的细节处理，但同时它实现起来也更容易。</p>
 
-<p>Since transitions are limited to these two stages, they can lack the nuance of animations but at the same time be easier to use.</p>
+<h2>什么时候使用过渡效果？</h2>
 
-<h3>When to use them</h3>
-
-<p>If you want to change an element from one state to another smoothly, a transition is a good choice. Simple changes can usually be handled with transitions and timing functions can be used to customize the way the transition occurs.</p>
-
-<p>A transition would work well when someone hovers or taps a button:</p>
+<p>如果你想将控件从一个状态平滑地过渡到另一个状态，过渡效果是一个不错的选择。很简单的改变通常就能控制好过渡效果，时间控制器也能被用来自定义过渡效果。当访客悬停在按钮上或进行点击时，过渡效果就很好：</p>
 
 <section class="shiny demo-container tap-to-activate">
   <button>Shiny effect</button>
 </section>
 
-<p>Or when an item is added to a page:</p>
+<p>或者在页面中添加条目的时候</p>
 
 <section class="add-to-list swing demo-container">
   <ul>
@@ -115,29 +111,29 @@
   <button>Add a list item</button>
 </section>
 
-<h2>What are Animations?</h2>
+<h2>什么是动效</h2>
 
-<p>CSS Animations are a more powerful alternative to transitions. Rather than rely on a change from one beginning state to an end state, animations can be made up of as many in-between states as you like, and offer more control over how the states are animated.</p>
+<p>CSS 动效是一种能够代替过渡效果的更强大的工具。只要你喜欢，动效可以让你添加很多中间状态，并提供了更高的控制程度，而不必依赖于始末两个状态。</p>
 
-<p>Where a transition only goes from A to B, an animation can go from A, B, C to D. Or any number of stages as needed.</p>
+<p>过渡效果只能从 A 到 B，但动效能从 A 到 B 到 C 再到 D，甚至是任意数量的状态。</p>
 
-<p>Animations achieve this by using sets of <code>keyframes</code>. Where a transition can be specified with one line in the class, an animation works by referencing a set of keyframes that are described separately in the CSS.</p>
+<p>动效是通过对 <code>keyframes</code>（关键帧）的使用设置实现的。过渡效果能在一个类中的一行被指定，而动效能在 CSS 里单独用一系列关键帧被指定。</p>
 
-<h3>When to use them</h3>
+<h2>什么时候使用动效？</h2>
 
-<p>If an animation needs to run when the page loads, or is more complex than a simple A to B state change, a CSS animation might be more appropriate.</p>
+<p>如果动效需要在页面加载的时候运行，或者它比一个简单的从 A 到 B 状态的变换要更复杂，那么用 CSS 动效可能会更适合。</p>
 
-<p>Examples of this might be if you want to have an animation on the page that plays after a certain amount of time, like this blink effect on this Baymax character:</p>
+<p>这方面的例子比如你希望动效在一段时间之后播放，就像这个 Baymax 眨眼的效果：</p>
 
 <section class="demo-container baymax-container">
   <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
 </section>
 
-<p>An animation might also be a good choice if an item has to move across multiple places on the page, such as an instruction overlay with a mouse cursor point out various areas of interest on a screen.</p>
+<p>如果一个条目需要在页面中移经很多地方，动效可能也是一个不错的选择，比如鼠标悬停在屏幕中各种感兴趣的区域时，会有操作指引覆盖出现在上面。</p>
 
-<h2>Sometimes it&rsquo;s not obvious</h2>
+<h2>但有时不是那么明显就能判断</h2>
 
-<p>A recent post began as an animation, but then became a case for transitions.</p>
+<p>我最近做的一个东西起初用了动效，但后来又用回了过渡效果：</p>
 
 <div class="demo-container clocks single local bounce">
   <article class="clock station">
@@ -153,17 +149,17 @@
   </article>
 </div>
 
-<p>When I began designing this clock, I had the hands move continuously on load. This was a good case for using the <code>animation</code> property. It was to animate on load and continue forever. When I started adding more complexity, I found it made more sense to have the hands&rsquo; angles set using JavaScript.</p>
+<p>当我在开始设计这个钟的时候，我让指针通过加载来不断移动。这是一个用 <code>animation</code> （动效）的好案例，它通过加载会不断运动并永远运行下去。但我开始添加更复杂的效果时，我发现用 JavaScript 来设置指针的角度会更有意义。 </p>
 
-<p>As the hands were being moved by JavaScript, <code>transitions</code> became a better choice. When the JavaScript changes the angle of a hand, the CSS <code>transition</code> handles the change (from state A to state B) more elegantly than an animation would.</p>
+<p>指针的运动用 JavaScript 写 <code>transitions</code>（过渡效果）是一个更好的选择。当用 JavaScript 改变指针角度，CSS 过渡效果就比动效能更完美地控制其中的变化（从状态 A 到状态 B）。</p>
 
-<p>Check out this <a href="/clocks/">CSS clock tutorial</a> for more detail.</p>
+<p><a href="https://cssanimation.rocks/clocks/">点击这里</a> 可以看到更多代码细节。</p>
 
-<h2>In summary</h2>
+<h2>总结</h2>
 
-<p>Transitions for creating a smooth transition from one state to another, and animations for more complex series of movements.</p>
+<p>过渡效果可以从一个状态平滑地过渡到另一个状态，而动效可以做一系列更复杂的运动。</p>
 
-<p>Transitions are generally easier to create and manage, and apply to the majority of situations. If you need more control over animating an element through a series of steps, or if the animation needs to begin on load, then an animation with keyframes might be the better choice.</p>
+<p>过渡效果一般更易被创建和管理，并适用于大部分情况。如果你需要对一个元素有更高的控制程度，那就可以做一系列的动效步骤；或者当需要在开始加载时就出现动效，用关键帧完成动效会是更好的选择。</p>
 
 
       <section class="quote-container">
@@ -171,7 +167,7 @@
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Transitions vs Animations&url=https%3A%2F%2Fcssanimation.rocks%2Ftransition-vs-animation&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=[译文]过渡效果 vs 动效&url=https%3A%2F%2Fcssanimation.rocks%2Fcn%2Ftransition-vs-animation%2F&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -193,15 +189,11 @@
     <aside class="post-aside three columns">
       
       
-        <section class="translations">
-          <h3>Translations</h3>
-          <ul>
-            
-              <li><a href="/cn/transition-vs-animation/">中国 (Chinese)</a></li>
-            
-          </ul>
-        </section>
       
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/ethonlau">Ethon Lau</a>. (<a href="/transition-vs-animation/">See original</a>)</p>
+        </section>
       
       <section class="sidebar-email-signup">
         <h4>Get weekly updates</h4>
