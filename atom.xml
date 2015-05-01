@@ -4,22 +4,13 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-01T10:20:25+01:00</updated>
+ <updated>2015-05-01T21:47:17+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
- 
- <entry>
-   <title>WWDC Logo CSS</title>
-   <link href="https://cssanimation.rocks/wwdc15"/>
-   <updated>2015-04-30T00:00:00+01:00</updated>
-   <id>https://cssanimation.rocks/wwdc15</id>
-   <content type="html">&lt;!--more--&gt;
-</content>
- </entry>
  
  <entry>
    <title>Mac Plus CSS</title>
