@@ -4,13 +4,296 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-01T21:47:17+01:00</updated>
+ <updated>2015-05-02T21:18:38+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>WWDC Logo CSS</title>
+   <link href="https://cssanimation.rocks/wwdc15"/>
+   <updated>2015-04-30T00:00:00+01:00</updated>
+   <id>https://cssanimation.rocks/wwdc15</id>
+   <content type="html">&lt;p&gt;Every year, Apple runs a special event for their developers. Dubbed WWDC, it&amp;rsquo;s a chance for iOS and OSX designers and developers to learn all about what cool stuff Apple&amp;rsquo;s up to and what to expect in the new versions of the mobile and desktop software.&lt;/p&gt;
+
+&lt;p&gt;With each year&amp;rsquo;s event, they create a beautiful invitation that goes out a few weeks prior. This year I was quite taken with the overlapping circles and shapes, and decided to have a go making it in HTML and CSS.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2&gt;WWDC 15 invitation&lt;/h2&gt;
+
+&lt;p&gt;Apple&amp;rsquo;s icons often use overlapping colours and shapes, like a &lt;a href=&quot;https://cssanimation.rocks/demo/photos/&quot;&gt;iOS 7 Photos icon&lt;/a&gt;. This year the invitation to WWDC included this image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/wwdc15.jpg&quot; alt=&quot;WWDC 15 invitation logo&quot; style=&quot;max-width:600px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s made up of a set of overlapping, semi-transparent shapes. Perfect to recreate with some HTML and CSS.&lt;/p&gt;
+
+&lt;h2&gt;Planning: HTML&lt;/h2&gt;
+
+&lt;p&gt;Taking on a complex piece like this involves a bit of planning. For this example, I broke the layout down into it&amp;rsquo;s parts.&lt;/p&gt;
+
+&lt;p&gt;The logo is made up of 3 sets of shapes. The basis is made up of 8 large circles, so I began by listing them out:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;large circle one&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle three&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle four&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle five&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle six&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle seven&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large circle eight&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I&amp;rsquo;m using multiple classes here so that I can write CSS that applies to all &lt;code&gt;large&lt;/code&gt; elements, and CSS that applies for all &lt;code&gt;circle&lt;/code&gt; elements, etc. The more we can reuse the CSS, the simpler it should be.&lt;/p&gt;
+
+&lt;p&gt;We now have eight smaller shapes that sit in front and sit out at the edge of the large circles. These shapes are made up of four circles and four &amp;ldquo;squircles&amp;rdquo;, squares with a rounded edge. I&amp;rsquo;ll add some HTML for them:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;small circle one&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small squircle two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small circle three&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small squircle four&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small circle five&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small squircle six&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small circle seven&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;small squircle eight&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We have the eight smaller shapes listed here, with alternating &lt;code&gt;circle&lt;/code&gt; and &lt;code&gt;squircle&lt;/code&gt; classes. I&amp;rsquo;ve labelled each set with numbers one through eight. This will be useful when we position the shapes and give them colours.&lt;/p&gt;
+
+&lt;p&gt;Lastly we have two large squircles in the middle of the logo.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;large squircle one&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;large squircle two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Again these are of the &lt;code&gt;large&lt;/code&gt; size and the &lt;code&gt;squircle&lt;/code&gt; shape. &lt;/p&gt;
+
+&lt;h2&gt;Logo and content&lt;/h2&gt;
+
+&lt;p&gt;Before moving on to style this HTML we&amp;rsquo;ll add some content for the central squircle.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;large squircle two&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;
+    &amp;lt;svg viewBox=&amp;quot;0 0 160 164&amp;quot; xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot;&amp;gt;
+   &amp;lt;g&amp;gt;
+    &amp;lt;g id=&amp;quot;svg_1&amp;quot;&amp;gt;
+     &amp;lt;path d=&amp;quot;m127.805969,90.003128c0.224838,24.213104 21.241287,32.270615 21.474121,32.373459c-0.177704,0.56826 -3.358078,11.482742 -11.072464,22.756622c-6.668747,9.746841 -13.590027,19.457977 -24.493088,19.659103c-10.713348,0.197403 -14.158287,-6.353043 -26.406677,-6.353043c-12.24469,0 -16.072174,6.151901 -26.213551,6.550446c-10.52422,0.398254 -18.538303,-10.539917 -25.26247,-20.251053c-13.740021,-19.864456 -24.24024,-56.132286 -10.1411,-80.613663c7.004152,-12.157551 19.521101,-19.85622 33.10713,-20.053638c10.334515,-0.197132 20.089069,6.952717 26.406689,6.952717c6.313614,0 18.167473,-8.59832 30.628998,-7.335548c5.21682,0.217129 19.860519,2.1073 29.263641,15.871029c-0.75766,0.469692 -17.472931,10.200527 -17.291229,30.443592m-20.134499,-59.456692c5.587379,-6.7633 9.348007,-16.178439 8.322067,-25.546439c-8.053787,0.32369 -17.792625,5.36682 -23.569427,12.126399c-5.177124,5.985922 -9.711121,15.566772 -8.48777,24.749359c8.976891,0.69453 18.147476,-4.561718 23.73513,-11.329308&amp;quot;/&amp;gt;
+    &amp;lt;/g&amp;gt;
+   &amp;lt;/g&amp;gt;
+  &amp;lt;/svg&amp;gt;
+  &amp;lt;h1&amp;gt;The epicenter of change.&amp;lt;/h1&amp;gt;
+  &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;WWDC&amp;lt;/strong&amp;gt;15&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we have an inline SVG image and the text from the invitation. The font used on the original image is &amp;ldquo;San Francisco&amp;rdquo;. This font isn&amp;rsquo;t standard yet on OSX so for now I&amp;rsquo;ll replace it with Helvetica Neue Light. &lt;/p&gt;
+
+&lt;h2&gt;Styling the circles and squircles&lt;/h2&gt;
+
+&lt;p&gt;The first thing we want to set up is the &lt;code&gt;circle&lt;/code&gt; and &lt;code&gt;squircle&lt;/code&gt; elements.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.circle, .squircle {
+  border-top: 0.1em solid rgba(255,255,255,0.4);
+  height: 12.5em;
+  position: absolute;
+  width: 12.5em;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Most of the shapes are of the larger variety so I&amp;rsquo;ll style them at the larger size by default. Each of the elements uses position &lt;code&gt;absolute&lt;/code&gt; and has a light white border on top. This border might not match exactly with the invitation image but helps give the shapes a little sheen.&lt;/p&gt;
+
+&lt;p&gt;Next we&amp;rsquo;ll set styles for the large circles. Using a &lt;code&gt;border-radius&lt;/code&gt; of 50%, we can create the circle shape. We then position them using &lt;code&gt;left&lt;/code&gt; and &lt;code&gt;top&lt;/code&gt; values.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.circle {
+  border-radius: 50%;
+  box-shadow: 0 1em 2em rgba(0,0,0,0.5);
+  left: calc(50% - 6.25em);
+  top: calc(50% - 12.5em);
+  transform-origin: 50% 12.5em;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At this point, all the circles are in the same place! But the trick here is in the &lt;code&gt;transform-origin&lt;/code&gt; value. When you rotate an object in HTML using a &lt;code&gt;transform&lt;/code&gt;, it rotates around a point called the &lt;code&gt;transform-origin&lt;/code&gt;. This point is usually in the middle (50%, 50%) of the element.&lt;/p&gt;
+
+&lt;p&gt;In this case we&amp;rsquo;ve moved this point down to the bottom of the circles. When we rotate the circles, they&amp;rsquo;ll fan out into the circular shape in the logo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/step1.png&quot; alt=&quot;Circles fanned out into position&quot; style=&quot;max-width:400px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s add the CSS to position each of these circles. Looking carefully at the invitation image, we can see that the circle sitting behind all the rest is on the bottom-left. With this in mind we&amp;rsquo;ll make sure the first circle in the HTML is rotated around to that position.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.one {
+  background: rgba(16, 63, 236, 0.75);
+  transform: rotateZ(225deg);
+}
+.two {
+  background: rgba(37, 172, 162, 0.75);
+  transform: rotateZ(180deg);
+}
+.three {
+  background: rgba(233, 124, 32, 0.75);
+  transform: rotateZ(135deg);
+}
+.four {
+  background: rgba(235, 67, 35, 0.75);
+  transform: rotateZ(90deg);
+}
+.five {
+  background: rgba(190, 28, 65, 0.75);
+  transform: rotateZ(45deg);
+}
+.six {
+  background: rgba(208, 57, 159, 0.75);
+  transform: rotateZ(0);
+}
+.seven {
+  background: rgba(150, 32, 198, 0.75);
+  transform: rotateZ(-45deg);
+}
+.eight {
+  background: rgba(95, 33, 203, 0.75);
+  transform: rotateZ(-90deg);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Each of these styles has a colour and a &lt;code&gt;transform&lt;/code&gt; to rotate it into position. This animation shows how all the circles are placed at the top-middle of the screen, then rotated into place.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cssanimation.rocks/demo/wwdc15/&quot;&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/circles.gif&quot; alt=&quot;Circles fanning out into position&quot; style=&quot;max-width:400px&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;With the circles in place, we can style the other shapes. Firstly, a &lt;code&gt;squircle&lt;/code&gt; is a &lt;code&gt;circle&lt;/code&gt; but with a different border radius.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.squircle {
+  border-radius: 25%;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When we positioned the circles, we specified a rotation and a colour. Happily enough, the smaller shapes can use this same CSS too. We&amp;rsquo;ll first need to give these &lt;code&gt;small&lt;/code&gt; shapes some styles of their own.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.small {
+  width: 4em;
+  height: 4em;
+  left: calc(50% - 2em);
+  top: calc(50% - 15em);
+  transform-origin: 50% 15em;
+  box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.2);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We set up these shapes to be smaller and position them a greater distance up from the middle. By using the same &lt;code&gt;transform-origin&lt;/code&gt; trick, the &lt;code&gt;rotate&lt;/code&gt; transforms from earlier will put them into the correct position without need for any more CSS.&lt;/p&gt;
+
+&lt;h3&gt;Small squircles&lt;/h3&gt;
+
+&lt;p&gt;The small &lt;code&gt;squircle&lt;/code&gt; shapes are the wrong angle. They need to be rotated a further 45 degrees.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/step3.png&quot; alt=&quot;Squircles in the wrong place&quot; style=&quot;max-width:400px&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;There are a couple of ways we could do this. We could add an extra element to each &lt;code&gt;squircle&lt;/code&gt; and add a transform, or we could use a &lt;a href=&quot;/pseudo-elements/&quot;&gt;pseudo-element&lt;/a&gt; in the CSS. Either way is good but I thought it would be interesting to handle it in the CSS.&lt;/p&gt;
+
+&lt;p&gt;First we remove the background, border and box shadow from the small squircles.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.small.squircle {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can now use the &lt;code&gt;::after&lt;/code&gt; pseudo-element to create a new squircle within each, and rotate them 45 degrees.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.small.squircle::after {
+  background: red;
+  border-radius: 25%;
+  box-shadow: -0.25em 0.25em 0.5em rgba(0,0,0,0.2);
+  content: &amp;quot;&amp;quot;;
+  height: 100%;
+  position: absolute;
+  transform: rotateZ(-45deg);
+  width: 100%;
+}
+
+.small.squircle.two::after {
+  background: rgba(37, 172, 162, 0.75);
+}
+.small.squircle.four::after {
+  background: rgba(235, 67, 35, 0.75);
+}
+.small.squircle.six::after {
+  background: rgba(208, 57, 159, 0.75);
+}
+.small.squircle.eight::after {
+  background: rgba(95, 33, 203, 0.75);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We should now have both the large circles and the smaller shapes in place.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/step2.png&quot; alt=&quot;Circles and squircles oh my&quot; style=&quot;max-width:400px&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Content squircles&lt;/h2&gt;
+
+&lt;p&gt;The last piece of the image is the two squircles that contain the content. Let&amp;rsquo;s position them in the middle and give them a slightly transparent dark colour.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.large.squircle {
+  background: rgba(30, 7, 66, 0.65);
+  border: none;
+  height: 15em;
+  left: calc(50% - 7.5em);
+  position: absolute;
+  top: calc(50% - 7.5em);
+  transform: none;
+  width: 15em;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can then rotate the first of these squircles (the one that sits behind the squircle containing the content).&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.large.squircle.one {
+  transform: rotateZ(45deg);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://cssanimation.rocks/demo/wwdc15/&quot;&gt;&lt;img src=&quot;/assets/images/posts/wwdc15/step4.png&quot; alt=&quot;Finished WWDC invitation graphic&quot; style=&quot;max-width:400px&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Adding animation&lt;/h2&gt;
+
+&lt;p&gt;The original invitation image is not animated, but this site is called &lt;a href=&quot;https://cssanimation.rocks&quot;&gt;CSS Animation Rocks&lt;/a&gt; after all, so let&amp;rsquo;s try some animation.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to make each of the sets of circles and squircles spin. To do this we can wrap each in a &lt;code&gt;span&lt;/code&gt; and apply an animation to the &lt;code&gt;span&lt;/code&gt; wrapper.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;span class=&amp;quot;large-circles&amp;quot;&amp;gt;
+  &amp;lt;!-- Large Circles here ... --&amp;gt;
+&amp;lt;/span&amp;gt;
+&amp;lt;span class=&amp;quot;small-shapes&amp;quot;&amp;gt;
+  &amp;lt;!-- Small Shapes here... --&amp;gt;
+&amp;lt;/span&amp;gt;
+  &amp;lt;!-- Squircles --&amp;gt;
+&amp;lt;span class=&amp;quot;content-squircle&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;large squircle one&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;First we position these &lt;code&gt;span&lt;/code&gt; elements so that they don&amp;rsquo;t break the layout.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;span {
+  display: block;
+  height: 20em;
+  left: calc(50% - 10em);
+  position: absolute;
+  top: calc(50% - 10em);
+  width: 20em;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This places the &lt;code&gt;span&lt;/code&gt; wrappers in the middle of the page.&lt;/p&gt;
+
+&lt;p&gt;Next we will apply animations to each of these three &lt;code&gt;span&lt;/code&gt; elements.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.large-circles {
+  animation: spin 10s linear infinite;
+}
+
+.small-shapes {
+  animation: spin 30s linear infinite;
+}
+
+.content-squircle {
+  animation: spin 20s linear infinite;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We&amp;rsquo;re using the same set of keyframes each time, but changing the &lt;code&gt;animation-duration&lt;/code&gt; of each. I&amp;rsquo;ve chosen 10 seconds, 20 seconds and 30 seconds so that they&amp;rsquo;ll line up every minute.&lt;/p&gt;
+
+&lt;p&gt;With the &lt;code&gt;animation&lt;/code&gt; property in place, let&amp;rsquo;s put together the &lt;code&gt;keyframes&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This starts with zero rotation and finishes the animation having rotated around 360 degrees. &lt;a href=&quot;https://cssanimation.rocks/demo/wwdc15/&quot;&gt;See it in action in this demo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Reusing CSS&lt;/h2&gt;
+
+&lt;p&gt;This is a fun experiment in creating overlapping shapes using CSS but one thing that I found most helpful was the way the CSS was reused in some places. Rotating both the circles and the smaller shapes was handled by the same CSS, and the animations all used one set of keyframes. This can be a good way to keep your CSS files small and make sure they load quickly.&lt;/p&gt;
+
+&lt;h2&gt;Prefixes&lt;/h2&gt;
+
+&lt;p&gt;When creating this example, I used &lt;a href=&quot;https://github.com/postcss/autoprefixer&quot;&gt;autoprefixer&lt;/a&gt; to avoid having to think about adding browser prefixes. Do keep this in mind if you&amp;rsquo;re using &lt;code&gt;transitions&lt;/code&gt;, &lt;code&gt;animations&lt;/code&gt; or &lt;code&gt;transforms&lt;/code&gt; in production.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Mac Plus CSS</title>
