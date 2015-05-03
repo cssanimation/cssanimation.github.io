@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-02T22:58:02+01:00</updated>
+ <updated>2015-05-03T09:30:14+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -17,9 +17,9 @@
    <link href="https://cssanimation.rocks/wwdc15"/>
    <updated>2015-04-30T00:00:00+01:00</updated>
    <id>https://cssanimation.rocks/wwdc15</id>
-   <content type="html">&lt;p&gt;Every year, Apple runs a special event for their developers. Dubbed WWDC, it&amp;rsquo;s a chance for iOS and OSX designers and developers to learn all about what cool stuff Apple&amp;rsquo;s up to and what to expect in the new versions of the mobile and desktop software.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Every year, Apple runs a special event for their developers. &lt;a href=&quot;https://developer.apple.com/wwdc/&quot;&gt;WWDC&lt;/a&gt; (Apple&amp;rsquo;s Worldwide Developer Conference) is a chance for iOS and OSX designers and developers to learn all about what cool stuff Apple&amp;rsquo;s up to and what to expect in the new versions of the mobile and desktop software.&lt;/p&gt;
 
-&lt;p&gt;With each year&amp;rsquo;s event, they create a beautiful invitation that goes out a few weeks prior. This year I was quite taken with the overlapping circles and shapes, and decided to have a go making it in HTML and CSS.&lt;/p&gt;
+&lt;p&gt;With each year&amp;rsquo;s event, they create a beautiful invitation. This year I was quite taken with the overlapping circles and shapes, and decided to have a go making it in HTML and CSS.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
