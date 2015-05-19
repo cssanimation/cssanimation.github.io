@@ -1,0 +1,13 @@
+<p>“Element A is X pixels wide, with a red border” as opposed to “move this thing from a to b”.</p>
+
+<p>Still, there are two ways CSS allows us to animate. JavaScript is great but I tend to try to use CSS when possible before reaching for the JS for more advanced stuff.</p>
+
+<p>1) Transitions</p>
+
+<p>CSS has some state changes built-in, in the form of pseudo-class selectors. “Hover”, “focus”, “empty”, even “nth-child” are all states that involve change. Someone hovers over an element, tabs to it, deletes something from it or a list item becomes the first on a list. When this happens, we can add styles to this version of the element.</p>
+
+<p>When this happens, the change on hover or when the element is emptied is sudden. To bring animation in, we add a “transition” property to the element. This transition tells it how to animate from the normal state to hover, etc.</p>
+
+<p>2) Animations</p>
+
+<p>Animations don’t rely on a change of state, they can run straight away and we can control them in greater detail. </p>

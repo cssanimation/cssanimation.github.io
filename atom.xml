@@ -4,13 +4,34 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-11T13:22:01+01:00</updated>
+ <updated>2015-05-19T13:47:19+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Thinking</title>
+   <link href="https://cssanimation.rocks/thinking"/>
+   <updated>2015-05-19T00:00:00+01:00</updated>
+   <id>https://cssanimation.rocks/thinking</id>
+   <content type="html">&lt;p&gt;“Element A is X pixels wide, with a red border” as opposed to “move this thing from a to b”.&lt;/p&gt;
+
+&lt;p&gt;Still, there are two ways CSS allows us to animate. JavaScript is great but I tend to try to use CSS when possible before reaching for the JS for more advanced stuff.&lt;/p&gt;
+
+&lt;p&gt;1) Transitions&lt;/p&gt;
+
+&lt;p&gt;CSS has some state changes built-in, in the form of pseudo-class selectors. “Hover”, “focus”, “empty”, even “nth-child” are all states that involve change. Someone hovers over an element, tabs to it, deletes something from it or a list item becomes the first on a list. When this happens, we can add styles to this version of the element.&lt;/p&gt;
+
+&lt;p&gt;When this happens, the change on hover or when the element is emptied is sudden. To bring animation in, we add a “transition” property to the element. This transition tells it how to animate from the normal state to hover, etc.&lt;/p&gt;
+
+&lt;p&gt;2) Animations&lt;/p&gt;
+
+&lt;p&gt;Animations don’t rely on a change of state, they can run straight away and we can control them in greater detail. &lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>WWDC 2015</title>
