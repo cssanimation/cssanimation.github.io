@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-22T23:13:24+01:00</updated>
+ <updated>2015-05-22T23:24:47+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -176,7 +176,7 @@ c-0.1,2.4-2.7,4.8-4.9,5.9c-32.2,15.3-64.5,30.3-96.8,45.4c-13.9,6.5-27.7,13.1-41.
   animation-name: layer3;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This applies each of those three sets of keyframes to the right layer.&lt;/p&gt;
+&lt;p&gt;This applies each of those three sets of keyframes to the correct layer.&lt;/p&gt;
 
 &lt;section class=&quot;demo-container animated&quot;&gt;
   &lt;svg width=&quot;100%&quot; height=&quot;100%&quot; x=&quot;0px&quot; y=&quot;0px&quot; viewBox=&quot;0 0 313.3 321.4&quot; style=&quot;enable-background:new 0 0 313.3 321.4;&quot; xml:space=&quot;preserve&quot;&gt;
