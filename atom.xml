@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-22T23:32:31+01:00</updated>
+ <updated>2015-05-22T23:43:10+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -19,7 +19,7 @@
    <id>https://cssanimation.rocks/buffer</id>
    <content type="html">&lt;p&gt;I love finding examples of subtle animation in websites. Recently, when I was logging into &lt;a href=&quot;https://bufferapp.com&quot;&gt;Buffer&lt;/a&gt;, I noticed a nice loading effect in their logo. Here&amp;rsquo;s how to recreate it using SVG and CSS.&lt;/p&gt;
 
-&lt;h2&gt;Buffer&amp;rsquo;s loading icon&lt;/h2&gt;
+&lt;h2&gt;Indicating activity&lt;/h2&gt;
 
 &lt;p&gt;When something takes longer than expected, it&amp;rsquo;s a nice idea to include some visual feedback to tell your visitor that something is happening. One way is to have a subtle animation, or loading animation, on the page. Buffer&amp;rsquo;s approach is to animate their logo:&lt;/p&gt;
 
