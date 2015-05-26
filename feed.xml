@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-25T13:22:40+01:00</updated>
+ <updated>2015-05-26T12:52:59+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -47,7 +47,7 @@
 
 &lt;p&gt;Before creating an SVG I spent a while trying to create the Buffer logo using CSS. A similar effect can be seen on the &lt;a href=&quot;https://get.fabric.io/&quot;&gt;Fabric&lt;/a&gt; landing page, with 3 squares animating into place using CSS. Unfortunately the more subtle details in the Buffer layers meant it was too tricky, so I turned to SVG instead.&lt;/p&gt;
 
-&lt;p&gt;SVG (Scaleable Vector Graphics) is a type of vector image file. The files are made up of a series of paths, are infinitely scaleable and can be very efficient. There are various tools used to create them, including Sketch, Affinity Design, and Adobe Illustrator.&lt;/p&gt;
+&lt;p&gt;SVG (Scaleable Vector Graphics) is a type of vector image file. The files are made up of a series of paths, are infinitely scaleable and can be very efficient. There are various tools used to create them, including Sketch, Affinity Designer, and Adobe Illustrator.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/posts/buffer/image_trace.png&quot; alt=&quot;Tracing the image using illustrator&quot;&gt;&lt;/p&gt;
 
