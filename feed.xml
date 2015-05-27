@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-05-27T10:56:13+01:00</updated>
+ <updated>2015-05-27T16:34:46+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;When the loading is complete, the animated GIF is swapped out for a static PNG version of the logo.&lt;/p&gt;
 
-&lt;p&gt;It&amp;rsquo;s hard to make an animation in GIF format look just the same as a PNG, as they&amp;rsquo;re compressed differently, so we see a slight &amp;ldquo;jump&amp;rdquo; as the two are switched.&lt;/p&gt;
+&lt;p&gt;It can be tricky to cleanly swap an animated GIF with a static image, and in this case we see a slight &amp;ldquo;jump&amp;rdquo; as the two are switched.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s see if we can get around this by creating the animation and finished state using CSS.&lt;/p&gt;
 
