@@ -4,13 +4,565 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-07-06T21:29:44+01:00</updated>
+ <updated>2015-07-08T08:44:08+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
    <email>hello@cssanimation.rocks</email>
  </author>
 
+ 
+ <entry>
+   <title>Portal CSS</title>
+   <link href="https://cssanimation.rocks/portal"/>
+   <updated>2015-07-08T00:00:00+01:00</updated>
+   <id>https://cssanimation.rocks/portal</id>
+   <content type="html">&lt;p&gt;You don&amp;rsquo;t need JavaScript to create impressive 3D projects in the web browser. In this post I will show how to create and animate a Portal-inspired scene using only CSS.&lt;/p&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;http://hop.ie/portal/&quot;&gt;online Portal CSS demo&lt;/a&gt;, and download the &lt;a href=&quot;https://github.com/donovanh/portal&quot;&gt;source on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Portal Orientation Video No. 1&lt;/h2&gt;
+
+&lt;p&gt;As an example to show the various stages of creating, styling and then animating a 3D scene, this post will aim to recreate a scene from the &lt;a href=&quot;http://www.youtube.com/watch?v=gr_9Fw_gC4I&quot;&gt;Portal Training Video&lt;/a&gt;. In particular, the stylised, cartoony look of the first part of the video in which a silhouetted character jumps through a portal and emerges from the other side. This is the original video:&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;
+  &lt;iframe src=&quot;http://www.youtube.com/embed/V5paXrfkYmI&quot; width=&quot;720&quot; height=&quot;405&quot; data-height=&quot;405&quot; frameborder=&quot;0&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This video blew my mind when it was first released. Portal (which was developed from &lt;a href=&quot;http://en.wikipedia.org/wiki/Narbacular_Drop&quot;&gt;Narbacular Drop&lt;/a&gt;) introduced a fun twist on the 3D platform genre.&lt;/p&gt;
+
+&lt;p&gt;The isometric, cartoony graphics in the introduction video are very different from the game yet manage to capture some of it&amp;rsquo;s style. In this post I will see if this cartoony style can be reproduced using nothing but HTML and CSS.&lt;/p&gt;
+
+&lt;p&gt;In particular, this is the scene that will be created:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/video.jpg&quot; alt=&quot;Portal video screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;A quick note on prefixes&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve removed the prefixed versions of rules in the following CSS. I would recommend either using something like &lt;a href=&quot;http://leaverou.github.io/prefixfree/&quot;&gt;prefix free&lt;/a&gt; or &lt;a href=&quot;http://sass-lang.com/&quot;&gt;SASS&lt;/a&gt; to manage these for you. Otherwise, be aware that most browser prefixes will need to applied. Full versions of the CSS and SASS can be found &lt;a href=&quot;https://github.com/donovanh/portal&quot;&gt;on Github&lt;/a&gt; along with the HTML.&lt;/p&gt;
+
+&lt;h3&gt;There&amp;rsquo;s science to be done&lt;/h3&gt;
+
+&lt;p&gt;The following project has been developed and tested primarily in Chrome. It uses CSS that won&amp;rsquo;t work properly in Internet Explorer. It covers some interesting 3D CSS techniques that while they aren&amp;rsquo;t yet mainstream, can prove useful in other front-end development.&lt;/p&gt;
+
+&lt;h2&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;We need to set a scene in which we can build our 3D creation. To do this we&amp;rsquo;ll need to use an HTML element and give it the needed properties that tell the browser to expect 3D content within it. Start with some HTML:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;article class=&amp;quot;container&amp;quot;&amp;gt;...&amp;lt;/article&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this case the container is an &lt;code&gt;article&lt;/code&gt; tag. In HTML5, &lt;em&gt;article&lt;/em&gt; represents a standalone piece of content that could be reproduced elsewhere and still make sense.&lt;/p&gt;
+
+&lt;p&gt;The first property to apply is &lt;a href=&quot;http://docs.webplatform.org/wiki/css/properties/perspective&quot;&gt;perspective&lt;/a&gt;. This property takes a value in pixels, and represents the depth of the 3D scene. A smaller value will produce a more dramatic effect, and it&amp;rsquo;s usual to set it somewhere betweeh 800 and 1,200 pixels.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/perspective.gif&quot; alt=&quot;Alternating between a perspective value of 900 pixels and 2000 pixels&quot; class=&quot;bordered centered&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this scene to feel like it&amp;rsquo;s a large room, we will set the perspective value quite high at 2,600 pixels. Ignoring the various browser prefixes, we use the following:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;article.container {
+  perspective: 2600px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Vanishing point&lt;/h3&gt;
+
+&lt;p&gt;The container for the scene has a depth, so the next step is to determine the viewing angle. By adjusting the &lt;a href=&quot;http://docs.webplatform.org/wiki/css/properties/perspective-origin&quot;&gt;perspective-origin&lt;/a&gt; property, we can establish the scene&amp;rsquo;s vanishing point, and determine whether we&amp;rsquo;re looking down at the object or from the side.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.container {
+  perspective-origin: 50% -1400px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;perspective-origin&lt;/code&gt; property takes two values, a horizontal and a vertical offset. In this case we&amp;rsquo;re setting it half-way across the scene, and 1,400 pixels up. This will result in our point of view being above the object, looking down.&lt;/p&gt;
+
+&lt;p&gt;To determine these values, I adjusted the value in the Chrome web inspector panel and judged it by eye. When setting up your scene, your value might be higher or lower than this. It will depend on the effect you want to convey. Also keep in mind that this value can be animated, creating some interesting perspective-change effects.&lt;/p&gt;
+
+&lt;h3&gt;No vectors, Victor&lt;/h3&gt;
+
+&lt;p&gt;The objects we position in HTML are normal HTML elements. They have a width, height, and are rectangular. This means that as you build a 3D object, you place each rectangle in place. This differs from some other methods that involve describing points and lines to create shapes. It also means that there aren&amp;rsquo;t as many primatives, such as circles or teapots, to draw upon.&lt;/p&gt;
+
+&lt;p&gt;The HTML elements are placed within the 3D scene using the &lt;code&gt;transform&lt;/code&gt; property. &lt;/p&gt;
+
+&lt;h3&gt;Transformin&amp;rsquo;&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code&gt;transform&lt;/code&gt; property consists of a series of adjustments to the HTML element. These adjustments can take the form of &lt;code&gt;translate&lt;/code&gt; to move the element, &lt;code&gt;rotate&lt;/code&gt; to adjust it&amp;rsquo;s angle, &lt;code&gt;skew&lt;/code&gt; and even &lt;code&gt;scale&lt;/code&gt;. Each of these can be stacked to create more complex transforms, for example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.example {
+  transform: rotateY(45deg) translateZ(-100px);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This rule will rotate an element 45 degrees around the Y axis, then move it back 100 pixels on the Z axis. The effect would look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/transform.png&quot; alt=&quot;A transform in action&quot; class=&quot;bordered centered&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Transform origin property&lt;/h3&gt;
+
+&lt;p&gt;When rotating elements around the place, it&amp;rsquo;s worth keeping in mind that the transforms have an origin that can be set. The &lt;a href=&quot;http://docs.webplatform.org/wiki/css/properties/transform-origin&quot;&gt;transform origin&lt;/a&gt; is a point referred to by specifying the X, Y and Z values. This is the default:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.default-origin {
+  transform-origin: 50% 50% 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When building this example I kept the default but it&amp;rsquo;s worth knowing that it&amp;rsquo;s there.&lt;/p&gt;
+
+&lt;h2&gt;Let&amp;rsquo;s build&lt;/h2&gt;
+
+&lt;p&gt;With the scene set, we can start putting together our 3D masterpiece. When beginning to build 3D objects with HTML and CSS, it&amp;rsquo;s worth taking a moment to understand how this approach differs from other 3D software.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;section class=&amp;quot;stage&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;shadow&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;back-left&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;back-right&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;platform-left&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;platform-right&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;pit-left&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;pit-right&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&amp;quot;pit-back&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above includes a &lt;em&gt;stage&lt;/em&gt; section, which we will be using to contain all the elements. A set of divs within the stage section form the main parts of the structure. They take the form of back pieces, platforms, the sides of the pit, and a shadow to place underneath them.&lt;/p&gt;
+
+&lt;p&gt;When I started building this scene, I tried to place the walls directly onto the stage, rotating it and adjusting its position. However since the scene is being viewed from an isometric angle, an easier approach is to place the parts of the scene and then rotate the entire scene 45 degrees at once.&lt;/p&gt;
+
+&lt;p&gt;With that in mind, the HTML elements are transformed into place according to the following sketch:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/sketch.png&quot; alt=&quot;Plan view of the scene&quot; class=&quot;centered&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As the sketch shows, the &lt;em&gt;back-left&lt;/em&gt; piece is aligned to the left, but the &lt;em&gt;back-right&lt;/em&gt; piece is right in front of the viewer. To adjust for this, we&amp;rsquo;ll rotate the entire stage 45 degrees later.&lt;/p&gt;
+
+&lt;p&gt;Before applying transforms however, we need to give the divs some shared properties:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Each div will be positioned absolutely, and the &lt;code&gt;transform-style&lt;/code&gt; property to instruct the browser that 3D transforms are to be applied in relation to the perspective we set earlier.&lt;/p&gt;
+
+&lt;p&gt;With this done we can start positioning divs:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .back-left {
+  background-color: #6b522b;
+  border-left: 6px solid #574625;
+  border-top: 6px solid #8a683d;
+  height: 120px;
+  transform: rotateY(90deg) translateX(-256px);
+  width: 500px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The above rules describe a height of 500 pixels, which is the side length of our 3D scene, a height of 120 pixels and a light brown background colour. The div is then rotated 90 degrees and pushed back along the X axis. The div has a 6 pixel border applied to create the illusion of depth.&lt;/p&gt;
+
+&lt;p&gt;A similar transform is applied to the &lt;em&gt;back-right&lt;/em&gt; div:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .back-right {
+  background-color: #9c7442;
+  border-right: 6px solid #78552c;
+  border-top: 6px solid #b5854a;
+  height: 120px;
+  transform: translateX(253px) translateZ(3px);
+  width: 446px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This div is a little smaller, as it looks like the room in the original Portal video is not quite square.&lt;/p&gt;
+
+&lt;p&gt;Next, add in some platforms and the sides of the pit:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .platform-left {
+  background-color: #bcb3a8;
+  border-bottom: 6px solid #857964;
+  height: 220px;
+  transform: rotateX(90deg) translateY(396px) translateX(253px) translateZ(-13px);
+  width: 446px;
+}
+.stage .platform-right {
+  background-color: #bcb3a8;
+  border-bottom: 6px solid #847660;
+  border-right: 6px solid #554c3d;
+  height: 164px;
+  transform: rotateX(90deg) translateY(88px) translateX(253px) translateZ(-41px);
+  width: 446px;
+}
+.stage .pit-left {
+  background-color: #4d4233;
+  height: 800px;
+  transform: translate3D(254px, 125px, 285px);
+  width: 447px;
+}
+.stage .pit-right {
+  background-color: #847660;
+  height: 800px;
+  top: -1400px;
+  transform: translate3D(254px, 125px, 173px);
+  width: 451px;
+}
+.stage .pit-back {
+  background-color: #6b522b;
+  height: 220px;
+  transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
+  width: 170px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The end result of all this should be a scene that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/layout01.png&quot; alt=&quot;Initial layout of the stage divs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It doesn&amp;rsquo;t look right yet. We need to rotate the entire scene to see it properly. Add a &lt;code&gt;transform&lt;/code&gt; to the &lt;em&gt;scene&lt;/em&gt; section:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage {
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transform: rotateY(-45deg);
+  width: 460px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The result should look more like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/layout02.png&quot; alt=&quot;Initial layout rotated to show the stage properly&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You may notice that the borders create a nice depth effect, particularly at the corners, where the different coloured borders meet with a 45 degree angle. Since the scene we&amp;rsquo;re building is to be viewed at 45 degrees, this effect works to our advantage in most cases. A few of the corners don&amp;rsquo;t quite look right, but considering how straightforward the borders are to apply, and the lack of images, I feel this is a reasonable compromise.&lt;/p&gt;
+
+&lt;h3&gt;In the shade&lt;/h3&gt;
+
+&lt;p&gt;The video features a nice shadow beneath the platforms. We can reproduce this using the CSS &lt;code&gt;box-shadow&lt;/code&gt; property.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .shadow {
+  background-color: transparent;
+  box-shadow: -600px 0 50px #afa79f;
+  height: 550px;
+  transform: rotateX(90deg) translateZ(-166px) translateX(550px);
+  width: 550px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The rules above add a box shadow to the &lt;em&gt;shadow&lt;/em&gt; div, which is itself transparent. The box shadow is offset by 600 pixels so that the actual &lt;em&gt;shadow&lt;/em&gt; div doesn&amp;rsquo;t get in the way of the shadow. The whole lot is rotated and positioned off-stage, so that only the shadow part is visible on the stage. The result should be something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/layout03.png&quot; alt=&quot;Initial layout with a shadow&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Red VS Blue&lt;/h2&gt;
+
+&lt;p&gt;Next up we need to add some decoration and the glowing portals.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/portal.png&quot; alt=&quot;Red portal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The HTML needed for the two portals is simple enough:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;portal red&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;portal blue&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There is a &lt;code&gt;div&lt;/code&gt; for each of the two portals, one red and the other blue. They both have a similar style, with gradients used to create glowing effect. Since they are only one HTML element, the CSS includes a pseudo-element we can style to achieve the full effect.&lt;/p&gt;
+
+&lt;p&gt;The first step is to establish the general portal shape:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .portal {
+  background-color: black;
+  border-radius: 44px/62px;
+  box-shadow: 0 0 15px 4px white;
+  height: 72px;
+  width: 48px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This sets up the portal and uses the &lt;code&gt;border-radius&lt;/code&gt; property to create an oval shape, and a white box shadow creates a glow. A pseudo-element is then added that has similar dimensions, and the white border: &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .portal:before {
+  border-radius: 44px/62px;
+  border: 4px solid white;
+  content: &amp;quot;&amp;quot;;
+  display: block;
+  height: 72px;
+  margin-left: -4px
+  margin-top: -4px;
+  width: 48px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So far these styles have both applied to portals in general. Since one is red and the other blue, we&amp;rsquo;ll use separate sets of CSS rules to describe the characteristics specific to each. Firstly, the red portal:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .portal.red {
+  background: radial-gradient(#000000, #000000 50%, #ff4640 70%);
+  border: 7px solid #ff4640;
+  transform: translate3D(223px, 25px, 385px) rotateY(90deg) skewX(5deg);
+}
+.stage .portal.blue {
+  background: radial-gradient(#000000, #000000 50%, #258aff 70%);
+  border: 7px solid #258aff;
+  transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The red portal is given a background &lt;a href=&quot;http://docs.webplatform.org/wiki/css/functions/radial-gradient&quot;&gt;radial gradient&lt;/a&gt; and a red border. The transform in this case rotates it and places it on the left wall. The blue portal is similar but has a blue gradient applied and is positioned on the right wall. Both looked a little off in testing, so I added a 5 degree skew effect that seemed to make them look a little better.&lt;/p&gt;
+
+&lt;h3&gt;Portal glow&lt;/h3&gt;
+
+&lt;p&gt;The HTML we added earlier included a &lt;code&gt;span&lt;/code&gt; tag within each of the two platforms. These spans were added so that they could be styled with a radial gradient to provide a glowing effect beneath each portal.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .platform-left span {
+  background: radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
+  display: block;
+  height: 200px;
+  left: 0;
+  position: absolute;
+  width: 120px;
+}
+.stage .platform-right span {
+  background: radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px);
+  display: block;
+  height: 60px;
+  left: 280px;
+  position: absolute;
+  width: 150px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The two spans are positioned absolutely and given a red and blue gradient, positioned beneath each of the portals. A pseudo-element could have been used to achieve this effect, but since animating pseudo-elements is not well supported (even within versions of Webkit), a separate span is used in this case.&lt;/p&gt;
+
+&lt;h3&gt;The Door&lt;/h3&gt;
+
+&lt;p&gt;One of the unexpected successes was the use of borders to create what looks like an opening in the right wall, representing the exit. To create this door I use a single div and some coloured borders that make it look like it&amp;rsquo;s inset.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/door.png&quot; alt=&quot;Door&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The door HTML is straightforward. Add the following within the &lt;em&gt;stage&lt;/em&gt; section.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;door&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Styling the door involves a few borders and then a transform that positions it in front of the right wall:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .door {
+  background: #efe8dd;
+  border-bottom: 6px solid #bcb3a8;
+  border-left: 7px solid #78552e;
+  height: 85px;
+  transform: translate3D(450px, 34px, 4px);
+  width: 65px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Two borders are used to create the effect. The bottom and left borders match the platform and the side of the right wall, giving the impression of depth. Since there is no top border specified, the left border stops flush with the top of the div, which in this case works well.&lt;/p&gt;
+
+&lt;h2&gt;Characters&lt;/h2&gt;
+
+&lt;p&gt;With the portals and door in place, we need a person to jump through one and arrive on the other side. The first step is to create the person that jumps through the two portals.&lt;/p&gt;
+
+&lt;p&gt;In my initial testing, I tried using one character and having the animation stop at the first portal, and immediately continue from the other side. However when I animated the single character there was a flicker as it moved between portals. To avoid this, I instead used two characters and animated them separately.&lt;/p&gt;
+
+&lt;h3&gt;Building the character&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/dude1.png&quot; alt=&quot;The first of two characters to animate through the scene&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The beginning character shape is made up of 2 main parts, a head and body. Legs are added using pseudo-elements on the body. A similar structure is also included to be used as a shadow:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;dude one&amp;quot;&amp;gt;
+  &amp;lt;figure class=&amp;quot;head&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+  &amp;lt;figure class=&amp;quot;body&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+  &amp;lt;div class=&amp;quot;dude-shadow one&amp;quot;&amp;gt;
+    &amp;lt;figure class=&amp;quot;head&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;body&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since the shadow is contained within the character&amp;rsquo;s containing div, it can be animated at the same time. The CSS is as follows:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.dude, .dude-shadow {
+  height: 100px;
+  width: 30px;
+}
+.dude figure, .dude-shadow figure {
+  background-color: black;
+  display: block;
+  position: absolute;
+}
+.dude figure.head, .dude-shadow figure.head {
+  border-radius: 22px;
+  height: 20px;
+  left: 3px;
+  top: 0;
+  width: 20px;
+}
+.dude figure.body, .dude-shadow figure.body {
+  border-radius: 30px 30px 0 0;
+  height: 30px;
+  top: 21px;
+  width: 26px;
+}
+.dude figure.body:before, .dude figure.body:after, .dude-shadow figure.body:before, .dude-shadow figure.body:after {
+  background-color: black;
+  content: &amp;quot;&amp;quot;;
+  height: 15px;
+  position: absolute;
+  top: 30px;
+  width: 9px;
+}
+.dude figure.body:before, .dude-shadow figure.body:before {
+  left: 3px;
+}
+.dude figure.body:after, .dude-shadow figure.body:after {
+  left: 14px;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;These rules double up in each case, describing both the character and their shadow. Each of the parts is absolutely positioned and &lt;code&gt;border-radius&lt;/code&gt; is used to create the round shapes. The leg pseudo-elements are described at once then each positioned in separate rules.&lt;/p&gt;
+
+&lt;h3&gt;Character 1&lt;/h3&gt;
+
+&lt;p&gt;With the character shape specified, position the character at the starting position:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .dude.one {
+  transform: translate3D(514px, 50px, 375px) rotateY(78deg);
+}
+.stage .dude-shadow.one {
+  opacity: 0.1;
+  transform: translateX(-12px) rotateX(90deg) translateY(8px);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The CSS transforms position both the character itself but also the shadow. The opacity of the shadow is set to 0.1 rather than set it a grey colour. This allows background details to be seen behind the shadow.&lt;/p&gt;
+
+&lt;p&gt;The first character is now at the starting position, and rotated to a similar angle to that in the video. We will add animation later to have them jump through the portals.&lt;/p&gt;
+
+&lt;h3&gt;Armed&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/dude2.png&quot; alt=&quot;The second of two characters to animate through the scene&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The second character has some more detail, arms. The idea being when the character jumps through the portal, they&amp;rsquo;ll celebeate by raising their arms. Here&amp;rsquo;s the HTML:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;div class=&amp;quot;dude two&amp;quot;&amp;gt;
+    &amp;lt;figure class=&amp;quot;head&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;body&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;arm left&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;figure class=&amp;quot;arm right&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;div class=&amp;quot;dude-shadow two&amp;quot;&amp;gt;
+        &amp;lt;figure class=&amp;quot;head&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+        &amp;lt;figure class=&amp;quot;body&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+        &amp;lt;figure class=&amp;quot;arm left&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+        &amp;lt;figure class=&amp;quot;arm right&amp;quot;&amp;gt;&amp;lt;/figure&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The second character will begin the animation invisible, and then jump through the portal about halfway through the animation (after the first character reaches their portal). To set this up, this second character is positioned at the portal.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.stage .dude.two {
+  transform: translate3D(610px, 40px, 10px) rotateY(15deg);
+}
+.stage .dude.two figure.arm {
+  background: black;
+  height: 8px;
+  position: absolute;
+  top: 20px;
+  width: 20px;
+}
+.stage .dude.two figure.arm.left {
+  left: -13px;
+  transform: rotateZ(40deg);
+}
+.stage .dude.two figure.arm.right {
+  right: -10px;
+  transform: rotateZ(-40deg);
+}
+.stage .dude-shadow.two {
+  opacity: 0.1;
+  transform: translateY(12px) translateX(-16px) translateZ(-6px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg) skewX(30deg) scaleX(0.8);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A second animation will be applied to the arms, in which they will also be invisible to begin with but then appear later.&lt;/p&gt;
+
+&lt;h2&gt;The stage is set&lt;/h2&gt;
+
+&lt;p&gt;With the characters and the backdrop in place, the scene is ready for some animation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/portal/stage_set.png&quot; alt=&quot;The scene is ready, with 2 characters ready to be animated.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at how to make it look like the little person jumps through the first portal and arrives at the other.&lt;/p&gt;
+
+&lt;h2&gt;Animation&lt;/h2&gt;
+
+&lt;p&gt;If you &lt;a href=&quot;http://hop.ie/portal/&quot;&gt;view the demo&lt;/a&gt; you&amp;rsquo;ll see a few animations taking place. Rather than go through all the animations that set up the scene, I&amp;rsquo;ll focus on the animation of the character jumping through the portals.&lt;/p&gt;
+
+&lt;h3&gt;Keyframe animation&lt;/h3&gt;
+
+&lt;p&gt;Timing and animating the HTML elements is achieved by using &lt;a href=&quot;http://docs.webplatform.org/wiki/css/atrules/@keyframes&quot;&gt;keyframes&lt;/a&gt;, and then attaching the set of keyframes to an element using the &lt;a href=&quot;http://docs.webplatform.org/wiki/css/properties/animation&quot;&gt;animation&lt;/a&gt; property.&lt;/p&gt;
+
+&lt;p&gt;The first thing is to animate the first character, to have them approach and then jump into the left portal. Here&amp;rsquo;s a set of keyframes that achieves this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@keyframes move-dude-one {
+  /* Character flies into scene */
+  0% {
+    transform: translate3D(514px, -10px, 375px) rotateY(78deg) scaleY(2);
+  }
+  /* Waits a moment */
+  1%, 18% {
+    opacity: 1;
+    transform: translate3D(514px, 50px, 375px) rotateY(78deg) scaleY(1);
+  }
+  /* Moves toward the portal */
+  34%, 39% {
+    opacity: 1;
+    transform: translate3D(284px, 40px, 375px) rotateY(78deg);
+  }
+  /* Pauses, them jumps in */
+  41%, 42% {
+    opacity: 1;
+    transform: translate3D(234px, 40px, 375px) rotateY(78deg);
+  }
+  /* Vanishes */
+  43%, 100% {
+    opacity: 0;
+    transform: translate3D(234px, 40px, 375px) rotateY(78deg);
+  }
+}
+/* Note: Use prefixes, such as @-webkit-keyframes, @-moz-keyframes, etc! */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Keyframes are a series of steps, described using percentages. The percentage relates to the animation time, so that if an animation was to last 10 seconds, 10% would be the 1 second mark. 90% would be the 9 second mark.&lt;/p&gt;
+
+&lt;p&gt;To have the characters jumping through the portals in a nice loop, we&amp;rsquo;ll set two animations that are each 10 seconds long so that they match. I have put some inline comments that describe each stage of the animation. The &lt;code&gt;transform&lt;/code&gt; property is used at each stage to set the characters position and angle.&lt;/p&gt;
+
+&lt;p&gt;At 43% through the animation, the character&amp;rsquo;s &lt;code&gt;opacity&lt;/code&gt; is set to 0. This is when the first character vanishes into the portal. The second character should therefore appear at 43% through it&amp;rsquo;s animation.&lt;/p&gt;
+
+&lt;p&gt;Before we do that, let&amp;rsquo;s apply this first animation to the first character:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.dude.one {
+  animation: move-dude-one 10s linear infinite;
+  opacity: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;animation&lt;/code&gt; property above applies the animation to the &lt;em&gt;dude one&lt;/em&gt; element. It attaches it with the animation name, sets it to last for 10 seconds, and suggests that it loop infinitely.&lt;/p&gt;
+
+&lt;p&gt;An opacity of 0 is set to ensure the character is invisible before the animation starts.&lt;/p&gt;
+
+&lt;p&gt;Having done that let&amp;rsquo;s set up the corresponding animation keyframes for the second character:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@keyframes move-dude-two {
+  /* Dude be invisible */
+  0%, 42% {
+    opacity: 0;
+    transform: translate3D(610px, 40px, 10px) rotateY(15deg);
+  }
+  /* Apparato! */
+  42.5% {
+    display: block;
+    opacity: 1;
+    transform: translate3D(610px, 40px, 10px) rotateY(15deg);
+  }
+  /* Move onto the platform */
+  46%, 75% {
+    opacity: 1;
+    transform: translate3D(610px, 40px, 120px) rotateY(15deg);
+  }
+  /* Stand there for a bit */
+  76%, 97% {
+    opacity: 0;
+    transform: translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2);
+  }
+  /* Fly up into the sky! */
+  98%, 100% {
+    opacity: 0;
+    transform: translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2);
+  }
+}
+
+@keyframes arms {
+  /* No arms */
+  0%, 53% {
+    opacity: 0;
+  }
+  /* Yes arms! */
+  54%, 100% {
+    opacity: 1;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As planned, this animation begins around the 42% mark. The character leaps out of the portal, stands around for a bit, then is whisked away into the sky. A second set of keyframes describe the arms animation. These start off invisible and then show around halfway through the animation.&lt;/p&gt;
+
+&lt;p&gt;We can apply these keyframes to the second dude&amp;rsquo;s element as follows:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;.dude.two {
+  animation: move-dude-two 10s linear infinite;
+  opacity: 0;
+}
+
+.dude.two figure.arm {
+  animation: arms 10s linear infinite;
+  opacity: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this way the two animations are being applied. Since both are set to last 10 seconds, and loop infinitely, they should match up nicely with the timing of the first animation.&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t already, &lt;a href=&quot;http://hop.ie/portal/&quot;&gt;check out the finished result&lt;/a&gt; in a modern browser, though preferably not Internet Explorer.&lt;/p&gt;
+
+&lt;h2&gt;Caveats &amp;amp; browser quirks&lt;/h2&gt;
+
+&lt;p&gt;While we&amp;rsquo;re on the subject of browsers, I should note that this is not going to work currently in Internet Explorer. Firefox is a bit &lt;em&gt;meh&lt;/em&gt; but not bad, Safari&amp;rsquo;s almost there (waiting for Apple to patch webkit at long last), and Chrome is 100%. Hey, browsers gonna browse.&lt;/p&gt;
+
+&lt;p&gt;Performance is pretty good across various devices (browser issues aside). Testing on an iPhone with Safari and it performs better than Chrome on a laptop. This is because the CSS rules used (3D transforms) make use of the graphic hardware.&lt;/p&gt;
+
+&lt;h2&gt;Demo and contact info&lt;/h2&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://hop.ie/portal&quot;&gt;online Portal CSS demo&lt;/a&gt; or download the &lt;a href=&quot;https://github.com/donovanh/portal&quot;&gt;source from Github&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Buffer's loading animation</title>
