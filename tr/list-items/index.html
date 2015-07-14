@@ -8,14 +8,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <title>Animating List Items - CSS Animation</title>
-  <meta name="description" content="When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arriv...">
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/assets/stylesheets/custom/list_items.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/list-items">
+  <link rel="canonical" href="https://cssanimation.rocks/tr/list-items/">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
@@ -25,7 +25,7 @@
     <meta property="og:title" content="Animating List Items - CSS Animation" />
     <meta property="og:description" content="Some tricks to help announce list items through animation." />
     <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/list_items/list_items.png" />
-    <meta property="og:url" content="https://cssanimation.rocks/list-items" />
+    <meta property="og:url" content="https://cssanimation.rocks/tr/list-items/" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -80,44 +80,45 @@
   <section class="row">
     <article class="post-content nine columns">
       <h1 class="post-title">Animating List Items</h1>
-      <p>When parts of a web page change, adding some animation is a good way to help your viewers understand what&rsquo;s going on. Animations can announce the arrival of new content, or draw attention to content that&rsquo;s in the process of being removed. In this article we&rsquo;ll look at how this can be used to help introduce new content, by showing and hiding items in a list.</p>
+      <p>Bir web sayfasının parçaları değişken, bu değişen parçalara biraz animasyon eklemek ziyaretçilerinizin sayfada ne olup bittiğini anlaması yardımcı olmak için iyi bir yoldur. Animasyonlar yeni gelen içeriği bildirebilir ya da kaldırılmakta olan içeriğe dikkat çekebilir. Bu yazıda, bir liste içindeki ögeleri göstererek ve saklayarak bunun yeni içeriğin tanıtılmasında nasıl yardımcı olabileceğine bakacağız. </p>
 
 <!--more-->
 
 <section class="add-to-list swing-side demo-container">
   <ul>
-    <li class="show" style="background-color: #d13c9e;">List item</li>
-    <li class="show" style="background-color: #3cd19e;">List item</li>
+    <li class="show" style="background-color: #d13c9e;">Liste ögesi</li>
+    <li class="show" style="background-color: #3cd19e;">Liste ögesi</li>
   </ul>
-  <button>Add a list item</button>
+  <button>Bir liste ögesi ekle</button>
 </section>
+ 
 
-<h2>Introducing content</h2>
+<h2>İçeriği tanıtmak</h2>
 
-<p>Animation can be useful when helping visitors understand when things change on your site. When content is added or removed without any animation, they can miss sudden changes and be confused. Adding subtle animations can avoid this and help by &ldquo;announcing&rdquo; that something is going to leave the page or be introduced to it.</p>
+<p>Animasyonlar, ziyaretçilerin sitenizdeki şeylerin ne zaman değiştiğini anlamasına yardımcı olma konusunda yararlı olabilir. İçerikler animasyon kullanılmadan eklendiğinde ya da kaldırıldığında, ziyaretçiler bu ani değişiklikleri gözden kaçırabilir ve akılları karışabilir. İnce, hafif animasyonlar eklemek bu sorunun üstesinden gelebilir ve sayfadan bir şeyin kaldırılacağını ya da ekleneceğini &ldquo;haber vererek&rdquo; yardımcı olabilir.</p>
 
-<p>One example of adding or removing content is managing the content of a list. Most of the animations can be used for other sorts of content. If you find them useful, or have other ideas to add, do <a href="mailto:hello@cssanimation.rocks">get in touch</a>, we love to hear your thoughts.</p>
+<p>İçerik ekleme ya da silmenin bir örneği bir listenin içeriğini yönetmektir. Bu animasyonların çoğu başka türlü içerikler için de kullanılabilir. Eğer bu animasyonları yararlı bulduysanız ya da ekleyecek başka fikirleriniz varsa lütfen bizimle <a href="mailto:hello@cssanimation.rocks">iletişime geçin</a>, fikirlerinizi duymaktan mutluluk duyarız.</p>
 
-<h2>Setting up the HTML</h2>
+<h2>HTML</h2>
 
-<p>To get started we&rsquo;ll use a pre-filled list and a button to add new items to the list.</p>
+<p>Başlarken önceden doldurulmuş lan bir liste ve listeye yeni ögeler eklemek için bir buton kullanacağız.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul id=&quot;list&quot;&gt;
-  &lt;li class=&quot;show&quot;&gt;List item&lt;/li&gt;
-  &lt;li class=&quot;show&quot;&gt;List item&lt;/li&gt;
+  &lt;li class=&quot;show&quot;&gt;Liste ögesi&lt;/li&gt;
+  &lt;li class=&quot;show&quot;&gt;Liste ögesi&lt;/li&gt;
 &lt;/ul&gt;
-&lt;button id=&quot;add-to-list&quot;&gt;Add a list item&lt;/button&gt;
+&lt;button id=&quot;add-to-list&quot;&gt;Bir liste ögesi ekle&lt;/button&gt;
 </code></pre></div>
-<p>A few things to note. Firstly we have two IDs in the HTML. Generally we don&rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&rsquo;re useful when using JavaScript. </p>
+<p>Dikkatinizi çekmek istediğim birkaç şey var. İlki, HTML&#39;de iki adet ID kullandık. Normalde stil işleminde &ldquo;fazla spesifik&rdquo; oldukları ve problem çıkardıkları için ID kullanmayız. Fakat JavaScript kullanırken işimize yarayacaklar.</p>
 
-<p>The initial items have the class &ldquo;show&rdquo;, as this is a class we&rsquo;ll use later to add the animation effect.</p>
+<p>İkincisi ise kullandığımız &ldquo;show&rdquo; class&#39;ı. Bu class&#39;ı daha sonra animasyon eklerken kullanacağız.</p>
 
-<h2>A little JavaScript</h2>
+<h2>Biraz JavaScript</h2>
 
-<p>For the purpose of the demo we&rsquo;ll create a little JavaScript to add a new item to the list, then add the &ldquo;show&rdquo; class so that the animation can take place. There&rsquo;s a reason for using this two-step process. If the list items were added in a visible state, there wouldn&rsquo;t be any time for the transition to take place.</p>
+<p>Bu demo&#39;da listeye yeni ögeler eklemek ve daha sonra animasyonun gerçekleşebilmesi amacıyla &ldquo;show&rdquo; class&#39;ını eklemek için biraz JavaScript kullanacağız. Bunun iki aşamalı olmasının bir sebebi var. Eğer liste ögeleri görünür halde eklenselerdi, animasyon geçişinin gerçekleşmesi için yeterli zaman olmayacaktı.</p>
 
-<p>We could get around this by using an animation on the <code>li</code> elements, but this would be more difficult to override when removing the elements with another animation.</p>
+<p>Animasyonları <code>li</code> ögeleri üzerinde gerçekleştirerek bunun üstesinden gelebilirdik fakat bu daha sonra elementleri başka bir animasyonla kaldırmak istediğimizde zorluk çıkarırdı.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">/*
- * Add items to a list - from cssanimation.rocks/list-items/
+ * Listeye ögeler ekle - from cssanimation.rocks/list-items/
  */
 document.getElementById(&#39;add-to-list&#39;).onclick = function() {
   var list = document.getElementById(&#39;list&#39;);
@@ -129,9 +130,9 @@ document.getElementById(&#39;add-to-list&#39;).onclick = function() {
   }, 10);
 }
 </code></pre></div>
-<h2>No animation</h2>
+<h2>Animasyon olmadan</h2>
 
-<p>At it&rsquo;s most basic we can write some CSS to show the list items. We&rsquo;re using the <code>show</code> class as a way of setting them as visible, so removing the <code>show</code> class should also cause them to disappear.</p>
+<p>Biraz CSS yazarak liste ögelerinin görünmesini sağlayabiliriz. <code>show</code> class&#39;ını kullanarak liste ögelerini görünür yapıyoruz ve aynı mantıkla <code>show</code> class&#39;ını silmemiz liste ögelerinin kaybolmasına neden olmalı.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">li {
   list-style: none;
   background: #d1703c;
@@ -149,21 +150,22 @@ li.show {
   margin: 2px 0;
 }
 </code></pre></div>
-<p>In these styles we&rsquo;re setting up the <code>li</code> elements to look like rectangles, without the bullet points and giving them a <code>height</code> of 0, a <code>margin</code> of 0 and set <code>overflow</code> to hidden. This is so that they will appear invisible until we apply a <code>show</code> class.</p>
+<p>Verdiğimiz bu stiller ile <code>li</code> elementlerinin, önlerinde madde işareti olmadan dikdörtgen bir şekilde görünmesini sağlıyoruz, <code>height</code> ve <code>margin</code> özelliğine 0 veriyoruz ve <code>overflow</code> özelliğini hidden yani &lsquo;gizli&#39;ye ayarlıyoruz. Bu sayede  <code>show</code> class&#39;ı vermediğimiz sürece gizli kalacaklar.</p>
 
-<p>The <code>show</code> class applies a height and margin. Since we&rsquo;re not using animation yet, the items should appear suddenly on the page, like so. Also try pressing the list items to see them disappear.</p>
+<p><code>show</code> class&#39;ı elementlere height ve margin verecek. Henüz animasyon kullanmadığımız için ögeler sayfada bir anda belirecekler. Liste ögelerine tıklayıp yokolmalarını izlemeyi de unutmayın.</p>
 
 <section class="add-to-list demo-container">
   <ul>
-    <li class="show" style="background-color: #d13c9e;">List item</li>
-    <li class="show" style="background-color: #3cd19e;">List item</li>
+    <li class="show" style="background-color: #d13c9e;">Liste ögesi</li>
+    <li class="show" style="background-color: #3cd19e;">Liste ögesi</li>
   </ul>
-  <button>Add a list item</button>
+  <button>Bir liste ögesi ekle</button>
 </section>
+ 
 
-<h3>Fade</h3>
+<h3>Fade(Soluklaşma)</h3>
 
-<p>As a first animation we&rsquo;ll add a simple fade effect. The list items appear a little more gradually than before. Visually this still looks a little clunky but has the benefit of giving viewers longer to notice that something is happening.</p>
+<p>Ekleyeceğimiz ilk animasyon basit bir fade efekti olacak. Liste ögeleri eskisine göre daha aşamalı olarak belirecekler. Görsel olarak bu hala biraz kullanışsız ama artık kullanıcılar sayfada bir şey olduğunun farkına varmak için daha fazla zamana sahip.</p>
 
 <section class="add-to-list fade demo-container">
   <ul>
@@ -172,8 +174,9 @@ li.show {
   </ul>
   <button>Add a list item</button>
 </section>
+ 
 
-<p>To add the effect I&rsquo;ve created a separate snippet of CSS. To have this apply to the list, apply the class <code>fade</code> to a container surrounding your list.</p>
+<p>Efekti eklemek için bir CSS parçası daha oluşturdum. Bunu listeye uygulamak için, listeyi saran elemente <code>fade</code> class&#39;ı verin.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.fade li {
   transition: all 0.4s ease-out;
   opacity: 0;
@@ -183,19 +186,20 @@ li.show {
   opacity: 1;
 }
 </code></pre></div>
-<h3>Slide down &amp; Fade</h3>
+<h3>Slide down(Aşağıya kayma) &amp; Fade</h3>
 
-<p>The sudden jump each time an item is added or removed is a litle jarring. Let&rsquo;s have the height adjust as well, to create a smoother sliding effect.</p>
+<p>Her yeni öge eklendiğinde oluşan ani zıplama biraz rahatsız edici. Şimdi akıcı bir kayma efekti oluşturmak için height özelliğini de ayarlayalım. </p>
 
 <section class="add-to-list slide-fade demo-container">
   <ul>
-    <li class="show" style="background-color: #d13c9e;">List item</li>
-    <li class="show" style="background-color: #3cd19e;">List item</li>
+    <li class="show" style="background-color: #d13c9e;">Liste ögesi</li>
+    <li class="show" style="background-color: #3cd19e;">Liste ögesi</li>
   </ul>
-  <button>Add a list item</button>
+  <button>Bir liste ögesi ekle</button>
 </section>
+ 
 
-<p>The difference between this and the <code>fade</code> class above is only that the <code>height: 2em</code> has been removed. Since the <code>show</code> class contains a set height (inherited from the first CSS snippet), it will transition the height automatically.</p>
+<p><code>slide-fade</code> class&#39;ı ile <code>fade</code> class&#39;ı arasındaki tek fark <code>height: 2em</code> özelliğinin kaldırılmış olması. <code>show</code> class&#39;ı (ilk CSS parçasından aldığı) belirlenmiş bir height özelliğine sahip olduğu için height&#39;ı animasyon geçişinde otomatik olarak ayarlayacaktır.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.slide-fade li {
   transition: all 0.4s ease-out;
   opacity: 0;
@@ -204,26 +208,27 @@ li.show {
   opacity: 1;
 }
 </code></pre></div>
-<h3>Swinging in</h3>
+<h3>Swinging in(Sallanma)</h3>
 
-<p>Along with fading and sliding, we can go further by adding a little 3D effect. Browser can transform elements in more than the X or Y directions, useful for adding depth to scenes.</p>
+<p>Fading ve sliding efektleriyle yanı sıra, 3 boyutlu bir efekt ekliyerek biraz daha ileriye gidebiliriz. Tarayıcıların elementleri değiştirmeleri sadece X ve Y yönleriyle sınırlı değildir, ve bu derinlik efekti vermekte işimize yarar.</p>
 
 <section class="add-to-list swing demo-container">
   <ul>
-    <li class="show" style="background-color: #d13c9e;">List item</li>
-    <li class="show" style="background-color: #3cd19e;">List item</li>
+    <li class="show" style="background-color: #d13c9e;">Liste ögesi</li>
+    <li class="show" style="background-color: #3cd19e;">Liste ögesi</li>
   </ul>
-  <button>Add a list item</button>
+  <button>Bir liste ögesi ekle</button>
 </section>
+ 
 
-<p>To set this up, we need to define the containing <code>section</code> as a stage within which the 3D transitions take place. We do this by giving it a <code>perspective</code> value.</p>
+<p>Bunu ayarlamak için ul elementini içine alan <code>section</code>&#39;ı 3 boyutlu değişimler için bir sahne olarak belirlemeliyiz. Bunu <code>section</code>&#39;a bir <code>perspective</code> değeri vererek yapıyoruz.</p>
 
-<p>Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It&rsquo;s worth playing with this value to find a look that works for you.</p>
+<p>Perspective CSS&#39;de animasyon değişimlerinin gerçekleşeceği yerdeki derinliktir. Düşük bir değer daha sığ bir derinlik ve daha keskin açılar demektir. Bu değerlerle oynayıp sizin için uygun olanını bulabilirsiniz.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.swing {
   perspective: 100px;
 }
 </code></pre></div>
-<p>Next we set up the <code>li</code> elements to transform into place. We&rsquo;ll use <code>opacity</code> to create a fade effect as before, but add in a <code>transform</code> to rotate the <code>li</code> into place.</p>
+<p>Bir sonraki aşama <code>li</code> elementlerinin yerlerine dönüşerek gelmelerini ayarlamak. Daha önceki gibi fade efekti vermek için <code>opacity</code> özelliğini kullanacağız fakat <code>li</code> elementlerinin yerlerine dönerek gelmeleri için <code>transform</code> özelliği ekleyeceğiz.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.swing li {
   opacity: 0;
   transform: rotateX(-90deg);
@@ -236,11 +241,11 @@ li.show {
   transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }
 </code></pre></div>
-<p>In this example we&rsquo;re beginning with the <code>li</code> rotated back by 90 degrees. When the <code>show</code> class it added, this <code>transform</code> is set to <code>none</code>, allowing it to transition into place. To give it a swinging effect I&rsquo;ve used the <code>cubic-bezier</code> timing function.</p>
+<p>Bu örnekte <code>li</code> 90 derece arkaya dönük halde başlıyoruz. <code>show</code> class&#39;ı eklendiğinde <code>transform</code> özelliği <code>none</code>&#39;a ayarlanıyor ve bu da <code>li</code> elementinin bir geçişle yerine gelmesini sağlıyor. Sallanma efektini vermek için <code>cubic-bezier</code> zamanlama fonksiyonunu kullandım.</p>
 
-<h3>Swinging from side</h3>
+<h3>Swinging from side(Yandan sallanma)</h3>
 
-<p>We can tweak this effect to create different styles quite easily. Here&rsquo;s an example where the items swing in from the side.</p>
+<p>Bu efekti kolayca yeni şekiller elde etmek için ayarlayabiliriz. Aşağıda ögelerin yanlardan sallanarak geldiği bir örnek görebilirsiniz.</p>
 
 <section class="add-to-list swing-side demo-container">
   <ul>
@@ -249,21 +254,22 @@ li.show {
   </ul>
   <button>Add a list item</button>
 </section>
+ 
 
-<p>To create this effect we only need change the axis of rotation.</p>
+<p>Bu efekti sağlamak için sadece dönüşün eksenini değiştirmemiz gerekiyor.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.swing li {
   opacity: 0;
   transform: rotateY(-90deg);
   transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }
 </code></pre></div>
-<p>All we&rsquo;ve changed is <code>rotateX</code> to <code>rotateY</code>.</p>
+<p>Yaptığımız tek değişiklik <code>rotateX</code> yerine <code>rotateY</code> kullanmak oldu.</p>
 
-<h2>Prefixes and browser testing</h2>
+<h2>Ön ekler ve tarayıcı testleri</h2>
 
-<p>The code included above does not include any prefixes, for readability. It&rsquo;s strongly recommended to add prefixes to support browsers that need the <code>-webkit</code> prefix or others. I use <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to save worrying about these things.</p>
+<p>Yukarıdaki kod anlaşılabilirlik ve okunabilirlik için herhangi bir ön ek içermiyor. <code>-webkit</code> ön eki ve başka ön eklere ihtiyacı olan tarayıcıları desteklemek için bu ön ekleri eklemenizi kesinlikle tavsiye ederim. Ben bu gibi şeyler hakkında endişelenmemek için <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> kullanıyorum.</p>
 
-<p>As these animations are layered on top of the basic show / hide mechanism, they should degrade gracefully on browsers that don&rsquo;t support the animations. Testing on various devices and browsers is important but most modern browsers should be able to support these animations.</p>
+<p>Bu animasyonlar göster/sakla gibi basit bir mekanizma kullandıkları için animasyonları desteklemeyen tarayıcılarda bir sorun çıkarmayacaktır. Bir çok cihazda ve tarayıcıda bu animasyonların test edilmesi önemli fakat modern tarayıcıların çoğu bu animasyonları destekleyecektir.</p>
 
 
       <section class="quote-container">
@@ -271,7 +277,7 @@ li.show {
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating List Items&url=https%3A%2F%2Fcssanimation.rocks%2Flist-items&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating List Items&url=https%3A%2F%2Fcssanimation.rocks%2Ftr%2Flist-items%2F&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -296,17 +302,14 @@ li.show {
         <section class="translations">
           <h3>Translations</h3>
           
-            <ul>
-              
-                <li><a href="/tr/list-items/">Türk (Turkish)</a></li>
-              
-            </ul>
-          
-          
-            <p>Want to translate this article? Get the <a href="https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-12-list-items.md">source here</a>.</p>
           
         </section>
 
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/cangokt">Can Göktaş</a>. (<a href="/list-items/">See original</a>)</p>
+        </section>
       
       <section class="sidebar-email-signup">
         <h4>Free CSS lessons</h4>
