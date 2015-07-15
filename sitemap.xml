@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cssanimation.rocks/</loc>
-    <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+    <lastmod>2015-07-15T07:58:32+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -168,7 +168,7 @@
       <url>
         <loc>https://cssanimation.rocks/404.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -183,7 +183,7 @@
       <url>
         <loc>https://cssanimation.rocks/about.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -198,7 +198,7 @@
       <url>
         <loc>https://cssanimation.rocks/atom.xml</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -213,7 +213,7 @@
       <url>
         <loc>https://cssanimation.rocks/feed.xml</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -230,7 +230,7 @@
       <url>
         <loc>https://cssanimation.rocks/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -245,7 +245,7 @@
       <url>
         <loc>https://cssanimation.rocks/polish/principles/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -260,7 +260,7 @@
       <url>
         <loc>https://cssanimation.rocks/post/pseudo-elements/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -275,22 +275,7 @@
       <url>
         <loc>https://cssanimation.rocks/post/twitter-fave/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
-        
-        
-          <changefreq>monthly</changefreq>
-        
-        
-          <priority>0.3</priority>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://cssanimation.rocks/privacy/index.html</loc>
-        
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -305,52 +290,7 @@
       <url>
         <loc>https://cssanimation.rocks/cn/principles/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
-        
-        
-          <changefreq>monthly</changefreq>
-        
-        
-          <priority>0.3</priority>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://cssanimation.rocks/jp/principles/index.html</loc>
-        
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
-        
-        
-          <changefreq>monthly</changefreq>
-        
-        
-          <priority>0.3</priority>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://cssanimation.rocks/pl/macplus/index.html</loc>
-        
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
-        
-        
-          <changefreq>monthly</changefreq>
-        
-        
-          <priority>0.3</priority>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://cssanimation.rocks/pl/principles/index.html</loc>
-        
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -365,7 +305,7 @@
       <url>
         <loc>https://cssanimation.rocks/courses/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -378,24 +318,9 @@
   
     
       <url>
-        <loc>https://cssanimation.rocks/tr/pseudo-elements/index.html</loc>
+        <loc>https://cssanimation.rocks/privacy/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
-        
-        
-          <changefreq>monthly</changefreq>
-        
-        
-          <priority>0.3</priority>
-        
-      </url>
-    
-  
-    
-      <url>
-        <loc>https://cssanimation.rocks/courses/animation-101/index.html</loc>
-        
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -408,9 +333,9 @@
   
     
       <url>
-        <loc>https://cssanimation.rocks/fr/pseudo-elements/index.html</loc>
+        <loc>https://cssanimation.rocks/jp/principles/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -423,9 +348,24 @@
   
     
       <url>
-        <loc>https://cssanimation.rocks/cn/transition-vs-animation/index.html</loc>
+        <loc>https://cssanimation.rocks/pl/macplus/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/pl/principles/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -440,7 +380,82 @@
       <url>
         <loc>https://cssanimation.rocks/tr/list-items/index.html</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/tr/pseudo-elements/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/cn/transition-vs-animation/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/fr/pseudo-elements/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/earn/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
+        
+        
+          <changefreq>monthly</changefreq>
+        
+        
+          <priority>0.3</priority>
+        
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://cssanimation.rocks/courses/animation-101/index.html</loc>
+        
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
@@ -455,7 +470,7 @@
       <url>
         <loc>https://cssanimation.rocks/sitemap.xml</loc>
         
-          <lastmod>2015-07-14T21:43:24+01:00</lastmod>
+          <lastmod>2015-07-15T07:58:32+01:00</lastmod>
         
         
           <changefreq>monthly</changefreq>
