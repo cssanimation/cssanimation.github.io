@@ -7,25 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <title>Animating pseudo-elements - CSS Animation</title>
-  <meta name="description" content="Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML,...">
+  <title>Animation von Pseudo-Elementen - CSS Animation</title>
+  <meta name="description" content="CSS animation tips, articles and more. Follow @cssanimation on Twitter.">
 
   <link rel="stylesheet" href="/assets/stylesheets/main.css">
   <link href='//fonts.googleapis.com/css?family=Varela+Round|Open+Sans' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="/assets/stylesheets/custom/shiny_button.css">
 
-  <link rel="canonical" href="https://cssanimation.rocks/pseudo-elements">
+  <link rel="canonical" href="https://cssanimation.rocks/de/pseudo-elements/">
   <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="https://cssanimation.rocks/feed.xml" />
 
   
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@cssanimation" />
     <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="Animating pseudo-elements - CSS Animation" />
-    <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
+    <meta property="og:title" content="Animation von Pseudo-Elementen - CSS Animation" />
+    <meta property="og:description" content="Pseudo-Elemente geben Ihnen zwei extra HTML Elemente umsonst! Hier wird erklärt wie man sie animiert wenn die Maus über ihnen positioniert ist. Verwenden Sie sie weise." />
     <meta property="og:image" content="https://cssanimation.rocks/assets/images/posts/sheen/sheen.gif" />
-    <meta property="og:url" content="https://cssanimation.rocks/pseudo-elements" />
+    <meta property="og:url" content="https://cssanimation.rocks/de/pseudo-elements/" />
   
 
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -79,18 +79,18 @@
 <section class="container page-content">
   <section class="row">
     <article class="post-content nine columns">
-      <h1 class="post-title">Animating pseudo-elements</h1>
-      <p>Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we&rsquo;ll use a pseudo-element to add a little visual flair to a button.</p>
+      <h1 class="post-title">Animation von Pseudo-Elementen</h1>
+      <p>Pseudo-Elemente sind wie zusätzliche, freie DOM Elemente. Sie erlauben uns extra Inhalt, Dekoration und mehr zu unseren Seiten hinzuzufügen ohne extra HTML zu schreiben und sie können animiert werden. In diesem Beitrag werden wir ein Pseudo-Element verwenden um ein bisschen visuelles flair zu einem Knopf hinzuzufügen.</p>
 
 <!--more-->
 
 <section class="shiny demo-container tap-to-activate">
-  <button>Shiny effect</button>
+  <button>Leuchtender Effekt</button>
 </section>
 
-<h2>Pseudo-elements</h2>
+<h2>Pseudo-Elemente</h2>
 
-<p>Within CSS, we can specify a pseudo-element using <code>::before</code> or <code>::after</code>. The pseudo-element is then inserted within your element, between the element and any content. Since it acts as an element of it&rsquo;s own, it can be styled, positioned and more. The code looks a bit like this:</p>
+<p>Innerhalbs CSS können wir ein Pseudo-Element mit <code>::before</code> or <code>::after</code> spezifizieren. Das Pseudo-Element wird dann innerhalb Ihres Elementes eingefügt, zwischen dem Element und jeglichem Inhalt. Da es als eigenständiges Element agiert, kann es gestylt und positioniert werden. Der Code schaut ein bisschen so aus wie hier:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
   ...
 }
@@ -98,39 +98,42 @@
   ...
 }
 </code></pre></div>
-<p>At this point, our <code>.pebble</code> element has two virtual elements attached, and we can style them as needed.</p>
+<p>Zu diesem Zeitpunkt hat unser <code>.pebble</code> Element zwei virtuelle Elemente angehaengt, und wir koennen diese bei Bedarf stylen.</p>
 
-<h3>Note on &ldquo;::&rdquo; versus &ldquo;:&rdquo;</h3>
+<h3>Anmerkung zu &ldquo;::&rdquo; versus &ldquo;:&rdquo;</h3>
 
-<p>It&rsquo;s generally accepted that we use the double colon <code>::</code> to denote pseudo-elements (as opposed to pseudo-classes like :hover, :first-child). If you&rsquo;re adding IE8 support, it&rsquo;s best to use the single <code>:</code> instead. All other browsers and newer versions of IE support the double.</p>
+<p>Es ist allgemein akzeptiert, dass wir den zweifachen Doppelpunkt <code>::</code> verwenden um Pseudo-Elemente zu bezeichnen (im Gegenteil zu Pseudo-Klassen wie :hover, :first-child). Wenn Sie IE8 Unterstützung hinzufügen, dann ist es am Besten den einfachen  <code>:</code> stattdessen zu verwenden. Alle anderen Browser und neuere Versionen des IE unterstützen den zweifachen Doppelpunkt.</p>
 
-<h3>Don&rsquo;t forget &ldquo;content&rdquo;</h3>
+<h3>Vergessen Sie nicht &ldquo;content&rdquo;</h3>
 
-<p>When adding pseudo-elements, one thing to keep in mind is the need to specify the <code>content</code> property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty <code>content</code> like so:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.pebble::before {
+<p>Beim Hinzufügen von Pseudo-Elementen muss beachtet werden dass die <code>content</code>Eigenschaft spezifiziert wird bevor sie sichtbar auf der Seite wird. Weil das Pseudo-Element in einem inhaltslosen Zustand erschaffen wird, können wir es durch die Verwendung eines leeren <code>content</code> als sichtbar täuschen, siehe hier: 
+<code>
+.pebble::before {
   content: &quot;&quot;
   ... more styling goes here...
 }
-</code></pre></div>
-<p>This should make sure the element is visible on screen.</p>
+</code></p>
 
-<h2>Example: Shiny button</h2>
+<p>Dies sollte sicherstellen, dass das Element sichtbar auf dem Bildschirm ist.</p>
 
-<p>For this example we&rsquo;ll use a pseudo-element to create a shiny effect on hovering over a button. Here&rsquo;s an example of it in action (hover or tap to see effect).</p>
+<h2>Beispiel: Leuchtender Knopf</h2>
+
+<p>Fuer dieses Beispiel werden wir ein Pseudo-Element verwenden um einen leuchtenden Effekt zu erzeugen wenn die Maus ueber den Knopf schwebt (i.e., hovert). Hier sehen Sie ein Beispiel (Fahren Sie mit der Maus ueber den Knopf oder klicken sie auf den Knopf um den Effekt zu sehen).</p>
 
 <section class="shiny demo-container tap-to-activate">
-  <button>Shiny effect</button>
+  <button>Leuchtender Effekt</button>
 </section>
 
-<p>To begin, some HTML:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;button&gt;Oooh SHINY&lt;/button&gt;
+<p>Am Anfang, ein wenig HTML:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;button&gt;Oooh Leuchtend&lt;/button&gt;
 </code></pre></div>
-<p>Since we&rsquo;re using pseudo-elements, we won&rsquo;t need any more HTML than this to get going. You may want to add a class to the button if styling more than one type on a page, but for now we&rsquo;ll use the generic element for simplicity.</p>
+<p>Da wir Pseudo-Elemente verwenden, brauchen wir nicht mehr HTML als hier um zu beginnen. Vielleicht möchten Sie eine Klasse zum Knopf hinzufügen, wenn Sie mehr als einen Typ auf der Seite entwerfen, aber fürs Erste werden wir der Einfachheit halber ein generisches Element verwenden.</p>
 
-<h3>Adding the sheen effect</h3>
+<h3>Hinzufügen des leuchtenden Effekts</h3>
 
-<p>The shiny sheen effect is a linear gradient that passes across the button. To create this we&rsquo;ll use the <code>after</code> pseudo-element, and position it in a beginning position outside the button:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">button::after {
+<p>Der leuchtende Schimmereffekt ist ein linearer Gradient der über den Knopf wandert. Um ihn zu erzeugen werden wir das <code>after</code> Pseudo-Element verwenden, und es in einer Anfangsposition ausserhalb des Knopfes positionieren: 
+<code>
+button::after {
   content: &#39;&#39;;
   position: absolute;
   top: -50%;
@@ -140,10 +143,12 @@
   background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
   transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
-</code></pre></div>
-<p>The sheen effect is made up of a gradient from the button colour to white and back again. At this point it is now sitting outside the button.</p>
+</code></p>
 
-<p>We&rsquo;ll need to hide the sheen layer so that it only shows on hover. To do this we&rsquo;ll set the button&rsquo;s <code>overflow</code> property to <code>hidden</code>. Since the pseudo-element is within the button, this means it&rsquo;s positioning outside the button won&rsquo;t be visible.</p>
+<p>Der Schimmereffekt besteht aus einem Gradient aus der Knopffarbe zu weiss und zurück.
+An dieser Stelle ist er nun ausserhalb des Knopfes.</p>
+
+<p>We werden die Schimmerschicht verstecken müssen, so dass sie nur beim Hinueberfahren mit der Maus gezeigt wird. Um dies zu tun, werden wir die <code>overflow</code> Eigenschaft des Knopfes zu <code>hidden</code> setzen. Da das Pseudo-Element innerhalb des Knopfes ist, bedeutet es das die Positionierung ausserhalb des Knopfes nicht sichtbar wird.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">button {
   background: #e5ac8e;
   color: #fff;
@@ -155,39 +160,41 @@
   line-height: 32px;
 }
 </code></pre></div>
-<p>I&rsquo;ve put in some other styling also to give the button it&rsquo;s own look. One thing to point out, is the use of <code>position: relative</code>. I&rsquo;ve added this property so that the absolutely positioned pseudo-element will exist within the button. Without specifying the position, an absolutely positioned item will position within a parent element.</p>
+<p>Ich habe einige andere Stile zum Knopf hinzugefügt so dass er sein eigenes Aussehen hat. Ein Hinweis ist die Verwendung von <code>position: relative</code>. Ich habe diese Eigenschaft hinzugefügt damit das absolut positionierte Pesudo-Element innerhalb des Knopfes existiert. Ohne diese Positionsangabe wird ein absolut positioniertes Element innerhalb seines Eltern-Elementes positioniert.</p>
 
-<h2>Adding the animation</h2>
+<h2>Hinzufügen der Animation</h2>
 
-<p>Since we&rsquo;ll be using an animation in this example, there are two steps involved. The first is to tell the browser to use an animation on hover. Then we&rsquo;ll set out exactly what that animation is using <code>keyframes</code>.</p>
-
-<p>Adding the hover state can be done by stacking the <code>after</code> onto the <code>hover</code> like so:</p>
+<p>Da wir in diesem Beispiel eine Animation verwenden werden, sind zwei Schritte notwendig. Der erste befiehlt dem Browser eine Animation auf hover. Dann werden wir die Animation genau spezifizieren durch Verwendung von <code>keyframes</code>.
+Das Hinzufügen des Hover Zustands kann durch die Stapelung von <code>after</code> auf  <code>hover</code> geschehen, wie hier:  </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">button:hover::after, button:focus::after {
   animation: sheen 1s forwards;
 }
 </code></pre></div>
-<p>Here we are telling the browser than on hover, the <code>after</code> pseudo-element is to have an <code>animation</code>. The animation, called sheen, lasts one second and stops at the end without repeating.</p>
+<p>Hier befehlen wir dem Browser dass on Hover, das <code>after</code> Pseudo-Element eine <code>animation</code> hat Die Animation, &lsquo;sheen&rsquo; genannnt, dauert eine Sekunde und stoppt am Ende ohne Wiederholung.</p>
 
-<p>The order matters here. Using <code>::after:hover</code> won&rsquo;t work as it&rsquo;ll be telling the browser to react to the hover state of the pseudo-element itself.</p>
+<p>Die Reihenfolge ist wichtig hier. Die Verwendung von <code>::after:hover</code> würde nicht funktionieren, das es dem Browser befehlen wuerde auf einen Hover Zustand des Pseudo-Elementes zu reagieren.</p>
 
-<p>I&rsquo;ve also added the focus state. This means that viewers tabbing through the page will see the sheen effect as well, without needing to hover. (Thank you, <a href="https://twitter.com/simevidas">Šime Vidas</a>, for the tip)</p>
+<p>Ich habe auch einen focus Zustand hinzugefuegt. Dies bedeutet dass Betrachter 
+die durch die Seite tabben auch den Schimmereffekt sehen, ohne die Notwendigkeit eines Hovers. (Danke, <a href="https://twitter.com/simevidas">Šime Vidas</a>, fuer den Tip)</p>
 
-<p>Let&rsquo;s specify <code>keyframes</code> for this animation:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">@keyframes sheen {
+<p>Nun geben wir die <code>keyframes</code> fuer diese Animation an: 
+<code>
+@keyframes sheen {
   100% {
     transform: rotateZ(60deg) translate(1em, -9em);
   }
 }
-</code></pre></div>
-<p>We only need one keyframe in this case. Since the starting position (0%) is implied by the pseudo-element&rsquo;s starting position, we only describe the end position. In this case the end position is across at the top-right of the button. The browser will then animate the sheen effect across for us.</p>
+</code></p>
+
+<p>Wir brauchen nur ein keyframe in diesem Fall. Da die Startposition (0%) durch die Startposition des Pseudo-Elementes implizit angegeben ist, beschreiben wir nur die Endposition. In diesem Fall ist die Endposition gegenüber am oberen-rechten Ende des Knopfes. Der Browser wird dann den Bildschirmeffekt fuer uns animieren.</p>
 
 <section class="shiny demo-container tap-to-activate">
   <button>Shiny effect</button>
 </section>
 
-<h2>Browser considerations</h2>
+<h2>Browserueberlegungen</h2>
 
-<p>The <a href="http://caniuse.com/#feat=css-animation">animation property is well supported</a>, as are <a href="http://caniuse.com/#feat=css-gencontent">pseudo-elements</a>. It&rsquo;s always good to make sure and include <code>-webkit</code> and <code>-moz</code> prefixes for the <code>keyframes</code> and any transforms.</p>
+<p>Die <a href="http://caniuse.com/#feat=css-animation">animation Eigenschaft ist gut unterstützt</a>, so sind <a href="http://caniuse.com/#feat=css-gencontent">Pseudo-Elemente</a>. Es ist immer ratsam auf Nummer sicher zu gehen und die  <code>-webkit</code> und <code>-moz</code> Praefixe fuer die <code>keyframes</code> und jegliche Transformationen zu laden.</p>
 
 
       <section class="quote-container">
@@ -195,7 +202,7 @@
           <img src="/assets/images/rocky.svg">
         </section>
         <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animating pseudo-elements&url=https%3A%2F%2Fcssanimation.rocks%2Fpseudo-elements&via=cssanimation" target="_blank">share it</a>!</p>
+          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Animation von Pseudo-Elementen&url=https%3A%2F%2Fcssanimation.rocks%2Fde%2Fpseudo-elements%2F&via=cssanimation" target="_blank">share it</a>!</p>
         </blockquote>
       </section>
       <h3>Want to learn more about CSS animation?</h3>
@@ -220,21 +227,16 @@
         <section class="translations">
           <h3>Translations</h3>
           
-            <ul>
-              
-                <li><a href="/de/pseudo-elements/">Deutsche (German)</a></li>
-              
-                <li><a href="/fr/pseudo-elements/">Français (French)</a></li>
-              
-                <li><a href="/tr/pseudo-elements/">Türk (Turkish)</a></li>
-              
-            </ul>
-          
           
             <p>Want to translate this article? Get the <a href="https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-03-pseudo-elements.md">source here</a>.</p>
           
         </section>
 
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by <a href="https://twitter.com/serifritsch">Serena Fritsch</a>. (<a href="/pseudo-elements/">See original</a>)</p>
+        </section>
       
       <section class="sidebar-email-signup">
         <h4>Free CSS lessons</h4>
