@@ -4,7 +4,7 @@
  <title>CSS Animation</title>
  <link href="https://cssanimation.rocks/atom.xml" rel="self"/>
  <link href="https://cssanimation.rocks/"/>
- <updated>2015-07-27T16:34:25+01:00</updated>
+ <updated>2015-07-30T20:12:18+01:00</updated>
  <id>https://cssanimation.rocks</id>
  <author>
    <name>Donovan</name>
@@ -2877,7 +2877,7 @@ function moveSecondHands() {
 &amp;lt;/ul&amp;gt;
 &amp;lt;button id=&amp;quot;add-to-list&amp;quot;&amp;gt;Add a list item&amp;lt;/button&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;A few things to note. Firstly we have two IDs in the HTML. Generally we don&amp;rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&amp;rsquo;re useful when using JavaScript. &lt;/p&gt;
+&lt;p&gt;A few things to note. Firstly we have two IDs in the HTML. Generally we don&amp;rsquo;t use IDs for styling, as they can introduce problems with their specificity. However they&amp;rsquo;re useful when using JavaScript.&lt;/p&gt;
 
 &lt;p&gt;The initial items have the class &amp;ldquo;show&amp;rdquo;, as this is a class we&amp;rsquo;ll use later to add the animation effect.&lt;/p&gt;
 
