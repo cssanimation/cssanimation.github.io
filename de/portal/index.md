@@ -9,7 +9,7 @@ tweet_text: Erstelle diese beeindruckende Portal-animation mit ausschliesslich C
 custom_header: posts/portal.html
 demo_url: https://cssanimation.rocks/demo/portal/
 customCSS: portal.css
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-07-08-portal.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-07-08-portal.md
 translator: Martin Hesseler
 translator_link: https://twitter.com/waslangewaehrt
 english_version: /portal/

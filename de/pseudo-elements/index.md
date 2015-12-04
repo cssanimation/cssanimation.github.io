@@ -8,7 +8,7 @@ customCSS: shiny_button.css
 imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Leuchtende Knöpfe mit CSS
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-03-pseudo-elements.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-02-03-pseudo-elements.md
 translator: Serena Fritsch
 translator_link: https://twitter.com/serifritsch
 english_version: /pseudo-elements/

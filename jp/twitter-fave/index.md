@@ -6,7 +6,7 @@ description: どのようにして Twitter の派手な新しい「お気に入�
 categories: [animation, tips, transition, steps]
 customCSS: twitter_fave.css
 imageURL: /images/posts/steps/twitter_fave_rectangle.png
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: sei0o
 translator_link: https://getnative.me/user/3625

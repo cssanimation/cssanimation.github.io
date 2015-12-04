@@ -6,7 +6,7 @@ description: Erfahren Sie wie Twitters schicke, neue 'fav' Animation funktionier
 categories: [animation, tips, transition, steps]
 customCSS: twitter_fave.css
 imageURL: /images/posts/steps/twitter_fave_rectangle.png
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: Serena Fritsch
 translator_link: https://twitter.com/serifritsch

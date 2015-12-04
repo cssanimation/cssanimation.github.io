@@ -36,6 +36,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
+
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;

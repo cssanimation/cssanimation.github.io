@@ -8,7 +8,7 @@ customCSS: shiny_button.css
 imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Shiny buttons with CSS
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-03-pseudo-elements.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-02-03-pseudo-elements.md
 languages:
  - title: Français (French)
    url: /fr/pseudo-elements/

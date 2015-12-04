@@ -8,7 +8,7 @@ categories: [3d, css]
 imageURL: /images/posts/stereoscopic/home.png
 home_image: /images/posts/stereoscopic/home.jpg
 tweet_text: Cross your eyes to see a 3D effect created using CSS
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-11-17-stereoscopic.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-11-17-stereoscopic.md
 ---
 
 

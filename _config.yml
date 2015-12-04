@@ -13,9 +13,11 @@ url: "https://cssanimation.rocks" # the base hostname & protocol for your site
 markdown: redcarpet
 
 # relative_permalinks: true
-permalink: /:title
+permalink: /:title/
 paginate: 20
 paginate_path: 'page:num'
 
-highlighter: true
+highlighter: pygments
 gems: [jekyll-paginate]
+
+exclude: [_src, node_modules, gulpfile.js]

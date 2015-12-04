@@ -9,7 +9,7 @@ tweet_text: Learn how CSS can animate along curves
 custom_header: posts/circles.html
 demo_url: https://cssanimation.rocks/demo/circles/
 customCSS: circles.css
-source: https://raw.githubusercontent.com/cssanimation/posts/master/.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/.md
 published: false
 ---
 

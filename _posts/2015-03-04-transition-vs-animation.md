@@ -9,7 +9,7 @@ imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: When should you use a transition, and when an animation?
 custom_header: posts/transitions-animations.html
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-03-04-transition-vs-animation.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-03-04-transition-vs-animation.md
 languages:
  - title: 中国 (Chinese)
    url: /cn/transition-vs-animation/
@@ -22,8 +22,6 @@ languages:
 ---
 
 When animating on the web, do you use a transition or an animation? There are times when you would want to choose one over the other. Let's discuss the differences.
-
-/pl/
 
 ## What are Transitions?
 

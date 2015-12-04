@@ -10,7 +10,7 @@ tweet_text: Applying Disney's 12 Principles to web animation
 custom_header: posts/principles.html
 demo_url: http://codepen.io/collection/AxKOdY/
 published: true
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-03-21-principles.md
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-03-21-principles.md
 languages:
  - title: 中国 (Chinese)
    url: /cn/principles/
@@ -29,8 +29,6 @@ languages:
 As front-end designers and developers, we use CSS to style, position and create great looking sites. We often use CSS to add movement to pages in the form of transitions or even animations, but we don't usually go much beyond that.
 
 Animation can be a powerful tool to help our visitors and customers understand and benefit from our designs. There are principles we can apply to our work to make the most of this power.
-
-/pl/
 
 Long established as fundamental working practices at Disney, the [12 Principles of Animation](http://en.wikipedia.org/wiki/12_basic_principles_of_animation) were published as "The Illusion of Life: Disney Animation" in 1981. These principles describe how animation can be used to immerse viewers in a believable   world.
 
