@@ -64,6 +64,7 @@ It's generally accepted that we use the double colon `::` to denote pseudo-eleme
 
 When adding pseudo-elements, one thing to keep in mind is the need to specify the `content` property before they can be made visible on the page. As the pseudo-element is created in an content-less state, we can trick it into appearing by using an empty `content` like so:
 
+
 ```
 .pebble::before {
   content: ""
@@ -90,6 +91,7 @@ Since we're using pseudo-elements, we won't need any more HTML than this to get 
 ### Adding the sheen effect
 
 The shiny sheen effect is a linear gradient that passes across the button. To create this we'll use the `after` pseudo-element, and position it in a beginning position outside the button:
+
 
 ```
 button::after {
