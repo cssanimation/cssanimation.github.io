@@ -1,0 +1,19 @@
+.icons {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  svg path {
+    fill: #fff;
+    transition: all 0.75s ease-out;
+  }
+
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}

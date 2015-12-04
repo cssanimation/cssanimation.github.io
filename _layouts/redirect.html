@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    {% include head.html %}
+    <script type="text/javascript">
+    <!--
+      window.location = '{{ page.target }}'
+    //-->
+    </script>
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <p>Redirecting to <a href='{{ page.target }}'>{{ page.target }}</a></p>
+    </header>
+
+</body>
+</html>

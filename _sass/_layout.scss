@@ -1,0 +1,159 @@
+.content-box {
+  border-radius: .5em;
+  background: #fff;
+  padding: 1em;
+  margin: 1em 0;
+
+  h2:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.site-header {
+  padding-top: 2em;
+}
+
+nav {
+  float: right;
+  z-index: 20;
+
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    margin: 0 0.5em;
+    position: relative;
+  }
+
+  a {
+    border-radius: 0.25em;
+    color: $text-color;
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+    padding: 4px 8px;
+
+    &:hover {
+      color: #000;
+      background: rgba(255,255,255,0.8);
+    }
+  }
+}
+
+.absolute-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.new::after {
+  content: "NEW";
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  left: -2em;
+  top: -1em;
+}
+
+.post-content {
+  animation: fade-in .8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(1em);
+  img, .demo-container {
+    border-radius: 0.5em;
+    margin: 2em -35% 2em 0;
+  }
+
+}
+
+.rocky {
+  min-width: 120px;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+code {
+  background: #fff !important;
+  border-radius: 0.5em;
+}
+
+pre {
+  margin: 2em -35% 2em 0;
+}
+
+@media (max-width: 550px) {
+  pre {
+    margin: 2em -2em;
+  }
+}
+
+.highlight {
+
+  pre code {
+    background: #fff !important;
+    padding: 2em;
+  }
+}
+
+.centered {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+footer {
+  color: #fff;
+  background: #333;
+  margin-top: 2em;
+  padding: 0 0 2em;
+  text-align: center;
+
+  a {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  input.button {
+    background: #fff;
+  }
+}
+
+.follow-button {
+  background: rgba(255,255,255,0.2);
+  border-radius: 0.5em;
+  color: #fff;
+  display: block;
+  line-height: 1em;
+  padding: 0.5em;
+  margin-top: 2em;
+  margin-right: 0.5em;
+  transition: all 0.75s cubic-bezier(.54,-0.25,.34,1.33);
+
+  &:hover {
+    transform: rotateZ(360deg);
+    background: #fff;
+    border-color: $brand-color;
+    color: $brand-color;
+    text-decoration: none;
+
+    svg path {
+      fill: $brand-color;
+    }
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

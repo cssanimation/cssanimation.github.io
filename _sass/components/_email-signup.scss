@@ -1,0 +1,12 @@
+.email-signup {
+  input {
+    color: $text-color;
+    display: inline-block;
+  }
+  input[type=submit] {
+    transform: translateY(-2px);
+  }
+}
+.footer-signup-badge {
+  max-width: 8em;
+}

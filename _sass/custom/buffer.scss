@@ -1,0 +1,303 @@
+
+
+@media (max-width: 380px) {
+  .demo-container {
+    font-size: 12px;
+    width: 90%;
+    margin: 0 10%;
+  }
+}
+
+.demo-container, .post-header-container.buffer {
+  background: #fff;
+  border-radius: 1em;
+  display: inline-block;
+  margin: 2em 0;
+  min-width: 17em;
+  text-align: center;
+
+  &.multiple {
+    margin: 1em;
+  }
+
+  svg {
+    margin: 1em 2em;
+    max-width: 12.5em;
+  }
+
+
+  .layer {
+    fill: #4b4b4b;
+    animation: 4s linear infinite;
+  }
+
+  .layer1 {
+    animation-name: layer1;
+  }
+
+  .layer2 {
+    animation-name: layer2;
+  }
+
+  .layer3 {
+    animation-name: layer3;
+  }
+
+  &.variation1 {
+    .layer {
+      animation: 2s linear infinite;
+    }
+    .layer1 {
+      animation-name: variation1a;
+    }
+
+    .layer2 {
+      animation-name: variation1b;
+    }
+
+    .layer3 {
+      animation-name: variation1a;
+    }
+  }
+
+  &.variation2 {
+    .layer {
+      animation: 3s linear infinite;
+    }
+    .layer1 {
+      animation-name: variation2a;
+    }
+
+    .layer2 {
+      animation-name: variation2b;
+    }
+
+    .layer3 {
+      animation-name: variation2c;
+    }
+  }
+
+  &.variation3 {
+    .layer {
+      animation: 4s cubic-bezier(.75,-0.31,.32,1.41) infinite;
+    }
+    .layer1 {
+      animation-name: variation3a;
+      fill: #5FB641;
+    }
+
+    .layer2 {
+      animation-name: variation3b;
+      fill: #FFB605;
+    }
+
+    .layer3 {
+      animation-name: variation3c;
+      fill: #FB8501;
+    }
+  }
+
+  &.variation4 {
+    .layer {
+      animation: 4s linear infinite;
+      stroke-width: 1;
+      stroke: #4b4b4b;
+      fill: #fff;
+      stroke-dasharray: 697.923583984375 697.923583984375;
+      stroke-dashoffset: 697.923583984375;
+      transition: stroke-dashoffset 1s ease-out, fill 0.5s 1s linear;
+
+      &.draw {
+        stroke-dashoffset: 0;
+        fill: #4b4b4b;
+      }
+    }
+
+    .layer1 {
+      animation-name: variation4a;
+    }
+
+    .layer2 {
+      animation-name: variation4b;
+    }
+
+    .layer3 {
+      animation-name: variation4c;
+    }
+  }
+}
+
+.post-header {
+  background: #fff;
+}
+
+.post-header-container {
+  background: none !important;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-120%, -50%);
+  perspective: 800px;
+  transform-style: preserve-3d;
+
+  span {
+    font-size: 148px;
+    display: block;
+    transform: rotateY(-45deg) rotateX(-30deg);
+  }
+}
+
+
+@keyframes layer1 {
+  0%, 65% {
+    fill: #b2b2b2;
+  }
+  75%, 82% {
+    fill: #4b4b4b;
+  }
+  92%, 100% {
+    fill: #b2b2b2;
+  }
+}
+
+@keyframes layer2 {
+  0%, 40% {
+    fill: #b2b2b2;
+  }
+  50%, 86% {
+    fill: #4b4b4b;
+  }
+  96%, 100% {
+    fill: #b2b2b2;
+  }
+}
+
+@keyframes layer3 {
+  0%, 15% {
+    fill: #b2b2b2;
+  }
+  25%, 90% {
+    fill: #4b4b4b;
+  }
+  100% {
+    fill: #b2b2b2;
+  }
+}
+
+@keyframes variation1a {
+  0%, 45% {
+    fill: #4b4b4b;
+  }
+  55%, 95% {
+    fill: #b2b2b2;
+  }
+  100% {
+    fill: #4b4b4b;
+  }
+}
+
+@keyframes variation1b {
+  0%, 45% {
+    fill: #b2b2b2;
+  }
+  55%, 95% {
+    fill: #4b4b4b;
+  }
+  100% {
+    fill: #b2b2b2;
+  }
+}
+
+@keyframes variation2a {
+  0%, 65% {
+    opacity: 0;
+  }
+  75%, 82% {
+    opacity: 1;
+  }
+  92%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes variation2b {
+  0%, 40% {
+    opacity: 0;
+  }
+  50%, 86% {
+    opacity: 1;
+  }
+  96%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes variation2c {
+  0%, 15% {
+    opacity: 0;
+  }
+  25%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes variation3a {
+  0%, 20% {
+    fill: #009EDF;
+  }
+  20%, 40% {
+    fill: #974596;
+  }
+  40%, 60% {
+    fill: #E6433A;
+  }
+  60%, 80% {
+    fill: #FB8501;
+  }
+  80%, 100% {
+    fill: #FFB605;
+  }
+}
+
+@keyframes variation3b {
+  0%, 20% {
+    fill: #5FB641;
+  }
+  20%, 40% {
+    fill: #009EDF;
+  }
+  40%, 60% {
+    fill: #974596;
+  }
+  60%, 80% {
+    fill: #E6433A;
+  }
+  80%, 100% {
+    fill: #FB8501;
+  }
+}
+
+@keyframes variation3c {
+  0%, 20% {
+    fill: #FB8501;
+  }
+  20%, 40% {
+    fill: #5FB641;
+  }
+  40%, 60% {
+    fill: #009EDF;
+  }
+  60%, 80% {
+    fill: #974596;
+  }
+  80%, 100% {
+    fill: #E6433A;
+  }
+}
+
+

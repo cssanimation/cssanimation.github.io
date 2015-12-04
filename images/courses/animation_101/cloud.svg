@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100px" height="64px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g>
+        <g id="Layer1">
+            <g>
+                <path d="M26.2648,10.894C40.7705,10.894 52.5296,22.7822 52.5296,37.447C52.5296,52.1118 40.7705,64 26.2648,64C11.7592,64 -4.26326e-13,52.1118 -4.26326e-13,37.447C-4.26326e-13,22.7822 11.7592,10.894 26.2648,10.894Z" style="fill:white;"/>
+                <path d="M49.5368,-7.10543e-15C67.0181,-7.10543e-15 81.1895,14.3269 81.1895,32C81.1895,49.6731 67.0181,64 49.5368,64C32.0555,64 17.8841,49.6731 17.8841,32C17.8841,14.3269 32.0555,-7.10543e-15 49.5368,-7.10543e-15Z" style="fill:white;"/>
+                <g>
+                    <path d="M81.1895,25.9663C91.5783,25.9663 100,34.4804 100,44.9832C100,55.4859 91.5783,64 81.1895,64C70.8008,64 62.3791,55.4859 62.3791,44.9832C62.3791,34.4804 70.8008,25.9663 81.1895,25.9663Z" style="fill:white;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

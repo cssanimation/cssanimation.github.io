@@ -1,0 +1,134 @@
+.home {
+  margin-top: 2em;
+}
+
+
+/* Hero stuff */
+
+$animation-duration: 5s;
+$highlight-color: #38b449;
+
+.hero-image-container {
+  animation: hero-fade-in 1s 0.5s linear forwards;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 22em;
+}
+
+.window-background {
+  animation: background-color $animation-duration cubic-bezier(.81,-0.46,.19,1.33) infinite;
+  position: absolute;
+  height: 40em;
+  width: 30em;
+  top: 0;
+}
+
+.screen-container {
+  animation: move-emails $animation-duration infinite ease-out;
+  position: absolute;
+  width: 7.6em;
+  height: 6em;
+  bottom: 8.66em;
+  background: #fff url(/images/courses/animation_101/emails.svg) repeat-y;
+  background-size: 100% auto;
+  left: 50%;
+  transform: translate(-16.4%, -10%);
+}
+
+.notification {
+  animation: move-notification $animation-duration infinite cubic-bezier(.81,-0.46,.19,1.33);
+  position: absolute;
+  bottom: 62%;
+  left: 65%;
+  width: 4%;
+  height: 3%;
+  background: #fff url(/images/courses/animation_101/notification.svg);
+  background-size: 100%;
+}
+
+.moon {
+  animation: moon $animation-duration infinite linear;
+  position: absolute;
+  left: 25%;
+  top: 3%;
+  background: url(/images/courses/animation_101/moon.svg) no-repeat;
+  background-size: 100%;
+  height: 25%;
+  width: 8%;
+  transform-origin: 30% 350%;
+}
+
+
+@media (max-width: 520px) {
+  .international-homepage .flower-container h1 {
+    font-size: 22px !important;
+  }
+}
+
+
+@keyframes background-color {
+  0% {
+   background: #011;
+  }
+  20%, 30% {
+    background: #5ab6fc;
+  }
+  100% {
+    background: #011;
+  }
+}
+
+@keyframes move-emails {
+  0%, 24% {
+    background-position: 0 -4.6em;
+    animation-timing-function: cubic-bezier(.81,-0.46,.19,1.33);
+  }
+  34%, 60% {
+    background-position: 0 0;
+  }
+  90%, 100% {
+    background-position: 0 -78%;
+  }
+}
+
+@keyframes move-notification {
+  0%, 20% {
+   transform: translateX(.25em);
+   opacity: 0;
+  }
+  50%, 58% {
+    transform: none;
+    opacity: 1;
+  }
+  70%, 100% {
+    transform: translateX(-.25em);
+    opacity: 0;
+  }
+}
+
+@keyframes moon {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(.25,0,.41,1);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+    animation-timing-function: linear;
+  }
+}
+
+@media (max-width: 550px) {
+  .demo-container.clocks.single .clock, .badge {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .demo-container.clocks.single .clock, .badge {
+    font-size: 10px;
+  }
+}

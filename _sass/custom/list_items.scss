@@ -1,0 +1,145 @@
+.add-to-list {
+  // Basic LI items initially, then customise with animations
+  background: #fff;
+  border-radius: 0.5em;
+  padding: 1em 1em;
+  display: inline-block;
+  width: auto;
+
+
+  li {
+    list-style: none;
+    background: darken(#F8E9E1, 40%);
+    border-bottom: 0 solid #fff;
+    color: #fff;
+    height: 0;
+    padding: 0 0.5em;
+    margin: 0;
+    overflow: hidden;
+    line-height: 2em;
+    width: 10em;
+
+    &:hover {
+      cursor: crosshair;
+    }
+
+    &.show {
+      height: 2em;
+      border-width: 2px;
+    }
+  }
+
+  &.fade {
+    li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+      height: 2em;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.slide-fade {
+    li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.swing {
+    perspective: 100px;
+
+    li {
+      opacity: 0;
+      transform: rotateX(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+
+      &.show {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+      }
+    }
+
+  }
+
+  &.swing-side {
+    perspective: 200px;
+
+    li {
+      transform: rotateY(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+
+      &.show {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+      }
+    }
+
+  }
+}
+
+$header-bg: #903f1e;
+
+.demo {
+  background: lighten($header-bg, 50%);
+}
+
+.post-header-container {
+  background: none;
+  perspective: 800px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) rotateX(-55deg) rotateY(0deg) skewX(30deg);
+  font-size: 64px;
+
+  .add-to-list {
+    background: none;
+
+    li {
+      border-color: lighten($header-bg, 50%) !important;
+      transform: translateZ(2em) rotateX(90deg);
+      cursor: default;
+      transition: all 0.8s cubic-bezier(.36,-0.64,.34,1);
+      opacity: 0;
+
+      &.show {
+        transform: none;
+        opacity: 1;
+
+      }
+
+      &.hide {
+        opacity: 0;
+        height: 0;
+        border-width: 0;
+        transition: all 1s linear;
+        transform: rotateX(-50deg);
+        transition: all 0.5s ease-out;
+      }
+    }
+  }
+
+
+}
+
+@media (max-width: 550px) {
+  .post-header-container {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .post-header-container {
+    font-size: 24px;
+  }
+}

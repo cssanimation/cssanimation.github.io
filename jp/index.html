@@ -1,0 +1,71 @@
+---
+layout: home
+customCSS: flower.css
+language: jp
+bodyClass: international-homepage
+---
+
+<section class="container">
+  <section class="row">
+    <section class="twelve columns">
+      <a href="/" class="svg-logo"><img src="/images/logo.svg" alt="CSS Animation"></a>
+      {% include nav.html %}
+    </section>
+  </section>
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <section class="flower-container">
+        <section class="flower">
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <h1 style="font-size: 32px">CSS Animation Rocks: 日本語</h1>
+          <p>
+            Back to the <a href="/">English version</a>
+          </p>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <section class="post-container">
+        {% for post in site.posts %}
+          {% if post.languages %}
+            {% for language in post.languages %}
+              {% if language.iso == "jp" %}
+                <article class="post row">
+                    <a class="image-link" href="{{site.url}}{{language.url}}"><img src="{{ post.home_image }}"></a>
+                    {% if language.postTitle %}
+                      <h3><a class="post-link" href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></h3>
+                    {% else %}
+                      <h3><a class="post-link" href="{{site.url}}{{language.url}}">{{ post.title }}</a></h3>
+                    {% endif %}
+                </article>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </section>
+    </section>
+  </section>
+  <section class="row wow bounceIn" style="margin: 0 auto;max-width:540px;">
+    <section class="quote-container">
+      <section class="rocky">
+        <img src="/images/rocky.svg" class="rocky">
+      </section>
+      <blockquote>
+        <p>On Twitter? You should <a href="https://twitter.com/intent/follow?screen_name=cssanimation">follow me</a>!</p>
+      </blockquote>
+    </section>
+  </section>
+</section>

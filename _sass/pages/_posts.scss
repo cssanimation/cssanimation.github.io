@@ -1,0 +1,196 @@
+.post-header {
+  font-size: 16px;
+  background-color: darken($background-color, 20%);
+  height: 26em;
+  overflow: hidden;
+  position: relative;
+
+  &.shorter {
+    background: none;
+    height: 64px;
+  }
+
+  nav {
+    padding: 1em 2em;
+  }
+}
+
+.shorter aside {
+  padding-top: 4.5em;
+}
+
+.logo {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  width: 100px;
+  z-index: 10;
+}
+
+.demo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom :0;
+  left: 0;
+}
+
+.post-content {
+  h2, h3, h4, h5 {
+    margin-top: 4rem !important;
+  }
+}
+/* Right to left overrides */
+.rtl {
+  h1, h2, h3, h4, h5, p {
+    direction: rtl;
+    unicode-bidi: embed;
+  }
+  img {
+    display: block;
+    margin: 0 0 0 0;
+  }
+  pre {
+    margin: 2em 0;
+  }
+  .demo-container {
+    margin: 2em 0 2em auto;
+  }
+  .post-footer {
+    h1, h2, h3, h4, h5, p {
+      direction: ltr;
+    }
+  }
+}
+
+.post-aside {
+  padding-top: 3em;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.demo-link {
+  margin: 0 0 1em;
+
+  .button {
+    background: #333;
+    border: none;
+    color: #fff;
+  }
+}
+
+.translations {
+  p {
+    font-size: 0.75em;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 0.8em;
+    padding: 0 .5em 0;
+
+    li::before {
+      content:'\21FE  ';
+    }
+  }
+
+  .translate {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .translation-message {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.powered-by {
+  font-size: .5em;
+  color: #888;
+  padding-top: 0;
+
+  img {
+    width: 67px;
+    margin-left: 4px;
+  }
+}
+
+.translator {
+  p {
+    font-size: 0.8em;
+  }
+}
+
+.post-title {
+  margin-top: 1.25em;
+}
+
+.sidebar-email-signup {
+  background: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 0.5em 1em;
+
+  h4 {
+    font-size: 1.75em;
+    margin: 0 0 0.5em;
+  }
+
+  input[type=email] {
+    width: 100%;
+  }
+
+  input[type=submit] {
+    font-size: 9px !important;
+  }
+}
+
+.course-sidebar {
+  background: #fff;
+  border-radius: 0.5em;
+  margin: 1.5em 0;
+  padding: 0.25em 0.5em 0.5em;
+  img {
+    height: 5em;
+    margin: 0 auto;
+  }
+  h3, p {
+    color: #666;
+    font-size: 18px;
+    text-align: center;
+    margin: 0.5em 0;
+  }
+  p {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+/* Media queries here for various scales using font-size as a handle */
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 550px) {
+  .post-header {
+    font-size: 12px;
+  }
+
+  .author-details, .demo-link, .sidebar-email-signup, .course-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .post-header {
+    font-size: 8px;
+  }
+}
+
+
+
