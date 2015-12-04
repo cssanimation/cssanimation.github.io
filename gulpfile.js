@@ -5,6 +5,7 @@ var gulp = require('gulp');
 // Loads the plugins without having to list all of them, but you need
 // to call them as $.pluginname
 var $ = require('gulp-load-plugins')();
+var tinypng = require('gulp-tinypng-compress');
 
 // BrowserSync isn't a gulp package, and needs to be loaded manually
 var browserSync = require('browser-sync');
@@ -22,18 +23,14 @@ gulp.task('styles', function () {
     .pipe($.size({title: 'styles'}))
 });
 
-// Optimizes the images that exists
 gulp.task('images', function () {
-  return gulp.src('_src/images/**')
-    //.pipe($.changed('images'))
-    .pipe($.imagemin({
-      // Lossless conversion to progressive JPGs
-      progressive: true,
-      // Interlace GIFs for progressive rendering
-      interlaced: true
-    }))
-    .pipe(gulp.dest('images'))
-    .pipe($.size({title: 'images'}));
+  gulp.src('_src/images/**/*.{png,jpg,jpeg}')
+  .pipe(tinypng({
+      key: 'K6Et0FaK-Ybw480ibpNN99XvU9mJsLqD',
+      sigFile: 'images/.tinypng-sigs',
+      log: true
+  }))
+  .pipe(gulp.dest('images'));
 });
 
 gulp.task('build', $.shell.task('jekyll build --watch'));
@@ -47,8 +44,9 @@ gulp.task('serve', function () {
 // These tasks will look for files that change while serving and will auto-regenerate or
 // reload the website accordingly. Update or add other files you need to be watched.
 gulp.task('watch', function () {
-  gulp.watch(['src/sass/**/*.scss'], ['styles']);
+  gulp.watch(['_src/sass/**/*.scss'], ['styles']);
+  gulp.watch(['_src/images/**/*.{png,jpg,jpeg}'], ['images']);
 });
 
 // Default task, run when just writing 'gulp' in the terminal
-gulp.task('default', ['styles', 'build', 'serve', 'watch']);
+gulp.task('default', ['styles', 'images', 'build', 'serve', 'watch']);

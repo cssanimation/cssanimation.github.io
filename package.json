@@ -16,6 +16,7 @@
     "gulp-sass": "^2.0.4",
     "gulp-shell": "^0.5.1",
     "gulp-size": "^2.0.0",
+    "gulp-tinypng-compress": "^1.2.0",
     "gulp-uglify": "^1.0.1"
   },
   "engines": {
