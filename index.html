@@ -42,8 +42,8 @@ customCSS: flower.css
       <section class="post-container">
         {% for post in site.posts %}
           <article class="post row">
-              <a class="image-link" href="{{ post.url }}/"><img src="{{ post.home_image }}"></a>
-              <h3><a class="post-link" href="{{ post.url }}/">{{ post.title }}</a></h3>
+              <a class="image-link" href="{{ post.url }}"><img src="{{ post.home_image }}"></a>
+              <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
           </article>
         {% endfor %}
       </section>
