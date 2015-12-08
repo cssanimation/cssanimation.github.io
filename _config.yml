@@ -12,6 +12,8 @@ url: "https://cssanimation.rocks" # the base hostname & protocol for your site
 
 # Build settings
 markdown: redcarpet
+future: false
+drafts: false
 
 # relative_permalinks: true
 permalink: /:title/

@@ -33,13 +33,18 @@ gulp.task('images', function () {
   .pipe(gulp.dest('images'));
 });
 
-gulp.task('build', $.shell.task('jekyll build --watch'));
+gulp.task('build:dev', $.shell.task('jekyll build --watch --config _config.yml,_dev_config.yml'));
+
+gulp.task('build:prod', $.shell.task('jekyll build --watch --config _config.yml'));
+
 
 gulp.task('serve', function () {
   browserSync.init({server: {baseDir: '_site/'}});
   // Reloads page when some of the already built files changed:
   gulp.watch('_site/**/*.*').on('change', browserSync.reload);
 });
+
+
 
 // These tasks will look for files that change while serving and will auto-regenerate or
 // reload the website accordingly. Update or add other files you need to be watched.
@@ -49,4 +54,6 @@ gulp.task('watch', function () {
 });
 
 // Default task, run when just writing 'gulp' in the terminal
-gulp.task('default', ['styles', 'images', 'build', 'serve', 'watch']);
+gulp.task('default', ['styles', 'images', 'build:dev', 'serve', 'watch']);
+
+gulp.task('prod', ['styles', 'images', 'build:prod', 'serve', 'watch']);
