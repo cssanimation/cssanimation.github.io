@@ -24,7 +24,7 @@ imageURL: /images/courses/animation_101/animation_101.png
       <img src="/images/rocky.svg" class="rocky">
     </div>
     <blockquote>
-      <p>I'm back! Next course starts on Monday! Sign up now.</p>
+      <p>Next course starts on Monday!</p>
     </blockquote>
   </div>
 </section>
