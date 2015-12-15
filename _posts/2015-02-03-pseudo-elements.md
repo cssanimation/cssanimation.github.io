@@ -18,6 +18,10 @@ languages:
    url: /de/pseudo-elements/
    iso: de
    postTitle: Animation von Pseudo-Elementen
+ - title: Nederlands (Dutch)
+   url: /nl/pseudo-elements/
+   iso: nl
+   postTitle: "Pseudo-elementen animeren"
  - title: Polski (Polish)
    url: /pl/pseudo-elements/
    iso: pl

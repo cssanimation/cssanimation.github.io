@@ -44,11 +44,11 @@ bodyClass: international-homepage
             {% for language in post.languages %}
               {% if language.iso == "de" %}
                 <article class="post row">
-                    <a class="image-link" href="{{site.url}}{{language.url}}"><img src="{{ post.home_image }}"></a>
+                    <a class="image-link" href="{{language.url}}"><img src="{{ post.home_image }}"></a>
                     {% if language.postTitle %}
-                      <h3><a class="post-link" href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></h3>
+                      <h3><a class="post-link" href="{{language.url}}">{{ language.postTitle }}</a></h3>
                     {% else %}
-                      <h3><a class="post-link" href="{{site.url}}{{language.url}}">{{ post.title }}</a></h3>
+                      <h3><a class="post-link" href="{{language.url}}">{{ post.title }}</a></h3>
                     {% endif %}
                 </article>
               {% endif %}
