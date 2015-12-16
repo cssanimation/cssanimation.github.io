@@ -1,0 +1,15 @@
+// Styles for the translations page, with world map etc
+
+.world-container {
+  background-color: #9bb7cb;
+  position: relative;
+  min-height: 440px;
+}
+
+.world-map {
+  width: 960px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

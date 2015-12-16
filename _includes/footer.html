@@ -46,7 +46,12 @@
   </section>
 </footer>
 <script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
-<script src='/assets/javascript/site.js'></script>
+<script src='/javascript/site.js'></script>
+{% if page.externalJS %}
+  {% for jsURL in page.externalJS %}
+    <script src='{{ jsURL }}'></script>
+  {% endfor %}
+{% endif %}
 {% if page.extraJS %}
   {% for jsURL in page.extraJS %}
     <script src='/javascript/{{ jsURL }}'></script>

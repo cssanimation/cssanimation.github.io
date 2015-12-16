@@ -3,143 +3,25 @@ layout: page
 title: Article translations
 ---
 
+
+{% for language in site.data.languages %}
+<h3><a href="/{{language.iso}}/">{{language.name}} ({{language.english_name}})</a></h3>
+<ul>
+{% for post in site.posts %}
+  {% for post_language in post.languages %}
+    {% if post_language.iso == language.iso %}
+      {% if post_language.postTitle %}
+        <li><a href="{{post_language.url}}">{{ post_language.postTitle }}</a></li>
+      {% else %}
+        <li><a href="{{post_language.url}}">{{ post.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+</ul>
+{% endfor %}
+
 *Translations powered by <a href="https://getnative.me"><img src="/images/getnative.png" height="28" style="width:auto" alt="native - Community powered translations"></a>*
-
-
-<h3><a href="/cn/">العربية (Arabic)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'ar' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/cn/">中国 (Chinese)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'cn' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/de/">Deutsch (German)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'de' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/fr/">Français (French)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'fr' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/jp/">日本語 (Japanese)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'jp' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/pl/">Nederlands (Dutch)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'nl' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/pl/">Português (Portuguese)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'pt' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/pl/">Polski (Polish)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'pl' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
-
-<h3><a href="/tr/">Türkçe (Turkish)</a></h3>
-<ul>
-{% for post in site.posts %}
-{% for language in post.languages %}
-  {% if language.iso == 'tr' %}
-    {% if language.postTitle %}
-      <li><a href="{{site.url}}{{language.url}}">{{ language.postTitle }}</a></li>
-    {% else %}
-      <li><a href="{{site.url}}{{language.url}}">{{ post.title }}</a></li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% endfor %}
-</ul>
 
 
 ## How you can help
