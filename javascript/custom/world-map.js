@@ -5,18 +5,25 @@ $(function() {
   var h = 400,
       w = 960;
 
-  Raphael($('#world-map').get(0), w, h, function () {
+  Raphael("world-map", w, h, function () {
     var r = this;
     r.rect(0, 0, w, h, 0).attr({
       stroke: "none",
       fill: "#9bb7cb"
     });
-    var over = function () {
+
+    var over = function (event) {
+      // Country highlight colour
       this.c = this.c || this.attr("fill");
       this.stop().animate({fill: "#bacabd"}, 150);
+      // Tooltip
+      posX = event.pageX - $(document).scrollLeft() - $('#world-map').offset().left;
+      posY = event.pageY - $(document).scrollTop() - $('#world-map').offset().top;
+      $("#tooltip").show();
     },
       out = function () {
-          this.stop().animate({fill: this.c}, 180);
+        this.stop().animate({fill: this.c}, 180);
+        $("#tooltip").hide();
       };
     r.setStart();
     var hue = Math.random();
@@ -27,6 +34,15 @@ $(function() {
     }
     var world = r.setFinish();
     world.hover(over, out);
+    var worldContainerOffset = $('#world-container').offset();
+    world.mousemove (function(event) {
+      posX = event.pageX - $(document).scrollLeft() - worldContainerOffset.left;
+      posY = event.pageY - $(document).scrollTop() - worldContainerOffset.top;
+      $("#tooltip").css( {
+        top: posY - 130,
+        left: posX - 100
+      });
+    });
     world.getXY = function (lat, lon) {
       return {
         cx: lon * 2.6938 + 465.4,

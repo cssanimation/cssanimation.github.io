@@ -13,3 +13,11 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.tooltip {
+  background: rgba(255,255,255,0.5);
+  height: 100px;
+  padding: 10px;
+  position: absolute;
+  width: 200px;
+}

@@ -11,8 +11,9 @@ TODO:
 * World map with hover showing each country's status (if translations, link to the country page)
 * Instructions (and screenshots / animation) on how to add translations
 
-<section class="wide-container world-container">
+<section id="world-container" class="wide-container world-container">
   <div id="world-map" class="world-map"></div>
+  <div id="tooltip" class="tooltip">Testing</div>
 </section>
 
 <section class="container page-content">
