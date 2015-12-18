@@ -3,11 +3,11 @@ layout: post
 title: Star Wars
 bodyClass: shorter
 demo_url: https://cssanimation.rocks/demo/starwars
-description: Les titres de Star Wars 'Le R&eacute;veil de la Force' anim&eacute;s en CSS
+description: Les titres de Star Wars 'Le Réveil de la Force' animés en CSS
 categories: [3d, css]
 imageURL: /images/posts/starwars/home.jpg
 home_image: /images/posts/starwars/home.jpg
-tweet_text: Les titres de Star Wars anim&eacute;s en CSS
+tweet_text: Les titres de Star Wars animés en CSS
 translator: Pierre Choffé
 translator_link: https://twitter.com/pierrechoffe
 english_version: /starwars/
