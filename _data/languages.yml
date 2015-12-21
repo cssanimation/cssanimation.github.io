@@ -4,6 +4,9 @@
 - name: "中国"
   english_name: "Chinese"
   iso: cn
+- name: "Danske"
+  english_name: "Danish"
+  iso: da
 - name: "Deutsch"
   english_name: "German"
   iso: de
