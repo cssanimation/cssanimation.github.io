@@ -6,6 +6,7 @@ var gulp = require('gulp');
 // to call them as $.pluginname
 var $ = require('gulp-load-plugins')();
 var tinypng = require('gulp-tinypng-compress');
+var critical = require('critical');
 
 // BrowserSync isn't a gulp package, and needs to be loaded manually
 var browserSync = require('browser-sync');
@@ -33,10 +34,54 @@ gulp.task('images', function () {
   .pipe(gulp.dest('images'));
 });
 
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function (cb) {
+    critical.generate({
+        inline: false,
+        base: '_site/',
+        src: 'index.html',
+        dest: '_include/critical.css',
+        width: 860,
+        height: 680,
+        minify: true
+    });
+});
+
+// Page speed analysis
+var psi = require('psi');
+var site = 'https://cssanimation.rocks';
+var key = '';
+
+// Please feel free to use the `nokey` option to try out PageSpeed
+// Insights as part of your build process. For more frequent use,
+// we recommend registering for your own API key. For more info:
+// https://developers.google.com/speed/docs/insights/v2/getting-started
+
+gulp.task('mobile', function () {
+    return psi(site, {
+        // key: key
+        nokey: 'true',
+        strategy: 'mobile',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+        console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+    });
+});
+
+gulp.task('desktop', function () {
+    return psi(site, {
+        nokey: 'true',
+        // key: key,
+        strategy: 'desktop',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+    });
+});
+
+
 gulp.task('build:dev', $.shell.task('jekyll build --watch --config _config.yml,_dev_config.yml'));
 
 gulp.task('build:prod', $.shell.task('jekyll build --watch --config _config.yml'));
-
 
 gulp.task('serve', function () {
   browserSync.init({server: {baseDir: '_site/'}});
