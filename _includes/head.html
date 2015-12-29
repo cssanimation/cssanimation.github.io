@@ -32,27 +32,19 @@
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
   {% endif %}
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png">
+  <meta name="apple-mobile-web-app-title" content="CSS Animation">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png">
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fcf5f2">
+
   <link rel="shortcut icon" href="/images/favicons/favicon.ico">
-  <link rel="icon" type="image/png" href="/images/favicons/favicon-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/images/favicons/favicon-160x160.png" sizes="160x160">
-  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
-  {% if page.hide %}
-    <meta name="robots" content="noindex">
-  {% endif %}
-
+  {% if page.hide %}<meta name="robots" content="noindex">{% endif %}
   <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
 
   <script>
