@@ -22,15 +22,10 @@
     <section class="row" style="text-align: center">
       <p>CSS Animation is now available in more languages! Read CSS Animation articles in:
       <br>
-      <a href="/ar/">لعربية (Arabic)</a> |
-      <a href="/cn/">中国 (Chinese)</a> |
-      <a href="/fr/">Français (French)</a> |
-      <a href="/de/">Deutsch (German)</a> |
-      <a href="/jp/">日本語 (Japanese)</a> |
-      <a href="/nl/">Nederlands (Dutch)</a> |
-      <a href="/pt/">Português (Portuguese)</a> |
-      <a href="/pl/">Polski (Polish)</a> |
-      <a href="/tr/">Türkçe (Turkish)</a> </p>
+      {% for language in site.data.languages %}
+        {% unless forloop.index == 1 %} | {% endunless %}
+        <a href="/{{ language.iso }}/">{{ language.name }} ({{ language.english_name }})</a>
+      {% endfor %}
       <p>Want to help? Press the "Translate this" link on any article to get started.</p>
     </section>
     <section class="row" style="text-align: center">
