@@ -2,10 +2,9 @@
 importScripts('javascript/vendor/serviceworker-cache-polyfill.js');
 
 // Cache name - Update to invalidate current cache
-var CACHE_NAME = 'cssanimation-v3';
+var CACHE_NAME = 'cssanimation-css-js-v1';
 
 var urlsToCache = [
-  '/',
   '/css/main.css',
   '/javascript/site.js'
 ];
@@ -22,34 +21,19 @@ self.addEventListener('install', function(event) {
 });
 
 // Fetch event(s)
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     caches.match(event.request)
-//       .then(function(response) {
-//         // Cache hit - return response
-//         if (response) {
-//           return response;
-//         }
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return the response from the cached version
+        if (response) {
+          return response;
+        }
 
-//         var fetchRequest = event.request.clone();
-
-//         return fetch(fetchRequest).then(
-//           function(response) {
-//             // Check if we received a valid response
-//             if(!response || response.status !== 200 || response.type !== 'basic') {
-//               return response;
-//             }
-
-//             var responseToCache = response.clone();
-
-//             caches.open(CACHE_NAME)
-//               .then(function(cache) {
-//                 cache.put(event.request, responseToCache);
-//               });
-
-//             return response;
-//           }
-//         );
-//       })
-//     );
-// });
+        // Not in cache - return the result from the live server
+        // `fetch` is essentially a "fallback"
+        return fetch(event.request);
+      }
+    )
+  );
+});
