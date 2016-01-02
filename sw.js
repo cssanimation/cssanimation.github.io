@@ -2,7 +2,7 @@
 importScripts('javascript/vendor/serviceworker-cache-polyfill.js');
 
 // Cache name - Update to invalidate current cache
-var CACHE_NAME = 'cssanimation-v2';
+var CACHE_NAME = 'cssanimation-v3';
 
 var urlsToCache = [
   '/',
