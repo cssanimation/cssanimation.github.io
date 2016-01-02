@@ -23,7 +23,7 @@
       <p>CSS Animation is now available in more languages! Read CSS Animation articles in:
       <br>
       {% for language in site.data.languages %}
-        {% unless forloop.index == 1 %} | {% endunless %}
+        {% unless forloop.first %} | {% endunless %}
         <a href="/{{ language.iso }}/">{{ language.name }} ({{ language.english_name }})</a>
       {% endfor %}
       <p>Want to help? Press the "Translate this" link on any article to get started.</p>
