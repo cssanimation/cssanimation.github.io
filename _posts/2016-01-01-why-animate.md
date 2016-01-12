@@ -2,7 +2,6 @@
 layout: post
 title: Why animate?
 bodyClass: shorter
-demo_url: https://cssanimation.rocks/demo/starwars
 description: Why animation works so well, and how you can use it to improve your web designs.
 categories: [css, theory]
 imageURL: /images/posts/why-animate/home.png
