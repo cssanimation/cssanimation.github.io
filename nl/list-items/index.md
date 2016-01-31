@@ -15,7 +15,7 @@ translator_link: https://twitter.com/DenisValcke
 english_version: /list-items/
 ---
 
-Als er stukken van de pagina veranderen kan animatie een goede manier zijn om uw gebruikers te helpen begrijpen wat er gebeurd. Animaties kunnen nieuwe inhoud aankondigen of aandacht trekken naar inhoud die op punt staat verwijderd te worden. In dit artikel zullen we bekijken hoe we dit kunnen gebruiken om nieuwe inhoud in te leiden door items in een lijst te tonen en verbergen.
+Als er stukken van de pagina veranderen kan animatie een goede manier zijn om uw gebruikers te helpen begrijpen wat er gebeurt. Animaties kunnen nieuwe inhoud aankondigen of aandacht trekken naar inhoud die op punt staat verwijderd te worden. In dit artikel zullen we bekijken hoe we dit kunnen gebruiken om nieuwe inhoud in te leiden door items in een lijst te tonen en verbergen.
 
 <section class="add-to-list swing-side demo-container">
 <ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
