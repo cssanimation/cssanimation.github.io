@@ -9,7 +9,7 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: Denis Valcke
-translator_link: https://twitter.com/ShortyEx
+translator_link: https://twitter.com/DenisValcke
 english_version: /twitter-fave/
 ---
 

@@ -11,6 +11,10 @@ home_image: /images/posts/list_items/home.png
 tweet_text: Animating List Items
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-02-12-list-items.md
 languages:
+ - title: Nederlands (Dutch)
+   url: /nl/list-items/
+   iso: nl
+   postTitle: Lijstitems Animeren
  - title: Türkçe (Turkish)
    url: /tr/list-items/
    iso: tr

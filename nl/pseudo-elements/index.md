@@ -9,7 +9,7 @@ imageURL: /assets/images/posts/sheen/sheen.gif
 home_image: /assets/images/posts/sheen/home.png
 tweet_text: Glanzende knoppen met CSS
 translator: Denis Valcke
-translator_link: https://twitter.com/ShortyEx
+translator_link: https://twitter.com/DenisValcke
 english_version: /pseudo-elements/
 ---
 
