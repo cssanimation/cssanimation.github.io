@@ -44,9 +44,8 @@ english_version: /twitter-fave/
 
 بدايةً، سنقوم بإنشاء الـ HTML
 
-```html
-<section class="fave"></section>
-```
+
+    <section class="fave"></section>
 
 ### الصورة الخلفية
 
@@ -54,23 +53,21 @@ english_version: /twitter-fave/
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-```css
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-```
+
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 سنضيف صيغة الـ&nbsp;`hover`، وذلك يكون عندما نقرر إن على موضع الخلفيه أن يتحرك الى نهاية سلسلة الصور:
 
-```css
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-```
+
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 لاحظ القاعده الثانيه، تحدد الـ&nbsp;`transition` . فى هذه الحاله نحن نريد نقل خاصية الخلفيه، وتفعيل الإنتقال لمدة ثانيتين، بإستخدام خاصية التوقيت `steps`. جزء ال `steps` يشمل على القيمه `55`، كأن هناك 55 إطار فى هذه الحركه.
 

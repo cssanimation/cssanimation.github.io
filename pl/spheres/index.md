@@ -33,24 +33,20 @@ W przykładach kodu usunąłem wszystkie prefiksy przeglądarki. Zalecam skorzys
 
 Przed dodaniem szczeg&oacute;ł&oacute;w, stworzymy początkowy kształt koła. Zaczynając od HTML:
 
-```
-<figure class="circle"></figure>
-```
+    <figure class="circle"></figure>
 
 Używamy tutaj elementu `figure`, ale może to być dowolny element. Figure jest elementem wykorzystywanym w HTML5, aby przedstawić obraz lub diagram będący częścią treści, kt&oacute;ra może być usunięta bez wpływu na jej znaczenie.
 
 Aby stworzyć koło z elementu `figure`, nadam mu szerokość i wysokość oraz ustawię promień ramki na 50%. Ponad 50% spowoduje całkowicie zaokrąglony r&oacute;g.
 
-```
-.circle {
-  display: block;
-  background: black;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  margin: 0;
-}
-```
+    .circle {
+      display: block;
+      background: black;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      margin: 0;
+    }
 
 Pojawia się koło.
 
@@ -64,17 +60,15 @@ Pierwsza rzecz o jakiej piszą w poradnikach to dodanie pojedynczego radialnego 
 
 Możemy to zrobić korzystając z następującego kodu CSS.
 
-```
-.circle {
-  display: block;
-  background: black;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  margin: 0;
-  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-}
-```
+    .circle {
+      display: block;
+      background: black;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      margin: 0;
+      background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    }
 
 Powinno to wyglądać mniej więcej tak:
 
@@ -96,34 +90,30 @@ W zależności od rodzaju cieniowania zastosowanego na powierzchni, możesz twor
 
 HTML, kt&oacute;rego użyjemy posiada jeszcze kilka element&oacute;w:
 
-```
-<section class="stage">
-  <figure class="ball"><span class="shadow"></span></figure>
-</section>
-```
+    <section class="stage">
+      <figure class="ball"><span class="shadow"></span></figure>
+    </section>
 
 Element kuli uzyskał znacznik span, kt&oacute;rego użyjemy do stworzenia cienia i został owinięty div&nbsp;`stage`. div stage jest użyteczny, kiedy chcemy ustawić perspektywę i pozycję cienia sprawiając, że będzie wyglądał bardziej 3D.
 
 Zastosuj kilka styl&oacute;w do stage i pozycję cienia, aby ustawić scenę.
 
-```
-.stage {
-  width: 300px;
-  height: 300px;
-  display: inline-block;
-  margin: 20px;
-  perspective: 1200px;
-  perspective-origin: 50% 50%;
-}
-.ball .shadow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-  transform: rotateX(90deg) translateZ(-150px);
-  z-index: -1;
-}
-```
+    .stage {
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+      margin: 20px;
+      perspective: 1200px;
+      perspective-origin: 50% 50%;
+    }
+    .ball .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+      transform: rotateX(90deg) translateZ(-150px);
+      z-index: -1;
+    }
 
 Zwr&oacute;ć uwagę, że nie pokazuję prefiks&oacute;w w przykładowych fragmentach CSS. Przykłady z Codepen zawierają w pełni prefiksowe fragmenty CSS. W przykładzie powyżej ustawiłem div `stage`, aby uzyskać `perspective` wynoszącą 1,200 pikseli. Właściwość perspektywy jest jak znikający punkt w scenie 3D.
 
@@ -139,29 +129,27 @@ Zaczyna to wyglądać trochę lepiej. Dodajmy trochę więcej cieniowania do kul
 
 W prawdziwym świecie bardzo rzadko zdarzają się obiekty oświetlone pod jednym kątem. Powierzchnie odbijają światło na inne powierzchnie i efektem tego są zmieszane r&oacute;żne źr&oacute;dła światła.&nbsp; Aby stworzyć bardzie realistyczną kulę, utworzymy światło z dw&oacute;ch źr&oacute;deł korzystając z pseudoelementu, aby dodać dwa gradienty.
 
-```
-.ball {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
-}
-.ball:before {
-  content: "";
-  position: absolute;
-  top: 1%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
-  filter: blur(5px);
-  z-index: 2;
-}
-```
+    .ball {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    }
+    .ball:before {
+      content: "";
+      position: absolute;
+      top: 1%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+      filter: blur(5px);
+      z-index: 2;
+    }
 
 Tutaj mamy dwa nieco bardziej kompleksowe gradienty.
 
@@ -183,42 +171,40 @@ Efekt jest p&oacute;ki co całkiem łagodny, dodajmy trochę blasku i stw&oacute
 
 Aby to uzyskać, wykorzystamy łagodne podświetlenie jak wcześniej, ale zmniejszymy i wyostrzymy g&oacute;rne podświetlenie. Musimy wykorzystać dwa pseudo selektory do przechowywania koloru kuli, dolnego podświetlenia i odbicia.
 
-```
-.ball {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
-}
-.ball:before {
-  content: "";
-  position: absolute;
-  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-  bottom: 2.5%;
-  left: 5%;
-  opacity: 0.6;
-  height: 100%;
-  width: 90%;
-  filter: blur(5px);
-  z-index: 2;
-}
-.ball:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
-  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  filter: blur(10px);
-}
-```
+    .ball {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+    }
+    .ball:before {
+      content: "";
+      position: absolute;
+      background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      bottom: 2.5%;
+      left: 5%;
+      opacity: 0.6;
+      height: 100%;
+      width: 90%;
+      filter: blur(5px);
+      z-index: 2;
+    }
+    .ball:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+      transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+      filter: blur(10px);
+    }
 
 Tutaj mamy początkowy kolor zastosowany jak subtelny gradient na kuli. Pseudo element `before` zawiera jaśniejsze podświetlenie, kt&oacute;re zaczyna się na dole kuli i tworzy efekt odbitego światła od powierzchni.
 
@@ -234,40 +220,38 @@ Jeśli już robimy kulę bilardową, wykonajmy dodatkowy krok i dodajmy cyfrę 8
 
 Potrzebujemy dodatkowy element przechowujący 8 jak r&oacute;wnież style zastosowane na kuli.
 
-```
-<section class="stage">
-  <figure class="ball">
-    <span class="shadow"></span>
-    <span class="eight"></span>
-  </figure>
-</section>
+    <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="eight"></span>
+      </figure>
+    </section>
 
-.ball .eight {
-  width: 110px;
-  height: 110px;
-  margin: 30%;
-  background: white;
-  border-radius: 50%;
-  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
-  position: absolute;
-}
-.ball .eight:before {
-  content: "8";
-  display: block;
-  position: absolute;
-  text-align: center;
-  height: 80px;
-  width: 100px;
-  left: 50px;
-  margin-left: -40px;
-  top: 44px;
-  margin-top: -40px;
-  color: black;
-  font-family: Arial;
-  font-size: 90px;
-  line-height: 104px;
-}
-```
+    .ball .eight {
+      width: 110px;
+      height: 110px;
+      margin: 30%;
+      background: white;
+      border-radius: 50%;
+      transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+      position: absolute;
+    }
+    .ball .eight:before {
+      content: "8";
+      display: block;
+      position: absolute;
+      text-align: center;
+      height: 80px;
+      width: 100px;
+      left: 50px;
+      margin-left: -40px;
+      top: 44px;
+      margin-top: -40px;
+      color: black;
+      font-family: Arial;
+      font-size: 90px;
+      line-height: 104px;
+    }
 
 100% Promień ramki jest ponownie wykorzystany do stworzenia koła i to koło jest umiejscowione w g&oacute;rnym prawym rogu przy wykorzystaniu właściwości `transform`. Zamiast wstawić cyfrę 8 w zawartość, użyję pseudo selektora `before`, aby dodać zawartość przez CSS i następnie nachylić cyfrę w podobny spos&oacute;b do koła w kt&oacute;rym się znajduje.
 
@@ -281,57 +265,51 @@ Jedną ze świetnych rzeczy o transformacji CSS to możliwość animacji. Korzys
 
 Pierwszym krokiem jest dostosowanie niekt&oacute;rych kolor&oacute;w wykorzystywanych w przykładzie kuli 8. Kilka poprawek i bardziej wygląda jak oko. Najpierw HTML:
 
-```
-<section class="stage">
-  <figure class="ball">
-    <span class="shadow"></span>
-    <span class="iris"></span>
-  </figure>
-</section>
-```
+    <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="iris"></span>
+      </figure>
+    </section>
 
 Większość CSS jest podobna do kuli 8 z wyjątkiem tęcz&oacute;wki i części źrenicy.
 
-```
-.iris {
-  width: 40%;
-  height: 40%;
-  margin: 30%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
-  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
-  position: absolute;
-  animation: move-eye-skew 5s ease-out infinite;
-}
-.iris:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 37.5%;
-  height: 37.5%;
-  border-radius: 50%;
-  top: 31.25%;
-  left: 31.25%;
-  background: black;
-}
-.iris:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 31.25%;
-  height: 31.25%;
-  border-radius: 50%;
-  top: 18.75%;
-  left: 18.75%;
-  background: rgba(255, 255, 255, 0.2);
-}
-```
+    .iris {
+      width: 40%;
+      height: 40%;
+      margin: 30%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+      transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+      position: absolute;
+      animation: move-eye-skew 5s ease-out infinite;
+    }
+    .iris:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 37.5%;
+      height: 37.5%;
+      border-radius: 50%;
+      top: 31.25%;
+      left: 31.25%;
+      background: black;
+    }
+    .iris:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 31.25%;
+      height: 31.25%;
+      border-radius: 50%;
+      top: 18.75%;
+      left: 18.75%;
+      background: rgba(255, 255, 255, 0.2);
+    }
 
 Niebieski gradient formuje kolorową część tęcz&oacute;wki, a następnie źrenicę i tworzone jest podświetlenie jako pseudo elementy. Dodałem r&oacute;wnież właściwość animacji do elementu tęcz&oacute;wki. Animacje są dołączone do element&oacute;w wykorzystujących taki format:
 
-```
-animation: animation-name 5s ease-out infinite;
-```
+    animation: animation-name 5s ease-out infinite;
 
 W tym przypadku zastosujemy animację o nazwie &quot;animation-name&quot;, ustawimy jej trwanie na 5 sekund, zapętlimy i zastosujemy wartość łagodzenia &quot;easy-out&quot;. Ease-out oznacza, że animacja zwalnia, gdy osiąga koniec tworząc bardziej naturalny efekt.
 
@@ -341,25 +319,23 @@ Bez utworzonej animacji, mamy bardzo statyczną gałkę oczną.
 
 Utw&oacute;rzmy kilka klatek kluczowych, aby opisać jak gałka oczna powinna się poruszać.
 
-```
-@keyframes move-eye-skew {
-  0% {
-    transform: none;
-  }
-  20% {
-    transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
-  }
-  25%, 44% {
-    transform: none;
-  }
-  50%, 60% {
-    transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
-  }
-  66%, 100% {
-    transform: none;
-  }
-}
-```
+    @keyframes move-eye-skew {
+      0% {
+        transform: none;
+      }
+      20% {
+        transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+      }
+      25%, 44% {
+        transform: none;
+      }
+      50%, 60% {
+        transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+      }
+      66%, 100% {
+        transform: none;
+      }
+    }
 
 Klatki kluczowe w CSS mogą wydawać się trochę skomplikowane na początku. To co teraz robimy to opisujemy stan elementu w serii etap&oacute;w. Każdy stan jest mapowany procentowo. W tym przypadku tęcz&oacute;wka zacznie bez stosowania trasnformacji. Następnie przy 20% nastąpi przeniesienie i nachylenie do lewej. Przerwa między 0 a 20% jest automatycznie obliczana przez przeglądarkę tworząc łagodne przejście między tym dwoma punktami.
 
@@ -377,28 +353,26 @@ Tworzenie bąbelka wygląda podobnie, ale musimy wykorzystać więcej przeźrocz
 
 Animacja wykorzystuje transformacje `scale`, aby bąbelek się kołysał.
 
-```
-@keyframes bubble-anim {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scaleY(0.95) scaleX(1.05);
-  }
-  48% {
-    transform: scaleY(1.1) scaleX(0.9);
-  }
-  68% {
-    transform: scaleY(0.98) scaleX(1.02);
-  }
-  80% {
-    transform: scaleY(1.02) scaleX(0.98);
-  }
-  97%, 100% {
-    transform: scale(1);
-  }
-}
-```
+    @keyframes bubble-anim {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scaleY(0.95) scaleX(1.05);
+      }
+      48% {
+        transform: scaleY(1.1) scaleX(0.9);
+      }
+      68% {
+        transform: scaleY(0.98) scaleX(1.02);
+      }
+      80% {
+        transform: scaleY(1.02) scaleX(0.98);
+      }
+      97%, 100% {
+        transform: scale(1);
+      }
+    }
 
 Animacja dotyczy całego bąbelka i jego pseudo element&oacute;w.
 

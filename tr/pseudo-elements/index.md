@@ -22,14 +22,12 @@ Pseudo-element'ler bize pek &ccedil;aba harcamadan fazladan DOM elementleri elde
 
 CSS'te&nbsp;`::before`&nbsp;ya da&nbsp;`::after`&nbsp;kullanarak bir pseudo-element oluşturabiliriz. Bu pseudo-element daha sonra eklendiği element ile herhangi bir i&ccedil;eriğin arasına yerleştirilir. Pseudo-element kendi başına bir elementmiş gibi davrandığı i&ccedil;in stil verilebilir, konumlandırılabilir ve daha fazlası yapılabilir.&nbsp; Kod şuna benzer:
 
-```
-.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-```
+    .pebble::before {
+      ...
+    }
+    .pebble::after {
+      ...
+    }
 
 Bu aşamada&nbsp;`.pebble`&nbsp;elementimize iki adet sanal (HTML'de belirtmeden elde ettiğimiz) element ekledik ve bu elementleri ihtiyacımıza g&ouml;re şekillendirebiliyoruz.
 
@@ -41,12 +39,10 @@ Pseudo elementleri belirtirken genel olarak kabul edilen belirtme şekli (:hover
 
 Pseudo-elementler eklerken akılda tutulması gereken şeylerden biri, pseudo-elementlerin sayfada g&ouml;r&uuml;nebilir olması i&ccedil;in&nbsp;`content`&nbsp;&ouml;zelliğinin eklenmesi gerektiğidir.&nbsp; Pseudo-elementler&nbsp;i&ccedil;eriksiz&nbsp;bir halde oluşturuldukları i&ccedil;in onlara aşağıdaki şekilde boş bir&nbsp;`content`&nbsp;&ouml;zelliği ekleyerek sayfada g&ouml;r&uuml;nmelerini sağlayabiliriz:
 
-```
-.pebble::before {
-  content: ""
-  ... more styling goes here...
-}
-```
+    .pebble::before {
+      content: ""
+      ... more styling goes here...
+    }
 
 Bu kod elementin sayfada g&ouml;r&uuml;nmesini sağlayacaktır.
 
@@ -58,9 +54,7 @@ Bu &ouml;rnekte bir pseudo-element kullanarak mouse butonun &uuml;zerinde olduğ
 
 Biraz HTML ile başlayalım:
 
-```
-<button>Oooh SHINY</button>
-```
+    <button>Oooh SHINY</button>
 
 Pseudo-elementler kullandıgımız i&ccedil;in daha fazla HTML'e ihtiyacımız olmayacak.&nbsp; Eğer bir sayfada birden fazla butona stil verecekseniz class kullanmak isteyebilirsiniz ama şimdilik basitlik adına genel bir element kullanacağız.
 
@@ -68,35 +62,31 @@ Pseudo-elementler kullandıgımız i&ccedil;in daha fazla HTML'e ihtiyacımız o
 
 G&ouml;z kamaştıran parıltı efektimiz butonumuzun bir ucundan diğer ucuna giden bir linear gradient. Bunu oluşturmak i&ccedil;in&nbsp;`after`&nbsp;pseudo-elementini kullanacağız ve bunu butonun dışında bir başlama noktasına yerleştireceğiz.
 
-```
-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-```
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
 
 Parıltı (sheen) efekti, butonun renginden beyaza ve tekrar butonun rengine d&ouml;nen bir gradient'ten meydana gelmekte.&nbsp; Bu aşamada gradient butonun dışında duruyor.
 
 Parıltı (sheen) efekti olan katmanı sadece hover'da iken g&ouml;r&uuml;necek şekilde saklamamız gerekecek.&nbsp; Bunu yapmak i&ccedil;in &ouml;ncelikle butonun `overflow` &ouml;zelliğini `hidden` olarak belirleyeceğiz. Pseudo-elementimiz butonun i&ccedil;inde olduğundan butonun dışında kalan b&ouml;l&uuml;m&uuml; g&ouml;r&uuml;n&uuml;r olmayacaktır.
 
-```
-button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-```
+    button {
+      background: #e5ac8e;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0.5em;
+      padding: 0 1em;
+      position: relative;
+      overflow: hidden;
+      line-height: 32px;
+    }
 
 Butona kendine has bir g&ouml;r&uuml;nt&uuml; vermek i&ccedil;in başka stiller de verdim.&nbsp; Dikkatinizi &ccedil;ekmek istediğim bir nokta&nbsp;`position: relative`'in kullanımı. Bu &ouml;zelliği butona eklememin sebebi&nbsp;position: absolute&nbsp;ile sabitlenmiş olan pseudo-element'in butonun i&ccedil;inde yer almasını istemem. Pozisyonu belirtilmediği s&uuml;rece position: absolute&nbsp;kullanılan element, bir katman &uuml;st&uuml;nde yer alan (parent) elementin i&ccedil;inde yer alacaktır.
 
@@ -106,11 +96,9 @@ Bu &ouml;rnekte animasyon kullanacağımız i&ccedil;in &ouml;n&uuml;m&uuml;zde 
 
 Butonun hover halini&nbsp;`hover`&nbsp;pseudo-class'ına&nbsp;`after`&nbsp;pseudo-class'ını şu şekilde ekleyerek oluşturabiliriz:
 
-```
-button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-```
+    button:hover::after, button:focus::after {
+      animation: sheen 1s forwards;
+    }
 
 Burada tarayıcıya butonumuz hover'da olduğunda&nbsp;`after`&nbsp;pseudo-elementinin bir `animation` degeri almasi gerektiğini s&ouml;yl&uuml;yoruz. Sheen (parıltı) olarak adlandırdığımız animasyonumuz 1 saniye s&uuml;r&uuml;yor ve bunun sonunda tekrar etmeden sonlanıyor.
 
@@ -120,13 +108,11 @@ Butona aynı zamanda bir focus hali ekledim. Bunun sayesinde sayfayı tab tuşu 
 
 Şimdi animasyonumuzun&nbsp;`keyframes`&nbsp;ozelliklerini belirtelim:
 
-```
-@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-```
+    @keyframes sheen {
+      100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+      }
+    }
 
 Bu animasyonda tek bir keyframe'e ihtiyacımız var. Başlama noktası (0%) halihazırda pseudo-elementimizin başlama noktasında belirtildiği i&ccedil;in sadece bitiş noktasını belirtmemiz gerekiyor. Bu durumda bitiş noktası butonun (başlama noktasına g&ouml;re) diğer ucunun sağ &uuml;st&uuml;. Bunu tanımladıktan sonra tarayıcı parıltı efektinin animasyonunu butonun bir ucundan diğer ucana uygulayacak.
 

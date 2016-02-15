@@ -25,15 +25,12 @@ Avec les pseudo-éléments, tout se passe comme si on avait des éléments suppl
 
 En CSS, nous pouvons spécifier un pseudo-élément à l’aide de :before ou :after. Le pseudo-élément est alors inséré à l’intérieur de votre élément, entre l’élément et tout autre contenu. Du fait qu’il se comporte comme un élément en soi, on peut le styler, le positionner et. Le code ressemble à ceci:
 
-
-```
-.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-```
+    .pebble::before {
+      ...
+    }
+    .pebble::after {
+      ...
+    }
 
 Pour l’instant, notre élément .pebble a deux éléments virtuels attachés, et nous pouvons leur appliquer le style que nous voulons.
 
@@ -47,13 +44,10 @@ NdT : dans cet article, on adoptera la version simple : en suivant les recommand
 
 Lorsqu’on ajoute des pseudo-éléments, il faut toujours se rappeler de spécifier la propriété content. Comme notre pseudo-élément n’a pas de contenu, il suffit de le spécifier comme suit:
 
-
-```
-.pebble::before {
-  content: ""
-  ... more styling goes here...
-}
-```
+    .pebble::before {
+      content: ""
+      ... more styling goes here...
+    }
 
 Cela garantira que notre élément soit visible.
 
@@ -71,36 +65,31 @@ Puisque nous utilisons les pseudo-éléments, nous n’aurons pas besoin de plus
 
 L’effet de reflet luisant est un dégradé linéaire qui traverse le bouton. Pour le réaliser, nous allons utiliser le pseudo-élément :after et lui donner une position initiale située en-dehors du bouton:
 
-```
-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-```
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
 
 Le reflet est constitué d’un dégradé allant de la couleur du bouton jusqu’au blanc et vice-versa. Pour l’instant, il est hors du bouton.
 
 Nous devons cacher la couche luisante pour qu’elle n’apparaisse qu’au moment du survol (hover). Pour cela, nous allons donner à la propriété overflow la valeur hidden. Comme le pseudo-élément est situé à l’intérieur du bouton, cela signifie que tout ce qui est positionné à l’extérieur du bouton sera invisible.
 
-
-```
-button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-```
+    button {
+      background: #e5ac8e;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0.5em;
+      padding: 0 1em;
+      position: relative;
+      overflow: hidden;
+      line-height: 32px;
+    }
 
 J’ai ajouté d’autres styles pour donner son look particulier au bouton. Une chose à noter, l’utilisation de position: relative. J’ai ajouté cette propriété afin que le pseudo-élément positionné absolument puisse exister à l’intérieur du bouton. Si on ne spécifie pas la position, un item positionné absolument se positionnera à l’intérieur d’un élément parent.  NdT : Petit rappel vite fait sur le positionnement CSS ici.
 
@@ -110,12 +99,9 @@ Il y a deux étapes à considérer. La première est de dire au navigateur d’u
 
 Ajouter l’état hover peut se faire en empilant :after et :hover comme suit:
 
-
-```
-button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-```
+    button:hover::after, button:focus::after {
+      animation: sheen 1s forwards;
+    }
 
 Ici, nous disons au navigateur que lorsqu’on a un hover, le pseudo-élément doit avoir une animation. L’animation, que nous avons appelée sheen (reflet), dure une seconde et ne se répète pas une fois terminée.
 
@@ -123,14 +109,11 @@ L’ordre est important ici. Si l’on utilise :after:hover ça ne marchera pas,
 
 Spécifions maintenant les keyframes de cette animation.
 
-
-```
-@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-```
+    @keyframes sheen {
+      100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+      }
+    }
 
 Nous n’avons besoin que d’un keyframe dans notre exemple. Puisque le point de départ (0%) est impliqué par la position de départ du pseudo-élément, nous n’avons à décrire que le point d’arrivée. Celui-ci se situe en haut et à droite du bouton. Le navigateur animera l’effet à travers le bouton pour nous.
 

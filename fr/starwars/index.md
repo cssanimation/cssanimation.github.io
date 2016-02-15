@@ -41,14 +41,12 @@ Enfin, nous utiliserons `rotateY` pour faire tourner sur elles-m&ecirc;mes les l
 Pour pr&eacute;parer cet exemple, j'ai cr&eacute;&eacute; deux fichiers SVG pour les mots [Star](/demo/starwars/images/star.svg) et [Wars](/demo/starwars/images/wars.svg) du logo. N'h&eacute;sitez pas &agrave; les t&eacute;l&eacute;charger si vous voulez jouer avec pour suivre la d&eacute;mo.
 
 Le HTML de la d&eacute;mo est le suivant :
- 
-```
-<div class="starwars-demo">
-  <img src="/images/star.svg" alt="Star" class="star">
-  <img src="/images/wars.svg" alt="Wars" class="wars">
-  <h2 class="byline" id="byline">The Force Awakens</h2>
-</div>
-```
+
+    <div class="starwars-demo">
+      <img src="/images/star.svg" alt="Star" class="star">
+      <img src="/images/wars.svg" alt="Wars" class="wars">
+      <h2 class="byline" id="byline">The Force Awakens</h2>
+    </div>
 
 Une image statique d'[&eacute;toiles](/demo/starwars/images/bg.jpg) est utilis&eacute;e pour l'arri&egrave;re-plan. La police de caract&egrave;res du sous-titre a &eacute;t&eacute; compliqu&eacute;e &agrave; trouver, alors pour cet exemple j'ai choisi la police web &quot;Lato&quot;.
 
@@ -59,26 +57,24 @@ Le positionnement absolu du contenu au centre de l'&eacute;cran nous donne ceci 
 ## Animer Star et Wars
 
 Nous voulons que le texte principal disparaisse en fade out, et nous voulons &eacute;galement que sa taille diminue progressivement. C'est un excellent cas d'utilisation de la transformation `scale()`. Utilisons-la sur le mot &quot;Star&quot; avec ces keyframes :
- 
-```
-@keyframes star {
-  0% {
-    opacity: 0;
-    transform: scale(1.5) translateY(-0.75em);
-  }
-  20% {
-    opacity: 1;
-  }
-  89% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateZ(-1000em);
-  }
-}
-```
+
+    @keyframes star {
+      0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-0.75em);
+      }
+      20% {
+        opacity: 1;
+      }
+      89% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+      }
+    }
 
 Il y a deux propri&eacute;t&eacute;s qui changent durant cette animation, `opacity` et `transform`. Le changement d'opacit&eacute; le fait d&eacute;marrer transparent puis dispara&icirc;tre &agrave; la fin, de fa&ccedil;on &agrave; ce que nous puissions reprendre l'animation en boucle.
 
@@ -87,15 +83,13 @@ La transformation commence par la d&eacute;finition de scale &agrave; `1.5`. Cel
 Le `transformZ` final fait dispara&icirc;tre rapidement les mots.
 
 Nous pouvons appliquer ces keyframes au mot &quot;Star&quot; ainsi :
- 
-```
-.star {
-  animation: star 10s ease-out infinite;
-}
-.wars {
-  animation: wars 10s ease-out infinite;
-}
-```
+
+    .star {
+      animation: star 10s ease-out infinite;
+    }
+    .wars {
+      animation: wars 10s ease-out infinite;
+    }
 
 La propri&eacute;t&eacute; `animation`&nbsp;d&eacute;finit ici une animation que nous avons appel&eacute;e `star`&nbsp;ayant une dur&eacute;e de 10 secondes. Elle applique la fonction int&eacute;gr&eacute;e de timing `ease-out` et elle indique qu'elle doit se r&eacute;p&eacute;ter ind&eacute;finiment. Nous appliquons une r&egrave;gle similaire pour le mot &quot;Wars&quot;.
 
@@ -105,12 +99,12 @@ Pour utiliser les transformations 3D en CSS, que ce soit pour d&eacute;placer un
 
 Pour cela, nous ajoutons ceci &agrave; notre div&nbsp;`.starwars-demo` :
  
-```
-.starwars-demo {
-  perspective: 800px;
-  transform-style: preserve3d;
-} 
-```
+
+    .starwars-demo {
+      perspective: 800px;
+      transform-style: preserve3d;
+    } 
+
 
 Ces deux propri&eacute;t&eacute;s indiquent au navigateur que les &eacute;l&eacute;ments enfants du container doivent &ecirc;tre positionn&eacute;s en 3D et non &agrave; plat. [CSS Tricks[ donne de plus amples d&eacute;tails sur la propri&eacute;t&eacute;.
 
@@ -128,37 +122,37 @@ Appliquons maintenant une animation &agrave; chaque lettre.
 
 D'abord, les keyframes :
  
-```
-@keyframes spin-letters {
-  0%, 10% {
-    opacity: 0;
-    transform: rotateY(90deg);
-  }
-  30% {
-    opacity: 1;
-  }
-  70%, 86% {
-    transform: rotateY(0);
-    opacity: 1;
-  }
-  95%, 100% {
-    opacity: 0;
-  }
-}
-```
+
+    @keyframes spin-letters {
+      0%, 10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+      }
+      30% {
+        opacity: 1;
+      }
+      70%, 86% {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+      95%, 100% {
+        opacity: 0;
+      }
+    }
+
 
 On commence par faire tourner les lettres de 90 degr&eacute;s, puis aux alentours de 70% de l'animation elles font face au spectateur.
 
 Nous pouvons appliquer cet ensemble de keyframes &agrave; chaque span de cette fa&ccedil;on :
  
-```
-.byline span {
-  animation: spin-letters 10s linear infinite;
-}
-.byline {
-  animation: move-byline 10s linear infinite;
-}
-```
+
+    .byline span {
+      animation: spin-letters 10s linear infinite;
+    }
+    .byline {
+      animation: move-byline 10s linear infinite;
+    }
+
 
 Le r&eacute;sultat est que chaque span contenant une lettre va dispara&icirc;tre et tourner sur lui-m&ecirc;me lentement, avant de s'effacer &agrave; la fin de l'animation.
 

@@ -40,9 +40,7 @@ W większości funkcji w CSS animacja płynnie przechodzi od początku do końca
 
 Zacznijmy od kodu HTML:
 
-```html
-<section class="fave"></section>
-```
+    <section class="fave"></section>
 
 ### Obrazek w tle
 
@@ -50,23 +48,19 @@ Z tym w miejscu możemy dodać trochę styl&oacute;w i ustawić obraz w tle:
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-```css
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-```
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 Do kodu dodajemy akcję&nbsp;`hover`, kt&oacute;ra powoduje, że pozycja tła zostaje przesunięta na sam koniec serii obrazk&oacute;w.
 
-```css
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-```
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 Dodajmy teraz kolejną regułę: `transition`. W tym przypadku chcemy przesunąć tło za pomocą animacji, kt&oacute;ra będzie trwała 2 sekundy i wykorzystywała funkcję `steps`. Funkcja `steps` w parametrze posiada wartość `55`, kt&oacute;ra oznacza 55 klatek naszej animacji.
 

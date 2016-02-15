@@ -26,14 +26,12 @@ Pseudo-Elemente sind wie zusätzliche, freie DOM Elemente. Sie erlauben uns extr
 
 Innerhalbs CSS können wir ein Pseudo-Element mit `::before` or `::after` spezifizieren. Das Pseudo-Element wird dann innerhalb Ihres Elementes eingefügt, zwischen dem Element und jeglichem Inhalt. Da es als eigenständiges Element agiert, kann es gestylt und positioniert werden. Der Code schaut ein bisschen so aus wie hier:
 
-```
-.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-```
+    .pebble::before {
+      ...
+    }
+    .pebble::after {
+      ...
+    }
 
 Zu diesem Zeitpunkt hat unser `.pebble` Element zwei virtuelle Elemente angehaengt, und wir koennen diese bei Bedarf stylen.
 
@@ -44,12 +42,11 @@ Es ist allgemein akzeptiert, dass wir den zweifachen Doppelpunkt `::` verwenden 
 
 ### Vergessen Sie nicht "content"
 Beim Hinzufügen von Pseudo-Elementen muss beachtet werden dass die `content`Eigenschaft spezifiziert wird bevor sie sichtbar auf der Seite wird. Weil das Pseudo-Element in einem inhaltslosen Zustand erschaffen wird, können wir es durch die Verwendung eines leeren `content` als sichtbar täuschen, siehe hier:
-```
-.pebble::before {
-  content: ""
-  ... more styling goes here...
-}
-```
+
+    .pebble::before {
+      content: ""
+      ... more styling goes here...
+    }
 
 Dies sollte sicherstellen, dass das Element sichtbar auf dem Bildschirm ist.
 
@@ -70,36 +67,33 @@ Da wir Pseudo-Elemente verwenden, brauchen wir nicht mehr HTML als hier um zu be
 ### Hinzufügen des leuchtenden Effekts
 
 Der leuchtende Schimmereffekt ist ein linearer Gradient der über den Knopf wandert. Um ihn zu erzeugen werden wir das `after` Pseudo-Element verwenden, und es in einer Anfangsposition ausserhalb des Knopfes positionieren:
-```
-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-```
+
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
 
 Der Schimmereffekt besteht aus einem Gradient aus der Knopffarbe zu weiss und zurück.
 An dieser Stelle ist er nun ausserhalb des Knopfes.
 
 We werden die Schimmerschicht verstecken müssen, so dass sie nur beim Hinueberfahren mit der Maus gezeigt wird. Um dies zu tun, werden wir die `overflow` Eigenschaft des Knopfes zu `hidden` setzen. Da das Pseudo-Element innerhalb des Knopfes ist, bedeutet es das die Positionierung ausserhalb des Knopfes nicht sichtbar wird.
 
-```
-button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-```
+    button {
+      background: #e5ac8e;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0.5em;
+      padding: 0 1em;
+      position: relative;
+      overflow: hidden;
+      line-height: 32px;
+    }
 
 Ich habe einige andere Stile zum Knopf hinzugefügt so dass er sein eigenes Aussehen hat. Ein Hinweis ist die Verwendung von `position: relative`. Ich habe diese Eigenschaft hinzugefügt damit das absolut positionierte Pesudo-Element innerhalb des Knopfes existiert. Ohne diese Positionsangabe wird ein absolut positioniertes Element innerhalb seines Eltern-Elementes positioniert.
 
@@ -108,11 +102,9 @@ Ich habe einige andere Stile zum Knopf hinzugefügt so dass er sein eigenes Auss
 Da wir in diesem Beispiel eine Animation verwenden werden, sind zwei Schritte notwendig. Der erste befiehlt dem Browser eine Animation auf hover. Dann werden wir die Animation genau spezifizieren durch Verwendung von `keyframes`.
 Das Hinzufügen des Hover Zustands kann durch die Stapelung von `after` auf  `hover` geschehen, wie hier:
 
-```
-button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-```
+    button:hover::after, button:focus::after {
+      animation: sheen 1s forwards;
+    }
 
 Hier befehlen wir dem Browser dass on Hover, das `after` Pseudo-Element eine `animation` hat Die Animation, 'sheen' genannnt, dauert eine Sekunde und stoppt am Ende ohne Wiederholung.
 
@@ -122,13 +114,12 @@ Ich habe auch einen focus Zustand hinzugefuegt. Dies bedeutet dass Betrachter
 die durch die Seite tabben auch den Schimmereffekt sehen, ohne die Notwendigkeit eines Hovers. (Danke, [Šime Vidas](https://twitter.com/simevidas), fuer den Tip)
 
 Nun geben wir die `keyframes` fuer diese Animation an:
-```
-@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-```
+
+    @keyframes sheen {
+      100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+      }
+    }
 
 Wir brauchen nur ein keyframe in diesem Fall. Da die Startposition (0%) durch die Startposition des Pseudo-Elementes implizit angegeben ist, beschreiben wir nur die Endposition. In diesem Fall ist die Endposition gegenüber am oberen-rechten Ende des Knopfes. Der Browser wird dann den Bildschirmeffekt fuer uns animieren.
 

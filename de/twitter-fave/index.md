@@ -43,9 +43,8 @@ Bei den meisten Zeitfunktionen, wie ease oder cubic-bezier, ist der animierte We
 
 Wir beginnen mit der HTML Konfiguration:
 
-{% highlight html %}
-<section class="fave"></section>
-{% endhighlight %}
+
+    <section class="fave"></section>
 
 ### Hintergrundbild
 
@@ -53,23 +52,20 @@ Jetzt können wir ein bisschen Styling hinzufuegen und das Hintergrundbild posit
 
 ![Bild sprite fuer die Animation](/images/posts/steps/twitter_fave.png)
 
-{% highlight css %}
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-{% endhighlight %}
+
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 Der `hover` Zustand wird hinzugefügt. An diesem Punkt spezifizieren wir das die Hintergrundposition an das Ende der Bilderreihe gesetzt wird:
 
-{% highlight css %}
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-{% endhighlight %}
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 Beachten Sie die zweite Regel, welche die `Transition` definiert. In diesem Fall wollen wir die Hintergrundseigenschaft wechseln, die Transition fuer eine Zeitdauer von 2 Sekunden laufen lassen, und die `steps` Zeitfunktion nutzen. Der `steps` Teil beinhaltet den Wert `55`, da 55 frames in der Animation sind.
 

@@ -47,9 +47,7 @@ Bij de meeste timing functies zoals de cubic-bezier animeert de transitie soepel
 
 Om te beginnen zetten we de HTML op:
 
-```html
-<section class="fave"></section>
-```
+    <section class="fave"></section>
 
 ### Achtergrondafbeelding
 
@@ -57,23 +55,19 @@ Hierna voegen we wat opmaak toe en stellen we de positie van de achtergrondafbee
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-```css
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-```
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 De `hover` state wordt toegevoegd, dit is wanneer we de achtergrondpositie verplaatsen naar het eind van de reeks van afbeeldingen:
 
-```css
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-```
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 Let op de tweede regel, hier bepalen we de `transition`. In dit geval willen we dat de transitie werkt voor de achtergrondpositie, we laten de transitie twee seconden duren en maken gebruik van de `steps` timing functie. Het `steps` gedeelte bevat de waarde `55`, dit is omdat de animatie 55 frames bevat.
 

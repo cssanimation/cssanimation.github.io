@@ -72,9 +72,7 @@ With most timing functions such as ease or cubic-bezier, the transition animates
 
 To begin we set up the HTML:
 
-{% highlight html %}
-<section class="fave"></section>
-{% endhighlight %}
+    <section class="fave"></section>
 
 ### Background image
 
@@ -82,23 +80,19 @@ With that in place we can add a little styling and position the background image
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-{% highlight css %}
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-{% endhighlight %}
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 The `hover` state is added, which is when we specify that the background position be moved to the end of the series of images:
 
-{% highlight css %}
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-{% endhighlight %}
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 Note the second rule, specifying the `transition`. In this case we want to transition the background property, run the transition for a duration of one second, make use of the `steps` timing function. The `steps` part includes the value `55`, as there are 55 frames in the animation.
 

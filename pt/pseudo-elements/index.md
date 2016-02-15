@@ -21,14 +21,12 @@ Os pseudoelementos funcionam como se ganh&aacute;ssemos novos elmentos do DOM. E
 
 No CSS, podemos especificar um pseudoelemento&nbsp;usando&nbsp;`::before` ou `::after`. O pseudoelemento &eacute; inserido dentro de um elemento, entre este e qualquer outro conte&uacute;do. Uma vez que ele atua como se fosse um pr&oacute;prio elemento, pode ser estilizado, posicionado, etc. O c&oacute;digo &eacute; um pouco parecido com este:
 
-```
-.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-```
+    .pebble::before {
+      ...
+    }
+    .pebble::after {
+      ...
+    }
 
 Neste ponto, nosso elemento `.pebble` tem dois elementos virtuais anexados, e n&oacute;s podemos estiliz&aacute;-los conforme necess&aacute;rio.
 
@@ -40,12 +38,10 @@ Neste ponto, nosso elemento `.pebble` tem dois elementos virtuais anexados, e n&
 
 Ao adicionar pseudoelementos, uma coisa a manter em mente &eacute; a necessidade de especificar a propriedade `content`&nbsp;para que eles possam ser vis&iacute;veis na p&aacute;gina. Como o pseudoelemento &eacute; criado sem conte&uacute;do, n&oacute;s podemos criar um truque para faz&ecirc;-lo aparecer usando um `content` vazio, desse jeito:
 
-```
-.pebble::before {
-  content: ""
-  ... more styling goes here...
-}
-```
+    .pebble::before {
+      content: ""
+      ... more styling goes here...
+    }
 
 Isto deve gaantir que o elemento seja vis&iacute;vel na tela.
 
@@ -57,9 +53,7 @@ Para este exemplo, usaremos um pseudoelemento para criar um efeito brilhante ao 
 
 Para come&ccedil;ar, um pouco de HTML:
 
-```
-<button>Oooh SHINY</button>
-```
+    <button>Oooh SHINY</button>
 
 J&aacute; que estamos usando pseudoelementos, n&atilde;o precisaremos de mais HTML do que isso para come&ccedil;ar. Voc&ecirc; pode querer adicionar uma classe para o bot&atilde;o se quiser diferentes estilos numa mesma p&aacute;gina, mas, por enquanto, vamos usar o elemento gen&eacute;rico por simplicidade.
 
@@ -67,35 +61,31 @@ J&aacute; que estamos usando pseudoelementos, n&atilde;o precisaremos de mais HT
 
 O efeito de brilho &eacute; um gradiente linear que passa atrav&eacute;s do bot&atilde;o. Para criar isto, n&oacute;s usaremos o pseudoelemento `after` e vamos posicion&aacute;-lo inicialmente do lado de fora do bot&atilde;o:
 
-```
-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-```
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
 
 O efeito de brilho &eacute; composto por um gradiente da cor&nbsp;do bot&atilde;o&nbsp;para&nbsp;branco, numa dire&ccedil;&atilde;o, e o inverso na volta. Neste momento, ele est&aacute; aparecendo do lado de fora o bot&atilde;o.
 
 N&oacute;s precisamos ocultar a camada de brilho, para que ela s&oacute; apare&ccedil;a ao passarmos o mouse. Para fazer isso n&oacute;s definiremos a propriedade `overflow` do bot&atilde;o para `hidden`. Como o pseudoelemento est&aacute; dentro do bot&atilde;o, isto significa que seu posicionamento do lado de fora o bot&atilde;o n&atilde;o ser&aacute; vis&iacute;vel.
 
-```
-button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-```
+    button {
+      background: #e5ac8e;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0.5em;
+      padding: 0 1em;
+      position: relative;
+      overflow: hidden;
+      line-height: 32px;
+    }
 
 Eu adicionei outros estilos tamb&eacute;m para dar ao bot&atilde;o uma cara pr&oacute;pria. Uma coisa a salientar &eacute; o uso de `position: relative`. Adicionei essa propriedade para que o pseudoelemento posicionado&nbsp;absolutamente&nbsp;fique dentro do bot&atilde;o. Sem especificar a posi&ccedil;&atilde;o, um item absolutamente posicionado ir&aacute; se basear na posi&ccedil;&atilde;o do elemento pai (geralmente, o body).
 
@@ -105,11 +95,9 @@ Uma vez que estaremos usando uma anima&ccedil;&atilde;o neste exemplo, h&aacute;
 
 Adicionar o estado &quot;hover&quot; pode ser feito empilhando o `after` sobre o `hover`, desta forma:
 
-```
-button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-```
+    button:hover::after, button:focus::after {
+      animation: sheen 1s forwards;
+    }
 
 Aqui estamos dizendo ao navegador que ao passar do mouse, o pseudoelemento `after` deve ganhar uma `anima&ccedil;&atilde;o`. A anima&ccedil;&atilde;o, chamada brilho, dura um segundo e para ao final sem se repetir.
 
@@ -119,13 +107,11 @@ Tamb&eacute;m adicionei o estado de foco. Isto significa que os usu&aacute;rios 
 
 Vamos especificar `keyframes` para esta anima&ccedil;&atilde;o:
 
-```
-@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-```
+    @keyframes sheen {
+      100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+      }
+    }
 
 S&oacute; precisamos de um quadro-chave neste caso. Como a posi&ccedil;&atilde;o inicial (0%) est&aacute; impl&iacute;cita pela posi&ccedil;&atilde;o inicial do pseudoelemento, apenas precisamos descrever a posi&ccedil;&atilde;o final. Neste caso, a posi&ccedil;&atilde;o final &eacute; do outro lado, no canto superior direito do bot&atilde;o. O navegador ent&atilde;o animar&aacute; o efeito de brilho em toda a extens&atilde;o.
 

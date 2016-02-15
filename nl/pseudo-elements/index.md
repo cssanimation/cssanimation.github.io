@@ -21,14 +21,12 @@ Pseudo-elementen is als zomaar twee extra DOM elementen krijgen. Ze staan ons to
 
 Binnen CSS kan je een pseudo-element defini&euml;ren met behulp van `::before` of `::after`. Het pseudo-element wordt dan toegevoegd aan je element, tussen het element en enige content. Doordat het reageert als een alleenstaand element kan er stijl, positie enzovoort aan toegevoegd worden. De code ziet er dan min of meer uit als volgt:
  
-```
-.pebble::before {
-  ...
-}
-.pebble::after {
-  ...
-}
-```
+    .pebble::before {
+      ...
+    }
+    .pebble::after {
+      ...
+    }
 
 Op dit punt zijn aan ons `.pebble` element twee virtuele elementen toegevoegd, deze kunnen we voorzien van opmaak als we ze nodig hebben.
 
@@ -40,12 +38,10 @@ De dubbele dubbelpunt `::` is algemeen aanvaard als notatie voor pseudo-elemente
 
 Als je psuedo-elementen toevoegt is het belangrijk om ook de `content` property te&nbsp;specificeren om het element zichtbaar te maken op de pagina. Als het psuedo-element aangemaakt is in een&nbsp;inhoudsloze&nbsp;staat dan kunnen&nbsp;we de `content` property als leeg defini&euml;ren op deze manier:
  
-```
-.pebble::before {
-  content: ""
-  ... more styling goes here...
-}
-```
+    .pebble::before {
+      content: ""
+      ... more styling goes here...
+    }
 
 Op deze manier zou het element zichtbaar moeten zijn op het scherm.
 
@@ -57,9 +53,7 @@ Voor dit voorbeeld gebruiken we een pseudo-element om een glanzend effect te cre
 
 Om te beginnen, wat HTML:
  
-```
-<button>Oooh SHINY</button>
-```
+    <button>Oooh SHINY</button>
 
 Omdat we pseudo-elementen gebruiken hebben we niet meer dan deze HTML nodig om dit te doen werken. Het is aangeraden om een klasse toe te voegen aan de knop als je hem van stijl zou moeten voorzien op meer dan &eacute;&eacute;n pagina. Voor dit voorbeeld houden we het bij de generische knop voor de eenvoud.
 
@@ -67,35 +61,31 @@ Omdat we pseudo-elementen gebruiken hebben we niet meer dan deze HTML nodig om d
 
 Het glanzende effect is een&nbsp;lineaire gradient die over de knop ligt. Om dit te cre&euml;ren gebruiken we het `after` pseudo-element en positioneren het in een beginpositie buiten de knop:
  
-```
-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
-}
-```
+    button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
 
 Het glanseffect is opgebouwd uit een gradient die gaat van de kleur van de knop tot wit en terug. Op dit punt staat het nu aan de buitenkant van de knop.
 
 We moeten deze glanzende laag verbergen zodat ze enkel zichtbaar bij hover. Om dit te toen zetten we de `overflow` property van de knop op `hidden`. Omdat het pseudo-element in de knop zit zal het niet zichtbaar zijn als het buiten de knop gepositioneerd is.
  
-```
-button {
-  background: #e5ac8e;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 0.5em;
-  padding: 0 1em;
-  position: relative;
-  overflow: hidden;
-  line-height: 32px;
-}
-```
+    button {
+      background: #e5ac8e;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 0.5em;
+      padding: 0 1em;
+      position: relative;
+      overflow: hidden;
+      line-height: 32px;
+    }
 
 Ik heb ook wat andere stijl meegegeven om de knop zijn eigen look te geven. Wat belangrijk is om mee te geven is het gebruik van `position: relative`. Ik heb deze property meegegeven om ervoor te zorgen dat het absoluut&nbsp;gepositioneerd psuedo-element zou bestaan binnen de knop. Zonder de positie te specificeren zou het absoluut gepositioneerd item zich plaatsen binnen het parent element.
 
@@ -105,11 +95,9 @@ Doordat we animatie gebruiken in dit voorbeeld zijn er twee stappen die we moete
 
 De hover-state toevoegen kan door `after` aan de `hover` vast te hangen.
  
-```
-button:hover::after, button:focus::after {
-  animation: sheen 1s forwards;
-}
-```
+    button:hover::after, button:focus::after {
+      animation: sheen 1s forwards;
+    }
 
 Hier vertellen we de browser dat bij een hover-state, het `after` pseudo-element een `animation` moet hebben. De animatie, die we sheen noemen, duurt &eacute;&eacute;n seconde en stop zonder op het einde te herhalen.
 
@@ -119,13 +107,11 @@ Ik heb de focus-state ook toegevoegd. Dit betekent dat de gebruikers die door te
 
 Laten we de `keyframes` specificeren voor deze animatie:
  
-```
-@keyframes sheen {
-  100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
-  }
-}
-```
+    @keyframes sheen {
+      100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+      }
+    }
 
 In dit geval hebben we maar &eacute;&eacute;n keyframe nodig. Omdat de startpositie (0%) ge&iuml;mpliceerd wordt door de startpositie van het pseudo-element moeten we enkel de eindpositie bepalen. In dit geval is de eindpositie aan de rechterbovenhoek van de knop. De browser zal het glanseffect dan voor ons animeren over de knop heen.
 

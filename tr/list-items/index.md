@@ -31,13 +31,11 @@ Icerik ekleme veya cikarmayi bir liste ornegi uzerinde gosterebiliriz. Bu animas
 
 Başlarken &ouml;nceden doldurulmuş olan bir liste, ve listeye yeni &ouml;geler eklemek i&ccedil;in de bir buton olusturacagiz.
 
-```
-<ul id="list">
-  <li class="show">List item</li>
-  <li class="show">List item</li>
-</ul>
-<button id="add-to-list">Add a list item</button>
-```
+    <ul id="list">
+      <li class="show">List item</li>
+      <li class="show">List item</li>
+    </ul>
+    <button id="add-to-list">Add a list item</button>
 
 Dikkatinizi &ccedil;ekmek istediğim birka&ccedil; şey var. İlki, HTML'de iki adet ID kullandık.&nbsp; Normalde stil işlemlerinde &ldquo;fazla spesifik&rdquo; oldukları ve problem &ccedil;ıkardıkları i&ccedil;in ID kullanmayız.&nbsp; Fakat JavaScript kullanırken işimize yarayacaklar.
 
@@ -49,43 +47,39 @@ Bu demo'da listeye yeni &ouml;geler eklemek ve daha sonra animasyonun ger&ccedil
 
 Animasyonları&nbsp;`li`&nbsp;&ouml;geleri &uuml;zerinde ger&ccedil;ekleştirerek bunun &uuml;stesinden gelebilirdik fakat bu daha sonra elementleri başka bir animasyonla kaldırmak istediğimizde zorluk &ccedil;ıkarırdı.
 
-```
-/*
- * Add items to a list - from cssanimation.rocks/list-items/
- */
-document.getElementById('add-to-list').onclick = function() {
-  var list = document.getElementById('list');
-  var newLI = document.createElement('li');
-  newLI.innerHTML = 'A new item';
-  list.appendChild(newLI);
-  setTimeout(function() {
-    newLI.className = newLI.className + " show";
-  }, 10);
-}
-```
+    /*
+     * Add items to a list - from cssanimation.rocks/list-items/
+     */
+    document.getElementById('add-to-list').onclick = function() {
+      var list = document.getElementById('list');
+      var newLI = document.createElement('li');
+      newLI.innerHTML = 'A new item';
+      list.appendChild(newLI);
+      setTimeout(function() {
+        newLI.className = newLI.className + " show";
+      }, 10);
+    }
 
 ## Animasyonsuz Hal
 
 Biraz CSS yazarak liste &ouml;gelerini g&ouml;r&uuml;n&uuml;r hale getirebiliriz.&nbsp; `show`&nbsp;class'ını kullanarak liste &ouml;gelerini g&ouml;r&uuml;n&uuml;r yapıyoruz ve aynı mantıkla&nbsp;`show`&nbsp;class'ını silmemiz liste &ouml;gelerinin kaybolmasına neden oluyor.
 
-```
-li {
-  list-style: none;
-  background: #d1703c;
-  color: #fff;
-  height: 0;
-  line-height: 2em;
-  margin: 0;
-  padding: 0 0.5em;
-  overflow: hidden;
-  width: 10em;
-}
+    li {
+      list-style: none;
+      background: #d1703c;
+      color: #fff;
+      height: 0;
+      line-height: 2em;
+      margin: 0;
+      padding: 0 0.5em;
+      overflow: hidden;
+      width: 10em;
+    }
 
-li.show {
-  height: 2em;
-  margin: 2px 0;
-}
-```
+    li.show {
+      height: 2em;
+      margin: 2px 0;
+    }
 
 Verdiğimiz bu stiller ile&nbsp;`li`&nbsp;elementlerinin, &ouml;nlerinde madde işareti olmadan dikd&ouml;rtgen bir şekilde g&ouml;r&uuml;nmesini sağlıyoruz,&nbsp;`height`&nbsp;ve&nbsp;`margin`&nbsp;&ouml;zelliğine 0 veriyoruz ve&nbsp;`overflow`&nbsp;&ouml;zelliğini hidden'a ayarlıyoruz. &nbsp;Bu sayede&nbsp;`show` class'ı vermediğimiz s&uuml;rece gizli kalacaklar.
 
@@ -107,16 +101,14 @@ Ekleyeceğimiz ilk animasyon basit bir &quot;fade&quot; efekti olacak. Liste &ou
 
 Efekti eklemek i&ccedil;in bir CSS par&ccedil;ası daha oluşturdum. Bunu listeye uygulamak i&ccedil;in, listeyi saran elemente&nbsp;`fade`&nbsp;class'ı verin.
 
-```
-.fade li {
-  transition: all 0.4s ease-out;
-  opacity: 0;
-  height: 2em;
-}
-.fade li.show {
-  opacity: 1;
-}
-```
+    .fade li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+      height: 2em;
+    }
+    .fade li.show {
+      opacity: 1;
+    }
 
 ### Slide down (Aşağıya kayma) &amp; Fade
 
@@ -129,15 +121,13 @@ Her yeni &ouml;ge eklendiğinde oluşan ani zıplama biraz rahatsız edici. Şim
 
 `slide-fade`&nbsp;class'ı ile&nbsp;`fade`&nbsp;class'ı arasındaki tek fark&nbsp;height: 2em&nbsp;&ouml;zelliğinin kaldırılmış olması.&nbsp; `show`&nbsp;class'ı (ilk CSS par&ccedil;asından aldığı) belirlenmiş bir height &ouml;zelliğine sahip olduğu i&ccedil;in height'ı animasyon ge&ccedil;işinde otomatik olarak ayarlayacaktır.
 
-```
-.slide-fade li {
-  transition: all 0.4s ease-out;
-  opacity: 0;
-}
-.slide-fade li.show {
-  opacity: 1;
-}
-```
+    .slide-fade li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+    }
+    .slide-fade li.show {
+      opacity: 1;
+    }
 
 ### Swinging in (Sallanma)
 
@@ -152,27 +142,23 @@ Bunu ayarlamak i&ccedil;in ul elementini i&ccedil;ine alan&nbsp;`section`'ı 3 b
 
 Perspective CSS'te animasyon değişimlerinin ger&ccedil;ekleşeceği yerdeki derinliktir.&nbsp; D&uuml;ş&uuml;k bir değer, daha sığ bir derinlik ve daha keskin a&ccedil;ılar demektir. Bu değerlerle oynayıp sizin i&ccedil;in uygun olanını bulabilirsiniz.
 
-```
-.swing {
-  perspective: 100px;
-}
-```
+    .swing {
+      perspective: 100px;
+    }
 
 Bir sonraki aşama&nbsp;`li`&nbsp;elementlerinin yerlerine &quot;d&ouml;n&uuml;şerek&quot; gelmelerini ayarlamak.&nbsp; Daha &ouml;nceki gibi fade efekti vermek i&ccedil;in&nbsp;`opacity`&nbsp;&ouml;zelliğini kullanacağız fakat&nbsp;`li` elementlerinin yerlerine &quot;d&ouml;nerek&quot; gelmeleri i&ccedil;in&nbsp;`transform`&nbsp;&ouml;zelliği ekleyeceğiz.
 
-```
-.swing li {
-  opacity: 0;
-  transform: rotateX(-90deg);
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
+    .swing li {
+      opacity: 0;
+      transform: rotateX(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
-.swing li.show {
-  opacity: 1;
-  transform: none;
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
-```
+    .swing li.show {
+      opacity: 1;
+      transform: none;
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
 Bu &ouml;rnekte&nbsp;`li`&nbsp;90 derece arkaya d&ouml;n&uuml;k halde başlıyoruz. `show`&nbsp;class'ı eklendiğinde `transform`&nbsp;&ouml;zelliği&nbsp;`none`'a ayarlanıyor ve bu da&nbsp;li&nbsp;elementinin bir ge&ccedil;işle yerine gelmesini sağlıyor. Sallanma efektini vermek i&ccedil;in&nbsp;`cubic-bezier`&nbsp;zamanlama fonksiyonunu kullandım.
 
@@ -187,13 +173,11 @@ Yarattigimiz efekti kolayca yeni şekiller elde etmek i&ccedil;in duzenleyebilir
 
 Bu efekti sağlamak i&ccedil;in sadece d&ouml;n&uuml;ş&uuml;n eksenini değiştirmemiz gerekiyor.
 
-```
-.swing li {
-  opacity: 0;
-  transform: rotateY(-90deg);
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
-```
+    .swing li {
+      opacity: 0;
+      transform: rotateY(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
 Yaptığımız tek değişiklik&nbsp;`rotateX`&nbsp;yerine&nbsp;`rotateY`&nbsp;kullanmak oldu.
 

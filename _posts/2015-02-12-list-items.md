@@ -41,13 +41,11 @@ One example of adding or removing content is managing the content of a list. Mos
 
 To get started we'll use a pre-filled list and a button to add new items to the list.
 
-```
-<ul id="list">
-  <li class="show">List item</li>
-  <li class="show">List item</li>
-</ul>
-<button id="add-to-list">Add a list item</button>
-```
+    <ul id="list">
+      <li class="show">List item</li>
+      <li class="show">List item</li>
+    </ul>
+    <button id="add-to-list">Add a list item</button>
 
 A few things to note. Firstly we have two IDs in the HTML. Generally we don't use IDs for styling, as they can introduce problems with their specificity. However they're useful when using JavaScript.
 
@@ -59,43 +57,39 @@ For the purpose of the demo we'll create a little JavaScript to add a new item t
 
 We could get around this by using an animation on the `li` elements, but this would be more difficult to override when removing the elements with another animation.
 
-```
-/*
- * Add items to a list - from cssanimation.rocks/list-items/
- */
-document.getElementById('add-to-list').onclick = function() {
-  var list = document.getElementById('list');
-  var newLI = document.createElement('li');
-  newLI.innerHTML = 'A new item';
-  list.appendChild(newLI);
-  setTimeout(function() {
-    newLI.className = newLI.className + " show";
-  }, 10);
-}
-```
+    /*
+     * Add items to a list - from cssanimation.rocks/list-items/
+     */
+    document.getElementById('add-to-list').onclick = function() {
+      var list = document.getElementById('list');
+      var newLI = document.createElement('li');
+      newLI.innerHTML = 'A new item';
+      list.appendChild(newLI);
+      setTimeout(function() {
+        newLI.className = newLI.className + " show";
+      }, 10);
+    }
 
 ## No animation
 
 At it's most basic we can write some CSS to show the list items. We're using the `show` class as a way of setting them as visible, so removing the `show` class should also cause them to disappear.
 
-```
-li {
-  list-style: none;
-  background: #d1703c;
-  color: #fff;
-  height: 0;
-  line-height: 2em;
-  margin: 0;
-  padding: 0 0.5em;
-  overflow: hidden;
-  width: 10em;
-}
+    li {
+      list-style: none;
+      background: #d1703c;
+      color: #fff;
+      height: 0;
+      line-height: 2em;
+      margin: 0;
+      padding: 0 0.5em;
+      overflow: hidden;
+      width: 10em;
+    }
 
-li.show {
-  height: 2em;
-  margin: 2px 0;
-}
-```
+    li.show {
+      height: 2em;
+      margin: 2px 0;
+    }
 
 In these styles we're setting up the `li` elements to look like rectangles, without the bullet points and giving them a `height` of 0, a `margin` of 0 and set `overflow` to hidden. This is so that they will appear invisible until we apply a `show` class.
 
@@ -123,17 +117,14 @@ As a first animation we'll add a simple fade effect. The list items appear a lit
 
 To add the effect I've created a separate snippet of CSS. To have this apply to the list, apply the class `fade` to a container surrounding your list.
 
-```
-.fade li {
-  transition: all 0.4s ease-out;
-  opacity: 0;
-  height: 2em;
-}
-.fade li.show {
-  opacity: 1;
-}
-```
-
+    .fade li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+      height: 2em;
+    }
+    .fade li.show {
+      opacity: 1;
+    }
 
 ### Slide down & Fade
 
@@ -149,15 +140,13 @@ The sudden jump each time an item is added or removed is a litle jarring. Let's 
 
 The difference between this and the `fade` class above is only that the `height: 2em` has been removed. Since the `show` class contains a set height (inherited from the first CSS snippet), it will transition the height automatically.
 
-```
-.slide-fade li {
-  transition: all 0.4s ease-out;
-  opacity: 0;
-}
-.slide-fade li.show {
-  opacity: 1;
-}
-```
+    .slide-fade li {
+      transition: all 0.4s ease-out;
+      opacity: 0;
+    }
+    .slide-fade li.show {
+      opacity: 1;
+    }
 
 ### Swinging in
 
@@ -175,28 +164,23 @@ To set this up, we need to define the containing `section` as a stage within whi
 
 Perspective in CSS is the depth of the scene. A lower number means a more shallow perspective, with more extreme angles. It's worth playing with this value to find a look that works for you.
 
-```
-.swing {
-  perspective: 100px;
-}
-```
+    .swing {
+      perspective: 100px;
+    }
 
 Next we set up the `li` elements to transform into place. We'll use `opacity` to create a fade effect as before, but add in a `transform` to rotate the `li` into place.
 
+    .swing li {
+      opacity: 0;
+      transform: rotateX(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
-```
-.swing li {
-  opacity: 0;
-  transform: rotateX(-90deg);
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
-
-.swing li.show {
-  opacity: 1;
-  transform: none;
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
-```
+    .swing li.show {
+      opacity: 1;
+      transform: none;
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
 In this example we're beginning with the `li` rotated back by 90 degrees. When the `show` class it added, this `transform` is set to `none`, allowing it to transition into place. To give it a swinging effect I've used the `cubic-bezier` timing function.
 
@@ -214,13 +198,11 @@ We can tweak this effect to create different styles quite easily. Here's an exam
 
 To create this effect we only need change the axis of rotation.
 
-```
-.swing li {
-  opacity: 0;
-  transform: rotateY(-90deg);
-  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
-```
+    .swing li {
+      opacity: 0;
+      transform: rotateY(-90deg);
+      transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+    }
 
 All we've changed is `rotateX` to `rotateY`.
 

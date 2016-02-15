@@ -43,9 +43,7 @@ Daha onceden muhtemelen asina oldugunuz &quot;ease&quot; veya &quot;cubic-bezier
 
 Animasyonun HTML kismiyla basliyoruz:
 
-```html
-<section class="fave"></section>
-```
+    <section class="fave"></section>
 
 ### Background image
 
@@ -53,23 +51,19 @@ Ardindan bazi temel CSS ozelliklerini yaziyoruz. Animasyon karelerini iceren dos
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-```css
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-```
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
 
 Animasyonun baslangicini `hover` durumuna gore ayarladik.
 
-```css
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-```
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
 
 Ikinci tanimlamamiz olan `transition`'a dikkatinizi cekmek istiyorum. Bu satirda diyoruz ki, `steps` zamanlama fonksiyonu kullanilarak background ozelligimizdeki degisiklik 1 saniye icinde goruntulensin/hareketlensin. `steps` kismina `55` degeri verdik - tahmin edersiniz ki bu, animasyon icin 55 adet karemiz oldugu anlamina geliyor.
 

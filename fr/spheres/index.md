@@ -34,24 +34,20 @@ Dans les exemples de code, j'ai laiss&eacute; tomb&eacute; les pr&eacute;fixes d
 
 Avant d'ajouter les d&eacute;tails, nous cr&eacute;ons la forme circulaire de base. Cela commence avec le HTML :
 
-```
-<figure class="circle"></figure>
-```
+    <figure class="circle"></figure>
 
 Nous utilisons un &eacute;l&eacute;ment `figure` ici, mais cela peut &ecirc;tre n'importe quel &eacute;l&eacute;ment. Figure est un &eacute;l&eacute;ment HTML5 qui repr&eacute;sente une image ou un diagramme qui peut &ecirc;tre retir&eacute; du contenu sans en affecter le sens.
 
 Pour cr&eacute;er un cercle &agrave; partir de cet &eacute;l&eacute;ment `figure`, Je lui donne une largeur, une hauteur et un radian de 50% de la bordure. N'importe quoi au-del&agrave; de 50% r&eacute;sultera en un angle absolument rond.
 
-```
-.circle {
-  display: block;
-  background: black;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  margin: 0;
-}
-```
+    .circle {
+      display: block;
+      background: black;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      margin: 0;
+    }
 
 Un cercle appara&icirc;t.
 
@@ -65,17 +61,15 @@ La premi&egrave;re chose que la plupart des tutoriels de sph&egrave;res 3D font 
 
 Nous pouvons le faire avec ce code CSS:
 
-```
-.circle {
-  display: block;
-  background: black;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  margin: 0;
-  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-}
-```
+    .circle {
+      display: block;
+      background: black;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      margin: 0;
+      background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    }
 
 Vous devriez obtenir quelque chose comme &ccedil;a:
 
@@ -97,34 +91,30 @@ Selon le type d'ombre que vous appliquerez sur la surface, vous pourrez cr&eacut
 
 Le HTML que nous utilisons contient quelques &eacute;l&eacute;ments de plus.
 
-```
-<section class="stage">
-  <figure class="ball"><span class="shadow"></span></figure>
-</section>
-```
+    <section class="stage">
+      <figure class="ball"><span class="shadow"></span></figure>
+    </section>
 
 L'&eacute;l&eacute;ment &quot;ball&quot; se voit attribuer un span que nous allons utiliser pour cr&eacute;er une ombre et il est encadr&eacute; d'une section de classe&nbsp;`stage`. La section de classe stage est utile pour donner un peu de perspective et pour positionner l'ombre, ce qui nous donnera un aspect plus 3D.
 
 Appliquons quelques styles au stage et positionnons une ombre pour finir la sc&egrave;ne.
 
-```
-.stage {
-  width: 300px;
-  height: 300px;
-  display: inline-block;
-  margin: 20px;
-  perspective: 1200px;
-  perspective-origin: 50% 50%;
-}
-.ball .shadow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-  transform: rotateX(90deg) translateZ(-150px);
-  z-index: -1;
-}
-```
+    .stage {
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+      margin: 20px;
+      perspective: 1200px;
+      perspective-origin: 50% 50%;
+    }
+    .ball .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+      transform: rotateX(90deg) translateZ(-150px);
+      z-index: -1;
+    }
 
 Remarquez que je ne mets pas les pr&eacute;fixes dans ces exemples CSS. Les exemples Codepen contiennent du CSS totalement pr&eacute;fix&eacute;. Au-dessus, j'ai r&eacute;gl&eacute; la section&nbsp;`stage` de mani&egrave;re &agrave; avoir une `perspective` de 1.200 pixels. La propri&eacute;t&eacute; perspective donne un point de fuite &agrave; la sc&egrave;ne 3D.
 
@@ -140,29 +130,27 @@ Cela commence &agrave; &ecirc;tre plus sympa maintenant. Ajoutons une ombre &agr
 
 Dans le monde r&eacute;el vous trouverez rarement des objets &eacute;clair&eacute;s sous un seul angle. Les surfaces refl&egrave;tent la lumi&egrave;re sur les autres surfaces et au final les diff&eacute;rentes sources lumineuses se m&eacute;langent entre elles. Pour avoir un aspect de balle plus r&eacute;aliste, nous allons faire comme s'il y avait deux sources lumineuses avec un pseudo-element pour avoir deux d&eacute;grad&eacute;s.
 
-```
-.ball {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
-}
-.ball:before {
-  content: "";
-  position: absolute;
-  top: 1%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
-  filter: blur(5px);
-  z-index: 2;
-}
-```
+    .ball {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    }
+    .ball:before {
+      content: "";
+      position: absolute;
+      top: 1%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+      filter: blur(5px);
+      z-index: 2;
+    }
 
 Ici nous avons deux d&eacute;grad&eacute;s nettement plus &eacute;volu&eacute;s.
 
@@ -184,42 +172,41 @@ En l'&eacute;tat l'effet est assez doux, ajoutons y un peu de brillance et cr&ea
 
 Pour y arriver nous allons utiliser une douce lumi&egrave;re en soulignement comme avant, mais en ajustant l'&eacute;clairage lumineux du sommet pour qu'il soit plus petit et &eacute;troit. Il nous faudra utiliser deux pseudo-s&eacute;lecteurs pour contenir la couleur de la balle, une lumi&egrave;re en bas et une r&eacute;flection.
 
-```
-.ball {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 50%;
-  position: relative;
-  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
-}
-.ball:before {
-  content: "";
-  position: absolute;
-  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-  bottom: 2.5%;
-  left: 5%;
-  opacity: 0.6;
-  height: 100%;
-  width: 90%;
-  filter: blur(5px);
-  z-index: 2;
-}
-.ball:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
-  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-  filter: blur(10px);
-}
-```
+
+    .ball {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+    }
+    .ball:before {
+      content: "";
+      position: absolute;
+      background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      bottom: 2.5%;
+      left: 5%;
+      opacity: 0.6;
+      height: 100%;
+      width: 90%;
+      filter: blur(5px);
+      z-index: 2;
+    }
+    .ball:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+      transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+      filter: blur(10px);
+    }
 
 Ici nous avons la couleur originale &agrave; laquelle nous appliquons un d&eacute;grad&eacute; sur la balle elle-m&ecirc;me. Le pseudo-element `before` contient un surlignement plus lumineux qui l&agrave; aussi commence &agrave; la base de la balle et cr&eacute;e l'effet de r&eacute;flection de la lumi&egrave;re sur la surface.
 
@@ -235,40 +222,39 @@ Pour faire une boule de billard, ajoutons une &eacute;tape suppl&eacute;mentaire
 
 il nous faut un &eacute;l&eacute;ment suppl&eacute;mentaire pour contenir le 8, ainsi que des styles pour le placer sur la boule.
 
-```
-<section class="stage">
-  <figure class="ball">
-    <span class="shadow"></span>
-    <span class="eight"></span>
-  </figure>
-</section>
 
-.ball .eight {
-  width: 110px;
-  height: 110px;
-  margin: 30%;
-  background: white;
-  border-radius: 50%;
-  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
-  position: absolute;
-}
-.ball .eight:before {
-  content: "8";
-  display: block;
-  position: absolute;
-  text-align: center;
-  height: 80px;
-  width: 100px;
-  left: 50px;
-  margin-left: -40px;
-  top: 44px;
-  margin-top: -40px;
-  color: black;
-  font-family: Arial;
-  font-size: 90px;
-  line-height: 104px;
-}
-```
+    <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="eight"></span>
+      </figure>
+    </section>
+
+    .ball .eight {
+      width: 110px;
+      height: 110px;
+      margin: 30%;
+      background: white;
+      border-radius: 50%;
+      transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+      position: absolute;
+    }
+    .ball .eight:before {
+      content: "8";
+      display: block;
+      position: absolute;
+      text-align: center;
+      height: 80px;
+      width: 100px;
+      left: 50px;
+      margin-left: -40px;
+      top: 44px;
+      margin-top: -40px;
+      color: black;
+      font-family: Arial;
+      font-size: 90px;
+      line-height: 104px;
+    }
 
 Le bord arrondi &agrave; 100% est &agrave; nouveau utile pour cr&eacute;er le cercle, et ce cercle est positionn&eacute; en haut &agrave; droite avec la propri&eacute;t&eacute; `transform`. Plut&ocirc;t que de mettre le num&eacute;ro 8 dans le contenu, j'utilise le pseudo-selecteur `before` pour ajouter du contenu via la CSS et ensuite faire la translation du num&eacute;ro de mani&egrave;re comparable au cercle qui le contient.
 
@@ -282,51 +268,47 @@ Un truc vraiment sympa avec les transformations CSS c'est que l'on peut faire de
 
 Pour la premi&egrave;re &eacute;tape je vais adapter les couleurs que j'avais utilis&eacute; sur l'exemple de la boule num&eacute;ro 8. Quelques petits trucs et cela ressemble davantage &agrave; un oeil. En premier, le HTML :&nbsp;
 
-```
-<section class="stage">
-  <figure class="ball">
-    <span class="shadow"></span>
-    <span class="iris"></span>
-  </figure>
-</section>
-```
+    <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="iris"></span>
+      </figure>
+    </section>
 
 Le gros de la CSS est comparable &agrave; la boule num&eacute;ro 8, &agrave; l'exception de la pupille et de l'iris.
 
-```
-.iris {
-  width: 40%;
-  height: 40%;
-  margin: 30%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
-  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
-  position: absolute;
-  animation: move-eye-skew 5s ease-out infinite;
-}
-.iris:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 37.5%;
-  height: 37.5%;
-  border-radius: 50%;
-  top: 31.25%;
-  left: 31.25%;
-  background: black;
-}
-.iris:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 31.25%;
-  height: 31.25%;
-  border-radius: 50%;
-  top: 18.75%;
-  left: 18.75%;
-  background: rgba(255, 255, 255, 0.2);
-}
-```
+    .iris {
+      width: 40%;
+      height: 40%;
+      margin: 30%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+      transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+      position: absolute;
+      animation: move-eye-skew 5s ease-out infinite;
+    }
+    .iris:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 37.5%;
+      height: 37.5%;
+      border-radius: 50%;
+      top: 31.25%;
+      left: 31.25%;
+      background: black;
+    }
+    .iris:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 31.25%;
+      height: 31.25%;
+      border-radius: 50%;
+      top: 18.75%;
+      left: 18.75%;
+      background: rgba(255, 255, 255, 0.2);
+    }
 
 Un d&eacute;grad&eacute; bleu fait la partie color&eacute; de l'iris et maintenant la pupille et le surlignement sont cr&eacute;es par des pseudo-&eacute;lements. J'ai aussi ajout&eacute; une propri&eacute;t&eacute; d'animation sur l'&eacute;l&eacute;ment de l'iris. Les animations sont attach&eacute;es &agrave; un &eacute;l&eacute;ment sous cette forme :
 
@@ -342,25 +324,23 @@ Sans l'animation cr&eacute;&eacute;e, nous avons un globe oculaire tr&egrave;s s
 
 Cr&eacute;ons quelques keyframes pour d&eacute;crire comment ce globe oculaire doit bouger.
 
-```
-@keyframes move-eye-skew {
-  0% {
-    transform: none;
-  }
-  20% {
-    transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
-  }
-  25%, 44% {
-    transform: none;
-  }
-  50%, 60% {
-    transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
-  }
-  66%, 100% {
-    transform: none;
-  }
-}
-```
+    @keyframes move-eye-skew {
+      0% {
+        transform: none;
+      }
+      20% {
+        transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+      }
+      25%, 44% {
+        transform: none;
+      }
+      50%, 60% {
+        transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+      }
+      66%, 100% {
+        transform: none;
+      }
+    }
 
 Les keyframes d'animations en CSS peuvent sembler un peu compliqu&eacute; eu premier abord. Ce que vous &ecirc;tes en train de faire c'est de d&eacute;crire l'&eacute;tat d'un &eacute;l&eacute;ment dans une s&eacute;rie de moments. Chaque &eacute;tat est attach&eacute; &agrave; un pourcentage. Dans ce cas l'iris commence sans aucune transformation. Puis, &agrave; 20%, une transformation s'applique qui va le bouger et en faire une translation vers la gauche. L'espace entre 0 et 20% est calcul&eacute; automatiquement par le navigateur, il cr&eacute;e une transition douce entre les deux points.
 
@@ -378,28 +358,26 @@ Faire des bulles est assez similaire &agrave; avant, plus de transparence sur la
 
 L'animation utilise la transformation `scale` pour faire varier les bulles.
 
-```
-@keyframes bubble-anim {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scaleY(0.95) scaleX(1.05);
-  }
-  48% {
-    transform: scaleY(1.1) scaleX(0.9);
-  }
-  68% {
-    transform: scaleY(0.98) scaleX(1.02);
-  }
-  80% {
-    transform: scaleY(1.02) scaleX(0.98);
-  }
-  97%, 100% {
-    transform: scale(1);
-  }
-}
-```
+    @keyframes bubble-anim {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scaleY(0.95) scaleX(1.05);
+      }
+      48% {
+        transform: scaleY(1.1) scaleX(0.9);
+      }
+      68% {
+        transform: scaleY(0.98) scaleX(1.02);
+      }
+      80% {
+        transform: scaleY(1.02) scaleX(0.98);
+      }
+      97%, 100% {
+        transform: scale(1);
+      }
+    }
 
 L'animation s'applique sur la bulle enti&egrave;re et ses pseudo-elements.
 

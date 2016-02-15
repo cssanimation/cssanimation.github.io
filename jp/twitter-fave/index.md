@@ -41,9 +41,8 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
 
 はじめに、 HTML を用意します。
 
-```html
-<section class="fave"></section>
-```
+
+    <section class="fave"></section>
 
 ### 背景画像
 
@@ -51,23 +50,23 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-```css
-.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}
-```
+
+    .fave {
+      width: 70px;
+      height: 50px;
+      background: url(images/twitter_fave.png) no-repeat;
+      background-position: 0 0;
+    }
+
 
 `hover` ステートが追加されると、画像の羅列の最後に背景の位置が移動されるよう指定します。
 
-```css
-.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}
-```
+
+    .fave:hover {
+      background-position: -3519px 0;
+      transition: background 1s steps(55);
+    }
+
 
 `transition` を指定する二つ目の規則に注意してください。 この場合、背景のプロパティを1秒で、`steps` timing function を用いて変化させます。 `steps` は `55` という値を含んでいるので、アニメーションは55のフレームを持つことになります。
 
