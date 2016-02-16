@@ -161,4 +161,4 @@ In de codevoorbeelden zijn de gebruikelijke `-webkit` en `-moz` prefixes weg gel
 
 Hier is een versie in de vorm van een geanimeerde gif die je makkelijker online kan delen.
 
-[<img src="/assets/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
+[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
