@@ -1,7 +1,7 @@
 - name: "العربية"
   english_name: "Arabic"
   iso: ar
-- name: "中国"
+- name: "中文"
   english_name: "Chinese"
   iso: cn
 - name: "Danske"
