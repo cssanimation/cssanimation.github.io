@@ -11,23 +11,6 @@ custom_header: posts/principles.html
 demo_url: http://codepen.io/collection/AxKOdY/
 published: true
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-03-21-principles.md
-languages:
-  - title: 中国 (Chinese)
-    url: /cn/principles/
-    iso: cn
-    postTitle: "[译文]网页动画的十二原则"
-  - title: Danske (Danish)
-    url: /da/principles/
-    iso: da
-    postTitle: "Animationsprincipper for nettet"
-  - title: 日本語 (Japanese)
-    url: /jp/principles/
-    iso: jp
-    postTitle: "ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！"
-  - title: Polski (Polish)
-    url: /pl/principles/
-    iso: pl
-    postTitle: Reguły animacji w sieci
 ---
 
 As front-end designers and developers, we use CSS to style, position and create great looking sites. We often use CSS to add movement to pages in the form of transitions or even animations, but we don't usually go much beyond that.

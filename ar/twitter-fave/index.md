@@ -13,7 +13,6 @@ translators:
     url: https://twitter.com/@shehab_eltawel
   - name: Mac Alnakari
     url: https://getnative.me
-english_version: /twitter-fave/
 ---
 
 حدثت تويتر مؤخراً تصميم زر التفضيل الخاص بها وقدمت حركة جديدة لهذا الزر. بدلاً من الإعتماد على خاصية CSS transition، الحركة تستخدم سلسله من الصور. اليكم كيفية انشاء الحركة بأستخدام خاصية التوقيت `steps` في&nbsp;CSS

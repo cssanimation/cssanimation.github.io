@@ -12,7 +12,6 @@ demo_url: http://codepen.io/collection/AxKOdY/
 published: true
 translator: Shohei Yamazaki
 translator_link: https://twitter.com/photoshopvip
-english_version: /principles/
 ---
 
 フロントエンド・デザイナーやデベロッパーは、スタイリングや配置、またデザイン性の良いサイトを作成するためにCSS（Cascading Style Sheets、カスケーディング・スタイル・シート）を利用します。しばしばページに変化（英: Transition）やアニメーション（英: Animation）を加えるためにCSSを利用しますが、まだまだ開発する余地がありそうです。

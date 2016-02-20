@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 home_image: /images/posts/steps/home.png
 translator: Paweł Kuna
 translator_link: https://twitter.com/codecalm
-english_version: /twitter-fave/
 ---
 
 Twitter ostatnio zaktualizował przycisk &quot;dodaj do ulubionych&quot;, dodając subtelną animację. Nasza animacja będzie się składała z serii obrazk&oacute;w. Oto jak odtworzyć ją za pomocą kodu CSS i funkcji `steps`.

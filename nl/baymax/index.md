@@ -10,7 +10,6 @@ home_image: /assets/images/posts/baymax/home.png
 tweet_text: Animeer een Baymax gezicht in CSS
 translator: Denis Valcke
 translator_link: https://twitter.com/DenisValcke
-english_version: /baymax/
 ---
 
 Laten we CSS gebruiken om het Baymax personage van de film Big Hero 6 te maken.

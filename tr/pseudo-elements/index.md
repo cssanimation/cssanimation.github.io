@@ -10,7 +10,6 @@ home_image: /images/posts/sheen/home.png
 tweet_text: Shiny buttons with CSS
 translator: Can Göktaş
 translator_link: https://twitter.com/cangokt
-english_version: /pseudo-elements/
 ---
 
 

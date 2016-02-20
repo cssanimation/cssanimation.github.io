@@ -12,7 +12,6 @@ home_image: /assets/images/posts/list_items/home.png
 tweet_text: Animating List Items
 translator: Denis Valcke
 translator_link: https://twitter.com/DenisValcke
-english_version: /list-items/
 ---
 
 Als er stukken van de pagina veranderen kan animatie een goede manier zijn om uw gebruikers te helpen begrijpen wat er gebeurt. Animaties kunnen nieuwe inhoud aankondigen of aandacht trekken naar inhoud die op punt staat verwijderd te worden. In dit artikel zullen we bekijken hoe we dit kunnen gebruiken om nieuwe inhoud in te leiden door items in een lijst te tonen en verbergen.

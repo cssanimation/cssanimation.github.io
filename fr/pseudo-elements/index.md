@@ -10,7 +10,6 @@ home_image: /images/posts/sheen/home.png
 tweet_text: Animer des pseudo-éléments
 translator: Pierre Choffé
 translator_link: https://twitter.com/pierrechoffe
-english_version: /pseudo-elements/
 ---
 
 Avec les pseudo-éléments, tout se passe comme si on avait des éléments supplémentaires dans le DOM gratuitement. Ils nous permettent d’ajouter à nos pages du contenu supplémentaire, de la décoration et bien d’autres choses, sans ajouter plus de HTML, et ils peuvent être animés. Dans cet article, je vais utiliser un pseudo-élément pour ajouter une touche d’élégance à un bouton.

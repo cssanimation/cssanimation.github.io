@@ -10,7 +10,6 @@ source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/ma
 home_image: /images/posts/steps/home.png
 translator: sei0o
 translator_link: https://getnative.me/user/3625
-english_version: /twitter-fave/
 ---
 
 最近 Twitter は「お気に入り」(「ふぁぼ」としても有名) のデザインを変更、新しいアニメーションを取り入れました。 CSS transitions よりも、アニメーションは画像の羅列を活用できます。 そこで、 アニメーションを CSS animation の steps timing function を用いて作り直す方法を示します。

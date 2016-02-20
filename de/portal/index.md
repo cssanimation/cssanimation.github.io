@@ -12,7 +12,6 @@ customCSS: portal.css
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-07-08-portal.md
 translator: Martin Hesseler
 translator_link: https://twitter.com/waslangewaehrt
-english_version: /portal/
 ---
 
 Ihr benötigt kein JavaScript um beeindruckende 3D-Projekte in Eurem Web Browser zu erstellen. In diesem Artikel werde ich Euch zeigen, wie man eine Portal-Szene mit ausschliesslich CSS erstellt und animiert.

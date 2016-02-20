@@ -43,21 +43,23 @@ layout: default
     <section class="row wow fadeIn">
       <section class="twelve columns">
         <section class="post-container">
-          {% for post in site.posts %}
-            {% if post.languages %}
-              {% for language in post.languages %}
-                {% if language.iso == page.language %}
-                  <article class="post row">
-                      <a class="image-link" href="{{language.url}}"><img src="{{ post.home_image }}"></a>
-                      {% if language.postTitle %}
-                        <h3><a class="post-link" href="{{language.url}}">{{ language.postTitle }}</a></h3>
-                      {% else %}
-                        <h3><a class="post-link" href="{{language.url}}">{{ post.title }}</a></h3>
-                      {% endif %}
-                  </article>
-                {% endif %}
-              {% endfor %}
-            {% endif %}
+          {% for article in site.data.translations %}
+            {% for article_language in article.translations %}
+              {% if article_language.iso == page.language %}
+                {% for post in site.posts %}
+                  {% if post.url == article.url %}
+                    <article class="post row">
+                        <a class="image-link" href="/{{page.language}}{{article.url}}"><img src="{{ post.home_image }}"></a>
+                        {% if article_language.postTitle %}
+                          <h3><a class="post-link" href="/{{page.language}}{{article.url}}">{{ article_language.postTitle }}</a></h3>
+                        {% else %}
+                          <h3><a class="post-link" href="/{{page.language}}{{article.url}}">{{ post.language }}</a></h3>
+                        {% endif %}
+                    </article>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </section>
       </section>

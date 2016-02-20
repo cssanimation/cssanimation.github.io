@@ -1,0 +1,122 @@
+- url: /starwars/
+  translations:
+    - language: Français (French)
+      postTitle: Star Wars
+      iso: fr
+    - language: Polski (Polish)
+      postTitle: Gwiezdne Wojny
+      iso: pl
+- url: /spheres/
+  translations:
+    - language: Français (French)
+      postTitle: Sph&egrave;res
+      iso: fr
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Sfery
+- url: /portal/
+  translations:
+    - language: Deutsch (German)
+      iso: de
+      postTitle: CSS Portal
+    - language: Français (French)
+      postTitle: Portal CSS
+      iso: fr
+- url: /macplus/
+  translations:
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Mac Plus CSS
+- url: /principles/
+  translations:
+    - language: 中文 (Chinese)
+      iso: cn
+      postTitle: "[译文]网页动画的十二原则"
+    - language: Danske (Danish)
+      iso: da
+      postTitle: "Animationsprincipper for nettet"
+    - language: 日本語 (Japanese)
+      iso: jp
+      postTitle: "ディズニー社に学ぶ！HTML/CSSで12個のアニメーション基本原則を完全再現！"
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Reguły animacji w sieci
+- url: /transition-vs-animation/
+  translations:
+    - language: 中文 (Chinese)
+      iso: cn
+      postTitle: "[译文]过渡效果 vs 动效"
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Przejścia vs Animacje
+- url: /clocks/
+  translations:
+    - language: Français (French)
+      iso: fr
+      postTitle: Horloges
+- url: /baymax/
+  translations:
+    - language: Nederlands (Dutch)
+      iso: nl
+      postTitle: "Baymax in CSS"
+    - language: Polski (Polish)
+      postTitle: "Baymax w CSS"
+      iso: pl
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: "CSS ile Baymax"
+- url: /list-items/
+  translations:
+    - language: Nederlands (Dutch)
+      iso: nl
+      postTitle: Lijstitems Animeren
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Animowanie Element&oacute;w Listy
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: Hareketli Liste Elemanlari
+- url: /pseudo-elements/
+  translations:
+    - language: 中文 (Chinese)
+      iso: cn
+      postTitle: "伪元素(pseudo-elements)动画"
+    - language: Français (French)
+      iso: fr
+      postTitle: Animer des pseudo-éléments
+    - language: Deutsch (German)
+      iso: de
+      postTitle: Animation von Pseudo-Elementen
+    - language: Nederlands (Dutch)
+      iso: nl
+      postTitle: "Pseudo-elementen animeren"
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Animowanie pseudo element&oacute;w
+    - language: Português (Portuguese)
+      iso: pt
+      postTitle: Animando pseudoelementos
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: Pseudo-element'ler ile animasyon
+- url: /twitter-fave/
+  translations:
+    - language: "العربية (Arabic)"
+      iso: ar
+      postTitle: "حركة ايقونة التفضيل على تويتر"
+    - language: Deutsch (German)
+      iso: de
+      postTitle: Twitter's "fave" Animation
+    - language: 日本語 (Japanese)
+      iso: jp
+      postTitle: Twitter の「お気に入り」アニメーション
+    - language: Nederlands (Dutch)
+      iso: nl
+      postTitle: "De &quot;fave&quot; animatie van Twitter"
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Twitterowa animacja &quot;dodaj do ulubionych&quot;
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: Twitter'daki &quot;fav&quot; animasyonu
+

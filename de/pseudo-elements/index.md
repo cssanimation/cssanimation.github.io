@@ -11,7 +11,6 @@ tweet_text: Leuchtende Knöpfe mit CSS
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-02-03-pseudo-elements.md
 translator: Serena Fritsch
 translator_link: https://twitter.com/serifritsch
-english_version: /pseudo-elements/
 ---
 
 Pseudo-Elemente sind wie zusätzliche, freie DOM Elemente. Sie erlauben uns extra Inhalt, Dekoration und mehr zu unseren Seiten hinzuzufügen ohne extra HTML zu schreiben und sie können animiert werden. In diesem Beitrag werden wir ein Pseudo-Element verwenden um ein bisschen visuelles flair zu einem Knopf hinzuzufügen.

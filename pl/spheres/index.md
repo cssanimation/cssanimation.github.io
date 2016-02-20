@@ -10,7 +10,6 @@ custom_header: posts/spheres.html
 customCSS: spheres.css
 translator: Mateusz Kurlit
 translator_link: /pl/
-english_version: /spheres/
 ---
 
 Korzystając z właściwości CSS&nbsp;`border-radius` możemy stworzyć okrągłe kształty i koła. Po dodaniu gradient&oacute;w staną się sferami. Zr&oacute;bmy to i dodajmy animację, aby tchnąć w nie życie.

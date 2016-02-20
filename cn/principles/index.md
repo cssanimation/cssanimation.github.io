@@ -12,7 +12,6 @@ demo_url: http://codepen.io/collection/AxKOdY/
 published: true
 translator: Ethon Lau
 translator_link: https://twitter.com/ethonlau
-english_version: /principles/
 ---
 
 作为前端的设计师和工程师，我们用 CSS 去做样式、定位并创建出好看的网站。我们经常用 CSS 去添加页面的运动过渡效果甚至动画，但我们经常做的东西不会超过这些。

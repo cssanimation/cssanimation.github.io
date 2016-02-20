@@ -10,7 +10,6 @@ home_image: /images/posts/starwars/home.jpg
 tweet_text: Les titres de Star Wars animés en CSS
 translator: Pierre Choffé
 translator_link: https://twitter.com/pierrechoffe
-english_version: /starwars/
 ---
 
 Sortez les popcorns ! Aujourd'hui, nous allons cr&eacute;er le titre de la bande annonce de Star Wars 'Le R&eacute;veil de la Force'.

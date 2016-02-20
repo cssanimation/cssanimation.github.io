@@ -10,7 +10,6 @@ custom_header: posts/spheres.html
 customCSS: spheres.css
 translator: Philippe Auriol
 translator_link: https://twitter.com/PhilAllergie
-english_version: /spheres/
 ---
 
 

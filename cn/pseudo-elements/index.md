@@ -10,7 +10,6 @@ home_image: /assets/images/posts/sheen/home.png
 tweet_text: 用 CSS 闪亮按钮
 translator: Rrylee
 translator_link: https://getnative.me/user/4008
-english_version: /pseudo-elements/
 ---
 
 伪元素就像额外的免费&nbsp;DOM 元素。 它们允许我们添加额外的内容、 修饰和等等到我们的页面而不添加额外的 html 代码，当然他们也可以进行动画处理。 在这篇文章中，我们将使用一个伪元素要为按钮添加一个小的视觉风格。

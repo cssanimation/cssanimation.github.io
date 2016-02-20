@@ -11,7 +11,6 @@ home_image: /images/posts/list_items/home.png
 tweet_text: Hareketli Liste Elemanlari
 translator: Can Göktaş
 translator_link: https://twitter.com/cangokt
-english_version: /list-items/
 ---
 
 Web sayfanizin bir bolumu degisecegi zaman, bu degisimi bir animasyon ile yapmak ziyaretcilerinizin sitede neler olup bittigini anlamasini saglamak icin guzel bir yoldur. Animasyonlar yeni gelen i&ccedil;eriği bildirebilir ya da kaldırılmakta olan i&ccedil;eriğe dikkat &ccedil;ekebilir. Bu yazıda, bir liste i&ccedil;indeki &ouml;geleri g&ouml;stererek ve gizleyerek bunun i&ccedil;eriğin tanıtılmasında nasıl kullanilabileceğine bakacağız.

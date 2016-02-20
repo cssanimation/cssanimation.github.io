@@ -13,7 +13,6 @@ custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
 translator: Pierre Choffe
 translator_link: https://la-cascade.io
-english_version: /clocks/
 ---
 
 Le temps est venu. Dans cet article, nous allons relever le d&eacute;fi de cr&eacute;er et animer une horloge en utilisant des animations CSS simples et un peu de JavaScript.

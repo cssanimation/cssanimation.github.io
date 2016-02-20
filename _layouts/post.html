@@ -62,7 +62,7 @@ layout: default
       {% if page.translator %}
         <section class="translator">
           <h3>Translation Info</h3>
-          <p>This article translated by <a href="{{ page.translator_link }}">{{ page.translator }}</a>. (<a href="{{ page.english_version }}">See original</a>)</p>
+          <p>This article translated by <a href="{{ page.translator_link }}">{{ page.translator }}</a>. (<a href="/{{ page.url | split: '/' | last }}/">See original</a>)</p>
         </section>
 
       {% elsif page.translators %}
@@ -81,13 +81,17 @@ layout: default
         <section class="translations">
           <h3>Translations</h3>
           <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
-          {% if page.languages %}
-            <ul>
-              {% for language in page.languages %}
-                <li><a href="{{ language.url }}">{{ language.title }}</a></li>
+          {% for article in site.data.translations %}
+            {% if page.url == article.url %}
+              <ul>
+              {% for translation in article.translations %}
+                {% if translation.language %}
+                  <li><a href="/{{ translation.iso }}{{page.url}}">{{ translation.language }}</a></li>
+                {% endif %}
               {% endfor %}
-            </ul>
-          {% endif %}
+              </ul>
+            {% endif %}
+          {% endfor %}
           {% if page.source %}
             <p class="translate"><a class="button" href="https://getnative.me/?ref=cssanimation&amp;lang=en&amp;url={{site.url}}{{page.url}}&amp;sourceURL={{page.source}}&amp;title={{ page.title | cgi_escape }}&amp;format=markdown-yaml-frontmatter">Translate this article</a></p>
             <p class="powered-by">Powered by <img src="/images/getnative.png" alt="native - Community powered translations"></p>

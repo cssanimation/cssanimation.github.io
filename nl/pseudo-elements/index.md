@@ -10,7 +10,6 @@ home_image: /assets/images/posts/sheen/home.png
 tweet_text: Glanzende knoppen met CSS
 translator: Denis Valcke
 translator_link: https://twitter.com/DenisValcke
-english_version: /pseudo-elements/
 ---
 
 Pseudo-elementen is als zomaar twee extra DOM elementen krijgen. Ze staan ons toe om extra content, decoratie enzoverder toe te voegen zonder extra HTML toe te voegen. Bovendien kunnen ze geanimeerd worden. In deze post zullen we een pseudo-element gebruiken om een beetje meer visuele flair toe te voegen aan een knop.

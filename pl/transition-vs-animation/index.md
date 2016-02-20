@@ -11,12 +11,9 @@ tweet_text: Kiedy powinieneś/powinnaś korzystać z przejść a kiedy z animacj
 custom_header: posts/transitions-animations.html
 translator: Matt Chabros
 translator_link: http://matchabros.com
-english_version: /transition-vs-animation/
 ---
 
 Podczas tworzenia animacji na stronach internetowych, kiedy korzystasz z przejść a kiedy z animacji? Instnieją sytuacje kiedy chciałbyś/chciałabyś wykorzystać jedno a nie drugie. Omówmy różnice.
-
-/pl/
 
 ## Czym są przejścia?
 

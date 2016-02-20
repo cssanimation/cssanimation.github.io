@@ -12,7 +12,6 @@ custom_header: posts/transitions-animations.html
 published: true
 translator: Ethon Lau
 translator_link: https://twitter.com/ethonlau
-english_version: /transition-vs-animation/
 ---
 
 当你在网页上做动画时，你会选用过渡效果还是动态效果？这是你作出选择的时候了，现在让我们来探讨一下它们的不同之处。

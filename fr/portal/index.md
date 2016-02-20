@@ -11,7 +11,6 @@ demo_url: https://cssanimation.rocks/demo/portal/
 customCSS: portal.css
 translator: Pierre Choffe
 translator_link: https://la-cascade.io
-english_version: /portal/
 ---
 
 

@@ -10,7 +10,6 @@ source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/ma
 home_image: /images/posts/steps/home.png
 translator: Serena Fritsch
 translator_link: https://twitter.com/serifritsch
-english_version: /twitter-fave/
 ---
 
 Twitter hat vor kurzem das Design des "fave" (auch als "fav" bekannt) Knopfes mit der Einfuehrung einer neuen Animation aktualisiert. Anstelle sich auf CSS Transitionen zu verlassen, benutzt die Animation eine Reihe von Bildern. Hier wird erklärt wie man die Animation mit Hilfe der CSS 'steps' Zeitfunktion nachbilden kann.

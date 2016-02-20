@@ -10,7 +10,6 @@ source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/ma
 home_image: /images/posts/steps/home.png
 translator: Denis Valcke
 translator_link: https://twitter.com/DenisValcke
-english_version: /twitter-fave/
 ---
 
 Twitter heeft onlangs een update gegeven aan hun &quot;fave&quot;, ook&nbsp;gekend als &quot;fav&quot; knop, door er een nieuwe animatie aan mee te geven. In plaats van CSS transities maakt de animatie gebruik van een reeks afbeeldingen. Hieronder zie je hoe je deze animatie kan recre&euml;ren door middel van de CSS animatie `steps` timing functie.
