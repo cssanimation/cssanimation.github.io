@@ -41,6 +41,11 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Reguły animacji w sieci
+- url: /watch/
+  translations:
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Tarcze Apple Watch
 - url: /transition-vs-animation/
   translations:
     - language: 中文 (Chinese)
