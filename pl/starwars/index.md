@@ -10,7 +10,7 @@ home_image: /images/posts/starwars/home.jpg
 tweet_text: Tytuł Gwiezdnych Wojen animowany za pomocą CSS
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-12-10-starwars.md
 translator: Mateusz Kurlit
-translator_link: /pl/
+translator_link: http://transgent.co.nf
 ---
 
 Zostawcie popcorn! Dzisiaj zbudujemy tytuł filmu Gwiezdne Wojny ze zwiastuna &quot;Przebudzenie Mocy&quot;

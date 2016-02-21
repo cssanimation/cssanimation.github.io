@@ -54,6 +54,9 @@
     - language: Français (French)
       iso: fr
       postTitle: Horloges
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Zegary
 - url: /baymax/
   translations:
     - language: Nederlands (Dutch)

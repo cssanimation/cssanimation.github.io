@@ -9,7 +9,7 @@ tweet_text: Stw&oacute;rz tę niesamowitą animację Portalu za pomocą CSS
 custom_header: posts/spheres.html
 customCSS: spheres.css
 translator: Mateusz Kurlit
-translator_link: /pl/
+translator_link: http://transgent.co.nf
 ---
 
 Korzystając z właściwości CSS&nbsp;`border-radius` możemy stworzyć okrągłe kształty i koła. Po dodaniu gradient&oacute;w staną się sferami. Zr&oacute;bmy to i dodajmy animację, aby tchnąć w nie życie.

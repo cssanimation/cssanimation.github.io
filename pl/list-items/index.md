@@ -11,7 +11,7 @@ imageURL: /assets/images/posts/list_items/list_items.png
 home_image: /assets/images/posts/list_items/home.png
 tweet_text: Animowanie Element&oacute;w Listy
 translator: Mateusz Kurlit
-translator_link: /pl/
+translator_link: http://transgent.co.nf
 ---
 
 Kiedy fragmenty strony internetowej zmieniają się, dodanie animacji jest dobrym sposobem na wskazanie odwiedzającym co się dzieje.&nbsp; Animacje mogą zapowiadać pojawienie się nowej treści lub przyciągnąć uwagę do treści, kt&oacute;ra jest w trakcie usuwania. W tym artykule, przyjrzymy się jak wprowadzenie nowej treści może być wykorzystane, pokazując i ukrywając elementy na liście.
@@ -30,7 +30,7 @@ Jednym z przykład&oacute;w dodawania lub usuwania treści jest zarządzanie lis
 ## Konfigurowanie HTML
 
 Aby rozpocząć, skorzystamy z wstępnie wypełnionej listy i przycisku do dodawania nowych element&oacute;w do listy.
- 
+
     <ul id="list">
       <li class="show">List item</li>
       <li class="show">List item</li>
@@ -46,7 +46,7 @@ Początkowe elementy posiadają klasę &quot;show&quot;, ponieważ tę klasę u�
 Na potrzeby wersji demonstracyjnej napiszemy kod JavaScript, aby dodać nowy element do listy, a następnie klasę &quot;show&quot;, aby pojawiła się animacja. Istnieje pow&oacute;d wykorzystania tego dwuetapowego procesu. Jeśli elementy listy byłyby dodane w stanie widocznym, nie byłoby czasu na przeprowadzanie przejścia.
 
 Moglibyśmy obejść to aplikując animację na elemencie `li`, ale to byłoby trudniejsze do zastąpienia podczas usuwania element&oacute;w za pomocą innej animacji.
- 
+
     /*
      * Add items to a list - from cssanimation.rocks/list-items/
      */
@@ -63,7 +63,7 @@ Moglibyśmy obejść to aplikując animację na elemencie `li`, ale to byłoby t
 ## Brak animacji
 
 Najprościej możemy napisać kod CSS, aby pokazać elementy listy. Korzystamy z klasy `show `jako sposobu, aby były widoczne oraz usuwamy klasę `show`, co powinno spowodować ich zniknięcie.
- 
+
     li {
       list-style: none;
       background: #d1703c;
@@ -100,7 +100,7 @@ Jako pierwszą animację, dodamy prosty efekt zanikania. Elementy listy pojawiaj
 <button>Dodaj element listy</button></section>
 
 Aby dodać efekt, utworzyłem osobny fragment kodu CSS. Aby zastosować go do listy, dodaj klasę `fade` do kontenera otaczającego twoją listę.
- 
+
     .fade li {
       transition: all 0.4s ease-out;
       opacity: 0;
@@ -120,7 +120,7 @@ Nagły skok za każdym razem, gdy element jest dodawany lub usuwany powoduje ma�
 <button>Dodaj element listy</button></section>
 
 R&oacute;żnica między tym i klasą `fade` widoczną powyżej jest tylko to, że `height: 2em` zostało usunięte. Ponieważ klasa `show` zawiera ustawioną wysokość (dziedziczoną od pierwszego fragmentu CSS), przeniesie ona wysokość automatycznie.
- 
+
     .slide-fade li {
       transition: all 0.4s ease-out;
       opacity: 0;
@@ -141,13 +141,13 @@ Razem z zanikaniem i przesuwaniem, możemy iść dalej dodając mały efekt 3D. 
 Aby to ustawić, musimy zdefiniować `section` jako etap, w kt&oacute;rym przejścia 3D mają miejsce. Wykonujemy to określając wartość `perspective`.
 
 Perspektywa w CSS jest głębią sceny. Mała liczna oznacza płytszą perspektywę z bardziej ekstremalnymi kątami. Warto pobawić się wartością, aby znaleźć rezultat, kt&oacute;ry najbardziej ci odpowiada.
- 
+
     .swing {
       perspective: 100px;
     }
 
 Następnie ustawimy elementy `li`, aby przekształcić w miejscu. Skorzystamy z `opacity`, aby utworzyć efekt zanikania jak wcześniej, ale dodamy `transform`, aby obr&oacute;cić `li` w miejscu.
- 
+
     .swing li {
       opacity: 0;
       transform: rotateX(-90deg);
@@ -172,7 +172,7 @@ Możemy dostosować ten efekt, aby z łatwością stworzyć r&oacute;żne style.
 <button>Dodaj element listy</button></section>
 
 Aby stworzyć ten efekt, musimy tylko zmienić oś obrotu.
- 
+
     .swing li {
       opacity: 0;
       transform: rotateY(-90deg);
