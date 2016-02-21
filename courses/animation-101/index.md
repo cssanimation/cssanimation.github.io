@@ -183,6 +183,17 @@ This course is for people who build for the web and want to add animation to the
   </section>
 
   <section class="quote stacked">
+    <div class="quote-person" style="background-image: url(/images/quotes/gemma_cagney.jpg);" alt="Ronan Costello"></div>
+    <div class="quote-text-container">
+      <span class="quote-text">I wanted to learn how to use CSS animation in my own work but I had no
+idea where to start. Donovan's course is like a filter for all the
+important and useful information, as well as best practice tips. Totally
+recommend it!</span>
+      <span class="quotee"><a href="http://www.gemmacagney.com">Gemma Cagney</a></span>
+    </div>
+  </section>
+
+  <section class="quote stacked">
     <div class="quote-person" style="background-image: url(/images/quotes/dave_larkan.jpg);" alt="Dave Larkan"></div>
     <div class="quote-text-container">
       <span class="quote-text">A fantastic resource, I was able to put what I learned into practice straight away. The course did exactly what I hoped it would and taught me about transitions and animations.</span>
