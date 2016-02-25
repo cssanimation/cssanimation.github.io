@@ -13,8 +13,6 @@ source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/ma
 
 Pseudo-elements are like getting extra DOM elements for free. They allow us to add extra content, decoration and more to our pages without adding extra HTML, and they can be animated. In this post we'll use a pseudo-element to add a little visual flair to a button.
 
-
-
 <section class="shiny demo-container tap-to-activate">
   <button>Shiny effect</button>
 </section>

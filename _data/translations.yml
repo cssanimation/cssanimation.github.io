@@ -6,6 +6,11 @@
     - language: Polski (Polish)
       postTitle: Gwiezdne Wojny
       iso: pl
+- url: /stereoscopic/
+  translations:
+    - language: Polski (Polish)
+      postTitle: Stereoskopowy CSS
+      iso: pl
 - url: /spheres/
   translations:
     - language: Français (French)
