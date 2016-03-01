@@ -10,6 +10,9 @@
 - name: "Deutsch"
   english_name: "German"
   iso: de
+- name: "Español"
+  english_name: "Spanish"
+  iso: es
 - name: "Français"
   english_name: "French"
   iso: fr

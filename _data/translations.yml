@@ -56,6 +56,9 @@
     - language: 中文 (Chinese)
       iso: cn
       postTitle: "[译文]过渡效果 vs 动效"
+    - language: Español (Spanish)
+      iso: es
+      postTitle: Transiciones vs. Animaciones
     - language: Polski (Polish)
       iso: pl
       postTitle: Przejścia vs Animacje
