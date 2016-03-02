@@ -9,8 +9,11 @@ imageURL: /assets/images/posts/transitions-animations/transitions-animations.gif
 home_image: /assets/images/posts/transitions-animations/transitions-animations.png
 tweet_text: "&iquest;Cuando deber&iacute;as de utilizar una transici&oacute;n y cuando deber&iacute;as de utilizar una animaci&oacute;n?"
 custom_header: posts/transitions-animations.html
-translator: Mario S. Maselli
-translator_link: /es/
+translators:
+  - name: Mario S. Maselli
+    url: /es/
+  - name: Juan Vazquez
+    url: http://juanvazquez.me
 ---
 
 &iquest;Cuando realizas una animaci&oacute;n web, utilizas una transici&oacute;n o una animaci&oacute;n? En ciertas ocasiones preferir&aacute;s utilizar una sobre el otra. Discutamos algunas de las diferencias.
