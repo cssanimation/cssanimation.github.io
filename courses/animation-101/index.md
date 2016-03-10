@@ -15,9 +15,6 @@ imageURL: /images/courses/animation_101/animation_101.png
 
 <p class="subtitle">Become a CSS animation expert with an email and a few minutes each day</p>
 
-<span class="wow fadeIn">
-
-
 <section class="callout-1 wow bounceIn">
   <div class="quote-container">
     <div class="rocky">
@@ -34,8 +31,6 @@ Animation using CSS can be overwhelming to learn all at once.
 This course breaks up lessons into 20 emails. Each one should take around 10 minutes to read and a few minutes to follow through the homework. By mixing theory with practical lessons, you'll learn how, and why to use animation on your web pages.
 
 By the end of four weeks you will have a good understanding of CSS transitions and animations, and how to apply them to your work.
-
-</span>
 
 <section class="quote">
   <div class="quote-person" style="background-image: url(/images/quotes/malarkey.jpg);" alt="Andrew Clarke"></div>
