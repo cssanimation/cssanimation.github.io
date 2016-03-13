@@ -27,6 +27,11 @@
     - language: Français (French)
       postTitle: Portal CSS
       iso: fr
+- url: /wwdc15/
+  translations:
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: WWDC 2015
 - url: /macplus/
   translations:
     - language: Polski (Polish)
@@ -70,6 +75,9 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Zegary
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: Saatler
 - url: /baymax/
   translations:
     - language: Nederlands (Dutch)
