@@ -1,3 +1,8 @@
+- url: /why-animate/
+  translations:
+    - language: Polski (Polish)
+      postTitle: Dlaczego animować?
+      iso: pl
 - url: /starwars/
   translations:
     - language: Français (French)
@@ -19,6 +24,11 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Sfery
+- url: /buffer/
+  translations:
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Animacja wczytywania Buffera
 - url: /portal/
   translations:
     - language: Deutsch (German)
@@ -131,6 +141,9 @@
     - language: Deutsch (German)
       iso: de
       postTitle: Twitter's "fave" Animation
+    - language: Español (Spanish)
+      iso: es
+      postTitle: Animaci&oacute;n del bot&oacute;n&nbsp;&quot;favorito&quot; de Twitter
     - language: 日本語 (Japanese)
       iso: jp
       postTitle: Twitter の「お気に入り」アニメーション

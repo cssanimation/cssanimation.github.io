@@ -8,7 +8,6 @@ customCSS: baymax.css
 imageURL: /assets/images/posts/baymax/baymax.gif
 home_image: /assets/images/posts/baymax/home.png
 tweet_text: Animowanie twarzy Baymaxa w CSS
-source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-18-baymax.md
 translator: Mateusz Kurlit
 translator_link: http://transgent.co.nf
 ---
