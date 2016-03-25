@@ -37,6 +37,9 @@
     - language: Français (French)
       postTitle: Portal CSS
       iso: fr
+    - language: Polski (Polish)
+      iso: pl
+      postTitle: Portal CSS
 - url: /wwdc15/
   translations:
     - language: Polski (Polish)
