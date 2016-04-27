@@ -83,7 +83,7 @@ Animating background sprites is just one use of the `steps` timing function. Any
 
 ## Cheatsheet
 
-If you enjoyed this article, you can [share it on Twitter](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/post/twitter-fave/&original_referer=https://cssanimation.rocks) or save this handy summary cheatsheet:
+If you enjoyed this article, you can [share it on Twitter](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/twitter-fave/&original_referer=https://cssanimation.rocks) or save this handy summary cheatsheet:
 
 <img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px">
 
