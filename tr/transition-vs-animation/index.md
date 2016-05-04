@@ -11,7 +11,7 @@ tweet_text: Ne zaman &quot;transition&quot;, ne zaman &quot;animation&quot; &oum
 custom_header: posts/transitions-animations.html
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-03-04-transition-vs-animation.md
 translator: Burak Erman
-translator_link: https://cssanimation.rocks/tr/
+translator_link: https://twitter.com/mburakerman
 ---
 
 Web'de animasyon yaparken bu iki &ouml;zelliklerden birini kullanıyor musunuz? Bazen biri yerine diğerini se&ccedil;memiz gereken zamanlar vardır. Haydi farklılıkları tartışalım.
