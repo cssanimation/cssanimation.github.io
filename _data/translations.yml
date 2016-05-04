@@ -80,6 +80,9 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Przejścia vs Animacje
+    - language: Türkçe (Turkish)
+      iso: tr
+      postTitle: Transition mu, Animation mu?
 - url: /clocks/
   translations:
     - language: Français (French)
