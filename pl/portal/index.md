@@ -29,7 +29,7 @@ Izometryczne, kresk&oacute;wkowe grafiki w wprowadzającym wideo bardzo się r&o
 
 W szczeg&oacute;lności, tę scenę będziemy tworzyć:
 
-<img src="/assets/images/posts/portal/video.jpg" alt="Portal video screenshot" />
+<img src="/images/posts/portal/video.jpg" alt="Portal video screenshot" />
 
 ### Kr&oacute;tka uwaga o prefiksach
 
@@ -49,7 +49,7 @@ W tym przypadku kontener jest tagiem `article`. W HTML5 *article* stanowi samodz
 
 Pierwsza zastosowana właściwość to [perspective](http://docs.webplatform.org/wiki/css/properties/perspective). Ta właściwość przyjmuje wartość w pikselach i stanowi głębie sceny 3D. Mniejsza wartość przyniesie bardziej dramatyczny efekt i zazwyczaj jest ustawiona między 800 i 1200 pikseli.
 
-<img src="/assets/images/posts/portal/perspective.gif" alt="Alternating between a perspective value of 900 pixels and 2000 pixels" class="bordered centered" />
+<img src="/images/posts/portal/perspective.gif" alt="Alternating between a perspective value of 900 pixels and 2000 pixels" class="bordered centered" />
 
 Dla tej sceny, aby odzwierciedlić duży pok&oacute;j, ustawimy wartość perspektywy całkiem wysoko na 2600 pikseli. Ignorując r&oacute;żne prefiksy przeglądarki, użyjemy poniższego kodu:
 
@@ -85,7 +85,7 @@ Właściwość `transform` składa się z szeregu ustawień dotyczących element
 
 Powyższy kod obr&oacute;ci element o 45 stopni wok&oacute;ł osi Y oraz przesunie w głąb 100 pikseli wzdłuż osi Z. Efekt wygląda tak:
 
-<img src="/assets/images/posts/portal/transform.png" alt="A transform in action" class="bordered centered" />
+<img src="/images/posts/portal/transform.png" alt="A transform in action" class="bordered centered" />
 
 ### Właściwość transform-origin
 
@@ -118,7 +118,7 @@ Kiedy zacząłem budować tę scenę, pr&oacute;bowałem umieścić ściany bezp
 
 Mając to na uwadze, elementy HTML są przekształcane w miejscu zgodnie z następującym szkicem:
 
-<img src="/assets/images/posts/portal/sketch.png" alt="Plan view of the scene" class="centered" />
+<img src="/images/posts/portal/sketch.png" alt="Plan view of the scene" class="centered" />
 
 Powyższy skecz pokazuje, że fragment *back-left* jest wyr&oacute;wnany do lewej, ale fragment *back-right* jest bezpośrednio widzem. Aby to skorygować, obr&oacute;cimy p&oacute;źniej całą scenę o 45 stopni.
 
@@ -196,7 +196,7 @@ Następnie dodajmy platformy i ściany dołu:
 
 Efektem końcowym powinna być scena wyglądająca tak:
 
-<img src="/assets/images/posts/portal/layout01.png" alt="Initial layout of the stage divs" />
+<img src="/images/posts/portal/layout01.png" alt="Initial layout of the stage divs" />
 
 Nie wygląda jeszcze właściwie. Musimy obr&oacute;cić całą scenę, aby wyświetlić ją poprawnie. Dodaj `transform` do sekcji *scene*:
 
@@ -209,7 +209,7 @@ Nie wygląda jeszcze właściwie. Musimy obr&oacute;cić całą scenę, aby wyś
 
 Rezultat powinien wyglądać mniej więcej tak:
 
-<img src="/assets/images/posts/portal/layout02.png" alt="Initial layout rotated to show the stage properly" />
+<img src="/images/posts/portal/layout02.png" alt="Initial layout rotated to show the stage properly" />
 
 Możesz zauważyć, że obramowanie tworzy ładny efekt głębi, szczeg&oacute;lnie w rogach, gdzie r&oacute;żnokolorowe obramowania spotykają się pod kątem 45 stopni. Ponieważ scena, kt&oacute;rą budujemy, jest oglądana pod kątem 45 stopni, ten efekt działa na naszą korzyść większości przypadk&oacute;w. Kilka rog&oacute;w nie wygląda całkiem dobrze, ale biorąc pod uwagę to jak prosto obramowania są zastosowane i brak obraz&oacute;w, myślę, że to rozsądny kompromis.
 
@@ -227,13 +227,13 @@ Wideo posiada ładne cienie pod platformami. Możemy odtworzyć to za pomocą w�
 
 Powyższe reguły dodają cień do elementu div&nbsp;*shadow*, kt&oacute;ry jest przezroczysty. Cień jest przesunięty o 600 pikseli tak, aby rzeczywisty element div *shadow* nie wchodził w drogę cieniowi. Całość jest obr&oacute;cona i umieszczona poza sceną tak, aby tylko cień był widoczny na scenie. Rezultat powinien wyglądać tak:
 
-<img src="/assets/images/posts/portal/layout03.png" alt="Initial layout with a shadow" />
+<img src="/images/posts/portal/layout03.png" alt="Initial layout with a shadow" />
 
 ## Czerwony KONTRA Niebieski
 
 Następnie musimy dodać dekorację i świecące portale.
 
-<img src="/assets/images/posts/portal/portal.png" alt="Red portal" />
+<img src="/images/posts/portal/portal.png" alt="Red portal" />
 
 Kod HTML niezbędny dla dw&oacute;ch portali jest dość prosty:
 
@@ -307,7 +307,7 @@ Dwa tagi span są umieszczone bezwzględnie, nadano im czerwony i niebieski grad
 
 Jednym z nieoczekiwanych osiągnięć było wykorzystanie obramowań do stworzenia otworu w prawej ścianie, reprezentującej wyjście. Aby zrobić te drzwi, użyłem pojedynczego elementu div oraz kolorowych obramowań, kt&oacute;re wyglądają jak wstawka.
 
-<img src="/assets/images/posts/portal/door.png" alt="Door" />
+<img src="/images/posts/portal/door.png" alt="Door" />
 
 Drzwi w HTML są proste. Dodaj poniższy kod do sekcji *stage*.
 
@@ -334,7 +334,7 @@ W pierwszym teście pr&oacute;bowałem użyć jednej postaci, zatrzymać animacj
 
 ### Budowanie postaci
 
-<img src="/assets/images/posts/portal/dude1.png" alt="The first of two characters to animate through the scene" />
+<img src="/images/posts/portal/dude1.png" alt="The first of two characters to animate through the scene" />
 
 Na początku kształt postaci składa się z 2 gł&oacute;wnych części, głowy i ciała. Nogi zostały dodane za pomocą pseudo-element&oacute;w . Podobna konstrukcja została zastosowana jako cień:
 
@@ -406,7 +406,7 @@ Pierwsza postać znajduje się na pozycji startowej i jest obr&oacute;cony pod p
 
 ### Ręce
 
-<img src="/assets/images/posts/portal/dude2.png" alt="The second of two characters to animate through the scene" />
+<img src="/images/posts/portal/dude2.png" alt="The second of two characters to animate through the scene" />
 
 Druga postać posiada coś więcej, ręce. Pomysł polega na tym, że postać skacze przez portal i świętuje to podnosząc swoje ręce. Oto kod HTML:
 
@@ -454,7 +454,7 @@ Druga animacje zostanie zastosowana dla rąk, kt&oacute;re r&oacute;wnież będ�
 
 Po umieszczeniu postaci i tła, scena jest gotowa do animacji.
 
-<img src="/assets/images/posts/portal/stage_set.png" alt="The scene is ready, with 2 characters ready to be animated." />
+<img src="/images/posts/portal/stage_set.png" alt="The scene is ready, with 2 characters ready to be animated." />
 
 Dowiedzmy się jak sprawić, że mała osoba skacze przez pierwszy portal i pojawia się w drugim.
 

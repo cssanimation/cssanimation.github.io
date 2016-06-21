@@ -20,11 +20,11 @@ Lubie odkrywać przykłady subtelnych animacji na stronach internetowych. Ostatn
 
 Kiedy coś trwa dłużej niż zakładano, dobrym pomysłem jest dodanie wizualnej informacji zwrotnej, aby przekazać odwiedzającemu, że coś się dzieje. Pierwszy spos&oacute;b to subtelna animacja lub animacja wczytywania na stronie. Podejściem Buffera jest ich animowane logo:
 
-<img src="/assets/images/posts/buffer/buffer.gif" alt="Buffer loading animation" style="max-width: 272px" />
+<img src="/images/posts/buffer/buffer.gif" alt="Buffer loading animation" style="max-width: 272px" />
 
 Animacja została osiągnięta poprzez animowany plik GIF.
 
-<img src="/assets/images/posts/buffer/buffer-loading.gif" alt="Buffer icon gif" style="max-width: 26px; border: 1em solid #fff;" />
+<img src="/images/posts/buffer/buffer-loading.gif" alt="Buffer icon gif" style="max-width: 26px; border: 1em solid #fff;" />
 
 Po zakończeniu wczytywania, animowany GIF jest zamieniany na statyczna wersję PNG loga.
 
@@ -46,7 +46,7 @@ Przed stworzeniem SVG, spędziłem parę chwil pr&oacute;bując storzyć logo Bu
 
 SVG (Skalowalna Grafika Wektorowa) jest typem pliku wektorowego obrazu. Pliki składają się z serii ścieżek, kt&oacute;re są skalowalne w nieskończoność i mogą być bardzo wydajne. Istnieje wiele narzędzi, w kt&oacute;rych można je stworzyć, takich jak Sketch, Affinity Designer i Adobe Illustrator.
 
-<img src="/assets/images/posts/buffer/image_trace.png" alt="Tracing the image using illustrator" />
+<img src="/images/posts/buffer/image_trace.png" alt="Tracing the image using illustrator" />
 
 W tym przypadku wykorzystałem logo w formacie PNG w programie Illustrator i stworzyłem plik SVG. Rezultat jest ładny i wydajny. Tutaj jest w całości:
 
@@ -89,7 +89,7 @@ Możemy nadać warstwom Buffera kolor szary za pomocą tego kodu CSS:
 
 Możemy użyć animacji `keyframe`, aby stworzyć efekt animacji wczytywania. Podczas planowania tego typu animacji, lubię przejść na oł&oacute;wek i papier i rozrysować animację. Cele są 3 animacje, wszystkie zsynchronizowane w pętli.
 
-<img src="/assets/images/posts/buffer/timeline.jpg" alt="Timeline of the animations on the layers" />
+<img src="/images/posts/buffer/timeline.jpg" alt="Timeline of the animations on the layers" />
 
 Klatki kluczowe opisują animację jako serie krok&oacute;w od 0% do 100%. Aby to zilustrować, oznaczyłem obszary, gdzie warstwy muszą być &quot;włączone&quot;, aby stworzyć podobny efekt do animowanego GIFa.
 

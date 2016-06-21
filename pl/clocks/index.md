@@ -23,8 +23,8 @@ Oto zegar, kt&oacute;ry stworzymy za pomocą HTML, CSS, tła SVG i języka JavaS
 
 ### HTML
 
-Rozpoczniemy od fragmentu kodu HTML. 
- 
+Rozpoczniemy od fragmentu kodu HTML.
+
     <article class="clock">
       <div class="hours-container">
         <div class="hours"></div>
@@ -42,7 +42,7 @@ Moim pierwszym podejściem było użycie trzech element&oacute;w dla każdej wsk
 ## Tarcza zegara
 
 Rozpoczniemy od podstawowego wyglądu zegara z okrągłą tarczą, prostymi wskaz&oacute;wkami godzin, minut i sekund.
- 
+
     .clock {
       border-radius: 50%;
       background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -73,7 +73,7 @@ Powinnyśmy teraz mieć coś takiego:
 <div class="demo-container clocks single"> <article class="clock simple"></article></div>
 
 Przed dodaniem wskaz&oacute;wek, musimy umieścić kontenery.
- 
+
     .minutes-container, .hours-container, .seconds-container {
       position: absolute;
       top: 0;
@@ -87,7 +87,7 @@ To układa każdy kontener na wierzchu zegara. Następnie tworzymy wskaz&oacute;
 ### Wskaz&oacute;wka godzin
 
 Każda wskaz&oacute;wka otrzymała właściwość pozycji `absolute` i została umieszczona na godzinie dwunastej. Zaczniemy od wskaz&oacute;wki godzin.
- 
+
     .hours {
       background: #000;
       height: 20%;
@@ -105,7 +105,7 @@ Używam wartości procentowych, aby skalowanie zegar&oacute;w było łatwiejsze.
 ### Wskaz&oacute;wka minut
 
 Wskaz&oacute;wka minut jest podobna, ale wyższa i cieńsza.
- 
+
     .minutes {
       background: #000;
       height: 40%;
@@ -121,7 +121,7 @@ Wskaz&oacute;wka minut jest podobna, ale wyższa i cieńsza.
 ### Wskaz&oacute;wka sekund
 
 Wskaz&oacute;wka sekund jest jeszcze cieńsza, ale r&oacute;wnież wystaje poza środek. Aby to zrobić ustawiłem `transform-origin` na 80%. To sprawia, że 20% wskaz&oacute;wki wystaje poza środek.
- 
+
 .seconds {
   background: #000;
   height: 45%;
@@ -142,7 +142,7 @@ Stojący zegar będzie wskazywał prawidłową godzinę tylko dwa razy dziennie.
 Niekt&oacute;re zegary skaczą co sekundę wytwarzając dźwięk tykania. Inne mruczą wraz z płynnym poruszaniem się wskaz&oacute;wek. Wypr&oacute;bujemy obu sposob&oacute;w. Najpierw sprawimy, że wskaz&oacute;wki będą poruszały się płynnie.
 
 Możemy użyć `keyframe`, aby przekazać wskaz&oacute;wkom, aby obracały się o 360 stopni (zakładamy 0% jako pozycję startową).
- 
+
 @keyframes rotate {
   100% {
     transform: rotateZ(360deg);
@@ -150,7 +150,7 @@ Możemy użyć `keyframe`, aby przekazać wskaz&oacute;wkom, aby obracały się 
 }
 
 Ta klatka kluczowa m&oacute;wi elementowi, aby obracał się o 360 stopni po zastosowaniu dla elementu właściwości `animation`. Wykorzystamy funkcję czasu `linear`, aby wskaz&oacute;wka poruszała się płynnie.
- 
+
 .hours-container {
   animation: rotate 43200s infinite linear;
 }
@@ -174,7 +174,7 @@ Wskaz&oacute;wka sekund wykonuje pełny obr&oacute;t w 60 sekund, więc łatwiej
 ### Dodawanie krok&oacute;w
 
 Możemy sprawić, że wskaz&oacute;wki będą zachowywać się jak w zwykłym zegarze tworząc 60 osobnych ruch&oacute;w dla wskaz&oacute;wki sekund. Prostym sposobem na osiągnięcie tego jest użycie funkcji czasowej `steps`. Właściwość `animation` dla każdej wskaz&oacute;wki wygląda tak:
- 
+
 .minutes-container {
   animation: rotate 3600s infinite steps(60);
 }
@@ -182,14 +182,14 @@ Możemy sprawić, że wskaz&oacute;wki będą zachowywać się jak w zwykłym ze
   animation: rotate 60s infinite steps(60);
 }
 
-Teraz wskaz&oacute;wki minut i sekund obracają się w 60 krokach. Przeglądarka automatycznie oblicza o ile każdy z tych 60 krok&oacute;w ma się przesunąć. 
+Teraz wskaz&oacute;wki minut i sekund obracają się w 60 krokach. Przeglądarka automatycznie oblicza o ile każdy z tych 60 krok&oacute;w ma się przesunąć.
 
 <div class="demo-container clocks single steps"> <article class="clock simple"><div class="hours-container"> <div class="hours angled"></div> </div> <div class="minutes-container"> <div class="minutes angled"></div> </div> <div class="seconds-container"> <div class="seconds"></div> </div> </article></div>
 
 ### Prawidłowy czas
 
 Dobrze jest mieć ładny zegar, ale co z wskazywaniem właściwego czasu? Z pomocą kodu JavaScript możemy ustawić prawidłowy czas dla naszych odwiedzających. Oto kod.
- 
+
 /*
  * Starts any clocks using the user's local time
  * From: cssanimation.rocks/clocks
@@ -242,12 +242,12 @@ To następnie synchronizuje zegar z czasem systemu.
 
 Musimy się upewnić, że wskaz&oacute;wka minut przesunie się w momencie, gdy wskaz&oacute;wka sekund będzie wskazywała godzinę dwunastą.
 
-<img src="/assets/images/posts/clocks/twelve.gif" alt="Minute hand moving when second hand hits 12" style="max-width: 180px" />
+<img src="/images/posts/clocks/twelve.gif" alt="Minute hand moving when second hand hits 12" style="max-width: 180px" />
 
 Kiedy zegar jest po raz pierwszy rysowany na ekranie, minie mniej niż jedna minuta zanim wskaz&oacute;wka musi się przesunąć.&nbsp; Aby to umożliwić, możemy obliczyć jak długo trwa pierwsza minuta i ręcznie popchnąć wskaz&oacute;wkę. Ponieważ korzystamy z JavaScript, aby wykonać pierwszy ruch, możemy nadal obracać wskaz&oacute;wki o sześć stopni co minutę za pomocą `setInterval`.
 
 Przed przesunięciem wskaz&oacute;wki minut, musimy zakomunikować ile trwa bieżąca minuta. Być może zauważyłeś te wiersze.
- 
+
 if (degrees[j].hand === 'minutes') {
   elements[k].parentNode.setAttribute('data-second-angle', degrees[j + 1].degree);
 }
@@ -255,7 +255,7 @@ if (degrees[j].hand === 'minutes') {
 Te dodatkowe wiersze sprawdzają czy wskaz&oacute;wka jest &quot;minutowa&quot; i jeśli jest, to zestawia atrybut danych z bieżącym kątem wskaz&oacute;wki sekund.
 
 Po ustawieniu atrybutu danych, możemy użyć ich do określenia momentu przesunięcia wskaz&oacute;wki minutowej.
- 
+
 /*
  * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
  */
@@ -301,7 +301,7 @@ Ponieważ korzystamy z JavaScript do poruszania wskaz&oacute;wki minut, powinni�
 Kiedy JavaScript ustawia nowy kąt dla wskaz&oacute;wki, przejście CSS na elemencie przekaże przeglądarce, aby animować nową pozycję. To oznacza, że JavaScript odnosi się tylko do prostych zmian kąta i przeglądarka może zająć się animowaniem ich.
 
 Zanim to zrobimy, powinniśmy zaktualizować kod, aby użyć JavaScript r&oacute;wnież do poruszania wskaz&oacute;wką sekund. Użyjmy tego kodu, aby animować kontenery wskaz&oacute;wki sekund sześćdziesiąt razy na minutę.
- 
+
 /*
  * Move the second containers
  */
@@ -321,7 +321,7 @@ function moveSecondHands() {
 }
 
 Po skonfigurowaniu obsługiwania wskaz&oacute;wek minut i sekund przez JavaScript, zaktualizuj CSS zastępując `animation` właściwościami `transition`.
- 
+
 .minutes-container {
   transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
 }

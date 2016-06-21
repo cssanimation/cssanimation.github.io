@@ -22,14 +22,14 @@ Tutaj możesz [obejrzeć rezultat na pełnym ekranie.](http://codepen.io/donovan
 
 ## Pojedynczy element
 
-Wykorzystując pseudo-elementy, będziemy w stanie stworzyć fragmenty twarzy używając jeden element HTML. 
- 
+Wykorzystując pseudo-elementy, będziemy w stanie stworzyć fragmenty twarzy używając jeden element HTML.
+
     <div class="baymax"></div>
 
 ## Stylizacja
 
 Aby skonfigurować scenę, dodamy subtelny gradient na ekran, aby wyglądała jak zakrzywiona biała głowa. Do tego użyjemy radialny gradient na `body`.
- 
+
     body {
       background: radial-gradient(center, #fff, #fff 50%, #aaa);
       background-size: 100%;
@@ -38,7 +38,7 @@ Aby skonfigurować scenę, dodamy subtelny gradient na ekran, aby wyglądała ja
     }
 
 Następnie ustawimy twarz na środku strony. Usta to prosta czarna linia, kt&oacute;rą stworzymy korzystając z ramki.
- 
+
     .baymax {
       border-bottom: 1.5em solid #000;
       position: absolute;
@@ -61,7 +61,7 @@ Na tym etapie usta są wyśrodkowane w ten spos&oacute;b:
 ## Dodawanie oczu
 
 Użyjemy pseudo-element&oacute;w `before` i `after`, aby dodać oczy do twarzy. Nie będą wymagały żadnego dodatkowego kodu HTML i mogą być całkowicie obsługiwane za pomocą CSS.
- 
+
     .baymax::before {
       background: #000;
       border-radius: 50%;
@@ -95,7 +95,7 @@ Każdy pseudo-element posiada czarne tło i ramkę radialną ustawioną na 50%, 
 W filmie możemy zobaczyć zabawną scenę, gdzie bateria Baymaxa jest słaba. Zatacza się i jego powieki opadają. Możemy skorzystać z kombinacji gradient&oacute;w tła i animacji, aby stworzyć ten efekt.
 
 Najpierw chcemy nadać tłu dwa kolory. Czarny dla fragmentu, kiedy oko jest otwarte i biały dla powieki. Biały fragment musi być umieszczony poza oczami na początku, a następnie będziemy animować w d&oacute;ł wykonując opadanie powiek.
- 
+
     .baymax::before {
       background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
       background-position: 0 -100%;
@@ -113,7 +113,7 @@ Najpierw chcemy nadać tłu dwa kolory. Czarny dla fragmentu, kiedy oko jest otw
 Dodajemy gradient liniowy tła, ustawiamy mu dwukrotność wysokości kontenera i umieszczamy go w ten spos&oacute;b, że g&oacute;rna połowa znajduje się poza kontenerem.
 
 Po umieszczeniu dw&oacute;ch gradient&oacute;w tła, możemy dodać animację `keyframes`, aby sterować ruchem powiek.
- 
+
     @keyframes blink {
       0%, 50% {
         background-position: 0 100%;
@@ -131,7 +131,7 @@ Animacja `keyframes` jest sposobem na opisanie serii klatek używając wartości
 W ten spos&oacute;b możemy ustawić tło, aby pozostało w g&oacute;rze przez połowę czasu, następnie od 50% do 85% przesunęło się w d&oacute;ł, by na końcu animacji wr&oacute;cić do g&oacute;ry.
 
 Kolejnym etapem jest przekazanie pseudo-elementom, aby używały klatek kluczowych animacji. Dodaj właściwość `animation` do istniejących styl&oacute;w.
- 
+
     .baymax::before {
       animation: blink 6s infinite;
       ...
@@ -152,10 +152,10 @@ Tutaj możesz&nbsp;[obejrzeć rezultat na pełnym ekranie](http://codepen.io/don
 
 ## Przeglądarki
 
-W kodzie pominąłem wszystkie typowe prefiksy `-webkit` i `-moz`. Właściwości `transform` i `animation` powinny posiadać prefiksy i zalecam wykorzystanie do tego Autoprefixera. 
+W kodzie pominąłem wszystkie typowe prefiksy `-webkit` i `-moz`. Właściwości `transform` i `animation` powinny posiadać prefiksy i zalecam wykorzystanie do tego Autoprefixera.
 
 ## Wersja gif do udostępnienia
 
 Poniżej znajduje się wersja gif, kt&oacute;rą możesz z łatwością udostępnić w internecie.
 
-[<img src="/assets/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
+[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)

@@ -94,6 +94,9 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Zegary
+    - language: Nederlands (Dutch)
+      iso: nl
+      postTitle: Klokken
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Saatler

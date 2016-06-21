@@ -26,17 +26,17 @@ Pasa el rat&oacute;n por encima de la estrella para ver la animaci&oacute;n:
 
 En este ejemplo empezamos creando una serie de im&aacute;genes que formar&aacute;n la animaci&oacute;n. En este caso vamos a usar parte del grupo de im&aacute;genes que forman parte de la animaci&oacute;n del icono favoritos de Twitter:
 
-<img src="/assets/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
+<img src="/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
 
 Para animar estos frames, necesitamos ponerlos seguidos en una fila. Las im&aacute;genes est&aacute;n en [este archivo[ puestas en fila, lo que significa que podemos hacer una transici&oacute;n del primer frame al &uacute;ltimo frame posicionando la im&aacute;gen como background.
 
-<img src="/assets/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
+<img src="/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
 
 ### Funci&oacute;n de tiempo Steps()
 
 Con la mayor&iacute;a de las funciones de tiempo como m&aacute;s r&aacute;pido-m&aacute;s lento o c&uacute;bicas-B&eacute;zier, la transici&oacute;n entre los estados inicial y final se anima suavemente. La funci&oacute;n de tiempo `steps` es diferente. En vez de una transici&oacute;n suave, la transici&oacute;n se divide en un n&uacute;mero de pasos y el movimiento entre ellos es r&aacute;pido.
 
-<img src="/assets/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
+<img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
 
 Para empezar escribimos el HTML:
 
