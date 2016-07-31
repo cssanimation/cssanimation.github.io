@@ -2,7 +2,13 @@
   <section class="container">
     <section class="row">
       <section class="twelve columns">
-        {% include email-signup.html %}
+        
+        <div class="email-signup" id="email-signup">
+          <h2>CSS Animation Weekly</h2>
+          {% include email-signup.html %}
+          <p>A curated weekly roundup of all the latest CSS animation articles and inspiration.
+          <br><span style="font-size:12px;"><strong>No spam, ever,</strong> and you can unsubscribe with one click.</span></p>
+      </div>
       </section>
       <ul class="icons">
         <!--<li><a class="footer-icon" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>-->
@@ -20,13 +26,14 @@
       </ul>
     </section>
     <section class="row" style="text-align: center">
-      <p>CSS Animation is now available in more languages! Read CSS Animation articles in:
+      <p>Read CSS Animation articles in:
       <br>
-      {% for language in site.data.languages %}
-        {% unless forloop.first %} | {% endunless %}
-        <a href="/{{ language.iso }}/">{{ language.name }} ({{ language.english_name }})</a>
-      {% endfor %}
-      <p>Want to help? Press the "Translate this" link on any article to get started.</p>
+      <span style="font-size:12px">
+        {% for language in site.data.languages %}
+          {% unless forloop.first %} | {% endunless %}
+          <a href="/{{ language.iso }}/">{{ language.name }}</a>
+        {% endfor %}
+      <br>Want to help? Press the "Translate this" link on any article to get started.</span></p>
     </section>
     <section class="row" style="text-align: center">
       <p>

@@ -54,6 +54,6 @@ gulp.task('watch', function () {
 });
 
 // Default task, run when just writing 'gulp' in the terminal
-gulp.task('default', ['styles', 'images', 'build:dev', 'serve', 'watch']);
+gulp.task('default', ['styles', 'images', 'watch']);
 
-gulp.task('prod', ['styles', 'images', 'build:prod', 'serve', 'watch']);
+gulp.task('prod', ['styles', 'images', 'watch']);

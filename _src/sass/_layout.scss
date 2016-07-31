@@ -40,6 +40,12 @@ nav {
   }
 }
 
+.button {
+  background: $brand-color !important;
+  border-color: $brand-color !important;
+  color: #fff !important;
+}
+
 .absolute-nav {
   position: absolute;
   top: 0;
@@ -115,7 +121,7 @@ pre {
 
 footer {
   color: #fff;
-  background: #333;
+  background: $brand-color;
   margin-top: 2em;
   padding: 0 0 2em;
   text-align: center;

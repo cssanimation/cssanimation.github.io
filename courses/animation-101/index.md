@@ -34,10 +34,10 @@ By the end of four weeks you will have a good understanding of CSS transitions a
 
 <section class="quote">
   <div class="quote-person" style="background-image: url(/images/quotes/malarkey.jpg);" alt="Andrew Clarke"></div>
-    <div class="quote-text-container">
-      <span class="quote-text">CSS Animation 101 was the perfect primer for anyone who’s looking to add animations to their websites. It was the perfect balance of theory and practical examples and I recommend it highly.</span>
-      <span class="quotee"><a href="http://stuffandnonsense.co.uk/">Andrew Clarke</a></span>
-    </div>
+  <div class="quote-text-container">
+    <span class="quote-text">CSS Animation 101 was the perfect primer for anyone who’s looking to add animations to their websites. It was the perfect balance of theory and practical examples and I recommend it highly.</span>
+    <span class="quotee"><a href="http://stuffandnonsense.co.uk/">Andrew Clarke</a></span>
+  </div>
 </section>
 
 

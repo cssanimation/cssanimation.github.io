@@ -27,7 +27,7 @@ h1 {
   position: relative;
 }
 
-.signup-box, .quote {
+.signup-box {
   text-align: center;
   display: block;
   background: #fff;
@@ -44,38 +44,6 @@ strike {
 .callout-1 {
   margin: 0 auto;
   max-width: 500px;
-}
-
-.quote {
-  position: relative;
-  margin: 8em auto 4em;
-}
-
-.quote-person {
-  position: absolute;
-  left: calc(50% - 3em);
-  top: -5.5em;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background-size: 100%;
-  width: 6em;
-  height: 6em;
-}
-
-.quotee {
-  display: block;
-}
-
-.quotes-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 4em;
-}
-
-.quote.stacked {
-  min-width: 340px;
-  max-width: 33%;
-  margin-top: 4em;
 }
 
 .features-box {
