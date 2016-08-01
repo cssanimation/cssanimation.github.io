@@ -1,7 +1,10 @@
 ---
 layout: page
 title: CSS Animation Weekly
+hideTitle: true 
 ---
+
+<img src="/images/css_animation_weekly.png" alt="CSS Animation Weekly" class="centered" style="max-width:260px;margin-bottom:0;width:100%">
 
 A weekly roundup of all the latest CSS animation articles and inspiration. Subscribe now and never miss an issue.
 

@@ -12,7 +12,9 @@ layout: default
 
   <section class="row">
     <article class="post-content twelve columns">
-      <h1 class="post-title">{{ page.title }}</h1>
+      {% unless page.hideTitle %}
+        <h1 class="post-title">{{ page.title }}</h1>
+      {% endunless %}
       {{ content }}
     </article>
   </section>
