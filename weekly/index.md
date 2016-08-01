@@ -3,7 +3,7 @@ layout: page
 title: CSS Animation Weekly
 ---
 
-A weekly roundup of all the latest CSS animation articles and inspiration, curated by [Donovan Hutchinson](https://twitter.com/donovanh).
+A weekly roundup of all the latest CSS animation articles and inspiration. Subscribe now and never miss an issue.
 
 Join **4,500** other subscribers today.
 
