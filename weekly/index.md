@@ -5,7 +5,7 @@ title: CSS Animation Weekly
 
 A weekly roundup of all the latest CSS animation articles and inspiration, curated by [Donovan Hutchinson](https://twitter.com/donovanh).
 
-Join **3,500** other subscribers today.
+Join over **4,500** other subscribers today.
 
 <div class="callout wow bounceIn">
     <section class="row">
