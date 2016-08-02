@@ -28,6 +28,9 @@
 - name: "Polski"
   english_name: "Polish"
   iso: pl
+- name: "Ру́сский"
+  english_name: "Russian"
+  iso: ru
 - name: "Türkçe"
   english_name: "Turkish"
   iso: tr

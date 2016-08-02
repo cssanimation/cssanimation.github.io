@@ -83,6 +83,9 @@
     - language: Português (Portuguese)
       iso: pt
       postTitle: Transi&ccedil;&otilde;es vs Anima&ccedil;&otilde;es
+    - language: Ру́сский (Russian)
+      iso: ru
+      postTitle: Transitions vs Animations
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Transition mu, Animation mu?

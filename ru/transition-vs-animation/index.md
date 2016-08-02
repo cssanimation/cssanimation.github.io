@@ -9,7 +9,7 @@ imageURL: /assets/images/posts/transitions-animations/transitions-animations.gif
 home_image: /assets/images/posts/transitions-animations/transitions-animations.png
 tweet_text: Когда следует использовать&nbsp;transition (переходы), а когда&nbsp;animation (анимацию)?
 custom_header: posts/transitions-animations.html
-translator: 
+translator: Panda
 translator_link: https://cssanimation.rocks
 ---
 
