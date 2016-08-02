@@ -5,13 +5,14 @@ description: Описание различий между переходами �
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
 extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
-imageURL: /assets/images/posts/transitions-animations/transitions-animations.gif
-home_image: /assets/images/posts/transitions-animations/transitions-animations.png
+imageURL: /images/posts/transitions-animations/transitions-animations.gif
+home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: Когда следует использовать&nbsp;transition (переходы), а когда&nbsp;animation (анимацию)?
 custom_header: posts/transitions-animations.html
 translator: Panda
 translator_link: https://cssanimation.rocks
 ---
+
 
 При анимации в сети, ты используешь&nbsp;transition (переходы)&nbsp;или&nbsp;animation (анимации)? Бывают случаи, когда ты предпочитаешь выбрать один вместо другого. Давай поговорим о различиях.
 
