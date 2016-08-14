@@ -13,7 +13,6 @@ translator: Panda
 translator_link: https://cssanimation.rocks
 ---
 
-
 При анимации в сети, ты используешь&nbsp;transition (переходы)&nbsp;или&nbsp;animation (анимации)? Бывают случаи, когда ты предпочитаешь выбрать один вместо другого. Давай поговорим о различиях.
 
 ## Что такое Transitions?
