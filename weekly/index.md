@@ -8,7 +8,7 @@ hideTitle: true
 
 A weekly roundup of all the latest CSS animation articles and inspiration. Subscribe now and never miss an issue.
 
-Join **4,500** other subscribers today.
+Join **4,700** other subscribers today.
 
 <div class="callout wow bounceIn">
     <section class="row">
