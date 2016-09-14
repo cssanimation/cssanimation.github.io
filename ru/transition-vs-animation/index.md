@@ -9,8 +9,11 @@ imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: Когда следует использовать&nbsp;transition (переходы), а когда&nbsp;animation (анимацию)?
 custom_header: posts/transitions-animations.html
-translator: Panda
-translator_link: https://cssanimation.rocks
+translators:
+  - name: Panda
+    url: https://cssanimation.rocks
+  - name: Paul Trinko
+    url: https://cssanimation.rocks
 ---
 
 При анимации в сети, ты используешь&nbsp;transition (переходы)&nbsp;или&nbsp;animation (анимации)? Бывают случаи, когда ты предпочитаешь выбрать один вместо другого. Давай поговорим о различиях.
