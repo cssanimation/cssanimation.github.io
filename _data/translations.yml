@@ -145,6 +145,9 @@
     - language: Português (Portuguese)
       iso: pt
       postTitle: Animando pseudoelementos
+    - language: Ру́сский (Russian)
+      iso: ru
+      postTitle: Анимация&nbsp;псевдоэлементов
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Pseudo-element'ler ile animasyon
@@ -168,6 +171,9 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Twitterowa animacja &quot;dodaj do ulubionych&quot;
+    - language: Ру́сский (Russian)
+      iso: ru
+      postTitle: Анимация &quot;лайка&quot; в Twitter 
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Twitter'daki &quot;fav&quot; animasyonu
