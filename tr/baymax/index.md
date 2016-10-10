@@ -31,7 +31,7 @@ Pseudo-elementler sayesinde, sadece tek bir HTML elementi kullanarak Baymax'in y
 Kivrimli, beyaz bir yuz gorunumu elde etmek icin hafif bir gradient ekliyoruz. Bunun icin `body` elementine radial gradient ekliyoruz.
 
     body {
-      background: radial-gradient(center, #fff, #fff 50%, #aaa);
+      background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
       background-size: 100%;
       background-repeat: no-repeat;
       height: 100vh;

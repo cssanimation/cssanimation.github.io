@@ -33,7 +33,7 @@ Om te beginnen geven we het scherm een subtiele gradient zodat het er uit ziet a
  
 
     body {
-      background: radial-gradient(center, #fff, #fff 50%, #aaa);
+      background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
       background-size: 100%;
       background-repeat: no-repeat;
       height: 100vh;

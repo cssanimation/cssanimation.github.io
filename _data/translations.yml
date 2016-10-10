@@ -105,6 +105,9 @@
       postTitle: Saatler
 - url: /baymax/
   translations:
+    - language: "العربية (Arabic)"
+      iso: ar
+      postTitle: "بايماكس ب CSS"
     - language: Nederlands (Dutch)
       iso: nl
       postTitle: "Baymax in CSS"

@@ -31,7 +31,7 @@ Wykorzystując pseudo-elementy, będziemy w stanie stworzyć fragmenty twarzy u�
 Aby skonfigurować scenę, dodamy subtelny gradient na ekran, aby wyglądała jak zakrzywiona biała głowa. Do tego użyjemy radialny gradient na `body`.
 
     body {
-      background: radial-gradient(center, #fff, #fff 50%, #aaa);
+      background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
       background-size: 100%;
       background-repeat: no-repeat;
       height: 100vh;
