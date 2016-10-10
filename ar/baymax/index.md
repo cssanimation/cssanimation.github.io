@@ -36,7 +36,7 @@ translator_link: https://twitter.com/malozaibi_coder
  
 
     body {
-      background: radial-gradient(center, #fff, #fff 50%, #aaa);
+      background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
       background-size: 100%;
       background-repeat: no-repeat;
       height: 100vh;
@@ -110,14 +110,14 @@ translator_link: https://twitter.com/malozaibi_coder
     .baymax::before {
       background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
       background-position: 0 -100%;
-      background-size: 200%;
+      background-size: 200% 200%;
       ...
     }
 
     .baymax::after {
       background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
       background-position: 0 -100%;
-      background-size: 200%;
+      background-size: 200% 200%;
       ...
     }
 
@@ -174,5 +174,5 @@ translator_link: https://twitter.com/malozaibi_coder
 
 هنا نسخة gif متحركة يمكنك بسهولة مشاركتها على الإنترنت.
 
-[<img src="/assets/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
+[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
 
