@@ -1,9 +1,8 @@
-<form action="https://cssanimation.curated.co/email_subscribers" id="embedded-subscribe-form" method="post">
+<form action="https://www.getrevue.co/profile/cssanimation/add_subscriber" method="post">
   <section class="row">
     <section class="centered">
-      <input id='subscribe-email' type="email" value="" placeholder="Your email" name="email" class="email">
-      <input name='form_dom_id' value='embedded-subscribe-form' type='hidden' />
-      <input type='submit' class="button" onclick="this.form.submit(); this.disabled=true; this.value='Sending...';" value='Subscribe'/>
+      <input id='subscribe-email' type="email" value="" placeholder="Your email" name="member[email]" class="email">
+      <input type='submit' name="member[subscribe]" class="button" onclick="this.form.submit(); this.disabled=true; this.value='Sending...';" value='Subscribe'/>
     </section>
   </section>
 </form>
