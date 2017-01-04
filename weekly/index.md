@@ -8,7 +8,7 @@ hideTitle: true
 
 A weekly roundup of all the latest CSS animation articles and inspiration. Subscribe now and never miss an issue.
 
-Join **5,100** other subscribers today.
+Join **5,150** other subscribers today.
 
 <div class="callout wow bounceIn">
     <section class="row">
@@ -30,7 +30,7 @@ Join **5,100** other subscribers today.
     </section>
 </div>
 
-Want to see what you're missing? [Check out the archives here](http://cssanimation.curated.co/issues).
+Want to see what you're missing? [Check out the archives here](http://weekly.cssanimation.rocks).
 
 <!--
 ## Testimonials 
