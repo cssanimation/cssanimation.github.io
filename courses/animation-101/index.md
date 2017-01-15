@@ -125,7 +125,7 @@ This course is for people who build for the web and want to add animation to the
   <li>$100+ - You're the best! Not only will I be able to create more tutorials, I may even be able to pay people to add their own knowledge! Thank you!</li>
 </ul>
 
-<p>It's up to you. The main thing is, I'm just happier than even more people will get to enjoy and be inspired by this course, regardless of how much they can pay. Give it a go. And don't just take my word for it, check out these testimonials:</p>
+<p>It's up to you. The main thing is, I'm just happier that even more people will get to enjoy and be inspired by this course, regardless of how much they can pay. Give it a go. And don't just take my word for it, check out these testimonials:</p>
 
 <div class="quotes-container" id="testimonials">
 
