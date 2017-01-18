@@ -1,11 +1,16 @@
 @charset "utf-8";
 
-// Our variables
-$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$alternate-font-family: 'Varela Round', Helvetica, Arial, sans-serif;
 
-$text-color:       #2E2729;
-$background-color: #fcf5f2;
+@font-face {
+  font-family: Avenir Next;
+  src: url("/fonts/avenir-next.otf") format("opentype");
+}
+
+// Our variables
+$base-font-family: Avenir Next, Helvetica, Arial, sans-serif;
+
+$text-color:       #00194E;
+$background-color: #fff; //fcf5f2
 $brand-color:      #343436;
 
 $grey-color:       #828282;

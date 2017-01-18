@@ -1,5 +1,5 @@
 .quote {
-  background: #fff;
+  background: #eee;
   border-radius: 1em;
   display: block;
   margin: 8em auto 4em;
@@ -16,7 +16,7 @@
 .quote-person {
   background-size: 100%;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid #eee;
   height: 6em;
   left: calc(50% - 3em);
   position: absolute;
@@ -51,7 +51,7 @@
   }
 
   blockquote {
-    background: #fff;
+    background: #eee;
     border: none;
     border-radius: 1em;
     padding: 1em;
@@ -70,7 +70,7 @@
     top: calc(50% - 16px);
     left: -30px;
     border-width: 15px 30px 15px 0;
-    border-color: transparent #fff;
+    border-color: transparent #eee;
   }
   blockquote:after {
     position: absolute;
@@ -81,7 +81,7 @@
     bottom: auto;
     left: -21px;
     border-width: 9px 21px 9px 0;
-    border-color: transparent #fff;
+    border-color: transparent #eee;
     content: "";
   }
 }

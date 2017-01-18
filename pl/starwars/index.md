@@ -15,10 +15,10 @@ translator_link: http://transgent.co.nf
 
 Zostawcie popcorn! Dzisiaj zbudujemy tytuł filmu Gwiezdne Wojny ze zwiastuna &quot;Przebudzenie Mocy&quot;
 
-<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen"></p>
 
 <div class="callout">
-To jest fragment kursu, [CSS Animation 101](/courses/animation-101/). Przez ograniczony czas możesz *zapłacić ile chcesz*. [Zapisz się teraz!](/courses/animation-101/)
+  <p>To jest fragment kursu, <a href="/courses/animation-101/">CSS Animation 101</a>. Przez ograniczony czas możesz <em>zapłacić ile chcesz</em>. <a href="/courses/animation-101/">Zapisz się teraz!</a></p>
 </div>
 
 Ten przykład łączy w sobie animacje CSS i inne właściwości CSS, kt&oacute;re mogą być przydatne w szczeg&oacute;lności transformacje `scale`, `translate` i `rotate`.
@@ -155,5 +155,6 @@ Składając to razem otrzymamy [ukończone demo](http://codepen.io/donovanh/pen/
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <div class="callout">
-To jest fragment kursu CSS [Animation 101](/courses/animation-101/). Przez ograniczony czas możesz&nbsp;*zapłacić ile chcesz*. [Zapisz się teraz!](/courses/animation-101/)
+  <p>To jest fragment kursu, <a href="/courses/animation-101/">CSS Animation 101</a>. Przez ograniczony czas możesz <em>zapłacić ile chcesz</em>. <a href="/courses/animation-101/">Zapisz się teraz!</a></p>
 </div>
+

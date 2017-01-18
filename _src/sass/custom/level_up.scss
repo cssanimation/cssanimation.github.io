@@ -1,0 +1,13 @@
+// Styles specific to the course level-up page
+
+$animation-duration: 5s;
+$highlight-color: #38b449;
+
+
+@media (max-width: 550px) {
+  .demo-container.clocks.single .clock, .badge {
+    font-size: 12px;
+  }
+}
+
+
