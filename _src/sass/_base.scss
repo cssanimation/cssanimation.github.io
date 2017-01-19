@@ -5,6 +5,7 @@
 body {
     font-family: $base-font-family;
     font-weight: 400;
+    letter-spacing: -0.36px;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -16,6 +17,10 @@ body {
 h1, h2, h3, h4, h5, .demo-container {
   font-family: Avenir Next, Helvetica, Arial, sans-serif;
   font-weight: 400;
+}
+
+p {
+  letter-spacing: -0.36px;
 }
 
 /**
