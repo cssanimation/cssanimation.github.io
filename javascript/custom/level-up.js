@@ -18,6 +18,11 @@ $(function() {
   // Carousel logic
   $('#quotes-carousel').on('click', '.next', showNextQuote);
   $('#quotes-carousel').on('click', '.previous', showPreviousQuote);
+  // Cycle automatically
+  window.carouselRunning = true;
+  var interval = setInterval(function() {
+    $('#quotes-carousel').find('.next').trigger('click');
+  }, 4000);
 });
 
 /* Functions for the hero image part */
@@ -94,7 +99,7 @@ function startBubbles() {
 function appendNewBubble() {
   var newBubble = $('<div class="video-bubble" data-age="0"></div>'),
       offset = rand(0,50),
-      containerHeight = $('#video-bubbles').height() - 50,
+      containerHeight = $('#video-bubbles').height() - 80,
       duration = rand(10,14);
   $(newBubble).css({
     animationDuration: duration + 's',
@@ -131,20 +136,45 @@ function showNextQuote() {
       next = $('#quotes-carousel').find('.next');
   $(current).removeClass('current').addClass('previous');
   $(next).removeClass('next').addClass('current');
-  $(previous).removeClass('previous').addClass('removeLeft');
+  $(previous).removeClass('previous').addClass('remove-left');
+  setTimeout(function() {
+    $(previous).removeClass('remove-left');
+  }, 1000);
   // Work out what should now be the "next" item
   $(allQuotes).each(function(index, item) {
     if ($(item).hasClass('current')) {
       if (allQuotes[index + 1]) {
-        $(allQuotes[index + 1]).addClass('next');
+        $(allQuotes[index + 1]).addClass('next').removeClass('remove-left');
       } else {
-        $(allQuotes[0]).addClass('next');
+        $(allQuotes[0]).addClass('next').removeClass('remove-left');
       }
     }
   });
 }
 
 function showPreviousQuote() {
-  
+  var allQuotes = $('#quotes-carousel').find('.quote'),
+      current = $('#quotes-carousel').find('.current'),
+      previous = $('#quotes-carousel').find('.previous'),
+      next = $('#quotes-carousel').find('.next');
+  $(current).removeClass('current').addClass('next');
+  $(previous).removeClass('previous').addClass('current');
+  $(next).removeClass('next');
+  // Work out what should now be the "next" item
+  $(allQuotes).each(function(index, item) {
+    if ($(item).hasClass('current')) {
+      if (allQuotes[index - 1]) {
+        $(allQuotes[index - 1]).addClass('place-left');
+        setTimeout(function() {
+          $(allQuotes[index - 1]).addClass('previous').removeClass('place-left');
+        }, 10);
+      } else {
+        $(allQuotes[allQuotes.length - 1]).addClass('place-left');
+        setTimeout(function() {
+          $(allQuotes[allQuotes.length - 1]).addClass('previous').removeClass('place-left');
+        }, 10);
+      }
+    }
+  });
 }
 

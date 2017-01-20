@@ -480,7 +480,8 @@ footer {
 
 .quotes-carousel {
   position: relative;
-  min-height: 45rem;
+  min-height: 40rem;
+  margin-top: 4em;
   width: 100%;
 
   .quote {
@@ -490,7 +491,7 @@ footer {
     opacity: 0;
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%) scale(.6);
+    transform: translate(72rem, -50%) scale(.6);
     transition: transform 1s $bezier-luxurious, opacity .5s ease-out;
 
     &.previous {
@@ -507,7 +508,16 @@ footer {
     &.next {
       transform: translate(calc(-50% + 36rem), -50%) scale(.8);
       opacity: .5;
-      transition: transform 1s $bezier-luxurious, opacity 1s .4s ease-out;
+      transition: transform 1s $bezier-luxurious, opacity 1s .6s ease-out;
+    }
+
+    &.remove-left {
+      transform: translate(calc(-50% - 72rem), -50%) scale(.8);
+    }
+
+    &.place-left {
+      transform: translate(calc(-50% - 72rem), -50%) scale(.6);
+      transition: none;
     }
   }
 }
