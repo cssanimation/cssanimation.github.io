@@ -1,16 +1,23 @@
 @charset "utf-8";
 
-// Our variables
-$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$alternate-font-family: 'Varela Round', Helvetica, Arial, sans-serif;
 
-$text-color:       #2E2729;
-$background-color: #fcf5f2;
-$brand-color:      #343436;
+@font-face {
+  font-family: Avenir Next;
+  src: url("/fonts/avenir-next.otf") format("opentype");
+}
+
+// Our variables
+$base-font-family: Avenir Next, Helvetica, Arial, sans-serif;
+
+$text-color:       #00194E;
+$background-color: #fff; //fcf5f2
+$brand-color:      #141D31;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$box-shadow: 0 2px 4px 0 rgba(31,0,33,0.50);
 
 %bordered {
   border: 2px solid rgba($brand-color, 0.8);
