@@ -5,9 +5,10 @@ custom_header: courses/level_up.html
 customCSS: level_up.css
 description: Bring your web animation skills to a new level in this practical course
 imageURL: /images/courses/level_up/card.png
+extraJS: [vendor/rellax.min.js, custom/initRellax.js, custom/level-up.js]
 ---
 
-<section class="description row">
+<section class="description row wow fade-up">
   <section class="six columns">
     <p>Bring your web animation skills to a new level.</p>
     <p>We know the theory. We know about transitions and keyframes, but how do we apply this knowledge to a real project? How do we plan and bring animation into a design?</p>
@@ -21,7 +22,7 @@ imageURL: /images/courses/level_up/card.png
   </section>
 </section>
 
-<section class="who row">
+<section class="who row wow fade-up">
   <section class="twelve columns">
     <h2>Who this course is for</h2>
     <p>This course is for people who want to take their CSS animation knowledge to the next level. This course is for designers who want to design animation into their web pages, for developers who want to know how to implement smooth animations in the browser, and agencies who want their web projects to stand out from the rest.</p>
@@ -29,7 +30,7 @@ imageURL: /images/courses/level_up/card.png
   </section>
 </section>
 
-<section class="single-quote">
+<section class="single-quote wow fade-up">
   <div class="single-quote-person" style="background-image: url(/images/quotes/malarkey.jpg);" alt="Andrew Clarke"></div>
   <div class="single-quote-text-container">
     <span class="quote-text">CSS Animation 101 was the perfect primer for anyone who’s looking to add animations to their websites. It was the perfect balance of theory and practical examples and I recommend it highly.</span>
@@ -37,7 +38,63 @@ imageURL: /images/courses/level_up/card.png
   </div>
 </section>
 
-<section class="structure row">
+<section class="offers row wow fade-up">
+  <div class="four columns">
+    <div class="offer">
+      <h2>Learn by email</h2>
+      <p class="price">$49</p>
+      <a href="#" class="buy-button">Buy now</a>
+      <div class="offer-contents">
+        <h5>INCLUDES</h5>
+        <ul>
+          <li>20 email lessons, one per day</li>
+          <li>All code downloads</li>
+          <li>Course eBook</li>
+          <li>Help &amp; support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="four columns">
+    <div class="offer most-popular">
+      <h3 class="most-popular-callout">🙌 &nbsp;&nbsp;MOST POPULAR&nbsp;&nbsp; 🙌</h3>
+      <h2>Learn by video</h2>
+      <p class="price">$79</p>
+      <div class="special-buy-button-container">
+        <a href="#" class="buy-button">Buy now</a>
+      </div>
+      <div class="offer-contents">
+        <h5>INCLUDES</h5>
+        <ul>
+          <li>20 video lessons (lifetime access)</li>
+          <li>All code downloads</li>
+          <li>Course eBook</li>
+          <li>Help &amp; support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="four columns">
+    <div class="offer">
+      <h2>Teams and agencies</h2>
+      <p class="price">$499</p>
+      <a href="#" class="buy-button">Buy now</a>
+      <div class="offer-contents">
+        <h5>INCLUDES</h5>
+        <ul>
+          <li>20 video lessons, one per day</li>
+          <li>Team access to course (up to 4 seats)</li>
+          <li>All code downloads</li>
+          <li>Course eBook</li>
+          <li>Help &amp; support</li>
+          <li>1 hour face-to-face consulting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="structure row wow fade-up">
   <section class="twelve columns">
     <h2>Learn by doing</h2>
     <p>Most courses concentrate only on the theory. In this course we’ll create a practical example landing page, step by step. Over 2 hours of practical coding tutorials, we’ll create real examples of animation you can use on your own projects.</p>
@@ -83,63 +140,7 @@ imageURL: /images/courses/level_up/card.png
         <li><p><span class="number">6.2</span> Next steps, useful resources</p></li>
       </ul>
     </div>
-    <div class="structure-column">
-      <div class="video-bubble"></div>
-    </div>
-  </div>
-</section>
-
-<section class="offers row">
-  <div class="four columns">
-    <div class="offer">
-      <h2>Learn by email</h2>
-      <p class="price">$49</p>
-      <a href="#" class="buy-button">Buy now</a>
-      <div class="offer-contents">
-        <h5>INCLUDES</h5>
-        <ul>
-          <li>20 email lessons, one per day</li>
-          <li>All code downloads</li>
-          <li>Course eBook</li>
-          <li>Help &amp; support</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="four columns">
-    <div class="offer most-popular">
-      <h3 class="most-popular-callout">🙌 &nbsp;&nbsp;MOST POPULAR&nbsp;&nbsp; 🙌</h3>
-      <h2>Learn by video</h2>
-      <p class="price">$79</p>
-      <a href="#" class="buy-button">Buy now</a>
-      <div class="offer-contents">
-        <h5>INCLUDES</h5>
-        <ul>
-          <li>20 video lessons (lifetime access)</li>
-          <li>All code downloads</li>
-          <li>Course eBook</li>
-          <li>Help &amp; support</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="four columns">
-    <div class="offer">
-      <h2>Teams and agencies</h2>
-      <p class="price">$499</p>
-      <a href="#" class="buy-button">Buy now</a>
-      <div class="offer-contents">
-        <h5>INCLUDES</h5>
-        <ul>
-          <li>20 video lessons, one per day</li>
-          <li>Team access to course (up to 4 seats)</li>
-          <li>All code downloads</li>
-          <li>Course eBook</li>
-          <li>Help &amp; support</li>
-          <li>1 hour face-to-face consulting</li>
-        </ul>
-      </div>
-    </div>
+    <div class="structure-column" id="video-bubbles"></div>
   </div>
 </section>
 
@@ -147,7 +148,7 @@ imageURL: /images/courses/level_up/card.png
 
 <section class="background-2">
   <section class="container">
-    <section class="quotes-carousel">
+    <section class="quotes-carousel wow fade-up" id="quotes-carousel">
       <div class="quote previous">
         <div class="quote-person" style="background-image: url(/images/quotes/liz_myers.png);" alt="Liz Myers"></div>
           <div class="quote-text-container">
@@ -181,7 +182,62 @@ imageURL: /images/courses/level_up/card.png
         </div>
       </div>
     </section>
-    <section class="single-quote">
+    <section class="offers row wow fade-up">
+      <div class="four columns">
+        <div class="offer">
+          <h2>Learn by email</h2>
+          <p class="price">$49</p>
+          <a href="#" class="buy-button">Buy now</a>
+          <div class="offer-contents">
+            <h5>INCLUDES</h5>
+            <ul>
+              <li>20 email lessons, one per day</li>
+              <li>All code downloads</li>
+              <li>Course eBook</li>
+              <li>Help &amp; support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="offer most-popular">
+          <h3 class="most-popular-callout">🙌 &nbsp;&nbsp;MOST POPULAR&nbsp;&nbsp; 🙌</h3>
+          <h2>Learn by video</h2>
+          <p class="price">$79</p>
+          <div class="special-buy-button-container">
+            <a href="#" class="buy-button">Buy now</a>
+          </div>
+          <div class="offer-contents">
+            <h5>INCLUDES</h5>
+            <ul>
+              <li>20 video lessons (lifetime access)</li>
+              <li>All code downloads</li>
+              <li>Course eBook</li>
+              <li>Help &amp; support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="offer">
+          <h2>Teams and agencies</h2>
+          <p class="price">$499</p>
+          <a href="#" class="buy-button">Buy now</a>
+          <div class="offer-contents">
+            <h5>INCLUDES</h5>
+            <ul>
+              <li>20 video lessons, one per day</li>
+              <li>Team access to course (up to 4 seats)</li>
+              <li>All code downloads</li>
+              <li>Course eBook</li>
+              <li>Help &amp; support</li>
+              <li>1 hour face-to-face consulting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="single-quote wow fade-up">
       <div class="single-quote-person" style="background-image: url(/images/quotes/donovan.jpg);" alt="Donovan Hutchinson"></div>
       <div class="single-quote-text-container">
         <h2>About Donovan</h2>
@@ -189,7 +245,7 @@ imageURL: /images/courses/level_up/card.png
         <p>Twitter link, Github, LinkedIn, Email</p>
       </div>
     </section>
-    <section class="special-message" id="self-destruct">
+    <section class="special-message wow fade-up" id="self-destruct">
       <section class="photo"><span></span></section>
       <section class="message-content">
         <p>Hey… Donovan here… Want to save 20% right now?</p>
