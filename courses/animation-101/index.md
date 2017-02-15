@@ -36,7 +36,7 @@ By the end of four weeks you will have a good understanding of CSS transitions a
   <div class="single-quote-person" style="background-image: url(/images/quotes/malarkey.jpg);" alt="Andrew Clarke"></div>
   <div class="single-quote-text-container">
     <span class="quote-text">CSS Animation 101 was the perfect primer for anyone who’s looking to add animations to their websites. It was the perfect balance of theory and practical examples and I recommend it highly.</span>
-    <span class="single-quotee"><a href="http://stuffandnonsense.co.uk/">Andrew Clarke</a></span>
+    <span class="single-quotee"><a href="http://stuffandnonsense.co.uk/">Andrew Clarke</a>, author of <em>Hardboiled Web Design</em></span>
   </div>
 </section>
 
@@ -47,7 +47,6 @@ By the end of four weeks you will have a good understanding of CSS transitions a
   <li class="wow fadeIn">A total of 20 emails over 4 weeks (one each weekday)</li>
   <li class="wow fadeIn">Loads of code and project examples (on CodePen)</li>
   <li class="wow fadeIn">Download cheatsheet for CSS animation and transitions</li>
-  <li class="wow fadeIn">Your very own super-rare Happy Rock&trade; sticker</li>
   <li class="wow fadeIn">Help and support every step of the way from <a href="https://twitter.com/donovanh">Donovan</a> himself</li>
   <li class="wow fadeIn"><a href="#guarantee">100% money-back guarantee</a></li>
 </ul>
@@ -121,8 +120,8 @@ This course is for people who build for the web and want to add animation to the
 <ul>
   <li>$0 - Want to give the course a go, but don't know if it's for you? Sure why not. You can always come back and top up if you feel it's been worth it!</li>
   <li>$20 - If you can pay this much, you'll be helping me keep the server running and pay for the services needed to run the site. Thank you!</li>
-  <li>$50 - Now you're talking. I'll be able to invest in more translations, and put more time into creating great <a href="/">CSS tutorials</a> for you to read!</li>
-  <li>$100+ - You're the best! Not only will I be able to create more tutorials, I may even be able to pay people to add their own knowledge! Thank you!</li>
+  <li>$100 - Now you're talking. I'll be able to invest in more translations, and put more time into creating great <a href="https://cssanimation.rocks">CSS Animation tutorials</a> for you to read!</li>
+  <li>$200+ - You're the best! Not only will I be able to create more tutorials, I may even be able to pay people to add their own knowledge! Thank you!</li>
 </ul>
 
 <p>It's up to you. The main thing is, I'm just happier that even more people will get to enjoy and be inspired by this course, regardless of how much they can pay. Give it a go. And don't just take my word for it, check out these testimonials:</p>
@@ -236,6 +235,13 @@ recommend it!</span>
     </div>
   </section>
 
+  <section class="quote stacked">
+    <div class="quote-person" style="background-image: url(/images/quotes/maureen_denny.jpg);" alt="Maureen Denny"></div>
+    <div class="quote-text-container">
+      <span class="quote-text">Donovan’s CSS Animation 101 course is a great way to start using CSS animations.  The course is well laid out and the lessons are doable on a daily basis.  Donovan is great at explaining and demonstration how the code works and shows examples of how and when to use animation. Well worth the investment!</span>
+      <span class="quotee"><a href="https://www.moxiecreek.com/">Maureen Denny</a></span>
+    </div>
+  </section>
 
   <section class="quote stacked">
     <div class="quote-person" style="background-image: url(/images/quotes/ioana_manoliu.jpg);" alt="Ioana Manoliu"></div>
