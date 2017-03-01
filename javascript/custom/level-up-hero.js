@@ -17,7 +17,6 @@ function removeFirstItem() {
 function addNewItem() {
   // Build a "page" to add to the container
   var newPage = $('<div class="animation-parts-page"><div class="box box1"></div><div class="box box2"></div><div class="box box3"></div><div class="box box4"></div></div>');
-  console.log('Random: ', randomHeights());
   var arrayHeights = randomHeights(),
       arrayWidths = randomWidths();
   $(newPage).find('.box').each(function(index, item) {

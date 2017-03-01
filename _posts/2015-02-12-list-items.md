@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 bodyClass: shorter
 title: Animating List Items
 description: Some tricks to help announce list items through animation.

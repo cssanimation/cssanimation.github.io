@@ -39,13 +39,30 @@ customCSS: flower.css
   </section>
   <section class="row wow fadeIn">
     <section class="twelve columns">
+      <h2>CSS Animation Tutorials</h2>
       <section class="post-container">
         {% for post in site.posts %}
-          <article class="post row">
-              <a class="image-link" href="{{ post.url }}"><img src="{{ post.home_image }}"></a>
-              <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
-          </article>
+          {% if post.type == "tutorial" %}
+            <article class="post row">
+                <a class="image-link" href="{{ post.url }}"><img src="{{ post.home_image }}"></a>
+                <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+            </article>
+          {% endif %}
         {% endfor %}
+      </section>
+    </section>
+  </section>
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <h2>CSS Animation Updates</h2>
+      <section class="post-container">
+        <ul class="updates">
+          {% for post in site.posts %}
+            {% if post.type == "update" %}
+              <li class="update"><a class="post-link" href="{{ post.url }}">{{ post.title }}</a><li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </section>
     </section>
   </section>

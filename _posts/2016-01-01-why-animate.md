@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 title: Why animate?
 bodyClass: shorter
 description: Why animation works so well, and how you can use it to improve your web designs.

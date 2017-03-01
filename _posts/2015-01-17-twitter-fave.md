@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 bodyClass: shorter
 title: Twitter's "fave" animation
 description: Find out how Twitter's fancy new 'fave' animation works, using the CSS steps() timing function.

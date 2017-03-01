@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 bodyClass: shorter
 title: Animating pseudo-elements
 description: Pseudo-elements give you two extra HTML elements for free! Here's how to animate them on hover. Use them wisely.

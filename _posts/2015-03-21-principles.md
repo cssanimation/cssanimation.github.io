@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 title: Animation Principles for the Web
 description: How Disney's 12 Principles of Animation can be applied to web designs
 categories: [animation, tips, animations, transitions]

@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 title: Transitions vs Animations
 description: A description of the differences between transitions and animations in web animation.
 categories: [animation, tips, animations, transitions]

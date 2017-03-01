@@ -1,5 +1,6 @@
 ---
 layout: post
+type: tutorial
 title: Stereoscopic CSS
 bodyClass: shorter
 demo_url: https://cssanimation.rocks/demo/stereoscopic/
