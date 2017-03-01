@@ -11,7 +11,7 @@ tweet_text: This new CSS Animation course from @CSSAnimation looks great https:/
 
 Today's a big day. We passed [**5,000** Twitter followers](https://twitter.com/cssanimation) (hi everyone!), and I have news for you about a new course I'm launching very soon.
 
-I'd like to give **you** the opportunity to be one of the very first to enjoy the course, [for just **$1**](#id-buy-that-for-a-dollar)!
+I'd like to give you the opportunity to be one of the very first to enjoy the course, [for just **$1**](#id-buy-that-for-a-dollar)!
 
 ## Practical and useful lessons
 
@@ -37,7 +37,7 @@ Topics we'll be covering include:
 * Putting together your own animation library using Sass
 * And more modules added over time (your feedback counts)!
 
-Each module will come with downloadable code you can use *today* on your projects. Once you enrol, you'll get lifetime access to all modules as well as any future modules I add.
+Each module will come with downloadable code you can use *right away* on your projects. Once you enrol, you'll get lifetime access to all modules as well as any future modules I add.
 
 ## Social learning
 
