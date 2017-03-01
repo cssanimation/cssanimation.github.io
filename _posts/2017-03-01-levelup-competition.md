@@ -63,10 +63,7 @@ OR
 
 OR 
 
-* Give us [some love on Pinterest](http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fcourses.cssanimation.rocks%2Fp%2Flevel-up&media=https%3A%2F%2Fcssanimation.rocks%2Fimages%2Fcourses%2Flevelup%2Fcover2.png&description=Launching%20soon!%20See%20how%20you%20can%20level-up%20your%20CSS%20animation%20skills%20with%20this%20new%20course%20from%20CSS%20Animation%20Rocks%20https%3A%2F%2Fcssanimation.rocks)
-
-
-Bonus chance to win: Make sure you've signed up to the [CSS Animation Weekly newsletter](https://weekly.cssanimation.rocks)
+* Make sure you've signed up to the [CSS Animation Weekly newsletter](https://weekly.cssanimation.rocks)
 
 Be quick! This competition closes on Friday, 3rd March at 12pm GMT. Winners will be contacted shortly after.
 
