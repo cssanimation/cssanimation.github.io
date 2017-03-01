@@ -65,6 +65,8 @@ nav {
   animation: fade-in .8s ease-out forwards;
   opacity: 0;
   transform: translateY(1em);
+  padding-right: 2em;
+  
   img, .demo-container {
     border-radius: 0.5em;
     margin: 2em -35% 2em 0;

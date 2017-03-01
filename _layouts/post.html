@@ -39,18 +39,17 @@ layout: default
         <article class="content-box wow bounceIn">
           <section class="course">
             <div class="course-image four columns">
-              <a href="/courses/animation-101/"><img src="/images/courses/animation_101/badge.svg" class="footer-signup-badge" alt="CSS Animation 101"></a>
+              <a href="/courses/animation-101/"><img src="/images/courses/levelup/cover2.png" class="footer-signup-badge" alt="Level Up Your CSS Animation Skills"></a>
             </div>
             <div class="course-details eight columns">
-              <h2><a href="/courses/animation-101/">Animation 101</a></h2>
-              <p>An email course all about transitions, animations and how to apply them to your work.</p>
-              <p class="button"><a href="/courses/animation-101/">Tell me more</a></p>
+              <h2><a href="http://courses.cssanimation.rocks/p/level-up">Level Up Your CSS Animation Skills</a></h2>
+              <p>A practical video course applying the theory of CSS animation to a real project. Enrol now and <strong>save $140!</p>
+              <p class="button"><a href="http://courses.cssanimation.rocks/p/level-up">Check it out</a></p>
             </div>
             <span class="clearfix"></span>
           </section>
         </article>
       </section>
-
     </article>
     <aside class="post-aside three columns">
       {% if page.demo_url %}
@@ -78,37 +77,47 @@ layout: default
           </section>
       {% else %}
 
-        <section class="translations">
-          <h3>Translations</h3>
-          <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
-          {% for article in site.data.translations %}
-            {% if page.url == article.url %}
-              <ul>
-              {% for translation in article.translations %}
-                {% if translation.language %}
-                  <li><a href="/{{ translation.iso }}{{page.url}}">{{ translation.language }}</a></li>
-                {% endif %}
-              {% endfor %}
-              </ul>
-            {% endif %}
-          {% endfor %}
-          {% if page.source %}
-            <p class="translate"><a class="button" href="https://getnative.me/?ref=cssanimation&amp;lang=en&amp;url={{site.url}}{{page.url}}&amp;sourceURL={{page.source}}&amp;title={{ page.title | cgi_escape }}&amp;format=markdown-yaml-frontmatter">Translate this article</a></p>
-            <p class="powered-by">Powered by <img src="/images/getnative.png" alt="native - Community powered translations"></p>
-          {% endif %}
-        </section>
+        {% if page.source %}
+          <section class="translations">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            {% for article in site.data.translations %}
+              {% if page.url == article.url %}
+                <ul>
+                {% for translation in article.translations %}
+                  {% if translation.language %}
+                    <li><a href="/{{ translation.iso }}{{page.url}}">{{ translation.language }}</a></li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+              <p class="translate"><a class="button" href="https://getnative.me/?ref=cssanimation&amp;lang=en&amp;url={{site.url}}{{page.url}}&amp;sourceURL={{page.source}}&amp;title={{ page.title | cgi_escape }}&amp;format=markdown-yaml-frontmatter">Translate this article</a></p>
+              <p class="powered-by">Powered by <img src="/images/getnative.png" alt="native - Community powered translations"></p>
+          </section>
+        {% endif %}
 
       {% endif %}
       <section class="sidebar-email-signup">
-        <h4>CSS Animation emails</h4>
+        <h4>CSS Animation Weekly</h4>
         <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
           <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
           <input type="submit" value="Add me" name="subscribe" class="button">
-          <p>Stay up to date with all the latest updates.</p>
+          <p>Weekly tutorials and inspiration in your inbox.</p>
         </form>
       </section>
       <section class="course-sidebar wow bounceIn">
+        <h3>Pre-launch discount!</h3>
+        <section class="course">
+            <a href="/courses/animation-101/"><img src="/images/courses/levelup/cover2.png" alt="Level Up Your CSS Animation Skills"></a>
+            <h3><a href="http://courses.cssanimation.rocks/p/level-up">Level Up Your CSS Animation Skills</a></h3>
+            <p>A practical video course applying the theory of CSS animation to a real project.<br>Enrol now and <strong>save $140!</strong></p>
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </section>
+      <!-- <section class="course-sidebar wow bounceIn">
         <h3>Enrolling now!</h3>
         <section class="course">
             <a href="/courses/animation-101/"><img src="/images/courses/animation_101/badge.svg" alt="CSS Animation 101"></a>
@@ -117,7 +126,7 @@ layout: default
           </div>
           <span class="clearfix"></span>
         </section>
-      </section>
+      </section> -->
     </aside>
   </section>
 </section>
