@@ -67,5 +67,5 @@ OR
 
 Be quick! This competition closes on Friday, 3rd March at 12pm GMT. Winners will be contacted shortly after.
 
-I'm looking forward to seeing how you all get on with this new course and excited to see the amazing animations you create. Let's do this!
+I'm looking forward to seeing how you all get on with this new course and excited to see the amazing animations you create. 
 
