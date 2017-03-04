@@ -6,7 +6,9 @@ customCSS: animation_101.css
 description: Learn the essentials of CSS animation with an email and a few minutes each day
 imageURL: /images/courses/animation_101/animation_101.png
 ---
-
+<script>
+fbq('track', 'CSS Animaton 101 view');
+</script>
 <div class="badge">
   <img class="hero-image" src="/images/courses/animation_101/badge.svg" alt="CSS Animation 101">
 </div>
