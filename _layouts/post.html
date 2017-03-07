@@ -89,7 +89,8 @@ fbq('track', 'Article opened');
                 <ul>
                 {% for translation in article.translations %}
                   {% if translation.language %}
-                    <li><a href="/{{ translation.iso }}{{page.url}}">{{ translation.language }}</a></li>
+
+                    <li><a href="/{{ translation.iso }}{{page.url}}" hreflang="{{ translation.iso }}">{{ translation.language }}</a></li>
                   {% endif %}
                 {% endfor %}
                 </ul>
