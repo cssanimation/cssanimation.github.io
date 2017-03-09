@@ -1,13 +1,9 @@
 @charset "utf-8";
 
-
-@font-face {
-  font-family: Avenir Next;
-  src: url("/fonts/avenir-next.otf") format("opentype");
-}
-
 // Our variables
-$base-font-family: Avenir Next, Helvetica, Arial, sans-serif;
+$base-font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
+$italic-font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
+$bold-font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
 
 $text-color:       #00194E;
 $background-color: #fff; //fcf5f2
