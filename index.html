@@ -59,7 +59,7 @@ customCSS: flower.css
         <ul class="updates">
           {% for post in site.posts %}
             {% if post.type == "update" %}
-              <li class="update"><a class="post-link" href="{{ post.url }}">{{ post.title }}</a><li>
+              <li class="update"><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
             {% endif %}
           {% endfor %}
         </ul>
