@@ -62,6 +62,26 @@ fbq('track', 'Article opened');
         </section>
       {% endif %}
 
+      <section class="course-sidebar wow bounceIn sidebox">
+        <h4>New course!</h4>
+        <section class="course">
+            <a href="/courses/animation-101/"><img src="/images/courses/levelup/cover2.png" style="height:109px" alt="Level Up Your CSS Animation Skills"></a>
+            <h3><a href="http://courses.cssanimation.rocks/p/level-up">Level Up Your CSS Animation Skills</a></h3>
+            <p>A practical video course applying the theory of CSS animation to a real project. Build the ultimate animated landing page!</p>
+            <!--<p class="button"><a href="http://courses.cssanimation.rocks/p/level-up" style="margin: 0 auto;font-style: normal;color: #fff">I want this</a></p>-->
+          </div>
+          <span class="clearfix"></span>
+        </section>
+      </section>
+      <section class="sidebar-email-signup">
+        <h4>CSS Animation Weekly</h4>
+        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
+          <input type="submit" value="Add me" name="subscribe" class="button">
+          <p>Weekly tutorials and inspiration in your inbox.</p>
+        </form>
+      </section>
       {% if page.translator %}
         <section class="translator">
           <h3>Translation Info</h3>
@@ -82,7 +102,7 @@ fbq('track', 'Article opened');
       {% else %}
 
         {% if page.source %}
-          <section class="translations">
+          <section class="translations" style="padding-top: 2em">
             <h3>Translations</h3>
             <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
             {% for article in site.data.translations %}
@@ -103,26 +123,6 @@ fbq('track', 'Article opened');
         {% endif %}
 
       {% endif %}
-      <section class="sidebar-email-signup">
-        <h4>CSS Animation Weekly</h4>
-        <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
-          <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
-          <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
-          <input type="submit" value="Add me" name="subscribe" class="button">
-          <p>Weekly tutorials and inspiration in your inbox.</p>
-        </form>
-      </section>
-      <section class="course-sidebar wow bounceIn">
-        <h3>New course!</h3>
-        <section class="course">
-            <a href="/courses/animation-101/"><img src="/images/courses/levelup/cover2.png" style="height:109px" alt="Level Up Your CSS Animation Skills"></a>
-            <h3><a href="http://courses.cssanimation.rocks/p/level-up">Level Up Your CSS Animation Skills</a></h3>
-            <p>A practical video course applying the theory of CSS animation to a real project. Build the ultimate animated landing page!</p>
-            <p class="button"><a href="http://courses.cssanimation.rocks/p/level-up" style="margin: 0 auto;font-style: normal;color: #fff">I want this</a></p>
-          </div>
-          <span class="clearfix"></span>
-        </section>
-      </section>
       <!-- <section class="course-sidebar wow bounceIn">
         <h3>Enrolling now!</h3>
         <section class="course">

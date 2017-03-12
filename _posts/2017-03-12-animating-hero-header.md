@@ -3,6 +3,7 @@ layout: post
 type: tutorial
 title: Animating your hero header
 bodyClass: shorter
+demo_url: http://codepen.io/donovanh/pen/PpbvZB/
 description: Make your hero header stand out with CSS animations
 categories: [css, theory]
 imageURL: /images/posts/animating-hero-header/home.jpg
