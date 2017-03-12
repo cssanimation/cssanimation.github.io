@@ -14,11 +14,13 @@ published: true
 
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-*This post is part of the new course, [Level Up your CSS Animation Skills](http://courses.cssanimation.rocks/p/level-up). Enrol today to secure your place and learn how to build the ultimate landing page!*
+*This post is part of the new course, [Level Up your CSS Animation Skills](http://courses.cssanimation.rocks/p/level-up). If you're playing along, you can find the HTML and CSS in [this Pen](http://codepen.io/donovanh/pen/NpbyJP/).*
 
 <div class="videoWrapper">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>
 </div>
+
+## Transcript
 
 If you've ever arrived on a website and been greeted by a large image or video, and some titles on top, then you've encountered the "Hero Header". It's a popular way to introduce a website, and can be a great opportunity to help people quickly understand what it is your site does.
 
