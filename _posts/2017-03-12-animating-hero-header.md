@@ -31,7 +31,9 @@ In this tutorial we'll animate in the content on top, and take the opportunity t
 
 ## Introducing the titles
 
-Here's what we're starting with. It's got a nice background image, some titles and a bit call-to-action button.
+Here's what we're starting with.
+
+It's got a nice background image, some titles and a bit call-to-action button.
 
 <p data-height="600" data-theme-id="light" data-slug-hash="NpbyJP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with background image" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/NpbyJP/">Landing page with background image</a>.</p>
 
