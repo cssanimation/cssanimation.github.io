@@ -19,21 +19,21 @@ If you've ever arrived on a website and been greeted by a large image or video, 
 
 For many visitors it'll be their first impression of your brand, so you'll want to make the most of this moment to shine.
 
+Here's what we'll be putting together.
+
+<p data-height="600" data-theme-id="light" data-slug-hash="PpbvZB" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (staggered and cubic bezier and wedge)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/PpbvZB/">Landing page with animated foreground elements (staggered and cubic bezier and wedge)</a>.</p>
+
 ## Standing out from the rest
 
 We can use animation to add polish to that first moment when the content appears, as well as use it to control the order in which information appears and draw the eye to what matters.
 
 In this tutorial we'll animate in the content on top, and take the opportunity to experiment more with bouncy timing functions, animation choreography and creating reusable sets of keyframes.
 
-*This post is part of the new course, [Level Up your CSS Animation Skills](http://courses.cssanimation.rocks/p/level-up). If you're playing along, you can find the HTML and CSS in [this Pen](http://codepen.io/donovanh/pen/NpbyJP/).*
-
 ## Introducing the titles
 
 Here's what we're starting with. It's got a nice background image, some titles and a bit call-to-action button.
 
 <p data-height="600" data-theme-id="light" data-slug-hash="NpbyJP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with background image" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/NpbyJP/">Landing page with background image</a>.</p>
-
-Let's see how animation can make it better. (If you're playing along, you can find the HTML and CSS in [this Pen](http://codepen.io/donovanh/pen/NpbyJP/).)
 
 ## Making it pop
 
