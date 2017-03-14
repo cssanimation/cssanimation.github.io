@@ -35,9 +35,9 @@ Here's what we're starting with. It's got a nice background image, some titles a
 
 <p data-height="600" data-theme-id="light" data-slug-hash="NpbyJP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with background image" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/NpbyJP/">Landing page with background image</a>.</p>
 
-## Making it pop
+## Making it bounce
 
-Like in the choreography you see in stage performances and dances, we're going to think about how all the various pieces of content in our hero header move together. We could have the elements slide in to place like the background image, which would show a nice connectedness between the elements. Let's also take it a little further by making each of the elements seem to "pop" out of the screen.
+Like in the choreography you see in stage performances and dances, we're going to think about how all the various pieces of content in our hero header move together. We could have the elements slide in to place like the background image, which would show a nice connectedness between the elements. Let's also take it a little further by making each of the elements seem to pop out of the screen.
 
 To begin we'll create some `keyframes` for the animation. Within the `keyframes` container, we want "0%" and "100%" frames, representing the beginning and end states of the animation.
 
