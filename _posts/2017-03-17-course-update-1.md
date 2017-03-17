@@ -19,16 +19,16 @@ Here's a taste of what to expect:
   <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3&vq=hd720" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## New content
+Module #1 includes:
 
-Videos added include:
-
-* Hero header?
-* Animating the background
-* Intoducing the titles
-* Adding a scroll cue
-* Simplifying keyframes
-* Waiting till the content is ready
+* What is a hero header?
+* Why should we use CSS to animate it?
+* How to always create smooth animations
+* How to create sets of keyframes
+* Creating your own cubic-bezier timing functions
+* Controlling animations with "animation-play-state"
+* Reusing keyframes in multiple animations
+* and more!
 
 ## Next steps
 
