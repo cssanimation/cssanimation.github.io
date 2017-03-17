@@ -3,7 +3,7 @@ layout: post
 type: update
 title: New course & competition
 bodyClass: shorter
-description: Create your own jQuery plugin loading spinner
+description: Announcing the Level Up course!
 categories: [updates, courses]
 imageURL: /images/courses/levelup/cover.png
 tweet_text: This new CSS Animation course from @CSSAnimation looks great https://cssanimation.rocks/images/courses/levelup/cover.png
