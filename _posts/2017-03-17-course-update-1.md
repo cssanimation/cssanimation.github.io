@@ -9,8 +9,6 @@ imageURL: /images/courses/levelup/cover2.png
 tweet_text: This new CSS Animation course from @CSSAnimation looks great http://courses.cssanimation.rocks/p/level-up
 ---
 
-Summary of what's being announced
-
 [Level up your CSS animation skills](http://courses.cssanimation.rocks/p/level-up) just got better with all new videos for Module 1, "Build an animated hero header".
 
 Enjoy professionally produced videos and learn how to bring your static web sites to life. This update brings you **over 45 minutes of practical, step by step lessons** - and it's just the start.
