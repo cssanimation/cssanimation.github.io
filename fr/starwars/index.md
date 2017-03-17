@@ -13,12 +13,11 @@ translator_link: https://twitter.com/pierrechoffe
 ---
 
 Sortez les popcorns ! Aujourd'hui, nous allons cr&eacute;er le titre de la bande annonce de Star Wars 'Le R&eacute;veil de la Force'.
-<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
+
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen"></p>
 
 <div class="callout"> 
-
-Cet article est un extrait du cours <a href="/courses/animation-101/">CSS Animation 101</a>. Pour une p&eacute;riode limit&eacute;e, <em>vous pouvez payer ce que vous voulez</em>. <a href="/courses/animation-101/">Inscrivez-vous</a> !
-
+  Cet article est un extrait du cours <a href="/courses/animation-101/">CSS Animation 101</a>. Pour une p&eacute;riode limit&eacute;e, <em>vous pouvez payer ce que vous voulez</em>. <a href="/courses/animation-101/">Inscrivez-vous</a> !
 </div>
 
 Notre exemple associe l'animation CSS &agrave; quelques autres propri&eacute;t&eacute;s CSS utiles, en particulier les transformations `scale`, `translate` et `rotate`.
@@ -42,8 +41,8 @@ Pour pr&eacute;parer cet exemple, j'ai cr&eacute;&eacute; deux fichiers SVG pour
 Le HTML de la d&eacute;mo est le suivant :
 
     <div class="starwars-demo">
-      <img src="/images/star.svg" alt="Star" class="star">
-      <img src="/images/wars.svg" alt="Wars" class="wars">
+      <img src="https://cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" class="star">
+      <img src="https://cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" class="wars">
       <h2 class="byline" id="byline">The Force Awakens</h2>
     </div>
 
