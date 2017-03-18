@@ -23,10 +23,9 @@ Schaut Euch die [CSS Portal demo](http://hop.ie/portal/) an und ladet Euch den [
 Um Euch die verschiedenen Schritte einer 3D-Szene (erstellen, stylen und schließlich animieren) nahe zu bringen, werden wir in diesem Artikel eine Szene aus dem [Portal Training Video](http://www.youtube.com/watch?v=gr_9Fw_gC4I) nachbauen. Insbesondere konzentrieren wir uns auf den stilisierten Cartoon-look aus dem ersten Teil des Videos, in dem die Silhouette einer Figur durch ein Portal springt und auf der anderen Seite wieder auftaucht.
 Hier ist das originale Video:
 
-<div class="video-wrapper">
-  <iframe src="http://www.youtube.com/embed/V5paXrfkYmI" width="720" height="405" data-height="405" frameborder="0">
-  </iframe>
-</div>
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3&vq=hd720" frameborder="0" allowfullscreen></iframe>
+</div><br>
 
 Als dieses Video zum ersten Mal veröffentlicht wurde, hat es mich völlig umgehauen. Portal (entwickelt von [Narbacular Drop](http://en.wikipedia.org/wiki/Narbacular_Drop)) führte mit der Einführung ihrer Spielmechanik zu einer interessanten Wendung im 3D Genre.
 

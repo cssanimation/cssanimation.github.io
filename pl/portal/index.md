@@ -21,7 +21,9 @@ Zobacz demo [Portal CSS online](http://hop.ie/portal/) i pobierz [kod źr&oacute
 
 Jako przykład pokazania r&oacute;żnych etap&oacute;w tworzenia, stylizowania i animowania sceny 3D, ten artykuł będzie miał na celu odtworzenie sceny z [Wideo Treningowego Portalu](http://www.youtube.com/watch?v=gr_9Fw_gC4I). W szczeg&oacute;lności, stylizowany, kresk&oacute;wkowy wygląd pierwszej części wideo, w kt&oacute;rej sylwetka postaci przechodzi przez portal i pojawia się po drugiej stronie. To jest oryginalne wideo:
 
-<div class="video-wrapper"> <iframe src="http://www.youtube.com/embed/V5paXrfkYmI" width="720" height="405" data-height="405" frameborder="0"> </iframe></div>
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3&vq=hd720" frameborder="0" allowfullscreen></iframe>
+</div><br>
 
 Wideo rzuciło mnie na kolana, kiedy zostało opublikowane. Portal (kt&oacute;ry został stworzony przez [Narbacular Drop](http://en.wikipedia.org/wiki/Narbacular_Drop)) wprowadza zabawny zwrot w gatunku gier platformowych 3D.
 
