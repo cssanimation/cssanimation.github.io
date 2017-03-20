@@ -1,21 +1,22 @@
 ---
 layout: post
 type: tutorial
-title: Design and build a Hero Header
+title: Build an awesome Hero Header
 bodyClass: shorter
 description: All about planning and building your hero header
 categories: [updates, courses]
-imageURL: /images/courses/levelup/cover2.png
+imageURL: /images/posts/hero-header/home.png
+home_image: /images/posts/hero-header/home.png
 tweet_text: Everything you need to build an awesome hero header
 ---
 
-When people arrive on your homepage you have mere seconds to impress them, explain what you're about and convince them to stick around. This is an incredibly important moment for your website, but most sites fail to clearly communicate and connect with their visitors.
+When people arrive on your homepage you have mere seconds to impress them, explain what you're about and convince them to stick around. This is an important moment yet most sites miss the opportunity to impress and connect with their visitors.
 
 Let's make sure your hero header stands head and shoulders above the rest.
 
 ## What to include in your Hero Header
 
-There are all sorts of ways you can tackle your hero header. You might want it to take over the entire page, maybe it needs to showcase new products, or explain in one short sentence what your brand does. Either way there are some ingredients most hero headers share. These include:
+There are all sorts of ways you can tackle your hero header. You might want it to take over the entire page, maybe it needs to showcase new products, or explain in one short sentence what your brand does. There are some ingredients most hero headers share. These might include:
 
 * An eye catching headline
 * A call to action
@@ -27,17 +28,17 @@ There are all sorts of ways you can tackle your hero header. You might want it t
 
 Let's go through each of these and see how each can be built into our hero header section.
 
-## The right headline
+## The headline
 
 We start with the headline. This is likely the first thing your visitors will read. It needs to be easy to understand while also conveying the right message. In this example, Mailchimp uses the space to explain that their service helps you "Send better email" and "Sell more stuff". This is short and easy to read but also lets me know just what it is Mailchimp does.
 
-![Mailchimp header](https://cssanimation.rocks/images/posts/hero-header/mailchimp.png)
+[![Mailchimp header](https://cssanimation.rocks/images/posts/hero-header/mailchimp.png)](http://mailchimp.com)
 
 ### Getting the style right
 
-When making your text easy to understand, it also needs to be clear. Again in the previous example the dark text is set against a plain white background. There's no way to miss that headline! A large, bold font helps too. In this example from Tito we see the text set against a background image. The image is faded a little to let the text stand out better.
+When making your text easy to understand, it also needs to be clear. Again in the previous example the dark text is set against a plain white background. There's no way to miss that headline! A large, bold font helps too. In this example from [Tito](http://tito.io) we see the text set against a background image. The image is faded a little to let the text stand out better.
 
-![Tito header](https://cssanimation.rocks/images/posts/hero-header/tito.png)
+[![Tito header](https://cssanimation.rocks/images/posts/hero-header/tito.png)](http://tito.io)
 
 If you're using background images it's usually a good idea to go for large white text as it tends to be easier to read than dark text. Here are some [handy tips on helping your text stand out on an image](https://designmodo.com/design-type-photo/).
 
@@ -47,11 +48,11 @@ Once you've established your initial message through the big, eye catching headl
 
 When designing your call to action you need to make sure it stands out visually. This could mean using a brand colour as the background, making it large or placing it in a prominent position on the screen. Front and center just under the headline is a popular choice, but it doesn't have to be. A good highlight colour can make a call to action stand out even when it's up in the top right corner, like on this example from [Each&Other](http://www.eachandother.com/future-of-banking.html).
 
-![Each&Other header](https://cssanimation.rocks/images/posts/hero-header/eachother.png)
+[![Each&Other header](https://cssanimation.rocks/images/posts/hero-header/eachother.png)](http://www.eachandother.com/future-of-banking.html)
 
 Once you have it in place, the next thing to consider is your choice of words. Think in terms of *actions*. What would you like your customer to do? Phrases such as "Get started", "Download now" or "Sign up" are all very action oriented and help your visitor understand what the button means. Try to avoid terms like "Submit" or "Go". A vague phrase here can slow people down, and what you really want is for your happy visitor to confidently press the button.
 
-## The right background image
+## The background image
 
 We have a strong message and an action. You might want to consider the wider page next. Many hero headers make use of large background images. These can really bring life to your design and help people connect with the message or feeling behind the design.
 
@@ -65,7 +66,7 @@ Photos should be saved as JPEG files and compressed. Depending on the type of ph
 
 Don't worry about the name, it'll work on `.jpg` files too!
 
-### Covering the viewport
+### Filling the entire viewport
 
 Screens can be all sorts of sizes. Often we want our hero header to fit itself to the screen but it's hard to know whether people will have a wide short browser window, or a narrow tall window. We can use two tricks to get our hero header to fill the available space. Setting the background size to `cover` and the height of the hero header to `100vh`.
 
@@ -100,13 +101,13 @@ Here we add a `before` pseudo-element that sits behind our content but in front 
 
 The main idea is to make sure your foreground text stands out against the photo, like in this example from [Bulmers](http://bulmers.com).
 
-![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)
+[![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)]((http://bulmers.com)
 
 ## Background video
 
 Sometimes having a big image isn't enough, and you need something more. A popular option is to embed a video in the background of the page and have it play automatically on load. In this example from [Storyful](https://storyful.com) we have a full-screen background image showing the way the company works. 
 
-![Storyful header](https://cssanimation.rocks/images/posts/hero-header/storyful.png)
+[![Storyful header](https://cssanimation.rocks/images/posts/hero-header/storyful.png)](https://storyful.com)
 
 Videos can look great but you need to make sure they're optimised for the web. This means keeping them short, usually 10 to 20 seconds at most. They should be scaled down to a relatively low resolution and compressed so that the file size is close to 10MB or so.
 
@@ -114,17 +115,15 @@ Videos can be hosted on your own server but it's usually better to use a service
 
 If you're looking for great free videos to get started, I've found [Coverr](https://coverr.co) a great starting point. It's like Unsplash but for video.
 
-You can even mix in a bit of a background image with transparency to act as a mask in front of the video, as seen on this lovely site from [Adapt](adaptcentre.ie).
+You can even mix in a bit of a background image with transparency to act as a mask in front of the video, as seen on this lovely site from [Adapt](http://adaptcentre.ie).
 
-![Adapt header](https://cssanimation.rocks/images/posts/hero-header/adapt.png)
+[![Adapt header](https://cssanimation.rocks/images/posts/hero-header/adapt.png)](http://adaptcentre.ie)
 
 ## Explainer video
 
 Setting the scene on your hero header with a background image or video might not be enough. We can still use video though, but put it front and center to tell the story of our brand. In this example from [HomeHero](http://homehero.info) we see a big video that automatically plays on load.
 
-![HomeHero header](https://cssanimation.rocks/images/posts/hero-header/homehero.png)
-
-### Using the Youtube API
+[![HomeHero header](https://cssanimation.rocks/images/posts/hero-header/homehero.png)](http://homehero.info)
 
 We can embed videos like this from Youtube (or Vimeo if you prefer). If using Youtube, the simplest way is to use their `iframe` embed option. You can add some custom settings to make it look tidier. Here's an example:
 
@@ -134,11 +133,11 @@ In this I've set the `modestbranding` to "1", the `vq` to "hd720" and `rel` to "
 
 ## Carousels
 
-This can sometimes be a tricky one. In the earlier days of the web we had this idea that there was a "fold" (a newspaper term) at the bottom of the hero header beyond which all content and hope was lost. This is not necessarily true but the idea persists. Before considering whether a carousel is the right idea, [read up on how to do it right](https://www.nngroup.com/articles/designing-effective-carousels/). You might not need a carousel at all.
+This can sometimes be a tricky one. In the earlier days of the web we had this idea that there was a "fold" (a newspaper term) at the bottom of the screen beyond which all content and hope was lost. This is not necessarily true but the idea persists. Before considering whether a carousel is the right idea, [read up on how to do it right](https://www.nngroup.com/articles/designing-effective-carousels/). You might not need a carousel at all.
 
 Still, rules are made to be broken. [Apple.com](http://www.apple.com) uses a carousel on their home page. They do so in a way that uses a small number of different screens, which change slowly. Their hero carousel also stops animating once you interact with it and has navigation at the bottom.
 
-![Apple header](https://cssanimation.rocks/images/posts/hero-header/apple.png)
+[![Apple header](https://cssanimation.rocks/images/posts/hero-header/apple.png)](http://www.apple.com)
 
 A carousel can be useful for your hero header but be cautious. You don't want to confuse your visitors with too many messages.
 
@@ -150,13 +149,13 @@ As we can see in the examples pictured above, it's common to place your logo in 
 
 Make sure the logo and navigation links are easy to read. If using a large background image you might want to place a bar along the top to help the logo and links stand out.
 
-## "There is no fold"
+## Thinking beyond the "fold"
 
 While it can be impressive to take over the screen with your hero header, it's also ok to let people know there's more to see below. People are pretty good at scrolling on the web and on mobile it's even easier than clicking. You can make use of this by having the content that follows your header be visible, encouraging people to scroll.
 
 Still, studies do show that [the information that people see first is more important than the rest of the page](https://www.nngroup.com/articles/page-fold-manifesto/).
 
-"What is visible on the page without requiring any action is what encourages us to scroll."
+*"What is visible on the page without requiring any action is what encourages us to scroll."*
 
 In short, make the most of what's visible when the page first appears, but also keep in mind that people do scroll. Even if they find that content less important.
 
@@ -168,6 +167,16 @@ The approaches laid out here are hopefully useful but don't be afraid to try you
 
 Still the header works in my opinion. It clearly shows the problem being solved, it has a highlighted call to action on the top right and the layout encourages people to scroll.
 
-## Your ideas!
+## Add animation
 
-Have you seen any great examples of hero headers or used them in ways not described here? [Get in touch](mailto:donovan@cssanimation.rocks) and let me know. 
+With an awesome hero header in place, something is missing. It's just loads and appears suddenly. The next step is to add in animation! Let's bring your hero header to life with animation.
+
+Now that you're ready, head on over to my [Level up your CSS animation skills](http://courses.cssanimation.rocks/p/level-up).
+
+In the first module you'll learn how to put together a series of animations that work together to deliver a polished, impressive hero header. You'll also learn how to create stunning hover interactions, trigger animations on scroll, build an animated carousel and more.
+
+[Enrol now](http://courses.cssanimation.rocks/p/level-up) and get lifetime access to the exclusive CSS Animation Slack group and get all the support you need as you learn.
+
+
+
+
