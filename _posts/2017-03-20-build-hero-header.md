@@ -99,9 +99,9 @@ Another approach might be to use the power of CSS. We can make use of CSS to app
 
 Here we add a `before` pseudo-element that sits behind our content but in front of the background image. In this case it's a gradient from grey to darker grey. You could substitute a solid colour or a different gradient, or even a background image. Alternately you could add a background colour or image to your heading.
 
-The main idea is to make sure your foreground text stands out against the photo, like in this example from [Bulmers](http://bulmers.com).
+The main idea is to make sure your foreground text stands out against the photo, like in this example from [Bulmers](http://bulmers.ie).
 
-[![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)](http://bulmers.com)
+[![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)](http://bulmers.ie)
 
 ## Background video
 
