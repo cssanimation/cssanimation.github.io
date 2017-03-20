@@ -101,7 +101,7 @@ Here we add a `before` pseudo-element that sits behind our content but in front 
 
 The main idea is to make sure your foreground text stands out against the photo, like in this example from [Bulmers](http://bulmers.com).
 
-[![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)]((http://bulmers.com)
+[![Bulmers header](https://cssanimation.rocks/images/posts/hero-header/bulmers.png)](http://bulmers.com)
 
 ## Background video
 
