@@ -88,7 +88,7 @@ We have our lovely background image but now we find it's hard to see our headlin
 Another approach might be to use the power of CSS. We can make use of CSS to apply a background gradient on top of our hero header's photo. One way to do this might be to use a pseudo-element:
 
     .hero-header-container:before {
-      background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.8))
+      background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.8));
       content: "";
       position: absolute;
         top: 0;
