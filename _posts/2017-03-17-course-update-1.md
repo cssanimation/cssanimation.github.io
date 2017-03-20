@@ -16,7 +16,7 @@ Enjoy professionally produced videos and learn how to bring your static web site
 Here's a taste of what to expect:
 
 <div class="videoWrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3&vq=hd720" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/0jhDAVkdsAI?modestbranding=1&cc_load_policy=0&iv_load_policy=3&vq=hd720&rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 Module #1 includes:
