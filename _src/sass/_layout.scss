@@ -44,6 +44,13 @@ nav {
   background: $brand-color !important;
   border-color: $brand-color !important;
   color: #fff !important;
+  a {
+    color: #fff !important;
+  }
+}
+
+input.button {
+  margin-top: -1px;
 }
 
 .absolute-nav {
@@ -180,6 +187,52 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Download special section */
+.download-container {
+  background: #f0f0f0;
+  border-radius: .5em;
+  padding: 1em 2em .5em;
+
+  h2 {
+    padding-top: 0;
+    margin-top: 0 !important;
+  }
+}
+
+.download-signup-form {
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  transform: translateY(-.5em);
+  transition: all 1s cubic-bezier(0,1.83,.66,.86);
+
+  &.show {
+    height: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  #mc_embed_signup_scroll {
+    display: flex;
+
+    input[type=submit] {
+      margin: 1px 0 0 8px;
+    }
+  }
+}
+
+.download-signup-form-button {
+  transition: all .4s ease-out;
+  height: 3em;
+  overflow: none;
+
+  &.hide {
+    opacity: 1;
+    height: 0;
+    display: none;
+  }
 }
 
 .clearfix:after {

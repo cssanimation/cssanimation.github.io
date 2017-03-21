@@ -7,6 +7,7 @@ description: All about planning and building your hero header
 categories: [updates, courses]
 imageURL: /images/posts/hero-header/home.png
 home_image: /images/posts/hero-header/home.png
+customJS: download-form.js
 tweet_text: Everything you need to build an awesome hero header
 ---
 
@@ -27,6 +28,30 @@ There are all sorts of ways you can tackle your hero header. You might want it t
 * Branding and navigation
 
 Let's go through each of these and see how each can be built into our hero header section.
+
+<!--
+<section class="download-container">
+  <div class="download-info">
+    <h2>Get your own free Hero Header cheatsheet</h2>
+    <p>A handy A4-sized guide to all the essential elements in your hero header.</p>
+    <div class="download-signup-form-button">
+      <p class="button"><a href="#" class="download-show-form">I want this</a></p>
+    </div>
+  </div>
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+  <div class="download-signup-form">
+    <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=98f24d8edc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="button">
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="b_07ab661c8a6f6b3ec4c98c791_98f24d8edc" tabindex="-1" value="">
+          </div>
+        </div>
+    </form>
+  </div>
+</section>
+-->
 
 ## The headline
 
