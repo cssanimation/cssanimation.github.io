@@ -5,8 +5,8 @@ title: Pseudo-elementen animeren
 description: Met pseudo-elementen krijg je twee extra HTML elementen bij ieder element! Hieronder zie je hoe je deze kan animeren als je er over hovert. Ga hier wel doordacht mee om.
 categories: [animation, tips, animations, pseudo-elements]
 customCSS: shiny_button.css
-imageURL: /assets/images/posts/sheen/sheen.gif
-home_image: /assets/images/posts/sheen/home.png
+imageURL: /images/posts/sheen/sheen.gif
+home_image: /images/posts/sheen/home.png
 tweet_text: Glanzende knoppen met CSS
 translator: Denis Valcke
 translator_link: https://twitter.com/DenisValcke

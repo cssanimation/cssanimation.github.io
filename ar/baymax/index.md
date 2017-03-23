@@ -6,8 +6,8 @@ title: بايماكس ب CSS
 description: نسخة محركة ذات عنصر واحد لوجه شخصية بايماكس (Baymax) من بيج هيرو 6 (Big Hero 6).
 categories: [animation, tips, animations, transitions, pseudo-elements]
 customCSS: baymax.css
-imageURL: /assets/images/posts/baymax/baymax.gif
-home_image: /assets/images/posts/baymax/home.png
+imageURL: /images/posts/baymax/baymax.gif
+home_image: /images/posts/baymax/home.png
 tweet_text: تحريك وجه بايماكس بواسطة CSS
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-18-baymax.md
 translator: Mohammed Alozaibi
@@ -174,5 +174,5 @@ translator_link: https://twitter.com/malozaibi_coder
 
 هنا نسخة gif متحركة يمكنك بسهولة مشاركتها على الإنترنت.
 
-[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
+[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/images/posts/baymax/baymax.gif)
 

@@ -5,9 +5,9 @@ title: Animaci&oacute;n del bot&oacute;n&nbsp;&quot;favorito&quot; de Twitter
 description: Descubre con funciona la nueva animaci&oacute;n en CSS del bot&oacute;n &quot;favorito&quot; de Twitter con la funci&oacute;n de tiempo steps().
 categories: [animation, tips, transition, steps]
 customCSS: twitter_fave.css
-imageURL: /assets/images/posts/steps/twitter_fave_rectangle.png
+imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
-home_image: /assets/images/posts/steps/home.png
+home_image: /images/posts/steps/home.png
 translator: M Rubare
 translator_link: /
 ---
@@ -46,7 +46,7 @@ Para empezar escribimos el HTML:
 
 Con esto en su sitio podemos a&ntilde;adir un poco de estilo y posicionar la imagen de fondo:
 
-![Image sprite for the animation](/assets/images/posts/steps/twitter_fave.png)
+![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
     .fave {
       width: 70px;

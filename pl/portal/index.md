@@ -3,8 +3,8 @@ layout: post
 title: Portal CSS
 description: Odtwarzanie klasycznego wideo instruktażowego Portalu za pomocą HTML i CSS
 categories: [animation, experiment, css]
-imageURL: /assets/images/posts/portal/home.png
-home_image: /assets/images/posts/portal/home.png
+imageURL: /images/posts/portal/home.png
+home_image: /images/posts/portal/home.png
 tweet_text: Odtw&oacute;rz niesamowitą animację Portalu za pomocą czystego kodu CSS
 custom_header: posts/portal.html
 demo_url: https://cssanimation.rocks/demo/portal/

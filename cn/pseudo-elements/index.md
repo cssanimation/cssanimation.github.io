@@ -5,8 +5,8 @@ title: 伪元素(pseudo-elements)动画
 description: 伪元素提供给你两个额外的 HTML 元素!这里如何来处理悬停动画，聪明的使用它们!
 categories: [animation, tips, animations, pseudo-elements]
 customCSS: shiny_button.css
-imageURL: /assets/images/posts/sheen/sheen.gif
-home_image: /assets/images/posts/sheen/home.png
+imageURL: /images/posts/sheen/sheen.gif
+home_image: /images/posts/sheen/home.png
 tweet_text: 用 CSS 闪亮按钮
 translator: Rrylee
 translator_link: https://getnative.me/user/4008

@@ -5,8 +5,8 @@ title: Baymax w CSS
 description: Jednoelementowa animowana wersja twarzy bohatera Baymax z filmu Big Hero 6.
 categories: [animation, tips, animations, transitions, pseudo-elements]
 customCSS: baymax.css
-imageURL: /assets/images/posts/baymax/baymax.gif
-home_image: /assets/images/posts/baymax/home.png
+imageURL: /images/posts/baymax/baymax.gif
+home_image: /images/posts/baymax/home.png
 tweet_text: Animowanie twarzy Baymaxa w CSS
 translator: Mateusz Kurlit
 translator_link: http://transgent.co.nf
@@ -158,4 +158,4 @@ W kodzie pominąłem wszystkie typowe prefiksy `-webkit` i `-moz`. Właściwośc
 
 Poniżej znajduje się wersja gif, kt&oacute;rą możesz z łatwością udostępnić w internecie.
 
-[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/assets/images/posts/baymax/baymax.gif)
+[<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/images/posts/baymax/baymax.gif)

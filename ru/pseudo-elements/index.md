@@ -5,8 +5,8 @@ title: Анимация&nbsp;псевдоэлементов
 description: Псевдоэлементы дают два дополнительных&nbsp;HTML элемента бесплатно!
 categories: [animation, tips, animations, pseudo-elements]
 customCSS: shiny_button.css
-imageURL: /assets/images/posts/sheen/sheen.gif
-home_image: /assets/images/posts/sheen/home.png
+imageURL: /images/posts/sheen/sheen.gif
+home_image: /images/posts/sheen/home.png
 tweet_text: Блестящие кнопки с помощью CSS
 translator: Panda
 translator_link: /

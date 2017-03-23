@@ -6,8 +6,8 @@ categories: [animations, transitions, javascript]
 customCSS: clocks.css
 extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
 customJS: clocks.js
-imageURL: /assets/images/posts/clocks/clock.gif
-home_image: /assets/images/posts/clocks/home.png
+imageURL: /images/posts/clocks/clock.gif
+home_image: /images/posts/clocks/home.png
 tweet_text: Animowanie zegara w CSS
 custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
@@ -45,7 +45,7 @@ Rozpoczniemy od podstawowego wyglądu zegara z okrągłą tarczą, prostymi wska
 
     .clock {
       border-radius: 50%;
-      background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
+      background: #fff url(/images/posts/clocks/ios_clock.svg) no-repeat center;
       background-size: 88%;
       height: 20em;
       padding-bottom: 31%;
@@ -66,7 +66,7 @@ Rozpoczniemy od podstawowego wyglądu zegara z okrągłą tarczą, prostymi wska
       z-index: 10;
     }
 
-Możesz [pobrać tło SVG tutaj](/assets/images/posts/clocks/ios_clock.svg). Dodałem r&oacute;wnież pseudo-element, aby dodać czarne koło na środek. Wskaz&oacute;wki zegara mogą być umieszczone pod tym pseudo-elementem w razie potrzeby.
+Możesz [pobrać tło SVG tutaj](/images/posts/clocks/ios_clock.svg). Dodałem r&oacute;wnież pseudo-element, aby dodać czarne koło na środek. Wskaz&oacute;wki zegara mogą być umieszczone pod tym pseudo-elementem w razie potrzeby.
 
 Powinnyśmy teraz mieć coś takiego:
 

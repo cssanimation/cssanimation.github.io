@@ -7,8 +7,8 @@ description: Some tricks to help announce list items through animation.
 categories: [animation, tips, animations, transitions]
 customCSS: list_items.css
 customJS: list_items.js
-imageURL: /assets/images/posts/list_items/list_items.png
-home_image: /assets/images/posts/list_items/home.png
+imageURL: /images/posts/list_items/list_items.png
+home_image: /images/posts/list_items/home.png
 tweet_text: Animowanie Element&oacute;w Listy
 translator: Mateusz Kurlit
 translator_link: http://transgent.co.nf

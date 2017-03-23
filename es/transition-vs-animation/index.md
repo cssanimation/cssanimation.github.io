@@ -5,8 +5,8 @@ description: "Una descripci&oacute;n de las diferencias entre animaciones y tran
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
 extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
-imageURL: /assets/images/posts/transitions-animations/transitions-animations.gif
-home_image: /assets/images/posts/transitions-animations/transitions-animations.png
+imageURL: /images/posts/transitions-animations/transitions-animations.gif
+home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: "&iquest;Cuando deber&iacute;as de utilizar una transici&oacute;n y cuando deber&iacute;as de utilizar una animaci&oacute;n?"
 custom_header: posts/transitions-animations.html
 translators:

@@ -5,9 +5,9 @@ title: Анимация &quot;лайка&quot; в Twitter
 description: Узнайте как работает &quot;лайк&quot; в Twitter   используя CSS steps() (временную ступенчатую функцию).
 categories: [animation, tips, transition, steps]
 customCSS: twitter_fave.css
-imageURL: /assets/images/posts/steps/twitter_fave_rectangle.png
+imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
-home_image: /assets/images/posts/steps/home.png
+home_image: /images/posts/steps/home.png
 translator: Panda
 translator_link: /
 ---
@@ -26,17 +26,17 @@ Twitter недавно обновил дизайн их &quot;fave&quot; (так
 
 В данном примере начнем с создания серии изображений, которые составят анимацию. В этом случае мы используем лишь часть из серии картинок для анимации.
 
-<img src="/assets/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
+<img src="/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
 
 Для того, чтобы оживить эти кадры, нам нужно разместить их в одну линию. [В этом файле[ они стоят в один ряд, а это означает, что мы можем перейти от первого кадра до последнего путем позиционирования фона:
 
-<img src="/assets/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
+<img src="/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
 
 ### Steps() (пошаговая временная функция)
 
 Большинство временных функций, таких как ease или  cubic-bezier, делает переход анимации плавно между начальным и конечным состояниями. В `steps `совсем другая. Вместо плавного перехода, она делит переход на несколько кадров (столько сколько задано), и резко перемещается между ними.
 
-<img src="/assets/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
+<img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
 
 Для начала составим HTML:
  
@@ -48,7 +48,7 @@ Twitter недавно обновил дизайн их &quot;fave&quot; (так
 
 Добавляем немного стилей и позиционирования фоновому изображению:
 
-![Image sprite for the animation](/assets/images/posts/steps/twitter_fave.png)
+![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
  
 
     .fave {
