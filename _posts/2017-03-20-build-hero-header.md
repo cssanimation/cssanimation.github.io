@@ -193,7 +193,7 @@ The approaches laid out here are hopefully useful but don't be afraid to try you
 
 Still the header works in my opinion. It clearly shows the problem being solved, it has a highlighted call to action on the top right and the layout encourages people to scroll.
 
-## Add animation
+## Animation
 
 With an awesome hero header in place, something is missing. It's just loads and appears suddenly. The next step is to add in animation! Next we'll make your [hero header animated](https://cssanimation.rocks/animating-hero-header/).
 
