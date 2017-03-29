@@ -26,6 +26,7 @@ There are all sorts of ways you can tackle your hero header. You might want it t
 * A carousel showcasing featured content
 * Company branding - logo or slogan
 * Branding and navigation
+* [Animation](https://cssanimation.rocks/animating-hero-header/)
 
 Let's go through each of these and see how each can be built into our hero header section.
 
