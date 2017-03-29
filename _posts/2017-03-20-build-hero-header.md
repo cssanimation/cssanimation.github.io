@@ -194,13 +194,8 @@ Still the header works in my opinion. It clearly shows the problem being solved,
 
 ## Add animation
 
-With an awesome hero header in place, something is missing. It's just loads and appears suddenly. The next step is to add in animation! Let's bring your hero header to life with animation.
+With an awesome hero header in place, something is missing. It's just loads and appears suddenly. The next step is to add in animation! Next we'll make your [hero header animated](https://cssanimation.rocks/animating-hero-header/).
 
-Now that you're ready, you're ready to try my new course, [Level up your CSS animation skills](http://courses.cssanimation.rocks/p/level-up).
-
-In the first module you'll learn how to put together a series of animations that work together to deliver a polished, impressive hero header. You'll also learn how to create stunning hover interactions, trigger animations on scroll, build an animated carousel and more.
-
-[Enrol now](http://courses.cssanimation.rocks/p/level-up) and get lifetime access to the exclusive CSS Animation Slack group and get all the support you need as you learn.
 
 
 
