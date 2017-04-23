@@ -264,7 +264,7 @@ This will add a delay to each of the list items. Since we're using the "*" selec
 
 Here's the finished result.
 
-<p data-height="500" data-theme-id="12592" data-slug-hash="qmNgXW" data-default-tab="css,result" data-user="donovanh" data-embed-version="2" data-pen-title="Planet hover effect part 3: with transition" class="codepen">See the Pen <a href="https://codepen.io/donovanh/pen/qmNgXW/">Planet hover effect part 3: with transition</a> by Donovan Hutchinson (<a href="http://codepen.io/donovanh">@donovanh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="12592" data-slug-hash="qmNgXW" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Planet hover effect part 3: with transition" class="codepen">See the Pen <a href="https://codepen.io/donovanh/pen/qmNgXW/">Planet hover effect part 3: with transition</a> by Donovan Hutchinson (<a href="http://codepen.io/donovanh">@donovanh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 So there we have it! A seemingly complicated animation, I mean *transition* carried out with just one CSS rule.
 
