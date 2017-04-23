@@ -7,14 +7,14 @@ demo_url: https://codepen.io/donovanh/full/qmNgXW/
 home_image: /images/posts/space/home.jpg
 imageURL: /images/posts/space/home.jpg
 layout: post
-title: Space transitions
+title: Transitions in space
 tweet_text: Achieve complex animation with just a few transitions
 type: tutorial
 ---
 
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-Sometimes a few simple transitions can make a huge difference. In this article we'll learn how just one `transition` can bring your content to life, as well as look at how can plan and build our hover effects to perform smoothly and look great.
+A few simple transitions can make a huge difference. In this article we'll learn how we can use transitions to bring our content to life, as well as plan and build our hover effects to perform smoothly and look great.
 
 ## Transitions vs animations
 
