@@ -84,7 +84,7 @@ We set up the dimensions for the moon and give it an animation using the `spin` 
     .moon {
       animation: spin 20s linear infinite;
       background: none;
-      height: 50%;
+      height: 50px;
       pointer-events: none;
       transform-origin: 25px;
       width: 50px;
