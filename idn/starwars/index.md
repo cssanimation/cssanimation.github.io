@@ -13,7 +13,8 @@ translator_link: https://getnative.me/user/8827
 ---
 
 Keluarkan popcorn! Hari ini kami sedang membangun judul film Star Wars dari &quot;The Force Awakens&quot; trailer.
-<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
+
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen"></p>
 
 Contoh ini menggabungkan animasi CSS dengan beberapa properti CSS lainnya yang mungkin membantu Anda, khususnya transformasi`&nbsp;scale`,&nbsp;`translate`&nbsp;and&nbsp;`rotate`.
 
