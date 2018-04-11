@@ -11,6 +11,9 @@
     - language: Polski (Polish)
       postTitle: Gwiezdne Wojny
       iso: pl
+    - language: Bahasa Indonesia (Indonesian)
+      postTitle: Star Wars
+      iso: idn
 - url: /stereoscopic/
   translations:
     - language: Polski (Polish)
@@ -176,8 +179,7 @@
       postTitle: Twitterowa animacja &quot;dodaj do ulubionych&quot;
     - language: Ру́сский (Russian)
       iso: ru
-      postTitle: Анимация &quot;лайка&quot; в Twitter 
+      postTitle: Анимация &quot;лайка&quot; в Twitter
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Twitter'daki &quot;fav&quot; animasyonu
-

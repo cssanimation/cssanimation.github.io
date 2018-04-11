@@ -34,3 +34,6 @@
 - name: "Türkçe"
   english_name: "Turkish"
   iso: tr
+- name: "Bahasa Indonesia"
+  english_name: "Indonesian"
+  iso: idn
