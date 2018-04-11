@@ -15,10 +15,6 @@ translator_link: https://getnative.me/user/8827
 Keluarkan popcorn! Hari ini kami sedang membangun judul film Star Wars dari &quot;The Force Awakens&quot; trailer.
 <p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
 
-<div class="callout">
-Ini adalah kutipan dari kursus, [CSS Animation 101.](/courses/animation-101/) Untuk waktu yang terbatas Anda dapat *membayar apa yang Anda inginkan.* [Daftar sekarang!](/courses/animation-101/)
-</div>
-
 Contoh ini menggabungkan animasi CSS dengan beberapa properti CSS lainnya yang mungkin membantu Anda, khususnya transformasi`&nbsp;scale`,&nbsp;`translate`&nbsp;and&nbsp;`rotate`.
 
 ## Transformasi
@@ -163,7 +159,3 @@ Menyusunnya bersama kita memiliki&nbsp;[finished demo](http://codepen.io/donovan
 <p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
 
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<div class="callout">
-Ini adalah kutipan dari kursus, [CSS Animation 101](/courses/animation-101/). Untuk waktu yang terbatas Anda dapat *membayar apa yang Anda inginkan*. [Daftar sekarang!](/courses/animation-101/)
-</div>
