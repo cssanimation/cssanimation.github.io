@@ -133,6 +133,9 @@
       postTitle: Hareketli Liste Elemanlari
 - url: /pseudo-elements/
   translations:
+    - language: "العربية (Arabic)"
+      iso: ar
+      postTitle: "عناصر زائفة متحركة"
     - language: 中文 (Chinese)
       iso: cn
       postTitle: "伪元素(pseudo-elements)动画"
