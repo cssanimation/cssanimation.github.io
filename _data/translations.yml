@@ -13,7 +13,7 @@
       iso: pl
     - language: Bahasa Indonesia (Indonesian)
       postTitle: Star Wars
-      iso: idn
+      iso: id
 - url: /stereoscopic/
   translations:
     - language: Polski (Polish)
@@ -50,6 +50,9 @@
       postTitle: WWDC 2015
 - url: /macplus/
   translations:
+    - language: Bahasa Indonesia (Indonesian)
+      postTitle: Mac ditambah CSS
+      iso: id
     - language: Polski (Polish)
       iso: pl
       postTitle: Mac Plus CSS

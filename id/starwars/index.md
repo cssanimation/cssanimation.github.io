@@ -154,9 +154,10 @@ Kita dapat menerapkan kumpulan bingkai utama ini ke setiap rentang seperti:
 }
 ```
 
-Hasilnya adalah setiap kontainer `span `yang menahan setiap huruf akan memudar dan berputar perlahan ke tempatnya, sebelum memudar pada akhir animasi.
+Hasilnya adalah setiap kontainer `span`yang menahan setiap huruf akan memudar dan berputar perlahan ke tempatnya, sebelum memudar pada akhir animasi.
 
 Menyusunnya bersama kita memiliki&nbsp;[finished demo](http://codepen.io/donovanh/pen/pJzwEw?editors=110).
+
 <p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
 
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
