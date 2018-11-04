@@ -1,5 +1,8 @@
 - url: /why-animate/
   translations:
+    - language: Bahasa Indonesia (Indonesian)
+      postTitle: Kenapa dengan Animasi?
+      iso: id
     - language: Polski (Polish)
       postTitle: Dlaczego animować?
       iso: pl
