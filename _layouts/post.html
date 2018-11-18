@@ -27,6 +27,15 @@ fbq('trackCustom', 'Article opened');
   <section class="row">
     <article class="post-content nine columns {% if page.rtl %}rtl{% endif %}">
       <h1 class="post-title">{{ page.title }}</h1>
+      <section class="quote-container">
+        <section class="rocky">
+          <img src="/images/rocky.svg">
+        </section>
+        <blockquote>
+          <p>Hey! My video course is now <strong>just $10</strong>! Save $130 and <a href="http://courses.cssanimation.rocks/p/level-up/">learn CSS animation skills today</a>!</p>
+          <p class="button"><a href="http://courses.cssanimation.rocks/p/level-up">Get the full course for just $10</a></p>
+        </blockquote>
+      </section>
       {{ content }}
 
       <section class="post-footer">
@@ -35,7 +44,11 @@ fbq('trackCustom', 'Article opened');
             <img src="/images/rocky.svg">
           </section>
           <blockquote>
-            <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text={{page.tweet_text | escape}}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | cgi_escape}}&via=cssanimation" target="_blank">share it</a>!</p>
+            <p>Don't forget! My video course is now <strong>just $10</strong>! Save $130 and <a href="http://courses.cssanimation.rocks/p/level-up/">learn CSS animation skills today</a>!</p>
+            <p>
+              You'll learn how to make an awesome animated hero header, animated link and button actions, animate on scroll and much more.
+              </p>
+            <p class="button"><a href="http://courses.cssanimation.rocks/p/level-up">Get the full course for just $10</a></p>
           </blockquote>
         </section>
         <h3>Want to learn more about CSS animation?</h3>
