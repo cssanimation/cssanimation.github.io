@@ -32,6 +32,8 @@ Animation using CSS can be overwhelming to learn all at once.
 
 This course breaks up lessons into 20 emails. Each one should take around 10 minutes to read and a few minutes to follow through the homework. By mixing theory with practical lessons, you'll learn how, and why to use animation on your web pages.
 
+**Note:** You can now get this course as a <a href="http://eepurl.com/dPELWj">FREE book here</a>.
+
 By the end of four weeks you will have a good understanding of CSS transitions and animations, and how to apply them to your work.
 
 <section class="single-quote">
@@ -106,6 +108,8 @@ This course is for people who build for the web and want to add animation to the
     </blockquote>
   </div>
 </section>
+
+**Note:** You can now get this course as a <a href="http://eepurl.com/dPELWj">FREE book here</a>.
 
 <section class="signup-box wow bounceIn">
     <h3 style="margin-top:0 !important">Price: Pay What You Want!</h3>
