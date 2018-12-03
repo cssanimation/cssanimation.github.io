@@ -20,7 +20,7 @@ title: Courses
     </div>
     <div class="course-details four columns">
       <h2><a href="http://courses.cssanimation.rocks/p/level-up">Level Up your CSS Animation Skills</a></h2>
-      <p>A practical video course applying the theory of CSS animation to a real project. Enrol now for <strong>just $10!</strong></p>
+      <p>A practical video course applying the theory of CSS animation to a real project. Enrol now for <strong>just $49!</strong></p>
       <p class="button"><a href="http://courses.cssanimation.rocks/p/level-up">Level me up</a></p>
     </div>
   </article>
