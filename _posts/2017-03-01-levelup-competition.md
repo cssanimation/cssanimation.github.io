@@ -1,7 +1,7 @@
 ---
 layout: post
 type: update
-title: New course & competition
+title: New course &amp; competition
 bodyClass: shorter
 description: Announcing the Level Up course!
 categories: [updates, courses]
