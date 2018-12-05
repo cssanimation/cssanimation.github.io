@@ -6,7 +6,7 @@ categories: [animations, transitions, javascript]
 customCSS: clocks.css
 extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
 customJS: clocks.js
-imageURL: /images/posts/clocks/clock.gif
+imageURL: /images/posts/clocks/twelve.gif
 home_image: /images/posts/clocks/home.png
 tweet_text: Een klok animeren met CSS
 custom_header: posts/clocks.html
