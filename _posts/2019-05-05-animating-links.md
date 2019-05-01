@@ -18,13 +18,11 @@ The humble text link, or anchor, is a mainstay of the World Wide Web. For a long
 
 In this tutorial we will learn how we style and animate the underlines on our links, we will combine multiple transitions, group animation keyframes together, and investigate some of the upsides and downsides of using animations instead of transitions.
 
-TODO: update this embed
-
 <div class="videoWrapper">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1JRqQTRLSQc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CP4VzMN5EW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div><br>
 
-You'll need some files to play along. Download <a href="https://cssanimation.rocks/levelup/public/02/02.zip">this zip file</a>, and open folder `00-start` in the `02` folder. A completed version of this lesson's code is in the folder `01-anchors`.
+You'll need some files to follow this tutorial. Download <a href="https://cssanimation.rocks/levelup/public/02/02.zip">this zip file</a>, and open folder `00-start` in the `02` folder. A completed version of this lesson's code is in the folder `01-anchors`.
 
 You'll notice there are loads more examples there too - you'll find [all the lessons on this course](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) if you'd like to learn more.
 

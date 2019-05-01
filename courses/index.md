@@ -21,7 +21,7 @@ title: Learn CSS Animation
   </article>
   <article class="course">
     <div class="course-image two columns">
-      <a href="http://courses.cssanimation.rocks/p/level-up"><img src="/images/courses/levelup/cover2.png" alt="Level Up your CSS Animation Skills"></a>
+      <a href="http://courses.cssanimation.rocks/p/level-up"><img src="/images/courses/levelup/cover.png" alt="Level Up your CSS Animation Skills"></a>
     </div>
     <div class="course-details four columns">
       <h2><a href="https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK">Level Up your CSS Animation Skills</a></h2>
