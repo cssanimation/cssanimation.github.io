@@ -12,8 +12,6 @@ tweet_text: Explore how we can make our anchor links stand out with transitions 
 
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-# Animating links
-
 The humble text link, or anchor, is a mainstay of the World Wide Web. For a long time links were always blue and underlined, until CSS came along and gave us the tools to change the colour and style and even animate our link hover effects.
 
 In this tutorial we will learn how we style and animate the underlines on our links, we will combine multiple transitions, group animation keyframes together, and investigate some of the upsides and downsides of using animations instead of transitions.
