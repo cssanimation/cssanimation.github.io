@@ -2,7 +2,7 @@
 layout: default
 ---
 <script>
-fbq('trackCustom', 'Article opened');
+fbq("trackCustom", "Article opened");
 </script>
 {% if page.custom_header %}
   <section class="post-header">
@@ -26,8 +26,8 @@ fbq('trackCustom', 'Article opened');
 <section class="container page-content">
   <section class="row">
     <article class="post-content nine columns {% if page.rtl %}rtl{% endif %}">
-      <h1 class="post-title">{{ page.title }}</h1>
-  
+      <h1 class="post-title" style="margin-bottom:4px;">{{ page.title }}</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">{{ page.date | date: '%B %d, %Y'}}</p>
       {{ content }}
 
       <section class="post-footer">
