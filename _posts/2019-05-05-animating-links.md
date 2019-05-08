@@ -279,6 +279,31 @@ As we can see, this gives us a smoother mouse out effect.
 
 When choosing whether to use animation or transition for interactions it good to keep in mind this benefit. For the rest of this module we'll be focusing on how we can make the most of the transitions to provide smooth animated responses to interactions.
 
+## Multiple lines
+
+The above works well for links in a single line, but it can break when we make the text wrap multiple lines.
+
+This [blog post](https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/) sets out a good approach - using `background-image` instead of the border on the link element. So if you're looking at animating links on multiple lines, you can set it up like so:
+
+    a {
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 4px;
+      transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      background-size: 100% 4px;
+    }
+
+Here it is in action:
+
+<p data-height="600" data-theme-id="light" data-slug-hash="mYeJdP" data-default-tab="result" data-user="donovanh" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/mYeJdP/">See the example on CodePen</a>.</p>
+
 ## What we learned
 
 In this lesson we learned how to create custom underline effects on our links, we combined multiple transitions and also applied them to different properties. We then looked at how the animation property differs in how it could be used for hover animations and created keyframe animations with grouped keyframes.
