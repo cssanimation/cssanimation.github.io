@@ -16,7 +16,11 @@ In this post we'll take a look at a demo React app and explore how adding animat
 
 ## Demo project
 
-Over on Github I've prepared a little React project to get started. If you want to play along you can [clone the repo](https://github.com/donovanh/react-animation-example) and run `npm install` to set up the necessary bits. Then run `npm start` to run it locally. You'll find it on [`localhost:3000`](http://localhost:3000) in the browser.
+Over on Github I've prepared a little React project to get started. If you've ever used `Create React App`, it'll be quite familiar. It's a basic React app with components, around which I've added [styled-components](https://www.styled-components.com) to handle styling.
+
+Styled Components is a handy way of wrapping CSS styling around components in React, allowing us to use Sass-style nesting but also provides us with a way of injecting a "theme" - a set of objects containing settings or snippets of CSS we can apply throughout our apps. We'll use this theme approach to create some simple but useful animations we can apply to projects.
+
+You can [clone the repo](https://github.com/donovanh/react-animation-example) and run `npm install` to set up the necessary bits. Then run `npm start` to run it locally. You'll find it on [`localhost:3000`](http://localhost:3000) in the browser.
 
 If you'd like to see the finished version, check out branch `animated` - otherwise you can follow along.
 
