@@ -12,7 +12,7 @@ tweet_text: See how small UI animations in React can make an app shine
 
 On this site we've explored loads of big impressive animations. I thought it would be worth stepping back and looking at how small UI animations can add up.
 
-In this post we'll take a look at a demo React app, and explore how adding animations to situations when UI changes can result in a more polished experience. We'll try to do so in a way that means reusing animations so that the result is a more consistent style of animation through the app, and we'll take a look at a handy little React package we can use to make animations easier.
+In this post we'll take a look at a demo React app and explore how adding animations to situations when UI changes can result in a more polished experience. We'll try to do so in a way that means reusing animations so that the result is a more consistent style of animation through the app, and we'll take a look at a handy little React package we can use to make animations easier.
 
 ## Demo project
 
