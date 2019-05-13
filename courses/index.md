@@ -21,7 +21,7 @@ title: Learn CSS Animation
     </div>
     <div class="course-details four columns">
       <h2><a href="https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK">Level Up your CSS Animation Skills</a></h2>
-      <p>A practical video course applying the theory of CSS animation to a real project. Enrol now for <strong>just $9.99 (Reduced from $149!)</strong></p>
+      <p>A practical video course applying the theory of CSS animation to a real project. <strong>Special offer for CSS Animation fans: save over 90% today!</strong></p>
       <p class="button"><a href="https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK">Level me up</a></p>
     </div>
   </article>
