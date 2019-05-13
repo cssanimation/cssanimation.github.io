@@ -155,7 +155,7 @@ We can configure this with some options.
 
 When adding an item to the cart, the text changes. Let's have this animate but with some more bounciness this time.
 
-Around line 33 of `components/ProductPage/index.js` we wrap the button's contents:
+Around line 33 of `components/ProductPage/index.js` where we wrap the button's contents:
 
     <AnimateOnChange animationIn="bounceIn" animationOut="bounceOut">
       {addingToCart ? 'Added to cart' : 'Add to Cart'}
