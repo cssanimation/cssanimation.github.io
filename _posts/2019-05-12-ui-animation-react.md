@@ -14,6 +14,10 @@ On this site we've explored loads of big impressive animations. I thought it wou
 
 In this post we'll take a look at a demo React app and explore how adding animations to situations when UI changes can result in a more polished experience. We'll try to do so in a way that means reusing animations so that the result is a more consistent style of animation through the app, and we'll take a look at a handy little React package we can use to make animations easier.
 
+## Video version
+
+<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6lshX4daC_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 ## Demo project
 
 Over on Github I've prepared a little React project to get started. If you've ever used `Create React App`, it'll be quite familiar. It's a basic React app with components, around which I've added [styled-components](https://www.styled-components.com) to handle styling.
