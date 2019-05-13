@@ -145,9 +145,9 @@ Then we wrap the "price" text with this component:
 
     <AnimateOnChange>{currentPrice}</AnimateOnChange>
 
-<iframe src="https://giphy.com/embed/dBNIuB3rfZWg70b6iC" width="480" height="148" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
 By default, the `AnimateOnChange` component will look for any change in the children components and apply a fade-out and fade-in when they change.
+
+<iframe src="https://giphy.com/embed/dBNIuB3rfZWg70b6iC" width="480" height="148" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 We can configure this with some options.
 
