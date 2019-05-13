@@ -50,9 +50,11 @@ Let's begin with the biggest change - moving between pages.
 
 ### Page transitions
 
-<iframe src="https://giphy.com/embed/l0QxLxuzgqiodZdb3i" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
 I'm a big fan of keeping things simple. I also love it when I can write something once and use it in many places. Let's do both to make the page transitions better.
+
+Here's how they currently look. No animation, just sudden changes:
+
+<iframe src="https://giphy.com/embed/l0QxLxuzgqiodZdb3i" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 In the `theme` folder we'll open the `index.js` file. We already have a bunch of settings here I've thrown in to demonstrate how a theme might look, but it doesn't have any animations yet. Let's change that. Begin by adding an object with a set of CSS keyframes I'll call `show`.
 
