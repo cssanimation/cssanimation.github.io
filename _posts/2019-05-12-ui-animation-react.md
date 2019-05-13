@@ -16,6 +16,8 @@ In this post we'll take a look at a demo React app and explore how adding animat
 
 ## Video version
 
+Note: the code is hard to see in the video, but you'll find all these examples and code below!
+
 <div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6lshX4daC_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ## Demo project
