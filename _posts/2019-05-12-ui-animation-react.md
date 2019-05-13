@@ -141,7 +141,7 @@ Let's use the defaults and add a fade animation to the price when it changes. In
 
 Then we wrap the "price" text with this component:
 
-<AnimateOnChange>{currentPrice}</AnimateOnChange>
+    <AnimateOnChange>{currentPrice}</AnimateOnChange>
 
 <iframe src="https://giphy.com/embed/dBNIuB3rfZWg70b6iC" width="480" height="148" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
