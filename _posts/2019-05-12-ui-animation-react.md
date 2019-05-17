@@ -4,6 +4,7 @@ type: tutorial
 title: UI Animation in React
 bodyClass: shorter
 description: See how small UI animations in React can make an app shine
+demo_url: https://react-animation-example-ypudeffqpx.now.sh
 categories: [ui animation]
 imageURL: /images/posts/ui-animation-react/home.png
 home_image: /images/posts/ui-animation-react/home.png

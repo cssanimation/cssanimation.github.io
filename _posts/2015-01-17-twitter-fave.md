@@ -45,7 +45,6 @@ With most timing functions such as ease or cubic-bezier, the transition animates
 
 <img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px">
 
-
 To begin we set up the HTML:
 
     <section class="fave"></section>
@@ -87,7 +86,3 @@ Animating background sprites is just one use of the `steps` timing function. Any
 If you enjoyed this article, you can [share it on Twitter](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/twitter-fave/&original_referer=https://cssanimation.rocks) or save this handy summary cheatsheet:
 
 <img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px">
-
-
-
-

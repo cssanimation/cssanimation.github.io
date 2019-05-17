@@ -6,9 +6,7 @@ customCSS: animation_101.css
 description: Learn the essentials of CSS animation with an email and a few minutes each day
 imageURL: /images/courses/animation_101/animation_101.png
 ---
-<script>
-fbq('track', 'CSS Animaton 101 view');
-</script>
+
 <div class="badge">
   <img class="hero-image" src="/images/courses/animation_101/badge.svg" alt="CSS Animation 101">
 </div>
@@ -43,7 +41,6 @@ By the end of four weeks you will have a good understanding of CSS transitions a
     <span class="single-quotee"><a href="http://stuffandnonsense.co.uk/">Andrew Clarke</a>, author of <em>Hardboiled Web Design</em></span>
   </div>
 </section>
-
 
 ## You will get
 
@@ -308,6 +305,3 @@ It is important to me that you find this course helpful and inspiring. If you fi
 ## Other questions
 
 Get me [on email](mailto:hello@cssanimation.rocks) or [Twitter](https://twitter.com/donovanh).
-
-
-

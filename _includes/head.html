@@ -1,74 +1,287 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css"/>
-  <link rel="stylesheet" href="/css/main.css">
-  {% if page.customCSS %}<link rel="stylesheet" href="/css/custom/{{ page.customCSS}}">{% endif %}
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />
-
-  {% if page.imageURL %}
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@cssanimation" />
-    <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
-    <meta property="og:description" content="{{page.description | escape}}" />
-    <meta property="og:image" content="{{ site.url }}{{page.imageURL}}" />
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+  <title>
+    {% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}
+  </title>
+  <meta
+    name="description"
+    content="{% if page.excerpt %}{{
+      page.excerpt | strip_html | strip_newlines | truncate: 160
+    }}{% else %}{{ site.description }}{% endif %}"
+  />
+  <link
+    rel="stylesheet"
+    href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css"
+  />
+  <link rel="stylesheet" href="/css/main.css" />
+  {% if page.customCSS %}
+  <link rel="stylesheet" href="/css/custom/{{ page.customCSS }}" />
+  {% endif %}
+  <link
+    rel="canonical"
+    href="{{ page.url | replace:'index.html','' | prepend: site.url }}"
+  />
+  <link rel="alternate" type="application/rss+xml" title="{{
+    site.title
+  }}" href="{{
+    "/feed.xml" | prepend: site.url
+  }}" /> {% if page.imageURL %}
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta
+    property="og:title"
+    content="{% if page.title %}{{ page.title | escape }} - {{
+      site.title | escape
+    }}{% else %}{{ site.title | escape }}{% endif %}"
+  />
+  <meta property="og:description" content="{{ page.description | escape }}" />
+  <meta property="og:image" content="{{ site.url }}{{ page.imageURL }}" />
+  <meta
+    property="og:url"
+    content="{{ page.url | replace:'index.html','' | prepend: site.url }}"
+  />
   {% else %}
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@cssanimation" />
-    <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta
+    property="og:title"
+    content="{% if page.title %}{{ page.title | escape }} - {{
+      site.title | escape
+    }}{% else %}{{ site.title | escape }}{% endif %}"
+  />
+  <meta
+    property="og:description"
+    content="{% if page.excerpt %}{{
+      page.excerpt | strip_html | strip_newlines | truncate: 160
+    }}{% else %}{{ site.description }}{% endif %}"
+  />
+  <meta
+    property="og:url"
+    content="{{ page.url | replace:'index.html','' | prepend: site.url }}"
+  />
   {% endif %}
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png">
-  <meta name="apple-mobile-web-app-title" content="CSS Animation">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png">
-  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png">
-  <meta name="msapplication-TileColor" content="#fcf5f2">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link
+    rel="icon"
+    sizes="192x192"
+    href="/images/favicons/favicon-192x192.png"
+  />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link
+    rel="apple-touch-icon-precomposed"
+    href="/images/favicons/apple-touch-icon-152x152.png"
+  />
+  <meta
+    name="msapplication-TileImage"
+    content="/images/favicons/apple-touch-icon-144x144.png"
+  />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
 
-  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RSS"
+    href="/feed.xml"
+  />
 
-  {% if page.hide %}<meta name="robots" content="noindex">{% endif %}
-  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+  {% if page.hide %}
+  <meta name="robots" content="noindex" />
+  {% endif %}
+  <meta
+    name="google-site-verification"
+    content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8"
+  />
 
   <script>
-    ;window.Modernizr=function(a,b,c){function A(a){j.cssText=a}function B(a,b){return A(m.join(a+";")+(b||""))}function C(a,b){return typeof a===b}function D(a,b){return!!~(""+a).indexOf(b)}function E(a,b){for(var d in a){var e=a[d];if(!D(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function F(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:C(f,"function")?f.bind(d||b):f}return!1}function G(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return C(b,"string")||C(b,"undefined")?E(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),F(e,b,c))}var d="2.8.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={svg:"http://www.w3.org/2000/svg"},r={},s={},t={},u=[],v=u.slice,w,x=function(a,c,d,e){var f,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),l.appendChild(j);return f=["&#173;",'<style id="s',h,'">',a,"</style>"].join(""),l.id=h,(m?l:n).innerHTML+=f,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=g.style.overflow,g.style.overflow="hidden",g.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),g.style.overflow=k),!!i},y={}.hasOwnProperty,z;!C(y,"undefined")&&!C(y.call,"undefined")?z=function(a,b){return y.call(a,b)}:z=function(a,b){return b in a&&C(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=v.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(v.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(v.call(arguments)))};return e}),r.cssanimations=function(){return G("animationName")},r.csstransforms3d=function(){var a=!!G("perspective");return a&&"webkitPerspective"in g.style&&x("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}",function(b,c){a=b.offsetLeft===9&&b.offsetHeight===3}),a},r.csstransitions=function(){return G("transition")},r.svg=function(){return!!b.createElementNS&&!!b.createElementNS(q.svg,"svg").createSVGRect};for(var H in r)z(r,H)&&(w=H.toLowerCase(),e[w]=r[H](),u.push((e[w]?"":"no-")+w));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)z(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},A(""),i=k=null,e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return E([a])},e.testAllProps=G,e.testStyles=x,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+u.join(" "):""),e}(this,this.document);
+    window.Modernizr = (function(a, b, c) {
+      function A(a) {
+        j.cssText = a;
+      }
+      function B(a, b) {
+        return A(m.join(a + ";") + (b || ""));
+      }
+      function C(a, b) {
+        return typeof a === b;
+      }
+      function D(a, b) {
+        return !!~("" + a).indexOf(b);
+      }
+      function E(a, b) {
+        for (var d in a) {
+          var e = a[d];
+          if (!D(e, "-") && j[e] !== c) return b == "pfx" ? e : !0;
+        }
+        return !1;
+      }
+      function F(a, b, d) {
+        for (var e in a) {
+          var f = b[a[e]];
+          if (f !== c)
+            return d === !1 ? a[e] : C(f, "function") ? f.bind(d || b) : f;
+        }
+        return !1;
+      }
+      function G(a, b, c) {
+        var d = a.charAt(0).toUpperCase() + a.slice(1),
+          e = (a + " " + o.join(d + " ") + d).split(" ");
+        return C(b, "string") || C(b, "undefined")
+          ? E(e, b)
+          : ((e = (a + " " + p.join(d + " ") + d).split(" ")), F(e, b, c));
+      }
+      var d = "2.8.3",
+        e = {},
+        f = !0,
+        g = b.documentElement,
+        h = "modernizr",
+        i = b.createElement(h),
+        j = i.style,
+        k,
+        l = {}.toString,
+        m = " -webkit- -moz- -o- -ms- ".split(" "),
+        n = "Webkit Moz O ms",
+        o = n.split(" "),
+        p = n.toLowerCase().split(" "),
+        q = { svg: "http://www.w3.org/2000/svg" },
+        r = {},
+        s = {},
+        t = {},
+        u = [],
+        v = u.slice,
+        w,
+        x = function(a, c, d, e) {
+          var f,
+            i,
+            j,
+            k,
+            l = b.createElement("div"),
+            m = b.body,
+            n = m || b.createElement("body");
+          if (parseInt(d, 10))
+            while (d--)
+              (j = b.createElement("div")),
+                (j.id = e ? e[d] : h + (d + 1)),
+                l.appendChild(j);
+          return (
+            (f = ["&#173;", '<style id="s', h, '">', a, "</style>"].join("")),
+            (l.id = h),
+            ((m ? l : n).innerHTML += f),
+            n.appendChild(l),
+            m ||
+              ((n.style.background = ""),
+              (n.style.overflow = "hidden"),
+              (k = g.style.overflow),
+              (g.style.overflow = "hidden"),
+              g.appendChild(n)),
+            (i = c(l, a)),
+            m
+              ? l.parentNode.removeChild(l)
+              : (n.parentNode.removeChild(n), (g.style.overflow = k)),
+            !!i
+          );
+        },
+        y = {}.hasOwnProperty,
+        z;
+      !C(y, "undefined") && !C(y.call, "undefined")
+        ? (z = function(a, b) {
+            return y.call(a, b);
+          })
+        : (z = function(a, b) {
+            return b in a && C(a.constructor.prototype[b], "undefined");
+          }),
+        Function.prototype.bind ||
+          (Function.prototype.bind = function(b) {
+            var c = this;
+            if (typeof c != "function") throw new TypeError();
+            var d = v.call(arguments, 1),
+              e = function() {
+                if (this instanceof e) {
+                  var a = function() {};
+                  a.prototype = c.prototype;
+                  var f = new a(),
+                    g = c.apply(f, d.concat(v.call(arguments)));
+                  return Object(g) === g ? g : f;
+                }
+                return c.apply(b, d.concat(v.call(arguments)));
+              };
+            return e;
+          }),
+        (r.cssanimations = function() {
+          return G("animationName");
+        }),
+        (r.csstransforms3d = function() {
+          var a = !!G("perspective");
+          return (
+            a &&
+              "webkitPerspective" in g.style &&
+              x(
+                "@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}",
+                function(b, c) {
+                  a = b.offsetLeft === 9 && b.offsetHeight === 3;
+                }
+              ),
+            a
+          );
+        }),
+        (r.csstransitions = function() {
+          return G("transition");
+        }),
+        (r.svg = function() {
+          return (
+            !!b.createElementNS &&
+            !!b.createElementNS(q.svg, "svg").createSVGRect
+          );
+        });
+      for (var H in r)
+        z(r, H) &&
+          ((w = H.toLowerCase()),
+          (e[w] = r[H]()),
+          u.push((e[w] ? "" : "no-") + w));
+      return (
+        (e.addTest = function(a, b) {
+          if (typeof a == "object")
+            for (var d in a) z(a, d) && e.addTest(d, a[d]);
+          else {
+            a = a.toLowerCase();
+            if (e[a] !== c) return e;
+            (b = typeof b == "function" ? b() : b),
+              typeof f != "undefined" &&
+                f &&
+                (g.className += " " + (b ? "" : "no-") + a),
+              (e[a] = b);
+          }
+          return e;
+        }),
+        A(""),
+        (i = k = null),
+        (e._version = d),
+        (e._prefixes = m),
+        (e._domPrefixes = p),
+        (e._cssomPrefixes = o),
+        (e.testProp = function(a) {
+          return E([a]);
+        }),
+        (e.testAllProps = G),
+        (e.testStyles = x),
+        (g.className =
+          g.className.replace(/(^|\s)no-js(\s|$)/, "$1$2") +
+          (f ? " js " + u.join(" ") : "")),
+        e
+      );
+    })(this, this.document);
   </script>
   <style>
-  .wow {
-    visibility: hidden;
-  }
+    .wow {
+      visibility: hidden;
+    }
   </style>
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '867457513393728', {
-em: 'insert_email_variable,'
-});
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=867457513393728&ev=PageView&noscript=1"
-/></noscript>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
-
-
 </head>
