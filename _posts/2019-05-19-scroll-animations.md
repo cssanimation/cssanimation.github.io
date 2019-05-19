@@ -15,7 +15,7 @@ tweet_text: Bake your own scroll animations using requestAnimationFrame and will
 
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-It's time to add some animation to our page when a visitor scrolls. For this tutorial I've set up a demo page all about pizza. The content isn't important but it'll act as a long scrollable page. Let's bring some animation to the page.
+It's time to add some animation to our page when a visitor scrolls. For this tutorial I've set up a demo page all about pizza. We'll use this to learn how to have animations triggered by scrolling, and investigate ways we can do so efficiently.
 
 In this tutorial we'll learn how to make use of the `requestAnimationFrame` method and detect when elements are within the viewport of the browser. We'll introduce a new `will-change` property and use that to make sure our animations are smooth, and we'll put these together with some transitions to create animations that are triggered on scroll.
 
