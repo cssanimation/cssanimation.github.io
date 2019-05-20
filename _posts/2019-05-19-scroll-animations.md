@@ -17,7 +17,9 @@ tweet_text: Bake your own scroll animations using requestAnimationFrame and will
 
 It's time to add some animation to our page when a visitor scrolls. For this tutorial I've set up a demo page all about pizza. We'll use this to learn how to have animations triggered by scrolling, and investigate ways we can do so efficiently.
 
-In this tutorial we'll learn how to make use of the `requestAnimationFrame` method and detect when elements are within the viewport of the browser. We'll introduce a new `will-change` property and use that to make sure our animations are smooth, and we'll put these together with some transitions to create animations that are triggered on scroll.
+In this tutorial we'll learn how to make use of the `requestAnimationFrame` as well as `Intersection Observer` methods to detect when elements are within the viewport of the browser. We'll introduce a new `will-change` property and use that to make sure our animations are smooth, and we'll put these together with some transitions to create animations that are triggered on scroll.
+
+_Note_: The video doesn't include the `Intersection Observer` approach but you'll find it in the code below.
 
 <div class="videoWrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/-ths7kNIFnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -127,6 +129,35 @@ There's one bit missing. In the `loop` function we're calling a method `isElemen
 Just to run through this quickly. It begins by checking to see if `jQuery` is defined. jQuery changes the way elements are made available and this corrects for a possible issue that might arise. Next it uses a handy method called `getBoundingClientRect`. This is the rectangle around the element we want to check.
 
 Next it does a series of checks that will return true if the element is on the page and on the screen.
+
+### Alternate approach: Intersection Observer
+
+The above works pretty well, but there's a newer way to approach this problem using the browser's [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This is quite well supported in browsers, with the exception of Internet Explorer (currently IE11 does not support this, so will need a polyfill).
+
+The Intersection Observer looks at the target element's position in relation to a `root` element, and when they "intersect", will return true. In this case we can use it to tell us when our `show-on-scroll` elements are within the viewport.
+
+When setting up an instance of `IntersectionObserver` we can pass in options such as the `root` element want, or even the "margin" by which the elements need to overlap. For now though I'll keep it simpler and just use the defaults. See the [docs](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for more details.
+
+We can replace the above JavaScript with this:
+
+    const callback = function(entries) {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("is-visible");
+      });
+    };
+
+    const observer = new IntersectionObserver(callback);
+
+    const targets = document.querySelectorAll(".show-on-scroll");
+    targets.forEach(function(target) {
+      observer.observe(target);
+    });
+
+To step through this - it's first setting up a `callback` function that will be called every time one of our observed targets enters or leaves the viewport.
+
+We then instantiate the `observer` using this callback function. With those two pieces put together, we then grab all our `targets`, and loop through them, attaching a listener (`observe`) to each one. When the element enters or leaves the viewport, it'll run the `callback` function.
+
+Lastly, this `callback` function toggles the class `is-visible` on our element. This approach is simpler that the previous JavaScript but do keep in mind that it might not work so well in Internet Explorer currently. Check the [CanIUse page](https://caniuse.com/#feat=intersectionobserver) for more info.
 
 Let's save this and set up our HTML to make use of this new power.
 
