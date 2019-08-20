@@ -9,9 +9,7 @@ tweet_text: Recr&eacute;ons cette fantastique animation en pur CSS
 custom_header: posts/spheres.html
 customCSS: spheres.css
 translator: Philippe Auriol
-translator_link: https://twitter.com/PhilAllergie
 ---
-
 
 Avec la propri&eacute;t&eacute; CSS `border-radius`, nous pouvons faire des formes arrondies et des cercles. Ajoutons y quelques d&eacute;grad&eacute;s et elles sont devenues des sph&egrave;res. Essayons &ccedil;a, et ajoutons y un peu d'animation pour les rendre plus vivantes.
 
@@ -171,7 +169,6 @@ En l'&eacute;tat l'effet est assez doux, ajoutons y un peu de brillance et cr&ea
 
 Pour y arriver nous allons utiliser une douce lumi&egrave;re en soulignement comme avant, mais en ajustant l'&eacute;clairage lumineux du sommet pour qu'il soit plus petit et &eacute;troit. Il nous faudra utiliser deux pseudo-s&eacute;lecteurs pour contenir la couleur de la balle, une lumi&egrave;re en bas et une r&eacute;flection.
 
-
     .ball {
       display: inline-block;
       width: 100%;
@@ -220,7 +217,6 @@ La transformation d&eacute;place l'effet de brillance de 80 pixels &agrave; gauc
 Pour faire une boule de billard, ajoutons une &eacute;tape suppl&eacute;mentaire et ajoutons le num&eacute;ro 8.
 
 il nous faut un &eacute;l&eacute;ment suppl&eacute;mentaire pour contenir le 8, ainsi que des styles pour le placer sur la boule.
-
 
     <section class="stage">
       <figure class="ball">
@@ -419,5 +415,3 @@ Tous les exemples donn&eacute;s sont pr&eacute;sents sur [mon compte Codepen](ht
 Si vous avez des questions &agrave; propos de cet article, contactez moi [par mail](mailto:hello@cssanimation.rocks) ou [sur Twitter](http://twitter.com/cssanimation).
 
 <script src="//codepen.io/assets/embed/ei.js"></script>
-
-

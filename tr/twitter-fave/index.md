@@ -10,11 +10,9 @@ source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/ma
 home_image: /images/posts/steps/home.png
 tweet_text: Twitter'daki &quot;fav&quot; animasyonu
 translator: Can Göktaş
-translator_link: https://twitter.com/cangokt
 ---
 
 Twitter gectigimiz gunlerde &quot;fav&quot; butonunun tasarimini degistirdi ve butona bir animasyon ekledi. Bu animasyon CSS transition kullanmiyor, bunun yerine sadece bir dizi goruntu arasinda gecis yapiyor. Bu animasyonu CSS'teki `steps` zamanlama fonksiyonu ile yeniden yaratmaya basliyoruz.
-
 
 ## Hareket yanılsaması
 

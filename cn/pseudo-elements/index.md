@@ -9,7 +9,6 @@ imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: 用 CSS 闪亮按钮
 translator: Rrylee
-translator_link: https://getnative.me/user/4008
 ---
 
 伪元素就像额外的免费&nbsp;DOM 元素。 它们允许我们添加额外的内容、 修饰和等等到我们的页面而不添加额外的 html 代码，当然他们也可以进行动画处理。 在这篇文章中，我们将使用一个伪元素要为按钮添加一个小的视觉风格。
@@ -19,7 +18,6 @@ translator_link: https://getnative.me/user/4008
 ## 伪元素
 
 CSS 中，我们可以使用`::before` 或 `::after` 来指定伪元素。 伪元素就插入到你的元素之中，或元素之间和任何内容。 既然它充当它自己的元素，那么可以来定义风格，定位和更多。 代码如下：
-
 
     .pebble::before {
       ...
@@ -99,7 +97,7 @@ CSS 中，我们可以使用`::before` 或 `::after` 来指定伪元素。 伪�
       animation: sheen 1s forwards;
     }
 
-在这里我们告诉浏览器比悬停时, `after` 伪元素是有一个 `animation`。 动画，名为sheen，持续一秒，停止在结束不重复。
+在这里我们告诉浏览器比悬停时, `after` 伪元素是有一个 `animation`。 动画，名为 sheen，持续一秒，停止在结束不重复。
 
 命令事项。 使用&nbsp;`::after:hover`&nbsp;悬停不会工作，它会告诉浏览器对伪元素本身的悬停状态作出反应。
 

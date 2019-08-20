@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: Denis Valcke
-translator_link: https://twitter.com/DenisValcke
 ---
 
 Twitter heeft onlangs een update gegeven aan hun &quot;fave&quot;, ook&nbsp;gekend als &quot;fav&quot; knop, door er een nieuwe animatie aan mee te geven. In plaats van CSS transities maakt de animatie gebruik van een reeks afbeeldingen. Hieronder zie je hoe je deze animatie kan recre&euml;ren door middel van de CSS animatie `steps` timing functie.
@@ -18,7 +17,7 @@ De volgende techniek kan ook gebruikt worden met de nieuwe “hart’ animatie, 
 
 <section class="fave demo-container tap-to-activate heart"></section>
 
-Zie het voorbeeld [live op CodePen]((http://codepen.io/donovanh/pen/dYqxNb)).
+Zie het voorbeeld [live op CodePen](<(http://codepen.io/donovanh/pen/dYqxNb)>).
 
 ## De illusie van beweging
 

@@ -11,7 +11,6 @@ demo_url: https://cssanimation.rocks/demo/buffer/
 customCSS: buffer.css
 customJS: buffer.js
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Lubie odkrywać przykłady subtelnych animacji na stronach internetowych. Ostatnio, gdy logowałem się do [Buffera](https://bufferapp.com), zauważyłem ładny efekt w czytywania w ich logo. Oto jak odtworzyć go za pomocą obrazu SVG i CSS.

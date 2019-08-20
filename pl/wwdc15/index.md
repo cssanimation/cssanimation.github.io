@@ -10,7 +10,6 @@ tweet_text: Animowanie logo WWDC w CSS
 custom_header: posts/wwdc15.html
 demo_url: https://cssanimation.rocks/demo/wwdc15/
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Każdego roku Apple uruchamia specjalne wydarzenie dla swoich deweloper&oacute;w. [WWDC](Międzynarodowa Konferencja Deweloper&oacute;w Apple) jest szansą dla projektant&oacute;w i deweloper&oacute;w systemu iOS i OSX, aby dowiedzieć się co szykuje Apple i czego można się spodziewać w nowych wersjach mobilnego i stacjonarnego oprogramowania.
@@ -30,7 +29,7 @@ Składa się z zestawu nakładających się, p&oacute;łprzezroczystych kształt
 Wykonanie tak kompleksowego elementu wymaga planowania. W tym przykładzie, podzieliłem układ na części.
 
 Logo składa się z 3 zestaw&oacute;w kształt&oacute;w. Podstawa założona jest z 8 dużych k&oacute;łek, więc utworzyłem ich listę:
- 
+
     <div class="large circle one"></div>
     <div class="large circle two"></div>
     <div class="large circle three"></div>
@@ -43,7 +42,7 @@ Logo składa się z 3 zestaw&oacute;w kształt&oacute;w. Podstawa założona jes
 Korzystam tutaj z wielu klas, aby można było zastosować CSS dla wszystkich element&oacute;w `large` i wszystkich element&oacute;w `circle`, itd. Im więcej możemy wykorzystać ponownie CSS, tym prostszy powinien on być.
 
 Teraz mamy osiem mniejszych kształt&oacute;w, kt&oacute;re znajdują się na wierzchu i pod spodem krawędzi dużych k&oacute;łek. Te kształty składają się z czterech k&oacute;łek i czterech &quot;squircles&quot;, kwadrat&oacute;w z zaokrąglonymi krawędziami. Dodam do nich kod HTML:
- 
+
     <div class="small circle one"></div>
     <div class="small squircle two"></div>
     <div class="small circle three"></div>
@@ -56,16 +55,16 @@ Teraz mamy osiem mniejszych kształt&oacute;w, kt&oacute;re znajdują się na wi
 Mamy tutaj wymienione osiem mniejszych kształt&oacute;w zmiennymi klasami&nbsp;`circle` i `squircle`. Oznakowałem każdy zestaw za pomocą liczb od jeden do osiem. Wykorzystam to podczas umieszczania kształt&oacute;w i nadawania im kolor&oacute;w.
 
 Na końcu mamy dwa duże &quot;squircles&quot; na środku logo.
- 
+
     <div class="large squircle one"></div>
     <div class="large squircle two"></div>
 
-Te ponownie mają rozmiar `large` i kształt `squircle`. 
+Te ponownie mają rozmiar `large` i kształt `squircle`.
 
 ## Logo i zawartość
 
 Przed przejściem do stylizacji tego kodu HTML, dodamy nieco treści do centralnego &quot;squircle&quot;.
- 
+
     <div class="large squircle two">
       <div class="content">
         <svg viewBox="0 0 160 164" xmlns="http://www.w3.org/2000/svg">
@@ -79,12 +78,12 @@ Przed przejściem do stylizacji tego kodu HTML, dodamy nieco treści do centraln
       <p><strong>WWDC</strong>15</p>
     </div>
 
-Tutaj mamy zgodny obraz SVG i tekst zaproszenia. Czcionka użyta w oryginalnym obrazie to &quot;San Francisco&quot;. Ta czcionka nie jest jeszcze standardem na OS X, dlatego zamienię ją na Helvetica Neue Light. 
+Tutaj mamy zgodny obraz SVG i tekst zaproszenia. Czcionka użyta w oryginalnym obrazie to &quot;San Francisco&quot;. Ta czcionka nie jest jeszcze standardem na OS X, dlatego zamienię ją na Helvetica Neue Light.
 
 ## Stylizowanie k&oacute;łek i &quot;squircles&quot;
 
 Pierwszą rzeczą jest ustawienie element&oacute;w `circle` i `squircle`.
- 
+
     .circle, .squircle {
       border-top: 0.1em solid rgba(255,255,255,0.4);
       height: 12.5em;
@@ -95,7 +94,7 @@ Pierwszą rzeczą jest ustawienie element&oacute;w `circle` i `squircle`.
 Większość kształt&oacute;w posiadają duży rozmiar, więc domyślnie je powiększę. Każdy z element&oacute;w korzysta z pozycji `absolute` i ma jasną białą ramkę na wierzchu. Ta ramka może nie odpowiadać obrazowi zaproszenia, ale umożliwi nadanie kształtom trochę połysku.
 
 Następnie ustawimy style dla dużych k&oacute;łek. Wykorzystując 50% `border-radius`, możemy utworzyć kształt k&oacute;łka. Potem umieścimy je używając wartości `left` i `top`.
- 
+
     .circle {
       border-radius: 50%;
       box-shadow: 0 1em 2em rgba(0,0,0,0.5);
@@ -111,7 +110,7 @@ W tym przypadku przesunęliśmy ten punkt do dolnej części k&oacute;łek. Kied
 <img src="/images/posts/wwdc15/step1.png" alt="Circles fanned out into position" style="max-width:400px" />
 
 Dodajmy kod CSS, aby umiejscowić każde z tych k&oacute;łek. Patrząc uważnie na obraz zaproszenia, możemy zobaczyć, że k&oacute;łko umieszczone za całą resztą znajduje się w lewym dolnym rogu. Pamiętając o tym, upewnimy się, że pierwsze k&oacute;łko w HTML jest obr&oacute;cone wok&oacute;ł tej pozycji.
- 
+
     .one {
       background: rgba(16, 63, 236, 0.75);
       transform: rotateZ(225deg);
@@ -150,13 +149,13 @@ Każdy z tych styl&oacute;w posiada kolor i `transform`, aby m&oacute;c obracać
 [<img src="/images/posts/wwdc15/circles.gif" alt="Circles fanning out into position" style="max-width:400px" />](https://cssanimation.rocks/demo/wwdc15/)
 
 Po umieszczeniu k&oacute;łek, możemy stylizować inne kształty. Najpierw `squircle` jest `circle`, ale z innym promieniem ramki.
- 
+
     .squircle {
       border-radius: 25%;
     }
 
 Kiedy ustawiliśmy k&oacute;łka, określiliśmy rotację i kolor. Szczęśliwie mniejsze kształty mogą skorzystać z tego samego kodu CSS. Najpierw musimy dodać do kształt&oacute;w `small` kilka styl&oacute;w własnych.
- 
+
     .small {
       width: 4em;
       height: 4em;
@@ -177,7 +176,7 @@ Małe kształty `squircle` są pod złym kątem. Muszą być obr&oacute;cone o 4
 Istnieje kilka spos&oacute;b na wykonanie tego. Możemy dodać dodatkowy element do każdego `squircle` i dodać transformację lub użyć [pseudo-elementu](/pseudo-elements/) w CSS. Każdy ze sposob&oacute;w jest dobry, ale pomyślałem, że warto poradzić sobie z tym za pomocą CSS.
 
 Najpierw usuniemy tło, ramkę i cień pudełka z małych &quot;squircles&quot;.
- 
+
     .small.squircle {
       background: none;
       border: none;
@@ -185,7 +184,7 @@ Najpierw usuniemy tło, ramkę i cień pudełka z małych &quot;squircles&quot;.
     }
 
 Możemy teraz użyć pseudo-elementu `::after`, aby utworzyć nowy &quot;squircle&quot; w każdym i obr&oacute;cić je o 45 stopni.
- 
+
     .small.squircle::after {
       background: red;
       border-radius: 25%;
@@ -217,7 +216,7 @@ Powinniśmy teraz mieć oba duże k&oacute;łka i mniejsze kształty na miejscu.
 ## Zawartość &quot;squircles&quot;
 
 Ostatnimi elementami obrazu są dwa &quot;squircles&quot;, kt&oacute;re zawierają treść. Ustawmy je na środku i nadajmy im delikatnie przezroczysty ciemny kolor.
- 
+
     .large.squircle {
       background: rgba(30, 7, 66, 0.65);
       border: none;
@@ -230,7 +229,7 @@ Ostatnimi elementami obrazu są dwa &quot;squircles&quot;, kt&oacute;re zawieraj
     }
 
 Następnie możemy obr&oacute;cić pierwszy &quot;squircle&quot; (ten, kt&oacute;ry znajduje się za &quot;squircle&quot; zawierającym treść).
- 
+
     .large.squircle.one {
       transform: rotateZ(45deg);
     }
@@ -242,7 +241,7 @@ Następnie możemy obr&oacute;cić pierwszy &quot;squircle&quot; (ten, kt&oacute
 Oryginalny obraz zaproszenia nie jest animowany, ale moja strona nosi nazwę&nbsp;[CSS Animation Rocks](https://cssanimation.rocks), dlatego dodamy animację.
 
 Chcę sprawić, aby każdy zestaw k&oacute;łek i &quot;squircles&quot; kręcił się. Aby to zrobić, możemy wrzucić każdy do `span` i zastosować animację dla opakowania&nbsp;`span`.
- 
+
     <span class="large-circles">
       <!-- Large Circles here ... -->
     </span>
@@ -255,7 +254,7 @@ Chcę sprawić, aby każdy zestaw k&oacute;łek i &quot;squircles&quot; kręcił
     </span>
 
 Najpierw ustawiamy elementy `span`, aby nie rozbiły one układu.
- 
+
     span {
       display: block;
       height: 20em;
@@ -268,7 +267,7 @@ Najpierw ustawiamy elementy `span`, aby nie rozbiły one układu.
 To umieszcza opakowania `span` na środku strony.
 
 Następnie zastosujemy animację dla każdego z tych trzech element&oacute;w `span`.
- 
+
     .large-circles {
       animation: spin 10s linear infinite;
     }
@@ -284,7 +283,7 @@ Następnie zastosujemy animację dla każdego z tych trzech element&oacute;w `sp
 Korzystamy z tych samych zestaw&oacute;w klatek kluczowych za każdym razem zmieniając tylko&nbsp;`animation-duration`. Wybrałem 10 sekund, 20 sekund i 30 sekund, aby wyr&oacute;wnywały się co minutę.
 
 Mając ustawioną właściwość `animation`, zbierzmy razem `keyframes`.
- 
+
     @keyframes spin {
       0% {
         transform: rotateZ(0);
@@ -303,4 +302,3 @@ To był ciekawy eksperyment, w kt&oacute;rym stworzyliśmy nakładające kształ
 ## Prefiksy
 
 Podczas tworzenia tego przykładu, wykorzystałem [autoprefixer](https://github.com/postcss/autoprefixer), aby uniknąć dodawania prefiks&oacute;w przeglądarki. Pamiętaj o tym, jeśli używasz `transitions`, `animations` lub `transforms` w swojej pracy.
-

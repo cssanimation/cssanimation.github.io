@@ -9,7 +9,6 @@ home_image: /images/posts/watch/watch.png
 tweet_text: Odtworzenie tarcz Apple Watch za pomocą CSS.
 custom_header: posts/watch.html
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Po ogłoszeniu nowego zegarka firmy Apple w tym tygodniu, postanowiłem stworzyć tarcze aktywności za pomocą CSS.

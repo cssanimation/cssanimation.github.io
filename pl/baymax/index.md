@@ -9,7 +9,6 @@ imageURL: /images/posts/baymax/baymax.gif
 home_image: /images/posts/baymax/home.png
 tweet_text: Animowanie twarzy Baymaxa w CSS
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Użyjmy CSS, aby stworzyć bohatera o imieniu Baymax z filmu Big Hero 6.

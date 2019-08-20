@@ -5,12 +5,11 @@ title: عناصر زائفة متحركة
 description: تمنحك العناصر الزائفة عنصرين HTML إضافيين مجانًا!&nbsp;في ما يلي كيفية تنشيطها عند التمرير.&nbsp;استخدمها بحكمة.
 categories: [animation, tips, animations, pseudo-elements]
 customCSS: shiny_button.css
-imageURL: /assets/images/posts/sheen/sheen.gif
-home_image: /assets/images/posts/sheen/home.png
+imageURL: /images/posts/sheen/sheen.gif
+home_image: /images/posts/sheen/home.png
 tweet_text: أزرار لامعة مع CSS
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-02-03-pseudo-elements.md
 translator: Mayar Shaheen
-translator_link: /ar/
 ---
 
 عناصر زائفة ، مثل الحصول على عناصر DOM إضافية مجانًا. فهي تسمح لنا بإضافة محتوى إضافي وديكورات والمزيد إلى صفحاتنا دون إضافة المزيد من HTML ، ويمكن أن تكون متحركة. في هذه المشاركة ، سنستخدم عنصرًا&nbsp; زائفًا لإضافة القليل من الذوق البصري إلى&nbsp; زر.

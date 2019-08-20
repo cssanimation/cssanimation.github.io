@@ -4,13 +4,19 @@ title: Transition mu, Animation mu?
 description: Web animasyonlarında kullanılan &quot;transition&quot; ve &quot;animation&quot; &ouml;zelliklerinin farklılıkları.
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+    custom/list_items.js,
+    custom/clocks.js,
+  ]
 imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: Ne zaman transition, ne zaman animation kullanmali?
 custom_header: posts/transitions-animations.html
 translator: Can Göktaş
-translator_link: https://twitter.com/cangokt
 ---
 
 Web icin animasyon yaparken bu iki yontemden birini kullaniyor musunuz? Bazen biri yerine diğerini se&ccedil;memiz gereken zamanlar vardır. Haydi farklılıkları tartışalım.

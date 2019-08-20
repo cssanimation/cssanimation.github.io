@@ -4,13 +4,19 @@ title: Transi&ccedil;&otilde;es vs Anima&ccedil;&otilde;es
 description: Uma descri&ccedil;&atilde;o das diferen&ccedil;as entre o uso de transi&ccedil;&otilde;es e&nbsp;anima&ccedil;&otilde;es na hora de criar suas anima&ccedil;&otilde;es.
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+    custom/list_items.js,
+    custom/clocks.js,
+  ]
 imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: Quando voc&ecirc; deve usar transi&ccedil;&atilde;o, e quando usar anima&ccedil;&atilde;o?
 custom_header: posts/transitions-animations.html
 translator: "Sérgio Jardim"
-translator_link: https://twitter.com/sjardim
 ---
 
 Enquanto desenvolve uma anima&ccedil;&atilde;o na web, voc&ecirc; usa transi&ccedil;&atilde;o ou uma anima&ccedil;&atilde;o? Em alguns casos, voc&ecirc; vai preferir optar por uma, ao inv&eacute;s da outra. Vamos ver as diferen&ccedil;as.

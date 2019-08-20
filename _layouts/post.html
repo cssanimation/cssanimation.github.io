@@ -118,7 +118,7 @@ layout: default
       {% if page.translator %}
         <section class="translator">
           <h3>Translation Info</h3>
-          <p>This article translated by <a href="{{ page.translator_link }}">{{ page.translator }}</a>. (<a href="/{{ page.url | split: '/' | last }}/">See original</a>)</p>
+          <p>This article translated by {{ page.translator }}. (<a href="/{{ page.url | split: '/' | last }}/">See original</a>)</p>
         </section>
 
       {% elsif page.translators %}

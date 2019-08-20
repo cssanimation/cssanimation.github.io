@@ -11,7 +11,6 @@ imageURL: /images/posts/list_items/list_items.png
 home_image: /images/posts/list_items/home.png
 tweet_text: Animowanie Element&oacute;w Listy
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Kiedy fragmenty strony internetowej zmieniają się, dodanie animacji jest dobrym sposobem na wskazanie odwiedzającym co się dzieje.&nbsp; Animacje mogą zapowiadać pojawienie się nowej treści lub przyciągnąć uwagę do treści, kt&oacute;ra jest w trakcie usuwania. W tym artykule, przyjrzymy się jak wprowadzenie nowej treści może być wykorzystane, pokazując i ukrywając elementy na liście.
@@ -62,7 +61,7 @@ Moglibyśmy obejść to aplikując animację na elemencie `li`, ale to byłoby t
 
 ## Brak animacji
 
-Najprościej możemy napisać kod CSS, aby pokazać elementy listy. Korzystamy z klasy `show `jako sposobu, aby były widoczne oraz usuwamy klasę `show`, co powinno spowodować ich zniknięcie.
+Najprościej możemy napisać kod CSS, aby pokazać elementy listy. Korzystamy z klasy `show`jako sposobu, aby były widoczne oraz usuwamy klasę `show`, co powinno spowodować ich zniknięcie.
 
     li {
       list-style: none;

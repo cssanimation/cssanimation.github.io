@@ -9,9 +9,7 @@ imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Shiny buttons with CSS
 translator: Can Göktaş
-translator_link: https://twitter.com/cangokt
 ---
-
 
 Pseudo-element'ler bize pek &ccedil;aba harcamadan fazladan DOM elementleri elde etme imkanı verir.&nbsp; Sayfalarımıza ilave HTML eklemeden fazladan i&ccedil;erik, dekor vb. eklememizi sağlarlar ve bu pseudo-elementlere animasyon ekleyebiliriz.&nbsp; Bu yazıda bir pseudo-element'i bir butona biraz g&ouml;rsellik eklemek i&ccedil;in kullanacağız.
 

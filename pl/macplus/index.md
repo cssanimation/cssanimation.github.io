@@ -10,7 +10,6 @@ tweet_text: Recreate Apple's classic Mac Plus
 custom_header: posts/macplus.html
 demo_url: http://codepen.io/donovanh/full/HGqjp/
 translator: Matt Chabros
-translator_link: http://matchabros.com
 ---
 
 Zawsze będę pamiętał dzień w którym poraz pierwszy przyszło mi korzystać z Apple Mac Plus. W tym poście postaram się oddać hołd temu komputerowi odtwarzając go w CSS.

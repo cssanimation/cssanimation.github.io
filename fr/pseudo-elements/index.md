@@ -9,7 +9,6 @@ imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Animer des pseudo-éléments
 translator: Pierre Choffé
-translator_link: https://twitter.com/pierrechoffe
 ---
 
 Avec les pseudo-éléments, tout se passe comme si on avait des éléments supplémentaires dans le DOM gratuitement. Ils nous permettent d’ajouter à nos pages du contenu supplémentaire, de la décoration et bien d’autres choses, sans ajouter plus de HTML, et ils peuvent être animés. Dans cet article, je vais utiliser un pseudo-élément pour ajouter une touche d’élégance à un bouton.
@@ -90,7 +89,7 @@ Nous devons cacher la couche luisante pour qu’elle n’apparaisse qu’au mome
       line-height: 32px;
     }
 
-J’ai ajouté d’autres styles pour donner son look particulier au bouton. Une chose à noter, l’utilisation de position: relative. J’ai ajouté cette propriété afin que le pseudo-élément positionné absolument puisse exister à l’intérieur du bouton. Si on ne spécifie pas la position, un item positionné absolument se positionnera à l’intérieur d’un élément parent.  NdT : Petit rappel vite fait sur le positionnement CSS ici.
+J’ai ajouté d’autres styles pour donner son look particulier au bouton. Une chose à noter, l’utilisation de position: relative. J’ai ajouté cette propriété afin que le pseudo-élément positionné absolument puisse exister à l’intérieur du bouton. Si on ne spécifie pas la position, un item positionné absolument se positionnera à l’intérieur d’un élément parent. NdT : Petit rappel vite fait sur le positionnement CSS ici.
 
 ## Ajouter l’animation
 
@@ -116,7 +115,6 @@ Spécifions maintenant les keyframes de cette animation.
 
 Nous n’avons besoin que d’un keyframe dans notre exemple. Puisque le point de départ (0%) est impliqué par la position de départ du pseudo-élément, nous n’avons à décrire que le point d’arrivée. Celui-ci se situe en haut et à droite du bouton. Le navigateur animera l’effet à travers le bouton pour nous.
 
-
 <section class="shiny demo-container tap-to-activate">
   <button>Shiny effect</button>
 </section>
@@ -124,6 +122,3 @@ Nous n’avons besoin que d’un keyframe dans notre exemple. Puisque le point d
 ## Compatibilité
 
 La [propriété animation est bien supportée](http://caniuse.com/#feat=css-animation), de même que les [pseudo-éléments](http://caniuse.com/#feat=css-gencontent). Il est toujours bon néanmoins d’inclure les préfixes -webkit et -moz pour les keyframes et pour les transformations. Vous pouvez le faire automatiquement grâce à Autoprefixer.
-
-
-

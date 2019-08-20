@@ -9,11 +9,11 @@ imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Błyszczące przyciski w CSS
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Pseudo elementy są jak uzyskanie dodatkowych element&oacute;w DOM za darmo. Pozwalają dodać&nbsp;do naszych stron dodatkową zawartość, dekorację i znacznie&nbsp;więcej&nbsp;bez dodawania dodatkowego HTML i następnie ją animować. W tym poradniku wykorzystamy pseudo element, aby dodać małą wizualną klasę do przycisku.
 /pl/
+
 <section class="shiny demo-container tap-to-activate"><button>Efekt połysku</button></section>
 
 ## Pseudo elementy

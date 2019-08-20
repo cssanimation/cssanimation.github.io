@@ -4,13 +4,19 @@ title: Przejścia vs Animacje
 description: Opis różnic między transiations (przejścia) a animations (animacje) w web animacjach.
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+    custom/list_items.js,
+    custom/clocks.js,
+  ]
 imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: Kiedy powinieneś/powinnaś korzystać z przejść a kiedy z animacji?
 custom_header: posts/transitions-animations.html
 translator: Matt Chabros
-translator_link: http://matchabros.com
 ---
 
 Podczas tworzenia animacji na stronach internetowych, kiedy korzystasz z przejść a kiedy z animacji? Instnieją sytuacje kiedy chciałbyś/chciałabyś wykorzystać jedno a nie drugie. Omówmy różnice.
@@ -92,4 +98,3 @@ Dla większej ilości informacji sprawdź [poradnik - Zegar CSS](/clocks/).
 Do tworzenia płynnych przejść z jednego stanu do drugiego, wykorzystujemy przejścia a animacje do bardziej skomplikowanych serii ruchów.
 
 Przejścia generalnie są łatwiejsze w tworzeniu i zarządzaniu, można je wykorzystać w większości sytuacji. Jeżeli wymagasz większej kontroli nad animowaniem elementu poprzez serię kroków lub, kiedy animacja musi rozpocząć się podczas ładowania strony, animacja z wykorzstaniem keyframes będzie lepszym wyborem.
-

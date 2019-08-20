@@ -11,7 +11,6 @@ tweet_text: Menciptakan Apple klasik Mac Plus
 custom_header: posts/macplus.html
 demo_url: http://codepen.io/donovanh/full/HGqjp/
 translator: Muhammad Azzam
-translator_link: /id/
 ---
 
 Aku akan selalu ingat saat aku harus menggunakan Apple Mac Plus. Aku akan selalu ingat saat aku harus menggunakan Apple Mac Plus.
@@ -46,9 +45,7 @@ Saya telah menghilangkan awalan CSS apapun dari contoh kode untuk membuat kode l
 
 Ketika membuat 3D menggunakan HTML kita membutuhkan sebuah adegan di mana untuk membangun. Mulailah dengan sebuah wadah elemen HTML:
 
-
     <div class="stage"></div>
-
 
 Ini adalah sederhana div dengan kelas panggung, dan bertindak sebagai wadah untuk objek 3D.
 
@@ -64,12 +61,10 @@ Properti perspektif-asal menetapkan posisi tampilan. Perubahan itu memungkinkan 
 
 Perubahan itu memungkinkan Anda untuk melihat ke bawah ke adegan dari atas, naik dari bawah atau di dari sisi. CSS seperti ini:
 
-
     .stage {
       perspective: 1600px;
       perspective-origin: 50% 100px;
     }
-
 
 Folder stylesheet dalam file ZIP proyek berisi aturan-aturan CSS yang penuh untuk menetapkan berbagai properti lainnya di panggung, termasuk latar belakang, lebar dan tinggi.
 
@@ -89,11 +84,9 @@ The CSS `transform` property allows us to rotate, skew, position and even scale 
 
 Transform-properti mungkin terlihat seperti ini:
 
-
     .example {
       transform: rotateY(45deg) translateZ(-100px);
     }
-
 
 Anda membangun mengubah oleh chaining serangkaian pernyataan. Dalam contoh ini, contoh elemen berputar 45 derajat di sekitar sumbu y, dan kemudian mendorong kembali 100px sepanjang z-sumbu.
 
@@ -107,18 +100,15 @@ Contoh mengubah CSS dapat ditemukan dalam folder contoh/02-transformasi dalam fi
 
 Ketika berputar elemen di sekitar tempat itu, adalah senilai mengingat bahwa transformasi mempunyai asal yang dapat diatur. Asal mengubah adalah titik yang dirujuk oleh menentukan nilai X, Y dan Z. Ini adalah default:
 
-
     .default-origin {
       transform-origin: 50% 50% 0;
     }
-
 
 Ketika membangun contoh ini aku tetap default tapi it's worth mengetahui bahwa itu ada.
 
 ## Membuat kotak
 
 Kita dapat menggunakan beberapa transformasi untuk mengatur tubuh utama komputer. HTML terlihat seperti ini:
-
 
     <div class="stage">
       <div class="positioning animated">
@@ -137,7 +127,6 @@ Kita dapat menggunakan beberapa transformasi untuk mengatur tubuh utama komputer
       </div>
     </div>
 
-
 Dalam tahap, ada div saya akan menggunakan posisi komputer pada halaman. Dalam itu adalah Mac itu sendiri. Dua kotak yang sendiri terdiri dari unsur-unsur gambar. Elemen-elemen ini mewakili sisi, atas, depan dan belakang dua kotak.
 
 Ada juga seorang tokoh untuk mewakili bayangan.
@@ -151,7 +140,6 @@ Hasil kami akan pergi untuk terlihat seperti ini:
 Each of the boxes are transformed into place using the CSS `transform` property, and CSS `gradients` are used to add depth to the scene.
 
 The CSS looks like this:
-
 
     .front {
       height: 11.5em;
@@ -216,7 +204,6 @@ The CSS looks like this:
       box-shadow: -20.2em 0 1.8em rgba(100, 90, 100, 0.4);
     }
 
-
 Masing-masing angka-angka telah diberikan lebar dan tinggi, dan CSS latar belakang gradien atau warna. Angka-angka yang kemudian masing-masing diposisikan menggunakan transform-properti. Sebagai contoh, sisi kiri adalah diputar 90 derajat sebelum diterjemahkan (pindah) kembali setengah lebar komputer.
 
 Gambar depan diterjemahkan ke depan, sepanjang sumbu z, setengah panjang komputer dan belakang diputar 180 derajat sebelum diterjemahkan kembali.
@@ -231,14 +218,12 @@ Sebuah fitur dari komputer ini adalah mempunyai kemiringan tepi di sekitar depan
 
 Untuk mencapai hal ini saya menambahkan beberapa unsur-unsur tambahan ke angka tamu, seperti:
 
-
     <figure class="front">
       <span class="bezel-top"></span>
       <span class="bezel-left"></span>
       <span class="bezel-right"></span>
       <span class="bezel-bottom"></span>
     </figure>
-
 
 The `span` elements within the front figure each represent one of these bezels. Dengan beberapa gaya yang ditambahkan, mereka akan terlihat seperti ini:
 
@@ -247,7 +232,6 @@ The `span` elements within the front figure each represent one of these bezels. 
 Contoh ini dapat ditemukan dalam folder contoh/04-Bezels.
 
 CSS berikut posisi masing-masing, dan membuat penggunaan perbatasan-lebar trik untuk membuat mempunyai kemiringan tepi.
-
 
     .front .bezel-top {
       border-top: 0.75em solid #f2f2f2;
@@ -277,7 +261,6 @@ CSS berikut posisi masing-masing, dan membuat penggunaan perbatasan-lebar trik u
       transform: rotateZ(180deg) translateY(-10.76em);
     }
 
-
 Masing-masing panel mempunyai batas-batas 3. Untuk panel atas, kami menetapkan batas berwarna di atas. Kami kemudian menetapkan dua perbatasan transparan pada sisi kiri dan kanan. Dalam CSS, ketika perbatasan bertemu perbatasan warna lain, baris mana mereka bertemu diagonal. Ini berarti bahwa perbatasan transparan mengakibatkan diagonal tepi perbatasan berwarna.
 
 Teknik ini diterapkan untuk masing-masing bezels, menciptakan penampilan mempunyai kemiringan tepi pada masing-masing.
@@ -289,7 +272,6 @@ Bezels juga memiliki mengubah diterapkan untuk memutar dan posisi mereka di sisi
 Dengan kotak utama komputer di tempat kita dapat menambahkan berbagai rincian yang membuatnya terlihat seperti Macintosh Plus, seperti layar, ikon, dan disk drive.
 
 Gambar depan berisi HTML berikut:
-
 
     <figure class="front">
       <span class="bezel-top"></span>
@@ -309,7 +291,6 @@ Gambar depan berisi HTML berikut:
       <figure class="floppy"></figure>
     </figure>
 
-
 Contoh kerja dapat ditemukan di folder contoh/05-selesai.
 
 ### Layar
@@ -324,7 +305,6 @@ Logo terdiri dari dua bagian, gambar dan beberapa teks. Rentang gambar berisi ga
 
 Untuk membuat tampilan yang tepat, tertanam font ditambahkan. This uses the CSS `font-face` property. Ada banyak cara untuk melakukan ini, tapi mungkin yang termudah adalah menggunakan layanan seperti Font tupai @font-face generator untuk membuat CSS berikut:
 
-
     @font-face {
       font-family: "apple_garamondregular";
       src: url("../fonts/apple_garamond-webfont.eot");
@@ -333,7 +313,6 @@ Untuk membuat tampilan yang tepat, tertanam font ditambahkan. This uses the CSS 
       font-style: normal;
     }
 
-
 Font tupai membantu dengan menghasilkan file berbagai (eot, woff, dll) yang kemudian dapat ditempatkan dalam proyek dan disebut dalam CSS seperti yang ditunjukkan.
 
 Hasilnya adalah font yang cocok yang asli.
@@ -341,7 +320,6 @@ Hasilnya adalah font yang cocok yang asli.
 ### Drive disket
 
 Drive disket adalah satu elemen, dan menggunakan CSS perbatasan untuk membuatnya terlihat seperti diatur ke depan. CSS yang menciptakan efek terlihat seperti ini:
-
 
     .floppy {
       height: 0.2em;
@@ -354,7 +332,6 @@ Drive disket adalah satu elemen, dan menggunakan CSS perbatasan untuk membuatnya
       border-left: 0.3em solid #e6e6e6;
       border-radius: 0.25em;
     }
-
 
 Drive disket memiliki warna latar belakang abu-abu yang solid, dan empat perbatasan. Perbatasan atas adalah yang paling gelap, dengan perbatasan bawah yang menjadi terang untuk membuatnya tampak terang dari atas. Akhirnya, border-radius putaran sudut-sudut.
 
@@ -372,7 +349,6 @@ Dalam CSS, ada dua jenis animasi. Transisi, di mana elemen pada halaman bernyawa
 
 Serangkaian keyframes dapat digambarkan sebagai serangkaian persentase, dengan CSS yang menjelaskan setiap langkah. Itu bisa terlihat seperti ini:
 
-
     @keyframes back-and-forth {
       0% {
         transform: rotateY(40deg);
@@ -385,7 +361,6 @@ Serangkaian keyframes dapat digambarkan sebagai serangkaian persentase, dengan C
       }
     }
 
-
 Dalam contoh ini animasi disebut kembali-dan-sebagainya, dan terdiri dari 3 langkah. It begins rotated to an angle of 40 degrees. Kemudian oleh mark 40%, diputar ke minus 40 derajat. Tetap ini rotasi sampai 50%, maka pada 90% telah kembali ke posisi semula.
 
 Browser secara otomatis mengisi kekosongan dengan cara menghidupkan properti. Dalam hal ini ia akan menghidupkan sudut rotasi.
@@ -396,9 +371,7 @@ Untuk menerapkan animasi ini kita dapat menggunakan CSS animasi tag.
 
 Tag animasi terlihat seperti ini:
 
-
     animation: back-and-forth 14s ease-in-out infinite;
-
 
 Beberapa hal yang digabungkan menjadi satu baris di sini. Referensi animasi dengan nama (&quot;kembali-dan-sebagainya&quot;), set durasi 14 detik, dan memberitahu animasi untuk mengulangi tanpa batas. Nilai kemudahan-in-out mengacu mengurangi, yang akan memberitahukan browser untuk memiliki animasi memulai dan mengakhiri secara bertahap.
 

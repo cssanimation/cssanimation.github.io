@@ -9,7 +9,6 @@ imageURL: /images/posts/starwars/home.jpg
 home_image: /images/posts/starwars/home.jpg
 tweet_text: Les titres de Star Wars animés en CSS
 translator: Pierre Choffé
-translator_link: https://twitter.com/pierrechoffe
 ---
 
 Sortez les popcorns ! Aujourd'hui, nous allons cr&eacute;er le titre de la bande annonce de Star Wars 'Le R&eacute;veil de la Force'.
@@ -96,13 +95,11 @@ La propri&eacute;t&eacute; `animation`&nbsp;d&eacute;finit ici une animation que
 Pour utiliser les transformations 3D en CSS, que ce soit pour d&eacute;placer un &eacute;l&eacute;ment le long de l'axe des Z ou pour le faire tourner sur les axes des Y ou des Z, il faut cr&eacute;er un cadre pour la 3D. En termes HTML, cela signifie qu'il faut cr&eacute;er un container et indiquer au navigateur que ce sera le cadre de notre 3D.
 
 Pour cela, nous ajoutons ceci &agrave; notre div&nbsp;`.starwars-demo` :
- 
 
     .starwars-demo {
       perspective: 800px;
       transform-style: preserve3d;
-    } 
-
+    }
 
 Ces deux propri&eacute;t&eacute;s indiquent au navigateur que les &eacute;l&eacute;ments enfants du container doivent &ecirc;tre positionn&eacute;s en 3D et non &agrave; plat. [CSS Tricks[ donne de plus amples d&eacute;tails sur la propri&eacute;t&eacute;.
 
@@ -119,7 +116,6 @@ Mais je me suis rapidement rendu compte d'un probl&egrave;me : il n'existe pas d
 Appliquons maintenant une animation &agrave; chaque lettre.
 
 D'abord, les keyframes :
- 
 
     @keyframes spin-letters {
       0%, 10% {
@@ -138,11 +134,9 @@ D'abord, les keyframes :
       }
     }
 
-
 On commence par faire tourner les lettres de 90 degr&eacute;s, puis aux alentours de 70% de l'animation elles font face au spectateur.
 
 Nous pouvons appliquer cet ensemble de keyframes &agrave; chaque span de cette fa&ccedil;on :
- 
 
     .byline span {
       animation: spin-letters 10s linear infinite;
@@ -151,17 +145,16 @@ Nous pouvons appliquer cet ensemble de keyframes &agrave; chaque span de cette f
       animation: move-byline 10s linear infinite;
     }
 
-
 Le r&eacute;sultat est que chaque span contenant une lettre va dispara&icirc;tre et tourner sur lui-m&ecirc;me lentement, avant de s'effacer &agrave; la fin de l'animation.
 
 Si on met tout ensemble, nous avons notre [d&eacute;mo finale](http://codepen.io/donovanh/pen/pJzwEw?editors=110).
+
 <p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
 
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<div class="callout"> 
+<div class="callout">
 
 Cet article est un extrait du cours <a href="/courses/animation-101/">CSS Animation 101</a>. Pour une p&eacute;riode limit&eacute;e, <em>vous pouvez payer ce que vous voulez</em>. <a href="/courses/animation-101/">Inscrivez-vous</a> !
 
 </div>
-

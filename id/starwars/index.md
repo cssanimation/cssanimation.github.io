@@ -9,7 +9,6 @@ imageURL: /images/posts/starwars/home.jpg
 home_image: /images/posts/starwars/home.jpg
 tweet_text: Judul-judul Star Wars dianimasikan dengan CSS
 translator: PanduAri
-translator_link: https://getnative.me/user/8827
 ---
 
 Keluarkan popcorn! Hari ini kami sedang membangun judul film Star Wars dari &quot;The Force Awakens&quot; trailer.

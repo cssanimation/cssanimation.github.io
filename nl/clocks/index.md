@@ -4,7 +4,12 @@ title: Klokken
 description: Met behulp van CSS en wat JavaScript, kunnen we een klok ontwerpen en animeren in verschillende stijlen.
 categories: [animations, transitions, javascript]
 customCSS: clocks.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+  ]
 customJS: clocks.js
 imageURL: /images/posts/clocks/twelve.gif
 home_image: /images/posts/clocks/home.png
@@ -12,7 +17,6 @@ tweet_text: Een klok animeren met CSS
 custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
 translator: Denis Valcke
-translator_link: https://twitter.com/DenisValcke
 ---
 
 Het werd tijd. In dit artikel zullen we de uitdaging aangaan om een klok te maken en animeren met behulp van simpele CSS animaties en JavaScript gebruiken om die animatie in gang te zetten.
@@ -23,8 +27,8 @@ Dit is de klok die we zullen maken met behulp van HTML, CSS, een SVG achtergrond
 
 ### HTML
 
-Om te beginnen hebben we wat HTML nodig. 
- 
+Om te beginnen hebben we wat HTML nodig.
+
     <article class="clock">
       <div class="hours-container">
         <div class="hours"></div>
@@ -42,7 +46,7 @@ Mijn initi&euml;le aanpak was om deze drie elementen te gebruiken voor elk van d
 ## Wijzerplaat
 
 We beginnen met een eenvoudig ontwerp met een ronde wijzerplaat en simpele wijzers.
- 
+
     .clock {
       border-radius: 50%;
       background: #fff url(/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -73,7 +77,7 @@ We zouden nu iets als dit moeten hebben.
 <div class="demo-container clocks single"> <article class="clock simple"></article></div>
 
 Voor we de wijzers toevoegen, moeten we de containers positioneren.
- 
+
     .minutes-container, .hours-container, .seconds-container {
       position: absolute;
       top: 0;
@@ -87,7 +91,7 @@ Dit stapelt iedere container bovenop de klok. Vervolgens cre&euml;ren we de wijz
 ### Uurwijzer
 
 Elke wijzer krijgt een positie `absolute`&nbsp;en wordt in de &quot;12 uur&quot; positie geplaatst. We beginnen met de uurwijzer.
- 
+
     .hours {
       background: #000;
       height: 20%;
@@ -105,7 +109,7 @@ We gebruiken percentages om de klok makkelijker te doen schalen. Dit is iets mee
 ### Minutenwijzer
 
 De minutenwijzer is gelijkaardig maar langer en smaller.
- 
+
     .minutes {
       background: #000;
       height: 40%;
@@ -121,7 +125,7 @@ De minutenwijzer is gelijkaardig maar langer en smaller.
 ### Secondenwijzer
 
 De secondenwijzer is opnieuw smaller maar staat ook iets meer naar beneden zodat hij iets over het midden staat. Hiervoor zetten we `transform-origin` op 80%. Dit zorgt er voor dat 20% van de wijzer voorbij het midden zal staan.
- 
+
     .seconds {
       background: #000;
       height: 45%;
@@ -142,7 +146,7 @@ Een stilstaande klok zal maar twee keer per dag juist staan. Laten we wat animat
 Sommige klokken verspringen per second en maken een tikkend geluid. Bij sommige klokken bewegen de wijzers dan weer heel vloeiend. We zullen beiden uitproberen. Eerst zullen we de handen vloeiend doen bewegen.
 
 We kunnen een `keyframe` gebruiken om de wijzers te vertellen dat ze 360 graden moeten draaien (0% als startpositie is ge&iuml;mpliceerd).
- 
+
     @keyframes rotate {
       100% {
         transform: rotateZ(360deg);
@@ -150,7 +154,7 @@ We kunnen een `keyframe` gebruiken om de wijzers te vertellen dat ze 360 graden 
     }
 
 Deze keyframe zegt het element&nbsp;360 graden&nbsp;rond&nbsp;te animeren,&nbsp;wanneer&nbsp;toegevoegd met behulp van de animation property. We zullen een `linear` timing functie gebruiken om de wijzers vloeiend te doen bewegen.
- 
+
     .hours-container {
       animation: rotate 43200s infinite linear;
     }
@@ -174,7 +178,7 @@ De tweede wijzer doet er 60 seconden over, wat makkelijker op te merken is.
 ### Stappen toevoegen
 
 We kunnen de wijzers meer doen bewegen als een normale clock door de secondewijzer te doen ronddraaien in 60 aparte bewegingen. Een simpele manier om dit te bereiken is door de `steps` timing functie te gebruiken. De `animation` property voor ieder wijzer wordt dan:
- 
+
     .minutes-container {
       animation: rotate 3600s infinite steps(60);
     }
@@ -182,14 +186,14 @@ We kunnen de wijzers meer doen bewegen als een normale clock door de secondewijz
       animation: rotate 60s infinite steps(60);
     }
 
-Zowel de minuten- als de secondewijzer bewegen nu rond in 60 stappen. De browser berekend automatisch hoe die 60 stappen bewegen. 
+Zowel de minuten- als de secondewijzer bewegen nu rond in 60 stappen. De browser berekend automatisch hoe die 60 stappen bewegen.
 
 <div class="demo-container clocks single steps"> <article class="clock simple"><div class="hours-container"> <div class="hours angled"></div> </div> <div class="minutes-container"> <div class="minutes angled"></div> </div> <div class="seconds-container"> <div class="seconds"></div> </div> </article></div>
 
 ### De correcte tijd
 
 Allemaal goed en wel zo'n bewegende klok maar is het accuraat? Met een beetje JavaScript kunnen we de tijd correct zetten voor onze bezoekers. Hier is de code.
- 
+
     /*
      * Starts any clocks using the user's local time
      * From: cssanimation.rocks/clocks
@@ -247,7 +251,7 @@ We moeten er voor zorgen dat de minutenwijzer beweegt als de secondewijzer op tw
 Als de klok voor het eerst op het scherm wordt getekend blijft er minder dan een minuut over voor de minutenwijzer moet bewegen. Om dit toe te staan moeten we uitrekenen hoe lang het duurt voor deze eerste minuut eindigt en manueel de wijzer een duwtje geven. Omdat we JavaScript gebruiken voor de eerste beweging kunnen we verdergaan met het elke minuut 6 graden te doen roteren met behulp van `setInterval`.
 
 Voor we de minutenwijzer bewegen moeten we eerst communiceren hoe ver we in de huidige minuut staan. Deze lijntjes zijn je misschien al opgevallen.
- 
+
     if (degrees[j].hand === 'minutes') {
       elements[k].parentNode.setAttribute('data-second-angle', degrees[j + 1].degree);
     }
@@ -255,7 +259,7 @@ Voor we de minutenwijzer bewegen moeten we eerst communiceren hoe ver we in de h
 Deze extra lijnen zijn om na te kijken of de wijzer de minutenwijzer is en, als dat zo is, een data-attribuut in te stellen met de huidige hoek van de secondewijzer.
 
 Als dat data-attribuut is ingesteld, kunnen we de data hieruit gebruiken om uit te zoeken wanneer we de minutenwijzer moeten bewegen.
- 
+
     /*
      * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
      */
@@ -301,7 +305,7 @@ Omdat we nu JavaScript gebruiken om de minutenwijzer te bewegen moeten we de ani
 Wanneer de JavaScript een nieuwe hoek instelt voor de wijzer zal een CSS transitie op het element de browser laten weten om deze nieuwe positie te animeren. Dit betekent dat de JavaScript enkel over de simpele hoeken gaat en de browser neemt de animatie dan voor zich.
 
 Voor we dat doen, moeten we de code updaten om ook JavaScript te gebruiken voor de secondewijzer. Laten we deze code gebruiken om de secondewijzer containers 60 keer per minuut te animeren.
- 
+
     /*
      * Move the second containers
      */
@@ -321,7 +325,7 @@ Voor we dat doen, moeten we de code updaten om ook JavaScript te gebruiken voor 
     }
 
 Nu JavaScript zorgt voor zowel de seconde- als de minutenwijzer, kunnen we de CSS updaten om de `animation` properties te vervangen door `transitions`.
- 
+
     .minutes-container {
       transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
     }
@@ -362,4 +366,3 @@ Je kan dit in actie zien [op Codepen](http://codepen.io/donovanh/full/vEjywy/).
 Moderne browsers kunnen de CSS transities en animaties voor deze klok aan. IE10+, de recente versies van Chrome en Firefox kunnen dit ondersteunen zonder prefixes, Safari heeft de `-webkit` prefix nodig.
 
 Vergeet niet deze prefixes ook te gebruiken in JavaScript.
-

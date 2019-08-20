@@ -4,7 +4,12 @@ title: Horloges
 description: Utiliser CSS et JavaScript pour concevoir et animer des horloges de tous les styles.
 categories: [animations, transitions, javascript]
 customCSS: clocks.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+  ]
 customJS: clocks.js
 imageURL: /images/posts/clocks/twelve.gif
 home_image: /images/posts/clocks/home.png
@@ -12,7 +17,6 @@ tweet_text: Animer une horloge avec CSS
 custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
 translator: Pierre Choffe
-translator_link: https://la-cascade.io
 ---
 
 Le temps est venu. Dans cet article, nous allons relever le d&eacute;fi de cr&eacute;er et animer une horloge en utilisant des animations CSS simples et un peu de JavaScript.

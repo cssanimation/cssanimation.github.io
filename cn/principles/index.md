@@ -11,7 +11,6 @@ custom_header: posts/principles.html
 demo_url: http://codepen.io/collection/AxKOdY/
 published: true
 translator: Ethon Lau
-translator_link: https://twitter.com/ethonlau
 ---
 
 作为前端的设计师和工程师，我们用 CSS 去做样式、定位并创建出好看的网站。我们经常用 CSS 去添加页面的运动过渡效果甚至动画，但我们经常做的东西不会超过这些。
@@ -22,7 +21,6 @@ translator_link: https://twitter.com/ethonlau
 
 在本文中，我会逐个介绍这十二个原则，并讨论它们怎样运用在网页中。你能在 Codepen 找到它们[全部的开源 HTML 和 CSS 代码](http://codepen.io/collection/AxKOdY/)。
 
-
 ## 挤压和拉伸 (Squash and stretch)
 
 <section class="demo-container principle principle-one">
@@ -32,7 +30,6 @@ translator_link: https://twitter.com/ethonlau
   </div>
 </section>
 
-
 这是物体存在质量且运动时质量保持不变的概念。当一个球在弹跳时，碰击到地面会变扁，恢复的时间会越来越短。
 
 创建对象的时候最有用的方法是参照实物，比如人、时钟和弹性球。
@@ -40,7 +37,6 @@ translator_link: https://twitter.com/ethonlau
 当它和网页元件一起工作时可能会忽略这个原则。DOM 对象不一定和实物相关，它会按需要在屏幕上缩放。例如，一个按钮会变大并变成一个信息框，或者错误信息会出现和消失。
 
 尽管如此，挤压和伸缩效果可以为一个对象增加实物的感觉。甚至一些形状上的小变化就可以创造出细微但抢眼的效果。
-
 
 ## 预备动作 (Anticipation)
 
@@ -67,7 +63,6 @@ translator_link: https://twitter.com/ethonlau
   </div>
 </section>
 
-
 演出布局是确保对象在场景中得以聚焦，让场景中的其它对象和视觉在主动画发生的地方让位。这意味着要么把主动画放到突出的位置，要么模糊其它元件来让用户专注于看他们需要看的东西。
 
 在网页方面，一种方法是用 model 覆盖在某些内容上。在现有页面添加一个遮罩并把那些主要关注的内容前置展示。
@@ -75,7 +70,6 @@ translator_link: https://twitter.com/ethonlau
 另一种方法是用动作。当很多对象在运动，你很难知道哪些值得关注。如果其它所有的动作停止，只留一个在运动，即使动得很微弱，这都可以让对象更容易被察觉。
 
 还有一种方法是做一个晃动和闪烁的按钮来简单地建议用户比如他们可能要保存文档。屏幕保持静态，所以再细微的动作也会突显出来。
-
 
 ## 连续运动和姿态对应 (Straight-Ahead Action and Pose-to-Pose)
 
@@ -90,7 +84,7 @@ translator_link: https://twitter.com/ethonlau
 
 大多数网页动画用的是姿态对应：关键帧之间的过渡可以通过浏览器在每个关键帧之间的插入尽可能多的帧使动画流畅。
 
-有一个例外是定时功能step。通过这个功能，浏览器 "steps" 可以把尽可能多的无序帧串清晰。你可以用这种方式绘制一系列图片并让浏览器按顺序显示出来，这开创了一种逐帧动画的风格。
+有一个例外是定时功能 step。通过这个功能，浏览器 "steps" 可以把尽可能多的无序帧串清晰。你可以用这种方式绘制一系列图片并让浏览器按顺序显示出来，这开创了一种逐帧动画的风格。
 
 ## 跟随和重叠动作 (Follow Through and Overlapping Action)
 

@@ -10,7 +10,6 @@ home_image: /images/posts/sheen/home.png
 tweet_text: Leuchtende Knöpfe mit CSS
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-02-03-pseudo-elements.md
 translator: Serena Fritsch
-translator_link: https://twitter.com/serifritsch
 ---
 
 Pseudo-Elemente sind wie zusätzliche, freie DOM Elemente. Sie erlauben uns extra Inhalt, Dekoration und mehr zu unseren Seiten hinzuzufügen ohne extra HTML zu schreiben und sie können animiert werden. In diesem Beitrag werden wir ein Pseudo-Element verwenden um ein bisschen visuelles flair zu einem Knopf hinzuzufügen.
@@ -34,12 +33,12 @@ Innerhalbs CSS können wir ein Pseudo-Element mit `::before` or `::after` spezif
 
 Zu diesem Zeitpunkt hat unser `.pebble` Element zwei virtuelle Elemente angehaengt, und wir koennen diese bei Bedarf stylen.
 
-
 ### Anmerkung zu "::" versus ":"
 
-Es ist allgemein akzeptiert, dass wir den zweifachen Doppelpunkt `::` verwenden um Pseudo-Elemente zu bezeichnen (im Gegenteil zu Pseudo-Klassen wie :hover, :first-child). Wenn Sie IE8 Unterstützung hinzufügen, dann ist es am Besten den einfachen  `:` stattdessen zu verwenden. Alle anderen Browser und neuere Versionen des IE unterstützen den zweifachen Doppelpunkt.
+Es ist allgemein akzeptiert, dass wir den zweifachen Doppelpunkt `::` verwenden um Pseudo-Elemente zu bezeichnen (im Gegenteil zu Pseudo-Klassen wie :hover, :first-child). Wenn Sie IE8 Unterstützung hinzufügen, dann ist es am Besten den einfachen `:` stattdessen zu verwenden. Alle anderen Browser und neuere Versionen des IE unterstützen den zweifachen Doppelpunkt.
 
 ### Vergessen Sie nicht "content"
+
 Beim Hinzufügen von Pseudo-Elementen muss beachtet werden dass die `content`Eigenschaft spezifiziert wird bevor sie sichtbar auf der Seite wird. Weil das Pseudo-Element in einem inhaltslosen Zustand erschaffen wird, können wir es durch die Verwendung eines leeren `content` als sichtbar täuschen, siehe hier:
 
     .pebble::before {
@@ -99,7 +98,7 @@ Ich habe einige andere Stile zum Knopf hinzugefügt so dass er sein eigenes Auss
 ## Hinzufügen der Animation
 
 Da wir in diesem Beispiel eine Animation verwenden werden, sind zwei Schritte notwendig. Der erste befiehlt dem Browser eine Animation auf hover. Dann werden wir die Animation genau spezifizieren durch Verwendung von `keyframes`.
-Das Hinzufügen des Hover Zustands kann durch die Stapelung von `after` auf  `hover` geschehen, wie hier:
+Das Hinzufügen des Hover Zustands kann durch die Stapelung von `after` auf `hover` geschehen, wie hier:
 
     button:hover::after, button:focus::after {
       animation: sheen 1s forwards;
@@ -127,8 +126,5 @@ Wir brauchen nur ein keyframe in diesem Fall. Da die Startposition (0%) durch di
 </section>
 
 ## Browserueberlegungen
-Die [animation Eigenschaft ist gut unterstützt](http://caniuse.com/#feat=css-animation), so sind [Pseudo-Elemente](http://caniuse.com/#feat=css-gencontent). Es ist immer ratsam auf Nummer sicher zu gehen und die  `-webkit` und `-moz` Praefixe fuer die `keyframes` und jegliche Transformationen zu laden.
 
-
-
-
+Die [animation Eigenschaft ist gut unterstützt](http://caniuse.com/#feat=css-animation), so sind [Pseudo-Elemente](http://caniuse.com/#feat=css-gencontent). Es ist immer ratsam auf Nummer sicher zu gehen und die `-webkit` und `-moz` Praefixe fuer die `keyframes` und jegliche Transformationen zu laden.

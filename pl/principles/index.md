@@ -11,7 +11,6 @@ custom_header: posts/principles.html
 demo_url: http://codepen.io/collection/AxKOdY/
 published: true
 translator: Mat Chabros
-translator_link: http://matchabros.com
 ---
 
 Jako projektanci oraz deweloperzy front-endowi, wykorzystujemy CSS do stylizacji, pozycjonowania oraz tworzenia świetnie wyglądających stron. Bardzo często, CSS służy Nam również w celu dodania ruchu na naszej stronie w formie przejść oraz animacji, niestety najczęściej nie wykraczamy poza ów obszar.

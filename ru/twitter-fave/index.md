@@ -1,7 +1,7 @@
 ---
 layout: post
 bodyClass: shorter
-title: Анимация &quot;лайка&quot; в Twitter 
+title: Анимация &quot;лайка&quot; в Twitter
 description: Узнайте как работает &quot;лайк&quot; в Twitter   используя CSS steps() (временную ступенчатую функцию).
 categories: [animation, tips, transition, steps]
 customCSS: twitter_fave.css
@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: Panda
-translator_link: /
 ---
 
 Twitter недавно обновил дизайн их &quot;fave&quot; (так же знаем под &quot;fav&quot;) кнопки, включая новую анимацию. В CSS вместо переходов предпочли анимацию с серией картинок. Из серии картинок воссоздается steps (ступенчатая временная функция).
@@ -34,22 +33,19 @@ Twitter недавно обновил дизайн их &quot;fave&quot; (так
 
 ### Steps() (пошаговая временная функция)
 
-Большинство временных функций, таких как ease или  cubic-bezier, делает переход анимации плавно между начальным и конечным состояниями. В `steps `совсем другая. Вместо плавного перехода, она делит переход на несколько кадров (столько сколько задано), и резко перемещается между ними.
+Большинство временных функций, таких как ease или cubic-bezier, делает переход анимации плавно между начальным и конечным состояниями. В `steps`совсем другая. Вместо плавного перехода, она делит переход на несколько кадров (столько сколько задано), и резко перемещается между ними.
 
 <img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
 
 Для начала составим HTML:
- 
 
     <section class="fave"></section>
-
 
 ### Фоновое изображение
 
 Добавляем немного стилей и позиционирования фоновому изображению:
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
- 
 
     .fave {
       width: 70px;
@@ -58,15 +54,12 @@ Twitter недавно обновил дизайн их &quot;fave&quot; (так
       background-position: 0 0;
     }
 
-
 При `hover` анимация добавляется и за определенное количество кадров фоновая позиция переместится в конец серии изображений:
- 
 
     .fave:hover {
       background-position: -3519px 0;
       transition: background 1s steps(55);
     }
-
 
 Обратите внимание на второе правило. Оно задано `transition` (переходом). В этом случае мы хотим сделать перемещение через свойство фона и запуская переход продолжительностью в две секунды. `steps` имеет значение `55`. Это означает, что есть 55 кадров анимации.
 
@@ -85,4 +78,3 @@ Twitter недавно обновил дизайн их &quot;fave&quot; (так
 Если вам понравился этот урок, то можете поделиться в [твиттере ](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/post/twitter-fave/&original_referer=https://cssanimation.rocks)или сохранить это краткое описание:
 
 <img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px" />
-

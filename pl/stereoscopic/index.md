@@ -10,9 +10,7 @@ home_image: /images/posts/stereoscopic/home.jpg
 tweet_text: Cross your eyes to see a 3D effect created using CSS
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-11-17-stereoscopic.md
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
-
 
 Przez jakiś czas blogowałem o tworzeniu r&oacute;żnego rodzaju efekt&oacute;w 3D przy wykorzystaniu CSS. W tym artykule p&oacute;jdę o krok dalej i spr&oacute;buje sprawić, że ujęcia będą wyglądały **bardziej tr&oacute;jwymiarowo**.
 
@@ -49,7 +47,7 @@ To tylko mała uwaga, ale jeśli zamierzasz spędzić dużo czasu wpatrując si�
 ## Ustaw ujęcie
 
 Zaczniemy od stworzenia prostego ujęcia 3D za pomocą HTML.
- 
+
     <div class="stage">
       <figure class="cube">
         <span class="back">S</span>
@@ -64,7 +62,7 @@ Zaczniemy od stworzenia prostego ujęcia 3D za pomocą HTML.
 Mamy tutaj zawierający scenę `div`, kt&oacute;ra będzie działać jako scena, w kt&oacute;rej umieścimy sześcian, a niej figurę sześcianu. Sześcian składa się z 6 części.
 
 &quot;Scena&quot; div jest potrzebna do ustanowienia przez przeglądarkę kilku ważnych ustawień związanych z 3D takich jak głębia ujęcia i kąt patrzenia na ujęcie. Te rzeczy ustawiamy za pomocą CSS.
- 
+
     .stage {
       width: 480px;
       height: 500px;
@@ -78,7 +76,7 @@ CSS przedstawia scenę za pomocą kilku proporcji i wartości `perspective`. Per
 ## Budowanie sześcianu
 
 Sześcian jest zbudowany z sześciu elementu. Korzystając z właściwości `transform` w CSS, możemy manipulować składowymi w przestrzeni 3D i umieścić je, gdzie chcemy. Jednakże najpierw musimy przekazać przeglądarce, że naszą intencją jest przemieszczanie element&oacute;w w przestrzeni 3D. Nasz kod CSS jest w stanie to osiągnąć.
- 
+
     .cube {
       transform-style: preserve-3d;
       transform-origin: 100px 50%;
@@ -90,7 +88,7 @@ Sześcian jest zbudowany z sześciu elementu. Korzystając z właściwości `tra
 Należy zwr&oacute;cić tutaj na gł&oacute;wne właściwości `transform-style` i `transform-origin`. Przekazują one przeglądarce, że ten i elementy podrzędne będą w stanie się przekształcać w kontekście &quot;sceny&quot; `figure`, jak r&oacute;wnież opisywać punkt względnie kt&oacute;rego będzie przebiegać rotacja, skalowanie lub pochylanie.
 
 Następnie musimy określić wymiary ścian sześcianu, a potem przenieść je na miejsce używając właściwości `transform`.
- 
+
     .cube span {
       color: white;
       display: block;
@@ -135,7 +133,7 @@ Ten kod CSS opisuje og&oacute;lne zasady dla składowych, kt&oacute;rych szeroko
 ## Tworzenie stereoskopii
 
 Teraz gdy mamy ujęcie z obiektem 3D, możemy go sklonować i uczynić stereoskopowym. Rozpoczniemy kopiując kod HTML do tagu div `left` i `right`.
- 
+
     <div class="container">
       <div class="left">
         <div class="stage">
@@ -165,7 +163,7 @@ Teraz gdy mamy ujęcie z obiektem 3D, możemy go sklonować i uczynić stereosko
     </div>
 
 Celem jest podzielenie ekranu na dwie części i umieszczenie dw&oacute;ch sześcian&oacute;w obok siebie. Ponownie skorzystamy z magii o nazwie CSS, aby osiągnąć cel.
- 
+
     .container {
       margin: 0 auto;
       width: 960px;
@@ -188,7 +186,7 @@ Celem jest podzielenie ekranu na dwie części i umieszczenie dw&oacute;ch sześ
 Nasz przykład nie musi być wyświetlany na pełnym ekranie, więc ustawiłem go w kolumnie kontenera. Każdy tag `div` jest ustawiony na 50% szerokości i pływa odpowiednio na lewej i prawej stronie.
 
 Teraz mamy dwa identyczne obiekty 3D. To nie koniec, ponieważ musimy dostosować je do r&oacute;żnych kąt&oacute;w dla każdego oka. Aby to wykonać, nadpiszemy każdą właściwość perspective-origin tagu `stage`.
- 
+
     .left .stage {
       perspective-origin: 63.5% -340px;
     }

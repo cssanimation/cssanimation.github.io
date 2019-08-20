@@ -9,7 +9,6 @@ imageURL: /images/posts/baymax/baymax.gif
 home_image: /images/posts/baymax/home.png
 tweet_text: Animeer een Baymax gezicht in CSS
 translator: Denis Valcke
-translator_link: https://twitter.com/DenisValcke
 ---
 
 Laten we CSS gebruiken om het Baymax personage van de film Big Hero 6 te maken.
@@ -22,15 +21,13 @@ Je kan [het hier zien op je volledige scherm](http://codepen.io/donovanh/full/ZY
 
 ## Enkel element
 
-Door gebruik te maken van pseudo-elementen, krijgen we de mogelijkheid om het gezicht te maken aan de hand van &eacute;&eacute;n HTML element. 
- 
+Door gebruik te maken van pseudo-elementen, krijgen we de mogelijkheid om het gezicht te maken aan de hand van &eacute;&eacute;n HTML element.
 
     <div class="baymax"></div>
 
 ## Opmaak
 
 Om te beginnen geven we het scherm een subtiele gradient zodat het er uit ziet als een gebogen, wit hoofd. Hiervoor gebruiken we een radiale gradient op de `body`.
- 
 
     body {
       background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
@@ -40,7 +37,7 @@ Om te beginnen geven we het scherm een subtiele gradient zodat het er uit ziet a
     }
 
 Vervolgens positioneren we het gezicht in het midden van de pagina. De mond is een simpele zwarte lijn, die maken we aan de hand van een rand.
- 
+
     .baymax {
       border-bottom: 1.5em solid #000;
       position: absolute;
@@ -63,7 +60,7 @@ Op dit moment wordt de mond als volgt gecentreerd:
 ## De ogen toevoegen
 
 We maken gebruik van de `before` en `after` pseudo-elementen om de ogen toe te voegen aan het gezicht. Dit heeft geen extra HTML nodig en wordt volledig in CSS geregeld.
- 
+
     .baymax::before {
       background: #000;
       border-radius: 50%;
@@ -97,7 +94,7 @@ Elk van deze pseudo-elementen heeft een zwart achtergrondkleur en een border-rad
 Er is een grappige scene in de film waar Baymax zijn batterij bijna leeg is. Hij strompelt rond en zijn oogleden vallen wat dicht. We kunnen een combinatie van achtergrond gradients en animatie gebruiken om dit effect te cre&euml;ren.
 
 Eerst geven we de achtergrond twee kleuren. Zwart voor het gedeelte van het oog dat open is, wit voor het ooglid. Het witte stuk moet initieel buiten de ogen gepositioneerd worden, dan animeren we het zo dat het lijkt alsof de oogleden wat dichtvallen.
- 
+
     .baymax::before {
       background: linear-gradient(to bottom, #efefef, #efefef 50%, #000 50%, #000);
       background-position: 0 -100%;
@@ -115,7 +112,7 @@ Eerst geven we de achtergrond twee kleuren. Zwart voor het gedeelte van het oog 
 Er wordt een lineaire gradient achtergrond toegevoegd, die is twee keer de hoogte van de container, we positioneren die zo bovenaan half uit de container valt.
 
 Met de twee achtergrond gradients in hun plaats kunnen we de animatie `keyframes` toevoegen om de beweging van de oogleden te controleren.
- 
+
     @keyframes blink {
       0%, 50% {
         background-position: 0 100%;
@@ -133,7 +130,7 @@ Animatie `keyframes` zijn een manier om een reeks frames te beschrijven aan de h
 Op deze manier kunnen we de achtergrond omhoog laten staan tot halfweg de animatie, tussen 50% en 85% beweegt hij naar omlaag en op het einde van de animatie schuift hij terug naar boven.
 
 De volgende stap is om het pseudo-element deze animatie keyframes te laten gebruiken. Voeg de `animation` property toe aan de bestaande stijl.
- 
+
     .baymax::before {
       animation: blink 6s infinite;
       ...
@@ -154,7 +151,7 @@ Je kan [het volledige effect hier zien op je volledige scherm](http://codepen.io
 
 ## Browsers
 
-In de codevoorbeelden zijn de gebruikelijke `-webkit` en `-moz` prefixes weg gelaten. De `transform` en `animation` properties worden best voorzien van een prefix, hiervoor raad ik Autoprefixer aan. 
+In de codevoorbeelden zijn de gebruikelijke `-webkit` en `-moz` prefixes weg gelaten. De `transform` en `animation` properties worden best voorzien van een prefix, hiervoor raad ik Autoprefixer aan.
 
 ## Shareable gif versie
 

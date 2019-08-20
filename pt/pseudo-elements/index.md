@@ -9,7 +9,6 @@ imageURL: /images/posts/sheen/sheen.gif
 home_image: /images/posts/sheen/home.png
 tweet_text: Bot&otilde;es brilhantes com CSS
 translator: "Sérgio Jardim"
-translator_link: https://twitter.com/sjardim
 ---
 
 Os pseudoelementos funcionam como se ganh&aacute;ssemos novos elmentos do DOM. Eles nos permitem adicionar&nbsp;em nossas p&aacute;ginas&nbsp;conte&uacute;do extra, decora&ccedil;&atilde;o, e muito&nbsp;mais, sem adicionar nada ao HTML. E eles podem ser animados. Neste post, n&oacute;s usaremos um pseudoelemento para adicionar um pouco do estilo visual para um bot&atilde;o.

@@ -4,7 +4,12 @@ title: Zegary
 description: Korzystając z CSS i JavaScript, zaprojektujemy i zaanimujemy r&oacute;żne rodzaje zegar&oacute;w.
 categories: [animations, transitions, javascript]
 customCSS: clocks.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+  ]
 customJS: clocks.js
 imageURL: /images/posts/clocks/twelve.gif
 home_image: /images/posts/clocks/home.png
@@ -12,7 +17,6 @@ tweet_text: Animowanie zegara w CSS
 custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Nadszedł czas. W tym artykule podejmiemy wyzwanie stworzenia i animacji zegara za pomocą prostych animacji CSS oraz języka JavaScript, aby je wywołać.
@@ -123,14 +127,14 @@ Wskaz&oacute;wka minut jest podobna, ale wyższa i cieńsza.
 Wskaz&oacute;wka sekund jest jeszcze cieńsza, ale r&oacute;wnież wystaje poza środek. Aby to zrobić ustawiłem `transform-origin` na 80%. To sprawia, że 20% wskaz&oacute;wki wystaje poza środek.
 
 .seconds {
-  background: #000;
-  height: 45%;
-  left: 49.5%;
-  position: absolute;
-  top: 14%;
-  transform-origin: 50% 80%;
-  width: 1%;
-  z-index: 8;
+background: #000;
+height: 45%;
+left: 49.5%;
+position: absolute;
+top: 14%;
+transform-origin: 50% 80%;
+width: 1%;
+z-index: 8;
 }
 
 <div class="demo-container clocks single"> <article class="clock simple"><div class="hours-container"> <div class="hours angled"></div> </div> <div class="minutes-container"> <div class="minutes angled"></div> </div> <div class="seconds-container"> <div class="seconds"></div> </div> </article></div>
@@ -144,21 +148,21 @@ Niekt&oacute;re zegary skaczą co sekundę wytwarzając dźwięk tykania. Inne m
 Możemy użyć `keyframe`, aby przekazać wskaz&oacute;wkom, aby obracały się o 360 stopni (zakładamy 0% jako pozycję startową).
 
 @keyframes rotate {
-  100% {
-    transform: rotateZ(360deg);
-  }
+100% {
+transform: rotateZ(360deg);
+}
 }
 
 Ta klatka kluczowa m&oacute;wi elementowi, aby obracał się o 360 stopni po zastosowaniu dla elementu właściwości `animation`. Wykorzystamy funkcję czasu `linear`, aby wskaz&oacute;wka poruszała się płynnie.
 
 .hours-container {
-  animation: rotate 43200s infinite linear;
+animation: rotate 43200s infinite linear;
 }
 .minutes-container {
-  animation: rotate 3600s infinite linear;
+animation: rotate 3600s infinite linear;
 }
 .seconds-container {
-  animation: rotate 60s infinite linear;
+animation: rotate 60s infinite linear;
 }
 
 Wskaz&oacute;wka `hours` jest ustawiona tak, aby wykonywać pełny obr&oacute;t co 12 godzin&nbsp;(43,200 sekund). Wskaz&oacute;wka minut wykonuje pełny obr&oacute;t co godzinę, a wskaz&oacute;wka sekund co minutę.
@@ -176,10 +180,10 @@ Wskaz&oacute;wka sekund wykonuje pełny obr&oacute;t w 60 sekund, więc łatwiej
 Możemy sprawić, że wskaz&oacute;wki będą zachowywać się jak w zwykłym zegarze tworząc 60 osobnych ruch&oacute;w dla wskaz&oacute;wki sekund. Prostym sposobem na osiągnięcie tego jest użycie funkcji czasowej `steps`. Właściwość `animation` dla każdej wskaz&oacute;wki wygląda tak:
 
 .minutes-container {
-  animation: rotate 3600s infinite steps(60);
+animation: rotate 3600s infinite steps(60);
 }
 .seconds-container {
-  animation: rotate 60s infinite steps(60);
+animation: rotate 60s infinite steps(60);
 }
 
 Teraz wskaz&oacute;wki minut i sekund obracają się w 60 krokach. Przeglądarka automatycznie oblicza o ile każdy z tych 60 krok&oacute;w ma się przesunąć.
@@ -190,44 +194,45 @@ Teraz wskaz&oacute;wki minut i sekund obracają się w 60 krokach. Przeglądarka
 
 Dobrze jest mieć ładny zegar, ale co z wskazywaniem właściwego czasu? Z pomocą kodu JavaScript możemy ustawić prawidłowy czas dla naszych odwiedzających. Oto kod.
 
-/*
- * Starts any clocks using the user's local time
- * From: cssanimation.rocks/clocks
- */
-function initLocalClocks() {
+/\*
+
+- Starts any clocks using the user's local time
+- From: cssanimation.rocks/clocks
+  \*/
+  function initLocalClocks() {
   // Get the local time using JS
   var date = new Date;
   var seconds = date.getSeconds();
   var minutes = date.getMinutes();
   var hours = date.getHours();
 
-  // Create an object with each hand and it's angle in degrees
-  var hands = [
-    {
-      hand: 'hours',
-      angle: (hours * 30) + (minutes / 2)
-    },
-    {
-      hand: 'minutes',
-      angle: (minutes * 6)
-    },
-    {
-      hand: 'seconds',
-      angle: (seconds * 6)
-    }
-  ];
-  // Loop through each of these hands to set their angle
-  for (var j = 0; j < hands.length; j++) {
-    var elements = document.querySelectorAll('.' + hands[j].hand);
-    for (var k = 0; k < elements.length; k++) {
-        elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
-        elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
-        // If this is a minute hand, note the seconds position (to calculate minute position later)
-        if (hands[j].hand === 'minutes') {
-          elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
-        }
-    }
-  }
+// Create an object with each hand and it's angle in degrees
+var hands = [
+{
+hand: 'hours',
+angle: (hours * 30) + (minutes / 2)
+},
+{
+hand: 'minutes',
+angle: (minutes * 6)
+},
+{
+hand: 'seconds',
+angle: (seconds * 6)
+}
+];
+// Loop through each of these hands to set their angle
+for (var j = 0; j < hands.length; j++) {
+var elements = document.querySelectorAll('.' + hands[j].hand);
+for (var k = 0; k < elements.length; k++) {
+elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
+// If this is a minute hand, note the seconds position (to calculate minute position later)
+if (hands[j].hand === 'minutes') {
+elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
+}
+}
+}
 }
 
 Ta funkcja konwertuje czas (godziny, minuty i sekundy) do odpowiedniego kąta każdej wskaz&oacute;wki. Następnie zapętla każdą wskaz&oacute;wkę i stosuje kąt korzystając z `style.transform` właściwości `rotateZ`.
@@ -249,50 +254,52 @@ Kiedy zegar jest po raz pierwszy rysowany na ekranie, minie mniej niż jedna min
 Przed przesunięciem wskaz&oacute;wki minut, musimy zakomunikować ile trwa bieżąca minuta. Być może zauważyłeś te wiersze.
 
 if (degrees[j].hand === 'minutes') {
-  elements[k].parentNode.setAttribute('data-second-angle', degrees[j + 1].degree);
+elements[k].parentNode.setAttribute('data-second-angle', degrees[j + 1].degree);
 }
 
 Te dodatkowe wiersze sprawdzają czy wskaz&oacute;wka jest &quot;minutowa&quot; i jeśli jest, to zestawia atrybut danych z bieżącym kątem wskaz&oacute;wki sekund.
 
 Po ustawieniu atrybutu danych, możemy użyć ich do określenia momentu przesunięcia wskaz&oacute;wki minutowej.
 
-/*
- * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
- */
-function setUpMinuteHands() {
+/\*
+
+- Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
+  _/
+  function setUpMinuteHands() {
   // Find out how far into the minute we are
   var containers = document.querySelectorAll('.minutes-container');
   var secondAngle = containers[0].getAttribute("data-second-angle");
   if (secondAngle > 0) {
-    // Set a timeout until the end of the current minute, to move the hand
-    var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
-    setTimeout(function() {
-      moveMinuteHands(containers);
-    }, delay);
+  // Set a timeout until the end of the current minute, to move the hand
+  var delay = (((360 - secondAngle) / 6) + 0.1) _ 1000;
+  setTimeout(function() {
+  moveMinuteHands(containers);
+  }, delay);
   }
-}
+  }
 
-/*
- * Do the first minute's rotation
- */
-function moveMinuteHands(containers) {
+/\*
+
+- Do the first minute's rotation
+  \*/
+  function moveMinuteHands(containers) {
   for (var i = 0; i < containers.length; i++) {
-    containers[i].style.webkitTransform = 'rotateZ(6deg)';
-    containers[i].style.transform = 'rotateZ(6deg)';
+  containers[i].style.webkitTransform = 'rotateZ(6deg)';
+  containers[i].style.transform = 'rotateZ(6deg)';
   }
   // Then continue with a 60 second interval
   setInterval(function() {
-    for (var i = 0; i < containers.length; i++) {
-      if (containers[i].angle === undefined) {
-        containers[i].angle = 12;
-      } else {
-        containers[i].angle += 6;
-      }
-      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
-      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
-    }
+  for (var i = 0; i < containers.length; i++) {
+  if (containers[i].angle === undefined) {
+  containers[i].angle = 12;
+  } else {
+  containers[i].angle += 6;
+  }
+  containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+  containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+  }
   }, 60000);
-}
+  }
 
 ### Dodawanie odbicia
 
@@ -302,31 +309,32 @@ Kiedy JavaScript ustawia nowy kąt dla wskaz&oacute;wki, przejście CSS na eleme
 
 Zanim to zrobimy, powinniśmy zaktualizować kod, aby użyć JavaScript r&oacute;wnież do poruszania wskaz&oacute;wką sekund. Użyjmy tego kodu, aby animować kontenery wskaz&oacute;wki sekund sześćdziesiąt razy na minutę.
 
-/*
- * Move the second containers
- */
-function moveSecondHands() {
+/\*
+
+- Move the second containers
+  \*/
+  function moveSecondHands() {
   var containers = document.querySelectorAll('.seconds-container');
   setInterval(function() {
-    for (var i = 0; i < containers.length; i++) {
-      if (containers[i].angle === undefined) {
-        containers[i].angle = 6;
-      } else {
-        containers[i].angle += 6;
-      }
-      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
-      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
-    }
+  for (var i = 0; i < containers.length; i++) {
+  if (containers[i].angle === undefined) {
+  containers[i].angle = 6;
+  } else {
+  containers[i].angle += 6;
+  }
+  containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+  containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+  }
   }, 1000);
-}
+  }
 
 Po skonfigurowaniu obsługiwania wskaz&oacute;wek minut i sekund przez JavaScript, zaktualizuj CSS zastępując `animation` właściwościami `transition`.
 
 .minutes-container {
-  transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
 }
 .seconds-container {
-  transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
 }
 
 Te przejścia dotyczą właściwości `transform` i korzystają z funkcji czasowej `cubic-bezier`. Funkcja czasowa nadaje wskaz&oacute;wkom efekt odbicia.

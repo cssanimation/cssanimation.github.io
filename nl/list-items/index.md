@@ -11,7 +11,6 @@ imageURL: /images/posts/list_items/list_items.png
 home_image: /images/posts/list_items/home.png
 tweet_text: Animating List Items
 translator: Denis Valcke
-translator_link: https://twitter.com/DenisValcke
 ---
 
 Als er stukken van de pagina veranderen kan animatie een goede manier zijn om uw gebruikers te helpen begrijpen wat er gebeurt. Animaties kunnen nieuwe inhoud aankondigen of aandacht trekken naar inhoud die op punt staat verwijderd te worden. In dit artikel zullen we bekijken hoe we dit kunnen gebruiken om nieuwe inhoud in te leiden door items in een lijst te tonen en verbergen.
@@ -30,7 +29,7 @@ Een voorbeeld van inhoud toevoegen of verwijderen is inhoud van een lijst behere
 ## De HTML opzetten
 
 Om te starten gebruiken we een lijst die reeds gevuld is en een knop om nieuwe items toe te voegen aan de lijst.
- 
+
     <ul id="list">
       <li class="show">List item</li>
       <li class="show">List item</li>
@@ -46,8 +45,7 @@ De initi&euml;le items hebben een klasse &quot;show&quot;, dit is de klasse die 
 Voor deze demo zullen we een stukje JavaScript maken om een nieuw item toe te voegen aan de lijst, daarna voegen we de &quot;show&quot; klasse toe zo dat de animatie kan doorgaan. Er is een reden om dit proces in twee stappen uit te voeren. Als de lijst items zouden worden toegevoegd in een zichtbare staat, zou er geen tijd zijn om de transitie te laten doorgaan.
 
 We zouden dit kunnen vermijden door een animatie te voorzien op de `li` elementen, dit zou echter moeilijker zijn om te overschrijven als je de elementen verwijdert zonder een andere animatie.
- 
-  
+
     /*
      * Add items to a list - from cssanimation.rocks/list-items/
      */
@@ -64,7 +62,7 @@ We zouden dit kunnen vermijden door een animatie te voorzien op de `li` elemente
 ## Geen animatie
 
 We kunnen basis CSS schrijven om de lijstitems te tonen. We gebruiken de `show` klasse als een manier om hen zichtbaar te maken, de `show` klasse verwijderen zou ze dus moeten doen verdwijnen.
- 
+
     li {
       list-style: none;
       background: #d1703c;
@@ -101,7 +99,7 @@ Als eerste animatie voegen we een simpel fade effect toe. De lijstitems verschij
 <button>Een lijstitem toevoegen</button></section>
 
 Om het effect toe te voegen heb ik een apart stukje CSS gemaakt. Om dit toe te voegen aan uw lijst voeg je de klasse `fade` toe aan een container rond uw lijst.
- 
+
     .fade li {
       transition: all 0.4s ease-out;
       opacity: 0;
@@ -121,7 +119,7 @@ De plotse sprong telkens er een item wordt toegevoegd of verwijderd is een beetj
 <button>Een lijstitem toevoegen</button></section>
 
 Het verschil tussen dit en de `fade` klasse hierboven is enkel dat `height: 2em` verwijderd is. De `show` klasse heeft een ingestelde hoogte (overge&euml;rfd van het eerste stukje CSS), de transitie op de hoogte zal automatisch gebeuren.
- 
+
     .slide-fade li {
       transition: all 0.4s ease-out;
       opacity: 0;
@@ -142,13 +140,13 @@ Samen met de fade en slide kunnen we ook nog verder gaan door een klein 3D effec
 Om dit op te zetten moeten we de omliggende `section` defini&euml;ren als een stage waarin de 3D transitie plaats vindt. We doen dit door het een `perspective` waarde te geven.
 
 Perspectief in CSS is de diepte van de scene. Een lager nummer betekent een minder diep perspectief, met hardere hoeken. Het is de moeite waard om met deze waarde te spelen en zien wat specifiek voor u werkt.
- 
+
     .swing {
       perspective: 100px;
     }
 
 Vervolgens zetten we de `li` elementen zo op, om naar hun plaats te transformeren. We gebruiken `opacity` om een fade effect te bekomen, zoals voordien, maar we voegen ook een `transform` toe om de `li` in plaats te roteren.
- 
+
     .swing li {
       opacity: 0;
       transform: rotateX(-90deg);
@@ -173,7 +171,7 @@ We kunnen dit effect aanpassen om makkelijk andere stijlen te cre&euml;ren. Hier
 <button>Een lijstitem toevoegen</button></section>
 
 Om dit effect te cre&euml;ren moeten we enkel de as van de rotatie aanpassen.
- 
+
     .swing li {
       opacity: 0;
       transform: rotateY(-90deg);

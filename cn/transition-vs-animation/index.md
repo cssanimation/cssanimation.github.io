@@ -4,14 +4,20 @@ title: "[译文]过渡效果 vs 动效"
 description: A description of the differences between transitions and animations in web animation.
 categories: [animation, tips, animations, transitions]
 customCSS: animations_transitions.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js, custom/list_items.js, custom/clocks.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+    custom/list_items.js,
+    custom/clocks.js,
+  ]
 imageURL: /images/posts/transitions-animations/transitions-animations.gif
 home_image: /images/posts/transitions-animations/transitions-animations.png
 tweet_text: "[译文]过渡效果 vs 动效"
 custom_header: posts/transitions-animations.html
 published: true
 translator: Ethon Lau
-translator_link: https://twitter.com/ethonlau
 ---
 
 当你在网页上做动画时，你会选用过渡效果还是动态效果？这是你作出选择的时候了，现在让我们来探讨一下它们的不同之处。
@@ -50,7 +56,6 @@ CSS 动效是一种能够代替过渡效果的更强大的工具。只要你喜�
 
 动效是通过对 `keyframes`（关键帧）的使用设置实现的。过渡效果能在一个类中的一行被指定，而动效能在 CSS 里单独用一系列关键帧被指定。
 
-
 ## 什么时候使用动效？
 
 如果动效需要在页面加载的时候运行，或者它比一个简单的从 A 到 B 状态的变换要更复杂，那么用 CSS 动效可能会更适合。
@@ -66,7 +71,6 @@ CSS 动效是一种能够代替过渡效果的更强大的工具。只要你喜�
 ## 但有时不是那么明显就能判断
 
 我最近做的一个东西起初用了动效，但后来又用回了过渡效果：
-
 
 <div class="demo-container clocks single local bounce">
   <article class="clock station">

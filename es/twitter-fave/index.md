@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/posts/master/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: M Rubare
-translator_link: /
 ---
 
 Recientemente Twitter ha actualizado el dise&ntilde;o de su bot&oacute;n &quot;favorito&quot; (tambi&eacute;n conocido como &quot;fav&quot;), con una nueva animaci&oacute;n. En vez de basarse en transiciones CSS, la animaci&oacute;n usar&aacute; una serie de im&aacute;genes. As&iacute; es como se recrea la animaci&oacute;n utilizando CSS con la funci&oacute;n de tiempo `steps`

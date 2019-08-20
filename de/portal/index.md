@@ -9,9 +9,7 @@ tweet_text: Erstelle diese beeindruckende Portal-animation mit ausschliesslich C
 custom_header: posts/portal.html
 demo_url: https://cssanimation.rocks/demo/portal/
 customCSS: portal.css
-source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-07-08-portal.md
 translator: Martin Hesseler
-translator_link: https://twitter.com/waslangewaehrt
 ---
 
 Ihr benötigt kein JavaScript um beeindruckende 3D-Projekte in Eurem Web Browser zu erstellen. In diesem Artikel werde ich Euch zeigen, wie man eine Portal-Szene mit ausschliesslich CSS erstellt und animiert.
@@ -35,7 +33,7 @@ Genauer gesagt ist dies die Szene, die wir erstellen werden:
 
 <img src="/images/posts/portal/video.jpg" alt="Portal video screenshot" />
 
-### Ein kurzer Hinweis zu *browser prefixes*
+### Ein kurzer Hinweis zu _browser prefixes_
 
 Ich habe im folgenden CSS die prefix-Versionen entfernt und empfehle Euch, entweder [prefix free](http://leaverou.github.io/prefixfree/) oder [SASS](http://sass-lang.com/) oder etwas Ähnliches zu benutzen, um diese automatisch zu handhaben. Denkt auf der anderen Seite daran, dass ihr die meisten Browser prefixes werdet benutzen müssen. Die vollständigen Versionen des CSS und SASS zusammen mit dem HTML könnt ihr auf [Github](https://github.com/donovanh/portal) finden.
 
@@ -49,13 +47,13 @@ Wir müssen zunächst einen Rahmen erstellen, in welchem unsere 3D-Szene stattfi
 
     <article class="container">...</article>
 
-In diesem Fall ist der Container ein *article tag*. Dieser *tag* ist in HTML5 ein Inhalt, welcher für sich alleine Sinn macht und sich an anderer Stelle auf der Seite wiederholen kann.
+In diesem Fall ist der Container ein _article tag_. Dieser _tag_ ist in HTML5 ein Inhalt, welcher für sich alleine Sinn macht und sich an anderer Stelle auf der Seite wiederholen kann.
 
-Die erste Eigenschaft, die wir setzen, ist *[perspective](http://docs.webplatform.org/wiki/css/properties/perspective)*. Sie akzeptiert einen Wert in Pixeln und repräsentiert die Tiefe der 3D-Szene. Ein kleinerer Wert produziert einen dramatischeren Effekt. Gängige Werte für diese Eigenschaft liegen zwischen 800 und 1200 Pixeln.
+Die erste Eigenschaft, die wir setzen, ist _[perspective](http://docs.webplatform.org/wiki/css/properties/perspective)_. Sie akzeptiert einen Wert in Pixeln und repräsentiert die Tiefe der 3D-Szene. Ein kleinerer Wert produziert einen dramatischeren Effekt. Gängige Werte für diese Eigenschaft liegen zwischen 800 und 1200 Pixeln.
 
 <img src="/images/posts/portal/perspective.gif" alt="Wechsel zwischen Perspektiv-werten von 900 und 2000 Pixeln" class="bordered centered" />
 
-Damit die Szene den Eindruck eines großen Raumes erweckt, werden wir den Wert für *perspective* recht hoch setzen, 2600px. Die verschiedenen Browser Präfixe außer Acht lassend, sieht das folgendermaßen aus:
+Damit die Szene den Eindruck eines großen Raumes erweckt, werden wir den Wert für _perspective_ recht hoch setzen, 2600px. Die verschiedenen Browser Präfixe außer Acht lassend, sieht das folgendermaßen aus:
 
     article.container {
       perspective: 2600px;
@@ -63,7 +61,7 @@ Damit die Szene den Eindruck eines großen Raumes erweckt, werden wir den Wert f
 
 ### Fluchtpunkt
 
-Der Container der Szene hat nun eine Tiefe. Der nächste Schritt besteht darin, einen Blickwinkel zu bestimmen. Mit der *[perspective-origin](http://docs.webplatform.org/wiki/css/properties/perspective-origin)* Eigenschaft können wir den Fluchtpunkt der Szene festlegen und somit beeinflussen, ob wir z.B. von oben oder von der Seite auf die Szene schauen.
+Der Container der Szene hat nun eine Tiefe. Der nächste Schritt besteht darin, einen Blickwinkel zu bestimmen. Mit der _[perspective-origin](http://docs.webplatform.org/wiki/css/properties/perspective-origin)_ Eigenschaft können wir den Fluchtpunkt der Szene festlegen und somit beeinflussen, ob wir z.B. von oben oder von der Seite auf die Szene schauen.
 
     .container {
       perspective-origin: 50% -1400px;
@@ -71,17 +69,17 @@ Der Container der Szene hat nun eine Tiefe. Der nächste Schritt besteht darin, 
 
 Diese Eigenschaft erwartet zwei Werte: einen für den horizontalen und einen für den vertikalen Versatz des Fluchtpunktes. In diesem Fall setzen wir den ersten, horizontalen Wert genau in die Mitte der Szene. Den vertikalen hingegen versetzen wir nach oben auf 1400 Pixel. Wir schauen dadurch also von oben auf die Szene herab.
 
-Diese Werte habe ich im Chrome Web Inspector mit gutem Augenmaß ermittelt und eingestellt. Bei Eurer Szene werdet Ihr die Werte möglicherweise höher oder niedriger setzen. Das wird davon abhängen, welchen Effekt Ihr beim Betrachter erzielen wollt. Denkt auch daran, dass man die *perspective-origin* Eigenschaft und somit den Blickwinkel animieren kann, womit man einen interessanten Effekt erreichen kann.
+Diese Werte habe ich im Chrome Web Inspector mit gutem Augenmaß ermittelt und eingestellt. Bei Eurer Szene werdet Ihr die Werte möglicherweise höher oder niedriger setzen. Das wird davon abhängen, welchen Effekt Ihr beim Betrachter erzielen wollt. Denkt auch daran, dass man die _perspective-origin_ Eigenschaft und somit den Blickwinkel animieren kann, womit man einen interessanten Effekt erreichen kann.
 
 ### Keine Vektoren
 
-Unsere Objekte im HTML *markup* sind normale HTML-Elemente. Sie besitzen  eine Breite und eine Höhe und sind rechteckig. Während Ihr also ein 3D-Objekt erstellt, wird jedes dieser Rechtecke positioniert. Dieser Ansatz unterscheidet sich von einigen anderen Methoden, bei denen mit Hilfe von Punkten und Linien Formen erstellt werden. Dies bedeutet auch, dass wir weniger für 3D-Programme typische primitive Formen wie z.B. Kreise und Teekannen zur Verfügung haben.
+Unsere Objekte im HTML _markup_ sind normale HTML-Elemente. Sie besitzen eine Breite und eine Höhe und sind rechteckig. Während Ihr also ein 3D-Objekt erstellt, wird jedes dieser Rechtecke positioniert. Dieser Ansatz unterscheidet sich von einigen anderen Methoden, bei denen mit Hilfe von Punkten und Linien Formen erstellt werden. Dies bedeutet auch, dass wir weniger für 3D-Programme typische primitive Formen wie z.B. Kreise und Teekannen zur Verfügung haben.
 
-Unsere HTML-Elemente werden innerhalb der 3D-Szene mit Hilfe der *transform* Eigenschaft arrangiert.
+Unsere HTML-Elemente werden innerhalb der 3D-Szene mit Hilfe der _transform_ Eigenschaft arrangiert.
 
 ### Transformieren
 
-Die *transform* Eigenschaft beinhaltet eine Reihe von Neuausrichtungen für das HTML-Element. Diese Neuausrichtungen des Elements können im Versetzen (*translate*), in seiner Rotation (*rotate*), seiner Verdrehung (*skew*) and sogar seiner Skalierung (*skale*) bestehen. Diese Neuausrichtungen lassen sich kombinieren um noch komplexere Transformationen zu animieren, wie z.B.:
+Die _transform_ Eigenschaft beinhaltet eine Reihe von Neuausrichtungen für das HTML-Element. Diese Neuausrichtungen des Elements können im Versetzen (_translate_), in seiner Rotation (_rotate_), seiner Verdrehung (_skew_) and sogar seiner Skalierung (_skale_) bestehen. Diese Neuausrichtungen lassen sich kombinieren um noch komplexere Transformationen zu animieren, wie z.B.:
 
     .example {
       transform: rotateY(45deg) translateZ(-100px);
@@ -91,9 +89,9 @@ Dieser Befehl rotiert das Element zunächst um 45 Grad um die Y-Achse und versch
 
 <img src="/images/posts/portal/transform.png" alt="Eine Transformation in Aktion" class="bordered centered" />
 
-### Die *transform-origin* Eigenschaft
+### Die _transform-origin_ Eigenschaft
 
-Wenn wir Element rotieren, lohnt es sich im Hinterkopf zu behalten, dass sich der Ursprung der Transformation festlegen lässt. Der Wert der *tranform-origin* Eigenschaft ist ein Punkt im Koordinatensystem, wird also durch Werte auf der X-, Y- und Z-Achse bestimmt. Der Standardwert ist:
+Wenn wir Element rotieren, lohnt es sich im Hinterkopf zu behalten, dass sich der Ursprung der Transformation festlegen lässt. Der Wert der _tranform-origin_ Eigenschaft ist ein Punkt im Koordinatensystem, wird also durch Werte auf der X-, Y- und Z-Achse bestimmt. Der Standardwert ist:
 
     .default-origin {
       transform-origin: 50% 50% 0;
@@ -116,7 +114,7 @@ Unser Schauplatz ist eingerichtet, und wir können somit beginnen, unser Meister
       <div class="pit-back"></div>
     </section>
 
-Der oben gezeigte Code beinhaltet ein *section* Element, welches unsere Bühne sein wird (*stage*). Eine Reihe von *div* Elementen innerhalb des *section* Elements bilden das Grundgerüst. Sie werden die Formen der Hintergründe, der Ebenen, die Seiten des Schachtes und der Schatten unter den Objekten annehmen.
+Der oben gezeigte Code beinhaltet ein _section_ Element, welches unsere Bühne sein wird (_stage_). Eine Reihe von _div_ Elementen innerhalb des _section_ Elements bilden das Grundgerüst. Sie werden die Formen der Hintergründe, der Ebenen, die Seiten des Schachtes und der Schatten unter den Objekten annehmen.
 
 Als ich mit der Szene begann, habe ich zunächst versucht, die Wände direkt auf der Bühne aufzustellen, zu drehen und in Position zu bringen. Da wir die Szene jedoch von einem isometrischen Winkel betrachten, ist es einfacher, alle Elemente aufzustellen und anschließend die gesamte Szene um 45 Grad zu drehen.
 
@@ -126,16 +124,16 @@ Wenn wir dies berücksichtigen, können wir die Elemente gemäß folgender Zeich
 
 Wie man sehen kann, ist die Seite, die sich hinten links befinden soll, links ausgerichtet. Aber die Seite, die sich hinten rechts befinden soll, sitzt dem Zuschauer direkt gegenüber. Um dies auszugleichen, werden wir später die gesamte Szene um 45 Grad drehen.
 
-Bevor wir allerdings die Transformationen ausführen können, müssen wir zunächst einige gemeinsame Eigenschaften für die *divs* festlegen:
+Bevor wir allerdings die Transformationen ausführen können, müssen wir zunächst einige gemeinsame Eigenschaften für die _divs_ festlegen:
 
     .stage div {
       position: absolute;
       transform-style: preserve-3d;
     }
 
-Jedes div wird *absolute* positioniert. Außerdem setzen wir die *transform-style* Eigenschaft, um den Browser wissen zu lassen, dass unsere Transformationen unter Berücksichtigung der eingestellten Perspektive ausgeführt werden sollen.
+Jedes div wird _absolute_ positioniert. Außerdem setzen wir die _transform-style_ Eigenschaft, um den Browser wissen zu lassen, dass unsere Transformationen unter Berücksichtigung der eingestellten Perspektive ausgeführt werden sollen.
 
-Nachdem dies erledigt ist, können wir nun die *divs* positionieren:
+Nachdem dies erledigt ist, können wir nun die _divs_ positionieren:
 
     .stage .back-left {
       background-color: #6b522b;
@@ -148,7 +146,7 @@ Nachdem dies erledigt ist, können wir nun die *divs* positionieren:
 
 Die oben stehenden Anweisungen beschreiben eine Breite von 500 Pixeln, was der Seitenlänge unserer 3D-Szene entspricht, eine Höhe von 120 Pixeln und einen hellbraunen Hintergrund. Das Element wird dann um 90 Grad gedreht und auf der X-Achse nach hinten versetzt. Der Rand von 6 Pixel soll die Illusion von Tiefe erzeugen.
 
-Für das *div* hinten rechts benutzen wir eine ähnliche Transformation:
+Für das _div_ hinten rechts benutzen wir eine ähnliche Transformation:
 
     .stage .back-right {
       background-color: #9c7442;
@@ -202,7 +200,7 @@ Das Endresultat sollte folgendermaßen aussehen:
 
 <img src="/images/posts/portal/layout01.png" alt="Ausgangslayout der divs für die Bühne" />
 
-Etwas fehlt noch. Um die gesamte Szene richtig zu sehen, müssen wir sie drehen. Wir fügen also eine Transformation zur *stage* Klasse hinzu:
+Etwas fehlt noch. Um die gesamte Szene richtig zu sehen, müssen wir sie drehen. Wir fügen also eine Transformation zur _stage_ Klasse hinzu:
 
     .stage {
       margin: 0 auto;
@@ -215,11 +213,11 @@ Das Ergebnis sollte nun so aussehen:
 
 <img src="/images/posts/portal/layout02.png" alt="Rotiertes Ausgangslayout um die Bühne korrekt darzustellen" />
 
-Ihr werdet vielleicht bemerkt haben, dass die Ränder (*border* Eigenschaft) einen netten Effekt von Tiefe erzeugen, und zwar besonders da, wo sich zwei Ränder unterschiedlicher Farben in einem Winkel von 45 Grad treffen. Da wir unser Werk aus einem Winkel von 45 Grad betrachten, wirkt dieser Effekt zumeist zu unserem Vorteil. Einige der Ecken sehen nicht ganz korrekt aus. Wenn wir allerdings berücksichtigen, wie einfach die *border* Eigenschaft einzusetzen ist und dass wir keine Bilder zu Verfügung haben, denke ich, dass dies ein akzeptabler Kompromiss ist.
+Ihr werdet vielleicht bemerkt haben, dass die Ränder (_border_ Eigenschaft) einen netten Effekt von Tiefe erzeugen, und zwar besonders da, wo sich zwei Ränder unterschiedlicher Farben in einem Winkel von 45 Grad treffen. Da wir unser Werk aus einem Winkel von 45 Grad betrachten, wirkt dieser Effekt zumeist zu unserem Vorteil. Einige der Ecken sehen nicht ganz korrekt aus. Wenn wir allerdings berücksichtigen, wie einfach die _border_ Eigenschaft einzusetzen ist und dass wir keine Bilder zu Verfügung haben, denke ich, dass dies ein akzeptabler Kompromiss ist.
 
 ### Im Schatten
 
-Das Video zeigt einen schönen Schatten unter den beiden Ebenen, welchen wir mit Hilfe der CSS *box-shadow* Eigenschaft nachahmen wollen.
+Das Video zeigt einen schönen Schatten unter den beiden Ebenen, welchen wir mit Hilfe der CSS _box-shadow_ Eigenschaft nachahmen wollen.
 
     .stage .shadow {
       background-color: transparent;
@@ -229,10 +227,9 @@ Das Video zeigt einen schönen Schatten unter den beiden Ebenen, welchen wir mit
       width: 550px;
     }
 
-Die oben stehenden Anweisungen erzeugen einen Schatten für *div.shadow*. Die *div* selbst ist transparent. Der Schatten ist um 600 Pixel versetzt, sodass die eigentliche *div* den Schatten nicht überlagert. Das ganze wird so gedreht und positioniert, dass von oben aus nur der Schatten zu sehen ist. Das Ergebnis sollte nun folgendermaßen aussehen:
+Die oben stehenden Anweisungen erzeugen einen Schatten für _div.shadow_. Die _div_ selbst ist transparent. Der Schatten ist um 600 Pixel versetzt, sodass die eigentliche _div_ den Schatten nicht überlagert. Das ganze wird so gedreht und positioniert, dass von oben aus nur der Schatten zu sehen ist. Das Ergebnis sollte nun folgendermaßen aussehen:
 
 <img src="/images/posts/portal/layout03.png" alt="Ausgangslayout mit Schatten" />
-
 
 ## Rot gegen Blau
 
@@ -245,7 +242,7 @@ Das HTML für die beiden Portal könnte simpler nicht sein:
     <div class="portal red"></div>
     <div class="portal blue"></div>
 
-Für das rote und das blaue Portal existiert jeweils ein *div*. Die beiden sehen einander ähnlich, wobei wir Gradienten benutzen, um den Leuchteffekt zu erzeugen. Da für jedes Portal nur ein HTML-Element existiert, benutzen wir ein CSS Pseudo-Element, um den Gesamteindruck zu vervollständigen.
+Für das rote und das blaue Portal existiert jeweils ein _div_. Die beiden sehen einander ähnlich, wobei wir Gradienten benutzen, um den Leuchteffekt zu erzeugen. Da für jedes Portal nur ein HTML-Element existiert, benutzen wir ein CSS Pseudo-Element, um den Gesamteindruck zu vervollständigen.
 
 Im ersten Schritt kümmern wir uns um die Form der Portale:
 
@@ -257,7 +254,7 @@ Im ersten Schritt kümmern wir uns um die Form der Portale:
       width: 48px;
     }
 
-Mit Hilfe der *border-radius* Eigenschaft erstellen wir die ovale Form der Portale. *box-shadow* benutzen wir um ein weißes Leuchten zu erzeugen. Anschließend nutzen wir ein Pseudo-Element mit ähnlichen Ausmaßen, um den weißen Ring zu erzeugen:
+Mit Hilfe der _border-radius_ Eigenschaft erstellen wir die ovale Form der Portale. _box-shadow_ benutzen wir um ein weißes Leuchten zu erzeugen. Anschließend nutzen wir ein Pseudo-Element mit ähnlichen Ausmaßen, um den weißen Ring zu erzeugen:
 
     .stage .portal:before {
       border-radius: 44px/62px;
@@ -283,11 +280,11 @@ Alle bisherigen Anweisungen betrafen beide Portale. Da eines jedoch rot und das 
       transform: translate3D(586px, 25px, 4px) skewX(-5deg);
     }
 
-Das rote Portal erhält als Hintergrung einen [radialen Gradienten](http://docs.webplatform.org/wiki/css/functions/radial-gradient) und dazu einen roten Rand. Mit Hilfe einer Transformation drehen und positionieren wir das Portal an der linken Wand. Das blaue Portal erhält dementsprechend einen blauen Gradienten und wird an der rechten Wand positioniert. Beide Portale sahen daraufhin etwas merkwürdig aus, sodass ich sie um 5 Grad verdreht (*skew* Eigenschaft) habe, um sie größer aussehen zu lassen.
+Das rote Portal erhält als Hintergrung einen [radialen Gradienten](http://docs.webplatform.org/wiki/css/functions/radial-gradient) und dazu einen roten Rand. Mit Hilfe einer Transformation drehen und positionieren wir das Portal an der linken Wand. Das blaue Portal erhält dementsprechend einen blauen Gradienten und wird an der rechten Wand positioniert. Beide Portale sahen daraufhin etwas merkwürdig aus, sodass ich sie um 5 Grad verdreht (_skew_ Eigenschaft) habe, um sie größer aussehen zu lassen.
 
 ### Portal-Leuchten
 
-Im oben stehenden HTML haben wir zwei *span tags* innerhalb jeder Ebene eingefügt. Sie haben den Zweck, das Portal-Leuchten unterhalb der Portale darzustellen.
+Im oben stehenden HTML haben wir zwei _span tags_ innerhalb jeder Ebene eingefügt. Sie haben den Zweck, das Portal-Leuchten unterhalb der Portale darzustellen.
 
     .stage .platform-left span {
       background: radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
@@ -306,15 +303,15 @@ Im oben stehenden HTML haben wir zwei *span tags* innerhalb jeder Ebene eingefü
       width: 150px;
     }
 
-Die beiden *span tags* werden *absolute* positioniert und erhalten einen roten und blauen Gradienten, welcher jeweils unterhalb der Portale positioniert wird. Wir hätten dies auch mit einem Pseudo-Element erreichen können. Allerdings ist die Browser-Unterstützung für die Animation von Pseudo-Elementen nicht sehr gut (sogar zwischen verschiedenen Webkit-Versionen), sodass ich mich für die Lösung mit dem zusätzlichen *span* entschieden habe.
+Die beiden _span tags_ werden _absolute_ positioniert und erhalten einen roten und blauen Gradienten, welcher jeweils unterhalb der Portale positioniert wird. Wir hätten dies auch mit einem Pseudo-Element erreichen können. Allerdings ist die Browser-Unterstützung für die Animation von Pseudo-Elementen nicht sehr gut (sogar zwischen verschiedenen Webkit-Versionen), sodass ich mich für die Lösung mit dem zusätzlichen _span_ entschieden habe.
 
 ### Die Tür
 
-Eine der unerwarteten und zudem positiven Überraschungen war der Einsatz von Rändern (*border* Eigenschaft), um in der rechten Wand eine Öffnung darzustellen, welche den Ausgang repräsentieren soll. Für die Tür habe ich ein einzelnes *div* und einige farbige Ränder benutzt, welche die Öffnung so aussehen lassen, als sei sie in die Wand eingelassen.
+Eine der unerwarteten und zudem positiven Überraschungen war der Einsatz von Rändern (_border_ Eigenschaft), um in der rechten Wand eine Öffnung darzustellen, welche den Ausgang repräsentieren soll. Für die Tür habe ich ein einzelnes _div_ und einige farbige Ränder benutzt, welche die Öffnung so aussehen lassen, als sei sie in die Wand eingelassen.
 
 <img src="/images/posts/portal/door.png" alt="Tür" />
 
-Das HTML für die Tür ist sehr einfach. Folgendes fügen wir zu *section.stage* hinzu.
+Das HTML für die Tür ist sehr einfach. Folgendes fügen wir zu _section.stage_ hinzu.
 
     <div class="door"></div>
 
@@ -329,7 +326,7 @@ Wir benötigen für die Tür einige Rahmen. Anschließend können wir die Tür m
       width: 65px;
     }
 
-Wir setzten zwei Kanten ein, um unseren Effekt zu erzielen. Die linke Kante ist auf die rechte Wand farblich abgestimmt. Die untere passt zur Ebene, wodurch ein Gefühl von Tiefe entsteht. Da kein oberer Rahmen angegeben wurde, schließt der linke Rahmen mit der Oberseite des *div* ab, was in diesem Fall gut aussieht.
+Wir setzten zwei Kanten ein, um unseren Effekt zu erzielen. Die linke Kante ist auf die rechte Wand farblich abgestimmt. Die untere passt zur Ebene, wodurch ein Gefühl von Tiefe entsteht. Da kein oberer Rahmen angegeben wurde, schließt der linke Rahmen mit der Oberseite des _div_ ab, was in diesem Fall gut aussieht.
 
 ## Figuren
 
@@ -352,7 +349,7 @@ Die erste Figur besteht im Wesentlich aus zwei Teilen: dem Kopf und dem Körper.
       </div>
     </div>
 
-Da der Schatten Teil der gesamten Figur ist (*dude one*), können wir beides gleichzeitig animieren. Das CSS sieht folgendermaßen aus:
+Da der Schatten Teil der gesamten Figur ist (_dude one_), können wir beides gleichzeitig animieren. Das CSS sieht folgendermaßen aus:
 
     .dude, .dude-shadow {
       height: 100px;
@@ -391,7 +388,7 @@ Da der Schatten Teil der gesamten Figur ist (*dude one*), können wir beides gle
       left: 14px;
     }
 
-Die Anweisungen duplizieren sich jeweils durch die Beschreibung von sowohl Figur also auch Schatten. Jedes Element wir absolut positioniert, und wir benutzen *border-radius* um runde Formen zu erzeugen. Die Beine werden, wie gesagt, durch zwei Pseudo-Elemente beschrieben und dann positioniert.
+Die Anweisungen duplizieren sich jeweils durch die Beschreibung von sowohl Figur also auch Schatten. Jedes Element wir absolut positioniert, und wir benutzen _border-radius_ um runde Formen zu erzeugen. Die Beine werden, wie gesagt, durch zwei Pseudo-Elemente beschrieben und dann positioniert.
 
 ### Figur 1
 
@@ -405,7 +402,7 @@ Die Figur ist also fertig und muss nun an ihre Startposition gebracht werden:
       transform: translateX(-12px) rotateX(90deg) translateY(8px);
     }
 
-Die CSS Transformation bezieht sich sowohl auf die Figur wie auch den Schatten. Anstatt für den Schatten eine graue Farbe zu benutzen, setzen wir die Lichtdurchlässigkeit (*opacity* Eigenschaft) auf 0,1. Dadurch lassen sich Details der Szene durch den Schatten hindurch erkennen.
+Die CSS Transformation bezieht sich sowohl auf die Figur wie auch den Schatten. Anstatt für den Schatten eine graue Farbe zu benutzen, setzen wir die Lichtdurchlässigkeit (_opacity_ Eigenschaft) auf 0,1. Dadurch lassen sich Details der Szene durch den Schatten hindurch erkennen.
 
 Die Figur ist nun also an ihrer Startposition und in einem dem Video entsprechenden Winkel gedreht. Um die Animation der Figuren durch die Portale kümmern wir uns später.
 
@@ -467,11 +464,11 @@ Jetzt wollen wir versuchen, dass die Figur scheinbar durch das erste Portal spri
 
 In der [Demo](http://hop.ie/portal/) erkennt Ihr eine ganze Reihe von Animationen. Anstatt auf jede einzelne Animation in der Szene einzugehen, setze ich den Fokus hier auf die Animation der Figur wie sie durch die Portale springt.
 
-### *keyframe* Animation
+### _keyframe_ Animation
 
-Animation und korrektes Timing der HTML-Elemente erreichen wir mit Hilfe der  [*keyframes*](http://docs.webplatform.org/wiki/css/atrules/@keyframes) Eigenschaft. Die *keyframes* werden dann durch die [*animation*](http://docs.webplatform.org/wiki/css/properties/animation) Eigenschaft den entsprechenden HTML-Elementen zugeordnet.
+Animation und korrektes Timing der HTML-Elemente erreichen wir mit Hilfe der [_keyframes_](http://docs.webplatform.org/wiki/css/atrules/@keyframes) Eigenschaft. Die _keyframes_ werden dann durch die [_animation_](http://docs.webplatform.org/wiki/css/properties/animation) Eigenschaft den entsprechenden HTML-Elementen zugeordnet.
 
-Als erstes animieren wir die Annäherung und den Sprung der Figur durch das linke Portal. Im folgenden seht ihr die *keyframes*, um dies zu erreichen:
+Als erstes animieren wir die Annäherung und den Sprung der Figur durch das linke Portal. Im folgenden seht ihr die _keyframes_, um dies zu erreichen:
 
     @keyframes move-dude-one {
       /* Character flies into scene */
@@ -501,11 +498,11 @@ Als erstes animieren wir die Annäherung und den Sprung der Figur durch das link
     }
     /* Anmerkung: Benutzt *prefixes* wie @-webkit-keyframes, @-moz-keyframes etc.! */
 
-*Keyframes* beschreiben eine Reihe von Schritten in der Animation, wobei die Schritte in Prozent der Animationsdauer angegeben werden. Bei einer Dauer von 10 Sekunden entsprechen 10% also 1 Sekunde und 90% entsprechen 9 Sekunden.
+_Keyframes_ beschreiben eine Reihe von Schritten in der Animation, wobei die Schritte in Prozent der Animationsdauer angegeben werden. Bei einer Dauer von 10 Sekunden entsprechen 10% also 1 Sekunde und 90% entsprechen 9 Sekunden.
 
-Wir benutzen zwei Animationen von jeweils 10 Sekunden, damit unsere Figuren in einer nahtlosen Schleife durch die Portale springen. Für jeden Animationsschritt habe ich einen Kommentar in den Code geschrieben. Um die Figuren für jeden Animationsschritt in Position zu bringen und zu drehen, benutzen wir die *transform* Eigenschaft.
+Wir benutzen zwei Animationen von jeweils 10 Sekunden, damit unsere Figuren in einer nahtlosen Schleife durch die Portale springen. Für jeden Animationsschritt habe ich einen Kommentar in den Code geschrieben. Um die Figuren für jeden Animationsschritt in Position zu bringen und zu drehen, benutzen wir die _transform_ Eigenschaft.
 
-Bei 43% der Animationsdauer lassen wir die erste Figur verschwinden (*opacity* wird auf Null gesetzt). Zu diesen Zeitpunkt verschwindet die Figur durch das linke Portal. Die zweite Figur muss somit bei 43% sichtbar werden.
+Bei 43% der Animationsdauer lassen wir die erste Figur verschwinden (_opacity_ wird auf Null gesetzt). Zu diesen Zeitpunkt verschwindet die Figur durch das linke Portal. Die zweite Figur muss somit bei 43% sichtbar werden.
 
 Bevor wir uns darum kümmern, wollen wir zunächst die Anweisungen für die Animation der ersten Figur festlegen:
 
@@ -514,11 +511,11 @@ Bevor wir uns darum kümmern, wollen wir zunächst die Anweisungen für die Anim
       opacity: 0;
     }
 
-Die *animation* Eigenschaft beschreibt die Anweisungen für die Animation der ersten Figur (*dude one*). Die Anweisungen werden einem Animationsnamen zugeordnet, die Animationsdauer wird auf 10 Sekunden gesetzt, und die Animation soll in einer Endlosschleife laufen.
+Die _animation_ Eigenschaft beschreibt die Anweisungen für die Animation der ersten Figur (_dude one_). Die Anweisungen werden einem Animationsnamen zugeordnet, die Animationsdauer wird auf 10 Sekunden gesetzt, und die Animation soll in einer Endlosschleife laufen.
 
-Bevor unsere Animation startet, soll unsere erste Figur unsichtbar sein (*opacity: 0*).
+Bevor unsere Animation startet, soll unsere erste Figur unsichtbar sein (_opacity: 0_).
 
-Nachdem das erledigt ist, können wir die *keyframes* für die zweite Figur festlegen:
+Nachdem das erledigt ist, können wir die _keyframes_ für die zweite Figur festlegen:
 
     @keyframes move-dude-two {
       /* Dude be invisible */
@@ -560,9 +557,9 @@ Nachdem das erledigt ist, können wir die *keyframes* für die zweite Figur fest
       }
     }
 
-Wie erwähnt beginnt diese Animation bei etwa 42% der Animationsdauer. Die Figur springt aus dem Portal hervor, steht ein bisschen herum und entschwindet dann nach oben. Die Animation der Arme wird in einer zweiten Reihe von *keyframes* beschrieben. Die Arme sind zunächst unsichtbar und erscheinen dann bei etwa der Hälfte der Animationsdauer.
+Wie erwähnt beginnt diese Animation bei etwa 42% der Animationsdauer. Die Figur springt aus dem Portal hervor, steht ein bisschen herum und entschwindet dann nach oben. Die Animation der Arme wird in einer zweiten Reihe von _keyframes_ beschrieben. Die Arme sind zunächst unsichtbar und erscheinen dann bei etwa der Hälfte der Animationsdauer.
 
-Die Anweisungen für die Animation der zweiten Figur (*dude two*) sehen folgendermaßen aus:
+Die Anweisungen für die Animation der zweiten Figur (_dude two_) sehen folgendermaßen aus:
 
     .dude.two {
       animation: move-dude-two 10s linear infinite;

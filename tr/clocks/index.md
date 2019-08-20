@@ -4,7 +4,12 @@ title: Saatler
 description: Biraz JavaScript'in de yardimiyla, CSS kullanarak saatler tasarlayip hareketlendirecegiz.
 categories: [animations, transitions, javascript]
 customCSS: clocks.css
-extraJS: [vendor/moment.min.js,vendor/moment-timezone.min.js, vendor/moment-timezone-with-data-2010-2020.min.js]
+extraJS:
+  [
+    vendor/moment.min.js,
+    vendor/moment-timezone.min.js,
+    vendor/moment-timezone-with-data-2010-2020.min.js,
+  ]
 customJS: clocks.js
 imageURL: /images/posts/clocks/twelve.gif
 home_image: /images/posts/clocks/home.png
@@ -12,7 +17,6 @@ tweet_text: CSS ile saat animasyonu
 custom_header: posts/clocks.html
 demo_url: http://codepen.io/donovanh/full/vEjywy/
 translator: Can Göktaş
-translator_link: https://twitter.com/cangokt
 ---
 
 Vakit tamam! Bu yazida,&nbsp;bir saat olusturup basit CSS animasyonlari (ve tabii onlari tetiklemek icin&nbsp;JavaScript) kullanarak onu hareketlendirmeye calisacagiz.
@@ -23,8 +27,8 @@ Iste HTML, CSS, bir SVG arkaplan ve biraz da JavaScript kullanarak olusturacagim
 
 ### HTML
 
-Biraz HTML ile ise koyuluyoruz. 
- 
+Biraz HTML ile ise koyuluyoruz.
+
     <article class="clock">
       <div class="hours-container">
         <div class="hours"></div>
@@ -42,7 +46,7 @@ Her bir bolum icin (toplamda 3: saat, dakika, saniye) birer element yaratiyoruz.
 ## Saat arkaplani
 
 Basit bir dairesel arkaplan, akrep, yelkovan ve saniye cubugu ile basliyoruz.
- 
+
     .clock {
       border-radius: 50%;
       background: #fff url(/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -73,7 +77,7 @@ Islemler sonunda boyle bir sonuc elde etmis olacagiz.
 <div class="demo-container clocks single"> <article class="clock simple"></article></div>
 
 Cubuklari eklemeden once kapsayici elementleri yerlestirmeliyiz.
- 
+
     .minutes-container, .hours-container, .seconds-container {
       position: absolute;
       top: 0;
@@ -87,7 +91,7 @@ Bu kod sayesinde her bir cubuk kapsayicisi, saatin en ust noktasinda gorunecekti
 ### Akrep (saat gostergesi)
 
 Su anda her bir cubuk `absolute` position degeri almis halde ve saat 12'yi yani yukariyi gosterecek sekilde. Akrep cubugunu duzenlemeye basliyoruz.
- 
+
     .hours {
       background: #000;
       height: 20%;
@@ -105,7 +109,7 @@ Saati ilerde farkli boyutlara kucultmek/buyutmek daha kolay olsun diye pixel deg
 ### Yelkovan (dakika gostergesi)
 
 Yelkovan Akrep'le benzerlik gosteriyor; ancak biraz daha dar ve uzun bir gorunume sahip.
- 
+
     .minutes {
       background: #000;
       height: 40%;
@@ -121,7 +125,7 @@ Yelkovan Akrep'le benzerlik gosteriyor; ancak biraz daha dar ve uzun bir gorunum
 ### Saniye gostergesi
 
 Bu gosterge de ayni sekilde uzun, ancak biraz daha asagiya cekilmis halde. Boylelikle tam merkezden degil, biraz daha asagidan baslamis olacak. Bunun icin `transform-origin` degerini 80%'e ayarliyoruz. Boylelikle bu gostergenin %20'si merkezin disinda olmus oluyor.
- 
+
     .seconds {
       background: #000;
       height: 45%;
@@ -142,7 +146,7 @@ Saatimiz bu haliyle gunde sadece 2 kere dogruyu gosteriyor. :) Gercek bir saat g
 Bazi saatler her saniye calisarak &quot;tik-tak&quot; sesini cikarir. Bazi saatlerse bunu daha &quot;smooth&quot; sekilde yapar; saniye cubugu keskin hareketlerle degil yavasca ilerler. Biz her ikisini de olusturacagiz. Oncelikle gosterge cubuklarinin yavasca hareket ettigi gorunumu yapalim.
 
 Bir CSS `keyframe` olusturarak gostergelerin 360 derece donmesini saglayabiliriz. (0% baslangic noktasi olacaktir)
- 
+
     @keyframes rotate {
       100% {
         transform: rotateZ(360deg);
@@ -150,7 +154,7 @@ Bir CSS `keyframe` olusturarak gostergelerin 360 derece donmesini saglayabiliriz
     }
 
 Olusturdugumuz keyframe, eger belirtilen `animation` degeri elemente atandigi takdirde elementi 360 derece dondurecektir. Animasyonun akici bir sekilde ilerlemesi icin `linear` zamanlama fonksiyonunu kullanacagiz.
- 
+
     .hours-container {
       animation: rotate 43200s infinite linear;
     }
@@ -174,7 +178,7 @@ Saniye gostergesinin donusu de tabii 60 saniye; boylelikle onun donusunu kolayca
 ### &quot;Tik-tak&quot; efekti
 
 Bu kez de standart bir saat gorunumu elde edecegiz; yani saniye gostergemiz saatin icinde 60 saniye icinde her biri sert donusler yapacak. `Steps` zamanlama fonksiyonu kullanarak bunun kolayca ustesinden gelebiliriz. Her bir gosterge icin `animation` degerini su sekilde degistiriyoruz:
- 
+
     .minutes-container {
       animation: rotate 3600s infinite steps(60);
     }
@@ -182,14 +186,14 @@ Bu kez de standart bir saat gorunumu elde edecegiz; yani saniye gostergemiz saat
       animation: rotate 60s infinite steps(60);
     }
 
-Boylece, hem saniye hem de dakika gostergemiz 60 keskin donus yapiyor. Web tarayicimiz otomatik olarak bu 60 hareketin uzakligini hesapliyor. 
+Boylece, hem saniye hem de dakika gostergemiz 60 keskin donus yapiyor. Web tarayicimiz otomatik olarak bu 60 hareketin uzakligini hesapliyor.
 
 <div class="demo-container clocks single steps"> <article class="clock simple"><div class="hours-container"> <div class="hours angled"></div> </div> <div class="minutes-container"> <div class="minutes angled"></div> </div> <div class="seconds-container"> <div class="seconds"></div> </div> </article></div>
 
 ### Saat kac?
 
 Saat gorunumunu elde etmek kolay; peki ya bu saatin dogru saat ve dakikayi gostermesini nasil saglayacagiz? Biraz JavaScript ile saati ziyaretcilerimizin bulundugu bolgenin saatiyle eslestirebiliriz. Kod asagida gordugunuz gibi.
- 
+
     /*
      * Starts any clocks using the user's local time
      * From: cssanimation.rocks/clocks
@@ -247,7 +251,7 @@ Saniye gostergemiz saatin tepesine, yani saat 12 pozisyonuna geldiginde dakika g
 Saatimiz ekrana geldiginde, dakika gostergemizin hareket etmesi icin 1 dakikadan az sure gerekmeli. Bunun icin, dakikanin bitmesine kac saniye kaldigini hesaplayip dakika gostergemizi hareket ettirmemiz gerekli. Saatin hareket baslangicini JavaScript ile yaptigimiz icin, devaminda dakika gostergemizi de her dakika 6 derece ilerletmesi icin&nbsp;`setInterval` kullanabiliriz.
 
 Dakika gostergesini hareket ettirmeden once, icinde bulundugumuz dakikanin ne kadarlik bolumunde oldugumuzu hesaplamaliyiz. Koddaki bu satirlar dikkatinizi cekmistir.
- 
+
     if (degrees[j].hand === 'minutes') {
       elements[k].parentNode.setAttribute('data-second-angle', degrees[j + 1].degree);
     }
@@ -255,7 +259,7 @@ Dakika gostergesini hareket ettirmeden once, icinde bulundugumuz dakikanin ne ka
 Buradaki kod, oncelikle gostergenin &quot;minutes (dakika)&quot; gostergesi olup olmadigini kontrol ediyor. Eger oyleyse, saniye gostergesinin o anki acisini bir data-attribute olarak elemente veriyor.
 
 Bu data-attribute yerlesimi sayesinde, dakika gostergesini ne zaman ilerletmemiz gerektigini hesaplayabilecegiz.
- 
+
     /*
      * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
      */
@@ -301,7 +305,7 @@ Dakika gostergesini ilerletmek icin artik JavaScript kullandigimiza gore, animat
 JavaScript ile gostergeye yeni bir aci verildiginde (yani hareket ettirildiginde), elementteki CSS transition'u sayesinde web tarayicimiz bu acida bir hareket gosterecek. Boylelikle JavaScript sadece bize dogru aciyi ayarlamakta yardimci olacak, web tarayicimiz ise onun animasyon tarafi ile ilgilenmis olacak.
 
 Oncesinde, saniye gostergesini oynatmasi icin JavaScript kodumuzu guncellemeliyiz. Bu kod sayesinde saniye gostergemizi dakikada 60 kez oynatiyoruz.
- 
+
     /*
      * Move the second containers
      */
@@ -321,7 +325,7 @@ Oncesinde, saniye gostergesini oynatmasi icin JavaScript kodumuzu guncellemeliyi
     }
 
 Hem saniye hem dakika gostergemizin hareketlerini JavaScript'e emanet ettigimize gore, CSS'teki `animation` ozelliklerini de `transition` ile degistirebiliriz.
- 
+
     .minutes-container {
       transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
     }
@@ -362,4 +366,3 @@ Calisir haldeki ornek kodu [bu Codepen linkinden](http://codepen.io/donovanh/ful
 Modern tarayicilar CSS transition ve animation ozelliklerini desteklemekte. Internet Explorer 10 uzeri versiyonlar, son Chrome versiyonlari ve Firefox icin prefix kullanmaniza gerek yok, Safari icinse `-webkit` prefix'ini kullanmaniz gerekir.
 
 Prefix'li ozellikleri JavaScript icinde olusturdugumuz kodlara da eklemeyi unutmayin.
-

@@ -8,7 +8,6 @@ customCSS: twitter_fave.css
 imageURL: /images/posts/steps/twitter_fave_rectangle.png
 home_image: /images/posts/steps/home.png
 translator: Paweł Kuna
-translator_link: https://twitter.com/codecalm
 ---
 
 Twitter ostatnio zaktualizował przycisk &quot;dodaj do ulubionych&quot;, dodając subtelną animację. Nasza animacja będzie się składała z serii obrazk&oacute;w. Oto jak odtworzyć ją za pomocą kodu CSS i funkcji `steps`.
@@ -78,4 +77,3 @@ Animowanie tła jest tylko jednym z przykład&oacute;w użycia&nbsp;`steps`. Wsz
 Jeśli podoba ci się ten artykuł, możesz podzielić się nim na [Twitterze](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/post/twitter-fave/&original_referer=https://cssanimation.rocks) lub zapisać tą przydatną ściągawkę:
 
 <img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px" />
-

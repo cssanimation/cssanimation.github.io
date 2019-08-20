@@ -9,7 +9,6 @@ imageURL: /images/posts/baymax/baymax.gif
 home_image: /images/posts/baymax/home.png
 tweet_text: Baymax'in yuzunu CSS ile hareketlendirme
 translator: Can Göktaş
-translator_link: https://twitter.com/cangokt
 ---
 
 Big Hero 6 filmindeki Baymax karakterini CSS'te yapmaya baslayalim.
@@ -159,4 +158,3 @@ Kod orneklerinde `-webkit` ve `-moz` &ouml;n eklerini kullanmadik. `Transform` v
 Bu poncik Baymax animasyonunu arkadaslarinizla paylasmak isterseniz, buyrun; gif hali:
 
 [<img src="/images/posts/baymax/baymax.gif" style="max-width:225px" />](/images/posts/baymax/baymax.gif)
-

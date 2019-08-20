@@ -9,7 +9,6 @@ imageURL: /images/posts/why-animate/home.png
 home_image: /images/posts/why-animate/home.png
 tweet_text: Dlaczego animacje mogą poprawić projekty sieciowe
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Patrząc na płomienie ognia, oglądając fale rozbijających się o brzeg morza lub obserwując spojrzenie tygrysa zamierzającego się rzucić, wiemy że świat jest w ruchu.
@@ -65,12 +64,12 @@ Dzięki możliwości przekazywania informacji za pośrednictwem ruchu, możemy p
 
 Niekt&oacute;re sposoby animacji mogą dodać wartość do projektu:
 
-* Podświetlanie interaktywnej treści
-* Dodawanie i usuwanie treści
-* Opowiadanie historii
-* Przyciąganie uwagi
-* Wiarygodność
-* Znakowanie i zabawa
+- Podświetlanie interaktywnej treści
+- Dodawanie i usuwanie treści
+- Opowiadanie historii
+- Przyciąganie uwagi
+- Wiarygodność
+- Znakowanie i zabawa
 
 ### Podświetlanie interaktywnej treści
 

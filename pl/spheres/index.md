@@ -9,7 +9,6 @@ tweet_text: Stw&oacute;rz tę niesamowitą animację Portalu za pomocą CSS
 custom_header: posts/spheres.html
 customCSS: spheres.css
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Korzystając z właściwości CSS&nbsp;`border-radius` możemy stworzyć okrągłe kształty i koła. Po dodaniu gradient&oacute;w staną się sferami. Zr&oacute;bmy to i dodajmy animację, aby tchnąć w nie życie.
@@ -81,7 +80,7 @@ Następna to określony zestaw kolor&oacute;w. Możesz wybrać ponad dwa kolory,
 
 W tym przykładzie określimy tylko dwa kolory. To pozwoli przeglądarce założyć, że pierwszy jest na 0%, a drugi 100% i rysuje gradient między tymi kolorami. Jeśli chcemy ustawić gradient inaczej, możemy określić odległości w pikselach lub procentowo jak zobaczymy p&oacute;źniej.
 
-Teraz mamy coś co jest podobne do 3D. Wygląda *dobrze*, ale spr&oacute;bujmy to nieco upiększyć.
+Teraz mamy coś co jest podobne do 3D. Wygląda _dobrze_, ale spr&oacute;bujmy to nieco upiększyć.
 
 ## Cienie i 3D
 

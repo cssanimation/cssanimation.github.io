@@ -10,7 +10,6 @@ custom_header: posts/portal.html
 demo_url: https://cssanimation.rocks/demo/portal/
 customCSS: portal.css
 translator: Mateusz Kurlit
-translator_link: http://transgent.co.nf
 ---
 
 Nie potrzebujesz JavaScript, aby tworzyć imponujące projekty 3D w przeglądarce internetowej. W tym artykule pokażę jak stworzyć i animować scenę inspirowaną Portalem używając tylko kod CSS.
@@ -47,7 +46,7 @@ Musimy ustawić scenę, w kt&oacute;rej możemy zbudować nasz projekt 3D. Aby t
 
     <article class="container">...</article>
 
-W tym przypadku kontener jest tagiem `article`. W HTML5 *article* stanowi samodzielną część zawartości, kt&oacute;ra może być wykorzystana gdzie indziej i nadal będzie miała sens.
+W tym przypadku kontener jest tagiem `article`. W HTML5 _article_ stanowi samodzielną część zawartości, kt&oacute;ra może być wykorzystana gdzie indziej i nadal będzie miała sens.
 
 Pierwsza zastosowana właściwość to [perspective](http://docs.webplatform.org/wiki/css/properties/perspective). Ta właściwość przyjmuje wartość w pikselach i stanowi głębie sceny 3D. Mniejsza wartość przyniesie bardziej dramatyczny efekt i zazwyczaj jest ustawiona między 800 i 1200 pikseli.
 
@@ -114,7 +113,7 @@ Po ustawieniu sceny, możemy rozpocząć składanie naszego arcydzieła w 3D. Za
       <div class="pit-back"></div>
     </section>
 
-Powyższy kod zawiera sekcję *stage*, kt&oacute;rą będziemy używać umieszczenia wszystkich element&oacute;w. Zestaw element&oacute;w div w sekcji stage formują gł&oacute;wne części struktury. Przyjmują formę tylnych ścian, platform, ścian dołu i cienia umieszczonego pod nimi.
+Powyższy kod zawiera sekcję _stage_, kt&oacute;rą będziemy używać umieszczenia wszystkich element&oacute;w. Zestaw element&oacute;w div w sekcji stage formują gł&oacute;wne części struktury. Przyjmują formę tylnych ścian, platform, ścian dołu i cienia umieszczonego pod nimi.
 
 Kiedy zacząłem budować tę scenę, pr&oacute;bowałem umieścić ściany bezpośrednio na sekcji stage, obracając je i dostosowując ich pozycję. Ponieważ scena będzie oglądana z widoku izometrycznego, łatwiejszym podejściem jest umieszczenie fragment&oacute;w sceny i obr&oacute;cenie całe sceny o 45 stopni.
 
@@ -122,7 +121,7 @@ Mając to na uwadze, elementy HTML są przekształcane w miejscu zgodnie z nast�
 
 <img src="/images/posts/portal/sketch.png" alt="Plan view of the scene" class="centered" />
 
-Powyższy skecz pokazuje, że fragment *back-left* jest wyr&oacute;wnany do lewej, ale fragment *back-right* jest bezpośrednio widzem. Aby to skorygować, obr&oacute;cimy p&oacute;źniej całą scenę o 45 stopni.
+Powyższy skecz pokazuje, że fragment _back-left_ jest wyr&oacute;wnany do lewej, ale fragment _back-right_ jest bezpośrednio widzem. Aby to skorygować, obr&oacute;cimy p&oacute;źniej całą scenę o 45 stopni.
 
 Przed zastosowaniem przekształceń, musimy nadać elementom div kilku wsp&oacute;lnych właściwości:
 
@@ -146,7 +145,7 @@ Po wykonaniu tego możemy rozpocząć umieszczanie element&oacute;w div:
 
 Powyższe reguły opisują szerokość 500 pikseli, kt&oacute;ra jest długością boku naszej sceny 3D, wysokość 120 pikseli i jasnobrązowy kolor tła. Następnie obracamy div o 90 stopni i odsuwamy wzdłuż osi X. Div posiada obramowanie o grubości 6 pikseli, zastosowane w celu stworzenia iluzji głębi.
 
-Podobne przekształcenie jest zastosowane dla div *back-right*:
+Podobne przekształcenie jest zastosowane dla div _back-right_:
 
     .stage .back-right {
       background-color: #9c7442;
@@ -200,7 +199,7 @@ Efektem końcowym powinna być scena wyglądająca tak:
 
 <img src="/images/posts/portal/layout01.png" alt="Initial layout of the stage divs" />
 
-Nie wygląda jeszcze właściwie. Musimy obr&oacute;cić całą scenę, aby wyświetlić ją poprawnie. Dodaj `transform` do sekcji *scene*:
+Nie wygląda jeszcze właściwie. Musimy obr&oacute;cić całą scenę, aby wyświetlić ją poprawnie. Dodaj `transform` do sekcji _scene_:
 
     .stage {
       margin: 0 auto;
@@ -227,7 +226,7 @@ Wideo posiada ładne cienie pod platformami. Możemy odtworzyć to za pomocą w�
       width: 550px;
     }
 
-Powyższe reguły dodają cień do elementu div&nbsp;*shadow*, kt&oacute;ry jest przezroczysty. Cień jest przesunięty o 600 pikseli tak, aby rzeczywisty element div *shadow* nie wchodził w drogę cieniowi. Całość jest obr&oacute;cona i umieszczona poza sceną tak, aby tylko cień był widoczny na scenie. Rezultat powinien wyglądać tak:
+Powyższe reguły dodają cień do elementu div&nbsp;_shadow_, kt&oacute;ry jest przezroczysty. Cień jest przesunięty o 600 pikseli tak, aby rzeczywisty element div _shadow_ nie wchodził w drogę cieniowi. Całość jest obr&oacute;cona i umieszczona poza sceną tak, aby tylko cień był widoczny na scenie. Rezultat powinien wyglądać tak:
 
 <img src="/images/posts/portal/layout03.png" alt="Initial layout with a shadow" />
 
@@ -311,7 +310,7 @@ Jednym z nieoczekiwanych osiągnięć było wykorzystanie obramowań do stworzen
 
 <img src="/images/posts/portal/door.png" alt="Door" />
 
-Drzwi w HTML są proste. Dodaj poniższy kod do sekcji *stage*.
+Drzwi w HTML są proste. Dodaj poniższy kod do sekcji _stage_.
 
     <div class="door"></div>
 
@@ -511,7 +510,7 @@ Zanim to zrobimy, zastosujmy pierwszą animację dla pierwszej postaci.
       opacity: 0;
     }
 
-Powyższa właściwość `animation` dotyczy animacji elementu *dude one*. Dołącza go za pomocą nazwy animacji, ustawia czas trwania na 10 sekund i dodaje animację w pętli.
+Powyższa właściwość `animation` dotyczy animacji elementu _dude one_. Dołącza go za pomocą nazwy animacji, ustawia czas trwania na 10 sekund i dodaje animację w pętli.
 
 Widoczność ustawiona na 0 sprawia, że postać jest niewidoczna przed rozpoczęciem animacji.
 
@@ -577,7 +576,7 @@ Jeśli jeszcze tego nie zrobiłeś, [sprawdź końcowy rezultat](http://hop.ie/p
 
 ## Ostrzeżenia i dziwactwa przeglądarek
 
-Ponieważ jesteśmy w temacie przeglądarek, powinienem zwr&oacute;cić uwagę, że obecnie animacja nie będzie działać w Internet Explorer. Firefox jest trochę *meh*, ale nieźle, Safari prawie dobrze (czekamy, aż Apple w końcu załata webkit), a Chrome w 100% prawidłowo. Hej, przeglądarki mają przeglądać.
+Ponieważ jesteśmy w temacie przeglądarek, powinienem zwr&oacute;cić uwagę, że obecnie animacja nie będzie działać w Internet Explorer. Firefox jest trochę _meh_, ale nieźle, Safari prawie dobrze (czekamy, aż Apple w końcu załata webkit), a Chrome w 100% prawidłowo. Hej, przeglądarki mają przeglądać.
 
 Wydajność jest całkiem dobra na r&oacute;żnych urządzeniach (pomijając problemy przeglądarek). Testowałem na iPhone z Safari i działa lepiej niż Chrome na laptopie. To dlatego, że użyte reguły CSS (przekształcenia 3D) wykorzystują sprzęt graficzny.
 

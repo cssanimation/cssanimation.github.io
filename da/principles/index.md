@@ -10,7 +10,6 @@ tweet_text: Anvendelse af Disneys 12 principper i web-animation
 custom_header: posts/principles.html
 demo_url: http://codepen.io/collection/AxKOdY/
 translator: Asbjørn Faurholt
-translator_link: https://twitter.com/K0mB47W0mB47
 ---
 
 Som &quot;front-end&quot;-designere og udviklere bruger vi CSS til udseende, position og skabelsen af flotte sites. Vi bruger ofte CSS til at skabe bev&aelig;gelse i sider i form af overgange eller s&aring;gar animationer, men vi g&aring;r for det meste ikke l&aelig;ngere end det.

@@ -22,6 +22,9 @@
     - language: Polski (Polish)
       postTitle: Stereoskopowy CSS
       iso: pl
+    - language: Ру́сский (Russian)
+      iso: ru
+      postTitle: Стереоскопический CSS
 - url: /spheres/
   translations:
     - language: Français (French)
@@ -53,11 +56,20 @@
       postTitle: WWDC 2015
 - url: /macplus/
   translations:
+    - language: Deutsch (German)
+      postTitle: Mac Plus CSS
+      iso: de
     - language: Bahasa Indonesia (Indonesian)
       postTitle: Mac ditambah CSS
       iso: id
+    - language: 日本語 (Japanese)
+      iso: jp
+      postTitle: Mac Plus CSS
     - language: Polski (Polish)
       iso: pl
+      postTitle: Mac Plus CSS
+    - language: Ру́сский (Russian)
+      iso: ru
       postTitle: Mac Plus CSS
 - url: /principles/
   translations:
@@ -134,6 +146,9 @@
     - language: Polski (Polish)
       iso: pl
       postTitle: Animowanie Element&oacute;w Listy
+    - language: Ру́сский (Russian)
+      iso: ru
+      postTitle: Анимированные элементы списка
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Hareketli Liste Elemanlari

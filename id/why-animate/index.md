@@ -9,7 +9,6 @@ imageURL: /images/posts/why-animate/home.png
 home_image: /images/posts/why-animate/home.png
 tweet_text: Mengapa animasi dapat meningkatkan desain web Anda
 translator: Muhammad Azzam
-translator_link: /id/
 ---
 
 Menatap nyala api yang berkelap-kelip, menyaksikan ombak laut melayang di pantai, menangkap sekilas tajam harimau yang hendak menerkam, dunia adalah gerakan.

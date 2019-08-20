@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: sei0o
-translator_link: https://getnative.me/user/3625
 ---
 
 最近 Twitter は「お気に入り」(「ふぁぼ」としても有名) のデザインを変更、新しいアニメーションを取り入れました。 CSS transitions よりも、アニメーションは画像の羅列を活用できます。 そこで、 アニメーションを CSS animation の steps timing function を用いて作り直す方法を示します。
@@ -40,7 +39,6 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
 
 はじめに、 HTML を用意します。
 
-
     <section class="fave"></section>
 
 ### 背景画像
@@ -49,7 +47,6 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
 
-
     .fave {
       width: 70px;
       height: 50px;
@@ -57,19 +54,16 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
       background-position: 0 0;
     }
 
-
 `hover` ステートが追加されると、画像の羅列の最後に背景の位置が移動されるよう指定します。
-
 
     .fave:hover {
       background-position: -3519px 0;
       transition: background 1s steps(55);
     }
 
+`transition` を指定する二つ目の規則に注意してください。 この場合、背景のプロパティを 1 秒で、`steps` timing function を用いて変化させます。 `steps` は `55` という値を含んでいるので、アニメーションは 55 のフレームを持つことになります。
 
-`transition` を指定する二つ目の規則に注意してください。 この場合、背景のプロパティを1秒で、`steps` timing function を用いて変化させます。 `steps` は `55` という値を含んでいるので、アニメーションは55のフレームを持つことになります。
-
-要素をホバーすると、55の等しいステップで変化します。
+要素をホバーすると、55 の等しいステップで変化します。
 
 ### どうして GIF を使わないの?
 
@@ -84,4 +78,3 @@ ease や cubic-bezier などの大半の timing function は、初めから終�
 この記事を楽しんでいただけたなら、 [Twitter でシェア](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/post/twitter-fave/&original_referer=https://cssanimation.rocks)やチートシートの保存ができます:
 
 <img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px" />
-

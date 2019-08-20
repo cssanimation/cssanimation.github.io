@@ -10,9 +10,7 @@ custom_header: posts/portal.html
 demo_url: https://cssanimation.rocks/demo/portal/
 customCSS: portal.css
 translator: Pierre Choffe
-translator_link: https://la-cascade.io
 ---
-
 
 Vous n'avez pas nécessairement besoin de JavaScript pour créer des projets 3D impressionnants dans le navigateur web. Dans cet article, je vais vous montrer comment créer et animer une scène inspirée de Portal, uniquement à l'aide de CSS.
 
@@ -233,7 +231,6 @@ Les règles ci-dessus ajoutent une `box-shadow` à la div shadow, qui est elle-m
 
 <img src="/images/posts/portal/layout03.png" alt="Initial layout with a shadow" />
 
-
 ## Rouge et Bleu
 
 Ensuite, il nous faut ajouter un peu de décoration et les portails étincelants.
@@ -314,7 +311,7 @@ Un succès inattendu a été l'utilisation des bordures pour créer ce qui resse
 
 <img src="/images/posts/portal/door.png" alt="Door" />
 
-Le HTML de la porte est très simple. Ajoutez le code suivant à l'intérieur de la section *stage*.
+Le HTML de la porte est très simple. Ajoutez le code suivant à l'intérieur de la section _stage_.
 
     <div class="door"></div>
 
@@ -352,7 +349,7 @@ La forme du premier personnage est constituée de deux parties principales, la t
       </div>
     </div>
 
-Comme l'ombre (*dude-shadow*) est incluse dans la div contenant le personnage, elle peut être animée simultanément. Voici le CSS:
+Comme l'ombre (_dude-shadow_) est incluse dans la div contenant le personnage, elle peut être animée simultanément. Voici le CSS:
 
     .dude, .dude-shadow {
       height: 100px;
@@ -512,7 +509,7 @@ Avant cela, appliquons cette première animation au premier personnage:
       opacity: 0;
     }
 
-La propriété `animation` ci-dessus applique l'animation à l'élément dude one. Il l'attache au moyen du nom de l'animation (*move-dude-one*), lui assigne une durée de 10 secondes et une répétition à l'infini.
+La propriété `animation` ci-dessus applique l'animation à l'élément dude one. Il l'attache au moyen du nom de l'animation (_move-dude-one_), lui assigne une durée de 10 secondes et une répétition à l'infini.
 
 Une opacité de 0 permet de garantir que le personnage est invisible avant le début de l'animation.
 
@@ -574,7 +571,7 @@ Nous pouvons appliquer ces keyframes au deuxième personnage de la façon suivan
 
 De cette manière, les deux animations sont appliquées. Comme elles ont toutes les deux une durée identique de 10 secondes, et qu'elles se reproduisent à l'infini, elles sont parfaitement coordonnées.
 
-Si ce n'est déjà fait, vous pouvez vérifier [le résultat final dans](](http://hop.ie/portal/)) un navigateur moderne, de préférence pas Internet Explorer.
+Si ce n'est déjà fait, vous pouvez vérifier [le résultat final dans](<](http://hop.ie/portal/)>) un navigateur moderne, de préférence pas Internet Explorer.
 
 ## Précautions
 
@@ -586,6 +583,6 @@ Puisque nous parlons des navigateurs, je dois dire que tout ceci ne fonctionnera
 
 Check out the [online Portal CSS demo](http://hop.ie/portal) or download the [source from Github](https://github.com/donovanh/portal).
 
-Regardez [la démo](](http://hop.ie/portal)) ou téléchargez [le code sur Github](https://github.com/donovanh/portal).
+Regardez [la démo](<](http://hop.ie/portal)>) ou téléchargez [le code sur Github](https://github.com/donovanh/portal).
 
 Je serais ravi de connaître votre avis, vous pouvez me joindre sur [Twitter](https://twitter.com/donovanh).

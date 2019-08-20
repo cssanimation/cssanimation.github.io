@@ -9,7 +9,6 @@ imageURL: /images/posts/steps/twitter_fave_rectangle.png
 source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2015-01-17-twitter-fave.md
 home_image: /images/posts/steps/home.png
 translator: Serena Fritsch
-translator_link: https://twitter.com/serifritsch
 ---
 
 Twitter hat vor kurzem das Design des "fave" (auch als "fav" bekannt) Knopfes mit der Einfuehrung einer neuen Animation aktualisiert. Anstelle sich auf CSS Transitionen zu verlassen, benutzt die Animation eine Reihe von Bildern. Hier wird erklärt wie man die Animation mit Hilfe der CSS 'steps' Zeitfunktion nachbilden kann.
@@ -42,7 +41,6 @@ Bei den meisten Zeitfunktionen, wie ease oder cubic-bezier, ist der animierte We
 
 Wir beginnen mit der HTML Konfiguration:
 
-
     <section class="fave"></section>
 
 ### Hintergrundbild
@@ -50,7 +48,6 @@ Wir beginnen mit der HTML Konfiguration:
 Jetzt können wir ein bisschen Styling hinzufuegen und das Hintergrundbild positionieren:
 
 ![Bild sprite fuer die Animation](/images/posts/steps/twitter_fave.png)
-
 
     .fave {
       width: 70px;
@@ -83,8 +80,3 @@ Animieren von Hintergrund-Sprites ist nur eine Nutzung der `steps` Zeitfunktion.
 Wenn Ihnen dieser Artikel gefallen hat, dann können Sie ihn auf [Twitter teilen](https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&url=https://cssanimation.rocks/post/twitter-fave/&original_referer=https://cssanimation.rocks) oder diesen handlichen Spickzettel speichern:
 
 <img src="/tips/twitter-fave.png" alt="Teile diese Zusammenfassung auf Twitter" style="max-width:375px">
-
-
-
-
-
