@@ -3,17 +3,67 @@
     <section class="row">
       <section class="twelve columns">
         <h2>CSS Animation Weekly</h2>
-      <p>A curated weekly roundup of all the latest in web animation. <br>Sign up now to get your FREE book, CSS Animation 101!</p>
+        <p>
+          A curated weekly roundup of all the latest in web animation.
+          <br />Sign up now to get your FREE book, CSS Animation 101!
+        </p>
         <div class="email-signup" id="email-signup">
-          <form action="https://hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_169820d65d" tabindex="-1" value=""></div>
+          <form
+            action="https://rocks.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate
+          >
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input
+                type="text"
+                name="b_07ab661c8a6f6b3ec4c98c791_169820d65d"
+                tabindex="-1"
+                value=""
+              />
+            </div>
             <section class="row">
               <section class="centered">
                 <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                  <div
+                    class="response"
+                    id="mce-error-response"
+                    style="display:none"
+                  ></div>
+                  <div
+                    class="response"
+                    id="mce-success-response"
+                    style="display:none"
+                  ></div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div
+                    style="position: absolute; left: -5000px;"
+                    aria-hidden="true"
+                  >
+                    <input
+                      type="text"
+                      name="b_07ab661c8a6f6b3ec4c98c791_169820d65d"
+                      tabindex="-1"
+                      value=""
+                    />
+                  </div>
+                  <input
+                    type="email"
+                    value=""
+                    name="EMAIL"
+                    class="required email"
+                    id="mce-EMAIL"
+                  />
+                  <input
+                    type="submit"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    class="button"
+                  />
                 </div>
               </section>
             </section>
@@ -30,9 +80,9 @@
     </section>
     <section class="row" style="text-align: center">
       <p>
-        {% for language in site.data.languages %}
-          {% unless forloop.first %} | {% endunless %}
-          <a href="/{{ language.iso }}/">{{ language.name }}</a>
+        {% for language in site.data.languages %} {% unless forloop.first %} |
+        {% endunless %}
+        <a href="/{{ language.iso }}/">{{ language.name }}</a>
         {% endfor %}
       </p>
     </section>
@@ -41,49 +91,66 @@
     </section>
   </section>
 </footer>
-<script src='//code.jquery.com/jquery-2.1.3.min.js'></script>
-<script src='/javascript/site.js'></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
 <script src="/javascript/vendor/wow.min.js"></script>
-{% if page.externalJS %}
-  {% for jsURL in page.externalJS %}
-    <script src='{{ jsURL }}'></script>
-  {% endfor %}
-{% endif %}
-{% if page.extraJS %}
-  {% for jsURL in page.extraJS %}
-    <script src='/javascript/{{ jsURL }}'></script>
-  {% endfor %}
-{% endif %}
-{% if page.customJS %}<script src='/javascript/custom/{{ page.customJS }}'></script>{% endif %}
+{% if page.externalJS %} {% for jsURL in page.externalJS %}
+<script src="{{ jsURL }}"></script>
+{% endfor %} {% endif %} {% if page.extraJS %} {% for jsURL in page.extraJS %}
+<script src="/javascript/{{ jsURL }}"></script>
+{% endfor %} {% endif %} {% if page.customJS %}<script src="/javascript/custom/{{
+    page.customJS
+  }}"></script
+>{% endif %}
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <script>
- new WOW().init();
+  hljs.initHighlightingOnLoad();
 </script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-3481417-30', 'auto');
-  ga('send', 'pageview');
+  new WOW().init();
 </script>
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+<script>
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+  ga("create", "UA-3481417-30", "auto");
+  ga("send", "pageview");
+</script>
+<script>
+  window.twttr = (function(d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
+    return t;
+  })(document, "script", "twitter-wjs");
+</script>
 
 <!-- Service worker stuff -->
 <script>
@@ -91,7 +158,3 @@
   //   navigator.serviceWorker.register('/serviceworker.js', {scope: './'});
   // }
 </script>
-
-
-
-
