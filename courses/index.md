@@ -9,9 +9,9 @@ title: Learn CSS Animation
       <a href="/courses/animation-101/"><img src="/images/css-animation-101-book.png" alt="CSS Animation 101"></a>
     </div>
     <div class="course-details four columns">
-      <h2><a href="https://amazin.donovanh.now.sh/B07R9V95NX">CSS Animation 101</a></h2>
+      <h2><a href="https://amazin.donovanh.now.sh/B07R9V95NX">CSS Animation 101 (ebook)</a></h2>
       <p>A solid introduction to CSS animation, combining theory with practical lessons. Learn how, and why to use animation on your web pages.</p>
-      <p>Get the <a href="https://amazin.donovanh.now.sh/B07R9V95NX/B07R9V95NX">book on Amazon near you!</a>
+      <p>Get the <a href="https://amazin.donovanh.now.sh/B07R9V95NX/B07R9V95NX">book on Kindle at an Amazon near you!</a>
       </p>
     </div>
   </article>
