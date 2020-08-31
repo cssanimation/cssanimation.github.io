@@ -7,7 +7,7 @@ description: The humble scroll cue is an easily overlooked element on your page.
 categories: [updates, courses]
 imageURL: /images/posts/cue/home.png
 home_image: /images/posts/cue/home.png
-tweet_text: "Help people find your content by animating your site's scroll cue. Part of this course: https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK"
+tweet_text: "Help people find your content by animating your site's scroll cue. Part of this course: https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A"
 ---
 
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -18,14 +18,14 @@ In this tutorial we're going to add a subtle cue to the bottom of the page that 
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1JRqQTRLSQc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div><br>
 
-[In our previous lessons](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) we've animated the background, and used staggered animations to introduce the titles. The page is beginning to look pretty animated, but it leaves just one last piece, the scroll cue.
+[In our previous lessons](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A) we've animated the background, and used staggered animations to introduce the titles. The page is beginning to look pretty animated, but it leaves just one last piece, the scroll cue.
 
 Whether we need an arrow to tell people to scroll is a topic for debate. Some would suggest that it's no better than a sticky plaster, and that a better idea would be to design the layout of the page in such a way that scrolling is more obvious. Let's leave the discussion aside for the moment, and instead we'll use this as an opportunity to see how multiple CSS animations can be combined in one little detail.
 
 To code along with this lesson, grab the <a href="https://cssanimation.rocks/levelup/public/01/01.zip">sample code zip file</a> and look for folder `02-introduce-titles`.  A completed version of this lesson's code is in the folder `03-scroll-cue`.
 
 <div class="callout">
-    <p>This post is part of my <a href="https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK">amazing 4-hour video course on CSS animation</a>. I'm currently offering a massive 93% discount for CSS animation fans. <a href="https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK">Reserve your place today!</a></p>
+    <p>This post is part of my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">amazing 4-hour video course on CSS animation</a>. I'm currently offering a massive 93% discount for CSS animation fans. <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Reserve your place today!</a></p>
 </div>
 
 ## Adding the HTML and CSS
@@ -150,9 +150,9 @@ It's easy to go crazy and make all the things animate, but that's rarely a good 
 
 ## Want to learn more?
 
-This was part of my [amazing 4-hour video course on CSS animation](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK). As a fan of this site you can save a massive 93% on the course today.
+This was part of my [amazing 4-hour video course on CSS animation](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A). As a fan of this site you can save a massive 93% on the course today.
 
-[Save 93% and Level Up Your CSS Animation Skills](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) today!
+[Save 93% and Level Up Your CSS Animation Skills](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A) today!
 
 
 

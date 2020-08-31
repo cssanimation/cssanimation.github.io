@@ -22,7 +22,7 @@ In this tutorial we will learn how we style and animate the underlines on our li
 
 You'll need some files to follow this tutorial. Download <a href="https://cssanimation.rocks/levelup/public/02/02.zip">this zip file</a>, and open folder `00-start` in the `02` folder. A completed version of this lesson's code is in the folder `01-anchors`.
 
-You'll notice there are loads more examples there too - you'll find [all the lessons on this course](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) if you'd like to learn more.
+You'll notice there are loads more examples there too - you'll find [all the lessons on this course](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A) if you'd like to learn more.
 
 ## Starting HTML and CSS
 
@@ -310,6 +310,6 @@ In this lesson we learned how to create custom underline effects on our links, w
 
 ## Want to learn more?
 
-This was part of my [video course on CSS animation](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK). As a fan of this site you can save a massive 93% on the course today.
+This was part of my [video course on CSS animation](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A). As a fan of this site you can save a massive 93% on the course today.
 
-[Save over 90% and Level Up Your CSS Animation Skills](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) today!
+[Save over 90% and Level Up Your CSS Animation Skills](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A) today!

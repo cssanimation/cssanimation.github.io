@@ -292,6 +292,6 @@ We also made use of the `will-change` property, which allows us to hint to the b
 
 ## Level up your CSS animation skills!
 
-If you like this, you'll love my [video course on CSS animation](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK). As a fan of this site you can save over 90% on the course today.
+If you like this, you'll love my [video course on CSS animation](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A). As a fan of this site you can save over 90% on the course today.
 
-[Save over 90% and Level Up Your CSS Animation Skills](https://www.udemy.com/level-up-your-css-animation-skills/?couponCode=SITELINK) today!
+[Save over 90% and Level Up Your CSS Animation Skills](https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A) today!
