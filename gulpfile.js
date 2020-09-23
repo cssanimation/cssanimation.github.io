@@ -44,8 +44,6 @@ gulp.task('serve', function () {
   gulp.watch('_site/**/*.*').on('change', browserSync.reload);
 });
 
-
-
 // These tasks will look for files that change while serving and will auto-regenerate or
 // reload the website accordingly. Update or add other files you need to be watched.
 gulp.task('watch', function () {
