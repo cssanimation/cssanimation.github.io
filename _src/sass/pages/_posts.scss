@@ -218,6 +218,7 @@
 
 #carbonads .carbon-wrap {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .carbon-img {
@@ -228,20 +229,19 @@
 
 .carbon-img img {
   display: block;
+  width: auto;
 }
 
 .carbon-text {
   font-size: 13px;
-  padding: 10px;
+  padding: 10px 0;
   line-height: 1.5;
   text-align: left;
 }
 
 .carbon-poweredby {
   display: block;
-  padding: 8px 10px;
-  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
-  text-align: center;
+  padding: 8px 0;
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: 600;
