@@ -59,6 +59,9 @@
     - language: Deutsch (German)
       postTitle: Mac Plus CSS
       iso: de
+    - language: Español (Spanish)
+      iso: es
+      postTitle: Mac Plus CSS
     - language: Bahasa Indonesia (Indonesian)
       postTitle: Mac ditambah CSS
       iso: id
