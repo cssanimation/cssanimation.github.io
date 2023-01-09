@@ -24,37 +24,13 @@ Join **5,750+** other subscribers today.
       </section>
       <section class="six columns">
         <div style="padding: 2em 0">
+          <p>Sign up paused for a minute while I move to a new platform!</p>
+          <!--
           {% include email-signup.html %}
+          -->
         </div>
       </section>
     </section>
 </div>
 
 Want to see what you're missing? [Check out the archives here](http://weekly.cssanimation.rocks).
-
-<!--
-## Testimonials
-
-<section class="container">
-  <section class="row">
-    <section class="six columns wow fadeIn">
-      <section class="quote stacked">
-        <div class="quote-person" style="background-image: url(/images/quotes/maile_valentine.jpg);" alt="Maile Valentine"></div>
-        <div class="quote-text-container">
-          <span class="quote-text">I loved that this course provided context for the samples provided in the lessons. I learned new concepts, as well as where and when to apply the techniques.</span>
-          <span class="quotee"><a href="https://twitter.com/mailevalentine">Maile Valentine</a></span>
-        </div>
-      </section>
-    </section>
-    <section class="six columns wow fadeIn">
-      <section class="quote stacked">
-        <div class="quote-person" style="background-image: url(/images/quotes/maile_valentine.jpg);" alt="Maile Valentine"></div>
-        <div class="quote-text-container">
-          <span class="quote-text">I loved that this course provided context for the samples provided in the lessons. I learned new concepts, as well as where and when to apply the techniques.</span>
-          <span class="quotee"><a href="https://twitter.com/mailevalentine">Maile Valentine</a></span>
-        </div>
-      </section>
-    </section>
-  </section>
-</section>
--->
