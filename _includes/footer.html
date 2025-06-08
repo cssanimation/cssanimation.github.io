@@ -1,9 +1,22 @@
-<div class="email-signup" id="email-signup" style="max-width: 500px;margin: 0 auto">
+<div
+  class="email-signup"
+  id="email-signup"
+  style="max-width: 500px; margin: 0 auto"
+>
   <h2>CSS Animation Weekly</h2>
   <p>The latest tutorials and inspiration every week!</p>
-  <iframe src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="
+      margin: 0;
+      border-radius: 0px !important;
+      background-color: transparent;
+    "
+  ></iframe>
 </div>
-
 
 <footer class="footer">
   <section class="container">
@@ -34,10 +47,11 @@
 <script src="{{ jsURL }}"></script>
 {% endfor %} {% endif %} {% if page.extraJS %} {% for jsURL in page.extraJS %}
 <script src="/javascript/{{ jsURL }}"></script>
-{% endfor %} {% endif %} {% if page.customJS %}<script src="/javascript/custom/{{
+{% endfor %} {% endif %} {% if page.customJS %}
+<script src="/javascript/custom/{{
     page.customJS
-  }}"></script
->{% endif %}
+  }}"></script>
+{% endif %}
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>
   hljs.initHighlightingOnLoad();
@@ -46,11 +60,11 @@
   new WOW().init();
 </script>
 <script>
-  (function(i, s, o, g, r, a, m) {
+  (function (i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
     (i[r] =
       i[r] ||
-      function() {
+      function () {
         (i[r].q = i[r].q || []).push(arguments);
       }),
       (i[r].l = 1 * new Date());
@@ -67,30 +81,4 @@
   );
   ga("create", "UA-3481417-30", "auto");
   ga("send", "pageview");
-</script>
-<script>
-  window.twttr = (function(d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
-
-    return t;
-  })(document, "script", "twitter-wjs");
-</script>
-
-<!-- Service worker stuff -->
-<script>
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.register('/serviceworker.js', {scope: './'});
-  // }
 </script>

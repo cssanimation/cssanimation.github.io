@@ -12,7 +12,7 @@ translators:
   - name: Shehab Eltawel
     url: https://twitter.com/@shehab_eltawel
   - name: Mac Alnakari
-    url: https://getnative.me
+    url: https://cssanimation.rocks
 ---
 
 حدثت تويتر مؤخراً تصميم زر التفضيل الخاص بها وقدمت حركة جديدة لهذا الزر. بدلاً من الإعتماد على خاصية CSS transition، الحركة تستخدم سلسله من الصور. اليكم كيفية انشاء الحركة بأستخدام خاصية التوقيت `steps` في&nbsp;CSS
@@ -43,7 +43,6 @@ translators:
 
 بدايةً، سنقوم بإنشاء الـ HTML
 
-
     <section class="fave"></section>
 
 ### الصورة الخلفية
@@ -51,7 +50,6 @@ translators:
 والأن يمكننا تعديل التصميم بعض الشيء ووضع الصورة الخلفية:
 
 ![Image sprite for the animation](/images/posts/steps/twitter_fave.png)
-
 
     .fave {
       width: 70px;
@@ -61,7 +59,6 @@ translators:
     }
 
 سنضيف صيغة الـ&nbsp;`hover`، وذلك يكون عندما نقرر إن على موضع الخلفيه أن يتحرك الى نهاية سلسلة الصور:
-
 
     .fave:hover {
       background-position: -3519px 0;
