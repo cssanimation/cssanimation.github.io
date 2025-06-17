@@ -155,6 +155,9 @@
     - language: Türkçe (Turkish)
       iso: tr
       postTitle: Hareketli Liste Elemanlari
+    - language: български (Bulgarian)
+      iso: bg
+      postTitle: Анимиране на елементи от списъка
 - url: /pseudo-elements/
   translations:
     - language: "العربية (Arabic)"

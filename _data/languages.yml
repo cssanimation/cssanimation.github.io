@@ -37,3 +37,6 @@
 - name: "Bahasa Indonesia"
   english_name: "Indonesian"
   iso: id
+- name: "български"
+  english_name: "Bulgarian"
+  iso: bg
