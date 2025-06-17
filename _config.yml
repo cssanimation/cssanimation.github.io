@@ -17,8 +17,8 @@ future: false
 # relative_permalinks: true
 permalink: /:title/
 paginate: 20
-paginate_path: 'page:num'
+paginate_path: "page:num"
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 exclude: [_src, node_modules, gulpfile.js]
