@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "description": "cssanimation2",
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.12",
     "del": "^5.1.0",
