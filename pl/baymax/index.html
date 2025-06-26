@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Baymax w CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Jednoelementowa animowana wersja twarzy bohatera Baymax z filmu Big Hero 6."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/baymax.css" />
+  
+  
+  <link rel="canonical" href="/pl/baymax/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Baymax w CSS - CSS Animation" />
+  <meta property="og:description" content="Jednoelementowa animowana wersja twarzy bohatera Baymax z filmu Big Hero 6." />
+  <meta property="og:image" content="/images/posts/baymax/baymax.gif" />
+  <meta property="og:url" content="/pl/baymax/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Baymax w CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Użyjmy CSS, aby stworzyć bohatera o imieniu Baymax z filmu Big Hero 6.</p>
+<p>W tym artykule będziemy animować obraz tła jak również efekt czasowy subtelnej animacji oraz wykonamy demo w CSS pojedynczego elementu HTML.</p>
+<section class="demo-container baymax-container"><a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a></section>
+<p>Tutaj możesz <a href="http://codepen.io/donovanh/full/ZYaMjw/">obejrzeć rezultat na pełnym ekranie.</a></p>
+<h2 id="pojedynczy-element" tabindex="-1">Pojedynczy element</h2>
+<p>Wykorzystując pseudo-elementy, będziemy w stanie stworzyć fragmenty twarzy używając jeden element HTML.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>baymax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="stylizacja" tabindex="-1">Stylizacja</h2>
+<p>Aby skonfigurować scenę, dodamy subtelny gradient na ekran, aby wyglądała jak zakrzywiona biała głowa. Do tego użyjemy radialny gradient na <code>body</code>.</p>
+<pre><code>body {
+  background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+</code></pre>
+<p>Następnie ustawimy twarz na środku strony. Usta to prosta czarna linia, którą stworzymy korzystając z ramki.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1.5em solid #000<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Pierwsza właściwość szerokość czarnej ramki na <code>1.5em</code>. Następnie umieszczamy linię używając pozycjonowania absolutnego, przesuwając w dół o 50% i w prawo o 50%. Wartości 50% odnoszą się do rozmiaru elementu kontenera (<code>body</code>)</p>
+<p>Pojawia się problem z elementem, który rozpoczyna się na środku i biegnie w prawo przez ekran. Nie jest na środku</p>
+<p>Aby skorygować to, użyjemy transformacji, aby przesunąć element w lewo o 50% szerokości i w górę o 40% szerokości.</p>
+<p>Na tym etapie usta są wyśrodkowane w ten sposób:</p>
+<section class="demo-container baymax-container"><span class="baymax no-pseudo-elements"></span></section>
+<h2 id="dodawanie-oczu" tabindex="-1">Dodawanie oczu</h2>
+<p>Użyjemy pseudo-elementów <code>before</code> i <code>after</code>, aby dodać oczy do twarzy. Nie będą wymagały żadnego dodatkowego kodu HTML i mogą być całkowicie obsługiwane za pomocą CSS.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -9em<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -6em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skewX</span><span class="token punctuation">(</span>-4deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -9em<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -6em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skewX</span><span class="token punctuation">(</span>4deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Każdy pseudo-element posiada czarne tło i ramkę radialną ustawioną na 50%, aby były okrągłe. Każdy jest umieszczony na końcach ust oraz posiada transformację <code>skew</code>, aby wyglądały na delikatnie pochylone Rezultat powinien wyglądać tak:</p>
+<section class="demo-container baymax-container"><span class="baymax no-animation"></span></section>
+<h2 id="niski-poziom-baterii" tabindex="-1">Niski poziom baterii</h2>
+<p>W filmie możemy zobaczyć zabawną scenę, gdzie bateria Baymaxa jest słaba. Zatacza się i jego powieki opadają. Możemy skorzystać z kombinacji gradientów tła i animacji, aby stworzyć ten efekt.</p>
+<p>Najpierw chcemy nadać tłu dwa kolory. Czarny dla fragmentu, kiedy oko jest otwarte i biały dla powieki. Biały fragment musi być umieszczony poza oczami na początku, a następnie będziemy animować w dół wykonując opadanie powiek.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #efefef<span class="token punctuation">,</span> #efefef 50%<span class="token punctuation">,</span> #000 50%<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 -100%<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> 200%<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #efefef<span class="token punctuation">,</span> #efefef 50%<span class="token punctuation">,</span> #000 50%<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 -100%<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> 200%<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>Dodajemy gradient liniowy tła, ustawiamy mu dwukrotność wysokości kontenera i umieszczamy go w ten sposób, że górna połowa znajduje się poza kontenerem.</p>
+<p>Po umieszczeniu dwóch gradientów tła, możemy dodać animację <code>keyframes</code>, aby sterować ruchem powiek.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> blink</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%, 50%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">85%, 95%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 75%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Animacja <code>keyframes</code> jest sposobem na opisanie serii klatek używając wartości procentowych. Wartość procentowa odnosi się do czasu trwania animacji. Wartość 50% oznacza, że połowę czasu trwania animacji.</p>
+<p>W ten sposób możemy ustawić tło, aby pozostało w górze przez połowę czasu, następnie od 50% do 85% przesunęło się w dół, by na końcu animacji wrócić do góry.</p>
+<p>Kolejnym etapem jest przekazanie pseudo-elementom, aby używały klatek kluczowych animacji. Dodaj właściwość <code>animation</code> do istniejących stylów.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> blink 6s infinite<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> blink 6s 0.1s infinite<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>Tutaj powiedzieliśmy przeglądarce, aby używała animacji <code>blink</code> na każdym elemencie. Animacja trwa 6 sekund i będzie się powtarzała w nieskończoność.</p>
+<p>Dodatkowa właściwość znajduje się w drugim przykładzie. <code>0.1s</code> po <code>6s</code> mówi przeglądarce, aby opóźniła animację o 0.1 sekundy. W ten sposób drugie oko zamyka się nieco później niż pierwsze. To dodaje efekt zmęczenia i sprawia, że animacja wygląda bardziej naturalnie. Wynik końcowy powinien wyglądać tak:</p>
+<section class="demo-container baymax-container"><a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a></section>
+<p>Tutaj możesz <a href="http://codepen.io/donovanh/full/ZYaMjw/">obejrzeć rezultat na pełnym ekranie</a>.</p>
+<h2 id="przegl%C4%85darki" tabindex="-1">Przeglądarki</h2>
+<p>W kodzie pominąłem wszystkie typowe prefiksy <code>-webkit</code> i <code>-moz</code>. Właściwości <code>transform</code> i <code>animation</code> powinny posiadać prefiksy i zalecam wykorzystanie do tego Autoprefixera.</p>
+<h2 id="wersja-gif-do-udost%C4%99pnienia" tabindex="-1">Wersja gif do udostępnienia</h2>
+<p>Poniżej znajduje się wersja gif, którą możesz z łatwością udostępnić w internecie.</p>
+<p><a href="/images/posts/baymax/baymax.gif"><img src="/images/posts/baymax/baymax.gif" style="max-width:225px" /></a></p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mateusz Kurlit. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

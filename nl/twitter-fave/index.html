@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    De &amp;quot;fave&amp;quot; animatie van Twitter - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Ontdek hoe de fancy, nieuwe &amp;quot;fave&amp;quot; animatie werkt door het gebruik van de CSS steps() timing functie."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/twitter_fave.css" />
+  
+  
+  <link rel="canonical" href="/nl/twitter-fave/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="De &amp;quot;fave&amp;quot; animatie van Twitter - CSS Animation" />
+  <meta property="og:description" content="Ontdek hoe de fancy, nieuwe &amp;quot;fave&amp;quot; animatie werkt door het gebruik van de CSS steps() timing functie." />
+  <meta property="og:image" content="/images/posts/steps/twitter_fave_rectangle.png" />
+  <meta property="og:url" content="/nl/twitter-fave/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">De &amp;quot;fave&amp;quot; animatie van Twitter</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Twitter heeft onlangs een update gegeven aan hun &quot;fave&quot;, ook gekend als &quot;fav&quot; knop, door er een nieuwe animatie aan mee te geven. In plaats van CSS transities maakt de animatie gebruik van een reeks afbeeldingen. Hieronder zie je hoe je deze animatie kan recreëren door middel van de CSS animatie <code>steps</code> timing functie.</p>
+<p>De volgende techniek kan ook gebruikt worden met de nieuwe “hart’ animatie, deze wordt in dezelfde manier uitgewerkt.</p>
+<section class="fave demo-container tap-to-activate heart"></section>
+<p>Zie het voorbeeld <a href="(http://codepen.io/donovanh/pen/dYqxNb)">live op CodePen</a>.</p>
+<h2 id="de-illusie-van-beweging" tabindex="-1">De illusie van beweging</h2>
+<p>Dit effect is vergelijkbaar met dat van de oude <a href="http://en.wikipedia.org/wiki/Zoetrope">Zoötroop</a> apparaten, die tonen een reeks illustraties die elkaar opvolgen in een cilinder. In plaats van in een cilinder, tonen we de afbeeldingen in een platte reeks in een element.</p>
+<h2 id="demo" tabindex="-1">Demo</h2>
+<p>Hover over de ster om de animatie te zien:</p>
+<section class="fave demo-container tap-to-activate"></section>
+<p>In dit voorbeeld beginnen we door de reeks afbeeldingen te maken waaruit de animatie zal bestaan. Hier gebruiken we een deel van de afbeeldingen uit de animatie van het Twitter fave icoon.</p>
+<img src="/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
+<p>Om deze frames te animeren moeten we ze eerst op één lijn plaatsen. In [dit bestand[ staan ze op één rij, dit betekent dat de transitie kan lopen van de eerste tot de laatste frame door de positie van de achtergrond te veranderen.</p>
+<img src="/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
+<h3 id="steps()-timing-functie" tabindex="-1">Steps() timing functie</h3>
+<p>Bij de meeste timing functies zoals de cubic-bezier animeert de transitie soepel van begin tot eind. De <code>steps</code> timing functie werkt anders. In plaats van een soepele transitie wordt de transitie verdeeld in een aantal stappen die scherp op elkaar volgen.</p>
+<img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
+<p>Om te beginnen zetten we de HTML op:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fave<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="achtergrondafbeelding" tabindex="-1">Achtergrondafbeelding</h3>
+<p>Hierna voegen we wat opmaak toe en stellen we de positie van de achtergrondafbeelding in:</p>
+<p><img src="/images/posts/steps/twitter_fave.png" alt="Image sprite for the animation"></p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 70px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/twitter_fave.png<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>De <code>hover</code> state wordt toegevoegd, dit is wanneer we de achtergrondpositie verplaatsen naar het eind van de reeks van afbeeldingen:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> -3519px 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background 1s <span class="token function">steps</span><span class="token punctuation">(</span>55<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Let op de tweede regel, hier bepalen we de <code>transition</code>. In dit geval willen we dat de transitie werkt voor de achtergrondpositie, we laten de transitie twee seconden duren en maken gebruik van de <code>steps</code> timing functie. Het <code>steps</code> gedeelte bevat de waarde <code>55</code>, dit is omdat de animatie 55 frames bevat.</p>
+<p>Het effect is dat wanneer we over het element hoveren, het element door de transitie springt in 55 gelijke stappen.</p>
+<h3 id="waarom-geen-gif%3F" tabindex="-1">Waarom geen gif?</h3>
+<p>Geanimeerde gifs kunnen gebruikt worden in dit geval maar zijn niet de beste optie. Het bestand is vaak groter en de frame rate is moeilijker te controleren. Met deze methode kunnen we pauzeren, terugspoelen en diverse andere soorten aanpassingen maken aan de animatie door middel van CSS.</p>
+<h2 id="andere-mogelijkheden-met-%22steps()%22" tabindex="-1">Andere mogelijkheden met &quot;steps()&quot;</h2>
+<p>Achtergrond sprites animeren is maar één van de vele mogelijkheden met de <code>steps</code> timing functie. Alles wat geanimeerd moet worden in een beperkt aantal stappen kan gebruik maken van deze functie. Zo kan je er bijvoorbeeld een klok mee laten tikken.</p>
+<h2 id="cheatsheet" tabindex="-1">Cheatsheet</h2>
+<p>As je dit artikel interessant vond kan je het <a href="https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;url=https://cssanimation.rocks/post/twitter-fave/&amp;original_referer=https://cssanimation.rocks">delen op Twitter</a> af kan je dit handige overzicht downloaden:</p>
+<img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px" />
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Denis Valcke. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

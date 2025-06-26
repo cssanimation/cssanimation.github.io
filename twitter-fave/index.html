@@ -1,226 +1,257 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <title>Twitter's "fave" animation</title>
-  <meta name="description" content="Twitter recently updated the design of their &ldquo;fave&rdquo; (also known as &ldquo;fav&rdquo;) button, introducing a new animation. Rather than rely on CS...">
+  <title>
+    Twitter&#39;s &quot;fave&quot; animation - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Find out how Twitter&#39;s fancy new &#39;fave&#39; animation works, using the CSS steps() timing function."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/twitter_fave.css" />
+  
+  
+  <link rel="canonical" href="/twitter-fave/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Twitter&#39;s &quot;fave&quot; animation - CSS Animation" />
+  <meta property="og:description" content="Find out how Twitter&#39;s fancy new &#39;fave&#39; animation works, using the CSS steps() timing function." />
+  <meta property="og:image" content="/images/posts/steps/twitter_fave_rectangle.png" />
+  <meta property="og:url" content="/twitter-fave/" />
+  
 
-  <link rel="stylesheet" href="/assets/stylesheets/main.css">
-  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
 
-  <link rel="stylesheet" href="/assets/stylesheets/custom/twitter_fave.css">
-
-  <link rel="canonical" href="http://cssanimation.rocks/twitter-fave">
-  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="http://cssanimation.rocks/feed.xml" />
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 
   
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@cssanimation" />
-    <meta property="twitter:creator" content="@donovanh" />
-    <meta property="og:title" content="Twitter&#39;s &quot;fave&quot; animation - CSS Animation" />
-    <meta property="og:description" content="Find out how Twitter&#39;s fancy new &#39;fave&#39; animation works, using the CSS steps() timing function." />
-    <meta property="og:image" content="http://cssanimation.rocks/assets/images/posts/steps/twitter_fave_rectangle.png" />
-    <meta property="og:url" content="http://cssanimation.rocks/twitter-fave" />
-  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
-  <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-160x160.png" sizes="160x160">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
 </head>
 
 
-  <body>
+  <body class="shorter">
+    
 
-    <section class="container page-content">
+  <section class="post-header shorter">
 
-  <section class="row">
-    <section class="three columns">
-      <header class="site-header">
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
 
-  <section class="content">
-    <section class="svg-logo"><a href="/"><img src="/assets/images/logo.svg" alt="CSS Animation"></a></section>
+    </div>
   </section>
 
-</header>
-
-    </section>
-
-    <article class="post-content nine columns">
-      <h1 class="post-title">Twitter's "fave" animation</h1>
-      <p>Twitter recently updated the design of their &ldquo;fave&rdquo; (also known as &ldquo;fav&rdquo;) button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here&rsquo;s how to recreate the animation using the CSS animation <code>steps</code> timing function.</p>
-
-<!--more-->
-
-<h2>Illusion of movement</h2>
-
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Twitter&#39;s &quot;fave&quot; animation</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">January 17, 2015</p>
+      
+      <p>Twitter recently updated the design of their &quot;fave&quot; (also known as &quot;fav&quot;) button, introducing a new animation. Rather than rely on CSS transitions, the animation makes use of a series of images. Here's how to recreate the animation using the CSS animation <code>steps</code> timing function.</p>
+<h3 id="update%3A-heart" tabindex="-1">Update: Heart</h3>
+<p>The following technique can also be used with the new &quot;Heart&quot; animation, as it's handled in a similar way:</p>
+<section class="fave demo-container tap-to-activate heart"></section>
+<p>See the <a href="http://codepen.io/donovanh/pen/dYqxNb">live example on CodePen</a>.</p>
+<h2 id="illusion-of-movement" tabindex="-1">Illusion of movement</h2>
 <p>The effect is similar to the old <a href="http://en.wikipedia.org/wiki/Zoetrope">Zoetrope</a> devices, which presented a series of illustrations in sequence around a cylinder. Instead of a cylinder, we display a flat series of images inside an element.</p>
-
-<h2>Demo</h2>
-
+<h2 id="demo" tabindex="-1">Demo</h2>
 <p>Hover the star to see the animation:</p>
-
 <section class="fave demo-container tap-to-activate"></section>
-
-<p>In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter&rsquo;s fave icon animation:</p>
-
-<p><img src="/assets/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px"></p>
-
-<p>To animate these frames, we&rsquo;ll need to put them into a single line. <a href="/assets/images/posts/steps/twitter_fave.png">This file</a> has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:</p>
-
-<p><img src="/assets/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px"></p>
-
-<h3>Steps() timing function</h3>
-
+<p>In this example we begin by creating a series of images that will make up the animation. In this case we are using part of the image set from Twitter's fave icon animation:</p>
+<img src="/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px">
+<p>To animate these frames, we'll need to put them into a single line. <a href="/images/posts/steps/twitter_fave.png">This file</a> has them in a single row, which means we can transition from the first frame to the last frame by positioning the background:</p>
+<img src="/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px">
+<h3 id="steps()-timing-function" tabindex="-1">Steps() timing function</h3>
 <p>With most timing functions such as ease or cubic-bezier, the transition animates smoothly between the start and end states. The <code>steps</code> timing function is different. Instead of a smooth transition, it divides up the transition into a number of steps and moves sharply between each step.</p>
-
-<p><img src="/assets/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px"></p>
-
+<img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px">
 <p>To begin we set up the HTML:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;section class=&quot;fave&quot;&gt;&lt;/section&gt;</code></pre></div>
-
-<h3>Background image</h3>
-
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fave<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="background-image" tabindex="-1">Background image</h3>
 <p>With that in place we can add a little styling and position the background image:</p>
-
-<p><img src="/assets/images/posts/steps/twitter_fave.png" alt="Image sprite for the animation"></p>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css">.fave {
-  width: 70px;
-  height: 50px;
-  background: url(images/twitter_fave.png) no-repeat;
-  background-position: 0 0;
-}</code></pre></div>
-
+<p><img src="/images/posts/steps/twitter_fave.png" alt="Image sprite for the animation"></p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 70px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/twitter_fave.png<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>The <code>hover</code> state is added, which is when we specify that the background position be moved to the end of the series of images:</p>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css">.fave:hover {
-  background-position: -3519px 0;
-  transition: background 1s steps(55);
-}</code></pre></div>
-
-<p>Note the second rule, specifying the <code>transition</code>. In this case we want to transition the background property, run the transition for a duration of two seconds, make use of the <code>steps</code> timing function. The <code>steps</code> part includes the value <code>55</code>, as there are 55 frames in the animation.</p>
-
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> -3519px 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background 1s <span class="token function">steps</span><span class="token punctuation">(</span>55<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Note the second rule, specifying the <code>transition</code>. In this case we want to transition the background property, run the transition for a duration of one second, make use of the <code>steps</code> timing function. The <code>steps</code> part includes the value <code>55</code>, as there are 55 frames in the animation.</p>
 <p>The effect is that when we hover over the element, it jumps through the transition in 55 equal steps.</p>
-
-<h3>Why not a gif?</h3>
-
+<h3 id="why-not-a-gif%3F" tabindex="-1">Why not a gif?</h3>
 <p>Animated gifs could potentially be used but in this case would not be a great fit. The file size is generally worse and frame rate is difficult to control. With this method we can pause, rewind, or make all sorts of other adjustments to the animation using CSS.</p>
-
-<h2>Other uses of &ldquo;steps()&rdquo;</h2>
-
+<h2 id="other-uses-of-%22steps()%22" tabindex="-1">Other uses of &quot;steps()&quot;</h2>
 <p>Animating background sprites is just one use of the <code>steps</code> timing function. Anything that needs to be animated in a series of discrete steps is a good fit for it. You could use it to create a ticking clock for example.</p>
-
-<h2>Cheatsheet</h2>
-
-<p>If you enjoyed this article, you can <a href="https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;url=http://cssanimation.rocks/post/twitter-fave/&amp;original_referer=http://cssanimation.rocks">share it on Twitter</a> or save this handy summary cheatsheet:</p>
-
-<p><img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px"></p>
+<h2 id="cheatsheet" tabindex="-1">Cheatsheet</h2>
+<p>If you enjoyed this article, you can <a href="https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;url=https://cssanimation.rocks/twitter-fave/&amp;original_referer=https://cssanimation.rocks">share it on Twitter</a> or save this handy summary cheatsheet:</p>
+<img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px">
 
 
-      <section class="quote-container">
-        <section class="rocky">
-          <img src="/assets/images/rocky.svg">
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
         </section>
-        <blockquote>
-          <p>If you enjoyed this article, <a href="https://twitter.com/intent/tweet/?text=Twitter's "fave" animation&url=http%3A%2F%2Fcssanimation.rocks%2Ftwitter-fave&via=cssanimation" target="_blank">share it</a>!</p>
-        </blockquote>
-      </section>
-
-      <section class="content-box">
-        <div class="email-signup">
-  <h2>Animation tips in your email!</h2>
-  <form action="//hop.us7.list-manage.com/subscribe/post?u=07ab661c8a6f6b3ec4c98c791&amp;id=169820d65d" method="post" class="validate" target="_blank" novalidate>
-    <section class="row">
-      <section class="eight columns">
-        <input type="email" value="" placeholder="Your email" name="EMAIL" class="email">
-        <div style="position: absolute; left: -5000px;"><input type="text" name="b_07ab661c8a6f6b3ec4c98c791_7daf5f7db7" value=""></div>
-      </section>
-      <section class="four columns">
-        <input type="submit" value="Add me" name="subscribe" class="button-primary">
-      </section>
-    </section>
-  </form>
-  <p>Be the first to get all the latest CSS Animation articles in your email.</p>
-</div>
-
       </section>
     </article>
-  </section>
+    
+    <aside class="post-aside three columns">
+      
 
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
 </section>
 
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
 
-    <footer class="container">
-  <section class="row">
-    <ul class="icons">
-      <!--<li><a class="footer-icon" href="/feed.xml">RSS</a>-->
-      <li>
-        <a class="footer-icon" href="https://twitter.com/cssanimation">
-          <span class="icon  icon--twitter">
-            <svg viewBox="0 0 16 16">
-              <path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
-              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z">
-            </svg>
-          </span>
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section class="row">
-    <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a>, hosted by Github.</p>
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
   </section>
 </footer>
-<script src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
-<script src='/assets/javascript/site.js'></script>
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-3481417-30', 'auto');
-  ga('send', 'pageview');
-</script>
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
-
-
-
+<script>new WOW().init();</script>
 
   </body>
-
 </html>

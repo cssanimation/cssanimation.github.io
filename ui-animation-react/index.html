@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    UI Animation in React - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="See how small UI animations in React can make an app shine"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/ui-animation-react/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="UI Animation in React - CSS Animation" />
+  <meta property="og:description" content="See how small UI animations in React can make an app shine" />
+  <meta property="og:image" content="/images/posts/ui-animation-react/home.png" />
+  <meta property="og:url" content="/ui-animation-react/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">UI Animation in React</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">May 12, 2019</p>
+      
+      <p>On this site we've explored loads of big impressive animations. I thought it would be worth stepping back and looking at how small UI animations can add up.</p>
+<p>In this post we'll take a look at a demo React app and explore how adding animations to situations when UI changes can result in a more polished experience. We'll try to do so in a way that means reusing animations so that the result is a more consistent style of animation through the app, and we'll take a look at a handy little React package we can use to make animations easier.</p>
+<h2 id="video-version" tabindex="-1">Video version</h2>
+<p>Note: the code is hard to see in the video, but you'll find all these examples and code below!</p>
+<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6lshX4daC_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="demo-project" tabindex="-1">Demo project</h2>
+<p>Over on Github I've prepared a little React project to get started. If you've ever used <code>Create React App</code>, it'll be quite familiar. It's a basic React app with components, around which I've added <a href="https://www.styled-components.com">styled-components</a> to handle styling.</p>
+<p>Styled Components is a handy way of wrapping CSS styling around components in React, allowing us to use Sass-style nesting but also provides us with a way of injecting a &quot;theme&quot; - a set of objects containing settings or snippets of CSS we can apply throughout our apps. We'll use this theme approach to create some simple but useful animations we can apply to projects.</p>
+<p>You can <a href="https://github.com/donovanh/react-animation-example">clone the repo</a> and run <code>npm install</code> to set up the necessary bits. Then run <code>npm start</code> to run it locally. You'll find it on <a href="http://localhost:3000"><code>localhost:3000</code></a> in the browser.</p>
+<p>If you'd like to see the finished version, check out branch <code>animated</code> - otherwise you can follow along.</p>
+<p><img src="/images/posts/ui-animation-react/code.png" alt="Demo app and code"></p>
+<p>What we have is a simple Create React App, into which I've added some <a href="https://www.styled-components.com">styled components</a> goodness. You don't have to stick with Styled Components if you prefer Emotion or something else - got for it. It's just to illustrate the approach.</p>
+<p>What we're starting with is a fairly simple little 3 page website with some &quot;products&quot; for sale on it. You can click between the products, you can select product variations, which results in their prices changing. You can even add them to the cart and see the cart button and cart total update.</p>
+<p>In the project you'll find a <code>components</code> directory. This is where I've set up the components for the app. The include a product page, and smaller things like navigation, images and buttons.</p>
+<p>You'll also find a <code>theme</code> folder. This is where I've set up some global CSS rules, along with some theme values that are injected into the components thanks to styled components. We'll look at how this can help make our animations reusable.</p>
+<h2 id="opportunities-to-animate" tabindex="-1">Opportunities to animate</h2>
+<p>When something changes, it's an opportunity to use animation. In this example we have lots of places where the UI changes.</p>
+<iframe src="https://giphy.com/embed/J4lwPWbcA71TKvHOBH" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>Let's begin with the biggest change - moving between pages.</p>
+<h3 id="page-transitions" tabindex="-1">Page transitions</h3>
+<p>I'm a big fan of keeping things simple. I also love it when I can write something once and use it in many places. Let's do both to make the page transitions better.</p>
+<p>Here's how they currently look. No animation, just sudden changes:</p>
+<iframe src="https://giphy.com/embed/l0QxLxuzgqiodZdb3i" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>In the <code>theme</code> folder we'll open the <code>index.js</code> file. We already have a bunch of settings here I've thrown in to demonstrate how a theme might look, but it doesn't have any animations yet. Let's change that. Begin by adding an object with a set of CSS keyframes I'll call <code>show</code>.</p>
+<p>Add to the top of <code>theme/index.js</code>:</p>
+<p>In theme/index add a set of keyframes:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> keyframes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@keyframes show {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span></code></pre>
+<p>This is a flexible little animation as it will simply apply an <code>opacity</code> of 1 and <code>transform</code> &quot;none&quot; to whatever we decide to apply it to.</p>
+<p>As we're only using the <code>to</code> state in the animation, the starting state will be implied from the styles we give to our component.</p>
+<p>This will be useful when we want to fade in the page content as we can set the page content to an <code>opacity</code> of 0, then apply the <code>show</code> animation.</p>
+<p>With the keyframes in place then we set up an animation:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> animations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    animation: show 500ms ease-out forwards;
+    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>keyframes<span class="token punctuation">.</span>show<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we're creating an <code>animations</code> variable with another object, this time containing the same property name, <code>show</code> but the property contains the CSS code that applies the animation, and bundles the keyframes along with it.</p>
+<p>Before we can use this we have to add it to the exports at the bottom of the file.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token punctuation">{</span>
+    animations<span class="token punctuation">,</span>
+    <span class="token operator">...</span>etc<span class="token operator">...</span></code></pre>
+<p>We can now apply our themed animation <code>show</code> to the pages. In <code>components/ProductPage/index.js</code> scroll down to the styling on line <code>44</code> and add:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">$</span><span class="token punctuation">{</span>props => props.theme.animations.show<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>As this is only applying the &quot;to&quot; or finished state of our animation, it won't do much. We need give the page a starting state.</p>
+<pre><code>animation-delay: 200ms;
+opacity: 0;
+</code></pre>
+<p>So the page begins with an <code>opacity</code> of 0. We also apply an <code>animation-delay</code> to hold back the animation for 200 milliseconds - enough to make it a little more noticeable.</p>
+<p>Testing this in the browser we have a simple but pleasant fade effect. Let's reuse the <code>show</code> animation once more.</p>
+<iframe src="https://giphy.com/embed/m94f44PD3QvRZYiNJt" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>This time in the <code>.content</code> part of the styles, add the following:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.content</span> <span class="token punctuation">{</span>
+  <span class="token selector">$</span><span class="token punctuation">{</span>props => props.theme.animations.show<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 500ms<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>20px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We are reusing the <code>show</code> animation but this time waiting a little longer with a longer delay. Notice also the <code>transform</code>. This will be reset by the <code>show</code> animation, resulting in an animated slide up the screen as it fades in.</p>
+<iframe src="https://giphy.com/embed/Q5u2TIl7ImAXFvsrxH" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>Feel free to experiment with other ways this could be used - maybe different timings on headings, paragraph content to create a staggered animation.</p>
+<h2 id="other-ui-animations" tabindex="-1">Other UI animations</h2>
+<p>There are still loads of places where things change in this UI. Let's bring in a handy library called <a href="http://github.com/nearform/react-animation/">React Animation</a> and see how we can use it's helper components to make our changes animate.</p>
+<h3 id="react-animation" tabindex="-1">React Animation</h3>
+<p>As you can see on <a href="https://nearform.github.io/react-animation/">the React Animation demo page</a>, you get two helpful components to apply animation to UI elements. Let's apply each.</p>
+<p>To begin, we install React Animation with <code>npm install -S react-animation</code>. We can now use it in our components!</p>
+<h3 id="animating-the-price" tabindex="-1">Animating the price</h3>
+<p>Let's use the defaults and add a fade animation to the price when it changes. In <code>components/ProductPage/index.js</code> we begin by importing the <code>AnimateOnChange</code> component (at the top of the file):</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">import</span> <span class="token punctuation">{</span> AnimateOnChange <span class="token punctuation">}</span> from <span class="token string">'react-animation'</span></code></pre>
+<p>Then we wrap the &quot;price&quot; text with this component:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>AnimateOnChange</span><span class="token punctuation">></span></span>{currentPrice}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>AnimateOnChange</span><span class="token punctuation">></span></span></code></pre>
+<p>By default, the <code>AnimateOnChange</code> component will look for any change in the children components and apply a fade-out and fade-in when they change.</p>
+<iframe src="https://giphy.com/embed/dBNIuB3rfZWg70b6iC" width="480" height="148" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>We can configure this with some options.</p>
+<h3 id="add-to-cart-button" tabindex="-1">Add to cart button</h3>
+<p>When adding an item to the cart, the text changes. Let's have this animate but with some more bounciness this time.</p>
+<p>Around line 33 of <code>components/ProductPage/index.js</code> where we wrap the button's contents:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>AnimateOnChange</span> <span class="token attr-name">animationIn</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bounceIn<span class="token punctuation">"</span></span> <span class="token attr-name">animationOut</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bounceOut<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  {addingToCart ? 'Added to cart' : 'Add to Cart'}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>AnimateOnChange</span><span class="token punctuation">></span></span></code></pre>
+<p>Here we're specifying <code>animationIn</code> and <code>animationOut</code>. You'll find more examples of built-in animations in the &quot;Animations&quot; section of <a href="https://nearform.github.io/react-animation/">the React Animation demo page</a>.</p>
+<p>Checking in the browser, we now have a bounce animation on click.</p>
+<iframe src="https://giphy.com/embed/kdiYLxGGXjNExm18iy" width="480" height="365" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<h3 id="cart-total" tabindex="-1">Cart total</h3>
+<p>Let's add some animation to the badge on the cart icon on the top-right. Currently it'll change each time we press &quot;Add to cart&quot; but there's no animation.</p>
+<p>To make it really stand out, we might want to have it animate last. This would draw the eye toward the cart button - something we might want people to notice when shopping.</p>
+<p>To do this we can use the <code>durationOut</code> prop.</p>
+<p>In the <code>components/CartButton/index.js</code> file on line 13, replace the <code>span</code> with this:</p>
+<pre><code>&lt;AnimateOnChange
+  className=&quot;cart-button-total&quot;
+  animationIn=&quot;bounceIn&quot;
+  animationOut=&quot;bounceOut&quot;
+  durationOut={2000}
+&gt;
+  {total}
+&lt;/AnimateOnChange&gt;
+</code></pre>
+<p>Notice that we're passing in the <code>className</code>. This applies the styling I've already set up for <code>cart-button-total</code> but it'll also apply the <code>AnimateOnChange</code> animation. In this case we're passing in <code>2000</code> (milliseconds) as the <code>durationOut</code>. This means it should disappear slowly, and animate back in later.</p>
+<iframe src="https://giphy.com/embed/cKzkvr0HN6KcKcGHC6" width="480" height="403" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<h3 id="hideuntilloaded" tabindex="-1">HideUntilLoaded</h3>
+<p>Now that we have the interactions animated, let's look at one more situation. When we change pages, the product images take a moment to load. Since they have a background shadow and background colour, this leaves big empty boxes visible for a moment before the image appears.</p>
+<iframe src="https://giphy.com/embed/VeBWcZnzBqOizNKykx" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>Let's fix this using <code>HideUntilLoaded</code>.</p>
+<p>In the file <code>components/ImageAndVariations/index.js</code> we begin by importing the component:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">import</span> <span class="token punctuation">{</span> HideUntilLoaded <span class="token punctuation">}</span> from <span class="token string">'react-animation'</span></code></pre>
+<p>Then around line 41 we look for the <code>img</code> tag, which we'll wrap in the <code>HideUntilLoaded</code> component:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HideUntilLoaded</span> <span class="token attr-name">imageToLoad</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{image}</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{image}</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{title}</span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>HideUntilLoaded</span><span class="token punctuation">></span></span></code></pre>
+<p>Now when we change views, any new images will hold back on loading until ready.</p>
+<iframe src="https://giphy.com/embed/jnE8jIDzbBtBVARosp" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<p>You can find more options for <code>HideUntilLoaded</code> such as passing in a &quot;Loading&quot; component, using other animations and more on <a href="https://nearform.github.io/react-animation/">the React Animation demo page</a>.</p>
+<p>Be sure to check out the other ways the components can be used to bring animations to your UI!</p>
+<h2 id="level-up-your-css-animation-skills!" tabindex="-1">Level up your CSS animation skills!</h2>
+<p>If you like this, you'll love my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">video course on CSS animation</a>. As a fan of this site you can save over 90% on the course today.</p>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Save over 90% and Level Up Your CSS Animation Skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://react-animation-example-ypudeffqpx.now.sh" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

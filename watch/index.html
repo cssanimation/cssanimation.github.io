@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Apple Watch Dials - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Recreate the Apple Watch radial dials using CSS."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/watch.css" />
+  
+  
+  <link rel="canonical" href="/watch/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Apple Watch Dials - CSS Animation" />
+  <meta property="og:description" content="Recreate the Apple Watch radial dials using CSS." />
+  <meta property="og:image" content="/images/posts/watch/watch.gif" />
+  <meta property="og:url" content="/watch/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <article class="watch play-once">
+  <div class="screen">
+    <header>
+      <span class="title">Activity</span>
+      <span class="time">10:09</span>
+    </header>
+    <section class="dials">
+      <div class="dial move">
+        <div class="dial-background one"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+      <div class="dial exercise">
+        <div class="dial-background two"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+      <div class="dial stand">
+        <div class="dial-background three"></div>
+        <div class="dial-container container1">
+          <div class="wedge"></div>
+        </div>
+        <div class="dial-container container2">
+          <div class="wedge"></div>
+        </div>
+        <div class="marker start"></div>
+        <div class="marker end"></div>
+      </div>
+    </section>
+    <section class="pips">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </div>
+</article>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Apple Watch Dials</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">March 9, 2015</p>
+      
+      <p>With the announcement of Apple's new watch this week, I thought I'd take a look at creating the activity dials using CSS.</p>
+<p>In this post we'll make use of CSS keyframe animations and a bit of <code>overflow</code> trickery to create the radial progress bars shown in the activities section of Apple's new watch.</p>
+<h2 id="demo" tabindex="-1">Demo</h2>
+<p>Here's an example of the final effect.</p>
+<section class="demo-container watch-container">
+  <article class="watch">
+```html
+<div class="bg-image"></div>
+<div class="screen">
+  <header>
+    <span class="title">Activity</span>
+    <span class="time">10:09</span>
+  </header>
+  <section class="dials">
+    <div class="dial move">
+      <div class="dial-background one"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="dial-container container2">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+    <div class="dial exercise">
+      <div class="dial-background two"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+    <div class="dial stand">
+      <div class="dial-background three"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+  </section>
+  <section class="pips">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+</div>
+```
+  </article>
+</section>
+<h2 id="radial-progress-bars" tabindex="-1">Radial progress bars</h2>
+<p>The watch's activity display is made up of 3 dials. Each is a kind of progress bar, shaped to curve around a circle. It's a little tricky to create this shape, but it can be done using two wedges and some carefully timed animation.</p>
+<p>We'll begin with a simple half-circle wedge shape.</p>
+<section class="demo-container">
+  <div class="example example0">
+```html
+<div class="wedge"></div>
+```
+  </div>
+</section>
+<p>Here's the HTML for this wedge:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>We set up the wedge to be a half-moon shape using the <code>border-radius</code> property and rotate it using a <code>keyframe</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.wedge</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> rotate 4s infinite linear<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 0 4em 4em 0<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 0% 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> rotate</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>360deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="masking" tabindex="-1">Masking</h2>
+<p>In earlier experiments, I'd tried creating this effect using the CSS <code>clip</code> property. This did work in some browsers, but it's a deprecated property and tricky to use. Instead, we can create a similar effect by using <code>overflow: hidden</code> on the container.</p>
+<p>There are two elements in play here. The <code>dial-container</code> is half as wide as the <code>wedge</code>, and has it's <code>overflow</code> property set to <code>hidden</code>. By placing it outside the container, we can rotate it into view.</p>
+<section class="demo-container">
+  <div class="example example1">
+```html
+<div class="wedge"></div>
+```
+  </div>
+</section>
+<pre class="language-css"><code class="language-css"><span class="token selector">.dial-container</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The container is positioned to the right of where the wedge is positioned, and the wedge is then rotated into view.</p>
+<p>To create the full circle we need to create a second wedge. We can create this by creating a second container, placed on the left and rotating a wedge into it from the right.</p>
+<section class="demo-container">
+  <div class="example example2">
+```html
+<div class="wedge"></div>
+```
+  </div>
+</section>
+<p>We can then put these together and create a circular dial. We'll also add some animation to have the second half of the dial start moving after the first dial.</p>
+<h2 id="full-circle" tabindex="-1">Full circle</h2>
+<p>Here's the HTML for these two parts. I've added a wrapper so that I can position both the containers on top of each other.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>And the CSS to handle the wrapper, containers and the two wedges.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 2em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dial-container</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.wedge</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 4em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container1</span> <span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container1 .wedge</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> rotate-bg-1 4s infinite linear<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 0 4em 4em 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 0 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container2</span> <span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.container2 .wedge</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> rotate-bg-2 4s infinite linear<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 4em 0 0 4em<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 2em 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* First animation moves 180 degrees in the first 2 seconds */</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> rotate-bg-1</span> <span class="token punctuation">{</span>
+  <span class="token selector">50%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Second animation moves 180 degrees in the last 2 seconds */</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> rotate-bg-2</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%, 50%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The result should look like this:</p>
+<section class="demo-container">
+  <div class="example example3">
+```html
+<div class="dial-container container1">
+  <div class="wedge"></div>
+</div>
+<div class="dial-container container2">
+  <div class="wedge"></div>
+</div>
+```
+  </div>
+</section>
+<h2 id="progress" tabindex="-1">Progress</h2>
+<p>The next step is to make the wedge into a bar. We can do this by masking the middle. Adding a circular <a href="/pseudo-elements/">pseudo-element</a> to a container, set to the background colour, has the desired effect.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.wrapper::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We now have something that looks more like Apple's activity radial progress bars.</p>
+<section class="demo-container">
+  <div class="example example4">
+```html
+<div class="dial-container container1">
+  <div class="wedge"></div>
+</div>
+<div class="dial-container container2">
+  <div class="wedge"></div>
+</div>
+```
+  </div>
+</section>
+<h2 id="rounding-the-edges" tabindex="-1">Rounding the edges</h2>
+<p>The Apple Watch demo features nicely rounded ends on its progress bars. To recreate this we'll add and animate some elements on each end of the bar. To begin we add the extra elements.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dial-container container2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wedge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marker start<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marker end<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The <code>start</code> marker will remain at the beginning, and the <code>end</code> marker needs to be animated to keep pace with the front of the progress bar. We can handle that with some CSS.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.marker</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 0.25em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.end</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> rotate-marker 4s infinite linear<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 50% 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> rotate-marker</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>360deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This CSS sets up the two markers to be green circles, and positions them at the top middle of the screen. The <code>end</code> marker then gets the <code>rotate-marker</code> animation and has its <code>transform-origin</code> set to the centre of the container. This means than when it rotates, it will spin around an arc.</p>
+<section class="demo-container">
+  <div class="example example5">
+```html
+<div class="dial-container container1">
+  <div class="wedge"></div>
+</div>
+<div class="dial-container container2">
+  <div class="wedge"></div>
+</div>
+<div class="marker start"></div>
+<div class="marker end"></div>
+```
+  </div>
+</section>
+<p>Changing the colour of the markers to red lets them blend in with the bar and give it a rounded effect. Adding a little cubic-bezier tweaking to the animation can give it a bit more character also.</p>
+<section class="demo-container">
+  <div class="example example6">
+```html
+<div class="dial-container container1">
+  <div class="wedge"></div>
+</div>
+<div class="dial-container container2">
+  <div class="wedge"></div>
+</div>
+<div class="marker start"></div>
+<div class="marker end"></div>
+```
+  </div>
+</section>
+<h2 id="putting-it-all-together" tabindex="-1">Putting it all together</h2>
+<p>Three of these radial progress bars together creates the Apple Watch activity dials. If you want to see more of this code, a full demo <a href="http://codepen.io/donovanh/full/GgYEBZ/">is available on Codepen</a>.</p>
+<section class="demo-container watch-container">
+  <article class="watch">
+```html
+<div class="bg-image"></div>
+<div class="screen">
+  <header>
+    <span class="title">Activity</span>
+    <span class="time">10:09</span>
+  </header>
+  <section class="dials">
+    <div class="dial move">
+      <div class="dial-background one"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="dial-container container2">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+    <div class="dial exercise">
+      <div class="dial-background two"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+    <div class="dial stand">
+      <div class="dial-background three"></div>
+      <div class="dial-container container1">
+        <div class="wedge"></div>
+      </div>
+      <div class="marker start"></div>
+      <div class="marker end"></div>
+    </div>
+  </section>
+  <section class="pips">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+</div>
+```
+  </article>
+</section>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Animating Links - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Apply transitions and keyframe animations to anchor tags."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/animating-links/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Animating Links - CSS Animation" />
+  <meta property="og:description" content="Apply transitions and keyframe animations to anchor tags." />
+  <meta property="og:image" content="/images/posts/animating-links/home.png" />
+  <meta property="og:url" content="/animating-links/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Animating Links</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">May 5, 2019</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>The humble text link, or anchor, is a mainstay of the World Wide Web. For a long time links were always blue and underlined, until CSS came along and gave us the tools to change the colour and style and even animate our link hover effects.</p>
+<p>In this tutorial we will learn how we style and animate the underlines on our links, we will combine multiple transitions, group animation keyframes together, and investigate some of the upsides and downsides of using animations instead of transitions.</p>
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CP4VzMN5EW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><br>
+<p>You'll need some files to follow this tutorial. Download <a href="https://cssanimation.rocks/levelup/public/02/02.zip">this zip file</a>, and open folder <code>00-start</code> in the <code>02</code> folder. A completed version of this lesson's code is in the folder <code>01-anchors</code>.</p>
+<p>You'll notice there are loads more examples there too - you'll find <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">all the lessons on this course</a> if you'd like to learn more.</p>
+<h2 id="starting-html-and-css" tabindex="-1">Starting HTML and CSS</h2>
+<p>To begin we have some simple HTML. Inside the containing <code>content</code> article you'll find a paragraph of text with a link. Nothing too fancy here.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>... and here is some text. This text shows how <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cssanimation.rocks/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>CSS animation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> can help us make links be more fun and useful...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>We're going to style this link using CSS, so let's open the stylesheet <code>links.css</code>. It's empty for now.</p>
+<p>Testing in the browser we see a simple paragraph with a &quot;normal&quot; looking link, complete with the default blue colour and text underline.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="xqmJzN" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/xqmJzN/">See the example on CodePen</a>.</p>
+<h2 id="replacing-the-underline" tabindex="-1">Replacing the underline</h2>
+<p>Let's start by replacing, and then animating the underline on the text. Many sites choose to remove the underline from links and rely on colour or font-weight to help links stand out. This is fine, but worth keeping in mind that some visitors might be colour-blind or have trouble making out subtle differences, so do test carefully.</p>
+<h2 id="accessibility" tabindex="-1">Accessibility</h2>
+<p>Just to note. While I'm using &quot;:hover&quot; in these examples, do keep in mind that you can also make use of the &quot;:focus&quot; state here too for keyboard navigation. For the purposes of these examples I am trying to keep things as simple as possible, but it's important to keep in mind other ways that people will be accessing our sites and applications.</p>
+<p>Also, we're setting link colours here. So you'll want to think about what style you want to apply to &quot;visited&quot; links. It can be useful to know which links on a page your visitors have visited before!</p>
+<p>OK back to the CSS. In our <code>links.css</code> stylesheet file, set the anchor styling to <code>text-decoration: none</code>, and the same on <code>hover</code>.</p>
+<pre><code>a {
+  text-decoration: none;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>With the underline gone, we can now put it back! Only this time we'll create our own that we can animate.</p>
+<p>One possible approach could be to add a <code>border-bottom</code> to the links. We'll see how it looks.</p>
+<pre><code>a {
+  border-bottom: .1em solid blue;
+  text-decoration: none;
+}
+</code></pre>
+<p>In the browser we can see the result. It's not great, the border sits very low, far away from the text.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="KWbBxR" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/KWbBxR/">See the example on CodePen</a>.</p>
+<p>Let's try another approach, using a pseudo-element.</p>
+<h2 id="pseudo-elements-%3A-vs-%3A%3A" tabindex="-1">Pseudo-elements : vs ::</h2>
+<p>Back when Internet Explorer 8 was a popular browser, we used to write pseudo-elements using a single colon &quot;:&quot; like &quot;:after&quot;. However the standard nowadays is to use two colons like so &quot;::&quot;. You may have noticed in the last module I used the older approach. This should be fine for now but for future compatibility it's a better idea to use two. A big thank you to one of my students for pointing this out! I'll be using two colons in the pseudo-elements from now on.</p>
+<p>Back to our CSS.</p>
+<pre><code>a {
+  position: relative;
+  text-decoration: none;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we add an <code>after</code> pseudo-element, using &quot;::after&quot;. We set a border on the top first. Then we give it the empty &quot;content&quot; property it needs, and position it absolutely. To make this work we need to also go back and set the <code>position</code> to &quot;relative&quot; on the anchor element. This tells the browser to use the anchor as a container for the absolutely positioned element within it.</p>
+<p>We're setting the <code>right</code> and the <code>left</code> to &quot;0&quot; so that the line goes all the way across the link. Lastly the &quot;bottom&quot; is set to be slightly higher than the bottom of the container, in this case &quot;.14em&quot; from the bottom. In the browser we can see that this now positions nicely.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="qrLyJW" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/qrLyJW/">See the example on CodePen</a>.</p>
+<h2 id="styling-the-underline" tabindex="-1">Styling the underline</h2>
+<p>Since we've created our own pseudo-underline we can apply styles. Like <code>border-radius</code> for example. We could add in a border radius and create an oval shaped underline using <code>border-radius: 50%</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We could even change the border style to <code>dotted</code> or <code>dashed</code> for some crazy styles, or even apply an SVG or image as the underline. Do experiment and see what works for you.</p>
+<p>For this example though we'll keep it simple so that we can focus on the animation. I'll just add a small border radius to make the border better match the style of this rounded font.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Time to add some animation.</p>
+<h2 id="animating-the-underline-(transitions)" tabindex="-1">Animating the underline (transitions)</h2>
+<p>To see what sorts of things we can do with this we'll try both a <code>transition</code> and an <code>animation</code> to see how each works. First we'll try a <code>transition</code>.</p>
+<p>We can adjust the style of the <code>after</code> pseudo-element on hover. To do so add a new block called <code>a:hover::after</code></p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover::after</span> <span class="token punctuation">{</span></code></pre>
+<pre><code>}
+</code></pre>
+<p>This contains the hover style for the pseudo-element. Let's adjust the positioning so that the line goes from left to right on hover. First we change the <code>right</code> property on the pseudo-element to &quot;100%&quot;. Then add a hover position where the line goes all the way across, by setting <code>right</code> to 0.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover::after</span> <span class="token punctuation">{</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Testing this in the browser, it doesn't look like much yet.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="ZeVjqq" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/ZeVjqq/">See the example on CodePen</a>.</p>
+<p>We'll need to add a transition to see this change from left to right.</p>
+<p>In the pseudo-element, add a transition that will transition the &quot;right&quot; property over a duration of .4s and using the cubic-bezier timing function with coordinates &quot;0,.5,0,1&quot;. This timing function starts very fast and tapers off, like an exponential ease-out.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> right .4s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">,</span>0<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We now see the underline animate from left to right on hover.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="QpzBzm" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/QpzBzm/">See the example on CodePen</a>.</p>
+<p>It's worth noting that we're animating the <code>right</code> property here. This is potentially a source of problems as it's not as optimised as if we'd animated the <code>transform</code> or <code>opacity</code>, but in this case it'll be ok as this transition doesn't move the element or cause any page reflowing.</p>
+<p>Before we finish up with the transition effect on the underline, let's add in some colour animation.</p>
+<pre><code>a {
+  color: #2F56B0;
+  position: relative;
+  text-decoration: none;
+  transition: color .4s ease-out;
+}
+</code></pre>
+<p>Back in the original anchor style block, we set the colour to match the border. We also want this colour to animate on hover, so we add a <code>transition</code> property to act only on the &quot;color&quot; property, with a duration of .4s and a simple &quot;ease-out&quot; timing function.</p>
+<p>Next we need to add another colour for the hover states of both the anchor and the pseudo-element.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #457DFB<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> #457DFB<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The anchor has the new colour set, and then the same colour is applied to the <code>border-color</code> on the pseudo-element. Lastly we need to add another <code>transition</code> to the pseudo-element to make this colour animation work.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a::after</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> .1em solid #2F56B0<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> .14em<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> right .4s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">,</span>0<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              border-color .4s ease-out<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In the transition we add a comma, then a second transition specific to the <code>border-color</code> property. This will match the timing and duration of the anchor's <code>color</code> transition.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="xqmJNK" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/xqmJNK/">See the example on CodePen</a>.</p>
+<h3 id="how-we-use-transitions" tabindex="-1">How we use transitions</h3>
+<p>In this example we've seen how transitions smooth the state change between an element's default state and its hover state. We've also seen how the transitions can be applied to multiple properties.</p>
+<p>The way we went about building the transition is worth looking at. We built each state, and then at the end added a transition to create the animation between the states. This is very different to how we design animations using <code>keyframes</code>. Rather than build the animation entirely within the keyframes, we plan out each state in advance and the <code>transition</code> property does the job of smoothing the changes between states.</p>
+<p>We can specify transitions properties when we set up the transitions - so for example the colour property changes using a different timing function to the other properties. We can use this to create more nuanced animations.</p>
+<p>Before we finish up though let's see how we can use an <code>animation</code> with <code>keyframes</code> to add animation to the hover event.</p>
+<h2 id="animating-the-underline-(keyframes)" tabindex="-1">Animating the underline (keyframes)</h2>
+<p>Where the <code>transition</code> property smoothes the changes between two states, we can use animations to introduce more than two states, to play automatically on load, and to repeat. These are features transitions don't give us, so it might be useful to make use of animations on hover states in some cases.</p>
+<p>For this example we'll set up the animation to repeat infinitely as long as the mouse is hovering over the link.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> anchor-underline</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%, 10%</span> <span class="token punctuation">{</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">40%, 60%</span> <span class="token punctuation">{</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">90%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We set up the <code>keyframes</code> with the name &quot;anchor-underline&quot;. In this we have three sets of pairs of keyframes. First 0% and 10%, then 40% and 60%, and lastly 90% and 100%. This is a little different from the way we've written keyframes so far, so it's worth explaining. When we want keyframes to have the same properties, we can list them together separated by commas. What this says is that the 0% and 10% states will be the same as each other, as well as the 40 and 60, and the 90 and 100.</p>
+<p>In effect this means that the animation doesn't change between 0% and 10%. However it then will animate between 10% and 40%, at which point it will remain unchanged until 60%, and so on.</p>
+<p>We add styles initially for the <code>left</code> and <code>right</code> positions. At first these styles make the line invisible, but pressed up against the left side. In the middle we set the left and right to 0, meaning the line is stretched across the entire link. Lastly we push the left up to 100% to squash the line against the right side.</p>
+<p>We then change our <code>:hover::after</code> block, removing the <code>right</code> property and replacing it with the <code>animation</code> property.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> anchor-underline 2s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">,</span>0<span class="token punctuation">,</span>1<span class="token punctuation">)</span> infinite<span class="token punctuation">;</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> #457DFB<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We specify the animation name, a duration of 2 seconds, the same timing function as earlier and lastly we give it an iteration count of &quot;infinite&quot;. This means it will run forever, as long as the link is hovered over. Let's see this in action.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="EWGpzB" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/EWGpzB/">See the example on CodePen</a>.</p>
+<p>For as long as we hold the hover state, the animation plays.</p>
+<h2 id="transition-vs-animation" tabindex="-1">Transition vs animation</h2>
+<p>This is one advantage the <code>animation</code> property has over <code>transition</code>. We can have animations that repeat, or alternate, or go through multiple stages. Transitions are more limited in this sense in that they only afford us the animation between one state and another. Having said that, there's a significant advantage to the transition approach, in that the hover effect gets a second, &quot;out&quot; transition for free. By applying the transition property to the anchor styles, the browser transitions both to and from the hover state, even if the mouse leaves halfway through the animation.</p>
+<p>As we can see, this gives us a smoother mouse out effect.</p>
+<p>When choosing whether to use animation or transition for interactions it good to keep in mind this benefit. For the rest of this module we'll be focusing on how we can make the most of the transitions to provide smooth animated responses to interactions.</p>
+<h2 id="multiple-lines" tabindex="-1">Multiple lines</h2>
+<p>The above works well for links in a single line, but it can break when we make the text wrap multiple lines.</p>
+<p>This <a href="https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/">blog post</a> sets out a good approach - using <code>background-image</code> instead of the border on the link element. So if you're looking at animating links on multiple lines, you can set it up like so:</p>
+<pre><code>a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 4px;
+  transition: background-size cubic-bezier(0,.5,0,1) 0.3s;
+}
+</code></pre>
+<pre><code>a:hover,
+a:focus {
+  text-decoration: none;
+  background-size: 100% 4px;
+}
+</code></pre>
+<p>Here it is in action:</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="mYeJdP" data-default-tab="result" data-user="donovanh" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/mYeJdP/">See the example on CodePen</a>.</p>
+<h2 id="what-we-learned" tabindex="-1">What we learned</h2>
+<p>In this lesson we learned how to create custom underline effects on our links, we combined multiple transitions and also applied them to different properties. We then looked at how the animation property differs in how it could be used for hover animations and created keyframe animations with grouped keyframes.</p>
+<h2 id="want-to-learn-more%3F" tabindex="-1">Want to learn more?</h2>
+<p>This was part of my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">video course on CSS animation</a>. As a fan of this site you can save a massive 93% on the course today.</p>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Save over 90% and Level Up Your CSS Animation Skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

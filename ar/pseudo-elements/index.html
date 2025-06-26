@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    عناصر زائفة متحركة - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="تمنحك العناصر الزائفة عنصرين HTML إضافيين مجانًا!&amp;nbsp;في ما يلي كيفية تنشيطها عند التمرير.&amp;nbsp;استخدمها بحكمة."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/shiny_button.css" />
+  
+  
+  <link rel="canonical" href="/ar/pseudo-elements/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="عناصر زائفة متحركة - CSS Animation" />
+  <meta property="og:description" content="تمنحك العناصر الزائفة عنصرين HTML إضافيين مجانًا!&amp;nbsp;في ما يلي كيفية تنشيطها عند التمرير.&amp;nbsp;استخدمها بحكمة." />
+  <meta property="og:image" content="/images/posts/sheen/sheen.gif" />
+  <meta property="og:url" content="/ar/pseudo-elements/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">عناصر زائفة متحركة</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>عناصر زائفة ، مثل الحصول على عناصر DOM إضافية مجانًا. فهي تسمح لنا بإضافة محتوى إضافي وديكورات والمزيد إلى صفحاتنا دون إضافة المزيد من HTML ، ويمكن أن تكون متحركة. في هذه المشاركة ، سنستخدم عنصرًا  زائفًا لإضافة القليل من الذوق البصري إلى  زر.</p>
+<section class="shiny demo-container tap-to-activate"><button>تاثير لامع</button></section>
+<h2 id="%D8%B9%D9%86%D8%A7%D8%B5%D8%B1-%D8%A7%D9%84%D8%B2%D8%A7%D8%A6%D9%81%D8%A9" tabindex="-1">عناصر-الزائفة</h2>
+<p>ضمن CSS ، يمكننا تحديد عنصر زائف باستخدام :: <code>before&amp;nbsp;</code>أو :: <code>after</code>. يتم بعد ذلك إدخال العنصر الشائع داخل العنصر الخاص بك ، بين العنصر وأي محتوى. بما أنها تعمل كعنصر خاص بها ، يمكن تصميمها ووضعها وأكثر من ذلك. بما أنها تعمل كعنصر خاص بها ، يمكن تصميمها ووضعها وأكثر من ذلك.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span>
+<span class="token selector">.pebble::after</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>في هذه المرحلة ، يحتوي عنصر .<code>pebble</code> على عنصرين ظاهريين ملحقين ،ويمكننا تصميمهما حسب الحاجة.</p>
+<h3 id="%D9%85%D9%84%D8%A7%D8%AD%D8%B8%D8%A9-%D8%B9%D9%84%D9%89-%22%3A%3A%22-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%22%3A%22" tabindex="-1">ملاحظة على &quot;::&quot; مقابل &quot;:&quot;</h3>
+<p>من المقبول عمومًا أن نستخدم القولون المزدوج <code>::</code> للدلالة على العناصر الزائفة (على عكس الطبقات الزائفة مثل: hover،: first-child). إذا كنت تقوم بإضافة دعم IE8 ، فمن الأفضل استخدام واحدة<code>&amp;nbsp;:</code> بدلاً من ذلك. جميع المتصفحات الأخرى والإصدارات الأحدث من IE تدعم المزدوجة.</p>
+<h3 id="%D9%84%D8%A7-%D8%AA%D9%86%D8%B3-%22%D8%A7%D9%84%D9%85%D8%AD%D8%AA%D9%88%D9%89%22" tabindex="-1">لا تنس &quot;المحتوى&quot;</h3>
+<p>عند إضافة عناصر زائفة ، هناك شيء واحد يجب أخذه في الاعتبار وهو الحاجة إلى تحديدخاصية <code>المحتوى</code> قبل أن تصبح مرئية على الصفحة. عندما يتم إنشاء العنصر الزائف في حالة أقل محتوى ، يمكننا خداعه في الظهور باستخدام <code>محتوى</code> فارغ مثل:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span>
+  ... more styling goes here...
+<span class="token punctuation">}</span></code></pre>
+<p>يجب أن يتأكد هذا من أن العنصر مرئي على الشاشة.</p>
+<h2 id="%D8%B9%D9%84%D9%89-%D8%B3%D8%A8%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%AB%D8%A7%D9%84%3A-%D8%B2%D8%B1-%D9%84%D8%A7%D9%85%D8%B9" tabindex="-1">على سبيل المثال: زر لامع</h2>
+<p>في هذا المثال ، سنستخدم عنصرًا زائفًا لإنشاء تأثير لامع على الماوس فوق زر. في ما يلي مثال على ذلك في الإجراء (مرر أو انقر لمعرفة التأثير).</p>
+<section class="shiny demo-container tap-to-activate"><button>تأثير لامع</button></section>
+<p>للبدء ، بعض HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Oooh SHINY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>نظرًا لأننا نستخدم عناصر زائفة ، فلن نحتاج إلى أي HTML أكثر من ذلك للبدء. قد ترغب في إضافة فصل دراسي إلى الزر إذا كنت تريد وضع أكثر من نوع واحد على الصفحة ، ولكن في الوقت الحالي سنستخدم العنصر العام للبساطة.</p>
+<h3 id="%D9%85%D8%B6%D9%8A%D9%81%D8%A7-%D8%AA%D8%A3%D8%AB%D9%8A%D8%B1-%D9%84%D9%85%D8%B9%D8%A7%D9%86" tabindex="-1">مضيفا تأثير لمعان</h3>
+<p>تأثير اللمعان اللامع هو التدرج الخطي الذي يمر عبر الزر. لإنشاء هذا ، سنستخدم العنصر <code>after</code> الزائف ، ونضعه في موضع بداية خارج الزر:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>-5em<span class="token punctuation">,</span> 7.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>يتكون تأثير اللمعان من التدرج من لون الزر إلى اللون الأبيض والعودة مرة أخرى. عند هذه النقطة يجلس الآن خارج الزر.</p>
+<p>سنحتاج إلى إخفاء الطبقة اللامعة بحيث لا تظهر إلا على الماوس. للقيام بذلك سنقوم بتعيين الخاصية <code>overflow</code> للزر إلى <code>hidden</code> . نظرًا لأن العنصر الزائف يقع داخل الزر ، فهذا يعني أن وضعه خارج الزر لن يكون مرئيًا.</p>
+<pre><code>button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre>
+<p>لقد وضعت بعض التصميم الأخرى أيضًا لإعطاء الزر مظهره الخاص. شيء واحد أن نشير إليه ، هو استخدام <code>الموقف: النسبي</code> .  لقد أضفت هذه الخاصية بحيث يوجد عنصر شبه زائف تمامًا داخل الزر. بدون تحديد الموضع ، سيتم وضع العنصر المحدد تمامًا داخل عنصر أصل.</p>
+<h2 id="%D9%85%D8%B6%D9%8A%D9%81%D8%A7-%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%B1%D9%83%D8%A9" tabindex="-1">مضيفا الرسوم المتحركة</h2>
+<p>وبما أننا سنستخدم رسومًا متحركة في هذا المثال ، فهناك خطوتان متضمنتان. الأول هو إخبار المتصفح باستخدام صورة متحركة على التمرير. ثم سنوضح بالضبط ما يستخدمه الرسم المتحرك باستخدام <code>الإطارات الرئيسية&amp;nbsp;</code>.</p>
+<p>اضافة حالة التمرير  يمكن أن تقوم به بجمع <code>after</code> على <code>hover</code> لذلك </p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button:hover::after, button:focus::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> sheen 1s forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>هنا نحن نقول للمتصفح انه في حالة التمرير ،  العنصر <code>التالي</code> هو <code>رسوم متحركة</code> .  تدوم الرسوم المتحركة ، التي تدعى لمعان ، ثانية واحدة وتتوقف في النهاية دون تكرار.</p>
+<p>الأمر مهم هنا. باستخدام :<code>after:&amp;nbsp;لن يعمل&amp;nbsp;hover</code> حيث سيخبر المتصفح بالرد على حالة التمرير الخاصة بالعنصر الزائف نفسه.</p>
+<p>لقد أضفت أيضًا حالة التركيز. هذا يعني أن المشاهدين الجدولين من خلال الصفحة سيشاهدون التأثير الواضح كذلك ، دون الحاجة إلى التمرير. (شكرا لك ، Šime Vidas ، لأجل الطرف)</p>
+<p>دعونا تحديد <code>إطارات مفتاحية&amp;nbsp;</code>لهذه الرسوم المتحركة:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> sheen</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span> -9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>نحتاج فقط إلى إطار مفتاحي واحد في هذه الحالة. نظرًا لأن موضع البدء (0٪) يتم تضمينه في موضع بدء العنصر الزائف ، فإننا نقوم فقط بوصف موضع النهاية. في هذه الحالة ، يكون موضع النهاية في الجانب العلوي الأيسر من الزر. سيقوم المتصفح بعد ذلك بتحريك تأثير اللمعان عبرنا.</p>
+<section class="shiny demo-container tap-to-activate"><button>تأثير لامع</button></section>
+<h2 id="%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD" tabindex="-1">اعتبارات المتصفح</h2>
+<p>و<a href="http://caniuse.com/#feat=css-animation"> ملكية الرسوم المتحركة تدعم بشكل جيد</a> ، وكذلك <a href="http://caniuse.com/#feat=css-gencontent">العناصر الزائفة</a> . من الجيد دائمًا التأكد من تضمين <code>-webkit</code> و <code>-moz&amp;nbsp;prefixes</code> <code>للإطارات الرئيسية</code> وأي تحويلات.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mayar Shaheen. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

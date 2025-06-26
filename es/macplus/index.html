@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Mac Plus CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Creando un modelo 3D del clásico Mac Plus con CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/macplus.css" />
+  
+  
+  <link rel="canonical" href="/es/macplus/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Mac Plus CSS - CSS Animation" />
+  <meta property="og:description" content="Creando un modelo 3D del clásico Mac Plus con CSS" />
+  <meta property="og:image" content="/images/posts/macplus/macplus.png" />
+  <meta property="og:url" content="/es/macplus/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Mac Plus CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Siempre recordaré el momento en que pude usar Apple Mac Plus En esta publicación intentaré rendir homenaje a esta hermosa computadora creándola en CSS</p>
+<h2 id="estilo-retro" tabindex="-1">Estilo retro</h2>
+<p>Construyamos (virtualmente) un computador. No cualquier computadora vieja, sino una computadora que fue, para muchos de nosotros, una introducción al mundo de Apple. El Macintosh Plus, cuyo nombre en clave es Mr. T, se introdujo por primera vez en 1986 y tenía un almacenamiento de 1 MB de RAM y un procesador de 8 MHz. Aparte de toda esa potencia bruta, era un diseño realmente lindo, que hizo que la computadora fuera más divertida de usar.</p>
+<p><img src="/images/posts/macplus/mac.jpg" alt="Credit: Vectronic's Apple World"></p>
+<p>En este proyecto, construiré un modelo 3D del Macintosh Plus y lo mostraré en un entorno tridimensional. Usando la animación CSS Keyframe, haremos que se mueva en la pantalla para mostrar mejor el efecto 3D.</p>
+<h2 id="por-qu%C3%A9-usar-css%3F" tabindex="-1">Por qué usar CSS?</h2>
+<p>Con Cascading Style Sheets son la forma estándar de diseñar el contenido de una página web. Todo, desde fuentes, colores, posicionamiento e imágenes de fondo, es manejado por CSS, y es una herramienta esencial para crear páginas web modernas. No es solo para contenido bidimensional. Con el uso de transformaciones 3D y posicionamiento, también puede usar CSS para agregar profundidad.</p>
+<p>La creación de escenas en CSS da como resultado tamaños de archivo más pequeños que las imágenes. En este ejemplo, el CSS se comprime a solo 4 KB y el HTML a menos de 1 KB. Una imagen equivalente sería de 100 KB o más.</p>
+<h2 id="demostraci%C3%B3n-en-vivo-y-c%C3%B3digo-fuente." tabindex="-1">Demostración en vivo y código fuente.</h2>
+<p>Ver el <a href="https://cssanimation.rocks/mac/">CSS Mac Plus en línea</a>.</p>
+<p>El código fuente completo <a href="https://github.com/donovanh/mac/archive/master.zip">se puede descargar aquí</a>, y puede ver el archivo <a href="https://github.com/donovanh/mac/blob/master/stylesheets/screen.css">CSS completo en Github</a>.</p>
+<p>También puede seguir las distintas etapas buscando la carpeta de <code>ejemplos</code> en <a href="https://github.com/donovanh/mac/archive/master.zip">los archivos del proyecto</a>.</p>
+<h2 id="sobre-prefijos" tabindex="-1">Sobre prefijos</h2>
+<p>He omitido los prefijos CSS de los ejemplos de código para facilitar la lectura del código. Cuando trabaje en esto, asegúrese de incluir prefijos para los otros navegadores, como <code>webkit</code>, <code>moz</code>, <code>ms</code> y <code>o</code>.</p>
+<h2 id="preparando-el-escenario" tabindex="-1">Preparando el escenario</h2>
+<p>Cuando estamos creando 3D usando HTML, necesitamos una escena dentro de la cual construirlo. Comience con un elemento HTML contenedor:</p>
+<pre><code>&lt;div class=&quot;stage&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>Este es un div simple con la etapa de clase y actúa como un contenedor para nuestro objeto 3D.</p>
+<p>Para establecerlo como un contenedor 3D, configuramos algunas propiedades CSS, <code>perspectiva</code> y <code>origen de perspectiva</code>. La propiedad de perspectiva es similar al punto de fuga de una escena. Cuanto menor sea el valor, más corto será el punto de fuga y más fuerte el efecto. Esta imagen muestra cómo cambiando el valor, cambia la forma en una escena:</p>
+<p><img src="/images/posts/macplus/01-perspective.png" alt="Different perspectives: 500px vs 2500px - examples/01-Perspective/index.html"></p>
+<h3 id="intentalo-tu-mismo" tabindex="-1">Intentalo tu mismo</h3>
+<p>Si desea probar, busque el archivo <code>screen.css</code> en la carpeta <code>examples / 01-Perspective</code> en los archivos del proyecto. Podrá actualizar el valor de perspectiva y ver el efecto abriendo el archivo <code>index.html</code> desde la misma carpeta en su navegador.</p>
+<p>La propiedad de <code>origen de perspectiva</code> establece la posición de visualización. Cambiarlo le permite mirar hacia abajo en la escena desde arriba, hacia arriba desde abajo o hacia adentro desde un lado.</p>
+<p>En este ejemplo, he optado por un valor de perspectiva de 1.600 píxeles. El CSS se ve así:</p>
+<pre><code>.stage {
+  perspective: 1600px;
+  perspective-origin: 50% 100px;
+}
+</code></pre>
+<p>La carpeta de <code>hojas de estilo</code> dentro del archivo ZIP del proyecto contiene las reglas CSS completas para configurar las otras propiedades en el escenario, incluyendo un fondo, ancho y alto.</p>
+<h2 id="planificando-la-estructura" tabindex="-1">Planificando la estructura</h2>
+<p>Con una etapa en su lugar, usaremos algunos elementos HTML para crear la computadora. En lugar de intentar incluir hasta el último detalle, nos centraremos en los detalles del frente en su mayor parte.</p>
+<p>El cuerpo principal de la Mac es una caja, ligeramente inclinada hacia atrás en ángulo y asentada sobre una base plana.</p>
+<p>Esto significará crear dos cajas, una un poco inclinada hacia atrás y colocada en una caja más plana. Para crear este efecto, usaremos la propiedad de <code>transformación</code> CSS.</p>
+<p>Si desea ver el HTML completo, puede encontrarlo en los archivos del proyecto dentro del archivo <code>index.html.</code></p>
+<h2 id="transforma" tabindex="-1">Transforma</h2>
+<p>La propiedad de <code>transformación</code> CSS nos permite rotar, sesgar, posicionar e incluso escalar elementos en la página. Podemos hacer uso del posicionamiento y la rotación para crear nuestra escena.</p>
+<p>Una propiedad de <code>transformación</code> podría verse así:</p>
+<pre><code>.example {
+  transform: rotateY(45deg) translateZ(-100px);
+}
+</code></pre>
+<p>Construye una transformación encadenando una serie de declaraciones. En este ejemplo, el elemento de ejemplo se gira 45 grados alrededor del eje Y y luego se empuja hacia atrás 100 px a lo largo del eje Z.</p>
+<p>Debería verse algo como esto:</p>
+<p><img src="/images/posts/macplus/02-Transforms.png" alt="Front and back panels transformed into place - examples/02-Transforms/index.html"></p>
+<p>Puede encontrar un ejemplo de transformaciones CSS en la carpeta <code>examples / 02-Transforms</code> dentro de los archivos del proyecto. Se colocan dos elementos en el ejemplo, y su posición se puede cambiar editando el archivo inclusiones <code>02-Transforms / css / screen.css.</code></p>
+<h3 id="transformar-origen" tabindex="-1">Transformar-origen</h3>
+<p>Al rotar elementos por el lugar, vale la pena tener en cuenta que las transformaciones tienen un origen que se puede configurar. El origen de la transformación es un punto al que se hace referencia especificando los valores X, Y y Z. Este es el valor predeterminado:</p>
+<pre><code>.default-origin {
+  transform-origin: 50% 50% 0;
+}
+</code></pre>
+<p>Al crear este ejemplo, mantuve el predeterminado, pero vale la pena saber que está ahí.</p>
+<h2 id="haciendo-las-cajas" tabindex="-1">Haciendo las cajas</h2>
+<p>Podemos usar algunas transformaciones para configurar el cuerpo principal de la computadora. El HTML tiene este aspecto:</p>
+<pre><code>&lt;div class=&quot;stage&quot;&gt;
+  &lt;div class=&quot;positioning animated&quot;&gt;
+```html
+&lt;div class=&quot;mac&quot;&gt;
+  &lt;figure class=&quot;back&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;left&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;right&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;top&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;base-front&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;base-left&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;base-right&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;base-back&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;front&quot;&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;shadow&quot;&gt;&lt;/figure&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+```
+<p>Dentro del escenario, hay un <code>div</code> que usaré para colocar la computadora en la página. Dentro de eso está la propia Mac. Las dos cajas están compuestas a su vez por elementos de <code>figura</code>. Estos elementos representan los lados, la parte superior, el frente y la parte posterior de las dos cajas.</p>
+<p>También hay una <code>figura</code> para representar la sombra.</p>
+<p>Este ejemplo se puede encontrar en la carpeta <code>examples / 03-Boxes</code>.</p>
+<p>El resultado que buscaremos se ve así:</p>
+<p><img src="/images/posts/macplus/04-Boxes.png" alt="CSS Boxes - examples/03-Boxes/index.html"></p>
+<p>Cada uno de los cuadros se <code>transforma</code> en su lugar utilizando la propiedad de <code>transformación</code> CSS, y los degradados CSS se utilizan para agregar profundidad a la escena.</p>
+<p>El CSS se ve así:</p>
+<pre><code>.front {
+  height: 11.5em;
+  width: 9.6em;
+  background: #e0e0e0;
+  transform: rotateX(5deg) translateZ(5.43em);
+}
+.back {
+  height: 11.5em;
+  width: 9.6em;
+  background: linear-gradient(top, #f2f2f2, #e6e6e6 0.25em, #c2c2c2);
+  transform: rotateX(5deg) translateZ(-5.45em) rotateY(180deg);
+}
+.top {
+  height: 10.95em;
+  width: 9.6em;
+  background-color: #ebf0dc;
+  background: linear-gradient(left, #fafafa, #d9d9d9 0.25em, #d9d9d9 9.35em, #fafafa);
+  transform: rotateX(5deg) rotateX(90deg) translateZ(5.45em);
+}
+.left {
+  height: 11.5em;
+  width: 10.9em;
+  background: linear-gradient(top, #ffffff, #e0e0e0 0.25em, #b3b3b3);
+  transform: rotateX(5deg) rotateY(-90deg) translateZ(5.45em);
+}
+.right {
+  height: 11.5em;
+  width: 10.9em;
+  background: linear-gradient(top, #ffffff, #e0e0e0 0.25em, #b3b3b3);
+  transform: rotateX(5deg) rotateY(90deg) translateZ(4.14em);
+}
+.base-front {
+  height: 2.1em;
+  width: 9.6em;
+  background: #c2c2c2;
+  transform: translateY(10.7em) translateZ(5em);
+}
+.base-back {
+  height: 2.1em;
+  width: 9.6em;
+  background: #b3b3b3;
+  transform: translateY(10.7em) translateZ(-5em) rotateY(180deg);
+}
+.base-left {
+  height: 2.1em;
+  width: 10em;
+  background: #b3b3b3;
+  transform: translateY(10.7em) rotateY(-90deg) translateZ(4.99em);
+}
+.base-right {
+  height: 2.1em;
+  width: 10em;
+  background: #b3b3b3;
+  transform: translateY(10.7em) rotateY(90deg) translateZ(4.58em);
+}
+.shadow {
+  width: 10em;
+  height: 11em;
+  background: transparent;
+  transform: rotateX(90deg) translateZ(-7.4em) translateX(20em);
+  box-shadow: -20.2em 0 1.8em rgba(100, 90, 100, 0.4);
+}
+</code></pre>
+<p>A cada una de las figuras se le ha dado un ancho y alto, y un degradado o color de fondo CSS. A continuación, las figuras se colocan utilizando la propiedad <strong>transform</strong>. Por ejemplo, el lado izquierdo se gira 90 grados antes de trasladar (mover) hacia atrás la mitad del ancho de la computadora.</p>
+<p>La figura frontal se traslada hacia adelante, a lo largo del eje Z, la mitad de la longitud de la computadora y la parte posterior se gira 180 grados antes de trasladarse hacia atrás.</p>
+<p>Para las piezas del cuadro superior, cada una de las figuras se gira 5 grados hacia atrás alrededor del eje X. Esto significa que el cuerpo principal del Macintosh Plus está inclinado hacia atrás.</p>
+<p>Finalmente, la <code>figura</code> de la sombra hace uso de la propiedad CSS <code>box-shadow</code> para crear una sombra que hace que parezca que la caja está asentada sobre una superficie plana.</p>
+<h2 id="biseles" tabindex="-1">Biseles</h2>
+<p>Una característica de esta computadora son los bordes inclinados alrededor del frente. Estos bordes, a los que me referiré como biseles, ayudan a suavizar las esquinas duras de la caja y hacer que parezca menos cuadrada.</p>
+<p>Para lograr esto, agregué algunos elementos adicionales a la <code>figura</code> frontal, así:</p>
+<pre><code>&lt;figure class=&quot;front&quot;&gt;
+  &lt;span class=&quot;bezel-top&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-left&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-right&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-bottom&quot;&gt;&lt;/span&gt;
+&lt;/figure&gt;
+</code></pre>
+<p>Los elementos de <code>tramo</code> dentro de la figura frontal representan cada uno de estos biseles. Con algunos estilos agregados, se verán así:</p>
+<p><img src="/images/posts/macplus/04b-Bezels.png" alt="Bezels added to front - examples/04-Bezels/index.html"></p>
+<p>Este ejemplo se puede encontrar en la carpeta <code>examples / 04-Bezels</code>.</p>
+<p>El siguiente CSS posiciona cada uno y hace uso de un truco de ancho de borde para crear bordes inclinados.</p>
+<pre><code>.front .bezel-top {
+  border-top: 0.75em solid #f2f2f2;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
+  width: 8.6em;
+}
+.front .bezel-left {
+  border-top: 0.5em solid #d9d9d9;
+  border-right: 0.75em solid transparent;
+  border-left: 0.75em solid transparent;
+  width: 10em;
+  transform: rotateZ(-90deg) translateX(-5.5em) translateY(-5.5em);
+}
+.front .bezel-right {
+  border-top: 0.5em solid #d4d4d4;
+  border-right: 0.75em solid transparent;
+  border-left: 0.75em solid transparent;
+  width: 10em;
+  transform: rotateZ(90deg) translateX(5.5em) translateY(-3.62em);
+}
+.front .bezel-bottom {
+  border-top: 0.75em solid #cccccc;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
+  width: 8.65em;
+  transform: rotateZ(180deg) translateY(-10.76em);
+}
+</code></pre>
+<p>Cada bisel tiene 3 bordes. Para el bisel superior, colocamos un borde de color en la parte superior. Luego colocamos dos bordes <em>transparentes</em> en los lados izquierdo y derecho. En CSS, cuando un borde se encuentra con un borde de otro color, la línea donde se encuentran es diagonal. Esto significa que los bordes transparentes dan como resultado bordes diagonales al borde de color.</p>
+<p>Esta técnica se aplica a cada uno de los biseles, creando la apariencia de bordes inclinados en cada uno.</p>
+<p>Los biseles también tienen una transformación aplicada para rotarlos y colocarlos al lado de la figura frontal.</p>
+<h2 id="m%C3%A1s-detalles" tabindex="-1">Más detalles</h2>
+<p>Con las cajas principales de la computadora en su lugar, podemos agregar los diversos detalles que hacen que parezca un Macintosh Plus, como la pantalla, el icono y la unidad de disco.</p>
+<p>La figura frontal contiene el siguiente HTML:</p>
+<pre><code>&lt;figure class=&quot;front&quot;&gt;
+  &lt;span class=&quot;bezel-top&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-left&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-right&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;bezel-bottom&quot;&gt;&lt;/span&gt;
+  &lt;figure class=&quot;screen-container&quot;&gt;
+```html
+&lt;span class=&quot;screen&quot;&gt;
+  &lt;p&gt;hello, Dave&lt;/p&gt;
+  &lt;span class=&quot;sheen&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+  </figure>
+  <figure class="logo">
+```html
+<span class="image"></span>
+<span class="text">Macintosh Plus</span>
+```
+  </figure>
+  <figure class="floppy"></figure>
+</figure>
+```
+<p>Puede encontrar un ejemplo de trabajo en la carpeta <code>examples / 05-Completed</code>.</p>
+<h3 id="pantalla" tabindex="-1">Pantalla</h3>
+<p>La pantalla está formada por varios elementos, incluido un contenedor, la pantalla en sí y una capa de &quot;brillo&quot; en la parte superior.</p>
+<p>El CSS para esto hace uso de <code>degradados</code> de CSS para que parezca insertado en la parte frontal de la computadora y el <code>tramo</code> de brillo usa un degradado casi transparente para darle a la pantalla algo de brillo.</p>
+<h3 id="logo" tabindex="-1">Logo</h3>
+<p>El logo se compone de dos partes, una imagen y algo de texto. El <code>intervalo</code> de imágenes contiene una imagen de fondo del antiguo logotipo de Apple en colores, y el texto se coloca junto a él. El CSS para estos se puede encontrar en los archivos fuente.</p>
+<p>Para crear el aspecto correcto, se agrega una fuente incrustada. Esto usa la propiedad <code>font-face</code> de CSS. Hay muchas formas de hacer esto, pero quizás la más fácil es usar un servicio como el generador <a href="http://www.fontsquirrel.com/tools/webfont-generator">@font-face de Font Squirrel</a> para crear el siguiente CSS:</p>
+<pre><code>@font-face {
+  font-family: &quot;apple_garamondregular&quot;;
+  src: url(&quot;../fonts/apple_garamond-webfont.eot&quot;);
+  src: url(&quot;../fonts/apple_garamond-webfont.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), url(&quot;../fonts/apple_garamond-webfont.woff&quot;) format(&quot;woff&quot;), url(&quot;../fonts/apple_garamond-webfont.ttf&quot;) format(&quot;truetype&quot;), url(&quot;../fonts/apple_garamond-webfont.svg#apple_garamondregular&quot;) format(&quot;svg&quot;);
+  font-weight: normal;
+  font-style: normal;
+}
+</code></pre>
+<p>Font Squirrel ayuda a generar varios archivos (eot, woff, etc.) que luego se pueden colocar en el proyecto y llamar dentro del CSS como se muestra.</p>
+<p>El resultado es una fuente que se asemeja mucho al original.</p>
+<h3 id="unidad-de-disquete" tabindex="-1">Unidad de disquete</h3>
+<p>La unidad de disquete es un solo elemento y usa bordes CSS para que parezca que está colocada en el frente. El CSS que crea el efecto se ve así:</p>
+<pre><code>.floppy {
+  height: 0.2em;
+  width: 2.8em;
+  transform: translate3d(4.8em, 8.9em, 0);
+  background: #555555;
+  border-top: 0.1em solid #cccccc;
+  border-right: 0.3em solid #e6e6e6;
+  border-bottom: 0.1em solid #f2f2f2;
+  border-left: 0.3em solid #e6e6e6;
+  border-radius: 0.25em;
+}
+</code></pre>
+<p>La unidad de disquete tiene un color de fondo gris sólido y cuatro bordes. El borde superior es el más oscuro, mientras que el borde inferior es más brillante para que parezca iluminado desde arriba. Finalmente, un radio de borde redondea las esquinas.</p>
+<h2 id="juntando-las-piezas" tabindex="-1">Juntando las piezas</h2>
+<p>Cada una de las piezas, cuando se juntan, se ve así:</p>
+<p><img src="/images/posts/macplus/05-Completed.png" alt="Completed Mac Plus - examples/05-Completed/index.html"></p>
+<h2 id="a%C3%B1adiendo-animaci%C3%B3n" tabindex="-1">Añadiendo animación</h2>
+<p>Si bien lo que tenemos se ve bastante bien, podemos mostrar correctamente el hecho de que es un objeto 3D haciéndolo moverse. Para hacer esto, haremos uso de la animación de <code>fotogramas clave</code> CSS.</p>
+<p>En CSS, hay dos tipos de animación. <code>Transiciones</code>, en las que los elementos de la página se animan de un estilo o posición a otro, y <code>fotogramas clave</code>, que representan una serie más compleja de pasos animados.</p>
+<p>Una serie de fotogramas clave se puede describir como una serie de porcentajes, con CSS describiendo cada paso. Podría verse algo como esto:</p>
+<pre><code>@keyframes back-and-forth {
+  0% {
+</code></pre>
+<p>transform: rotateY(40deg);</p>
+<pre><code>  }
+  40%, 50% {
+</code></pre>
+<p>transform: rotateY(-40deg);</p>
+<pre><code>  }
+  90%, 100% {
+</code></pre>
+<p>transform: rotateY(40deg);</p>
+<pre><code>  }
+}
+</code></pre>
+<p>En este ejemplo, la animación se denomina ida y vuelta y consta de 3 pasos. Esto comienza girado en un ángulo de 40 grados. Luego, en la marca del 40%, se gira a menos 40 grados. Permanece en esta rotación hasta el 50%, luego al 90% ha vuelto a la posición original.</p>
+<p>El navegador llena automáticamente los huecos animando las propiedades. En este caso animará el ángulo de rotación.</p>
+<h3 id="aplicar-animaci%C3%B3n" tabindex="-1">Aplicar animación</h3>
+<p>Para aplicar esta animación podemos usar la etiqueta de <strong>animación</strong> CSS.</p>
+<p>La etiqueta de <code>animación</code> se ve así:</p>
+<pre><code>animation: back-and-forth 14s ease-in-out infinite;
+</code></pre>
+<p>Aquí se combinan algunas cosas en una sola línea. Hace referencia a la animación por su nombre (&quot;ida y vuelta&quot;), establece una <code>duración</code> de 14 segundos y le dice a la animación que se repita indefinidamente. El valor de la <code>facilidad de entrada y salida</code> se refiere a la <code>relajación</code>, que le indica al navegador que la animación comience y finalice gradualmente.</p>
+<p>La aplicación de esta animación al div &quot;posicionamiento&quot; da como resultado algo como esto:</p>
+<div class="codepen" data-height="680" data-type="result" data-href="HGqjp" data-user="donovanh" data-safe="true"> </div>
+<h2 id="lo-que-aprendimos" tabindex="-1">Lo que aprendimos</h2>
+<p>Al crear y animar un objeto 3D en CSS, cubrimos bastantes técnicas. Establecemos la <code>perspectiva</code> y el <code>origen de la perspectiva</code>.  Luego hicimos uso de <code>transformaciones</code> para rotar, mover y colocar elementos, agregamos <code>degradados</code> para dar un efecto 3D más realista y usamos algunos trucos de <code>borde</code> CSS para crear biseles y profundidad. Finalmente hicimos uso de <code>fotogramas clave</code> y <code>animación</code> CSS para darle vida a la escena.</p>
+<h3 id="compatibilidad-del-navegador" tabindex="-1">Compatibilidad del navegador</h3>
+<p>No todos los navegadores pueden manejar transformaciones CSS. Internet Explorer tendrá dificultades, pero hay esperanzas de que el soporte <a href="http://caniuse.com/transforms3d">llegue a IE 11.</a> Todas las versiones recientes de Chrome, Safari y Firefox funcionarán bien.</p>
+<p>[Modernizr[ proporciona un conjunto de herramientas JavaScript para detectar las capacidades del navegador y se puede utilizar para mostrar contenido alternativo en los casos en que el navegador no puede admitir una determinada propiedad CSS. En el código de ejemplo, encontrará que hice uso de Modernizr para detectar la presencia de transformaciones 3D. En los casos en los que no existen, se muestra una imagen en su lugar.</p>
+<h2 id="avanzando" tabindex="-1">Avanzando</h2>
+<p>Si bien el ejemplo puede no parecer algo que usaría en un sitio web promedio, las técnicas pueden aplicarse a todo tipo de escenarios.</p>
+<p>Por ejemplo, las transformaciones CSS se pueden usar para agregar profundidad a las transiciones de página, carruseles de imágenes, logotipos y botones, por nombrar algunos. Las animaciones CSS se pueden usar para agregar un movimiento más interesante y delicadeza a sus transiciones, y los degradados CSS pueden agregar profundidad a las páginas sin necesidad de usar imágenes.</p>
+<script src="//codepen.io/assets/embed/ei.js"></script>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/donovanh/full/HGqjp/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Natalia Giraldo. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

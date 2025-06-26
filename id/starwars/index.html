@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Star Wars - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Judul Star Wars dari animasi &#39;The Force Awakens&#39; dengan CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/id/starwars/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Star Wars - CSS Animation" />
+  <meta property="og:description" content="Judul Star Wars dari animasi &#39;The Force Awakens&#39; dengan CSS" />
+  <meta property="og:image" content="/images/posts/starwars/home.jpg" />
+  <meta property="og:url" content="/id/starwars/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Star Wars</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Keluarkan popcorn! Hari ini kami sedang membangun judul film Star Wars dari &quot;The Force Awakens&quot; trailer.</p>
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen"></p>
+<p>Contoh ini menggabungkan animasi CSS dengan beberapa properti CSS lainnya yang mungkin membantu Anda, khususnya transformasi<code>&amp;nbsp;scale</code>, <code>translate</code> and <code>rotate</code>.</p>
+<h2 id="transformasi" tabindex="-1">Transformasi</h2>
+<p>Meskipun mungkin terdengar seperti itu menciptakan animasi, properti transformasi sebenarnya digunakan pengaturan posisi statis, miring atau skala elemen. Kita dapat menggunakannya untuk menciptakan efek yang hebat tetapi untuk melakukannya kita harus memiliki transformasi yang berbeda untuk setiap bingkai utama atau negara yang kita animasikan.</p>
+<h2 id="transform%3A-scale()%2C-translatez()-and-rotatey()" tabindex="-1">Transform: scale(), translateZ() and rotateY()</h2>
+<p>Kita dapat membuat elemen yang lebih besar atau lebih kecil menggunakan <code>scale</code> . Menggunakan <code>translateZ</code> kita dapat memindahkan elemen dalam sumbu-Z. Sumbu ini akan menjadi yang diwakili dengan menggambar garis dari Anda, melalui monitor.</p>
+<p>Dalam hal ini kita akan menggunakan kombinasi skala dan menerjemahkanZ untuk membuatnya terlihat seperti beberapa kata terbang melintasi angkasa.</p>
+<p>Terakhir kami akan gunakan <code>rotateY</code> untuk memutar huruf dari tagline. Berputar di sekitar sumbu Y akan membutuhkan sedikit kerja 3D di browser.</p>
+<h2 id="svg%2C-html-and-css" tabindex="-1">SVG, HTML and CSS</h2>
+<p>Sebagai persiapan untuk contoh ini saya membuat dua file SVG untuk bagian <a href="/demo/starwars/images/star.svg">Star</a> and <a href="/demo/starwars/images/wars.svg">Wars</a> pada logo. Jangan ragu untuk mengambilnya untuk digunakan jika Anda ingin bermain bersama.</p>
+<p>HTML untuk demo adalah sebagai berikut:</p>
+<pre><code>&lt;div class=&quot;starwars-demo&quot;&gt;
+  &lt;img src=&quot;/images/star.svg&quot; alt=&quot;Star&quot; class=&quot;star&quot;&gt;
+  &lt;img src=&quot;/images/wars.svg&quot; alt=&quot;Wars&quot; class=&quot;wars&quot;&gt;
+  &lt;h2 class=&quot;byline&quot; id=&quot;byline&quot;&gt;The Force Awakens&lt;/h2&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Gambar statis dari <a href="/demo/starwars/images/bg.jpg">beberapa bintang </a>digunakan untuk latar belakang. Font di byline sangat sulit ditemukan, jadi saya telah mereferensikan font web &quot;Lato&quot; dalam contoh ini.</p>
+<p>Dengan beberapa posisi absolut untuk memusatkan konten di tengah layar, kita mulai dengan ini:</p>
+<img src="/images/posts/starwars/starwars.jpg" />
+<h2 id="mengaktifkan-star-and-wars" tabindex="-1">Mengaktifkan Star and Wars</h2>
+<p>Kami ingin teks yang lebih besar memudar, sementara juga mulai lebih besar dan semakin kecil dari waktu ke waktu. Ini adalah kasus yang bagus untuk <code>scale()</code> trannsformasi. Mari kita gunakan pada kata &quot;Star&quot; dengan bingkai utama ini:</p>
+<pre><code>@keyframes star {
+  0% {
+</code></pre>
+<p>opacity: 0;
+transform: scale(1.5) translateY(-0.75em);</p>
+<pre><code>  }
+  20% {
+</code></pre>
+<p>opacity: 1;</p>
+<pre><code>  }
+  89% {
+</code></pre>
+<p>opacity: 1;
+transform: scale(1);</p>
+<pre><code>  }
+  100% {
+</code></pre>
+<p>opacity: 0;
+transform: translateZ(-1000em);</p>
+<pre><code>  }
+}
+</code></pre>
+<p>Ada dua properti yang berubah selama animasi ini. pada <code>opacity</code> dan <code>transform</code>. Perubahan opasitas membuatnya mulai transparan, dan memudar pada bagian akhir sehingga kita dapat mengulang animasi.</p>
+<p>Transformasi dimulai dengan menetapkan skala pada <code>1.5</code>. Ini berarti ukuran awal teks 150% lebih besar dari biasanya. Pada 89%, kami mengatur properti transformasi ke skala 1. Ini berarti bahwa antara 0% dan 89%, skala ini meningkat dari 150% menjadi 100%.</p>
+<p>pada akhir <code>transformZ&amp;nbsp;</code>menyebabkan kata untuk memperbesar dengan cepat.</p>
+<p>Kita dapat menerapkan bingkai utama ini ke kata &quot;Star&quot; seperti ini:</p>
+<pre><code>.star {
+  animation: star 10s ease-out infinite;
+}
+.wars {
+  animation: wars 10s ease-out infinite;
+}
+</code></pre>
+<p>Properti <code>animasi</code> di sini menentukan animasi yang disebut <code>bintang</code>, dan durasi sepuluh detik. Ini berlaku fungsi pengaturan waktu <code>ease-out</code>, dan memberitahukannya untuk mengulang tanpa batas. Kami menerapkan aturan serupa untuk kata &quot;Wars&quot;.</p>
+<h2 id="membuat-3d" tabindex="-1">Membuat 3D</h2>
+<p>Menggunakan transformasi 3D dalam CSS, baik menerjemahkan sepanjang sumbu Z, atau memutar di sekitar sumbu Y dan Z mengharuskan kita menetapkan panggung untuk 3D. Dalam istilah HTML ini berarti kita membuat wadah, dan memberi tahu browser bahwa beberapa hal 3D akan terjadi.</p>
+<p>Kami melakukan ini dengan menambahkan yang berikut ke <code>.starwars-demo</code> div:</p>
+<pre><code>.starwars-demo {
+  perspective: 800px;
+  transform-style: preserve3d;
+}
+</code></pre>
+<p>Kedua properti ini memberi tahu browser bahwa anak-anak penampung harus diposisikan dalam 3D, bukan datar. [CSS Tricks[ masuk ke lebih detail tentang properti.</p>
+<p>Kedua, properti <code>persective</code> memberitahu browser bagaimana &quot;deep&quot; adegan itu perlu. Seandainya kami membuatnya <code>800px</code>. Nilai yang lebih kecil menciptakan lebih banyak efek perspektif &quot;ekstrim&quot; karena adegannya lebih pendek.</p>
+<p>Dengan itu, kami akan memperkenalkan tagline.</p>
+<h2 id="awaken-the-force" tabindex="-1">Awaken the Force</h2>
+<p>Tagline &quot;The Force Awakens&quot; muncul di trailer dengan setiap huruf berputar pada tempatnya. Kita dapat membuat efek ini menggunakan <code>rotateY</code> transform. Dalam hal ini kami telah membungkus masing-masing huruf dalam elemen <code>span</code>, sehingga kami dapat menerapkan animasi untuk setiap huruf.</p>
+<p>Masalah yang saya temukan dengan cepat adalah bahwa tidak ada cara langsung untuk menghidupkan masing-masing huruf di garis. Pendekatan pertama saya adalah membungkus setiap huruf secara manual dalam tag <code>span</code>. Ini berhasil tetapi membuat HTML sedikit berantakan. Demo saat ini termasuk beberapa JavaScript (thanks to <a href="https://twitter.com/tadywankenobi">Tady </a>for the assist) yang membungkus setiap huruf secara otomatis dalam <code>span</code>.</p>
+<p>Kami akan menerapkan animasi untuk setiap huruf.</p>
+<p>Pertama, bingkai utama:</p>
+<pre><code>@keyframes spin-letters {
+  0%, 10% {
+</code></pre>
+<p>opacity: 0;
+transform: rotateY(90deg);</p>
+<pre><code>  }
+  30% {
+</code></pre>
+<p>opacity: 1;</p>
+<pre><code>  }
+  70%, 86% {
+</code></pre>
+<p>transform: rotateY(0);
+opacity: 1;</p>
+<pre><code>  }
+  95%, 100% {
+</code></pre>
+<p>opacity: 0;</p>
+<pre><code>  }
+}
+</code></pre>
+<p>Untuk mulai dengan, surat-surat diputar 90 derajat, kemudian dengan 70% melalui animasi, mereka telah animasi untuk menghadapi pemirsa.</p>
+<p>Kita dapat menerapkan kumpulan bingkai utama ini ke setiap rentang seperti:</p>
+<pre><code>.byline span {
+  animation: spin-letters 10s linear infinite;
+}
+.byline {
+  animation: move-byline 10s linear infinite;
+}
+</code></pre>
+<p>Hasilnya adalah setiap kontainer <code>span</code>yang menahan setiap huruf akan memudar dan berputar perlahan ke tempatnya, sebelum memudar pada akhir animasi.</p>
+<p>Menyusunnya bersama kita memiliki <a href="http://codepen.io/donovanh/pen/pJzwEw?editors=110">finished demo</a>.</p>
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class="codepen">
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://cssanimation.rocks/demo/starwars" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by PanduAri. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

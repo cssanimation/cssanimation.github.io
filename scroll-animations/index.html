@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Scroll animations - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Bake your own scroll animations using requestAnimationFrame and will-change"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/pizza.css" />
+  
+  
+  <link rel="canonical" href="/scroll-animations/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Scroll animations - CSS Animation" />
+  <meta property="og:description" content="Bake your own scroll animations using requestAnimationFrame and will-change" />
+  <meta property="og:image" content="/images/posts/scroll-animations/home.png" />
+  <meta property="og:url" content="/scroll-animations/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container">
+  <header class="header show-on-scroll">
+    <div class="main-photo"></div>
+    <h1 class="heading">When the moon hits your eye</h1>
+  </header>
+</div>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Scroll animations</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">May 19, 2019</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>It's time to add some animation to our page when a visitor scrolls. For this tutorial I've set up a demo page all about pizza. We'll use this to learn how to have animations triggered by scrolling, and investigate ways we can do so efficiently.</p>
+<p>In this tutorial we'll learn how to make use of the <code>requestAnimationFrame</code> as well as <code>Intersection Observer</code> methods to detect when elements are within the viewport of the browser. We'll introduce a new <code>will-change</code> property and use that to make sure our animations are smooth, and we'll put these together with some transitions to create animations that are triggered on scroll.</p>
+<p><em>Note</em>: The video doesn't include the <code>Intersection Observer</code> approach but you'll find it in the code below.</p>
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-ths7kNIFnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><br />
+<p>You'll find the HTML and CSS you need to get started in <a href="https://cssanimation.rocks/levelup/public/03/03.zip">this sample code file</a>. Look for folder <code>01-start</code>. A completed version of this tutorial's code is in the folder <code>01-end</code>.</p>
+<h2 id="starting-html" tabindex="-1">Starting HTML</h2>
+<p>In the <code>index.html</code> file you'll find a couple of page sections. The first is a <code>header</code> that contains the main photo and heading text.</p>
+<p>Beneath this we have a longer article. It's made up of paragraphs and images. I've added the class <code>inline-photo</code> to each of these images. We'll use this class to style the images, as well as animate them.</p>
+<p>Let's see how it looks. We can see the images and the text, but no animation yet.</p>
+<p data-height="600" data-zoom="05" data-theme-id="light" data-slug-hash="BRdaGj" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<h2 id="showing-on-scroll" tabindex="-1">Showing on scroll</h2>
+<p>For this tutorial we'll be using some JavaScript. The idea is to check, as the page is scrolled, for any special elements we want to animate. If any of these special elements are visible, we can give them a special class and use CSS to animate or transition them into view.</p>
+<p>To do this we'll need two things. We'll need the JavaScript to detect and add a class when one of these elements is visible, and we'll need to set up before and after styles on the elements.</p>
+<h2 id="javascript" tabindex="-1">JavaScript</h2>
+<p>Let's begin with our JavaScript. At the end of the HTML file you'll find a reference to the JavaScript file <code>show-on-scroll.js</code>. This is in the <code>javascripts</code> folder.</p>
+<p>In our editor we'll open this file. It's blank for now. This is where we'll set up the code to detect scrolling and check for those elements we want to show.</p>
+<p>We won't be using jQuery for this one. Instead we're going to use a handy method built in to browsers called <code>requestAnimationFrame</code>.</p>
+<p>Back in the day when building something like this I'd have used the <code>scroll</code> browser event, and then checked the state of the page while scrolling.</p>
+<pre class="language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'scroll'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Scrollin'"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>This might work in some ways, but sadly this has a couple of big problems. The first being efficiency. When scrolling, the <code>console.log</code> here will fire like crazy. If we're doing anything like parsing the DOM tree or other heavy tasks, this will add a lot of overhead to the browser. It could very easily slow things down and make our animations janky.</p>
+<p>A second issue is iOS. Scrolling on some phones only results in this <code>scroll</code> trigger being fired after the scrolling has finished. We'd like this to work on mobile, so that's a big fail there.</p>
+<p>Thankfully <code>requestAnimationFrame</code> solves these issues. It's a method that we can use to repeatedly check our page to see if elements are visible, while making sure we don't overload the browser by checking thousands of times per second. It does this by limiting how often the callback is executed to either the screen's refresh rate or 60 times per second.</p>
+<p>60 times per second might sound like a lot but for the work we'll be doing it's very slow and won't overload the browser.</p>
+<p>To set up our <code>requestAnimationFrame</code> method we'll apply it to a variable. This way we are able to have a fallback function for browsers that don't yet support it.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> scroll <span class="token operator">=</span> window<span class="token punctuation">.</span>requestAnimationFrame <span class="token operator">||</span>
+            <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span><span class="token punctuation">{</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token operator">/</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Here we're saying that <code>scroll</code> should be the <code>window.requestAnimationFrame</code> method, or (if this isn't available), use this simple function that waits one-sixtieth of a second before calling the callback.</p>
+<p>Next we'll grab the elements on the page we want to look out for.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> elementsToShow <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.show-on-scroll'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>This will look for all elements with class <code>show-on-scroll</code> and return them as an array we can loop through.</p>
+<p>Let's set up that looping function.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<pre class="language-js"><code class="language-js">  elementsToShow<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isElementInViewport</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'is-visible'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'is-visible'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code>  scroll(loop);
+}
+</code></pre>
+<p>We begin by setting up the function <code>loop</code>. This is a function we want to loop through all the elements and check if they're visible. We do this using the <code>forEach</code> method. For each of the <code>show-on-scroll</code> elements found this loop will check if it's in the viewport, and if so, add the class <code>is-visible</code>. Otherwise it'll remove the class.</p>
+<p>Lastly we want to keep firing this function so we'll make use of our <code>requestAnimationFrame</code> helper we set up earlier, and pass this function as a callback.</p>
+<p>This means that as soon as <code>requestAnimationFrame</code> allows us, it'll repeat this function and update classes as needed.</p>
+<p>As it stands, this won't do much yet. We need to kick it off by calling the <code>loop</code> function.</p>
+<pre><code>loop();
+</code></pre>
+<h3 id="checking-if-in-the-viewport" tabindex="-1">Checking if in the viewport</h3>
+<p>There's one bit missing. In the <code>loop</code> function we're calling a method <code>isElementInViewport</code>. Unfortunately this isn't a browser method, we'll have to write that one ourselves. Here's a handy one I grabbed from Stack Overflow.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Helper function from: http://stackoverflow.com/a/7557433/274826</span>
+<span class="token keyword">function</span> <span class="token function">isElementInViewport</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// special bonus for those using jQuery</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> jQuery <span class="token operator">===</span> <span class="token string">"function"</span> <span class="token operator">&amp;&amp;</span> el <span class="token keyword">instanceof</span> <span class="token class-name">jQuery</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    el <span class="token operator">=</span> el<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">var</span> rect <span class="token operator">=</span> el<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>rect<span class="token punctuation">.</span>top <span class="token operator">&lt;=</span> <span class="token number">0</span>
+      <span class="token operator">&amp;&amp;</span> rect<span class="token punctuation">.</span>bottom <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token operator">||</span>
+    <span class="token punctuation">(</span>rect<span class="token punctuation">.</span>bottom <span class="token operator">>=</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>innerHeight <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      rect<span class="token punctuation">.</span>top <span class="token operator">&lt;=</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>innerHeight <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token operator">||</span>
+    <span class="token punctuation">(</span>rect<span class="token punctuation">.</span>top <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span>
+      rect<span class="token punctuation">.</span>bottom <span class="token operator">&lt;=</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>innerHeight <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Just to run through this quickly. It begins by checking to see if <code>jQuery</code> is defined. jQuery changes the way elements are made available and this corrects for a possible issue that might arise. Next it uses a handy method called <code>getBoundingClientRect</code>. This is the rectangle around the element we want to check.</p>
+<p>Next it does a series of checks that will return true if the element is on the page and on the screen.</p>
+<h3 id="alternate-approach%3A-intersection-observer" tabindex="-1">Alternate approach: Intersection Observer</h3>
+<p>The above works pretty well, but there's a newer way to approach this problem using the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a>. This is quite well supported in browsers, with the exception of Internet Explorer (currently IE11 does not support this, so will need a polyfill).</p>
+<p>The Intersection Observer looks at the target element's position in relation to a <code>root</code> element, and when they &quot;intersect&quot;, will return true. In this case we can use it to tell us when our <code>show-on-scroll</code> elements are within the viewport.</p>
+<p>When setting up an instance of <code>IntersectionObserver</code> we can pass in options such as the <code>root</code> element want, or even the &quot;margin&quot; by which the elements need to overlap. For now though I'll keep it simpler and just use the defaults. See the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">docs</a> for more details.</p>
+<p>We can replace the above JavaScript with this:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">callback</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">entries</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">entry</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    entry<span class="token punctuation">.</span>target<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">"is-visible"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IntersectionObserver</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> targets <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".show-on-scroll"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+targets<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>To step through this - it's first setting up a <code>callback</code> function that will be called every time one of our observed targets enters or leaves the viewport.</p>
+<p>We then instantiate the <code>observer</code> using this callback function. With those two pieces put together, we then grab all our <code>targets</code>, and loop through them, attaching a listener (<code>observe</code>) to each one. When the element enters or leaves the viewport, it'll run the <code>callback</code> function.</p>
+<p>Lastly, this <code>callback</code> function toggles the class <code>is-visible</code> on our element. This approach is simpler that the previous JavaScript but do keep in mind that it might not work so well in Internet Explorer currently. Check the <a href="https://caniuse.com/#feat=intersectionobserver">CanIUse page</a> for more info.</p>
+<p>Let's save this and set up our HTML to make use of this new power.</p>
+<h2 id="selecting-the-elements" tabindex="-1">Selecting the elements</h2>
+<p>While there's a bit going on there in the JavaScript, the result is quite simple. It's going to apply an <code>is-visible</code> class when selected elements show on the screen. Let's choose which elements we want to show.</p>
+<p>In our <code>index.html</code> file we start by adding the class <code>show-on-scroll</code> to each of the photos.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/pizza.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inline-photo show-on-scroll<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>Lastly we'll also add this class to the <code>header</code> of the page. It'll be nice to have an animation on the titles and since this is just adding a class, we can totally do that in CSS.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header show-on-scroll<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>In our browser we can now test this. Opening the inspector we should see the <code>is-visible</code> class appearing and disappearing as we scroll.</p>
+<p>Time to use this for some animation!</p>
+<h2 id="animating-the-photos" tabindex="-1">Animating the photos</h2>
+<p>In the <code>scroll.css</code> file in the <code>stylesheets</code> folder we find some initial styles for the photos. Let's set these up to be animated by making a few changes.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.inline-photo</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1em solid #fff<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 4em solid #fff<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> .25em<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 1em 1em 2em .25em <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 2em auto<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>4em<span class="token punctuation">)</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-5deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 4s .25s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>1<span class="token punctuation">,</span>.3<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              opacity .3s .25s ease-out<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+  <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">,</span> opacity<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We want these to fade in so we set the <code>opacity</code> to zero. Then we also want these photos to slide into place, so let's adjust the transform to <code>translate</code> them down 4em, and give them a few degrees more rotation.</p>
+<p>Next we set up the transition we want to happen when these photos become visible. We add a transition for the transform, with a duration of 4 seconds, a quarter-second delay and the exponential ease-out timing function. We also fade it in using the opacity property, making it a little quicker than the transform.</p>
+<p>We're using a delay so that if our visitor is scrolling slowly, the animation won't have finished before the photo is properly visible on screen. It's a small tweak helps the flow of the page.</p>
+<p>Lastly we add a property we've not used yet, the <code>will-change</code> property. This is a way of telling the browser to prepare to animate the element. We supply this property the values <code>transform</code> and <code>opacity</code>.</p>
+<p>With this done, the photos will be invisible. We need to add some CSS to make them visible.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.inline-photo.is-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-2deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We add a new rule for the <code>is-visible</code> classed elements. In this we make them visible with <code>opacity</code> of 1, and we set the <code>transform</code> to just a slight rotation.</p>
+<p>Here's how it looks, showing the images as we scroll down the page.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="aWyPpP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<h2 id="animating-the-header" tabindex="-1">Animating the header</h2>
+<p>So far so good! Let's make use of the same JavaScript to bring animation to the header.</p>
+<p>Earlier we added the <code>show-on-scroll</code> class to the header. We can make use of the <code>is-visible</code> class to animate this part too. We'll need to set up a couple of different animations. First we'll have it fade in, then the main photo will pop into place and the text will slide up into place beneath it.</p>
+<p>Since we're doing this by applying a class, we have a situation where there's a change from one state to another. When we change from one state to another it's a good opportunity to use transitions, but if we wanted to do something more advanced here we could also use <code>keyframes</code> and animations.</p>
+<p>For now though we'll get by with a couple of transitions. Whenever possible I like to try to use the simplest approach before jumping into more complex solutions.</p>
+<p>We begin by fading in the <code>header</code>.</p>
+<pre><code>header {
+  opacity: 0;
+  transition: opacity .5s .25s ease-out;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">header.is-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We create a <code>header</code> style block and set the <code>opacity</code> to 0, as well as add a transition for the opacity.</p>
+<p>Next the <code>header</code> is given an opacity of 1 when the <code>is-visible</code> class is applied.</p>
+<p>For the header image and title we'd like to scale the photo and push the text down a bit. We can add styles to do this.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.main-photo</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>.8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.heading</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> <span class="token function">calc</span><span class="token punctuation">(</span>-50% + 1em<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This sets up the initial states of the elements. The photo is scaled down to .8 of it's normal size. The <code>heading</code> text is pushed down 1em. I'm using absolute positioning on this title text, setting the <code>left</code> and <code>top</code> to 50% of the <code>header</code>. This <code>transform</code> corrects by pulling the text back into the center and then adding an extra <code>1em</code> to push it down a bit.</p>
+<p>The next step is to add the styles for when the <code>header</code> has the <code>is-visible</code> class.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.is-visible .main-photo</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.is-visible .heading</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We start with <code>is-visible</code> then <code>main-photo</code> to specify the photo when it's parent has the <code>is-visible</code> class. In this state we can remove the <code>transform</code>. For the <code>heading</code> text we want to position it in the center of the screen.</p>
+<p>With the two states defined the last thing it to add a transition.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.main-photo,
+.heading</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 4s .25s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>1<span class="token punctuation">,</span>.3<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">will-change</span><span class="token punctuation">:</span> transform<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We specify both the <code>main-photo</code> and the <code>heading</code>. For each of these we apply a <code>transition</code> to the <code>transform</code> property, with a long duration of 4 seconds, a delay as before, and the exponential ease-out timing function.</p>
+<p>We'll also add a <code>will-change</code> property here to tell the browser to optimise the <code>transform</code> property on these elements for animating.</p>
+<p>Let's see it in action.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="rmzNZJ" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<p>Here we see that on load, the header fades in and the photo and text transition into place. If we scroll the page we see each of the photos fading in as they enter the viewport.</p>
+<h2 id="what-we-learned" tabindex="-1">What we learned</h2>
+<p>In this tutorial we were introduced to the handy <code>requestAnimationFrame</code> method. We wrote a handy JavaScript utility to detect when an element is inside the viewport, and apply a class to it. We will be able to use this any time we want to trigger animations on an element on scroll.</p>
+<p>We also made use of the <code>will-change</code> property, which allows us to hint to the browser which properties are going to be animated.</p>
+<h2 id="level-up-your-css-animation-skills!" tabindex="-1">Level up your CSS animation skills!</h2>
+<p>If you like this, you'll love my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">video course on CSS animation</a>. As a fan of this site you can save over 90% on the course today.</p>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Save over 90% and Level Up Your CSS Animation Skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://codepen.io/donovanh/full/rmzNZJ" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+  
+    <script src="/javascript/custom/show-on-scroll.js"></script>
+  
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

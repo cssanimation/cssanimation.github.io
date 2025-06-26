@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Hareketli Liste Elemanlari - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Liste elemanlarinizi animasyon yoluyla on plana cikarmak icin birkac yontem.Hareketli Liste Elemanlari"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/list_items.css" />
+  
+  
+  <link rel="canonical" href="/tr/list-items/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Hareketli Liste Elemanlari - CSS Animation" />
+  <meta property="og:description" content="Liste elemanlarinizi animasyon yoluyla on plana cikarmak icin birkac yontem.Hareketli Liste Elemanlari" />
+  <meta property="og:image" content="/images/posts/list_items/list_items.png" />
+  <meta property="og:url" content="/tr/list-items/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Hareketli Liste Elemanlari</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Web sayfanizin bir bolumu degisecegi zaman, bu degisimi bir animasyon ile yapmak ziyaretcilerinizin sitede neler olup bittigini anlamasini saglamak icin guzel bir yoldur. Animasyonlar yeni gelen içeriği bildirebilir ya da kaldırılmakta olan içeriğe dikkat çekebilir. Bu yazıda, bir liste içindeki ögeleri göstererek ve gizleyerek bunun içeriğin tanıtılmasında nasıl kullanilabileceğine bakacağız.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<h2 id="i%CC%87%C3%A7eri%C4%9Fi-tan%C4%B1tmak" tabindex="-1">İçeriği tanıtmak</h2>
+<p>Animasyonlar, ziyaretçilerin sitenizdeki şeylerin ne zaman değiştiğini anlamasına yardımcı olabilir. İçerikler animasyon kullanılmadan eklendiğinde ya da kaldırıldığında, ziyaretçiler bu ani değişiklikleri gözden kaçırabilir ve akılları karışabilir. Hafif animasyonlar eklemek bu sorunun üstesinden gelebilir ve sayfadan bir şeyin kaldırılacağını ya da ekleneceğini “haber vererek” yardımcı olabilir.</p>
+<p>Icerik ekleme veya cikarmayi bir liste ornegi uzerinde gosterebiliriz. Bu animasyonların çoğu başka türlü içerikler için de kullanılabilir. Eğer bu animasyonları yararlı bulduysanız ya da ekleyecek başka fikirleriniz varsa lütfen <a href="mailto:hello@cssanimation.rocks">bizimle iletişime geçin</a>, fikirlerinizi duymaktan mutluluk duyarız.</p>
+<h2 id="html" tabindex="-1">HTML</h2>
+<p>Başlarken önceden doldurulmuş olan bir liste, ve listeye yeni ögeler eklemek için de bir buton olusturacagiz.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add-to-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add a list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Dikkatinizi çekmek istediğim birkaç şey var. İlki, HTML'de iki adet ID kullandık.  Normalde stil işlemlerinde “fazla spesifik” oldukları ve problem çıkardıkları için ID kullanmayız.  Fakat JavaScript kullanırken işimize yarayacaklar.</p>
+<p>İkincisi ise kullandığımız “show” class'ı. Bu class'ı daha sonra animasyon eklerken kullanacağız.</p>
+<h2 id="biraz-javascript" tabindex="-1">Biraz JavaScript</h2>
+<p>Bu demo'da listeye yeni ögeler eklemek ve daha sonra animasyonun gerçekleşebilmesi amacıyla “show” class'ını eklemek için biraz JavaScript kullanacağız.  Bunun iki aşamalı olmasının bir sebebi var.  Eğer liste ögeleri görünür halde eklenselerdi, animasyon geçişinin gerçekleşmesi için yeterli zaman olmazdı.</p>
+<p>Animasyonları <code>li</code> ögeleri üzerinde gerçekleştirerek bunun üstesinden gelebilirdik fakat bu daha sonra elementleri başka bir animasyonla kaldırmak istediğimizde zorluk çıkarırdı.</p>
+<pre><code>/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById('add-to-list').onclick = function() {
+  var list = document.getElementById('list');
+  var newLI = document.createElement('li');
+  newLI.innerHTML = 'A new item';
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.className = newLI.className + &quot; show&quot;;
+  }, 10);
+}
+</code></pre>
+<h2 id="animasyonsuz-hal" tabindex="-1">Animasyonsuz Hal</h2>
+<p>Biraz CSS yazarak liste ögelerini görünür hale getirebiliriz.  <code>show</code> class'ını kullanarak liste ögelerini görünür yapıyoruz ve aynı mantıkla <code>show</code> class'ını silmemiz liste ögelerinin kaybolmasına neden oluyor.</p>
+<pre><code>li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 2px 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Verdiğimiz bu stiller ile <code>li</code> elementlerinin, önlerinde madde işareti olmadan dikdörtgen bir şekilde görünmesini sağlıyoruz, <code>height</code> ve <code>margin</code> özelliğine 0 veriyoruz ve <code>overflow</code> özelliğini hidden'a ayarlıyoruz.  Bu sayede <code>show</code> class'ı vermediğimiz sürece gizli kalacaklar.</p>
+<p><code>show</code> class'ı elementlere height ve margin verecek. Henüz animasyon kullanmadığımız için ögeler sayfada bir anda belirecekler. Liste ögelerine tıklayıp yokolmalarını izlemeyi de unutmayın.</p>
+<section class="add-to-list demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<h3 id="fade-(solukla%C5%9Fma)" tabindex="-1">Fade (Soluklaşma)</h3>
+<p>Ekleyeceğimiz ilk animasyon basit bir &quot;fade&quot; efekti olacak. Liste ögeleri eskisine göre daha aşamalı olarak belirecekler. Görsel olarak bu hala biraz kullanışsız ama artık kullanıcılar sayfada bir şey olduğunun farkına varmak için daha fazla zamana sahip.</p>
+<section class="add-to-list fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<p>Efekti eklemek için bir CSS parçası daha oluşturdum. Bunu listeye uygulamak için, listeyi saran elemente <code>fade</code> class'ı verin.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="slide-down-(a%C5%9Fa%C4%9F%C4%B1ya-kayma)-%26-fade" tabindex="-1">Slide down (Aşağıya kayma) &amp; Fade</h3>
+<p>Her yeni öge eklendiğinde oluşan ani zıplama biraz rahatsız edici. Şimdi akıcı bir kayma efekti oluşturmak için height özelliğini de ayarlayalım.</p>
+<section class="add-to-list slide-fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<p><code>slide-fade</code> class'ı ile <code>fade</code> class'ı arasındaki tek fark height: 2em özelliğinin kaldırılmış olması.  <code>show</code> class'ı (ilk CSS parçasından aldığı) belirlenmiş bir height özelliğine sahip olduğu için height'ı animasyon geçişinde otomatik olarak ayarlayacaktır.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.slide-fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.slide-fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="swinging-in-(sallanma)" tabindex="-1">Swinging in (Sallanma)</h3>
+<p>Fade ve slide efektlerinin yanı sıra, 3 boyutlu bir efekt ekleyerek biraz daha ileriye gidebiliriz. Tarayıcıların elementleri değiştirmeleri sadece X ve Y yönleriyle sınırlı değildir, ve boylece derinlik efekti verebiliriz.</p>
+<section class="add-to-list swing demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<p>Bunu ayarlamak için ul elementini içine alan <code>section</code>'ı 3 boyutlu değişimler için bir sahne olarak belirlemeliyiz. Bunu, section'a bir <code>perspective</code> değeri vererek yapıyoruz.</p>
+<p>Perspective CSS'te animasyon değişimlerinin gerçekleşeceği yerdeki derinliktir.  Düşük bir değer, daha sığ bir derinlik ve daha keskin açılar demektir. Bu değerlerle oynayıp sizin için uygun olanını bulabilirsiniz.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Bir sonraki aşama <code>li</code> elementlerinin yerlerine &quot;dönüşerek&quot; gelmelerini ayarlamak.  Daha önceki gibi fade efekti vermek için <code>opacity</code> özelliğini kullanacağız fakat <code>li</code> elementlerinin yerlerine &quot;dönerek&quot; gelmeleri için <code>transform</code> özelliği ekleyeceğiz.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Bu örnekte <code>li</code> 90 derece arkaya dönük halde başlıyoruz. <code>show</code> class'ı eklendiğinde <code>transform</code> özelliği <code>none</code>'a ayarlanıyor ve bu da li elementinin bir geçişle yerine gelmesini sağlıyor. Sallanma efektini vermek için <code>cubic-bezier</code> zamanlama fonksiyonunu kullandım.</p>
+<h3 id="swinging-from-side-(yandan-sallanma)" tabindex="-1">Swinging from side (Yandan sallanma)</h3>
+<p>Yarattigimiz efekti kolayca yeni şekiller elde etmek için duzenleyebiliriz. Aşağıda ögelerin yanlardan sallanarak geldiği bir örnek görebilirsiniz.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Liste ogesi</li><li class="show" style="background-color: #3cd19e;">Liste ogesi</li>
+</ul>
+<button>Yeni oge ekle</button></section>
+<p>Bu efekti sağlamak için sadece dönüşün eksenini değiştirmemiz gerekiyor.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Yaptığımız tek değişiklik <code>rotateX</code> yerine <code>rotateY</code> kullanmak oldu.</p>
+<h2 id="%C3%B6n-ekler-ve-taray%C4%B1c%C4%B1-testleri" tabindex="-1">Ön ekler ve tarayıcı testleri</h2>
+<p>Yukarıdaki kod anlaşılabilirlik ve okunabilirlik nedeniyle herhangi bir ön ek içermiyor. <code>-webkit</code> ön eki ve başka ön eklere ihtiyacı olan tarayıcıları desteklemek için bu ön ekleri eklemenizi kesinlikle tavsiye ederim. Ben bu gibi şeyler hakkında endişelenmemek için <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> kullanıyorum.</p>
+<p>Bu animasyonlar göster/sakla gibi basit bir mekanizma kullandıkları için animasyonları desteklemeyen tarayıcılarda bir sorun çıkarmayacaktır.  Birçok cihazda ve tarayıcıda bu animasyonların test edilmesi önemli fakat modern tarayıcıların çoğu bu animasyonları destekleyecektir.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Can Göktaş. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+  <script src="/javascript/custom/list_items.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

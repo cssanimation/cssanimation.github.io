@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Animationsprincipper for nettet - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Hvordan Disneys 12 animationsprincipper kan blive anvendt i web-design"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/principles.css" />
+  
+  
+  <link rel="canonical" href="/da/principles/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Animationsprincipper for nettet - CSS Animation" />
+  <meta property="og:description" content="Hvordan Disneys 12 animationsprincipper kan blive anvendt i web-design" />
+  <meta property="og:image" content="/images/posts/principles/principles.png" />
+  <meta property="og:url" content="/da/principles/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <section class="demo-container principle principle-twelve">
+  <div class="demo-angler">
+    <div class="shape">
+      <div class="container">
+        <span class="item one"></span>
+        <span class="item two"></span>
+        <span class="item three"></span>
+        <span class="item four"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Animationsprincipper for nettet</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Som &quot;front-end&quot;-designere og udviklere bruger vi CSS til udseende, position og skabelsen af flotte sites. Vi bruger ofte CSS til at skabe bevægelse i sider i form af overgange eller sågar animationer, men vi går for det meste ikke længere end det.</p>
+<p>Animation kan være et kraftfuldt værktøj til at hjælpe vores besøgende og vores kunder med at forstå og få fordel af vores designs. Der er principper, som vi kan anvende i vores arbejde, for at få mest ud af denne kraft.</p>
+<p>Veletableret som fundamentale arbejdspraksis ved Disney var de <a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation">12 animationsprincipper</a> udgivet som &quot;The Illusion of Life: Disney Animation&quot; i 1981. Disse principper beskriver hvordan animation kan blive brugt til at drage beskueren ind i en troværdig verden.</p>
+<p>I denne artikel vil jeg gennemgå hver af de 12 principper og diskutere hvordan de kan blive anvendt når man laver web-sider. Du kan finde <a href="http://codepen.io/collection/AxKOdY/">HTML- og CSS-kilden på Codepen for dem alle her.</a></p>
+<h2 id="mase-og-str%C3%A6kke" tabindex="-1">Mase og strække</h2>
+<section class="demo-container principle principle-one"><div class="wrapper"> <div class="shape"></div> <div class="surface"></div> </div></section>
+<p>Det er denne angivelse at et objekt har en fysisk masse og når det bevæger sig forbliver denne masse den samme. En bold vil blive bredere når den rammer jorden mens den hopper, men vil også blive kortere når dens masse bliver omdelt igen.</p>
+<p>Dette er mest brugbart når man skaber objekter, som vi vil have anset for fysiske, såsom mennesker, ure eller hoppende bolde.</p>
+<p>Det er muligt at ignorere denne regel med elementer fra en web-side. DOM-elementer er ikke nødvendigvis associeret med fysiske objekter og kan gro og skrumpe på skærmen efter nødvendighed. For eksempel: En knap kan gro og gradvist forvandle til en informationskasse eller fejlmeddelser kan vises og skjules.</p>
+<p>Stadigt, denne mase- og strækketeknik kan blive anvendt til at give et objekt følelsen af fysisk masse. Selv små skift i form kan skabe diskrete men iøjefaldende effekter.</p>
+<h2 id="forventning" tabindex="-1">Forventning</h2>
+<section class="demo-container principle principle-two"><div class="wrapper"> <div class="shape"></div> <div class="surface"></div> </div></section>
+<p>Bevægelser forekommer ikke pludseligt. I virkeligheden forekommer der for det meste en form for opbygning til en bevægelse. Om det så er en bold der begynder at rulle før den falder af et bord, eller om det er en person, som bukker deres knæ som forberedelse til et hop.</p>
+<p>Vi kan bruge dette til at lave vores overgange og animation mere livstro. Forventningen kan være i form af diskrete ændringer, som hjælper personer med at forstå hvad der skifter og holde styr på objekter på skærmen.</p>
+<p>For eksempel: Et element kan skrumpe en smule før det gror sig større ved et &quot;hover&quot;. Tilføjelsen af ekstra ting til en liste kan blive introduceret ved at andre objekter flytter sig ud af vejen først.</p>
+<h2 id="ops%C3%A6tning" tabindex="-1">Opsætning</h2>
+<section class="demo-container principle principle-three"><div class="wrapper"> <div class="shape a"></div> <div class="shape b"></div> <div class="shape c"></div> </div></section>
+<p>Opsætningen er at blive sikker på et objekt har focus i scenen når andre objekter eller aspekter af scenen gør plads for hvor den hovedsagelige begivelse tager sted. Dette betyder at enten placere den hovedsagelige begivelse i en prominent position eller at maskere andre elementer, for at fokusere på hvad brugeren har brug for at se.</p>
+<p>I web-termer kunne en tilgang være at bruge en &quot;modal&quot;-overtrækning for bestemt indhold. Tilføjelsen af en mørk overlægning på en eksisterende side, og derefter placere indholdet foran, opsætter det og viser det som det primære fokuspunkt.</p>
+<p>En anden tilgang er bevægelse. Når mange objekter er i bevægelse er det svært at forstå hvilke, som kræver opmærksomhed. Hvis alle andre objekter er stillestående og kun ét objekt bevæges, selv en smule, kan det blive meget nemmere at få øje på.</p>
+<p>En teknik er at give en &quot;Save&quot;-knap en slyngende eller blinkende effekt i et kort øjeblik for at hentyde for brugeren at de måske burde gemme et dokument. Med resten af sidens indhold holdt statisk og stillestående vil selv små bevægelser stå ud.</p>
+<h2 id="%22ret-fremad%22-aktion-og-%22posering-til-posering%22" tabindex="-1">&quot;Ret-fremad&quot;-aktion og &quot;posering-til-posering&quot;</h2>
+<section class="demo-container principle principle-four"><div class="wrapper"> <div class="shape a"></div> <div class="shape b"></div> </div></section>
+<p>&quot;Ret-fremad&quot;-aktion er når hver del af en animation er tegnet. &quot;Posering-til-posering&quot; er når en serie af nøglepunkter er defineret og resten af intervallerne fyldes ind senere - for det meste af en assistent.</p>
+<p>Med web-animation bruges &quot;posering-til-posering&quot;-animation. Overgangen mellem nøglepunkter kan blive håndtereret af browseren, som interpolere forskellen mellem hvert nøglepunkt og tegner så mange dele, som den kan, for at gøre animationen flydende.</p>
+<p>En undtagelse til dette er <code>steps</code> timingfunktionen. Med denne funktion træder browseren igennem så mange individuelle dele, som er defineret. På denne måde kan man tegne en serie af billeder og få browseren til at fremvise dem i en sekvens, hvilket skaber en &quot;ret-fremad&quot;-aktionsstil.</p>
+<h2 id="%22f%C3%B8lg-igennem%22-og-%22overlappende-aktion%22" tabindex="-1">&quot;Følg igennem&quot; og &quot;overlappende aktion&quot;</h2>
+<section class="demo-container principle principle-five"><div class="wrapper"> <div class="shape-container"> <div class="shape"></div> </div> </div></section>
+<p>Ting sker ikke nødvendigvis på samme tidspunkt. Når en bil pludseligt stopper tilter den fremad med røg fra hjulene og chaufføren indeni, som fortsætter fremad until de bliver stoppet eller forsvinder.</p>
+<p>Disse detaljer er nemlig eksempler på &quot;følg igennem&quot; og &quot;overlappende aktion&quot;. De kan blive brugt på nettet til at fastslå at noget stopper og har ikke bare glemt at animere. For eksempel: En ting tilføjet til en liste glider måske ind, fortsætter lidt for langt, og korregerer sig selv til den rigtige position.</p>
+<p>For at skabe følelsen af overlappende aktion kan vi bevæge elementer i hver deres forskellige tempo. Det er en teknik der bliver anvendt godt i iOS-operativsystemer med overgange mellem brugergrænseflader. Nogle knapper og elementer bevæger sig i forskellige hastigheder og den kombinerede effekt er derfor mere livstro og mindre flad end hvis alting bevægede sig samtidigt. Den kombinerede bevægelse giver tilskueren tid til ordenligt at forstå ændringen.</p>
+<p>I web-termer kan dette indebære at stable overgange og animationer hvilket skaber effekter som arbejder i forskellige hastigheder.</p>
+<h2 id="langsomt-ind-og-langsomt-ud" tabindex="-1">Langsomt-ind og langsomt-ud</h2>
+<section class="demo-container principle principle-six"><div class="wrapper"> <div class="shape a"></div> </div></section>
+<p>Objekter går sjældent fra stillestående til maksimal hastighed øjeblikkeligt. De har det med at gradvist få fart og sætte farten ned før de stopper. Uden acceleration og aftagning føles bevægelser robot-agtige.</p>
+<p>I CSS-termer er langsomt-ind og langsomt-ud kendt som <code>easing</code>. Easing er kendt som timingfunktioner og er en måde at beskrive intervallet gennem forløbet af en animation.</p>
+<p>Ved at bruge timingfunktioner kan animationer starte langsomt og tage fart (ease-in), starte hurtigt og aftage (ease-out) eller mere komplekse effekter ved brug af <code>cubic-bezier</code> timingfunktionen.</p>
+<h2 id="kurver" tabindex="-1">Kurver</h2>
+<section class="demo-container principle principle-sevena"><div class="wrapper"> <div class="shape-container"> <div class="shape a"></div> </div> </div></section>
+<p>Mens objekter er mere livstro når de følger &quot;langsomt-ind og langsomt-ud&quot;, bevæger objekter sig sjældent i en lige linje. De har det med at bevæge sig i kurver.</p>
+<p>Vi kan opnå kurvede bevægelser med CSS på en række forskellige måder. En er kombinationen af forskellige animationer. For eksempel kan en animation af en hoppende bold blive lavet udfra en animationen, som bevæger bolden op og ned, og en anden, som bevæger den fra side til side, samtidigt. Bolden ville derefter bevæge sig i en kurve henover skærmen.</p>
+<section class="demo-container principle principle-sevenb"><div class="wrapper"> <div class="shape a"></div> <div class="shape b"></div> </div></section>
+<p>En anden mulighed er at rotere et element. Vi kan justere et elements rotationscenter ved at sætte dets transformationsoprindelse udenfor elementet. Objektet vil derefter rotere i en kurve, hvis det bliver roteret.</p>
+<h2 id="sekund%C3%A6r-aktion" tabindex="-1">Sekundær aktion</h2>
+<section class="demo-container principle principle-eight"><div class="wrapper"> <div class="shape a"></div> <div class="shape b"></div> <div class="shape c"></div> </div></section>
+<p>Når en primær aktion finder sted, kan en sekundær animation hjælpe med at lægge vægt på aktionen. Dette kunne være de svingende arme af én, som går, eller deres tiltende hoved. Eller en hoppende bold, som skyder en smule støv op.</p>
+<p>På web-sider kunne sekundære aktioner være elementer, som bevæger sig ud af vejen, når det primære fokuspunkt introduceres, såsom at trække en ting og placere den i midten af en liste.</p>
+<h2 id="timing" tabindex="-1">Timing</h2>
+<section class="demo-container principle principle-nine"><div class="wrapper"> <div class="shape a"></div> <div class="shape b"></div> </div></section>
+<p>En animationstiming er hvor lang tid den er om at blive færdig. Timing kan blive brugt til at få objekter med vægt til at se tunge ud i bevægelse, eller tilføje personlighed til en bevægelse.</p>
+<p>På nettet kunne dette være så simpelt som justeringen af <code>animation-duration</code> eller <code>transition-duration</code> værdierne.</p>
+<p>Det er nemt at lade animationer tage længere tid end de behøver. Justeringen af timingen kan hjælpe med at få animationen væk fra indholdet eller interaktionen.</p>
+<h2 id="overdrivelse" tabindex="-1">Overdrivelse</h2>
+<section class="demo-container principle principle-ten"><div class="wrapper"> <div class="shape"></div> </div></section>
+<p>Mest almindeligt brugt i tegnefilm, overdrivelse kan drage opmærksomhed til bestemte aktioner eller gøre dem mere dramatiske. En ulv, som forsøger at bide, kunne have sine kæber mere åbne end normalt for at gøre effekten mere uhyggelig eller humoristisk.</p>
+<p>På en web-side kan objekter blive skaleret op eller ned for at lægge vægt på dem og drage opmærksomhed. For eksempel ved udfyldelsen af en form kan den aktive sektion gro, mens de andre skrumper og falmer.</p>
+<h2 id="solide-tegninger" tabindex="-1">Solide tegninger</h2>
+<section class="demo-container principle principle-eleven"><div class="wrapper"> <div class="shape"> <div class="container"> <span class="front"></span> <span class="back"></span> <span class="left"></span> <span class="right"></span> <span class="top"></span> <span class="bottom"></span> </div> </div> </div></section>
+<p>Ved animeringen af tre-dimensionelle objekter bør der være påpasselighed for at sikre de følger perspektivreglerne. Folk er vandt til at leve i en tre-dimensionel verden, så når objekter ikke opfører sig, som forventet, ser det forkert ud.</p>
+<p>Moderne browsere har udemærket understøttelse til tre-dimensionelle transformationer. Dette betyder at vi kan rotere og placere objekter i en scene og browseren kan håndtere overgangene automatisk.</p>
+<h2 id="appellering" tabindex="-1">Appellering</h2>
+<section class="demo-container principle principle-twelve"><div class="wrapper"> <div class="shape"> <div class="container"> <span class="item one"></span> <span class="item two"></span> <span class="item three"></span> <span class="item four"></span> </div> </div> </div></section>
+<p>Appelleringen er kuntsværkets personlighed og hvordan det får os til at forstå kunstnerens intention. Ligesom en skuespillers charisma er det kombinationen af detaljer og bevægelser, som kreerer et appellerende resultat.</p>
+<p>Animationer skabt med megen omhu på nettet kan skabe appellering. Firmaer, såsom Stripe, har haft god brug af animationer for at skabe troværdighed til deres checkout-proces.</p>
+<h2 id="pr%C3%B8v-det-selv!" tabindex="-1">Prøv det selv!</h2>
+<p>Brugen af de forskellige principper er en god måde at forbedre animationer. Animationer som bevarer den fysiske vægt, forbereder forandringer, gør brug af sekundære aktioner og har god timing er kostbare og hjælpsomme tilføjelser til dit indhold.</p>
+<p>Når du har chancen for at tilføje animationer til dine sider vil brugen af et eller flere af principperne gøre dem mere effektive og appellerende.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/collection/AxKOdY/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Asbjørn Faurholt. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Star Wars - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="The Star Wars titles from &#39;The Force Awakens&#39; animated with CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/starwars/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Star Wars - CSS Animation" />
+  <meta property="og:description" content="The Star Wars titles from &#39;The Force Awakens&#39; animated with CSS" />
+  <meta property="og:image" content="/images/posts/starwars/home.jpg" />
+  <meta property="og:url" content="/starwars/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Star Wars</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">December 10, 2015</p>
+      
+      <p>Get out the popcorn! Today we're building the Star Wars movie title from the &quot;The Force Awakens&quot; trailer.</p>
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class='codepen'></p>
+<div class="callout">
+  <p>This is an excerpt from the course, <a href="/courses/animation-101/">CSS Animation 101</a>. For a limited time you can <em>pay what you want</em>. <a href="/courses/animation-101/">Check it out!</a></p>
+</div>
+<p>This example combines CSS animation with some other CSS properties you may find helpful, specifically the transforms <code>scale</code>, <code>translate</code> and <code>rotate</code>.</p>
+<h2 id="transforms" tabindex="-1">Transforms</h2>
+<p>While it may sound like it creates an animation, the transform property is in fact used setting a static position, skew or scale of an element. We can use it to create great effects but to do so we need to have a different transform for each keyframe or state we animate.</p>
+<h2 id="transform%3A-scale()%2C-translatez()-and-rotatey()" tabindex="-1">Transform: scale(), translateZ() and rotateY()</h2>
+<p>We can make elements larger or smaller using <code>scale</code>. Using <code>translateZ</code> we can move elements in the Z-axis. This axis would be the one represented by drawing a line from you, through the monitor.</p>
+<p>In this case we'll be using a combination of scale and translateZ to make it look like some words are flying through space.</p>
+<p>Lastly we'll use <code>rotateY</code> to spin the letters of the tagline. Rotating around the Y-axis will require a bit of 3D work in the browser.</p>
+<h2 id="svg%2C-html-and-css" tabindex="-1">SVG, HTML and CSS</h2>
+<p>In preparation for this example I made two SVG files for the <a href="/demo/starwars/images/star.svg">Star</a> and <a href="/demo/starwars/images/wars.svg">Wars</a> parts of the logo. Do feel free to grab them to use if you want to play along.</p>
+<p>The HTML for the demo is as follows:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>starwars-demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/images/star.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Star<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>star<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/images/wars.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Wars<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wars<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>byline<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>byline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>The Force Awakens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>A static image <a href="/demo/starwars/images/bg.jpg">of some stars</a> is used for the background. The font in the byline was tricky to find, so I've referenced the web font &quot;Lato&quot; in this example.</p>
+<p>With some absolute positioning to center the content in the middle of the screen, we begin with this:</p>
+<img src="/images/posts/starwars/starwars.jpg">
+<h2 id="animating-the-star-and-wars" tabindex="-1">Animating the Star and Wars</h2>
+<p>We want the larger text to fade into view, while also starting larger and getting smaller over time. This is a good case for the <code>scale()</code> transform. Let's use it on the word &quot;Star&quot; with these keyframes:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> star</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>1.5<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-0.75em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">20%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">89%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-1000em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>There are two properties that change over the course of this animation. The <code>opacity</code> and <code>transform</code>. The opacity change makes it start transparent, and fade away at the end so that we can loop the animation.</p>
+<p>The transform begins by setting the scale at <code>1.5</code>. This means that the initial size of the text is 150% larger than normal. At 89%, we set the transform property to a scale of 1. This means that between 0% and 89%, the scale goes from 150% to 100%.</p>
+<p>The final <code>transformZ</code> causes the words to zoom away quickly.</p>
+<p>We can apply these keyframes to the word &quot;Star&quot; like so:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.star</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> star 10s ease-out infinite<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.wars</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> wars 10s ease-out infinite<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The <code>animation</code> property here is specifying an animation called <code>star</code>, and a duration of ten seconds. It applies the built-in <code>ease-out</code> timing function, and tells it to repeat infinitely. We apply a similar rule for the word &quot;Wars&quot;.</p>
+<h2 id="making-it-3d" tabindex="-1">Making it 3D</h2>
+<p>Using 3D transforms in CSS, whether translating along the Z-axis, or rotating around the Y and Z axes requires that we set a stage for the 3D. In HTML terms this means we create a container, and tell the browser that some 3D stuff is going to happen.</p>
+<p>We do this by adding the following to the <code>.starwars-demo</code> div:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.starwars-demo</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve3d<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>These two properties tell the browser that the container's children should be positioned in 3D, rather than flat. <a href="https://css-tricks.com/almanac/properties/t/transform-style/">CSS Tricks</a> goes into more detail on the property.</p>
+<p>Secondly, the <code>persective</code> property tells the browser how &quot;deep&quot; the scene needs to be. In case we've made it <code>800px</code>. Smaller values create more &quot;extreme&quot; perspective effects as the scene is shorter.</p>
+<p>With that covered, we'll introduce the tagline.</p>
+<h2 id="awaken-the-force" tabindex="-1">Awaken the Force</h2>
+<p>The tagline &quot;The Force Awakens&quot; appears in the trailer with each letter spinning into place. We can create this effect using the <code>rotateY</code> transform. In this case we've wrapped each of the letters in a <code>span</code> element, so that we can apply animation to each letter.</p>
+<p>An issue I quickly discovered was that there isn't a straightforward way to animate each of the letters in the byline. My first approach was to manually wrap each letter in a <code>span</code> tag. This worked but made the HTML a little messy. The current demo includes some JavaScript (thanks to <a href="https://twitter.com/tadywankenobi">Tady</a> for the assist) that wraps each letter automatically in a <code>span</code>.</p>
+<p>We're going to apply an animation to each letter.</p>
+<p>First, the keyframes:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> spin-letters</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%, 10%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">30%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">70%, 86%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">95%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>To begin with, the letters are rotated 90 degrees, then by 70% through the animation, they've been animated to face the viewer.</p>
+<p>We can apply this set of keyframes to each span like so:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.byline span</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> spin-letters 10s linear infinite<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.byline</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move-byline 10s linear infinite<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The result is each of the <code>span</code> containers that hold each letter will fade and spin slowly into place, before fading away at the end of the animation.</p>
+<p>Putting it together we have the <a href="http://codepen.io/donovanh/pen/pJzwEw?editors=110">finished demo</a>.</p>
+<p data-height="468" data-theme-id="12592" data-slug-hash="pJzwEw" data-default-tab="result" data-user="donovanh" class='codepen'></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<div class="callout">
+  <p>This is an excerpt from the course, <a href="/courses/animation-101/">CSS Animation 101</a>. For a limited time you can <em>pay what you want</em>. <a href="/courses/animation-101/">Check it out!</a></p>
+</div>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://cssanimation.rocks/demo/starwars" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

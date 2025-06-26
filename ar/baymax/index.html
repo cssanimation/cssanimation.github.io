@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    بايماكس ب CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="نسخة محركة ذات عنصر واحد لوجه شخصية بايماكس (Baymax) من بيج هيرو 6 (Big Hero 6)."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/baymax.css" />
+  
+  
+  <link rel="canonical" href="/ar/baymax/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="بايماكس ب CSS - CSS Animation" />
+  <meta property="og:description" content="نسخة محركة ذات عنصر واحد لوجه شخصية بايماكس (Baymax) من بيج هيرو 6 (Big Hero 6)." />
+  <meta property="og:image" content="/images/posts/baymax/baymax.gif" />
+  <meta property="og:url" content="/ar/baymax/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns rtl">
+      <h1 class="post-title" style="margin-bottom:4px;">بايماكس ب CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>لنستخدم CSS لعمل شخصية بايماكس من فلم بيج هيرو 6.</p>
+<p>في هذه المقالة سوف أقوم بتحريك صورة الخلفية (background image) وبالإضافة الى مؤثر توقيت لعمل حركة رقيقة و عمل نموذج ل CSS من عنصر HTML واحد.</p>
+<section class="demo-container baymax-container"><a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a></section>
+<p>يمكنك مشاهدة <a href="http://codepen.io/donovanh/full/ZYaMjw/">العمل بشاشة كاملة هنا</a>.</p>
+<h2 id="%D8%B9%D9%86%D8%B5%D8%B1-%D9%88%D8%A7%D8%AD%D8%AF" tabindex="-1">عنصر واحد</h2>
+<p>باستخدام أشباه العناصر (pseudo-elements) سوف نتمكن من عمل أجزاء الوجه باستخدام عنصر HTML واحد فقط.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>baymax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="%D8%A7%D9%84%D8%AA%D9%86%D8%B3%D9%8A%D9%82%D8%A7%D8%AA" tabindex="-1">التنسيقات</h2>
+<p>لتعيين الخلفية سنضيف تدرج (gradient) خفيف إلى الشاشة لجعلها تبدو مثل رأس منحني ابيض. لذلك سوف نستخدم تدرج دائري (radial-gradient) على عنصر <code>body</code>.</p>
+<pre><code>body {
+  background: radial-gradient(circle at center, #fff, #fff 50%, #aaa);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+</code></pre>
+<p>التالي سوف نقوم بوضع الوجه في وسط الصفحة (توسيط). الفم عبارة عن خط اسود بسيط وسنقوم بعمله بواسطة حد (border).</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax</span> <span class="token punctuation">{</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1.5em solid #000<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span> -40%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>الخاصية الأولى تعين حد أسود بعرض حجمة <code>1.5em</code>. بقية الخواص تقوم بتوسيط الخط (الفم) بأستخدام التموضع المطلق (absolute positioning)، دافعة العنصر 50% نحو الاسفل و50% من اليسار الى اليمين. هذه القيمة 50% مرتبطة بمساحة الحاوية وفي هذه الحالة هي العنصر الأب (<code>body</code>).</p>
+<p>المشكلة التي لدينا الآن هي أن العنصر يبدأ من منتصف الشاشة من الأعلى ومن المنتصف أيضاً من جهة اليسار عرضاً. أي أنه ليس متوسط الشاشة بل يبدأ من المنتصف.</p>
+<p>للتعويض عن هذا، سوف نستخدم خاصية التحويل (transform) لسحب العنصر 50% من عرضه إلى جهة اليسار و 40% من طوله إلى الأعلى.</p>
+<p>وفي هذه المرحلة يتم توسيط الفم كالتالي:</p>
+<section class="demo-container baymax-container"><span class="baymax no-pseudo-elements"></span></section>
+<h2 id="%D8%A5%D8%B6%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A%D9%86" tabindex="-1">إضافة العينين</h2>
+<p>سوف نستفيد من أشباه العناصر <code>before</code> و <code>after</code> لإضافة العينين إلى الوجه. ولن نحتاج إلى عناصر HTML أخرى لان CSS تتحكم بذلك كاملاً.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -9em<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -6em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skewX</span><span class="token punctuation">(</span>-4deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 12em<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -9em<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -6em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">skewX</span><span class="token punctuation">(</span>4deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>كل عنصر من أشباه العناصر يحتوي على خلفية سوداء وأنحناء لحدوده (border-radius) قطرة 50% لجعله دائرياً. نقوم بوضع كل منهم عند نهاية الفم، وأخيراً تحويل الإمالة <code>skew</code> لجعل العين تبدو وكأنها مائلة إلى الوراء قليلاً. يجب أن تبدو النتيجة هكذا:</p>
+<section class="demo-container baymax-container"><span class="baymax no-animation"></span></section>
+<h2 id="%D8%A7%D9%84%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D9%85%D9%86%D8%AE%D9%81%D8%B6%D8%A9" tabindex="-1">البطارية منخفضة</h2>
+<p>هناك مشهد مضحك في الفيلم حيث بطارية بايماكس تبدأ بالانخفاض. بحيث يترنح وجفنيه تتدلى. يمكننا أستخدام تركيبه من خلفيات متدرجة (background-gradient) وبعض التحريك (animation) لصنع التأثير.</p>
+<p>أولاً سنعطي الخلفية لونين. أسود لجزء العين المفتوح وأبيض للجفن. الجزء الأبيض يحتاج إلى وضعه خارج العين في البداية، ثم سوف نحركه لجعل الجفن يتدلى نعساً.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #efefef<span class="token punctuation">,</span> #efefef 50%<span class="token punctuation">,</span> #000 50%<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 -100%<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> 200% 200%<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> #efefef<span class="token punctuation">,</span> #efefef 50%<span class="token punctuation">,</span> #000 50%<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 -100%<span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> 200% 200%<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>نقوم بإضافة خلفية خطية متدرجة (linear-gradient) وجعلها ضعف ارتفاع الحاوية، ثم تحديد موضعه (position) بحيث يكون النصف العلوي خارج الحاوية.</p>
+<p>مع الخلفيات المتدرجة جاهزة، يمكننا أضافة <code>keyframes</code> للحركة (animation) للتحكم بتحرك الجفون.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> blink</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%, 50%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">85%, 95%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 75%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> 0 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>إطارات الحركة <code>keyframes</code> عبارة عن شرح سلسلة من الإطارات باستخدام نسبة مئوية. النسبة المئوية مرتبطة بالمدة الزمنية للحركة وكم بالمئة انقضى منها. لهذا نسبة مئوية تقدر ب 50% تعني أن الحركة قد أنقضى نصفها أي منتصف الحركة.</p>
+<p>وبهذه الطريقة يمكننا ضبط الخلفية للبقاء حتى منتصف المدة، ثم بين 50% و 85% تتحرك إلى الأسفل، ثم تعود بسرعة ألى مكانها في نهاية الحركة.</p>
+<p>الخطوة التالية هي أن نخبر أشباه العناصر أن تستخدم هذه الحركة من خلال أسم ال keyframes. وذلك بإضافة خاصية <code>animation</code> إلى التنسيقات الموجودة.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::before</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> blink 6s infinite<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.baymax::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> blink 6s 0.1s infinite<span class="token punctuation">;</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>هنا نخبر المتصفح بأن يستخدم حركة <code>blink</code> على كل عنصر. نحدد زمن الحركة ليكون ستة ثوان وجعل الحركة تعيد نفسها لانهائياً.</p>
+<p>خاصية أخرى مضافة في المثال الثاني. قيمة <code>0.1s</code> بعد قيمة <code>6s</code> تخبر المتصفح ليتأخر عن الحركة لمدة 0.1 ثانية. هذا يخلق تأثيراً بأن تغلق العين الثانية بعد العين الأولى بمدة طفيفة. هذا يضيف إلى الحركة تأثير العين المرهقة النعسة وجعلها تبدو أكثر آنسانية. النتيجة النهائية يجب أن تبدو مثل هكذا:</p>
+<section class="demo-container baymax-container"><a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a></section>
+<p>يمكنك <a href="http://codepen.io/donovanh/full/ZYaMjw/">رؤية التأثير على شاشة كاملة</a>.</p>
+<h2 id="%D8%A7%D9%84%D9%85%D8%AA%D8%B5%D9%81%D8%AD%D8%A7%D8%AA" tabindex="-1">المتصفحات</h2>
+<p>في أمثلة التعليمات البرمجية (الأكواد)، لم أكتب أي من البادئات المعروفة (prefixes) مثل <code>-webkit-</code> و <code>-moz-</code>. خاصيتي <code>transform</code> و <code>animation</code> يجب أن يكتبوا مع البادئات، وأنا أقترح أستخدام شيئ مثل Autoprefixer لعمل هذا تلقائياً.</p>
+<h2 id="%D8%B5%D9%8A%D8%BA%D8%A9-gif-%D9%82%D8%A7%D8%A8%D9%84%D8%A9-%D9%84%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%83%D8%A9" tabindex="-1">صيغة gif قابلة للمشاركة</h2>
+<p>هنا نسخة gif متحركة يمكنك بسهولة مشاركتها على الإنترنت.</p>
+<p><a href="/images/posts/baymax/baymax.gif"><img src="/images/posts/baymax/baymax.gif" style="max-width:225px" /></a></p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mohammed Alozaibi. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

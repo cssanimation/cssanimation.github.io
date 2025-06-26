@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Animer des pseudo-éléments - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/shiny_button.css" />
+  
+  
+  <link rel="canonical" href="/fr/pseudo-elements/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Animer des pseudo-éléments - CSS Animation" />
+  <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
+  <meta property="og:image" content="/images/posts/sheen/sheen.gif" />
+  <meta property="og:url" content="/fr/pseudo-elements/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Animer des pseudo-éléments</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Avec les pseudo-éléments, tout se passe comme si on avait des éléments supplémentaires dans le DOM gratuitement. Ils nous permettent d’ajouter à nos pages du contenu supplémentaire, de la décoration et bien d’autres choses, sans ajouter plus de HTML, et ils peuvent être animés. Dans cet article, je vais utiliser un pseudo-élément pour ajouter une touche d’élégance à un bouton.</p>
+<p>/pl/</p>
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+<h2 id="les-pseudo-%C3%A9l%C3%A9ments" tabindex="-1">Les pseudo-éléments</h2>
+<p>En CSS, nous pouvons spécifier un pseudo-élément à l’aide de :before ou :after. Le pseudo-élément est alors inséré à l’intérieur de votre élément, entre l’élément et tout autre contenu. Du fait qu’il se comporte comme un élément en soi, on peut le styler, le positionner et. Le code ressemble à ceci:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span>
+<span class="token selector">.pebble::after</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>Pour l’instant, notre élément .pebble a deux éléments virtuels attachés, et nous pouvons leur appliquer le style que nous voulons.</p>
+<h2 id="remarque-sur-%3A%3A-vs-%3A" tabindex="-1">Remarque sur :: vs :</h2>
+<p>On considère en général qu’il faut utiliser les doubles deux-points :: pour dénoter les pseudo-éléments par contraste avec les pseudo-classes comme :hover et :first-child. Si vous souhaitez une compatibilité avec IE8, il vaut mieux utiliser les simples deux-points : à la place. Tous les autres navigateurs, y compris les versions d’IE postérieures à IE8 supportent les ::.</p>
+<p>NdT : dans cet article, on adoptera la version simple : en suivant les recommandations de Chris Coyier.</p>
+<h2 id="noubliez-pas-%E2%80%9Ccontent%E2%80%9D" tabindex="-1">Noubliez pas “content”</h2>
+<p>Lorsqu’on ajoute des pseudo-éléments, il faut toujours se rappeler de spécifier la propriété content. Comme notre pseudo-élément n’a pas de contenu, il suffit de le spécifier comme suit:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span>
+  ... more styling goes here...
+<span class="token punctuation">}</span></code></pre>
+<p>Cela garantira que notre élément soit visible.</p>
+<h2 id="exemple%3A-un-bouton-luisant" tabindex="-1">Exemple: un bouton luisant</h2>
+<p>Pour cet exemple, nous utiliserons un pseudo-élément afin de créer un effet de reflet au moment du survol du bouton. Voici un exemple de ce que cela donne:</p>
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+<p>Puisque nous utilisons les pseudo-éléments, nous n’aurons pas besoin de plus de HTML pour réaliser notre objectif. Vous pouvez ajouter une classe au bouton si vous stylez plus d’un bouton par page, mais pour la simplicité j’utiliserai un élément générique.</p>
+<h2 id="ajouter-le-reflet" tabindex="-1">Ajouter le reflet</h2>
+<p>L’effet de reflet luisant est un dégradé linéaire qui traverse le bouton. Pour le réaliser, nous allons utiliser le pseudo-élément :after et lui donner une position initiale située en-dehors du bouton:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>-5em<span class="token punctuation">,</span> 7.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Le reflet est constitué d’un dégradé allant de la couleur du bouton jusqu’au blanc et vice-versa. Pour l’instant, il est hors du bouton.</p>
+<p>Nous devons cacher la couche luisante pour qu’elle n’apparaisse qu’au moment du survol (hover). Pour cela, nous allons donner à la propriété overflow la valeur hidden. Comme le pseudo-élément est situé à l’intérieur du bouton, cela signifie que tout ce qui est positionné à l’extérieur du bouton sera invisible.</p>
+<pre><code>button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre>
+<p>J’ai ajouté d’autres styles pour donner son look particulier au bouton. Une chose à noter, l’utilisation de position: relative. J’ai ajouté cette propriété afin que le pseudo-élément positionné absolument puisse exister à l’intérieur du bouton. Si on ne spécifie pas la position, un item positionné absolument se positionnera à l’intérieur d’un élément parent. NdT : Petit rappel vite fait sur le positionnement CSS ici.</p>
+<h2 id="ajouter-l%E2%80%99animation" tabindex="-1">Ajouter l’animation</h2>
+<p>Il y a deux étapes à considérer. La première est de dire au navigateur d’utiliser une animation au survol. Ensuite, nous définirons exactement ce que fait l’animation au moyen de keyframes.</p>
+<p>Ajouter l’état hover peut se faire en empilant :after et :hover comme suit:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button:hover::after, button:focus::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> sheen 1s forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ici, nous disons au navigateur que lorsqu’on a un hover, le pseudo-élément doit avoir une animation. L’animation, que nous avons appelée sheen (reflet), dure une seconde et ne se répète pas une fois terminée.</p>
+<p>L’ordre est important ici. Si l’on utilise :after:hover ça ne marchera pas, car cela revient à demander au navigateur de réagir à l’état de hover sur le pseudo-élément lui-même.</p>
+<p>Spécifions maintenant les keyframes de cette animation.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> sheen</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span> -9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Nous n’avons besoin que d’un keyframe dans notre exemple. Puisque le point de départ (0%) est impliqué par la position de départ du pseudo-élément, nous n’avons à décrire que le point d’arrivée. Celui-ci se situe en haut et à droite du bouton. Le navigateur animera l’effet à travers le bouton pour nous.</p>
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+<h2 id="compatibilit%C3%A9" tabindex="-1">Compatibilité</h2>
+<p>La <a href="http://caniuse.com/#feat=css-animation">propriété animation est bien supportée</a>, de même que les <a href="http://caniuse.com/#feat=css-gencontent">pseudo-éléments</a>. Il est toujours bon néanmoins d’inclure les préfixes -webkit et -moz pour les keyframes et pour les transformations. Vous pouvez le faire automatiquement grâce à Autoprefixer.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Pierre Choffé. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

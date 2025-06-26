@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Przejścia vs Animacje - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Opis różnic między transiations (przejścia) a animations (animacje) w web animacjach."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/animations_transitions.css" />
+  
+  
+  <link rel="canonical" href="/pl/transition-vs-animation/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Przejścia vs Animacje - CSS Animation" />
+  <meta property="og:description" content="Opis różnic między transiations (przejścia) a animations (animacje) w web animacjach." />
+  <meta property="og:image" content="/images/posts/transitions-animations/transitions-animations.gif" />
+  <meta property="og:url" content="/pl/transition-vs-animation/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container transitions" id="demo">
+  <div class="shape"></div>
+  <div class="transition-label label1">Transition</div>
+  <div class="transition-label label2">Animation</div>
+</div>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Przejścia vs Animacje</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Podczas tworzenia animacji na stronach internetowych, kiedy korzystasz z przejść a kiedy z animacji? Instnieją sytuacje kiedy chciałbyś/chciałabyś wykorzystać jedno a nie drugie. Omówmy różnice.</p>
+<h2 id="czym-s%C4%85-przej%C5%9Bcia%3F" tabindex="-1">Czym są przejścia?</h2>
+<p>Przejście zachodzi w momencie kiedy element zmienia swój stan z jednego na drugi a przeglądarka wypełnia ów zmianę sekwencją klatek które to przejście wypełnia. Posiada stan początkowy i końcowy.</p>
+<p>Najczęściej przejścia można zaobserwować podczas najeżdżania (hover state) kursorem na link lub podczas dodawania i usuwania informacji ze strony internetowej. Najeżdżanie (hover) może mieć subtelną zmianę koloru fontu oraz, informacja na stronie może z widzialnej przejść w niewidzialną.</p>
+<p>Z tego względu przejścia są ograniczone tylko do dwóch faz, być może brakuje im niuansów animacji ale tym samym sprawia że są łatwiejsze w używaniu.</p>
+<h3 id="kiedy-z-nich-korzysta%C4%87" tabindex="-1">Kiedy z nich korzystać</h3>
+<p>Kiedy chcesz płynnie zmienić stan elementu z jednego na drugi przejście to dobry wybór. Przejścia mogą się zająć prostymi zmianami a funkcje czasowe (timing functions) mogą być wykorzystane do dostosowania sposobu w jaki animacja przebiega.</p>
+<p>Przejście działa świetnie w momencie kiedy ktoś najeżdża (hover on) lub klika na guzik:</p>
+<section class="shiny demo-container tap-to-activate">
+  <button>Shiny effect</button>
+</section>
+<p>Lub w momencie kiedy nowy element jest dodany na stronę:</p>
+<section class="add-to-list swing demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">A list item</li>
+<li class="show" style="background-color: #3cd19e;">A list item</li>
+```
+  </ul>
+  <button>Add a list item</button>
+</section>
+<h2 id="czym-s%C4%85-animacje-(animations)%3F" tabindex="-1">Czym są animacje (animations)?</h2>
+<p>Animacje CSS są potężniejszą alternatywą przejść. Zamiast polegać na zmianie stanu początkowego w stan końcowy, animacje mogą się składać z dowolnej ilości stanów, tym samym oferują większą kontrolę nad przebiegiem animacji.</p>
+<p>Gdzie przejście przebiega od punktu A do punktu B, animacja może przejść od punktu A do B potem z B do C kończąc na D. Ilość etapów zależy od zapotrzebowania.</p>
+<p>Animacje osiągają ów efekt dzięki serii <code>keyframes</code> (kluczowe klatki). Gdzie przejście może być określone jedną linijką w klasie, animacja działa poprzez odwołanie się do keyframes które są osobno opisywane w CSS.</p>
+<h3 id="kiedy-z-nich-korzysta%C4%87-1" tabindex="-1">Kiedy z nich korzystać</h3>
+<p>Kiedy animacja musi przebiegać w momencie załadowania się strony lub jest bardziej skomplikowana od prostego przejścia z punktu A do B, animacja CSS może się okazać bardziej stosowna.</p>
+<p>Przykładem może być animacja na stronie która odtwarza się po danym upływie czasu, jak ten efekt mrugania u Baymaxa:</p>
+<section class="demo-container baymax-container">
+  <a href="http://codepen.io/donovanh/full/ZYaMjw/" class="baymax"></a>
+</section>
+<p>Animacja CSS może być dobrym wyborem w momencie kiedy animowany przedmiot ma się poruszać jak na przykład instrukcje na stronie które ujawniają się w różnych miejscach zainteresowania po najechaniu na nie kursorem myszki.</p>
+<h2 id="czasami-nie-jest-to-a%C5%BC-tak-oczywiste" tabindex="-1">Czasami nie jest to aż tak oczywiste</h2>
+<p>Ostatni post rozpoczął się jako animacja ale później stał się zadaniem dla przejścia.</p>
+<div class="demo-container clocks single local bounce">
+  <article class="clock station">
+```html
+<div class="hours-container">
+  <div class="hours angled"></div>
+</div>
+<div class="minutes-container">
+  <div class="minutes angled"></div>
+</div>
+<div class="seconds-container">
+  <div class="seconds"></div>
+</div>
+```
+  </article>
+</div>
+<p>Kiedy rozpocząłem projektowanie tego zegara, wskazówki poruszały się nieprzerwanie. Był to dobry przkład wykorzystania właściwości <code>animation</code>. Animacja miała rozpocząć się podczas załadowania strony i trwać w nieskonczoność. W momencie kiedy animacja zacznała być bardziej złożona zauważyłem że więcej sensu miałoby aby za kąt wskazówek odpowiedzialny był JavaScript.</p>
+<p>Wskazówki poruszane są przy pomocy JavaScript'u, <code>transitions</code> (przejście) stało się lepszym wyborem. Gdy JavaScript zmienia kąt wskazówek, CSS <code>transition</code> zajmuje się zmianą z puntku A do B z większą elegancją niż animacja CSS.</p>
+<p>Dla większej ilości informacji sprawdź <a href="/clocks/">poradnik - Zegar CSS</a>.</p>
+<h2 id="podsumowanie" tabindex="-1">Podsumowanie</h2>
+<p>Do tworzenia płynnych przejść z jednego stanu do drugiego, wykorzystujemy przejścia a animacje do bardziej skomplikowanych serii ruchów.</p>
+<p>Przejścia generalnie są łatwiejsze w tworzeniu i zarządzaniu, można je wykorzystać w większości sytuacji. Jeżeli wymagasz większej kontroli nad animowaniem elementu poprzez serię kroków lub, kiedy animacja musi rozpocząć się podczas ładowania strony, animacja z wykorzstaniem keyframes będzie lepszym wyborem.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Matt Chabros. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+  
+    <script src="/javascript/vendor/moment.min.js"></script>
+  
+    <script src="/javascript/vendor/moment-timezone.min.js"></script>
+  
+    <script src="/javascript/vendor/moment-timezone-with-data-2010-2020.min.js"></script>
+  
+    <script src="/javascript/custom/list_items.js"></script>
+  
+    <script src="/javascript/custom/clocks.js"></script>
+  
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

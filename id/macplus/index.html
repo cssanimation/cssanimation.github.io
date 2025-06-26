@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Mac ditambah CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Membuat model 3D dari klasik Mac ditambah dengan CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/macplus.css" />
+  
+  
+  <link rel="canonical" href="/id/macplus/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Mac ditambah CSS - CSS Animation" />
+  <meta property="og:description" content="Membuat model 3D dari klasik Mac ditambah dengan CSS" />
+  <meta property="og:image" content="/images/posts/macplus/macplus.png" />
+  <meta property="og:url" content="/id/macplus/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Mac ditambah CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Aku akan selalu ingat saat aku harus menggunakan Apple Mac Plus. Aku akan selalu ingat saat aku harus menggunakan Apple Mac Plus.</p>
+<h2 id="gaya-retro" tabindex="-1">Gaya retro</h2>
+<p>Mari kita membangun (hampir) komputer. Mari kita membangun (hampir) komputer. Macintosh Plus, codename Tn. T, pertama kali diperkenalkan di 1986 dan makan kekalahan 1MB RAM dan sebuah 8 MHz prosesor. Selain dari kekuatan yang mentah, itu desain yang serius lucu, yang membuat komputer lebih menyenangkan untuk digunakan.</p>
+<p><img src="/images/posts/macplus/mac.jpg" alt="Credit: Vectronic's Apple World"></p>
+<p>In this project I will build a 3D model of the Macintosh Plus and display it in a three dimensional setting. Menggunakan CSS Keyframe animasi kami akan membuatnya bergerak pada layar untuk menunjukkan efek 3D yang lebih baik.</p>
+<h2 id="mengapa-menggunakan-css%3F" tabindex="-1">Mengapa menggunakan CSS?</h2>
+<p>Mengapa menggunakan CSS? Segala sesuatu dari font, warna, posisi dan latar belakang gambar ditangani oleh CSS, dan itu adalah alat penting untuk membuat halaman web modern. Hal ini tidak hanya untuk konten dua dimensi. Hal ini tidak hanya untuk konten dua dimensi.</p>
+<p>Membuat adegan di CSS hasil dalam ukuran file yang lebih kecil daripada gambar. Dalam contoh ini, CSS kompres ke hanya 4 KB dan HTML kurang dari 1KB. Dalam contoh ini, CSS kompres ke hanya 4 KB dan HTML kurang dari 1KB.</p>
+<h2 id="live-demo-dan-kode-sumber" tabindex="-1">Live demo dan kode sumber</h2>
+<p>See the <a href="https://cssanimation.rocks/mac/">CSS Mac Plus online</a>.</p>
+<p>Kode sumber lengkap dapat didownload di sini, dan Anda dapat melihat file CSS penuh pada Github.</p>
+<p>Anda juga dapat mengikuti bersama berbagai tahap dengan mencari folder contoh dalam file proyek.</p>
+<h2 id="pada-awalan" tabindex="-1">Pada awalan</h2>
+<p>Saya telah menghilangkan awalan CSS apapun dari contoh kode untuk membuat kode lebih mudah dibaca. Ketika bekerja pada ini sendiri pastikan untuk memasukkan awalan untuk browser lainnya, seperti webkit, moz, ms, dan o.</p>
+<h2 id="mengatur-panggung" tabindex="-1">Mengatur panggung</h2>
+<p>Ketika membuat 3D menggunakan HTML kita membutuhkan sebuah adegan di mana untuk membangun. Mulailah dengan sebuah wadah elemen HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Ini adalah sederhana div dengan kelas panggung, dan bertindak sebagai wadah untuk objek 3D.</p>
+<p>Untuk membuat ini sebagai wadah 3D, kami menetapkan beberapa properti CSS, perspektif, dan perspektif-asal. Properti perspektif ini mirip dengan sebuah adegan vanishing point. Semakin kecil nilai, semakin pendek titik lenyap dan lebih ekstrim efek. Gambar ini menunjukkan bagaimana mengubah nilai perubahan bentuk pada adegan:</p>
+<p><img src="/images/posts/macplus/01-perspective.png" alt="Different perspectives: 500px vs 2500px - examples/01-Perspective/index.html"></p>
+<h3 id="mencobanya-sendiri" tabindex="-1">Mencobanya sendiri</h3>
+<p>Jika Anda ingin memiliki pergi, mencari file screen.css dalam folder file-file proyek contoh/01-perspektif. Anda akan dapat untuk memperbarui nilai perspektif dan melihat efek dengan membuka index.html file dari folder yang sama di peramban.</p>
+<p>Properti perspektif-asal menetapkan posisi tampilan. Perubahan itu memungkinkan Anda untuk melihat ke bawah ke adegan dari atas, naik dari bawah atau di dari sisi.</p>
+<p>Perubahan itu memungkinkan Anda untuk melihat ke bawah ke adegan dari atas, naik dari bawah atau di dari sisi. CSS seperti ini:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 1600px<span class="token punctuation">;</span>
+  <span class="token property">perspective-origin</span><span class="token punctuation">:</span> 50% 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Folder stylesheet dalam file ZIP proyek berisi aturan-aturan CSS yang penuh untuk menetapkan berbagai properti lainnya di panggung, termasuk latar belakang, lebar dan tinggi.</p>
+<h2 id="perencanaan-struktur" tabindex="-1">Perencanaan struktur</h2>
+<p>Panggung di tempat kita akan menggunakan beberapa elemen HTML untuk membuat komputer. Rather than try to include every last detail, we'll focus on the front detailing for the most part.</p>
+<p>Bagian utama dari Mac adalah sebuah kotak, miring sedikit kembali pada sudut dan duduk di dasar yang datar.</p>
+<p>Ini akan berarti membuat dua kotak, satu miring kembali sedikit dan duduk di sebuah kotak yang menyanjung. Untuk membuat efek ini, kami akan membuat menggunakan CSS transform properti.</p>
+<p>Jika Anda ingin melihat HTML lengkap, dapat ditemukan dalam file proyek dalam index.html file.</p>
+<h2 id="transformasi" tabindex="-1">Transformasi</h2>
+<p>The CSS <code>transform</code> property allows us to rotate, skew, position and even scale elements on the page. Kita dapat membuat penggunaan posisi dan rotasi untuk membuat kami adegan.</p>
+<p>Transform-properti mungkin terlihat seperti ini:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.example</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Anda membangun mengubah oleh chaining serangkaian pernyataan. Dalam contoh ini, contoh elemen berputar 45 derajat di sekitar sumbu y, dan kemudian mendorong kembali 100px sepanjang z-sumbu.</p>
+<p>Seharusnya terlihat seperti ini:</p>
+<p><img src="/images/posts/macplus/02-Transforms.png" alt="Front and back panels transformed into place - examples/02-Transforms/index.html"></p>
+<p>Contoh mengubah CSS dapat ditemukan dalam folder contoh/02-transformasi dalam file-file proyek. Dua elemen diposisikan dalam contoh, dan posisi mereka dapat berubah dengan mengedit termasuk 02-Transforms/css/screen.css file.</p>
+<h3 id="asal-mengubah" tabindex="-1">Asal mengubah</h3>
+<p>Ketika berputar elemen di sekitar tempat itu, adalah senilai mengingat bahwa transformasi mempunyai asal yang dapat diatur. Asal mengubah adalah titik yang dirujuk oleh menentukan nilai X, Y dan Z. Ini adalah default:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.default-origin</span> <span class="token punctuation">{</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 50% 50% 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ketika membangun contoh ini aku tetap default tapi it's worth mengetahui bahwa itu ada.</p>
+<h2 id="membuat-kotak" tabindex="-1">Membuat kotak</h2>
+<p>Kita dapat menggunakan beberapa transformasi untuk mengatur tubuh utama komputer. HTML terlihat seperti ini:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>positioning animated<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mac<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>back<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>base-front<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>base-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>base-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>base-back<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>front<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Dalam tahap, ada div saya akan menggunakan posisi komputer pada halaman. Dalam itu adalah Mac itu sendiri. Dua kotak yang sendiri terdiri dari unsur-unsur gambar. Elemen-elemen ini mewakili sisi, atas, depan dan belakang dua kotak.</p>
+<p>Ada juga seorang tokoh untuk mewakili bayangan.</p>
+<p>Contoh ini dapat ditemukan dalam folder contoh/03-kotak.</p>
+<p>Hasil kami akan pergi untuk terlihat seperti ini:</p>
+<p><img src="/images/posts/macplus/04-Boxes.png" alt="CSS Boxes - examples/03-Boxes/index.html"></p>
+<p>Each of the boxes are transformed into place using the CSS <code>transform</code> property, and CSS <code>gradients</code> are used to add depth to the scene.</p>
+<p>The CSS looks like this:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.front</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 11.5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9.6em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #e0e0e0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>5.43em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.back</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 11.5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9.6em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #f2f2f2<span class="token punctuation">,</span> #e6e6e6 0.25em<span class="token punctuation">,</span> #c2c2c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-5.45em<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.top</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 10.95em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9.6em<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #ebf0dc<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> #fafafa<span class="token punctuation">,</span> #d9d9d9 0.25em<span class="token punctuation">,</span> #d9d9d9 9.35em<span class="token punctuation">,</span> #fafafa<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>5.45em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.left</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 11.5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10.9em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #ffffff<span class="token punctuation">,</span> #e0e0e0 0.25em<span class="token punctuation">,</span> #b3b3b3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>5.45em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.right</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 11.5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10.9em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #ffffff<span class="token punctuation">,</span> #e0e0e0 0.25em<span class="token punctuation">,</span> #b3b3b3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>4.14em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.base-front</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2.1em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9.6em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #c2c2c2<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>10.7em<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.base-back</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2.1em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9.6em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #b3b3b3<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>10.7em<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-5em<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.base-left</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2.1em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #b3b3b3<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>10.7em<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>4.99em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.base-right</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2.1em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #b3b3b3<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>10.7em<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>4.58em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.shadow</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 11em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-7.4em<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>20em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> -20.2em 0 1.8em <span class="token function">rgba</span><span class="token punctuation">(</span>100<span class="token punctuation">,</span> 90<span class="token punctuation">,</span> 100<span class="token punctuation">,</span> 0.4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Masing-masing angka-angka telah diberikan lebar dan tinggi, dan CSS latar belakang gradien atau warna. Angka-angka yang kemudian masing-masing diposisikan menggunakan transform-properti. Sebagai contoh, sisi kiri adalah diputar 90 derajat sebelum diterjemahkan (pindah) kembali setengah lebar komputer.</p>
+<p>Gambar depan diterjemahkan ke depan, sepanjang sumbu z, setengah panjang komputer dan belakang diputar 180 derajat sebelum diterjemahkan kembali.</p>
+<p>Untuk potongan-potongan kotak, masing-masing angka-angka yang diputar 5 derajat kembali di sekitar sumbu-x. Ini berarti bahwa tubuh utama Macintosh Plus dimiringkan kembali.</p>
+<p>Akhirnya angka bayangan membuat penggunaan CSS properti kotak-bayangan untuk menciptakan bayangan yang membuatnya terlihat seperti kotak duduk di permukaan datar.</p>
+<h2 id="bezels" tabindex="-1">Bezels</h2>
+<p>Sebuah fitur dari komputer ini adalah mempunyai kemiringan tepi di sekitar depan. These edges, which I'll refer to as bezels, help soften the hard corners of the box and make it look less boxy.</p>
+<p>Untuk mencapai hal ini saya menambahkan beberapa unsur-unsur tambahan ke angka tamu, seperti:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>front<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-top<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-bottom<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span></code></pre>
+<p>The <code>span</code> elements within the front figure each represent one of these bezels. Dengan beberapa gaya yang ditambahkan, mereka akan terlihat seperti ini:</p>
+<p><img src="/images/posts/macplus/04b-Bezels.png" alt="Bezels added to front - examples/04-Bezels/index.html"></p>
+<p>Contoh ini dapat ditemukan dalam folder contoh/04-Bezels.</p>
+<p>CSS berikut posisi masing-masing, dan membuat penggunaan perbatasan-lebar trik untuk membuat mempunyai kemiringan tepi.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.front .bezel-top</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 0.75em solid #f2f2f2<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 0.5em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 0.5em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 8.6em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.front .bezel-left</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 0.5em solid #d9d9d9<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 0.75em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 0.75em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-5.5em<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-5.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.front .bezel-right</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 0.5em solid #d4d4d4<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 0.75em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 0.75em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>5.5em<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-3.62em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.front .bezel-bottom</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 0.75em solid #cccccc<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 0.5em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 0.5em solid transparent<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 8.65em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>180deg<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-10.76em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Masing-masing panel mempunyai batas-batas 3. Untuk panel atas, kami menetapkan batas berwarna di atas. Kami kemudian menetapkan dua perbatasan transparan pada sisi kiri dan kanan. Dalam CSS, ketika perbatasan bertemu perbatasan warna lain, baris mana mereka bertemu diagonal. Ini berarti bahwa perbatasan transparan mengakibatkan diagonal tepi perbatasan berwarna.</p>
+<p>Teknik ini diterapkan untuk masing-masing bezels, menciptakan penampilan mempunyai kemiringan tepi pada masing-masing.</p>
+<p>Bezels juga memiliki mengubah diterapkan untuk memutar dan posisi mereka di sisi depan gambar.</p>
+<h2 id="rincian-lebih-lanjut" tabindex="-1">Rincian lebih lanjut</h2>
+<p>Dengan kotak utama komputer di tempat kita dapat menambahkan berbagai rincian yang membuatnya terlihat seperti Macintosh Plus, seperti layar, ikon, dan disk drive.</p>
+<p>Gambar depan berisi HTML berikut:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>front<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-top<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bezel-bottom<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>hello, Dave<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sheen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Macintosh Plus<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>floppy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span></code></pre>
+<p>Contoh kerja dapat ditemukan di folder contoh/05-selesai.</p>
+<h3 id="layar" tabindex="-1">Layar</h3>
+<p>Layar terdiri dari beberapa elemen, termasuk sebuah wadah, layar itu sendiri, dan lapisan &quot;kemilau&quot; di atas.</p>
+<p>CSS untuk ini membuat penggunaan gradien CSS untuk membuatnya tampak inset ke depan komputer dan menggunakan span kemilau gradien hampir transparan untuk memberikan layar tampilan beberapa shininess.</p>
+<h3 id="logo" tabindex="-1">Logo</h3>
+<p>Logo terdiri dari dua bagian, gambar dan beberapa teks. Rentang gambar berisi gambar latar belakang berwarna-warni tua logo Apple, dan teks diposisikan di sebelah. CSS ini dapat ditemukan dalam file source.</p>
+<p>Untuk membuat tampilan yang tepat, tertanam font ditambahkan. This uses the CSS <code>font-face</code> property. Ada banyak cara untuk melakukan ini, tapi mungkin yang termudah adalah menggunakan layanan seperti Font tupai @font-face generator untuk membuat CSS berikut:</p>
+<pre><code>@font-face {
+  font-family: &quot;apple_garamondregular&quot;;
+  src: url(&quot;../fonts/apple_garamond-webfont.eot&quot;);
+  src: url(&quot;../fonts/apple_garamond-webfont.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), url(&quot;../fonts/apple_garamond-webfont.woff&quot;) format(&quot;woff&quot;), url(&quot;../fonts/apple_garamond-webfont.ttf&quot;) format(&quot;truetype&quot;), url(&quot;../fonts/apple_garamond-webfont.svg#apple_garamondregular&quot;) format(&quot;svg&quot;);
+  font-weight: normal;
+  font-style: normal;
+}
+</code></pre>
+<p>Font tupai membantu dengan menghasilkan file berbagai (eot, woff, dll) yang kemudian dapat ditempatkan dalam proyek dan disebut dalam CSS seperti yang ditunjukkan.</p>
+<p>Hasilnya adalah font yang cocok yang asli.</p>
+<h3 id="drive-disket" tabindex="-1">Drive disket</h3>
+<p>Drive disket adalah satu elemen, dan menggunakan CSS perbatasan untuk membuatnya terlihat seperti diatur ke depan. CSS yang menciptakan efek terlihat seperti ini:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.floppy</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0.2em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 2.8em<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3d</span><span class="token punctuation">(</span>4.8em<span class="token punctuation">,</span> 8.9em<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #555555<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 0.1em solid #cccccc<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 0.3em solid #e6e6e6<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 0.1em solid #f2f2f2<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 0.3em solid #e6e6e6<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 0.25em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Drive disket memiliki warna latar belakang abu-abu yang solid, dan empat perbatasan. Perbatasan atas adalah yang paling gelap, dengan perbatasan bawah yang menjadi terang untuk membuatnya tampak terang dari atas. Akhirnya, border-radius putaran sudut-sudut.</p>
+<h2 id="menempatkan-potongan" tabindex="-1">Menempatkan potongan</h2>
+<p>Each of the pieces, when put together, look like this:</p>
+<p><img src="/images/posts/macplus/05-Completed.png" alt="Completed Mac Plus - examples/05-Completed/index.html"></p>
+<h2 id="menambahkan-animasi" tabindex="-1">Menambahkan animasi</h2>
+<p>Sementara apa yang kita miliki terlihat cukup bagus, kita dapat benar pamer fakta bahwa itu adalah sebuah objek 3D dengan membuatnya bergerak. Untuk melakukan ini kita akan memanfaatkan CSS keyframe animasi.</p>
+<p>Dalam CSS, ada dua jenis animasi. Transisi, di mana elemen pada halaman bernyawa dari satu gaya atau posisi yang lain, dan keyframes, yang mewakili serangkaian langkah animasi yang lebih kompleks.</p>
+<p>Serangkaian keyframes dapat digambarkan sebagai serangkaian persentase, dengan CSS yang menjelaskan setiap langkah. Itu bisa terlihat seperti ini:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> back-and-forth</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>40deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">40%, 50%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-40deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">90%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>40deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Dalam contoh ini animasi disebut kembali-dan-sebagainya, dan terdiri dari 3 langkah. It begins rotated to an angle of 40 degrees. Kemudian oleh mark 40%, diputar ke minus 40 derajat. Tetap ini rotasi sampai 50%, maka pada 90% telah kembali ke posisi semula.</p>
+<p>Browser secara otomatis mengisi kekosongan dengan cara menghidupkan properti. Dalam hal ini ia akan menghidupkan sudut rotasi.</p>
+<h3 id="menerapkan-animasi" tabindex="-1">Menerapkan animasi</h3>
+<p>Untuk menerapkan animasi ini kita dapat menggunakan CSS animasi tag.</p>
+<p>Tag animasi terlihat seperti ini:</p>
+<pre><code>animation: back-and-forth 14s ease-in-out infinite;
+</code></pre>
+<p>Beberapa hal yang digabungkan menjadi satu baris di sini. Referensi animasi dengan nama (&quot;kembali-dan-sebagainya&quot;), set durasi 14 detik, dan memberitahu animasi untuk mengulangi tanpa batas. Nilai kemudahan-in-out mengacu mengurangi, yang akan memberitahukan browser untuk memiliki animasi memulai dan mengakhiri secara bertahap.</p>
+<p>Menerapkan animasi ini &quot;posisi&quot; div hasil dalam sesuatu seperti ini:</p>
+<div class="codepen" data-height="680" data-type="result" data-href="HGqjp" data-user="donovanh" data-safe="true"> </div>
+<h2 id="apa-yang-kita-pelajari" tabindex="-1">Apa yang kita pelajari</h2>
+<p>Dalam menciptakan dan menghidupkan objek 3D dalam CSS, kita membahas beberapa teknik. Kami mengatur sudut pandang dan perspektif-asal. Kami kemudian membuat penggunaan transformasi untuk memutar, bergerak dan posisi elemen, ditambahkan gradien untuk memberikan efek 3D yang lebih realistis, dan menggunakan beberapa CSS perbatasan trik untuk membuat bevels dan kedalaman. Akhirnya kita membuat penggunaan keyframes dan animasi CSS untuk memberikan hidup adegan.</p>
+<h3 id="kompatibilitas-browser" tabindex="-1">Kompatibilitas browser</h3>
+<p>Tidak semua browser belum dapat menangani mengubah CSS. Internet Explorer akan berjuang, tapi ada harapan bahwa dukungan akan tiba di IE 11. Semua versi terbaru Chrome, Safari dan Firefox akan lakukan ok.</p>
+<p>Modernizr menyediakan seperangkat alat JavaScript untuk mendeteksi kemampuan browser dan dapat digunakan untuk menampilkan konten alternatif dalam kasus-kasus yang mana browser tidak mendukung CSS properti tertentu. Dalam kode contoh, Anda akan menemukan saya telah membuat penggunaan Modernizr untuk mendeteksi keberadaan 3D transformasi. Dalam kasus-kasus di mana mereka tidak ada, gambar ditampilkan sebagai gantinya.</p>
+<h2 id="maju" tabindex="-1">Maju</h2>
+<p>Sementara contoh mungkin tidak tampak seperti sesuatu yang akan Anda gunakan di situs web rata-rata, teknik dapat berlaku untuk segala macam skenario.</p>
+<p>Misalnya, mengubah CSS dapat digunakan untuk menambahkan kedalaman transisi halaman, gambar komidi putar, logo dan tombol, untuk beberapa nama. Animasi CSS dapat digunakan untuk menambahkan lebih menarik gerakan dan kemahiran untuk transisi Anda, dan CSS gradien dapat menambahkan kedalaman ke halaman tanpa harus menggunakan gambar.</p>
+<script src="//codepen.io/assets/embed/ei.js"></script>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/donovanh/full/HGqjp/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Muhammad Azzam. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

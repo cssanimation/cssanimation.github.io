@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Pseudo-elementen animeren - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Met pseudo-elementen krijg je twee extra HTML elementen bij ieder element! Hieronder zie je hoe je deze kan animeren als je er over hovert. Ga hier wel doordacht mee om."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/shiny_button.css" />
+  
+  
+  <link rel="canonical" href="/nl/pseudo-elements/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Pseudo-elementen animeren - CSS Animation" />
+  <meta property="og:description" content="Met pseudo-elementen krijg je twee extra HTML elementen bij ieder element! Hieronder zie je hoe je deze kan animeren als je er over hovert. Ga hier wel doordacht mee om." />
+  <meta property="og:image" content="/images/posts/sheen/sheen.gif" />
+  <meta property="og:url" content="/nl/pseudo-elements/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Pseudo-elementen animeren</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Pseudo-elementen is als zomaar twee extra DOM elementen krijgen. Ze staan ons toe om extra content, decoratie enzoverder toe te voegen zonder extra HTML toe te voegen. Bovendien kunnen ze geanimeerd worden. In deze post zullen we een pseudo-element gebruiken om een beetje meer visuele flair toe te voegen aan een knop.</p>
+<section class="shiny demo-container tap-to-activate"><button>Glanzend effect</button></section>
+<h2 id="pseudo-elementen" tabindex="-1">Pseudo-elementen</h2>
+<p>Binnen CSS kan je een pseudo-element definiëren met behulp van <code>::before</code> of <code>::after</code>. Het pseudo-element wordt dan toegevoegd aan je element, tussen het element en enige content. Doordat het reageert als een alleenstaand element kan er stijl, positie enzovoort aan toegevoegd worden. De code ziet er dan min of meer uit als volgt:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span>
+<span class="token selector">.pebble::after</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>Op dit punt zijn aan ons <code>.pebble</code> element twee virtuele elementen toegevoegd, deze kunnen we voorzien van opmaak als we ze nodig hebben.</p>
+<h3 id="opmerking-bij-%22%3A%3A%22-tov.-'%3A'" tabindex="-1">Opmerking bij &quot;::&quot; tov. ':'</h3>
+<p>De dubbele dubbelpunt <code>::</code> is algemeen aanvaard als notatie voor pseudo-elementen (tegenover de notatie voor pseudo-klasses zoals :hover, :first-child). Als je support voor IE8 nodig hebt is het beter om de enkele <code>:</code> te gebruiken. Alle andere browsers en nieuwere versies van IE bieden ondersteuning voor de dubbele.</p>
+<h3 id="vergeet-de-%22content%22-niet" tabindex="-1">Vergeet de &quot;content&quot; niet</h3>
+<p>Als je psuedo-elementen toevoegt is het belangrijk om ook de <code>content</code> property te specificeren om het element zichtbaar te maken op de pagina. Als het psuedo-element aangemaakt is in een inhoudsloze staat dan kunnen we de <code>content</code> property als leeg definiëren op deze manier:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span>
+  ... more styling goes here...
+<span class="token punctuation">}</span></code></pre>
+<p>Op deze manier zou het element zichtbaar moeten zijn op het scherm.</p>
+<h2 id="voorbeeld%3A-glanzende-knop" tabindex="-1">Voorbeeld: Glanzende knop</h2>
+<p>Voor dit voorbeeld gebruiken we een pseudo-element om een glanzend effect te creëren als je er over hovert. Hieronder vind je een voorbeeld hiervan (hover of tik om het effect te zien).</p>
+<section class="shiny demo-container tap-to-activate"><button>Glanzend effect</button></section>
+<p>Om te beginnen, wat HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Oooh SHINY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Omdat we pseudo-elementen gebruiken hebben we niet meer dan deze HTML nodig om dit te doen werken. Het is aangeraden om een klasse toe te voegen aan de knop als je hem van stijl zou moeten voorzien op meer dan één pagina. Voor dit voorbeeld houden we het bij de generische knop voor de eenvoud.</p>
+<h3 id="het-glanseffect-toevoegen" tabindex="-1">Het glanseffect toevoegen</h3>
+<p>Het glanzende effect is een lineaire gradient die over de knop ligt. Om dit te creëren gebruiken we het <code>after</code> pseudo-element en positioneren het in een beginpositie buiten de knop:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>-5em<span class="token punctuation">,</span> 7.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Het glanseffect is opgebouwd uit een gradient die gaat van de kleur van de knop tot wit en terug. Op dit punt staat het nu aan de buitenkant van de knop.</p>
+<p>We moeten deze glanzende laag verbergen zodat ze enkel zichtbaar bij hover. Om dit te toen zetten we de <code>overflow</code> property van de knop op <code>hidden</code>. Omdat het pseudo-element in de knop zit zal het niet zichtbaar zijn als het buiten de knop gepositioneerd is.</p>
+<pre><code>button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre>
+<p>Ik heb ook wat andere stijl meegegeven om de knop zijn eigen look te geven. Wat belangrijk is om mee te geven is het gebruik van <code>position: relative</code>. Ik heb deze property meegegeven om ervoor te zorgen dat het absoluut gepositioneerd psuedo-element zou bestaan binnen de knop. Zonder de positie te specificeren zou het absoluut gepositioneerd item zich plaatsen binnen het parent element.</p>
+<h2 id="de-animatie-toevoegen" tabindex="-1">De animatie toevoegen</h2>
+<p>Doordat we animatie gebruiken in dit voorbeeld zijn er twee stappen die we moeten doorlopen. De eerste stap is om aan de browser mee te geven dat er animatie moet zijn bij de hover-state. Dan werken we exact uit wat de animatie moet doen aan de hand van <code>keyframes</code>.</p>
+<p>De hover-state toevoegen kan door <code>after</code> aan de <code>hover</code> vast te hangen.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button:hover::after, button:focus::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> sheen 1s forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Hier vertellen we de browser dat bij een hover-state, het <code>after</code> pseudo-element een <code>animation</code> moet hebben. De animatie, die we sheen noemen, duurt één seconde en stop zonder op het einde te herhalen.</p>
+<p>De volgorde is hier belangrijk. <code>::after:hover</code> gebruiken zal niet werken omdat we de browser dan vertellen om te reageren op de hover-state van het pseudo-element zelf.</p>
+<p>Ik heb de focus-state ook toegevoegd. Dit betekent dat de gebruikers die door te pagina gaan met de 'tab'-toets ook het glanseffect zullen zien, zonder over de knop te moeten hoveren. (Bedankt, <a href="https://twitter.com/simevidas">Šime Vidas</a>, voor de tip)</p>
+<p>Laten we de <code>keyframes</code> specificeren voor deze animatie:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> sheen</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span> -9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In dit geval hebben we maar één keyframe nodig. Omdat de startpositie (0%) geïmpliceerd wordt door de startpositie van het pseudo-element moeten we enkel de eindpositie bepalen. In dit geval is de eindpositie aan de rechterbovenhoek van de knop. De browser zal het glanseffect dan voor ons animeren over de knop heen.</p>
+<section class="shiny demo-container tap-to-activate"><button>Glanzend effect</button></section>
+<h2 id="browser-gerelateerde-opmerkingen" tabindex="-1">Browser gerelateerde opmerkingen</h2>
+<p>De <a href="http://caniuse.com/#feat=css-animation">animation property wordt goed ondersteund</a>, net als de <a href="http://caniuse.com/#feat=css-gencontent">pseudo-elementen</a>. Het is altijd een goed idee om de <code>-webkit</code> en <code>-moz</code> prefixes aan de <code>keyframes</code> en transforms toe te voegen.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Denis Valcke. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

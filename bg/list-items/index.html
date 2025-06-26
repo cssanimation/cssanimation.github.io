@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Анимиране на елементи от списъка - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Някои хитрости, които ще ви помогнат да покажете елементи от списъка ви чрез анимация."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/list_items.css" />
+  
+  
+  <link rel="canonical" href="/bg/list-items/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Анимиране на елементи от списъка - CSS Animation" />
+  <meta property="og:description" content="Някои хитрости, които ще ви помогнат да покажете елементи от списъка ви чрез анимация." />
+  <meta property="og:image" content="/images/posts/list_items/list_items.png" />
+  <meta property="og:url" content="/bg/list-items/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Анимиране на елементи от списъка</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Когато части от страницата на вашия сайт се променят, добавянето на анимация е добър начин да помогнете на зрителите си да разберат какво се случва. Анимациите могат да показват ново съдържание или да привлекат вниманието към съдържание, което е в процес на премахване. В тази статия ще разгледаме как това може да се използва за въвеждане на ново съдържание, като се показват и скриват елементите в списъка.</p>
+<section class="add-to-list swing-side demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;">Артикул</li>
+```
+  </ul>
+  <button>Добавяне на Артикули</button>
+</section>
+<h2 id="%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D1%8F%D0%BD%D0%B5-%D0%BD%D0%B0-%D1%81%D1%8A%D0%B4%D1%8A%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5%D1%82%D0%BE" tabindex="-1">Представяне на съдържанието</h2>
+<p>Анимацията може да бъде полезна, когато помага на посетителите на вашия сайт да разберат кога нещата се променят. Когато съдържанието се добавя или премахва без никаква анимация, те могат да пропуснат неочаквани промени и да се объркат. Добавянето на анимации може да избегне това и да помогне, като обяви, че нещо ще напусне страницата или ще бъде въведено на нея.</p>
+<p>Един пример за добавяне или премахване на съдържанието е управлението на списък. Повечето анимации могат да се използват и за други видове съдържание. Ако ги намерите за полезни или имате други идеи за добавяне,<a href="mailto:hello@cssanimation.rocks">свържете се с мен</a>, обичаме да чуваме вашите мисли.</p>
+<h2 id="%D1%81%D1%8A%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BD%D1%83%D0%B6%D0%BD%D0%B8%D1%8F-html" tabindex="-1">Създаване на нужния HTML</h2>
+<p>За да започнем, ще използваме предварително попълнен списък и бутон за добавяне на нови елементи към списъка.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Артикул<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Артикул<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add-to-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Добавяне на Артикули<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Няколко неща, които трябва да се отбележат. Първо, имаме два елемента с id в HTML. Обикновено не използваме id за стилизиране, тъй като те могат да създадат проблеми със своята специфичност.Все пак са полезни, когато се използват за JavaScript.</p>
+<p>Първоначалните елементи имат класа &quot;show&quot;, тъй като това е клас, който ще използваме по-късно, за да добавим анимационния ефект.</p>
+<h2 id="%D0%BC%D0%B0%D0%BB%D0%BA%D0%BE-javascript" tabindex="-1">Малко JavaScript</h2>
+<p>За целите на демонстрацията ще създадем малък JavaScript код, за да добавим нов елемент към списъка, след което ще добавим класа &quot;show&quot;, за да може да реализираме анимацията. Има причина да използваме процес с 2 стъпки. Ако елементите от списъка бяха видими, нямаше да има време за прехода.</p>
+<p>Можем да заобиколим това, като използваме анимация върху елементите &quot;li&quot;, но това би било по-трудно за отмяна при премахване на елементите с друга анимация.</p>
+<pre><code>/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById('add-to-list').onclick = function() {
+  var list = document.getElementById('list');
+  var newLI = document.createElement('li');
+  newLI.innerHTML = 'A new item';
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.className = newLI.className + &quot; show&quot;;
+  }, 10);
+}
+</code></pre>
+<h2 id="%D0%B1%D0%B5%D0%B7-%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%86%D0%B8%D1%8F" tabindex="-1">Без анимация</h2>
+<p>Ще напишем CSS код, за да покажем елементите от списъка. Използваме класа &quot;show&quot;, за да ги направим видими, така че премахването на класа &quot;show&quot; ще да доведе до тяхното изчезване.</p>
+<pre><code>li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 2px 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>В тези стилове, правим елементите &quot;li&quot; да изглеждат като правоъгълници, без точките, и им задаваме: &quot;height&quot; = 0, &quot;margin&quot; = 0 и &quot;overflow&quot; = hidden. Това е така, за да изглеждат невидими, докато не приложим клас &quot;show&quot;.</p>
+<p>Класът &quot;show&quot; прилага &quot;height&quot; и &quot;margin&quot;. Тъй като все още не използваме анимация, елементите трябва да се появят внезапно на страницата. Също така опитайте да натиснете елементите от списъка, за да ги видите как изчезват.</p>
+<section class="add-to-list demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;"> Артикул </li>
+```
+  </ul>
+  <button>Добавяне на Артикули</button>
+</section>
+<h3 id="%D0%B8%D0%B7%D0%B1%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5" tabindex="-1">Избледняване</h3>
+<p>Като първа анимация ще добавим ефект на избледняване. Елементите от списъка се появяват малко по-плавно от преди. Визуално това все още изглежда малко тромаво, но има предимството, че дава на зрителите повече време да забележат, че нещо се случва.</p>
+<section class="add-to-list fade demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;">Артикул</li>
+```
+  </ul>
+  <button>Добавяне на Артикули</button>
+</section>
+<p>За да добавя ефекта, създадох отделен CSS. За да се приложи това към списъка, се прилага класа &quot;fade&quot; към елемента, обграждащ вашия списък (в нашия случай section).</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="%D0%BF%D0%BB%D1%8A%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0%D0%B4%D0%BE%D0%BB%D1%83-%D0%B8-%D0%B8%D0%B7%D0%B1%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5" tabindex="-1">Плъзване надолу и избледняване</h3>
+<p>Внезапното подскачане всеки път, когато се добавя или премахва елемент, е малко дразнещ. Нека регулираме и височината, за да създадем по-плавен плъзгащ ефект.</p>
+<section class="add-to-list slide-fade demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;">Артикул</li>
+```
+  </ul>
+  <button>Добавяне на Артикули</button>
+</section>
+<p>Разликата между това и класа &quot;fade&quot; по-горе е само, че &quot;height&quot;: 2em е премахнат. Тъй като класът &quot;show&quot; има зададена височина (наследена от първия написан CSS), той ще я промени автоматично.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.slide-fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.slide-fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="%D0%BB%D1%8E%D0%BB%D0%B5%D0%B5%D0%BD%D0%B5-%D0%BD%D0%B0%D0%BF%D1%80%D0%B5%D0%B4-%D0%BD%D0%B0%D0%B7%D0%B0%D0%B4" tabindex="-1">Люлеене напред-назад</h3>
+<p>Заедно с избледняването и плъзгането, можем да стигнем по-далеч, като добавим малко 3D ефект. Браузърът може да трансформира елементите в повече посоки, освен тези по хоризонтала и вертикала, което е полезно за добавяне на дълбочина към сцените.</p>
+<section class="add-to-list swing demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;">Артикул</li>
+```
+  </ul>
+  <button>Добавяне на Артикули</button>
+</section>
+<p>За да настроим това, трябва да определим, съдържащия елемент section като етап, в който се осъществяват 3D преходите. Правим това, като му даваме стойност на свойството perspective.</p>
+<p>Перспективата в CSS показва дълбочината на сцената. По-малкото число означава по-близка перспектива. Струва си да експериментирате с тази стойност, за да намерите това, което ви харесва.
+.swing {
+perspective: 100px;
+}</p>
+<p>След това настройваме елементите li да се трансформират на място. Ще използваме свойството opacity, за да създадем ефект на преливане както преди, но ще добавим свойството transform, за да завъртим li на място.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0.36<span class="token punctuation">,</span> -0.64<span class="token punctuation">,</span> 0.34<span class="token punctuation">,</span> 1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0.36<span class="token punctuation">,</span> -0.64<span class="token punctuation">,</span> 0.34<span class="token punctuation">,</span> 1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>В този пример започваме с li, завъртян назад на 90 градуса. Когато класът show е добавен, transform е зададено на none, което му позволява да се върне на мястото си. За да му придам ефект на люлеене, използвах кубичната крива на Безие css функцията
+cubic-bezier()(създава плавен преход).</p>
+<h3 id="%D0%BB%D1%8E%D0%BB%D0%B5%D0%B5%D0%BD%D0%B5-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8" tabindex="-1">Люлеене настрани</h3>
+<p>Можем лесно да променим този ефект, за да създадем различни стилове. Ето пример, където елементите се завъртат отстрани.</p>
+<section class="add-to-list swing-side demo-container">
+  <ul>
+```html
+<li class="show" style="background-color: #d13c9e;">Артикул</li>
+<li class="show" style="background-color: #3cd19e;">Артикул</li>
+```
+  </ul>
+  <button>Добавяне на артикул</button>
+</section>
+<p>За да създадем този ефект, е нужно само да променим оста на въртене.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0.36<span class="token punctuation">,</span> -0.64<span class="token punctuation">,</span> 0.34<span class="token punctuation">,</span> 1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Всичко, което променихме, е rotateX на rotateY.</p>
+<h2 id="%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D0%B8-%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D1%8A%D1%80%D0%B0" tabindex="-1">Префикси и тестване на браузъра</h2>
+<p>Кодът, включен по-горе, не включва никакви префикси, за по-добра четливост. Силно се препоръчва да се добавят префикси, за да се поддържат браузъри, които се нуждаят от префикса <code>-webkit</code> или други. Използвам <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, за да спестя притесненията за тези неща.</p>
+<p>Тъй като тези анимации са наслоени върху основния механизъм за показване/скриване, те би трябвало да се получат прилично в браузъри, които не поддържат анимациите. Тестването на различни устройства и браузъри е важно, но повечето съвременни браузъри би трябвало да могат да поддържат тези анимации.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by:</p>
+          <ul>
+            
+              <li><a href="https://www.linkedin.com/in/maria-rangelova-frontdeveloper/">мария рангелова</a></li>
+            
+          </ul>
+          <p>(<a href="">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+  <script src="/javascript/custom/list_items.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

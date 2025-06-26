@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Parallax scrolling - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Animate with parallax scrolling and Rellax"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/parallax/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Parallax scrolling - CSS Animation" />
+  <meta property="og:description" content="Animate with parallax scrolling and Rellax" />
+  <meta property="og:image" content="/images/posts/moonrocks/home.png" />
+  <meta property="og:url" content="/parallax/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container">
+  <header class="header rellax" data-rellax-speed="14">
+    <svg
+      class="example-logo"
+      width="2000px"
+      height="2000px"
+      viewBox="-400 -400 1000 1000"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        id="icon-1"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <circle
+          class="rellax"
+          data-rellax-speed="-1"
+          stroke="#000000"
+          stroke-width="3"
+          fill="#333333"
+          style="opacity:.5"
+          cx="100.5"
+          cy="100.5"
+          r="100.5"
+        ></circle>
+        <circle
+          class="rellax"
+          data-rellax-speed="-.5"
+          stroke="#000000"
+          stroke-width="3"
+          fill="#aaa"
+          style="opacity:.5"
+          opacity="0.9"
+          cx="100.5"
+          cy="99.225"
+          r="79.875"
+        ></circle>
+        <g class="rellax" data-rellax-speed="2">
+          <g class="large-boulder" transform="translate(33.000000, 57.000000)">
+            <polygon
+              fill="#E6E7E8"
+              points="36 0.15 83.025 0.15 99 12.525 102.6 24.9 134.1 68.775 106.275 78.6 61.275 73.425 8.625 75.45 0.9 61.125 0.9 44.475 12.225 37.8 23.625 16.2"
+            ></polygon>
+            <path
+              d="M8.25,74.325 L31.425,59.7 L47.85,58.5 L64.95,60.6 L83.025,50.325 L108.3,57.15 L134.1,68.775 L106.275,78.6 L61.275,73.425 L37.05,74.1 L8.25,74.325 Z M18.15,27.45 L34.425,28.125 L39.075,33.15 L22.05,39.375 L7.425,51.3 L0.9,45.45 L10.5,38.775 L18.15,27.45 Z M71.175,25.875 L73.875,19.2 L83.85,15.9 L97.5,27.225 L84.375,23.1 L75.825,27.225 L71.175,25.875 Z M37.425,38.85 L58.725,33.15 L70.95,36.375 L79.2,42.525 L74.55,48.225 L59.175,49.275 L45.75,51 L32.85,50.325 L27.225,56.4 L16.35,52.8 L37.425,38.85 Z"
+              fill="#D1D3D4"
+            ></path>
+            <polygon
+              id="body"
+              stroke="#000000"
+              stroke-width="3"
+              points="36 0.15 83.025 0.15 99 12.525 102.6 24.9 134.1 68.775 106.275 78.6 61.275 73.425 8.625 75.45 0.9 61.125 0.9 44.475 12.225 37.8 23.625 16.2"
+            ></polygon>
+          </g>
+        </g>
+        <g class="rellax" data-rellax-speed="1.5">
+          <g
+            class="medium-boulder"
+            transform="translate(108.750000, 125.250000)"
+          >
+            <polygon
+              fill="#F1F2F2"
+              points="0.525 14.025 10.5 3.3 30.675 0.15 38.925 7.05 43.05 20.85 24.45 27.375 4.575 24.75"
+            ></polygon>
+            <polygon
+              fill="#D1D3D4"
+              points="0.525 13.8 18.6 19.35 30.975 18.225 40.275 11.55 43.05 20.625 24.45 27.225 4.575 24.525"
+            ></polygon>
+            <polygon
+              stroke="#000000"
+              stroke-width="3"
+              points="0.525 13.8 10.5 3.075 30.675 0 38.925 6.9 43.05 20.625 24.45 27.225 4.575 24.525"
+            ></polygon>
+          </g>
+        </g>
+        <g class="rellax" data-rellax-speed="1.25">
+          <g class="small-boulder" transform="translate(70.500000, 123.750000)">
+            <polygon
+              fill="#F1F2F2"
+              points="8.85 2.925 20.025 0 31.125 8.475 33.9 19.425 11.025 26.1 0.225 16.725 5.1 3.825"
+            ></polygon>
+            <polygon
+              fill="#E6E7E8"
+              points="3.9 6.975 14.325 17.625 26.1 12 32.025 12.075 33.9 19.425 11.025 26.1 0.525 15.6"
+            ></polygon>
+            <polygon
+              stroke="#000000"
+              stroke-width="3"
+              points="8.85 2.925 20.025 0 31.125 8.475 33.9 19.425 11.025 26.1 0.225 16.725 5.1 3.825"
+            ></polygon>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </header>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
+<script>
+  var rellax = new Rellax(".rellax");
+</script>
+
+<style>
+  .post-header-container {
+    background: #000;
+  }
+  .post-header nav a {
+    color: #aaa !important;
+  }
+
+  .post-header nav a:hover {
+    color: #00194e !important;
+  }
+
+  header {
+    align-items: center;
+    background: #000
+      url(https://cssanimation.rocks/levelup/public/03/04-end/images/moon.jpg)
+      center no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    height: 28em;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  header:after {
+    content: "";
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .example-logo {
+    z-index: 10;
+  }
+
+  .heading {
+    color: white;
+    font-size: 6em;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 10vh;
+    text-align: center;
+  }
+</style>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Parallax scrolling</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">May 26, 2019</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>Let's have some fun with parallax scrolling, using a handy JavaScript plugin called &quot;Rellax&quot; to animate a page with lots of elements scrolling at different speeds.</p>
+<p>For this tutorial you'll find the HTML and CSS you need to get started in <a href="https://cssanimation.rocks/levelup/public/03/03.zip">this sample code file</a>. Look for folder <code>03-start</code>. A completed version of this lesson's code is in the folder <code>03-end</code>.</p>
+<div class="videoWrapper">
+```html
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vYhmUe3nEqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+</div>
+<h2 id="what-is-parallax%3F" tabindex="-1">What is parallax?</h2>
+<p>Parallax movement is when things move at different speeds relative to each other. It's a popular effect that can be used to create an illusion of depth. If we're moving, we see objects close to us move faster than objects further away.</p>
+<p>The technique is popular in many places including video games, where it's usually seen in the layered backgrounds.</p>
+<p>In this example we see how parallax works when scrolling a website.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="zwdBzP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<p>Each of these boxes scrolls upward as I scroll down the page. The box in the middle, marked &quot;No parallax&quot; is scrolling at the same speed as the page. To it's left is a box that scrolls faster, and the box on the right scrolls slower.</p>
+<p>This means that if I was to scroll the page up by 100 pixels, the &quot;faster&quot; box actually scrolls something like 130 pixels, and the &quot;slower&quot; box moves about 70 pixels.</p>
+<p>In this example I'm using a tool called <a href="https://dixonandmoe.com/rellax/">Rellax</a>.</p>
+<h2 id="rellax" tabindex="-1">Rellax</h2>
+<p>The JavaScript utility Rellax is a handy, and quite simple plugin created by the design agency Dixon and Moe. It's lightweight and has no need for jQuery, and we can call it in from either local file or by using a CDN.</p>
+<p>Looking into <a href="https://github.com/dixonandmoe/rellax/blob/master/rellax">the code</a> we find that it's using a very similar approach to our &quot;show-on-scroll&quot; code. It sets up a <code>loop</code> variable using &quot;requestAnimationFrame&quot;, and then in each iteration uses CSS to <code>translate</code> each object by a calculated offset.</p>
+<p>It's worth taking a look through how this was built if you'd like to see how a nice simple JavaScript utility can be written and shared.</p>
+<p>Let's use it to bring our page some parallax movement.</p>
+<h2 id="starting-page" tabindex="-1">Starting page</h2>
+<p>To get started we have a space-themed page taking us on a trip to the moon. Along the way we pass a bunch of rocks. We can use Rellax to have these elements scroll at different speeds.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="gWxMLJ" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<p>We begin by adding Rellax to our page. In our <code>index.html</code> file, just before the closing <code>body</code> tag, add a reference to the script.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./javascripts/rellax.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">var</span> rellax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rellax</span><span class="token punctuation">(</span><span class="token string">'.rellax'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>We also put in some JavaScript to activate Rellax. We pass the <code>Rellax</code> method a string that will be used to identify the elements it'll need to animate. In this case, we're going to use the class &quot;rellax&quot; on our elements.</p>
+<p>With this in place we can add the &quot;rellax&quot; class. Scrolling back up the HTML we can look for each of the <code>floating-rocks</code> elements.</p>
+<p>We add the <code>rellax</code> class to each like so.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>floating-rocks front-one rellax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/rock1.svg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>With the class applied to each of the rocks we can see the effect in the browser.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="xdXYKv" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<p>So it's working, the rocks are scrolling at a slower speed than the text, but it's not right yet. All the rocks are moving at the same speed as each other. We'd like to have some sit in front of the text and some behind, so let's achieve this using some Rellax settings.</p>
+<h2 id="rellax-settings" tabindex="-1">Rellax settings</h2>
+<p>When working with Rellax we have two pieces of data we can pass in that will change the way the movement occurs. The first is speed.</p>
+<p>We can tell each image to scroll at a different speed. The value is an integer where a negative number means it'll move more slowly than the normal scroll speed, and a positive number means it'll move at the same speed or faster.</p>
+<p>In our HTML we again go to each of the images but this time add a speed. It's written as a <code>data</code> attribute <code>data-rellax-speed</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>floating-rocks front-one rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/rock1.svg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The first rock is a small one that sits in front so we'll give it a fast speed of &quot;8&quot;. The second one is far back so it's going to have a speed of &quot;-2&quot;. The next one in front again, so we'll give a positive value of &quot;3&quot;. The next rock is also far back so we'll give it a speed of &quot;-3&quot;.</p>
+<p>Lastly for planet earth we'll set it far back into the scene with a speed of &quot;-4&quot;.</p>
+<p>There's one more thing, &quot;centering&quot;.</p>
+<p>When Rellax calculates how far to move the elements it does so based on the height of the page. This means that elements further down the page will have moved more than elements at the top, as by the time we've scrolled all the way down there, they've been parallaxed to somewhere we may not expect.</p>
+<p>We can get around this using centering. This will adjust the element's position so that when we scroll to it, it'll still be visible on the page. We can either do this by adding a <code>data-rellax-percentage</code> value to each of the rocks, or we can set this globally in our original JavaScript at the bottom of the page.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">var</span> rellax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rellax</span><span class="token punctuation">(</span><span class="token string">'.rellax'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">center</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>In our JavaScript we add an object to be passed in to the <code>Rellax</code> method and in it we specify &quot;center&quot; be true. Back in our browser we can see the results.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="PmJQPj" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<p>The rocks now float in front as well as far away behind the text.</p>
+<p>Before we finish up this example, let's also see how Rellax can bring our header and footer elements to life.</p>
+<h2 id="animating-the-header-and-footer" tabindex="-1">Animating the header and footer</h2>
+<p>At the top our document we have a <code>header</code> element containing an SVG logo and heading text. The SVG is inline so we can apply Rellax to each of the individual parts. That way on scroll, the logo will come apart as it scrolls away.</p>
+<p>We start with the two <code>circle</code> elements.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-1<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#000000<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#333333<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">opacity</span><span class="token punctuation">:</span>.5</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100.5<span class="token punctuation">"</span></span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100.5<span class="token punctuation">"</span></span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100.5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>circle</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-.5<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#000000<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#aaa<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">opacity</span><span class="token punctuation">:</span>.5</span><span class="token punctuation">"</span></span></span> <span class="token attr-name">opacity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.9<span class="token punctuation">"</span></span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100.5<span class="token punctuation">"</span></span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>99.225<span class="token punctuation">"</span></span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>79.875<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>circle</span><span class="token punctuation">></span></span></code></pre>
+<p>Adding a class of &quot;rellax&quot; to each we can specify speeds. These two are farthest away so we'll use negative values of &quot;-1&quot; and &quot;-.5&quot; so they move quite slowly.</p>
+<p>Next we have some <code>&lt;g&gt;</code> groups we can use to hook Rellax onto. The first contains the large boulder. We'll use this containing <code>&lt;g&gt;</code> rather than the <code>large-boulder</code> group as there's already a <code>transform</code> on that group. Since Rellax uses transforms, this would cause a clash so it's safest to use the container.</p>
+<p>We'll add the &quot;rellax&quot; class and give this a speed of &quot;2&quot;.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>g</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>We then do the same for the &quot;medium-boulder&quot; and &quot;small-boulder&quot; containers, giving them a speed of &quot;1.5&quot; and &quot;1.25&quot; so that they move a little slower than the large boulder.</p>
+<p>With that done lets add parallax to the heading. There's a gradient on the <code>header</code> element at the bottom that makes it fade to black. It would be cool if this text was to scroll in behind that gradient. We can do this by giving the title a very slow scroll speed.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>MOON ROCKS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<p>Lastly let's do the same with the header at the bottom of the page. Inside the <code>footer</code> element we apply the same thing but a speed of &quot;-2&quot; to the heading.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading rellax<span class="token punctuation">"</span></span> <span class="token attr-name">data-rellax-speed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>MOON ROCKS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<p>Let's see how this is looking.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="ZKJOBe" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="" class="codepen">&nbsp;</p>
+<h2 id="fixing-the-header" tabindex="-1">Fixing the header</h2>
+<p>After recording this lesson I noticed that the &quot;center&quot; setting caused the header and footer elements to position wrongly. Turns out the header elements don't need this to be set, and we can get around this by declaring another set of &quot;Rellax&quot; elements in the JavaScript.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> rellaxNonCentered <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rellax</span><span class="token punctuation">(</span><span class="token string">'.rellax-non-centered'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">center</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>By using the class &quot;rellax-non-centered&quot; on the header and footer elements instead of &quot;rellax&quot;, this should fix the issue! The code in the <a href="https://cssanimation.rocks/levelup/public/03/03.zip">download zip file</a> has been updated with this change.</p>
+<h2 id="parallax-using-css" tabindex="-1">Parallax using CSS</h2>
+<p>While this example uses CSS and JavaScript for the positioning of the elements on scroll, it's possible to create a parallax effect using pure CSS. There's a <a href="https://developers.google.com/web/updates/2016/12/performant-parallaxing">great write-up of this approach</a> by Paul Lewis and Robert Flack that goes into more detail. It's a great approach and seems to perform well.</p>
+<h2 id="what-we-learned" tabindex="-1">What we learned</h2>
+<p>In this lesson we made use of a great JavaScript tool to create parallax movement on our page. Along the way we saw how this tool uses CSS transforms to move elements on scroll, using a similar <code>requestAnimationFrame</code> approach we've used ourselves. We also learned how to use Rellax with various speeds to create the illusion of depth on the page.</p>
+<h2 id="level-up-your-css-animation-skills!" tabindex="-1">Level up your CSS animation skills!</h2>
+<p>If you like this, you'll love my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">video course on CSS animation</a>. As a fan of this site you can save over 90% on the course today.</p>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Save over 90% and Level Up Your CSS Animation Skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://codepen.io/donovanh/pen/ZKJOBe" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+  
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

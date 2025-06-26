@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Transitions in space - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Creating complex transitions with just a few lines of CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/space.css" />
+  
+  
+  <link rel="canonical" href="/space-transitions/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Transitions in space - CSS Animation" />
+  <meta property="og:description" content="Creating complex transitions with just a few lines of CSS" />
+  <meta property="og:image" content="/images/posts/space/home.jpg" />
+  <meta property="og:url" content="/space-transitions/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <article class="earth-demo">
+    <div class="earth">
+      <div class="more-info">
+        <h1>Earth</h1>
+        <ul>
+          <li>Third planet from the Sun</li>
+          <li>Atmosphere: 21% oxygen</li>
+          <li>Liquid water on surface</li>
+          <li>Only planet that has life (that we know of)</li>
+        </ul>
+      </div>
+      <img src="https://cssanimation.rocks/images/random/earth.png">
+    </div>
+    <div class="moon-container">
+      <div class="demo-moon">
+        <img src="https://cssanimation.rocks/images/random/moon.png">
+      </div>
+    </div>
+  </article>
+</div>
+
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Transitions in space</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">April 21, 2017</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>A few simple transitions can make a huge difference. In this article we'll learn how we can use transitions to bring our content to life, as well as plan and build our hover effects to perform smoothly and look great.</p>
+<h2 id="transitions-vs-animations" tabindex="-1">Transitions vs animations</h2>
+<p>Transitions are a great way to smooth the changes from one state to another (and back again) in the browser. They seem like a simpler alternative to the <code>keyframes</code> and <code>animation</code> approach, but they are useful in very different ways.</p>
+<p>For example, a transition isn't much use if you want an animation to play on load, or if you want it to loop infinitely. But if you have two states and you want to be able to easily animate back and forth between the two, a transition's the best choice.</p>
+<p>I've written more about the differences between <a href="https://cssanimation.rocks/transition-vs-animation/">transitions vs animations</a>.</p>
+<p>In this example we're going to build up a space scene and introduce a hover effect to reveal some more information about the planet. We'll see how to think about setting the default and hover states, and what sorts of properties are best used to ensure smooth, jank-free animation.</p>
+<p>You can find the <a href="https://codepen.io/donovanh/full/qmNgXW/">full demo here</a>.</p>
+<h2 id="setting-the-states" tabindex="-1">Setting the states</h2>
+<p>When creating transitions most of the time and effort needs to go into the before and after states. We need to think about how it's going to look before the transition and then how it needs to look once the transition has finished.</p>
+<p>When I'm building more complex transitions I tend to not worry too much about the movement between these states until I'm happy that both states look right. Having said that it's important to think about the properties we use to create the <code>hover</code> state, as these properties are going to be animated.</p>
+<p>Before we get into that though let's set up the starting and hover states.</p>
+<h3 id="starting-state" tabindex="-1">Starting state</h3>
+<p>We begin with out planets places in the middle of the screen. The moon happily rotates around the earth.</p>
+<p>The HTML contains an article within which we have our <code>earth</code> and <code>moon</code> elements. I've also wrapped the <code>moon</code> in a <code>moon-container</code> div as this will help when repositioning it later for the hover effect.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>earth-demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>earth<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cssanimation.rocks/images/random/earth.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moon-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cssanimation.rocks/images/random/moon.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>Here's the CSS we use. For the <code>earth</code> element we position it absolutely, and use a <code>calc</code> trick to position it in the middle both horizontally and vertically.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The image is also positioned and given a height and width.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth img</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>For the moon we do something similar. Beginning by placing the container in the middle of the screen.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.moon-container</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 25px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% - 25px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We set up the dimensions for the moon and give it an animation using the <code>spin</code> keyframes. This will set it spinning around the Earth.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.moon</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> spin 20s linear infinite<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 25px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>At this point through, the moon is actually positioned in the middle of the screen, right on top of the earth. Let's use a <code>transform</code> to push the moon outside it's container and outside the planet.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.moon img</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-160px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-160px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This means that when the <code>moon</code> div rotates on top of the planet Earth, the actual image will be rotating further out. Next we give the images a border radius to tidy up any antialiasing issues and a <code>box-shadow</code> to give them a blue glow.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth img, .moon img</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 12em 1em <span class="token function">rgba</span><span class="token punctuation">(</span>110<span class="token punctuation">,</span> 140<span class="token punctuation">,</span> 200<span class="token punctuation">,</span> .6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Lastly, we want the <code>moon</code> to spin, so we create some keyframes. This is a simple one, we just want the animation to rotate around the Z-axis by 360 degrees.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> spin</span> <span class="token punctuation">{</span>
+  <span class="token selector">to</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>360deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here's what we have so far.</p>
+<p data-height="500" data-theme-id="12592" data-slug-hash="aWZPeP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Planet hover effect part 1: initial stage" class="codepen">See the Pen <a href="https://codepen.io/donovanh/pen/aWZPeP/">Planet hover effect part 1: initial stage</a> by Donovan Hutchinson (<a href="http://codepen.io/donovanh">@donovanh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<h3 id="showing-more-info" tabindex="-1">Showing more info</h3>
+<p>We'd like to show some useful information about the planet Earth on hover. Perhaps useful for alien visitors to get some insight into our home before they visit.</p>
+<p>Before we set up the hover state we need to add this extra info.</p>
+<p>We begin by expanding the HTML to add in a <code>more-info</code> block containing some text.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>earth-demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>earth<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>more-info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Earth<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Third planet from the Sun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Atmosphere: 21% oxygen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Liquid water on surface<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Only planet that has life (that we know of)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cssanimation.rocks/images/random/earth.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moon-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>moon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cssanimation.rocks/images/random/moon.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>This is added within the <code>earth</code> container as I'd like it to be part of the hover effect, so that when the cursor hovers the text it'll stay on the screen.</p>
+<p>In our CSS we add some styles for this <code>more-info</code> block.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth .more-info</span> <span class="token punctuation">{</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>10<span class="token punctuation">,</span>10<span class="token punctuation">,</span>10<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">,</span> black<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>.8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth .more-info h1</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 0 1em<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we're setting the background colour and border radius, text colour as well as padding and width. We're also scaling it a little using the scale <code>transform</code> and we set the <code>transform-origin</code> to the top-left corner so that it will scale from that direction.</p>
+<p>The <code>opacity</code> for this <code>more-info</code> block is set to zero so that it's invisible. We could go further and add in <code>visibility</code> to make sure the content doesn't interfere with other content but for this demo it's fine.</p>
+<h3 id="transitioning-the-right-properties" tabindex="-1">Transitioning the right properties</h3>
+<p>When setting up the hover transition animation it's important to think about performance. Properties such as height, padding, font-size or background-position can all be animated but they don't tend to perform well. The reason being that they cause the browser to recalculate all sorts of other details in the layout when they change.</p>
+<p>It's a good idea to stick to the <code>opacity</code> and <code>transform</code> properties when animating as these do tend to perform well and don't cause any &quot;jankiness&quot;.</p>
+<p>In this example we're using the transform and opacity properties. The <code>more-info</code> block is scaled down a little with a transform and has opacity of 0. In our hover state we can</p>
+<p>How we make use of the transform and opacity properties specifically. Let's set up the hover state to set the <code>more-info</code> block to be visible, while getting the planet itself out of the way.</p>
+<h2 id="hover-effect" tabindex="-1">Hover effect</h2>
+<p>Let's start setting up each of the <code>.earth:hover</code> states. If you're using Sass you can write this a little more succinctly but for now I'm using vanilla CSS.</p>
+<p>Firstly let's more the planet out of the way.</p>
+<p>.earth:hover img {</p>
+<pre class="language-css"><code class="language-css"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-75px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-75px<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>.5<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>}</p>
+<p>This <code>transform</code> pushes the planet up and left by 75 pixels while scaling it down to 50% in size. Powerful!</p>
+<p>Next we do a similar thing to the moon.</p>
+<p>.earth:hover ~ .moon-container {</p>
+<pre class="language-css"><code class="language-css"><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-75px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-75px<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>.5<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>}</p>
+<p>.earth:hover ~ .moon-container img {</p>
+<pre><code>transform: translateX(-140px) translateY(-140px);
+</code></pre>
+<p>}</p>
+<p>There's a second tweak here to the moon's image. I'm adjusting its <code>transform</code> to bring it a little closer to the earth. Next we show the <code>more-info</code> block.</p>
+<p>.earth:hover .more-info {</p>
+<pre><code>opacity: 1;
+transform: none;
+</code></pre>
+<p>}</p>
+<p>This sets the opacity to 1, making it visible and we set the <code>transform</code> to <code>none</code> so that the block scales up to the normal size.</p>
+<p>Here's the result. Hover over the planet to see the content.</p>
+<p data-height="500" data-theme-id="12592" data-slug-hash="bWezpR" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Planet hover effect part 2: basic hover effect" class="codepen">See the Pen <a href="https://codepen.io/donovanh/pen/bWezpR/">Planet hover effect part 2: basic hover effect</a> by Donovan Hutchinson (<a href="http://codepen.io/donovanh">@donovanh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<h2 id="applying-transitions" tabindex="-1">Applying transitions</h2>
+<p>Now that the hard work is done, all we need to do now is tell the browser <strong>how</strong> to transform between these states. Thankfully there's not too much involved. Most of the transitions can be handled with one CSS rule.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo *</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 4s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>1.5<span class="token punctuation">,</span>.3<span class="token punctuation">,</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Let's break this down. Firstly this rule uses the asterisk &quot;*&quot; to make it apply to all elements within the <code>earth-demo</code> article.</p>
+<p>It then applies a <code>transition</code> to <em>all</em> properties, lasting <em>4 seconds</em> and using a cubic-bezier timing function. This function is a kind of exponential ease-out, meaning that it starts off very fast and slows down toward the end. It also overshoots a little and settles back.</p>
+<p>Before we call it a day, let's just add a little nuance to the list of text. It would be nice to call attention to the list elements by having them animate into place one at a time. Thankfully we can do that with the <code>transition-delay</code> property.</p>
+<h3 id="transition-delays" tabindex="-1">Transition delays</h3>
+<p>We first want to set the opacity for these items to zero so that they are invisible before the transition starts.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo h1, li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Then when the <code>hover</code> happens, we show them.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo:hover h1, li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Next we want to delay each of the 4 list items. We can do that using the <code>nth-child</code> selector.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo:hover li:nth-child(1)</span> <span class="token punctuation">{</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 0s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo:hover li:nth-child(2)</span> <span class="token punctuation">{</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 0.2s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo:hover li:nth-child(3)</span> <span class="token punctuation">{</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 0.4s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.earth-demo:hover li:nth-child(4)</span> <span class="token punctuation">{</span>
+  <span class="token property">transition-delay</span><span class="token punctuation">:</span> 0.6s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This will add a delay to each of the list items. Since we're using the &quot;*&quot; selector above, each of these list items has a transition and we only need to specify a delay.</p>
+<p>Here's the finished result.</p>
+<p data-height="500" data-theme-id="12592" data-slug-hash="qmNgXW" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Planet hover effect part 3: with transition" class="codepen">See the Pen <a href="https://codepen.io/donovanh/pen/qmNgXW/">Planet hover effect part 3: with transition</a> by Donovan Hutchinson (<a href="http://codepen.io/donovanh">@donovanh</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p>So there we have it! A seemingly complicated animation, I mean <em>transition</em> carried out with just one CSS rule.</p>
+<p>In this article we've learned how to approach planning and building the states for an impressive transition, and made sure our animation is smooth and looks great.</p>
+<h2 id="next-steps" tabindex="-1">Next steps</h2>
+<p>There's loads we can do to bring our websites to life using animation and this is just one small part. If you'd like to become an expert in applying movement to your UI and web projects, don't miss your chance to <a href="http://courses.cssanimation.rocks/p/level-up">Level up your CSS animation skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://codepen.io/donovanh/full/qmNgXW/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

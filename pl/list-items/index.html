@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Animowanie Element&amp;oacute;w Listy - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Kilka sztuczek dotyczących wyświetlania element&amp;oacute;w listy za pomocą animacji.Animowanie Element&amp;oacute;w Listy"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/list_items.css" />
+  
+  
+  <link rel="canonical" href="/pl/list-items/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Animowanie Element&amp;oacute;w Listy - CSS Animation" />
+  <meta property="og:description" content="Kilka sztuczek dotyczących wyświetlania element&amp;oacute;w listy za pomocą animacji.Animowanie Element&amp;oacute;w Listy" />
+  <meta property="og:image" content="/images/posts/list_items/list_items.png" />
+  <meta property="og:url" content="/pl/list-items/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Animowanie Element&amp;oacute;w Listy</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Kiedy fragmenty strony internetowej zmieniają się, dodanie animacji jest dobrym sposobem na wskazanie odwiedzającym co się dzieje.  Animacje mogą zapowiadać pojawienie się nowej treści lub przyciągnąć uwagę do treści, która jest w trakcie usuwania. W tym artykule, przyjrzymy się jak wprowadzenie nowej treści może być wykorzystane, pokazując i ukrywając elementy na liście.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<h2 id="wprowadzenie-tre%C5%9Bci" tabindex="-1">Wprowadzenie treści</h2>
+<p>Animacja może być przydatna w przypadku gdy chcemy pomóc odwiedzającym zrozumieć kiedy rzeczy zmieniają się na stronie. Kiedy treść jest dodawana lub usuwana bez animacji, mogą oni przeoczyć nagłe zmiany i być zdezorientowani. Za pomocą animacji można tego uniknąć i pomóc poprzez &quot;ogłoszenie&quot;, że coś może zniknąć ze strony lub pojawić się na niej.</p>
+<p>Jednym z przykładów dodawania lub usuwania treści jest zarządzanie listą. Większość animacji może być użyta do innych rodzajów treści. Jeśli uznasz je za przydatne lub masz inne pomysły, <a href="mailto:hello@cssanimation.rocks">skontaktuj się z nami</a>, z radością o nich usłyszymy.</p>
+<h2 id="konfigurowanie-html" tabindex="-1">Konfigurowanie HTML</h2>
+<p>Aby rozpocząć, skorzystamy z wstępnie wypełnionej listy i przycisku do dodawania nowych elementów do listy.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add-to-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add a list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Kilka rzeczy wartych uwagi. Po pierwsze, mamy dwa ID w HTML. Zazwyczaj nie wykorzystujemy ID do stylizacji, ponieważ mogą one powodować problemy z ich specyfiką Jednakże są one przydatne podczas używania JavaScript.</p>
+<p>Początkowe elementy posiadają klasę &quot;show&quot;, ponieważ tę klasę użyjemy później, aby dodać efekt animacji.</p>
+<h2 id="troch%C4%99-javascript" tabindex="-1">Trochę JavaScript</h2>
+<p>Na potrzeby wersji demonstracyjnej napiszemy kod JavaScript, aby dodać nowy element do listy, a następnie klasę &quot;show&quot;, aby pojawiła się animacja. Istnieje powód wykorzystania tego dwuetapowego procesu. Jeśli elementy listy byłyby dodane w stanie widocznym, nie byłoby czasu na przeprowadzanie przejścia.</p>
+<p>Moglibyśmy obejść to aplikując animację na elemencie <code>li</code>, ale to byłoby trudniejsze do zastąpienia podczas usuwania elementów za pomocą innej animacji.</p>
+<pre><code>/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById('add-to-list').onclick = function() {
+  var list = document.getElementById('list');
+  var newLI = document.createElement('li');
+  newLI.innerHTML = 'A new item';
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.className = newLI.className + &quot; show&quot;;
+  }, 10);
+}
+</code></pre>
+<h2 id="brak-animacji" tabindex="-1">Brak animacji</h2>
+<p>Najprościej możemy napisać kod CSS, aby pokazać elementy listy. Korzystamy z klasy <code>show</code>jako sposobu, aby były widoczne oraz usuwamy klasę <code>show</code>, co powinno spowodować ich zniknięcie.</p>
+<pre><code>li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 2px 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>W tych stylach określamy elementy <code>li</code> w taki sposób, aby wyglądały jak prostokąty bez kropek i nadajemy im <code>height</code> 0, <code>margin</code> 0 i ustawiamy <code>overflow</code> na ukryty. W ten sposób pozostaną ukryte dopóki nie zastosujemy klasy <code>show</code>.</p>
+<p>Klasa <code>show</code> dotyczy wysokości i marginesu. Ponieważ nie używamy jeszcze animacji, elementy powinny nagle pojawiać się na stronie. Spróbuj również kliknąć elementy listy, aby zobaczyć jak znikają.</p>
+<section class="add-to-list demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<h3 id="zanikanie" tabindex="-1">Zanikanie</h3>
+<p>Jako pierwszą animację, dodamy prosty efekt zanikania. Elementy listy pojawiają się bardziej stopniowo niż przedtem. Wizualnie to wciąż wygląda trochę niezdarnie, ale ma tę zaletę, że zwraca uwagę odwiedzających, że coś się dzieje.</p>
+<section class="add-to-list fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<p>Aby dodać efekt, utworzyłem osobny fragment kodu CSS. Aby zastosować go do listy, dodaj klasę <code>fade</code> do kontenera otaczającego twoją listę.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="przesuwanie-w-d%C3%B3%C5%82-i-zanikanie" tabindex="-1">Przesuwanie w dół i Zanikanie</h3>
+<p>Nagły skok za każdym razem, gdy element jest dodawany lub usuwany powoduje mały zgrzyt. Dostosujmy również wysokość, aby stworzyć płynny efekt przesuwania.</p>
+<section class="add-to-list slide-fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<p>Różnica między tym i klasą <code>fade</code> widoczną powyżej jest tylko to, że <code>height: 2em</code> zostało usunięte. Ponieważ klasa <code>show</code> zawiera ustawioną wysokość (dziedziczoną od pierwszego fragmentu CSS), przeniesie ona wysokość automatycznie.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.slide-fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.slide-fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="ko%C5%82ysanie" tabindex="-1">Kołysanie</h3>
+<p>Razem z zanikaniem i przesuwaniem, możemy iść dalej dodając mały efekt 3D. Przeglądarka może przekształcić elementy nie tylko po osi X i Y, użyteczne w przypadku dodawania głębi sceny.</p>
+<section class="add-to-list swing demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<p>Aby to ustawić, musimy zdefiniować <code>section</code> jako etap, w którym przejścia 3D mają miejsce. Wykonujemy to określając wartość <code>perspective</code>.</p>
+<p>Perspektywa w CSS jest głębią sceny. Mała liczna oznacza płytszą perspektywę z bardziej ekstremalnymi kątami. Warto pobawić się wartością, aby znaleźć rezultat, który najbardziej ci odpowiada.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Następnie ustawimy elementy <code>li</code>, aby przekształcić w miejscu. Skorzystamy z <code>opacity</code>, aby utworzyć efekt zanikania jak wcześniej, ale dodamy <code>transform</code>, aby obrócić <code>li</code> w miejscu.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>W tym przykładzie zaczniemy z <code>li</code> obróconym o 90 stopni przeciwnie do wskazówek zegara. Po dodaniu klasy <code>show</code>, <code>transform</code> jest ustawiona jako <code>none</code>, pozwalając na przejście w miejscu. Aby uzyskać efekt kołysania, skorzystam z funkcji czasowej <code>cubic-bezier</code>.</p>
+<h3 id="ko%C5%82ysanie-z-boku" tabindex="-1">Kołysanie z boku</h3>
+<p>Możemy dostosować ten efekt, aby z łatwością stworzyć różne style. Oto przykład, w którym elementy kołyszą się z boku.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Element listy</li><li class="show" style="background-color: #3cd19e;">Element listy</li>
+</ul>
+<button>Dodaj element listy</button></section>
+<p>Aby stworzyć ten efekt, musimy tylko zmienić oś obrotu.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Wszystko co zmieniliśmy to <code>rotateX</code> na <code>rotateY</code>.</p>
+<h2 id="prefiksy-i-testowanie-w-przegl%C4%85darce" tabindex="-1">Prefiksy i testowanie w przeglądarce</h2>
+<p>Dla czytelności kod widoczny powyżej nie zawiera żadnych prefiksów  Zalecam dodanie prefiksów, aby umożliwić działanie w przeglądarkach, które wymagają prefiksów <code>-webkit</code> lub innych. Ja korzystam z <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, aby nie martwić się o te rzeczy.</p>
+<p>Ponieważ te animację znajdują się na górze podstawowego mechanizmu pokaż / ukryj, powinny się pogorszyć z gracją w przeglądarkach, które nie obsługują animacji. Testowanie różnych urządzeń i przeglądarek jest ważne, ale najnowsze przeglądarki powinny być w stanie wyświetlić te animacje.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mateusz Kurlit. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+  <script src="/javascript/custom/list_items.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

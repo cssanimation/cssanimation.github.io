@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Pseudo-element&#39;ler ile animasyon - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/shiny_button.css" />
+  
+  
+  <link rel="canonical" href="/tr/pseudo-elements/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Pseudo-element&#39;ler ile animasyon - CSS Animation" />
+  <meta property="og:description" content="Pseudo-elements give you two extra HTML elements for free! Here&#39;s how to animate them on hover. Use them wisely." />
+  <meta property="og:image" content="/images/posts/sheen/sheen.gif" />
+  <meta property="og:url" content="/tr/pseudo-elements/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Pseudo-element&#39;ler ile animasyon</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Pseudo-element'ler bize pek çaba harcamadan fazladan DOM elementleri elde etme imkanı verir.  Sayfalarımıza ilave HTML eklemeden fazladan içerik, dekor vb. eklememizi sağlarlar ve bu pseudo-elementlere animasyon ekleyebiliriz.  Bu yazıda bir pseudo-element'i bir butona biraz görsellik eklemek için kullanacağız.</p>
+<section class="shiny demo-container tap-to-activate"><button>G&Ouml;Z KAMAŞTIRAN EFEKT</button></section>
+<h2 id="pseudo-elementler" tabindex="-1">Pseudo-elementler</h2>
+<p>CSS'te <code>::before</code> ya da <code>::after</code> kullanarak bir pseudo-element oluşturabiliriz. Bu pseudo-element daha sonra eklendiği element ile herhangi bir içeriğin arasına yerleştirilir. Pseudo-element kendi başına bir elementmiş gibi davrandığı için stil verilebilir, konumlandırılabilir ve daha fazlası yapılabilir.  Kod şuna benzer:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span>
+<span class="token selector">.pebble::after</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>Bu aşamada <code>.pebble</code> elementimize iki adet sanal (HTML'de belirtmeden elde ettiğimiz) element ekledik ve bu elementleri ihtiyacımıza göre şekillendirebiliyoruz.</p>
+<h3 id="%E2%80%9C%3A%3A%E2%80%9D-ve-%E2%80%9C%3A%E2%80%9D-aras%C4%B1ndaki-fark-hakk%C4%B1nda" tabindex="-1">“::” ve “:” arasındaki fark hakkında</h3>
+<p>Pseudo elementleri belirtirken genel olarak kabul edilen belirtme şekli (:hover, :first-child gibi pseudo-class'ları aksine) iki adet ‘iki nokta üst üste’ imi <code>::</code> kullanmaktır.  Eğer IE8'i desteklemeniz gerekiyorsa, tek 'iki nokta üst üste’ imi <code>:</code> kullanmak en iyisidir. Diğer tüm tarayıcılar ve IE'nin yeni versiyonları iki adet 'iki nokta üst üste’ imini (::) desteklemektedir.</p>
+<h3 id="%E2%80%9Ccontent%22i-unutma!" tabindex="-1">“content&quot;i unutma!</h3>
+<p>Pseudo-elementler eklerken akılda tutulması gereken şeylerden biri, pseudo-elementlerin sayfada görünebilir olması için <code>content</code> özelliğinin eklenmesi gerektiğidir.  Pseudo-elementler içeriksiz bir halde oluşturuldukları için onlara aşağıdaki şekilde boş bir <code>content</code> özelliği ekleyerek sayfada görünmelerini sağlayabiliriz:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span>
+  ... more styling goes here...
+<span class="token punctuation">}</span></code></pre>
+<p>Bu kod elementin sayfada görünmesini sağlayacaktır.</p>
+<h2 id="%C3%B6rnek%3A-g%C3%B6z-kama%C5%9Ft%C4%B1r%C4%B1c%C4%B1-buton" tabindex="-1">Örnek: Göz kamaştırıcı buton</h2>
+<p>Bu örnekte bir pseudo-element kullanarak mouse butonun üzerinde olduğunda (burdan böyle kısaca ’hover’ diyeceğiz) tetiklenen göz kamaştırıcı bir efekt yaratacağız. Ornegin sonunda boyle bir goruntu elde edecegiz (animasyonu gormek icin butona hover yapabilirsiniz)</p>
+<section class="shiny demo-container tap-to-activate"><button>G&Ouml;Z KAMAŞTIRAN EFEKT</button></section>
+<p>Biraz HTML ile başlayalım:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Oooh SHINY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Pseudo-elementler kullandıgımız için daha fazla HTML'e ihtiyacımız olmayacak.  Eğer bir sayfada birden fazla butona stil verecekseniz class kullanmak isteyebilirsiniz ama şimdilik basitlik adına genel bir element kullanacağız.</p>
+<h3 id="par%C4%B1lt%C4%B1y%C4%B1-(sheen)-ekleme" tabindex="-1">Parıltıyı (sheen) ekleme</h3>
+<p>Göz kamaştıran parıltı efektimiz butonumuzun bir ucundan diğer ucuna giden bir linear gradient. Bunu oluşturmak için <code>after</code> pseudo-elementini kullanacağız ve bunu butonun dışında bir başlama noktasına yerleştireceğiz.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>-5em<span class="token punctuation">,</span> 7.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Parıltı (sheen) efekti, butonun renginden beyaza ve tekrar butonun rengine dönen bir gradient'ten meydana gelmekte.  Bu aşamada gradient butonun dışında duruyor.</p>
+<p>Parıltı (sheen) efekti olan katmanı sadece hover'da iken görünecek şekilde saklamamız gerekecek.  Bunu yapmak için öncelikle butonun <code>overflow</code> özelliğini <code>hidden</code> olarak belirleyeceğiz. Pseudo-elementimiz butonun içinde olduğundan butonun dışında kalan bölümü görünür olmayacaktır.</p>
+<pre><code>button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre>
+<p>Butona kendine has bir görüntü vermek için başka stiller de verdim.  Dikkatinizi çekmek istediğim bir nokta <code>position: relative</code>'in kullanımı. Bu özelliği butona eklememin sebebi position: absolute ile sabitlenmiş olan pseudo-element'in butonun içinde yer almasını istemem. Pozisyonu belirtilmediği sürece position: absolute kullanılan element, bir katman üstünde yer alan (parent) elementin içinde yer alacaktır.</p>
+<h2 id="animasyonu-ekleme" tabindex="-1">Animasyonu ekleme</h2>
+<p>Bu örnekte animasyon kullanacağımız için önümüzde iki adet aşama var. Birincisi tarayıcıya buton hover'da iken animasyon kullanmasını söylemek. Daha sonra ise <code>keyframes</code> kullanarak bu animasyonun tam olarak ne olduğunu belirteceğiz.</p>
+<p>Butonun hover halini <code>hover</code> pseudo-class'ına <code>after</code> pseudo-class'ını şu şekilde ekleyerek oluşturabiliriz:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button:hover::after, button:focus::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> sheen 1s forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Burada tarayıcıya butonumuz hover'da olduğunda <code>after</code> pseudo-elementinin bir <code>animation</code> degeri almasi gerektiğini söylüyoruz. Sheen (parıltı) olarak adlandırdığımız animasyonumuz 1 saniye sürüyor ve bunun sonunda tekrar etmeden sonlanıyor.</p>
+<p>Burada pseudo-class'ları kullanma sırası önemlidir.  Pseudo-class'ları <code>::after:hover</code> şeklinde kullanmak işe yaramayacaktır çünkü bu kullanım tarayıcıya butonun hover haline tepki vermesi yerine ::after pseudo-elementinin hover haline tepki vermesini söyleyecektir.</p>
+<p>Butona aynı zamanda bir focus hali ekledim. Bunun sayesinde sayfayı tab tuşu ile dolaşan kullanıcılar da butona hover etmelerine gerek kalmaksızın parıltı efektini görebilecekler. (<a href="https://twitter.com/simevidas">Šime Vidas</a>'a tavsiye için teşekkürler.)</p>
+<p>Şimdi animasyonumuzun <code>keyframes</code> ozelliklerini belirtelim:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> sheen</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span> -9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Bu animasyonda tek bir keyframe'e ihtiyacımız var. Başlama noktası (0%) halihazırda pseudo-elementimizin başlama noktasında belirtildiği için sadece bitiş noktasını belirtmemiz gerekiyor. Bu durumda bitiş noktası butonun (başlama noktasına göre) diğer ucunun sağ üstü. Bunu tanımladıktan sonra tarayıcı parıltı efektinin animasyonunu butonun bir ucundan diğer ucana uygulayacak.</p>
+<section class="shiny demo-container tap-to-activate"><button>G&Ouml;Z KAMAŞTIRAN EFEKT</button></section>
+<h2 id="taray%C4%B1c%C4%B1-de%C4%9Ferlendirmeleri" tabindex="-1">Tarayıcı değerlendirmeleri</h2>
+<p><a href="http://caniuse.com/#feat=css-animation">Animasyon özelliği</a> de, <a href="http://caniuse.com/#feat=css-gencontent">pseudo-elementler</a> de tarayıcılar tarafından iyi bir şekilde desteklenmektedir. İşi garantiye almak için <code>keyframes</code> ve diğer tüm transform özellikleri için <code>-webkit</code> ve <code>-moz</code> ön eklerini eklemek her zaman iyi bir fikirdir.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Can Göktaş. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

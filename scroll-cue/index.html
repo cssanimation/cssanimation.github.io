@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Create an animated scroll cue - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="The humble scroll cue is an easily overlooked element on your page. Let&#39;s make it shine by adding CSS animation."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/scroll-cue/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Create an animated scroll cue - CSS Animation" />
+  <meta property="og:description" content="The humble scroll cue is an easily overlooked element on your page. Let&#39;s make it shine by adding CSS animation." />
+  <meta property="og:image" content="/images/posts/cue/home.png" />
+  <meta property="og:url" content="/scroll-cue/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Create an animated scroll cue</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">April 28, 2019</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>In this tutorial we're going to add a subtle cue to the bottom of the page that lets people know that they can scroll to see more content. We'll use animation to make it easier to notice and even creating a nice &quot;heartbeat&quot; animation along the way.</p>
+<div class="videoWrapper">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1JRqQTRLSQc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><br>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">In our previous lessons</a> we've animated the background, and used staggered animations to introduce the titles. The page is beginning to look pretty animated, but it leaves just one last piece, the scroll cue.</p>
+<p>Whether we need an arrow to tell people to scroll is a topic for debate. Some would suggest that it's no better than a sticky plaster, and that a better idea would be to design the layout of the page in such a way that scrolling is more obvious. Let's leave the discussion aside for the moment, and instead we'll use this as an opportunity to see how multiple CSS animations can be combined in one little detail.</p>
+<p>To code along with this lesson, grab the <a href="https://cssanimation.rocks/levelup/public/01/01.zip">sample code zip file</a> and look for folder <code>02-introduce-titles</code>.  A completed version of this lesson's code is in the folder <code>03-scroll-cue</code>.</p>
+<div class="callout">
+```html
+<p>This post is part of my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">amazing 4-hour video course on CSS animation</a>. I'm currently offering a massive 93% discount for CSS animation fans. <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Reserve your place today!</a></p>
+```
+</div>
+<h2 id="adding-the-html-and-css" tabindex="-1">Adding the HTML and CSS</h2>
+<p>To get started, we add some extra HTML to our page. I've include a chevron image in the <code>images</code> folder. Add the following HTML to the <code>header</code> section of the HTML, outside the <code>header-content</code> section.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header-down-arrow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>images/downarrow.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<p>We'll use this to position the image. Next, in our CSS, set up styles for the chevron's container.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-down-arrow</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 4vh<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 10<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We're positioning this absolutely and using <code>text-align: center</code> to place the image inside it in the horizontal center of the screen. It's positioned 4% of the screen's height away from the bottom, so should be visible on all screens, whether they be desktop or mobile. I've also made sure to set the <code>z-index</code> here to a value higher than 1 as the header content also covers the entire screen and we want to make sure this chevron is on top and visible.</p>
+<p>Looking at the result we see a nicely positioned down arrow at the bottom of the screen.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="Ppbvbd" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with scroll cue / chevron (no animation)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/Ppbvbd/">Landing page with scroll cue / chevron (no animation)</a>.</p>
+<h2 id="animation-1%3A-introduce-the-chevron" tabindex="-1">Animation 1: Introduce the chevron</h2>
+<p>We begin with the <code>keyframes</code>. Since we're trying to convey the idea that people can scroll the page, we can hint at that with the animation on this scroll cue. If the chevron slides up as it appears, it will suggest that direction of movement. We'll create some keyframes called &quot;fade-slide-up&quot;.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> fade-slide-up</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>4rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This animation is very similar to the <code>fade-slide-down</code> animation we made in lesson 1. The only difference is the starting <code>transform</code>, where we're setting it to start 4rem down instead of up.</p>
+<p>If this rings alarm bells, don't worry, we're going to do some optimising in the next lesson and see if we can trim some of this back a bit. For now though we'll create new keyframes for this animation.</p>
+<p>We then apply this to our chevron image.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-down-arrow img</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> fade-slide-up 1s 1s ease-out forwards<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we have the animation name, a duration of 1 second, a delay of 1 second and a basic <code>ease-out</code> timing function. We also set the opacity to 0 so that there's no flash at the start before the animation begins.</p>
+<p>Here is in in action.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="xqRNrq" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with scroll cue / chevron (slide up animation)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/xqRNrq/">Landing page with scroll cue / chevron (slide up animation)</a>.</p>
+<p>If you look carefully you might notice that the chevron animates into place last. It finishes just after the last of the content has stopped moving. The idea is that visitors will subconsciously notice this and be more likely to notice that there's a scroll cue. This is a subtle detail and perhaps easily missed, so we can go further and add a second animation to this chevron. Let's make it pulse.</p>
+<h2 id="heartbeat" tabindex="-1">Heartbeat</h2>
+<p>So far all the <code>keyframes</code> we've built have only had start (0%) and end (100%) states. Let's build an animation with 3 states.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> pulse</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">50%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> .8<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>.8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In this we've added in a middle state, 50%. The animation begins with the chevron at full size, then scales it down at the halfway point, before scaling back up again. It also fades a little when it's &quot;further away&quot; from the viewer. This should be useful to create a subtle beating effect.</p>
+<p>We apply this to our image by adding a second animation to the <code>animation</code> property.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-down-arrow img</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> fade-slide-up 1s 1s ease-out forwards<span class="token punctuation">,</span>
+             pulse 2s 3s ease-out infinite<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Multiple animations, like multiple backgrounds, are added by using commas. Each will stack and should work in parallel. You should be careful through when more than one of the <code>keyframes</code> operates on the same property, such as <code>transform</code>, it can cause problems. I'm using a delay here of 3 seconds for the &quot;pulse&quot; animation to make sure it doesn't start while the &quot;fade-slide-up&quot; is animating.</p>
+<p>In this case the &quot;pulse&quot; animation has a duration of 2 seconds, a delay of 3 seconds, the old <code>ease-out</code> timing and lastly an <code>animation-iteration-count</code> of <em>infinite</em>. Since we're telling this animation to play forever, we don't need to specify the fill-mode.</p>
+<p>We can see it in action here.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="XMNwaj" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with scroll cue / chevron (slide up and pulse animation)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/XMNwaj/">Landing page with scroll cue / chevron (slide up and pulse animation)</a>.</p>
+<h2 id="a-note-about-safari" tabindex="-1">A note about Safari</h2>
+<p>While the above works well in most browsers, it runs into trouble with Safari. Hopefully this is something that will be fixed in future but for now we can fix it by splitting these two animations up and applying one of them to the container.</p>
+<p>First we remove the &quot;pulse&quot; animation from the <code>.header-down-arrow img</code> block and move it to the <code>.header-down-arrow</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-down-arrow</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> pulse 2s 3s ease-out infinite<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 4vh<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 10<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The animation will wait 3 seconds before starting, and there's no longer any conflict with the &quot;fade-slide-up&quot; keyframes. Phew!</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="mWOYBj" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with scroll cue / chevron (slide up and pulse animation - fix for Safari)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/mWOYBj/">Landing page with scroll cue / chevron (slide up and pulse animation - fix for Safari)</a>.</p>
+<h2 id="subtle-is-best" tabindex="-1">Subtle is best</h2>
+<p>It's easy to go crazy and make all the things animate, but that's rarely a good thing for your visitors. People want to be able to read and use the site without being bombarded with movement, so do go easy on the infinite animations. In this case it's quite a subtle animation. Experiment with what works for you, but do dial it back to the point where the animation <em>helps</em> your visitors rather than gets in the way.</p>
+<h2 id="want-to-learn-more%3F" tabindex="-1">Want to learn more?</h2>
+<p>This was part of my <a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">amazing 4-hour video course on CSS animation</a>. As a fan of this site you can save a massive 93% on the course today.</p>
+<p><a href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A">Save 93% and Level Up Your CSS Animation Skills</a> today!</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

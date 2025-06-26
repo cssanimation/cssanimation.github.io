@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Twitter の「お気に入り」アニメーション - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="どのようにして Twitter の派手な新しい「お気に入り」アニメーションが CSS の steps() timing function を用いて動いているのか、考えてみましょう。"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/twitter_fave.css" />
+  
+  
+  <link rel="canonical" href="/jp/twitter-fave/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Twitter の「お気に入り」アニメーション - CSS Animation" />
+  <meta property="og:description" content="どのようにして Twitter の派手な新しい「お気に入り」アニメーションが CSS の steps() timing function を用いて動いているのか、考えてみましょう。" />
+  <meta property="og:image" content="/images/posts/steps/twitter_fave_rectangle.png" />
+  <meta property="og:url" content="/jp/twitter-fave/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Twitter の「お気に入り」アニメーション</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>最近 Twitter は「お気に入り」(「ふぁぼ」としても有名) のデザインを変更、新しいアニメーションを取り入れました。 CSS transitions よりも、アニメーションは画像の羅列を活用できます。 そこで、 アニメーションを CSS animation の steps timing function を用いて作り直す方法を示します。</p>
+<h2 id="%E5%8B%95%E3%81%8D%E3%81%AE%E9%8C%AF%E8%A6%9A" tabindex="-1">動きの錯覚</h2>
+<p>その効果は、円筒の周りに順番に絵が出てくる、昔の<a href="http://en.wikipedia.org/wiki/Zoetrope">回転覗き絵</a>と似ています。 円筒の代わりに、私たちは要素の中に平らな画像の羅列を表示します。</p>
+<h2 id="%E3%83%87%E3%83%A2" tabindex="-1">デモ</h2>
+<p>星をホバーしてアニメーションを見られます:</p>
+<section class="fave demo-container tap-to-activate"></section>
+<p>この例ではアニメーションを構成する画像の羅列を作ることから始めます。 今回は、 Twitter のお気に入りアニメーションの画像のセットを使います。</p>
+<img src="/images/posts/steps/twitter_fave_rectangle.png" alt="Frames from Twitter's fave icon animation" style="max-width:256px" />
+<p>このフレームをアニメーションするために、私たちはフレームを一行にまとめる必要があります。 [このファイル[にまとめてあります。こうすることで、背景の位置を調整して最初から最後のフレームまで移動できるようになります。</p>
+<img src="/images/posts/steps/frames.png" alt="How the background images are positioned within an element" style="max-width:514px" />
+<h3 id="steps()-timing-function" tabindex="-1">Steps() timing function</h3>
+<p>ease や cubic-bezier などの大半の timing function は、初めから終わりの状態までなめらかにアニメーションします。 しかし、 <code>steps</code> timing function は違います。 なめらかな変化の代わりに、アニメーションを各ステップに分割し、変化を急にします。</p>
+<img src="/images/posts/steps/steps.png" alt="How the steps function is illustrated on a graph, as a series of discrete steps" style="max-width:362px" />
+<p>はじめに、 HTML を用意します。</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fave<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F" tabindex="-1">背景画像</h3>
+<p>少しのスタイリングと背景画像の位置の調整を加えることができます。</p>
+<p><img src="/images/posts/steps/twitter_fave.png" alt="Image sprite for the animation"></p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 70px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>images/twitter_fave.png<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>hover</code> ステートが追加されると、画像の羅列の最後に背景の位置が移動されるよう指定します。</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fave:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> -3519px 0<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> background 1s <span class="token function">steps</span><span class="token punctuation">(</span>55<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>transition</code> を指定する二つ目の規則に注意してください。 この場合、背景のプロパティを 1 秒で、<code>steps</code> timing function を用いて変化させます。 <code>steps</code> は <code>55</code> という値を含んでいるので、アニメーションは 55 のフレームを持つことになります。</p>
+<p>要素をホバーすると、55 の等しいステップで変化します。</p>
+<h3 id="%E3%81%A9%E3%81%86%E3%81%97%E3%81%A6-gif-%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%84%E3%81%AE%3F" tabindex="-1">どうして GIF を使わないの?</h3>
+<p>アニメーション GIF は利用できるかもしれませんが、この場合にはあまり適さないでしょう。 ファイルサイズは大きく、かつフレームレートの操作は難しいからです。 しかし、CSS のアニメーションを使えば、アニメーションを一時停止したり巻き戻したり、様々な調整ができます。</p>
+<h2 id="steps()-%E3%81%AE%E4%BB%96%E3%81%AE%E4%BD%BF%E3%81%84%E9%81%93" tabindex="-1">steps() の他の使い道</h2>
+<p>背景スプライトのアニメーションは <code>steps</code> timing function の使い道の一つに過ぎません。 個々の段階でアニメーションする必要のあるすべてのものに適しています。 例えば、アナログ時計の作成に用いることができます。</p>
+<h2 id="%E3%83%81%E3%83%BC%E3%83%88%E3%82%B7%E3%83%BC%E3%83%88" tabindex="-1">チートシート</h2>
+<p>この記事を楽しんでいただけたなら、 <a href="https://twitter.com/intent/tweet?text=Recreate%20the%20Twitter%20fave%20icon%20animation&amp;url=https://cssanimation.rocks/post/twitter-fave/&amp;original_referer=https://cssanimation.rocks">Twitter でシェア</a>やチートシートの保存ができます:</p>
+<img src="/tips/twitter-fave.png" alt="Share this summary on Twitter" style="max-width:375px" />
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by sei0o. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

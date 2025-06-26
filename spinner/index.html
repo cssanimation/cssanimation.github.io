@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    SVG loading spinners - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Create your own jQuery plugin loading spinner"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/spinner/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="SVG loading spinners - CSS Animation" />
+  <meta property="og:description" content="Create your own jQuery plugin loading spinner" />
+  <meta property="og:image" content="/images/posts/spinner/home.png" />
+  <meta property="og:url" content="/spinner/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">SVG loading spinners</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">August 17, 2016</p>
+      
+      <p>[INTRO] - why we have spinners, how they help. Sometimes you want to let people know that you're busy. If you want a generic spinner, services like <a href="http://spin.js.org">Spin.js</a> are handy. But they're generic. Let's go further and make something we can tailor to our own brand.</p>
+<p>Let's create a spinner we can use on our web sites. The goal will be a single JavaScript file that contains our loading image, animation CSS and logic to switch it on and off as needed.</p>
+<p>FInished example: [Button demo with target regions]</p>
+<p>Download: generic starter plugin (add your own SVG code to customise)</p>
+<p>And: Tito animated ticket machine (check if ok to distribute)</p>
+<h2 id="prepare-your-svg" tabindex="-1">Prepare your SVG</h2>
+<p>Setting up the layers, adding classes, optimising the SVG size.</p>
+<p>[Generic SVG image in CodePen]</p>
+<h2 id="plan-some-animations" tabindex="-1">Plan some animations</h2>
+<p>Considerations - what's the brand aiming for, does this animation have some UI concepts it could mirror? Like loading a grid of icons when preparing a grid-based layout.</p>
+<p>For example, here's a loader I recently put together for Tito</p>
+<p>[Tito animation example]</p>
+<h2 id="browser-compatibility" tabindex="-1">Browser compatibility</h2>
+<p>...</p>
+<h2 id="apply-animation-to-the-svg" tabindex="-1">Apply animation to the SVG</h2>
+<p>For this example we'll draw our logo using the SVG line bnah blah technique</p>
+<p>[Generic logo drawing animation]</p>
+<h2 id="showing-%2F-hiding" tabindex="-1">Showing / hiding</h2>
+<p>To make it a loading spinner, we need to be able to show or hide it as needed. Let's set up some CSS to show and hide the content. We can then activate it using JavaScript.</p>
+<p>[Show / hide button demo]</p>
+<p>How the CSS works. How the JavaScript works.</p>
+<h2 id="adding-a-target" tabindex="-1">Adding a target</h2>
+<p>Currently the loading spinner takes over the entire page. What if we want to block out only a portion of the page? We can add a little logic to handle this.</p>
+<p>[Button demo with target regions]</p>
+<h2 id="putting-it-all-together" tabindex="-1">Putting it all together</h2>
+<p>How to assemble it into one file, reference the file in HTML, and call the spinner using JS.</p>
+<p>How to replace the SVG with your own.</p>
+<p>Link to a demo page, and a download link to get your own version.</p>
+<p>CodePens to build:</p>
+<p>[Generic SVG image in CodePen]
+[Tito animation example] 				http://codepen.io/donovanh/pen/RRdyQE
+[Tito example with area controls] 		http://codepen.io/donovanh/pen/LkamLd
+[Generic logo drawing animation]
+[Show / hide button demo]
+[Button demo with target regions]</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

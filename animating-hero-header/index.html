@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Animating your hero header - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Make your hero header stand out with CSS animations"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/animating-hero-header/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Animating your hero header - CSS Animation" />
+  <meta property="og:description" content="Make your hero header stand out with CSS animations" />
+  <meta property="og:image" content="/images/posts/animating-hero-header/home.jpg" />
+  <meta property="og:url" content="/animating-hero-header/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Animating your hero header</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">March 12, 2017</p>
+      
+      <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<p>If you've ever arrived on a website and been greeted by a large image or video, and some titles on top, then you've encountered the &quot;Hero Header&quot;. It's a popular way to introduce a website, and can be a great opportunity to help people quickly understand what it is your site does.</p>
+<p>For many visitors it'll be their first impression of your brand, so you'll want to make the most of this moment to shine.</p>
+<p>Here's what we'll be putting together.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="PpbvZB" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (staggered and cubic bezier and wedge)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/PpbvZB/">Landing page with animated foreground elements (staggered and cubic bezier and wedge)</a>.</p>
+<h2 id="standing-out-from-the-rest" tabindex="-1">Standing out from the rest</h2>
+<p>We can use animation to add polish to that first moment when the content appears, as well as use it to control the order in which information appears and draw the eye to what matters.</p>
+<p>In this tutorial we'll animate in the content on top, and take the opportunity to experiment more with bouncy timing functions, animation choreography and creating reusable sets of keyframes.</p>
+<h2 id="introducing-the-titles" tabindex="-1">Introducing the titles</h2>
+<p>Here's what we're starting with.</p>
+<p>It's got a nice background image, some titles and a bit call-to-action button.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="NpbyJP" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with background image" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/NpbyJP/">Landing page with background image</a>.</p>
+<h2 id="making-it-bounce" tabindex="-1">Making it bounce</h2>
+<p>Like in the choreography you see in stage performances and dances, we're going to think about how all the various pieces of content in our hero header move together. We could have the elements slide in to place like the background image, which would show a nice connectedness between the elements. Let's also take it a little further by making each of the elements seem to pop out of the screen.</p>
+<p>To begin we'll create some <code>keyframes</code> for the animation. Within the <code>keyframes</code> container, we want &quot;0%&quot; and &quot;100%&quot; frames, representing the beginning and end states of the animation.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> pop-in</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-4rem<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>.8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Initially the content will be invisible, so we're setting <code>opacity</code> to 0. We'll also use a <code>transform</code> to <code>translate</code> the position of the content up by 4em. Lastly we're adding a new transform. We're scaling the size down to 0.8 in the starting frame.</p>
+<p>This means that when the animation starts the elements will be a little smaller, and by the end will have animated to their normal size. Let's see how we apply this to the content.</p>
+<h2 id="moving-the-elements" tabindex="-1">Moving the elements</h2>
+<p>We can now apply these keyframes to our content. However rather than adding an <code>animation</code> property to each element one at a time, let's take this opportunity to set up a reusable class for the animation. If we create a new class called <code>animate-pop-in</code>, we can then have this apply the animation more efficiently.</p>
+<p>To get started, in the HTML, we add this class to each of the content items we want to animate.</p>
+<pre class="language-css"><code class="language-css">... other HTML ...
+&lt;section class=<span class="token string">"header-content"</span>>
+  &lt;img class=<span class="token string">"rocky-dashed animate-pop-in"</span> src=<span class="token string">"images/rocky-dashed.svg"</span>>
+  &lt;h1 class=<span class="token string">"header-title animate-pop-in"</span>>Your awesome landing page&lt;/h1>
+  &lt;h3 class=<span class="token string">"header-subtitle animate-pop-in"</span>>A useful start for your projects&lt;/h3>
+  &lt;p class=<span class="token string">"header-button animate-pop-in"</span>>&lt;a href=<span class="token string">"#calls-to-action"</span> class=<span class="token string">"button"</span>>Get started today&lt;/a>&lt;/p>
+&lt;/section>
+... other HTML ...</code></pre>
+<p>We've added the <code>animate-pop-in</code> class to the image, headings and paragraph text. Now we can make use of that in our CSS. Here's what we add to our CSS.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.animate-pop-in</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> pop-in .6s ease-out forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This applies the animation <code>pop-in</code> to every element. It's making them appear with a duration of .6 seconds, and using the <code>ease-out</code> timing function.</p>
+<p><strong>Note: Hover and press &quot;Rerun&quot; to see the animation!</strong></p>
+<p data-height="600" data-theme-id="light" data-slug-hash="bqgywx" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (no bg movement + not staggered)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/bqgywx/">Landing page with animated foreground elements (no bg movement + not staggered)</a>.</p>
+<p>It's a start! But we can do better.</p>
+<h2 id="choreography" tabindex="-1">Choreography</h2>
+<p>Currently the content elements are popping in while the page is still blank. When we built our background animation, we made use of the <code>animation-delay</code> property. This meant the background waited for .5 seconds before the animation began.</p>
+<p>Let's add some delays to our content items so that they show up after the background has started to appear.</p>
+<p>Before we start adding delays, we set out which elements we're going to style.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.rocky-dashed</span> <span class="token punctuation">{</span></code></pre>
+<pre><code>}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-title</span> <span class="token punctuation">{</span></code></pre>
+<pre><code>}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-subtitle</span> <span class="token punctuation">{</span></code></pre>
+<pre><code>}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-button</span> <span class="token punctuation">{</span></code></pre>
+<pre><code>}
+</code></pre>
+<p>These 4 elements will need to appear, one at a time. Thankfully we don't need to put in the entire <code>animation</code> property for each, as these elements already have the <code>animate-pop-in</code> class. We'll just specify a delay on each one. Since the background animation takes about a second to get going, let's start these off with a delay of 1 second and increase it for each element.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.rocky-dashed</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-title</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1.2s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-subtitle</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1.4s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-button</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1.6s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We also need to set these elements to be invisible on load, to avoid the flash where they're visible then they animate after a delay. Set the opacity on the &quot;animate-pop-in&quot; element.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.animate-pop-in</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> pop-in .6s ease-out forwards<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>So let's see the result. We've added a delay that starts at 1 second, then each item waits a further .2 seconds before starting. When we look at the result we see the animations staggered.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="yMgWVW" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (no bg movement + staggered1)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/yMgWVW/">Landing page with animated foreground elements (no bg movement + staggered1)</a>.</p>
+<p>It might just be my opinion but I reckon these seem to be appearing just a little bit late. Let's go back through and change the numbers so they start at .6s instead.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.rocky-dashed</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> .6s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-title</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> .8s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-subtitle</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.header-button</span> <span class="token punctuation">{</span>
+  <span class="token property">animation-delay</span><span class="token punctuation">:</span> 1.1s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>On second thoughts, let's make that last item, the <code>header-button</code> appear a little more closely with just a .1 second gap. It should now all feel a bit tighter.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="ryWgaV" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (no bg movement + staggered2)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/ryWgaV/">Landing page with animated foreground elements (no bg movement + staggered2)</a>.</p>
+<p>That's better. It's a good idea to take time to tweak things like animation delays and timing functions by eye. Sometimes an animation won't feel right and it might just be a question of messing around with the timings until it all works together.</p>
+<p>So, now we have a staggered animation. It's looking pretty good, but the way the animation ends feels a little flat. Let's see if we can bring some life to this little animation with a more bouncy timing function.</p>
+<h2 id="bounciness" tabindex="-1">Bounciness</h2>
+<p>Time to replace that old <code>ease-out</code> timing function with something more interesting. Over on <a href="http://cubic-bezier.com">Cubic-Bezier.com</a> we'll create a curve that starts fast but then shoots right past the top and settles back to the finishing point. Place the first point on the left axis near the top to give it that fast start, then the second point above the top line. The resulting curve should be a long steep arc that tapers back at the end.</p>
+<p><img src="https://cssanimation.rocks/levelup/public/images/01/bezier02.png" alt="A bezier curve with points 0, .9, .3, 1.2"></p>
+<p>Taking the coordinates and putting them into our animation property now looks like this.</p>
+<pre class="language-css"><code class="language-css"><span class="token property">animation</span><span class="token punctuation">:</span> pop-in .6s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0.9<span class="token punctuation">,</span> 0.3<span class="token punctuation">,</span> 1.2<span class="token punctuation">)</span> forwards<span class="token punctuation">;</span></code></pre>
+<p>Let's see how that looks.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="mWRYmp" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (no bg movement+ staggered and cubic bezier)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/mWRYmp/">Landing page with animated foreground elements (no bg movement+ staggered and cubic bezier)</a>.</p>
+<p>It's starting to look a lot better now.</p>
+<h2 id="pieces-working-together" tabindex="-1">Pieces working together</h2>
+<p>The purpose of this choreography is to not only to look cool, but to draw attention to what we want our visitors to see. In this case it's straightforward, we want people to see the title and then have their attention drawn to the big &quot;call to action&quot; button in the middle.</p>
+<p>There's a second goal here though, and that's to let people know that there's more content further down the page. We're going to help draw attention to that using a chevron at the bottom , but we can add a subtle animation to the header also. Let's try our hand at a rotate <code>transform</code> by animating that big white wedge at the bottom of the screen.</p>
+<h2 id="animating-the-wedge" tabindex="-1">Animating the wedge</h2>
+<p>As before we'll create the <code>keyframes</code> for this new animation.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> rotate-up</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-4deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>You'll notice there's no &quot;0%&quot; this time. That's because it's optional. You can choose to leave out either the starting or even the ending keyframe and the browser will infer it based on the styles given to the element. In this case, it'll go from having no transform, to being rotated. We apply this by making a couple of changes to our <code>header:after</code> block.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">header:after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> rotate-up .5s .5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0.5<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 1<span class="token punctuation">)</span> forwards<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #F9FCFF<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40rem<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -5%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> -5%<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 0 0<span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>First we add the <code>animation</code> property, giving it the animation name of <code>rotate-up</code>. I've decided to make the duration just .5 seconds this time. If it's longer, it'll still be moving when the other content is appearing and that could confuse the flow. We'd like this to be a subtle animation that doesn't distract from the main content. We'll have it delayed for .5s and use the same timing function as the background image.</p>
+<p>Lastly we want this to begin without any <code>transform</code>, so we remove that line. It should now use the <code>rotate-up</code> keyframes to rotate from no transform, to -4 degrees.</p>
+<p>As a last minute bonus, I've added some animation to the background image too. Really brings it all together! Check out the  result.</p>
+<p data-height="600" data-theme-id="light" data-slug-hash="PpbvZB" data-default-tab="result" data-user="donovanh" data-embed-version="2" data-pen-title="Landing page with animated foreground elements (staggered and cubic bezier and wedge)" class="codepen">See the Pen <a href="http://codepen.io/donovanh/pen/PpbvZB/">Landing page with animated foreground elements (staggered and cubic bezier and wedge)</a>.</p>
+<h2 id="next-steps" tabindex="-1">Next steps</h2>
+<p>In this tutorial we have learned how to create and apply an animation to a class of elements, then use the <code>animation-delay</code> property to choreograph them. We'll be able to reuse this <code>animate-pop-in</code> class elsewhere without adding any extra CSS code to our project, essentially making it the beginning of our own animation library.</p>
+<p>You may have noticed the lack of scroll cue, and an issue where the image might be half-loaded when the animation starts. Don't worry, you can find these and many more answers in <a href="http://courses.cssanimation.rocks/p/level-up">the full course</a>).</p>
+<h3 id="take-your-skills-to-the-next-level" tabindex="-1">Take your skills to the next level</h3>
+<p>This is part of the new course, <a href="http://courses.cssanimation.rocks/p/level-up">Level Up your CSS Animation Skills</a>. Build the ultimate animated landing page. Enrol today and save 58%!</p>
+<p><a href="" class="button button-primary">I want this!</a></p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/donovanh/pen/PpbvZB/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

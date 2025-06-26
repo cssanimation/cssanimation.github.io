@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Zelda: A link to the CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Making 3D triangles using CSS and putting together a full-page animation."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/zelda.css" />
+  
+  
+  <link rel="canonical" href="/zelda/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Zelda: A link to the CSS - CSS Animation" />
+  <meta property="og:description" content="Making 3D triangles using CSS and putting together a full-page animation." />
+  <meta property="og:image" content="/images/posts/zelda/zelda.png" />
+  <meta property="og:url" content="/zelda/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Zelda: A link to the CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">November 17, 2015</p>
+      
+      <p>The Zelda games have always been close to my heart. In this post, we'll try to recreate the iconic introduction to what might be the best game ever, A Link to the Past.</p>
+<h2 id="zelda%3A-linked-to-the-past" tabindex="-1">Zelda: Linked to the Past</h2>
+<p>The idea is to create something that would look like this:</p>
+<p data-height="487" data-theme-id="12592" data-slug-hash="phnsJ" data-default-tab="result" data-user="donovanh" class='codepen'></p>
+<h2 id="getting-started%3A-html" tabindex="-1">Getting started: HTML</h2>
+<p>To get started, I created the HTML structure to which I'd be applying the styles. The layout requires three 3D triangles, and some text to sit on top. I began with a single triangle:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>triangle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>front<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>back<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>side1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>side2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>side3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The front and back pieces needed to be triangular, with 3 rectangles covering the left, right and bottom sides. HTML isn't great at producing shapes other than rectangles, but we can create a triangle shape using borders.</p>
+<p data-height="298" data-theme-id="12592" data-slug-hash="pjYOzm" data-default-tab="result" data-user="donovanh" class='codepen'>
+<p>[TODO: Explain the CSS behind creating a triangle]</p>
+<h2 id="setting-the-stage" tabindex="-1">Setting the stage</h2>
+<p>Once we have the shape in place, we'll need to place a back piece and position them both in 3D space. A containing &quot;stage&quot; div is needed to achieve this. We can apply a perspective value to the stage and any objects on it will be then drawn in relation to each other.</p>
+<div class="example-with-code clearfix">
+  <div class="left">
+```html
+<div class="stage example example2">
+  <div class="triangle">
+    <figure class="front"> </figure>
+    <figure class="back"> </figure>
+  </div>
+</div>
+```
+  </div>
+  <div class="right">
+<pre><code>.stage
+  @include perspective(800px)
+  @include perspective-origin(120% -200px)
+
+figure.front
+  +arrow(150px, 150px, up, #ffe403)
+  @include transform(translateZ(80px))
+
+figure.back
+  +arrow(150px, 150px, up, #ffd200)
+  @include transform(translateZ(-80px))
+</code></pre>
+  </div>
+</div>
+<p>The 3D positioning is achieved by using the <a href="http://docs.webplatform.org/wiki/css/properties/transform">translateZ transform</a>. The front face is brought forward 80 pixels and the back face pushed back 80px.</p>
+<p>I also rotated the back panel 180 degrees on the Y axis so that it now faces out toward the back.</p>
+<p>The <em>perspective</em> value relates to the depth of the scene, and larger values produce more extreme distortion. Similar to this, the <em>perspective-origin</em> value is used to move the viewpoint. In this case, the viewpoint is looking down from 200 pixels up, and from off to the right side of the stage.</p>
+<h2 id="sides" tabindex="-1">Sides</h2>
+<p>With the front and back in place, there are gaps to fill on the sides. To fill these, rectangular divs can be positioned like so:</p>
+<div class="example-with-code clearfix">
+  <div class="left">
+```html
+<div class="stage example example3">
+  <div class="triangle">
+    <figure class="front"> </figure>
+    <figure class="back"> </figure>
+    <figure class="side1"> </figure>
+    <figure class="side2"> </figure>
+    <figure class="side3"> </figure>
+  </div>
+</div>
+```
+  </div>
+  <div class="right">
+<pre><code>figure
+  &amp;.side1
+```
+content: " "
+display: block
+position: absolute
+height: 168px
+width: 40px
+background-color: #ffd200
+@include transform(translateY(-9px) translateX(18px) rotateY(-90deg) rotateX(26.5deg))
+```
+<p>&amp;.side2</p>
+<pre><code>content: &quot; &quot;
+display: block
+position: absolute
+height: 168px
+width: 40px
+background-color: #ffd200
+@include transform(translateY(-9px) translateX(92px) rotateY(90deg) rotateX(26.5deg))
+</code></pre>
+<p>&amp;.side3</p>
+<pre><code>content: &quot; &quot;
+background-color: #ffd200
+width: 150px
+height: 40px
+@include transform(translateY(130px) rotateX(-90deg))
+</code></pre>
+<p></code></pre></p>
+  </div>
+</div>
+<p>One small adjustment made in this example was to rotate the back panel 180 degrees to ensure it was facing outwards. With the back-faces hidden, it would have been invisible otherwise.</p>
+<h2 id="three-triangles" tabindex="-1">Three triangles</h2>
+<p>With one triangle done, it was straightforward to position three of them on the stage. I copied the div called &quot;triangle&quot; above, and replicated it three times. I then added a class &quot;one&quot;, &quot;two&quot; and &quot;three&quot; to each so they could be referenced individually:</p>
+<div class="example-with-code clearfix">
+  <div class="left">
+```html
+<div class="stage example example4">
+  <div class="scaler">
+    <div class="triangle one">
+      <figure class="front"> </figure>
+      <figure class="back"> </figure>
+      <figure class="side1"> </figure>
+      <figure class="side2"> </figure>
+      <figure class="side3"> </figure>
+    </div>
+    <div class="triangle two">
+      <figure class="front"> </figure>
+      <figure class="back"> </figure>
+      <figure class="side1"> </figure>
+      <figure class="side2"> </figure>
+      <figure class="side3"> </figure>
+    </div>
+    <div class="triangle three">
+      <figure class="front"> </figure>
+      <figure class="back"> </figure>
+      <figure class="side1"> </figure>
+      <figure class="side2"> </figure>
+      <figure class="side3"> </figure>
+    </div>
+  </div>
+</div>
+```
+  </div>
+  <div class="right">
+<pre><code>.triangle
+  @include animation(rotate 5s infinite linear)
+<p>&amp;.two</p>
+<pre><code>top: 150px
+left: 0
+</code></pre>
+<p>&amp;.three</p>
+<pre><code>top: 150px
+left: 150px
+</code></pre>
+<p></code></pre></p>
+  </div>
+</div>
+<h2 id="styling-the-text" tabindex="-1">Styling the text</h2>
+<p>To create the proper Zelda atmosphere, the right fonts were needed. For the main font, <a href="http://www.google.com/fonts/specimen/EB+Garamond">EB Garamond</a> seemed a decent choice. The smaller text looks good with <a href="http://www.google.com/fonts/specimen/Old+Standard+TT">Old Standard TT</a>.</p>
+<p>Including these fonts involves referencing them in the head of your HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>http://fonts.googleapis.com/css?family=EB+Garamond<span class="token punctuation">'</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text/css<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>http://fonts.googleapis.com/css?family=Old+Standard+TT<span class="token punctuation">'</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text/css<span class="token punctuation">'</span></span><span class="token punctuation">></span></span></code></pre>
+<p>You can then use them in your CSS:</p>
+<pre><code>h1
+  font-family: &quot;EB Garamond&quot;
+</code></pre>
+<p>The finishing touch was to add a border around the text:</p>
+<div class="example-with-code clearfix">
+  <div class="left">
+```html
+<div class="stage">
+  <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'></link>
+  <h1 class="zelda-style">ZELDA</h1>
+</div>
+```
+  </div>
+  <div class="right">
+<pre><code>.zelda-style
+  font-family: "EB Garamond"
+  @include text-fill-color(#b62f22)
+  @include text-stroke-color(#8b3536)
+  @include text-stroke-width(2px)
+  margin: 10px auto
+</code></pre>
+  </div>
+</div>
+<h2 id="bringing-it-together" tabindex="-1">Bringing it together</h2>
+<p>To achieve the animation I put together a few different animations and timed them so that they all worked together. Using keyframe animation in CSS is made much easier by using SASS, and I used a few basic mixins to make the process easier. I’m using Sass with the <a href="http://compass-style.org/">Compass</a> framework, but to add support for animation and keyframes to Compass, you’ll need <a href="https://gist.github.com/donovanh/5426633">this gist</a>.</p>
+<h3 id="animation-1%3A-rotating" tabindex="-1">Animation 1: Rotating</h3>
+<p>The spinning effect is creating using the following keyframes:</p>
+<pre><code>@include keyframes(rotate)
+  0%
+    @include transform(rotateY(0))
+  100%
+    @include transform(rotateY(360deg))
+</code></pre>
+<p>To apply this animation to the figures, the following SASS is used. Note, it makes use of the &quot;animation&quot; mixin <a href="https://gist.github.com/donovanh/5426633">found here</a>:</p>
+<pre><code>figure
+  @include animation(rotate 5s infinite linear)
+</code></pre>
+<p>This calls the &quot;animation&quot; mixin and passes in the name of the keyframes (rotate), the duration of 5 seconds, repeated forever. It also specifies that the animation easing be &quot;linear&quot;, which maintains a constant speed throughout the animation.</p>
+<h3 id="animation-2%3A-tumbling-triangles" tabindex="-1">Animation 2: Tumbling triangles</h3>
+<p>The introduction of the figures sees them tumble into place. This is done by transitioning them from an initial position offset to the top, left or right, while applying 360 degrees of rotation. These combine in the following keyframes:</p>
+<pre><code>@include keyframes(introduce-1)
+  0%
+    top: -200px
+    opacity: 0
+  45%
+    top: -100px
+    @include transform(rotateY(180deg) rotateX(-180deg))
+    opacity: 1
+  90%, 100%
+    top: 0
+    @include transform(rotateY(360deg) rotateX(-360deg))
+</code></pre>
+<p>By putting the ending position of the animation at both 90% and 100%, it ensures that the animation stays still for a moment at the end of it's tumbling.</p>
+<p>Applying both these to the figures at the same time looks like this:</p>
+<pre><code>@include animation(rotate 5s infinite linear, introduce-1 5s linear)
+</code></pre>
+<h3 id="animation-3%3A-text" tabindex="-1">Animation 3: Text</h3>
+<p>The text overlay is invisible at first, and I wanted it to wait until after the tumbling animation had finished before fading into place. To achieve this, the following keyframes apply to the text:</p>
+<pre><code>@include keyframes(showZeldaText)
+  0%, 80%
+    @include transform(scale(0.6) translateZ(-100px))
+    opacity: 0
+    -webkit-filter: blur(2px)
+  90%
+    -webkit-filter: blur(0)
+  100%
+    @include transform(scale(1) translateZ(0))
+    opacity: 1
+</code></pre>
+<p>For 90% of the time, the text is invisible. Then in the last 10% the text scales up from 60% scale to 100%, while the opacity changes from invisible to visible.</p>
+<p>Since the text animation starts at the same time as the tumbling, it needs a longer time to run so that it lines up properly. In this case, I set it to run for 6.5 seconds:</p>
+<pre class="language-css"><code class="language-css">@include <span class="token function">animation</span><span class="token punctuation">(</span>showZeldaText 6.5s linear<span class="token punctuation">)</span></code></pre>
+<p>With these in place, the last animation is the flash of background colour when the tumbling stops.</p>
+<h3 id="animation-4%3A-background-flash" tabindex="-1">Animation 4: Background flash</h3>
+<p>The background starts black, then when the tumbling finishes, briefly flashes white before the background image is shown. This colour sequence is also timed to coincide with the appearance of the text. The keyframes:</p>
+<pre><code>@include keyframes(animate-background)
+  0%
+    background: #000
+  83%
+    background: #000
+  84%
+    background: #fff
+  87%, 100%
+    background: #000
+</code></pre>
+<p>A similar set of keyframes is used to show the background image after the screen flashes.</p>
+<h2 id="see-it-in-action" tabindex="-1">See it in action</h2>
+<p>Here's a <a href="http://hop.ie/zelda">live demo</a>. It works reasonably in recent versions of Chrome, Safari and Firefox.</p>
+<h2 id="have-a-go" tabindex="-1">Have a go</h2>
+<p>The HTML and CSS is <a href="https://github.com/donovanh/zelda">available on Github</a>. Please fork, share, and have a play with it. If you'd like to add to or fix something, pull requests are a fast way to becoming one of my favourite people. Do it!</p>
+<h2 id="issues" tabindex="-1">Issues</h2>
+<p>IE10 support is basic, so any browser support improvements would be a good thing. There's also a bit of a glitch where the tumbling animation on the elements doesn't always start. It seems to happen in all browsers. Any suggestions on fixing that would be appreciated.</p>
+<p>I hope you enjoyed this post. I am more than happy to respond to questions and suggestions on Twitter at <a href="http://twitter.com/donovanh">@donovanh</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

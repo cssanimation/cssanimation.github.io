@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    伪元素(pseudo-elements)动画 - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="伪元素提供给你两个额外的 HTML 元素!这里如何来处理悬停动画，聪明的使用它们!"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/shiny_button.css" />
+  
+  
+  <link rel="canonical" href="/cn/pseudo-elements/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="伪元素(pseudo-elements)动画 - CSS Animation" />
+  <meta property="og:description" content="伪元素提供给你两个额外的 HTML 元素!这里如何来处理悬停动画，聪明的使用它们!" />
+  <meta property="og:image" content="/images/posts/sheen/sheen.gif" />
+  <meta property="og:url" content="/cn/pseudo-elements/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">伪元素(pseudo-elements)动画</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>伪元素就像额外的免费 DOM 元素。 它们允许我们添加额外的内容、 修饰和等等到我们的页面而不添加额外的 html 代码，当然他们也可以进行动画处理。 在这篇文章中，我们将使用一个伪元素要为按钮添加一个小的视觉风格。</p>
+<section class="shiny demo-container tap-to-activate"><button>Shiny effect</button></section>
+<h2 id="%E4%BC%AA%E5%85%83%E7%B4%A0" tabindex="-1">伪元素</h2>
+<p>CSS 中，我们可以使用<code>::before</code> 或 <code>::after</code> 来指定伪元素。 伪元素就插入到你的元素之中，或元素之间和任何内容。 既然它充当它自己的元素，那么可以来定义风格，定位和更多。 代码如下：</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span>
+<span class="token selector">.pebble::after</span> <span class="token punctuation">{</span>
+  ...
+<span class="token punctuation">}</span></code></pre>
+<p>在这个例子中，我们的<code>.pebble</code> 元素有两个伪元素附加，我们可以按需改变样式。</p>
+<h3 id="%E6%B3%A8%E6%84%8F%22%3A%3A%22%E4%B8%8E%22%3A%22" tabindex="-1">注意&quot;::&quot;与&quot;:&quot;</h3>
+<p>普遍认为我们使用双冒号:: 来表示伪元素 (而不是像伪类: hover，:first-child)。 如果您要添加 IE8 的支持，最好使用<code>:</code> 来代替。 其他所有的浏览器和较新版本的 IE 支持双冒号。</p>
+<h3 id="%E5%88%AB%E5%BF%98%E4%BA%86%22content%22" tabindex="-1">别忘了&quot;content&quot;</h3>
+<p>当添加伪元素，要时刻牢记的一件事是需要指定 <code>content</code> 这个属性在你让它们在页面显示之前。 伪元素适用于创建内容较少的情况，我们可以使用技巧让 <code>content</code> 为空:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.pebble::before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span>
+  ... more styling goes here...
+<span class="token punctuation">}</span></code></pre>
+<p>这就确保该元素是在页面可见。</p>
+<h2 id="%E4%BE%8B%E5%AD%90%EF%BC%9Ashiny-button" tabindex="-1">例子：Shiny button</h2>
+<p>本例中我们将使用一个伪元素创建悬停在按钮上的光泽效果。 这里是一个实际例子 (悬停或点击以查看效果)。</p>
+<section class="shiny demo-container tap-to-activate"><button>Shiny effect</button></section>
+<p>开始，一些 HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Oooh SHINY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>由于我们使用伪元素，我们不需要任何更多的 HTML。 你可能想要为按钮添加一个 class，如果添加在完整的网页中，但现在为简单起见，我们将使用泛型元素。</p>
+<h3 id="%E6%B7%BB%E5%8A%A0%E5%85%89%E6%B3%BD%E6%95%88%E6%9E%9C" tabindex="-1">添加光泽效果</h3>
+<p>闪亮光泽效果是穿越按钮的线性渐变。 若要创建这我们会使用后的伪元素，并将其定位在外面的按钮开始位置:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button::after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.5<span class="token punctuation">)</span> 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>229<span class="token punctuation">,</span> 172<span class="token punctuation">,</span> 142<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>-5em<span class="token punctuation">,</span> 7.5em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>光泽效果是由一个来自按钮的先为白色，然后再返回的渐变颜色组成。 在这一点上它现在处在外按钮。</p>
+<p>我们需要隐藏光泽层，使它仅悬停时显示。 为此我们将该按钮的 <code>overflow</code> 将属性设置为 <code>hidden</code>。 由于伪元素是在按钮内，这就意味着它定位外按钮不可见。</p>
+<pre><code>button {
+  background: #e5ac8e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  position: relative;
+  overflow: hidden;
+  line-height: 32px;
+}
+</code></pre>
+<p>我把放在一些其他的风格，也让按钮像按钮。 一件事要指出，是使用 <code>position: relative</code>。 所以，绝对定位的伪元素会存在在按钮内，我已经添加此属性。 如果不指定位置，绝对定位的项目将在父元素中的位置。</p>
+<h2 id="%E6%B7%BB%E5%8A%A0%E5%8A%A8%E7%94%BB" tabindex="-1">添加动画</h2>
+<p>接下来我们会在此示例中使用的这个动画，有两个步骤。 第一个是告诉浏览器悬停时使用动画。 接着我们开始看看到底使用什么 <code>keyframes</code> 动画。</p>
+<p>添加悬停状态可以通过在 <code>after</code> 后使用 <code>hover</code> 就像这样:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">button:hover::after, button:focus::after</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> sheen 1s forwards<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在这里我们告诉浏览器比悬停时, <code>after</code> 伪元素是有一个 <code>animation</code>。 动画，名为 sheen，持续一秒，停止在结束不重复。</p>
+<p>命令事项。 使用 <code>::after:hover</code> 悬停不会工作，它会告诉浏览器对伪元素本身的悬停状态作出反应。</p>
+<p>我也已经添加的焦点状态。 这意味着 tabbing through the page 的浏览者将看到，以及光泽效果，而无需将鼠标指针悬停。 (谢谢你的点子  Šime Vidas)</p>
+<p>让我们为动画指定指定 <code>keyframes</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> sheen</span> <span class="token punctuation">{</span>
+  <span class="token selector">100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>60deg<span class="token punctuation">)</span> <span class="token function">translate</span><span class="token punctuation">(</span>1em<span class="token punctuation">,</span> -9em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>该例子中我们只需要一个 keyframe。 因为起始位置 (0%) 隐含的伪元素的起始位置，我们只能描述的结束位置。 在这种情况下结束位置是横跨按钮的右上角。 浏览器然后将为我们动画跨光泽效果。</p>
+<section class="shiny demo-container tap-to-activate"><button>Shiny effect</button></section>
+<h2 id="%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" tabindex="-1">浏览器注意事项</h2>
+<p>动画属性被很好的支持，正如伪元素。 它是总是好的请确保为 <code>keyframes</code> 和任何 transform 添加 -<code>webkit</code> 和 <code>moz</code> 前缀。</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Rrylee. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

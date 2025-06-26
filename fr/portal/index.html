@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Portal CSS - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Recreating the classic Portal intstruction video using HTML and CSS"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/portal.css" />
+  
+  
+  <link rel="canonical" href="/fr/portal/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Portal CSS - CSS Animation" />
+  <meta property="og:description" content="Recreating the classic Portal intstruction video using HTML and CSS" />
+  <meta property="og:image" content="/images/posts/portal/home.png" />
+  <meta property="og:url" content="/fr/portal/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <section class="demo-container container">
+  <div class="portal">
+    <section class="stage">
+      <div class="shadow"></div>
+      <div class="back-left"></div>
+      <div class="back-right"></div>
+      <div class="platform-left"><span></span></div>
+      <div class="platform-right"><span></span></div>
+      <div class="pit-left"></div>
+      <div class="pit-right"></div>
+      <div class="pit-back"></div>
+      <div class="door"></div>
+      <div class="portal red"></div>
+      <div class="portal blue"></div>
+      <div class="person one">
+        <figure class="head"></figure>
+        <figure class="body"></figure>
+        <div class="person-shadow one">
+          <figure class="head"></figure>
+          <figure class="body"></figure>
+        </div>
+      </div>
+      <div class="person two">
+        <figure class="head"></figure>
+        <figure class="body"></figure>
+        <figure class="arm left"></figure>
+        <figure class="arm right"></figure>
+        <div class="person-shadow two">
+          <figure class="head"></figure>
+          <figure class="body"></figure>
+          <figure class="arm left"></figure>
+          <figure class="arm right"></figure>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<section class="fallback"></section>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Portal CSS</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Vous n'avez pas nécessairement besoin de JavaScript pour créer des projets 3D impressionnants dans le navigateur web. Dans cet article, je vais vous montrer comment créer et animer une scène inspirée de Portal, uniquement à l'aide de CSS.</p>
+<p>Vous pouvez regarder <a href="http://hop.ie/portal/">la démo Portal CSS en ligne</a> et télécharger <a href="https://github.com/donovanh/portal">le projet sur Github</a>.</p>
+<h2 id="vid%C3%A9o-d'explication-portal-%231" tabindex="-1">Vidéo d'explication Portal #1</h2>
+<p>Pour vous montrer les étapes de création, stylisation et animation d'une scène 3D, j'ai choisi de recréer une scène de <a href="http://www.youtube.com/watch?v=gr_9Fw_gC4I">la vidéo d'entraînement de Portal</a>. En particulier, le look stylisé, façon bande dessinée, de la première partie de la vidéo dans laquelle une silhouette passe à travers un portail et réapparaît de l'autre côté. Voici la vidéo originale:</p>
+<div class="video-wrapper">
+  <iframe src="http://www.youtube.com/embed/V5paXrfkYmI" width="720" height="405" data-height="405" frameborder="0">
+  </iframe>
+</div>
+<p>Cette vidéo m'a époustouflé lorsqu'elle est sortie. Portal (développé à partir de <a href="http://en.wikipedia.org/wiki/Narbacular_Drop">Narbacular Drop</a>) a introduit un peu de fun dans les plateformes 3D.</p>
+<p>Les graphiques isométriques de la vidéo d'introduction sont très différents du jeu, mais ils arrivent à reproduire son style. Dans cet article, je vais essayer de reproduire ce style bande dessinée en utilisant seulement HTML et CSS.</p>
+<p>Voici en particulier le décor que nous allons créer:</p>
+<img src="/images/posts/portal/video.jpg" alt="Portal video screenshot" />
+<h3 id="un-mot-rapide-sur-les-pr%C3%A9fixes" tabindex="-1">Un mot rapide sur les préfixes</h3>
+<p>J'ai supprimé toutes les versions préfixées des règles CSS dans le code qui suit. Je vous recommande d'utiliser quelque chose comme prefix free ou Sass pour les gérer à votre place ( NdT : et aujourd'hui, la Cascade vous recommande d'utiliser Autoprefixer). Vous pourrez trouver les versions préfixées de CSS et Sass sur Github.</p>
+<p>Le projet qui suit a été développé et testé sur Chrome. Il utilise un CSS qui ne fonctionnera pas comme il faut avec Internet Explorer. Il couvre quelques techniques intéressantes de CSS 3D qui, même si elles ne sont pas toujours d'usage courant peuvent s'avérer intéressantes dans certains projets front-end.</p>
+<p>The following project has been developed and tested primarily in Chrome. It uses CSS that won't work properly in Internet Explorer. It covers some interesting 3D CSS techniques that while they aren't yet mainstream, can prove useful in other front-end development.</p>
+<h2 id="on-commence" tabindex="-1">On commence</h2>
+<p>Nous allons d'abord planter le décor dans lequel construire notre création 3D. Pour cela, nous avons besoin d'un élément HTML auquel nous allons donner des propriétés indiquant au navigateur qu'il doit s'attendre à trouver du contenu 3D. Commençons avec un HTML simple:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>Notre conteneur est une balise <code>article</code>. En HTML5, article représente un contenu autonome qui pourrait être reproduit ailleurs tout en gardant du sens.</p>
+<p>La première propriété à appliquer est perspective. Cette propriété prend une valeur en pixels et représente la profondeur de la scène 3D. Plus la valeur est petite, moins l'effet est dramatique, et il est habituel de la fixer quelque part entre 800 et 1.200px.</p>
+<img src="/images/posts/portal/perspective.gif" alt="Alternating between a perspective value of 900 pixels and 2000 pixels" class="bordered centered" />
+<p>Pour donner l'impression que ce décor est une grande pièce, nous allons donner une valeur élevée à cette perspective, à 2.600px. Comme déjà indiqué, nous ne tenons pas compte des préfixes vendeurs et nous écrivons simplement :</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">article.container</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 2600px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="point-de-fuite" tabindex="-1">Point de fuite</h3>
+<p>Le conteneur a une profondeur, l'étape suivante consiste à déterminer un angle de vue. En ajustant la propriété <a href="http://docs.webplatform.org/wiki/css/properties/perspective-origin">perspective-origin</a>, nous pouvons établir <a href="http://fr.wikipedia.org/wiki/Point_de_fuite">le point de fuite</a> et déterminer si nous regardons du dessus ou de côté.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective-origin</span><span class="token punctuation">:</span> 50% -1400px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>La propriété <code>perspective-origin</code> prend deux valeurs, correspondant au décalage horizontal et vertical. Dans notre cas, nous le plaçons à mi-chemin en travers du décor et 1.400px au-dessus. Il en résultera un point de vue placé au-dessus de l'objet, regardant vers le bas.</p>
+<p>J'ai déterminé ces valeurs en les ajustant manuellement dans le panneau Chrome web inspector et en jugeant à l'oeil. Lorsque vous créerez votre scène, vos valeurs seront peut-être plus ou moins élevées, cela dépendra de l'effet que vous voulez faire passer. N'oubliez pas que ces valeurs peuvent être animées et on peut créer des effets intéressants de déplacement de perspective.</p>
+<h3 id="no-vectors%2C-victor" tabindex="-1">No vectors, Victor</h3>
+<p>Les objets que nous positionnons en HTML sont des éléments HTML normaux. Ils ont une largeur, une hauteur, et ils sont rectangulaires. Lorsque vous construisez un objet en 3D, vous mettez chaque rectangle en place. D'autres méthodes, différentes, décrivent des points et des lignes pour créer des formes, mais ce n'est pas le cas ici. Cela signifie aussi qu'il n'y a pas beaucoup de formes simples à partir desquelles dessiner.</p>
+<p>Les éléments HTML sont placés dans le décor 3D grâce à la propriété <code>transform</code>.</p>
+<h3 id="transformer" tabindex="-1">Transformer</h3>
+<p>La propriété <code>transform</code> consiste en une série d'ajustements de l'élément HTML. Ces ajustements peuvent prendre la forme de <code>translate</code> pour déplacer l'élément, <code>rotate</code> pour ajuster son angle, <code>skew</code> et même <code>scale</code>. On peut accumuler ces ajustements pour créer des transformations complexes, par exemple:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.example</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>45deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Cette règle fait tourner un élément de 45 degrés sur l'axe des Y, puis le déplace en arrière (en profondeur) de 100px sur l'axe des Z. L'effet donnerait ceci:</p>
+<img src="/images/posts/portal/transform.png" alt="A transform in action" class="bordered centered" />
+<h3 id="la-propri%C3%A9t%C3%A9-transform-origin" tabindex="-1">La propriété transform-origin</h3>
+<p>Lorsqu'on fait tourner les éléments, il faut garder à l'esprit que les transformations ont une origine que nous pouvons fixer. <a href="http://docs.webplatform.org/wiki/css/properties/transform-origin">Transform-origin</a> est un point auquel se réfèrent les valeurs X, Y et Z. Voici sa valeur par défaut :</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.default-origin</span> <span class="token punctuation">{</span>
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> 50% 50% 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>En réalisant cet exemple, j'ai conservé les valeurs par défaut, mais il est intéressant de savoir qu'elles sont là et qu'on peut les modifier.</p>
+<h2 id="construisons" tabindex="-1">Construisons</h2>
+<p>Notre décor est planté, nous pouvons maintenant assembler notre chef-d'oeuvre en 3D. Quand on commence à construire des objets en 3D à l'aide de HTML et CSS, il est utile de prendre un petit moment pour bien comprendre comment cette approche diffère de celle des logiciels de 3D.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>back-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>back-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>platform-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>platform-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pit-left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pit-right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pit-back<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<p>C-dessus, nous avons une section stage, qui contiendra tous nos éléments. Un ensemble de div forme la partie principale de la structure. Ce sont les deux plateformes, un puits, des murs, et une ombre.</p>
+<p>Lorsque j'ai commencé à construire ce décor, j'ai essayé de placer les murs directement sur la scène, en la tournant et en ajustant sa position. Cependant, comme le décor est vu depuis un angle isométrique, une approche plus simple était de placer les parties du décor puis de faire tourner le tout de 45 degrés en une seule fois.</p>
+<p>Gardons ceci à l'esprit et plaçons nos éléments HTML à partir du schéma suivant:</p>
+<img src="/images/posts/portal/sketch.png" alt="Plan view of the scene" class="centered" />
+<p>Comme on peut le voir, le fond gauche est aligné sur la gauche, mais le fond droit fait face à l'observateur. Pour ajuster ceci, nous ferons tourner le tout de 45 degrés tout à l'heure.</p>
+<p>Avant d'appliquer les transformations, nous devons donner à nos div quelques propriétés partagées:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage div</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve-3d<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Chaque div sera positionnée absolument et la propriété transform-style indique au navigateur que des transformations 3D doivent être appliquées en fonction de la perspective que nous avons fixée plus tôt.</p>
+<p>Nous pouvons maintenant commencer à positionner les div:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .back-left</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #6b522b<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 6px solid #574625<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 6px solid #8a683d<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-256px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Les règles ci-dessus donnent une largeur de 500px, qui est la longueur du côté gauche de notre décor 3D, une hauteur de 120px et une couleur de background marron clair. La div est ensuite pivotée de 90 degrés et repoussée le long de l'axe des X. La div a une bordure de 6 px pour donner l'illusion de la profondeur.</p>
+<p>Une transformation similaire est appliquée au fond droit:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .back-right</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #9c7442<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 6px solid #78552c<span class="token punctuation">;</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> 6px solid #b5854a<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>253px<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>3px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 446px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>La div est un peu plus petite, car la pièce originale dans la vidéo de Portal n'est pas tout à fait carrée.</p>
+<p>Ensuite, ajoutons les plateformes et les côtés du puits:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .platform-left</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #bcb3a8<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 6px solid #857964<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 220px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>396px<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>253px<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-13px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 446px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .platform-right</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #bcb3a8<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 6px solid #847660<span class="token punctuation">;</span>
+  <span class="token property">border-right</span><span class="token punctuation">:</span> 6px solid #554c3d<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 164px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>88px<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>253px<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-41px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 446px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .pit-left</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #4d4233<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>254px<span class="token punctuation">,</span> 125px<span class="token punctuation">,</span> 285px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 447px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .pit-right</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #847660<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> -1400px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>254px<span class="token punctuation">,</span> 125px<span class="token punctuation">,</span> 173px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 451px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .pit-back</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #6b522b<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 220px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>-200px<span class="token punctuation">,</span> 87px<span class="token punctuation">,</span> 168px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 170px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Le résultat final est un décor qui devrait ressembler à ceci:</p>
+<img src="/images/posts/portal/layout01.png" alt="Initial layout of the stage divs" />
+<p>Ce n'est pas encore ça. Nous devons faire pivoter tout ce décor pour le voir comme il faut. Ajoutons un transform à la section:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">transform-style</span><span class="token punctuation">:</span> preserve-3d<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-45deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 460px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Le résultat devrait maintenant être celui-ci:</p>
+<img src="/images/posts/portal/layout02.png" alt="Initial layout rotated to show the stage properly" />
+<p>Vos pouvez remarquer que les bordures créent un joli effet de profondeur, en particulier sur les coins, là où les différentes bordures colorées se rencontrent en formant un angle de 45 degrés. Comme ce décor doit être vu à 45 degrés, cet effet marche très bien dans la plupart des cas. Certains coins ne sont pas aussi réussis, mais si l'on considère la simplicité du procédé et l'absence d'images, je trouve que c'est un compromis acceptable.</p>
+<h3 id="dans-l'ombre" tabindex="-1">Dans l'ombre</h3>
+<p>Dans la vidéo, il y a une belle ombre sous les plateformes. Nous pouvons reproduire cet effet avec la propriété CSS <code>box-shadow</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .shadow</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> -600px 0 50px #afa79f<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 550px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-166px<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>550px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 550px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Les règles ci-dessus ajoutent une <code>box-shadow</code> à la div shadow, qui est elle-même transparente. La <code>box-shadow</code> est décalée de 600px de façon à ce que la div shadow n'empiète pas sur l'ombre. Le tout est pivoté et positionné en dehors du décor, afin que seule une partie de l'ombre soit visible. Le résultat devrait ressembler à ceci:</p>
+<img src="/images/posts/portal/layout03.png" alt="Initial layout with a shadow" />
+<h2 id="rouge-et-bleu" tabindex="-1">Rouge et Bleu</h2>
+<p>Ensuite, il nous faut ajouter un peu de décoration et les portails étincelants.</p>
+<img src="/images/posts/portal/portal.png" alt="Red portal" />
+<p>Le HTML dont nous avons besoin est assez simple:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>portal red<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>portal blue<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Il y a une div pour chaque portail, une rouge et une bleue. Elles ont toutes les deux un style similaire, avec des dégradés utilisés pour donner l'effet brillant. Comme il s'agit d'un élément HTML simple, le CSS comprend un pseudo-élément auquel nous pouvons appliquer un style pour obtenir l'effet désiré.</p>
+<p>La première étape est de donner sa forme générale au portail:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .portal</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 44px/62px<span class="token punctuation">;</span>
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 15px 4px white<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 72px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 48px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>On crée ainsi le portail, en utilisant la propriété <code>border-radius</code> pour obtenir une forme ovale, et une <code>box-shadow</code> blanche pour la brillance. Un pseudo-élément est ensuite ajouté, avec les mêmes dimensions, et la bordure blanche:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .portal:before</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 44px/62px<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 4px solid white<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 72px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -4px
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> -4px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 48px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Jusqu'à présent les mêmes styles s'appliquent aux deux portails. Mais puisque l'un est rouge et l'autre bleu, nous allons utiliser des ensembles de règles CSS séparés pour décrire les caractéristiques propres à chacun. D'abord le portail rouge, puis le bleu:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .portal.red</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>#000000<span class="token punctuation">,</span> #000000 50%<span class="token punctuation">,</span> #ff4640 70%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 7px solid #ff4640<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>223px<span class="token punctuation">,</span> 25px<span class="token punctuation">,</span> 385px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .portal.blue</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>#000000<span class="token punctuation">,</span> #000000 50%<span class="token punctuation">,</span> #258aff 70%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 7px solid #258aff<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>586px<span class="token punctuation">,</span> 25px<span class="token punctuation">,</span> 4px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>-5deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>On donne au portail rouge un background dégradé radial et une bordure rouge. Dans ce cas, le transform le fait pivoter et le place sur le mur gauche. Même chose pour le portail bleu, mais avec un dégradé bleu et un positionnement sur le mur de droite. Dans mon test, ils étaient tous les deux un peu de travers, alors j'ai ajouté un effet de déformation (skew) qui leur donne meilleure allure.</p>
+<h3 id="un-portail-%C3%A9tincelant" tabindex="-1">Un portail étincelant</h3>
+<p>Le HTML que nous avons créé initialement comprenait une balise span sur chaque plateforme. Ces spans ont été ajoutés de façon à être stylisés avec un dégradé radial pour donner un effet de luminosité éclatante sous chacun des portails.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .platform-left span</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> #f3cac8<span class="token punctuation">,</span> #c8b8ad 70px<span class="token punctuation">,</span> #bcb3a8 90px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .platform-right span</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> #cdebe8<span class="token punctuation">,</span> #c2cbc1 40px<span class="token punctuation">,</span> #bcb3a8 60px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 280px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Les deux spans sont positionnés absolument et on leur donne un dégradé rouge et bleu, positionné sous chacun des portails. On aurait pu utiliser un pseudo-élément pour obtenir cet effet, mais comme l'animation des pseudo-élements n'est pas très bien supportée (même dans des versions de Webkit), un span séparé les remplace.</p>
+<h3 id="la-porte" tabindex="-1">La porte</h3>
+<p>Un succès inattendu a été l'utilisation des bordures pour créer ce qui ressemble à une ouverture dans le mur de droite, représentant la sortie. Pour créer cette porte, j'ai utilisé une simple div et quelques bordures colorées qui donnent l'illusion de la profondeur.</p>
+<img src="/images/posts/portal/door.png" alt="Door" />
+<p>Le HTML de la porte est très simple. Ajoutez le code suivant à l'intérieur de la section <em>stage</em>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>door<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Pour donner un style à la porte, il nous faut quelques bordures et un <code>transform</code> qui la positionne dans le mur de droite:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .door</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #efe8dd<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 6px solid #bcb3a8<span class="token punctuation">;</span>
+  <span class="token property">border-left</span><span class="token punctuation">:</span> 7px solid #78552e<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 85px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>450px<span class="token punctuation">,</span> 34px<span class="token punctuation">,</span> 4px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 65px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Deux bordures sont utilisées pour créer cet effet. Les bordures bottom et left correspondent à la plateforme et à un côté du mur. Comme il n'y a pas de bordure spécifiée pour le haut de la porte, la bordure de gauche est coupée par le haut de la div, ce qui fonctionne bien.</p>
+<h2 id="les-personnages" tabindex="-1">Les personnages</h2>
+<p>Les portails et la porte sont en place, il nous faut maintenant un personnage pour sauter dans l'un et réapparaître par l'autre. La première étape consiste à créer la persone.</p>
+<p>Dans mes premiers tests, j'ai essayé d'utiliser un personnage et d'arrêter l'animation au premier portail puis de continuer immédiatement de l'autre côté. Mais quand j'animais un seul personnage, il y avait un scintillement pendant son transfert de l'autre côté. Pour éviter ce problème, j'utilise deux personnages et je les anime séparément.</p>
+<h3 id="construire-le-personnage" tabindex="-1">Construire le personnage</h3>
+<img src="/images/posts/portal/dude1.png" alt="The first of two characters to animate through the scene" />
+<p>La forme du premier personnage est constituée de deux parties principales, la tête et le corps. Les jambes sont ajoutées en utilisant des pseudo éléments sur le corps. Une structure similaire est aussi intégrée pour créer l'ombre:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dude one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>head<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dude-shadow one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>head<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Comme l'ombre (<em>dude-shadow</em>) est incluse dans la div contenant le personnage, elle peut être animée simultanément. Voici le CSS:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.dude, .dude-shadow</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure, .dude-shadow figure</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure.head, .dude-shadow figure.head</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure.body, .dude-shadow figure.body</span> <span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 30px 30px 0 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 21px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 26px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure.body:before, .dude figure.body:after, .dude-shadow figure.body:before, .dude-shadow figure.body:after</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 9px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure.body:before, .dude-shadow figure.body:before</span> <span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dude figure.body:after, .dude-shadow figure.body:after</span> <span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Ces règles sont dédoublées dans chaque cas, pour décrire à la fois le personnage et son ombre. Chaque partie est positionnée absolument et on utilise <code>border-radius</code> pour créer des formes arrondies. Les pseudo-éléments représentant les jambes sont décrits puis positionnés dans des règles séparées.</p>
+<h3 id="le-personnage-1" tabindex="-1">le personnage 1</h3>
+<p>Une fois la forme du personnage réalisée, positionnons celui-ci sur son point de départ:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .dude.one</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>514px<span class="token punctuation">,</span> 50px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .dude-shadow.one</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-12px<span class="token punctuation">)</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>8px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Les <code>transform</code> CSS positionnent à la fois le personnage et son ombre. Plutôt que de donner une couleur grise à l'ombre, on utilise la propriété opacité, réglée à 0.1, ce qui permet à des détails de background d'être vus en-dessous de l'ombre.</p>
+<p>Le premier personnage est maintenant sur son point de départ et pivoté selon un angle similaire à celui de la vidéo. Nous allons ajouter l'animation plus tard, pour le faire sauter à travers le portail.</p>
+<h3 id="des-bras" tabindex="-1">Des bras</h3>
+<img src="/images/posts/portal/dude2.png" alt="The second of two characters to animate through the scene" />
+<p>Le deuxième personnage a quelques détails supplémentaires, des bras, l'idée étant que lorsque le personnage passe à travers le portail, il lève les bras en signe de victoire. Voici le HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dude two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>head<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>arm left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>arm right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dude-shadow two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>head<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>arm left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>arm right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Le second personnage sera invisible au début de l'animation, puis il saute à travers le portail à mi-chemin de l'animation (après que le premier personnage ait sauté). Pour mettre ceci en place, le deuxième personnage est positionné sur le portail.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage .dude.two</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 10px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .dude.two figure.arm</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .dude.two figure.arm.left</span> <span class="token punctuation">{</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -13px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>40deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .dude.two figure.arm.right</span> <span class="token punctuation">{</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> -10px<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-40deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.stage .dude-shadow.two</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>12px<span class="token punctuation">)</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-16px<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-6px<span class="token punctuation">)</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>50deg<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>30deg<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>0.8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Une deuxième animation sera appliquée aux bras, dans laquelle ceux-ci seront d'abord invisibles pour apparaître ensuite.</p>
+<h2 id="le-d%C3%A9cor-est-plant%C3%A9" tabindex="-1">Le décor est planté</h2>
+<p>Les personnages sont là dans leur décor, nous sommes prêts pour l'animation.</p>
+<img src="/images/posts/portal/stage_set.png" alt="The scene is ready, with 2 characters ready to be animated." />
+<p>Voyons comment nous pouvons donner l'illusion que le personnage saute dans le premier portail et réapparaît dans le second.</p>
+<h2 id="animation" tabindex="-1">Animation</h2>
+<p>Si vous regardez la démo, vous verrez plusieurs animations. Plutôt que de passer en revue toutes les animations, je vais me concentrer sur l'animation du personnage passant d'un portail à l'autre.</p>
+<h3 id="keyframe-animation" tabindex="-1">Keyframe animation</h3>
+<p>L'animation des éléments HTML dans le temps est réalisée en utilisant des <a href="https://docs.webplatform.org/wiki/css/atrules/@keyframes">keyframes</a>, et en attachant un ensemble de keyframes à un élément au moyen d'une propriété <a href="https://docs.webplatform.org/wiki/css/properties/animation">animation</a>. Nous allons commencer en animant le premier personnage, qui s'approchera du portail de gauche et sautera au travers. Voici un ensemble de keyframes qui permettent de réaliser cette animation:</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> move-dude-one</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Character flies into scene */</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>514px<span class="token punctuation">,</span> -10px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Waits a moment */</span>
+  <span class="token selector">1%, 18%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>514px<span class="token punctuation">,</span> 50px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Moves toward the portal */</span>
+  <span class="token selector">34%, 39%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>284px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Pauses, them jumps in */</span>
+  <span class="token selector">41%, 42%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>234px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Vanishes */</span>
+  <span class="token selector">43%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>234px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 375px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>78deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* Note: Use prefixes, such as @-webkit-keyframes, @-moz-keyframes, etc! */</span></code></pre>
+<p>Les keyframes sont une série d'étapes, décrites à l'aide de pourcentages. Les pourcentages sont relatifs au timing de l'animation, c'est à dire que si l'animation dure 10 secondes, 10% représenteraient une étape d'une durée de 1 seconde.</p>
+<p>Afin de voir nos personnages sauter à travers les portails dans une belle continuité, nous allons créer deux animations de 10 secondes chacune qui fonctionneront de manière simultanée. J'ai mis quelques commentaires dans le code pour décrire chaque étape de l'animation. La propriété transform est utilisée à chaque étape pour régler la position et l'angle des personnages.</p>
+<p>À 43% de l'animation, l'<code>opacity</code> du personnage est fixée à 0. C'est le moment où le personnage disparaît dans le portail. Le second personnage devrait donc apparaître vers 43% grâce à son animation.</p>
+<p>Avant cela, appliquons cette première animation au premier personnage:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.dude.one</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move-dude-one 10s linear infinite<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>La propriété <code>animation</code> ci-dessus applique l'animation à l'élément dude one. Il l'attache au moyen du nom de l'animation (<em>move-dude-one</em>), lui assigne une durée de 10 secondes et une répétition à l'infini.</p>
+<p>Une opacité de 0 permet de garantir que le personnage est invisible avant le début de l'animation.</p>
+<p>Passons maintenant à l'animation du second personnage.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> move-dude-two</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* Dude be invisible */</span>
+  <span class="token selector">0%, 42%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 10px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Apparato! */</span>
+  <span class="token selector">42.5%</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 10px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Move onto the platform */</span>
+  <span class="token selector">46%, 75%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> 40px<span class="token punctuation">,</span> 120px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Stand there for a bit */</span>
+  <span class="token selector">76%, 97%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> -10px<span class="token punctuation">,</span> 120px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Fly up into the sky! */</span>
+  <span class="token selector">98%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate3D</span><span class="token punctuation">(</span>610px<span class="token punctuation">,</span> -10px<span class="token punctuation">,</span> 120px<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> arms</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* No arms */</span>
+  <span class="token selector">0%, 53%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/* Yes arms! */</span>
+  <span class="token selector">54%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Comme prévu, cette animation commence autour de 42%. Le personnage saute par le portail, il reste immobile quelques instants, puis il s'envole dans les airs. Un deuxième ensemble de keyframes décrit l'animation des bras. Ils sont invisibles au départ, puis apparaissent à mi-chemin de l'animation.</p>
+<p>Nous pouvons appliquer ces keyframes au deuxième personnage de la façon suivante:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.dude.two</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move-dude-two 10s linear infinite<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.dude.two figure.arm</span> <span class="token punctuation">{</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> arms 10s linear infinite<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>De cette manière, les deux animations sont appliquées. Comme elles ont toutes les deux une durée identique de 10 secondes, et qu'elles se reproduisent à l'infini, elles sont parfaitement coordonnées.</p>
+<p>Si ce n'est déjà fait, vous pouvez vérifier <a href="%5D(http://hop.ie/portal/)">le résultat final dans</a> un navigateur moderne, de préférence pas Internet Explorer.</p>
+<h2 id="pr%C3%A9cautions" tabindex="-1">Précautions</h2>
+<p>Puisque nous parlons des navigateurs, je dois dire que tout ceci ne fonctionnera pas dans IE... Firefox est un peu bof, mais pas mal. Safari y est presque et Chrome est bon à 100%. Mais on va y arriver. ( NdT : l'article date de juin 2013, on y est).</p>
+<p>Ça marche bien aussi sur la plupart des terminaux (toute question de navigateur mise à part), un test sur iPhone montre une performance meilleure encore que sur un laptop avec Chrome, parce que les règles CSS utilisées (transformations 3D) utilisent la carte graphique.</p>
+<h2 id="demo-and-contact" tabindex="-1">Demo and contact</h2>
+<p>Check out the <a href="http://hop.ie/portal">online Portal CSS demo</a> or download the <a href="https://github.com/donovanh/portal">source from Github</a>.</p>
+<p>Regardez <a href="%5D(http://hop.ie/portal)">la démo</a> ou téléchargez <a href="https://github.com/donovanh/portal">le code sur Github</a>.</p>
+<p>Je serais ravi de connaître votre avis, vous pouvez me joindre sur <a href="https://twitter.com/donovanh">Twitter</a>.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://cssanimation.rocks/demo/portal/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Pierre Choffe. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

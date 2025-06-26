@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Lijstitems Animeren - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Wat trucjes om lijstitems aan te kondigen met behulp van animatie.Lijstitems animeren"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/list_items.css" />
+  
+  
+  <link rel="canonical" href="/nl/list-items/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Lijstitems Animeren - CSS Animation" />
+  <meta property="og:description" content="Wat trucjes om lijstitems aan te kondigen met behulp van animatie.Lijstitems animeren" />
+  <meta property="og:image" content="/images/posts/list_items/list_items.png" />
+  <meta property="og:url" content="/nl/list-items/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Lijstitems Animeren</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Als er stukken van de pagina veranderen kan animatie een goede manier zijn om uw gebruikers te helpen begrijpen wat er gebeurt. Animaties kunnen nieuwe inhoud aankondigen of aandacht trekken naar inhoud die op punt staat verwijderd te worden. In dit artikel zullen we bekijken hoe we dit kunnen gebruiken om nieuwe inhoud in te leiden door items in een lijst te tonen en verbergen.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<h2 id="inhoud-inleiden" tabindex="-1">Inhoud inleiden</h2>
+<p>Animatie kan nuttig zijn als je bezoekers wilt helpen begrijpen wanneer er dingen veranderen op je website. Als er inhoud wordt toegevoegd of verwijderd zonder animatie kunnen sommige veranderingen gemist worden en leiden tot verwarring. Subtiele animaties kunnen dit vermijden en helpen om aan te kondigen dat iets aan de pagina zal worden toegevoegd of verwijderd.</p>
+<p>Een voorbeeld van inhoud toevoegen of verwijderen is inhoud van een lijst beheren. De meeste animaties kunnen gebruikt worden voor andere soorten inhoud. Als je ze nuttig vindt, of je wilt andere ideeën toevoegen, <a href="mailto:hello@cssanimation.rocks">neem dan zeker contact op</a>, we horen graag jouw mening en gedachten.</p>
+<h2 id="de-html-opzetten" tabindex="-1">De HTML opzetten</h2>
+<p>Om te starten gebruiken we een lijst die reeds gevuld is en een knop om nieuwe items toe te voegen aan de lijst.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>show<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>List item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add-to-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Add a list item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Goed om te weten. Eerst en vooral hebben we twee ID's in de HTML In het algemeen gebruiken we ID's niet voor opmaak omdat ze voor problemen kunnen zorgen door dat ze zo specifiek zijn. Ze zijn echter wel nuttig als je JavaScript gebruikt.</p>
+<p>De initiële items hebben een klasse &quot;show&quot;, dit is de klasse die we zullen gebruiken om het effect van de animatie toe te voegen.</p>
+<h2 id="een-beetje-javascript" tabindex="-1">Een beetje JavaScript</h2>
+<p>Voor deze demo zullen we een stukje JavaScript maken om een nieuw item toe te voegen aan de lijst, daarna voegen we de &quot;show&quot; klasse toe zo dat de animatie kan doorgaan. Er is een reden om dit proces in twee stappen uit te voeren. Als de lijst items zouden worden toegevoegd in een zichtbare staat, zou er geen tijd zijn om de transitie te laten doorgaan.</p>
+<p>We zouden dit kunnen vermijden door een animatie te voorzien op de <code>li</code> elementen, dit zou echter moeilijker zijn om te overschrijven als je de elementen verwijdert zonder een andere animatie.</p>
+<pre><code>/*
+ * Add items to a list - from cssanimation.rocks/list-items/
+ */
+document.getElementById('add-to-list').onclick = function() {
+  var list = document.getElementById('list');
+  var newLI = document.createElement('li');
+  newLI.innerHTML = 'A new item';
+  list.appendChild(newLI);
+  setTimeout(function() {
+    newLI.className = newLI.className + &quot; show&quot;;
+  }, 10);
+}
+</code></pre>
+<h2 id="geen-animatie" tabindex="-1">Geen animatie</h2>
+<p>We kunnen basis CSS schrijven om de lijstitems te tonen. We gebruiken de <code>show</code> klasse als een manier om hen zichtbaar te maken, de <code>show</code> klasse verwijderen zou ze dus moeten doen verdwijnen.</p>
+<pre><code>li {
+  list-style: none;
+  background: #d1703c;
+  color: #fff;
+  height: 0;
+  line-height: 2em;
+  margin: 0;
+  padding: 0 0.5em;
+  overflow: hidden;
+  width: 10em;
+}
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 2px 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In deze stijl zetten we de <code>li</code> elementen op om er uit te zien als rechthoeken, zonder de opsommingstekens en geven we hen een <code>height</code> van 0 en een <code>margin</code> van 0 met de <code>overflow</code> op hidden. Dit is om ze onzichtbaar te doen lijken tot we de klasse <code>show</code> toevoegen.</p>
+<p>De <code>show</code> klasse heeft effect op de hoogte en de marge. Omdat we nog geen animatie gebruiken zouden de items op deze manier gewoon plots op de pagina moeten verschijnen. Probeer ook eens op de lijstitems te klikken om ze te zien verdwijnen.</p>
+<section class="add-to-list demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<h3 id="fade" tabindex="-1">Fade</h3>
+<p>Als eerste animatie voegen we een simpel fade effect toe. De lijstitems verschijnen steeds iets meer als ervoor. Visueel ziet dit er wat onhandig uit maar het heeft als voordeel dat gebruikers langer de tijd hebben om te zien dat er iets gebeurd.</p>
+<section class="add-to-list fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<p>Om het effect toe te voegen heb ik een apart stukje CSS gemaakt. Om dit toe te voegen aan uw lijst voeg je de klasse <code>fade</code> toe aan een container rond uw lijst.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="slide-down-%26-fade" tabindex="-1">Slide down &amp; Fade</h3>
+<p>De plotse sprong telkens er een item wordt toegevoegd of verwijderd is een beetje schokkerig. We zullen de hoogte ook aanpassen om een zachter slide effect te bekomen.</p>
+<section class="add-to-list slide-fade demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<p>Het verschil tussen dit en de <code>fade</code> klasse hierboven is enkel dat <code>height: 2em</code> verwijderd is. De <code>show</code> klasse heeft een ingestelde hoogte (overgeërfd van het eerste stukje CSS), de transitie op de hoogte zal automatisch gebeuren.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.slide-fade li</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.4s ease-out<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.slide-fade li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="binnen-schommelen" tabindex="-1">Binnen schommelen</h3>
+<p>Samen met de fade en slide kunnen we ook nog verder gaan door een klein 3D effect toe te voegen. De browser kan elementen transformeren in meer dan de X en Y richting, dit is handig om diepte toe te voegen aan scenes.</p>
+<section class="add-to-list swing demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<p>Om dit op te zetten moeten we de omliggende <code>section</code> definiëren als een stage waarin de 3D transitie plaats vindt. We doen dit door het een <code>perspective</code> waarde te geven.</p>
+<p>Perspectief in CSS is de diepte van de scene. Een lager nummer betekent een minder diep perspectief, met hardere hoeken. Het is de moeite waard om met deze waarde te spelen en zien wat specifiek voor u werkt.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing</span> <span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Vervolgens zetten we de <code>li</code> elementen zo op, om naar hun plaats te transformeren. We gebruiken <code>opacity</code> om een fade effect te bekomen, zoals voordien, maar we voegen ook een <code>transform</code> toe om de <code>li</code> in plaats te roteren.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li.show</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>In dit voorbeeld beginnen we met de <code>li</code> die -90 graden gedraaid is. Als de <code>show</code> klasse wordt toegevoegd zal de <code>transform</code> worden terug gebracht naar <code>none</code>, om het naar zijn zijn plaats te brengen. Om het een schommelend effect te geven gebruiken we de <code>cubic-bezier</code> timing functie.</p>
+<h3 id="binnen-schommelen-uit-de-zijkant" tabindex="-1">Binnen schommelen uit de zijkant</h3>
+<p>We kunnen dit effect aanpassen om makkelijk andere stijlen te creëren. Hieronder een voorbeeld waarbij de items binnen schommelen van opzij.</p>
+<section class="add-to-list swing-side demo-container">
+<ul><li class="show" style="background-color: #d13c9e;">Lijstitem</li><li class="show" style="background-color: #3cd19e;">Lijstitem</li>
+</ul>
+<button>Een lijstitem toevoegen</button></section>
+<p>Om dit effect te creëren moeten we enkel de as van de rotatie aanpassen.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.swing li</span> <span class="token punctuation">{</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-90deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all 0.5s <span class="token function">cubic-bezier</span><span class="token punctuation">(</span>.36<span class="token punctuation">,</span>-0.64<span class="token punctuation">,</span>.34<span class="token punctuation">,</span>1.76<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Het enige wat we verandert hebben is <code>rotateX</code> in <code>rotateY</code>.</p>
+<h2 id="prefixes-en-browser-testing" tabindex="-1">Prefixes en browser testing</h2>
+<p>De code hierboven bevat, omwille van de leesbaarheid, nog geen prefixes. Het is aanbevolen om prefixes toe te voegen om browsers te ondersteunen die de <code>-webkit</code> of een andere prefix nodig hebben. Ik gebruik <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> zodat ik niet hoef in te zitten met die soort zaken.</p>
+<p>Omdat deze animaties bovenop het basis show/hide mechanisme worden geplaatst zouden ze nog steeds functioneel moeten blijven op browsers die dit soort animaties niet ondersteunen. Het is belangrijk om in verschillende browsers en toestellen te testen maar de meeste moderne browsers zouden dit soort animatie moeten ondersteunen.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Denis Valcke. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+  <script src="/javascript/custom/list_items.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Spheres - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Drawing 3D-style spheres with CSS and CSS transitions"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/spheres.css" />
+  
+  
+  <link rel="canonical" href="/spheres/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Spheres - CSS Animation" />
+  <meta property="og:description" content="Drawing 3D-style spheres with CSS and CSS transitions" />
+  <meta property="og:image" content="/images/posts/spheres/home.png" />
+  <meta property="og:url" content="/spheres/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <div class="post-header-container spheres">
+  <div class="eye-holder">
+    <figure class="ball eye">
+      <span class="shadow"></span>
+      <span class="iris"></span>
+    </figure>
+  </div>
+  <div class="bubble-holder one">
+    <div class="bubble-rotate-offset">
+      <figure class="ball bubble"></figure>
+    </div>
+  </div>
+  <div class="bubble-holder two">
+    <div class="bubble-rotate-offset">
+      <figure class="ball bubble"></figure>
+    </div>
+  </div>
+  <div class="bubble-holder three">
+    <div class="bubble-rotate-offset">
+      <figure class="ball bubble"></figure>
+    </div>
+  </div>
+</div>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Spheres</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">August 22, 2015</p>
+      
+      <p>Using the CSS <code>border-radius</code> property, we can create rounded shapes and circles. Add some gradients and they become spheres. Let's try that, and add some animation to bring them to life.</p>
+<h2 id="flat-design" tabindex="-1">Flat design</h2>
+<p>There are two ways we could approach making spheres with CSS.</p>
+<p>One is to create an actual 3D sphere using lots of elements. There are some <a href="http://codepen.io/peterwestendorp/pen/wGECk">beautiful</a> <a href="http://www.cssplay.co.uk/menu/cssplay-3D-sphere.html">examples</a> of these. A potential downside though is that these require the browser display many elements, which can impact performance. They also tend to look a bit rough as a smooth sphere would require many elements.</p>
+<p>Instead of this I'll try a second approach, making use of CSS gradients to add shading and create the 3D effect on a single element.</p>
+<h2 id="demo-and-source-code" tabindex="-1">Demo and source code</h2>
+<p>All the examples mentioned can be found via <a href="http://codepen.io/donovanh">my Codepen account</a>, or by selecting the &quot;Edit on Codepen&quot; links in each example below.</p>
+<p>In the code examples, I've left out any browser prefixes. I'd recommend using a tool like <a href="http://css-tricks.com/autoprefixer/">Autoprefixer</a>, or add in prefixes as needed.</p>
+<h2 id="basic-shape" tabindex="-1">Basic shape</h2>
+<p>Before adding details, we'll create the initial circle shape. Begin with the HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span></code></pre>
+<p>We're using an <code>figure</code> element here, but it could be any element. Figure is an element used in HTML5 to represent an image or diagram that is a part of the content that could be removed without affecting the content's meaning.</p>
+<p>To create a circle from this <code>figure</code> element, I'll give it a width and height, and a border radius of 50%. Anything over 50% will result in a fully rounded corner.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.circle</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>A circle appears.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="sdLhc" data-user="donovanh" data-safe="true"> </div>
+<p>Now that we have a basic circle, we can start to style it up into something more spherical.</p>
+<h2 id="shading-101" tabindex="-1">Shading 101</h2>
+<p>The first thing most 3D-sphere tutorials do is add a single radial gradient, slight up and to the left of the center of a circle.</p>
+<p>We can do this using the following CSS:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.circle</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 100px 100px<span class="token punctuation">,</span> #5cabff<span class="token punctuation">,</span> #000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>You should get something like this:</p>
+<div class="codepen" data-height="400" data-type="result" data-href="zDqAs" data-user="donovanh" data-safe="true"> </div>
+<h3 id="radial-gradients" tabindex="-1">Radial gradients</h3>
+<p>The <code>radial-gradient</code> property takes a few arguments. The first is the center position for the start of the gradient. This follows the form <code>*shape* at *position*</code>. In this case case, it's a circle with it's center position 100 pixels in from the left and 100 pixels from the top.</p>
+<p>Next a series of colours is specified. You can specify more than two colours, but it is then necessary to include a distance with each one so that the gradient knows when to blend each colour into the next.</p>
+<p>In this example just two colours are specified. This lets the browser assumes the first is 0% and the latter is 100%, and it draws the gradient between these to colours. If we wanted other steps in the gradient, we could specify distances in pixels or percentages, as you'll see later.</p>
+<p>So we have something that looks a bit 3D-ish. It's <em>ok</em>, but let's try to make it look a bit nicer.</p>
+<h2 id="shadows-%26-3d" tabindex="-1">Shadows &amp; 3D</h2>
+<p>Depending on what sort shading you apply to the surface, you can create different looking spheres. First though let's set up a scene to place the ball in.</p>
+<p>The HTML we'll use for this has a couple more elements:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ball<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<p>The &quot;ball&quot; element has been given a span which we'll use to create a shadow, and it has been wrapped in a <code>stage</code> div. The stage div is useful when we want to set some perspective and position the shadow, making it look more 3D.</p>
+<p>Apply some styles to the stage and position a shadow to set the scene.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.stage</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">;</span>
+  <span class="token property">perspective-origin</span><span class="token punctuation">:</span> 50% 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.ball .shadow</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.4<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.1<span class="token punctuation">)</span> 40%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>90deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-150px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Note that I'm not showing prefixes in this examples CSS. The Codepen examples contain fully prefixed CSS. In the above I set up the <code>stage</code> div to have <code>perspective</code> of 1,200 pixels. The perspective property is like the vanishing point in a 3D scene.</p>
+<p>The ball's shadow is then placed by giving it a radial gradient, but then positioning it using a <code>transform</code>. Transforms in CSS let you rotate, scale, move or skew things in a 3D space. The shadow is rotated 90 degrees on the X axis, and then is pulled down 150 pixels to the base of the ball.</p>
+<p>Since we established a perspective value on the stage container, we end up looking down on it and can see it as a stretched oval shape.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="pwGxn" data-user="donovanh" data-safe="true"> </div>
+<p>It's starting to look a bit better now. Let's add more shading to the ball itself.</p>
+<h2 id="multiple-shaders" tabindex="-1">Multiple shaders</h2>
+<p>Very rarely in the real world would you find objects lit from just one angle. Surfaces reflect light onto other surfaces and the end results in various light sources mixed together. To create a more realistic looking ball, we'll make it look light there are two light sources by using a pseudo-element to add two gradients.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.ball</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 120%<span class="token punctuation">,</span> #81e8f6<span class="token punctuation">,</span> #76deef 10%<span class="token punctuation">,</span> #055194 80%<span class="token punctuation">,</span> #062745 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.ball:before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 1%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 0px<span class="token punctuation">,</span> #ffffff<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 58%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>5px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we have two slightly more complex gradients.</p>
+<p>The first gradient is a subtle under-lighting effect and it applied to the <code>ball</code> element. The center of the gradient is positioned half-way across and at 120% of the ball's height. This places the center off the ball's surface. I did this so that the sharp ending colour wasn't visible, resulting in a smoother gradient.</p>
+<p>The second gradient is a highlight, placed at the top. It's set to be 90% of the ball's width and 90% of its height. The gradient is centered at the top so that it fades out at around halfway down the ball.</p>
+<p>I've used the <code>before</code> pseudo-element rather than create a new element to contain the shading.</p>
+<p>Since this highlight gradient has a sharp edge, I've made use of the <code>blur</code> effect to soften the highlight. Unfortunately this is currently only a webkit feature (Chrome and Safari) but it may be more useful in future across other browsers.</p>
+<p>Both gradients combine to create a much nicer effect:</p>
+<div class="codepen" data-height="400" data-type="result" data-href="fEaru" data-user="donovanh" data-safe="true"> </div>
+<h2 id="shinier" tabindex="-1">Shinier</h2>
+<p>The effect so far is quite soft, so let's add some shine and create something more like a snooker ball.</p>
+<p>To achieve this we'll make use of a soft under light as before, but adjust the top highlight to be smaller and sharper. We'll need to make use of two psuedo-selectors to contain the ball's colour, a bottom highlight and a reflection.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.ball</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 120%<span class="token punctuation">,</span> #323232<span class="token punctuation">,</span> #0a0a0a 80%<span class="token punctuation">,</span> #000000 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.ball:before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 120%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 70%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 2.5%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>
+  <span class="token property">opacity</span><span class="token punctuation">:</span> 0.6<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>5px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.ball:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 5%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 10%<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0.8<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0.8<span class="token punctuation">)</span> 14%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 24%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-80px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-90px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>-20deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Here we have the initial colour being applied as a subtle gradient on the ball itself. The <code>before</code> pseudo-element contains a lighter highlight, which again starts at the bottom of the ball and creates the effect of reflected light from the surface.</p>
+<p>The new addition here is the <code>after</code> psuedo-selector. It contains a circular gradient that starts almost opaque white at the center, and fades to transparent at around the 24% mark. This creates a white shiny effect, but to make it look like it's reflecting off a three dimensional object, we apply a CSS <code>transform</code>.</p>
+<p>The transform moves the shine effect left 80 pixels then up 90 pixels, and to adds a skew effect. The skew effect stretches the circle along the X-axis, so that it looks more like the sheen you'd find on a shiny ball.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="LuEAB" data-user="donovanh" data-safe="true"> </div>
+<h3 id="8-ball" tabindex="-1">8-ball</h3>
+<p>While we're making a pool ball, let's go the extra step and add the number 8.</p>
+<p>We'll need an extra element to contain the 8, as well as some styles to place it on the ball.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ball<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>eight<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.ball .eight</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 110px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 110px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 30%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>68px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-60px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span> <span class="token function">skewY</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.ball .eight:before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"8"</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> -40px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> -40px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Arial<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 104px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The 100% border radius is again used to create a circle, and this circle is positioned at the top right using the <code>transform</code> property. Rather that put the number 8 into the content, I'm using the <code>before</code> psuedo-selector to add the content via CSS, and then skewing the number in a similar way to the containing circle.</p>
+<p>The result is a shiny 8-ball.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="nzmJq" data-user="donovanh" data-safe="true"> </div>
+<h2 id="got-my-eye-on-you" tabindex="-1">Got my eye on you</h2>
+<p>One of the great things about CSS transforms is that they can be animated. Using CSS <code>keyframes</code> for animation, you can describe a series of transforms as an animation and apply that to an element. To show this, I'll create and animate an eyeball.</p>
+<p>First step is to adjust some of the colours use in the 8-ball example. A few tweaks and it's looking a lot more like an eye. First, the HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stage<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ball<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shadow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>iris<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<p>The bulk of the CSS is similar to the 8-ball, with the exception of the iris and pupil parts.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.iris</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 40%<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 30%<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle at 50% 50%<span class="token punctuation">,</span> #208ab4 0%<span class="token punctuation">,</span> #6fbfff 30%<span class="token punctuation">,</span> #4381b2 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>68px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-60px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span> <span class="token function">skewY</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move-eye-skew 5s ease-out infinite<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.iris:before</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 37.5%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 37.5%<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 31.25%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 31.25%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.iris:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 31.25%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 31.25%<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 18.75%<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 18.75%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>A blue gradient forms the coloured part of the iris, and then the pupil and a highlight are created as pseudo-elements. I've also added the animation property to the iris element. Animations are attached to elements using a format like this:</p>
+<pre><code>animation: animation-name 5s ease-out infinite;
+</code></pre>
+<p>In this case we'd be applying an animation called &quot;animation-name&quot;, setting it to last 5 seconds, loop indefinitely, and applying an easing value of &quot;ease-out&quot;. Ease-out is when the animation slows down as it reaches the end, creating a more natural effect.</p>
+<p>Without the animation yet created, we have a very static eyeball.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="nwsqa" data-user="donovanh" data-safe="true"> </div>
+<p>Lets create some keyframes to describe how the eyeball should move.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> move-eye-skew</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">20%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-68px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>30px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>15deg<span class="token punctuation">)</span> <span class="token function">skewY</span><span class="token punctuation">(</span>-10deg<span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span>0.95<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">25%, 44%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">50%, 60%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>68px<span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-40px<span class="token punctuation">)</span> <span class="token function">skewX</span><span class="token punctuation">(</span>5deg<span class="token punctuation">)</span> <span class="token function">skewY</span><span class="token punctuation">(</span>2deg<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>0.95<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">66%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Animation keyframes in CSS can seem tricky at first. What you're doing is describing the state of the element at a series of stages. Each state is mapped to a percentage. In this case the iris will begin with no transforms applied. Then at 20%, a transform will apply in which it is moved and skewed to the left. The gap between 0 and 20% is automatically calculated by the browser, creating a smooth transition between these two points.</p>
+<p>This continues across each of the keyframes, and the entire animation in this case takes 5 seconds, as specified earlier.</p>
+<p>Don't forget to create moz, ms, o and non-prefixed versions of keyframe animations as some browsers need the prefixes.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="iBolr" data-user="donovanh" data-safe="true"> </div>
+<h2 id="bubbles" tabindex="-1">Bubbles</h2>
+<p>Using a combination of shading and animation can produce all sorts of interesting and varied effects. How about some bubbles?</p>
+<p>Creating the bubble look is similar to before, using more transparency in the main colour and two pseudo-elements to add shine.</p>
+<p>The animation makes use of the <code>scale</code> transform to make the entire bubble wobble.</p>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> bubble-anim</span> <span class="token punctuation">{</span>
+  <span class="token selector">0%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">20%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>0.95<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>1.05<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">48%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>1.1<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>0.9<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">68%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>0.98<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>1.02<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">80%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span>1.02<span class="token punctuation">)</span> <span class="token function">scaleX</span><span class="token punctuation">(</span>0.98<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">97%, 100%</span> <span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The animation applies to the entire bubble and its pseudo-elements.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="pvrzK" data-user="donovanh" data-safe="true"> </div>
+<h2 id="using-images" tabindex="-1">Using images</h2>
+<p>So far all the balls have been created without using any images. Applying a background image can add more detail, and still take advantage of the CSS shading within the pseudo-elements. For example, an unshaded texture of a tennis ball:</p>
+<img src="http://hop.ie/balls/images/tennisball.png" style="max-width:200px" alt="Unshaded tennis ball image">
+<p>Adding some CSS gradients can create the illusion of depth.</p>
+<div class="codepen" data-height="400" data-type="result" data-href="vsEIK" data-user="donovanh" data-safe="true"> </div>
+<h3 id="around-the-world" tabindex="-1">Around the world</h3>
+<p>Animation can also be applied to the position of background images. Using this we can create a spinning globe.</p>
+<p>This flat image was stretched a little at the top and bottom to be used as a background image.</p>
+<img src="http://hop.ie/balls/images/world-map-one-color.png" alt="Flat world map">
+<p>With some shading and animation added, a 3D-style globe can be created. Select &quot;Result&quot; in this Codepen to see it in action. I've set it to display the HTML by default as the performance on this example was pretty slow, causing the fan to kick in on my development laptop.</p>
+<p>Note: Many thanks to Sidoruk Sergey ‏(<a href="http://twitter.com/Sidoruk_SV">@Sidoruk_SV</a>) for upgrading this globe. It's looking great.</p>
+<div class="codepen" data-height="400" data-type="html" data-href="GBIiv" data-user="donovanh" data-safe="true"> </div>
+<h2 id="resources" tabindex="-1">Resources</h2>
+<p>Some <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient">good info about radial gradients</a> in case you'd like to know more.</p>
+<p>Looking for more 3D examples? Check out <a href="/portal/">Portal CSS</a> for inspiration.</p>
+<h2 id="feedback" tabindex="-1">Feedback</h2>
+<p>All the examples mentioned can be found via <a href="http://codepen.io/donovanh">my Codepen account</a>. Many thanks to Chris and the team for making such a fantastic resource.</p>
+<p>If you have any questions about the above, get in touch <a href="mailto:hello@cssanimation.rocks">by email</a> or <a href="http://twitter.com/cssanimation">on Twitter</a>.</p>
+<script src="//codepen.io/assets/embed/ei.js"> </script>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+
+      
+        
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

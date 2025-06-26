@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Dlaczego animować? - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="Dlaczego animacje działają tak dobrze i jak można je wykorzystać do poprawienia projekt&amp;oacute;w sieciowych."
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  
+  <link rel="canonical" href="/pl/why-animate/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Dlaczego animować? - CSS Animation" />
+  <meta property="og:description" content="Dlaczego animacje działają tak dobrze i jak można je wykorzystać do poprawienia projekt&amp;oacute;w sieciowych." />
+  <meta property="og:image" content="/images/posts/why-animate/home.png" />
+  <meta property="og:url" content="/pl/why-animate/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="shorter">
+    
+
+  <section class="post-header shorter">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Dlaczego animować?</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Patrząc na płomienie ognia, oglądając fale rozbijających się o brzeg morza lub obserwując spojrzenie tygrysa zamierzającego się rzucić, wiemy że świat jest w ruchu.</p>
+<p>Jesteśmy naprawdę dobrzy w dostrzeganiu i reagowaniu na ruch. Jest ściśle związany z naszymi mózgami i jest ważną częścią tego jak postrzegam świat wokół nas.</p>
+<p>Kiedy siadamy i projektujemy stronę internetową, tworzymy coś co będzie się komunikowało z naszymi odwiedzającymi. Animacje są jednym ze sposobów na wykonanie tego.</p>
+<h2 id="komunikacja" tabindex="-1">Komunikacja</h2>
+<p>Często podczas projektowania stron internetowych możemy zastanawiać się nad treścią, układem, stylami, czcionkami i kolorami. Ale możemy również komunikować się przez ruch. Zamiast rozpatrywać animacji jako czegoś odrębnego w procesie projektowania, możemy traktować obiekty w ruchu jako inny aspekt w naszych projektach, który działa i komunikuje się równolegle z wszystkim innym.</p>
+<p>Wszystkie te rzeczy łączą się, aby stworzyć naszą markę i wrażenia, które będą tego warte.</p>
+<p>Mamy nadzieję, że nasze projekty efektywnie przedstawiają treść, wielką dbałość o szczegóły i zadowalają naszych odwiedzających. Ponieważ nasi goście zauważają i rozumieją ruch, animacja jest ważnym i potężnym narzędziem.</p>
+<h2 id="skromne-pocz%C4%85tki" tabindex="-1">Skromne początki</h2>
+<p>Prosty przykład animacji, którą widzimy wszędzie jest efekt najechania. Zachwycanie się teraz tą prostą koncepcją jest dziwne, ale gdy została przedstawiona pierwszy raz, było to wielkie wydarzenie.</p>
+<p>Kiedy sieć nabierała kształtów, mieliśmy dokumenty połączone za pomocą hiperłączy. Chcąc wyróżnić tekst od łącza, nadawano tym drugim niebieski kolor i podkreślano. Kursor zmieniał się również na styl <code>pointer</code>.</p>
+<p>Po kliknięciu zmieniały kolor na fioletowy, aby pokazać, że zostały aktywowane lub później, że były już odwiedzone. Kolory były wykorzystywane do informowania o statusie łącza. Sprawy miały się naprawdę dobrze.</p>
+<p>Potem pojawił się CSS. Na <a href="http://www.w3.org/TR/WD-CSS2-971104/cover.html" title="w3 specification for CSS 2">początku 1998</a> pojawił się selektor <code>:hover.</code> Nagle mogliśmy zrobić znacznie więcej. Zamiast polegać na nagłej zmianie kursora, mogliśmy nałożyć style na samo łącze, gdy kursor znajdował się nad nim.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Za pomocą tej małej zmiany, komunikowaliśmy więcej. Lista łączy stała się interaktywnym placem zabaw,gdy radośnie przesuwaliśmy nasze kursory, uzyskując błyskawiczną informację zwrotną od kolorów łączy.</p>
+<p>To nie była tylko zabawa. Zmiana koloru daje więcej informacji o tym co się dzieje na ekranie. Ludzie doskonale dostrzegają ruch lub zmianę obiektów, korzystając z dodatkowych informacji. Ale możemy więcej.</p>
+<h2 id="przekazywanie-wi%C4%99cej-informacji" tabindex="-1">Przekazywanie więcej informacji</h2>
+<p>Zamiast zatrzymać się na zmianie koloru, możemy dodać również animacje. Animowanie zmiany koloru daje naszym oczom większą szansę na zauważenie zmiany, ponieważ przyciąga wzrok na dłuższą chwilę Łatwiej dostrzec animowaną niż nagłą zmianę.</p>
+<pre><code>a {
+  transition: color 0.2s;
+}
+a:hover {
+  color: red;
+}
+</code></pre>
+<p>Dzięki temu możemy dodać przejście do kotwicy CSS. Po najechaniu na łącze, przeglądarka będzie animowała kolor tekstu z niebieskiego (lub fioletowego) do czerwonego przez okres 0.2 sekundy.</p>
+<h2 id="id%C4%85c-dalej" tabindex="-1">Idąc dalej</h2>
+<p>Być może to nie wiele, ale te proste narzędzia otwierają świat komunikacji, który możemy wykorzystać, aby tchnąć życie w nasze projekty.</p>
+<p>Dzięki możliwości przekazywania informacji za pośrednictwem ruchu, możemy przyciągnąć uwagę do odświeżonych obszarów strony, zakomunikować dodanie lub usunięcie treści, pokazać naszym odwiedzającym na co robić dalej i znacznie więcej.</p>
+<p>Niektóre sposoby animacji mogą dodać wartość do projektu:</p>
+<ul>
+<li>Podświetlanie interaktywnej treści</li>
+<li>Dodawanie i usuwanie treści</li>
+<li>Opowiadanie historii</li>
+<li>Przyciąganie uwagi</li>
+<li>Wiarygodność</li>
+<li>Znakowanie i zabawa</li>
+</ul>
+<h3 id="pod%C5%9Bwietlanie-interaktywnej-tre%C5%9Bci" tabindex="-1">Podświetlanie interaktywnej treści</h3>
+<p>Najeżdżanie na łącza jest jednym sposobem na dodanie wartości, ale może pójść dalej. Wskazówki, zmiana stylów i inne zmiany wizualne mogą znacznie ożywić strony i nakłonić odwiedzających do wybierania, naciskania lub inaczej wchodzenia w interakcję z treścią. Obszary mogą się rozwijać lub podświetlać po kliknięciu, biało-czarne obrazy mogą zmienić się w kolorowe i znacznie więcej.</p>
+<h3 id="dodawanie-i-usuwanie-tre%C5%9Bci" tabindex="-1">Dodawanie i usuwanie treści</h3>
+<p>Jeśli treść na stronie nagle pojawia się lub znika, możemy do dostrzec. Ale to wszystko co wiemy. Nie wiem, gdzie się teraz znajduje i dlaczego zniknął. To jest okazja, aby dodać małą animację.</p>
+<p>Dodawanie dodatkowego wiersza do list zadań, suwaka w panelu sterowania lub minimalizowania treści do rogu strony, wszystko to korzysta z animacji. Pokazując skąd elementy pochodzą i gdzie są przenoszone, nasi odwiedzający utrzymują połączenie ze stroną i lepiej rozumieją jak działa.</p>
+<h3 id="opowiadanie-historii" tabindex="-1">Opowiadanie historii</h3>
+<p>Nie jesteśmy ograniczeni do tekstu lub nieruchomych obrazów na naszych stronach internetowych. Przesuwając elementy, dodając nowe elementy lub usuwając je, możesz wziąć gości w podróż i dostarczyć im więcej informacji.</p>
+<p>Strona domowa <a href="http://mailchimp.com">Mailchimp</a> jest tego dobrym przykładem. Na środku ekranu wykorzystali kilka elementów HTML i kilka animacji CSS, aby wytłumaczyć jak się buduje emaile.</p>
+<p>Kiedyś mogliśmy stworzyć coś takiego za pomocą Flash, ale teraz możemy wykonać to samo bez polegania na wtyczkach i jednocześnie sprawiając, że nasza strona będzie szybka, łatwo dostępna i elastyczna.</p>
+<h3 id="przyci%C4%85ganie-uwagi" tabindex="-1">Przyciąganie uwagi</h3>
+<p>Jesteśmy świetni w dostrzeganiu rzeczy zmieniających się wizualnie. Ta cecha jest czymś co możemy wykorzystać do przyciągania uwagi do określonych obszarów. Powszechnym zastosowaniem tego może być aktualizacja treści na stronie, która będzie migać lub zmieniać kolor. </p>
+<p>Możemy pójść dalej i sprawić, że nasz przycisk rejestracji będzie się delikatnie trząsł po załadowaniu strony mówiąc &quot;hej, jestem ważny&quot; lub sugerowany artykuł wlatuje z boku ekranu kiedy odwiedzający dotrze do końca poprzedniego.</p>
+<p>Dbając o to, animacja jest bardzo potężnym sposobem na przyciągnięcie uwagi do tego co chcemy.</p>
+<h3 id="wiarygodno%C5%9B%C4%87" tabindex="-1">Wiarygodność</h3>
+<p>Czymś rzadziej branym pod uwagę jest efekt jaki dobra animacja wywiera na odwiedzających naszą stronę, jeżeli chodzi o zaufanie. Jeśli dostrzegasz interakcję z swoim systemem operacyjnym, istnieje wiele subtelnych animacji. Okna pojawiając, zanikając, minimalizując lub maksymalizując się pomagają zrozumieć komputer.</p>
+<p>Kiedy projektujemy strony internetowe często zapominamy o tym i tworzy coś płaskiego. Animacje mogą sprawić, że interakcje strony wyglądają lepiej.</p>
+<p>W <a href="https://medium.com/@michaelvillar/improve-the-payment-experience-with-animations-3d1b0a9b810e" title="Improve the payment experience with animations">artykule na Medium.com</a>, Michaël Villar wyjaśnia jak proces zakupu Stripe używa animacji, aby pomóc użytkownikowi zarówno w finalizacji zamówienia, ale również w zaszczepieniu zaufania.</p>
+<blockquote>
+<p>&quot;Niesamowite dopracowanie tej animacji zwiększa ogólne wrażenia użytkowania przekazując poziom doskonałości i dbałości o szczegóły, któremu nie można się oprzeć tylko zaufać&quot;</p>
+</blockquote>
+<p>Za pomocą właściwego stylu, animacje mogą sprawić, że użytkownik czuje, że używa nowoczesnego UI.</p>
+<h3 id="znakowanie-i-zabawa" tabindex="-1">Znakowanie i zabawa</h3>
+<p>Kiedy <a href="http://yahoo.com" title="Yahoo">Yahoo!</a> przechodził dużą zmianę marki w 2013, dodano subtelne animacje do każdego logo strony internetowej. Dążąc do przekazania poczucia radości, przyciągnęli uwagę do zmiany i sprawili, że ludzie o tym mówili.</p>
+<p>Strona prawdopodobnie już ich nie ma, ale możesz znaleźć przykłady animacji na <a href="http://astronautlove.tv/yahoo-rebrand-yahoo/" title="Examples of the Yahoo! logos being animated">stronie Astronaut Love</a>.</p>
+<p>Kiedy Stripe używa animacji, robi to na odpowiednim poziomie, który ludzie (i deweloperzy rozważający skorzystanie z ich usług) wiążą z ich nazwą. W obu przypadkach, animacja pomaga przyciągnąć uwagę i wzmocnić ich markę.</p>
+<p>Animacje mogą być również zabawą. Na <a href="http://hop.ie" title="Hop.ie">Hop.ie</a> stworzyłem postać imieniem &quot;bouncer&quot;, który wskakuje z lewej strony pełniąc rolę loga. Zachowując bardzo prosty wygląd strony, skoczek posiada również kotwicę, która prowadzi do strony domowej. Nie ma tutaj potrzeby animacji, ale myślę, że to podnosi trochę ton. Nie ma nic złego w odrobinie zabawy.</p>
+<h2 id="wielka-moc%2C-wielka-odpowiedzialno%C5%9B%C4%87" tabindex="-1">Wielka moc, wielka odpowiedzialność</h2>
+<p>Animacja to potężne narzędzie. Podobnie jak łatwo wpatrywać się w płonący ogień, trudno nam ignorować animacje. Niektórzy ludzie uważają, że jest to niemożliwe.</p>
+<p>Rozważając sposób używania animacji w swoich projektach, pamiętaj, że jest to narzędzie komunikacji. Powinny być wykorzystywane oszczędnie i nigdy nie wchodzić w drogę treści lub interakcji.</p>
+<p>Nieprzyjemnie słuchać wielu ludzi rozmawiających jednocześnie lub próbować skupić się w głośnym środowisku. Zbyt wiele animacji tworzy wizualny hałas, który rozprasza i utrudnia życie twoim gościom. Mając to na uwadze, zawsze staraj się ograniczać użycie animacji, aby były subtelne.</p>
+<h2 id="dlaczego-animowa%C4%87-teraz%3F" tabindex="-1">Dlaczego animować teraz?</h2>
+<p>Nigdy nie było lepszego czasu na wprowadzenie animacji do procesu projektowania. Przeglądarki stają się coraz lepsze, urządzenia bardziej potężne, a my dostajemy lepsze narzędzia do tworzenia animacji.</p>
+<p>Korzystanie z animacji wymaga oceny. Jeśli chcesz być dobry w używaniu animacji do wyróżniania treści, poprawiania konwersji lub ogólnie doskonalenia marki, nadszedł czas, aby zacząć. </p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="https://cssanimation.rocks/demo/starwars" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mateusz Kurlit. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>

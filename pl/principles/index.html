@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    Reguły animacji w sieci - CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="How Disney&#39;s 12 Principles of Animation can be applied to web designs"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+  <link rel="stylesheet" href="/css/custom/principles.css" />
+  
+  
+  <link rel="canonical" href="/pl/principles/" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="Reguły animacji w sieci - CSS Animation" />
+  <meta property="og:description" content="How Disney&#39;s 12 Principles of Animation can be applied to web designs" />
+  <meta property="og:image" content="/images/posts/principles/principles.png" />
+  <meta property="og:url" content="/pl/principles/" />
+  
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+
+  <body class="">
+    
+
+  <section class="post-header">
+
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    
+      <section class="demo">
+        <section class="demo-container principle principle-twelve">
+  <div class="demo-angler">
+    <div class="shape">
+      <div class="container">
+        <span class="item one"></span>
+        <span class="item two"></span>
+        <span class="item three"></span>
+        <span class="item four"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </section>
+    
+    <div class="absolute-nav">
+      <nav>
+  <ul>
+    <li><a href="/courses/">Learn CSS Animation</a></li>
+    <li><a href="https://weekly.cssanimation.rocks">Weekly Newsletter</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns ">
+      <h1 class="post-title" style="margin-bottom:4px;">Reguły animacji w sieci</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">June 26, 2025</p>
+      
+      <p>Jako projektanci oraz deweloperzy front-endowi, wykorzystujemy CSS do stylizacji, pozycjonowania oraz tworzenia świetnie wyglądających stron. Bardzo często, CSS służy Nam również w celu dodania ruchu na naszej stronie w formie przejść oraz animacji, niestety najczęściej nie wykraczamy poza ów obszar.</p>
+<p>Animacje potrafią być bardzo potężnym narzędziem dla Naszych klientów i gości aby pomóc im zrozumieć oraz docenić Nasz design. Istnieje szereg reguł które możemy wcielić w Nasze prace aby wykorzystać maksimum ich możliwości.</p>
+<p>Dawno utwierdzone, fundamentalne zasady pracy w Disney, <a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation">12 Reguł Animacji</a> zostały opublikowane jako &quot;The Illusion of Life: Disney Animation&quot; w 1981. Reguły które mówią w jaki sposób animacja może być wykorzystana aby pomóc widzowi pogrążyć się w realistycznie przedstawionym świecie.</p>
+<p>W tym artykule omówię każdą z 12stu reguł oraz przedyskutuję w jaki sposób można je wykorzystać na stronie internetowej. <a href="http://codepen.io/collection/AxKOdY/">Link do kodu możecie znaleźć tutaj</a>.</p>
+<h2 id="squash-and-stretch-(zgnie%C4%87-i-rozci%C4%85gnij)" tabindex="-1">Squash and stretch (Zgnieć i rozciągnij)</h2>
+<section class="demo-container principle principle-one">
+  <div class="wrapper">
+  <div class="shape"></div>
+  <div class="surface"></div>
+  </div>
+</section>
+<p>Wyobrażenie że każdy obiekt posiada swoją masę która pozostaje taka sama w momencie ruchu. Piłka się rozszerzy podczas odbijania się od ziemi, ale też stanie się niższa kiedy jej masa się rozłoży.</p>
+<p>Jest to bardzo pomocne podczas tworzenia obiektów które chcemy aby uważano je za cos fizycznego i prawdziwego - jak ludzie, zegarki lub odbijające się piłki.</p>
+<p>Możliwe jest pominięcie ów zasady podczas tworzenia stron internetowych. Elementy DOM nie są koniecznie powiązane z obiektami fizycznymi i mogą się zwiększać oraz zmniejszać na ekranie kiedy jest wymagane. Na przykład - przycisk może się zwiększyć i zmienić w okno dialogowe lub mogą się pojawiać i znikać informacje o błędach.</p>
+<p>Jednak wciąż reguła &quot;Squash and stretch&quot; może być wykorzystana aby nadać obiektowi wrażenia posiadania masy fizycznej. Nawet małe zmiany w kształcie mogą być subtelne ale przyciągające wrażenie.</p>
+<h2 id="anticipation-(oczekiwanie)" tabindex="-1">Anticipation (Oczekiwanie)</h2>
+<section class="demo-container principle principle-two">
+  <div class="wrapper">
+  <div class="shape"></div>
+  <div class="surface"></div>
+  </div>
+</section>
+<p>Ruch na ogół nie wydarzy się błyskawicznie. W prawdziwym życiu ruch jest poprzedzany przygotowaniem jak na przykład piłka która dopiero zaczyna się staczać zanim spadnie ze stołu lub osoba która ugina kolana aby przygotować się do skoku.</p>
+<p>Możemy to wykorzystać aby Nasze przejścia i animacje były bardziej żywe. Oczekiwanie może być w formie subtelnej sprężystości która pomoże widzom zrozumieć zmiany i bacznie obserwować obiekty na ekranie.</p>
+<p>Na przykład, element mógłby się trochę zmniejszyć przed powiększeniem kiedy najedziemy na niego kursorem; dodawania dodatkowych przedmiotów do listy mogłoby być przedstawione w taki sposób że starsze przedmioty robiłyby miejsce dla nowych.</p>
+<h2 id="staging-(inscenizacja)" tabindex="-1">Staging (Inscenizacja)</h2>
+<section class="demo-container principle principle-three">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  <div class="shape c"></div>
+  </div>
+</section>
+<p>Inscenizacja polega na tym aby obiekt był w centrum uwagi w momencie kiedy inne obiekty grają rolę drugoplanową. Można to osiągnąć pozycjonując główne wydarzenie w widocznym miejscu lub maskując inne elementy aby uwidocznić na czym użytkownik musi skupić swoją uwagę.</p>
+<p>Kolejnym podejściem jest wykorzystanie ruchu. Kiedy w tym samym momencie porusza się bardzo dużo obiektów, trudno jest Nam skupić uwagę na tym na czym powinniśmy. Jeżeli wszystkie inne obiekty przestaną się poruszać a tylko jeden będzie się wciąż poruszał, nawet odrobinę - będzie to o wiele łatwiejsze do spostrzeżenia.</p>
+<p>Jedną z technik jest sprawienie aby przycisk &quot;Save&quot; zadrżał lub błysną chwilowo aby zasugerować użytkownikowi chęć zapisania dokumentu. Kiedy cała reszta ekranu jest statyczna, nawet subtelny ruch będzie się wyróżniał.</p>
+<h2 id="straight-ahead-action-and-pose-to-pose-(rysowanie-progresywne-i-wed%C5%82ug-klatek-kluczowych-oraz-od-pozy-do-pozy)" tabindex="-1">Straight-Ahead Action and Pose-to-Pose (Rysowanie Progresywne i według Klatek Kluczowych oraz od Pozy do Pozy)</h2>
+<section class="demo-container principle principle-four">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+<p>Straight-Ahead Action jest wtedy kiedy każda klatka animacji jest narysowana. Od pozy do pozy występuje kiedy seria klatek kluczowych jest wykonana a później uzupełniona, najczęściej przez asystenta.</p>
+<p>Większość animacji wykorzystuje styl od pozy do pozy: przejściami między klatkami może się zając przeglądarka która dodaje zmiany wśród klatek i wyciąga tyle klatek ile może aby animacja była płynna.</p>
+<p>Jednym z wyjątków do tego jest funkcja czasowa 'steps'(kroki). Dzięki ów funkcji, przeglądarka 'steps'(wykonuje kroki) przez tyle klatek ile jest zdefiniowanych. W ten sposób możemy pokazać serię obrazków i sprawić aby przeglądarka wyświetlała je jedno po drugim, tworząc w ten sposób animację w stylu &quot;Straight-Ahead Action&quot;.</p>
+<h2 id="follow-through-and-overlapping-action-(nak%C5%82adanie-si%C4%99-i-pod%C4%85%C5%BCanie-za-akcj%C4%85)" tabindex="-1">Follow Through and Overlapping Action (Nakładanie się i podążanie za akcją)</h2>
+<section class="demo-container principle principle-five">
+  <div class="wrapper">
+  <div class="shape-container">
+```html
+<div class="shape"></div>
+```
+  </div>
+  </div>
+</section>
+<p>Wszystko nie dzieje się w tym samym momencie. Kiedy samochód niespodziewanie się zatrzymuje, przechyla się do przodu, z dymem spod kół oraz kierowcą który kontynuuje ruch aż do momentu zatrzymania.</p>
+<p>Takie detale są przykładem nakładania się i podążania za akcją.
+Mogą być wykorzystane w sieci aby podkreślić fakt ze coś się zatrzymuje. Na przykład, przedmiot w liście może się wsunąć trochę za daleko, skorygować swoje położenie i ustawić się w odpowiednim miejscu.</p>
+<p>Do stworzenia wrażenia nakładania się akcji, możemy sprawić aby elementy poruszały się z różnymi prędkościami względem siebie.
+Jest to technika wykorzystywana w systemach operacyjnych iOS kiedy następuje przejście między widokami.
+Niektóre przyciski i guziki poruszają się w różnych odstępach, efekt jest bardziej realistyczny i mniej płaski niż kiedy wszystko porusza się w tym samym momencie. Połączone efekty dają użytkownikowi czas aby dokładnie zrozumieli zmianę.</p>
+<h2 id="slow-in-and-slow-out-(rozp%C4%99dzania-i-zwolnienie)" tabindex="-1">Slow In and Slow Out (Rozpędzania i zwolnienie)</h2>
+<section class="demo-container principle principle-six">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  </div>
+</section>
+<p>Obiekty bardzo rzadko uzyskują maksymalną prędkość ze stanu spoczynku, stopniowo zwiększają swoja prędkość lub ją wytrącają przed zatrzymaniem. Bez przyspieszenia i zwolnienia, ruch sprawia wrażenie mechanicznego.</p>
+<p>W CSS, rozpędzania i zwolnienie jest znane nam jako 'easing'. Easing jest funkcja czasową, sposobem zdefiniowania prędkości zmian podczas animacji.</p>
+<p>Przy wykorzystaniu funkcji czasowej, animacja może się rozpocząć powoli i stopniowo zwiększać swoją prędkość(ease-in), rozpocząć szybko a potem zwolnić swoje tempo(ease-out) lub bardziej kompleksowe efekty dzięki wykorzystaniu 'cubic-bezier'.</p>
+<h2 id="arc-(%C5%82uki)" tabindex="-1">Arc (Łuki)</h2>
+<section class="demo-container principle principle-sevena">
+  <div class="wrapper">
+  <div class="shape-container">
+```html
+<div class="shape a"></div>
+```
+  </div>
+  </div>
+</section>
+<p>Obiekty są bardziej realistyczne kiedy poruszają się wedle zasady 'Rozpędzenia i Zwolnienia', bardzo rzadko podążają wzdłuż linii prostej: mają one również tendencję do ruchu w trajektorii łuku.</p>
+<p>W CSS możemy ów efekt ruchu uzyskać na różne sposoby. Jednym z nich jest połączenie ze sobą kilku animacji. Animacja odbijającej się piłki, na przykład, może być połączeniem dwóch animacji, jednej która wprawia piłkę w ruch poziomy a druga animacja w ruch pionowy. Piłka poruszała by się wtedy na ekranie po trajektorii łuku.</p>
+<section class="demo-container principle principle-sevenb">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+<p>Inną opcją jest obrócenie obiektu. Możemy dostosować środek rotacji obiektu poprzez ustawienie opcji 'transform' poza obszar elementu. Kiedy obrócimy obiekt, będzie się on obracał po trajektorii łuku.</p>
+<h2 id="secondary-action-(akcja-drugoplanowa)" tabindex="-1">Secondary Action (Akcja drugoplanowa)</h2>
+<section class="demo-container principle principle-eight">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  <div class="shape c"></div>
+  </div>
+</section>
+<p>W momencie kiedy dzieje się główna akcja, akcja drugoplanowa może ją wzbogacić lub podkreślić. Może to być ruch rękami podczas spaceru lub przechylenie głowy. Lub odbijająca się piłka która wznieca tuman kurzu.</p>
+<p>Na stronie internetowej, akcja drugoplanowa może polegać na tym że elementy ustępują miejsce głównemu elementowi który jest przedstawiony, jak na przykład, przeciągnięcie przedmiotu na środek listy.</p>
+<h2 id="timing-(taktowanie%2Fczas-trawania)" tabindex="-1">Timing (Taktowanie/Czas trawania)</h2>
+<section class="demo-container principle principle-nine">
+  <div class="wrapper">
+  <div class="shape a"></div>
+  <div class="shape b"></div>
+  </div>
+</section>
+<p>Taktowanie/Czas trwania może być wykorzystany aby pokazać ciężar poruszającego się obiektu, lub by dodać poruszającemu się obiektowi charakteru.</p>
+<p>W sieci jest to proste dzięki dostosowaniu wartości 'animation-duration' oraz 'transition-duration'.</p>
+<p>Sprawienie że animacja trwa dłużej niż powinna jest proste. Dostosowanie czasu trwania może być pomocne aby pozbyć się animacji z treści lub interakcji.</p>
+<h2 id="exaggeration-(wyolbrzymienie)" tabindex="-1">Exaggeration (Wyolbrzymienie)</h2>
+<section class="demo-container principle principle-ten">
+  <div class="wrapper">
+  <div class="shape"></div>
+  </div>
+</section>
+<p>Najczęściej wykorzystywane w kreskówkach, wyolbrzymienie może przyciągnąć uwagę na niektóre zachowania i sprawić że wyglądają bardziej dramatycznie. Wilk chcąc ugryźć może otworzyć szczęki szerzej niż normalnie aby efekt był przerażający albo śmieszny.</p>
+<p>Na stronie internetowej, obiekt może być zmniejszony i powiększony aby przyciągnąć uwagę. Na przykład podczas wypełniania formy, sekcja która jest aktywna może się powiększyć a reszta zmniejszyć lub zniknąć.</p>
+<h2 id="solid-drawing-(rysunek-przestrzenny)" tabindex="-1">Solid drawing (Rysunek przestrzenny)</h2>
+<section class="demo-container principle principle-eleven">
+  <div class="wrapper">
+  <div class="shape">
+```html
+<div class="container">
+  <span class="front"></span>
+  <span class="back"></span>
+  <span class="left"></span>
+  <span class="right"></span>
+  <span class="top"></span>
+  <span class="bottom"></span>
+</div>
+```
+  </div>
+  </div>
+</section>
+<p>Podczas animowania obiektu w trzech wymiarach należy mieć na uwadze fakt aby dany obiekt przestrzegał zasad perspektywy. Ludzie są przyzwyczajeni do życia w świecie trój wymiarowym, więc kiedy obiekt zachowuje się nie tak jak powinien - wygląda to źle.</p>
+<p>Nowoczesne przeglądarki mają przyzwoite wsparcie dla trój wymiarowych transformacji. Oznacza to ze możemy obracać oraz ustawiać obiekt w scenie a przeglądarka zajmie się przejściem automatycznie.</p>
+<h2 id="appeal-(urok)" tabindex="-1">Appeal (Urok)</h2>
+<section class="demo-container principle principle-twelve">
+  <div class="wrapper">
+  <div class="shape">
+```html
+<div class="container">
+  <span class="item one"></span>
+  <span class="item two"></span>
+  <span class="item three"></span>
+  <span class="item four"></span>
+</div>
+```
+  </div>
+  </div>
+</section>
+<p>Urok jest charakterem szaty graficznej i może pomóc Nam nawiązać połączenie z intencjami artysty. Jak charyzma u aktora, kombinacja uwagi na detal i ruch tworzy atrakcyjny efekt.</p>
+<p>Starannie przygotowane animacje na stronach internetowych mogą stworzyć urok. Firmy jak na przykład Stripe wykorzystały animacje aby dodać wiarygodności do swojego procesu płatności.</p>
+<h2 id="spr%C3%B3buj!" tabindex="-1">Spróbuj!</h2>
+<p>Wykorzystanie innych reguł jest dobrym sposobem na poprawienie animacji. Animacje które utrzymują fizyczny ciężar obiektów, oczekują zmian, dobrze wykorzystują akcje drugoplanowe oraz wyczucie czasu będą świetnym dodatkiem do treści Twojej strony.</p>
+<p>Kiedy masz szansę dodać kilka animacji na swoją stronę, wykorzystanie jednej lub więcej wyżej wymienionych reguł sprawi że będą bardziej efektywne oraz lepiej wyglądały.</p>
+
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      
+        <section class="demo-link">
+          <a href="http://codepen.io/collection/AxKOdY/" class="button primary-button">Demo</a>
+        </section>
+      
+
+      
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by Mat Chabros. (<a href="/">See original</a>)</p>
+        </section>
+      
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>
+
+    <div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        
+          
+            
+            <a href="/ar/">العربية</a>
+          
+             | 
+            <a href="/cn/">中文</a>
+          
+             | 
+            <a href="/da/">Danske</a>
+          
+             | 
+            <a href="/de/">Deutsch</a>
+          
+             | 
+            <a href="/es/">Español</a>
+          
+             | 
+            <a href="/fr/">Français</a>
+          
+             | 
+            <a href="/jp/">日本語</a>
+          
+             | 
+            <a href="/nl/">Nederlands</a>
+          
+             | 
+            <a href="/pt/">Português</a>
+          
+             | 
+            <a href="/pl/">Polski</a>
+          
+             | 
+            <a href="/ru/">Ру́сский</a>
+          
+             | 
+            <a href="/tr/">Türkçe</a>
+          
+             | 
+            <a href="/id/">Bahasa Indonesia</a>
+          
+             | 
+            <a href="/bg/">български</a>
+          
+        
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+
+
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>
+
+  </body>
+</html>
