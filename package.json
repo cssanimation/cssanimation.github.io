@@ -1,0 +1,26 @@
+{
+  "name": "cssanimation-11ty",
+  "version": "1.0.0",
+  "description": "CSS Animation 11ty site",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "deploy": "git push origin main && yarn build && gh-pages -d _site"
+  },
+  "keywords": [],
+  "author": "Donovan Hutchinson",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "eleventy-plugin-toc": "^1.1.5",
+    "js-yaml": "^4.1.0",
+    "markdown-it-anchor": "^8.6.7",
+    "moment": "^2.29.4"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

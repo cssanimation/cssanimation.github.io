@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    {% include "head.njk" %}
+    <script type="text/javascript">
+      window.location = '{{ target }}';
+    </script>
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <p>Redirecting to <a href='{{ target }}'>{{ target }}</a></p>
+    </header>
+  </div>
+</body>
+</html>

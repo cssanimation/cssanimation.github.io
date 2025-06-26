@@ -1,0 +1,85 @@
+---
+layout: default.njk
+---
+
+{% if custom_header %}
+  <section class="post-header">
+{% else %}
+  <section class="post-header shorter">
+{% endif %}
+    <section class="logo">
+      <a href="/">
+        <section class="svg-logo">
+          <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        </section>
+      </a>
+    </section>
+    {% if custom_header %}
+      <section class="demo">
+        {% include custom_header %}
+      </section>
+    {% endif %}
+    <div class="absolute-nav">
+      {% include "nav.njk" %}
+    </div>
+  </section>
+
+<section class="container page-content">
+  <section class="row">
+    <article class="post-content nine columns {% if rtl %}rtl{% endif %}">
+      <h1 class="post-title" style="margin-bottom:4px;">{{ title }}</h1>
+      <p style="font-size: 14px;margin-top: 0;color: #aaa;" class="date">{{ date | datePretty }}</p>
+      
+      {{ content | safe }}
+
+      <section class="post-footer">
+        <section class="quote-container">
+          <section class="rocky">
+            <img src="/images/rocky.svg">
+          </section>
+          <blockquote>
+            <p>Make sure to <a href="https://twitter.com/cssanimation">follow on Twitter</a> for all the latest updates!</p>
+          </blockquote>
+        </section>
+      </section>
+    </article>
+    
+    <aside class="post-aside three columns">
+      {% if demo_url %}
+        <section class="demo-link">
+          <a href="{{ demo_url }}" class="button primary-button">Demo</a>
+        </section>
+      {% endif %}
+
+      {% if translator %}
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by {{ translator }}. (<a href="/">See original</a>)</p>
+        </section>
+      {% elif translators %}
+        <section class="translator">
+          <h3>Translation Info</h3>
+          <p>This article translated by:</p>
+          <ul>
+            {% for translator in translators %}
+              <li><a href="{{ translator.url }}">{{ translator.name }}</a></li>
+            {% endfor %}
+          </ul>
+          <p>(<a href="{{ english_version }}">See original</a>)</p>
+        </section>
+      {% else %}
+        {% if source %}
+          <section class="translations" style="padding-top: 2em">
+            <h3>Translations</h3>
+            <p class="translation-message">CSS Animation articles are translated by our community - and you can too!</p>
+            <!-- Translation links will be handled by data -->
+          </section>
+        {% endif %}
+      {% endif %}
+      
+      <section class="esteemed-benefactors">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBICK7W&placement=cssanimationrocks" id="_carbonads_js"></script>
+      </section>
+    </aside>
+  </section>
+</section>

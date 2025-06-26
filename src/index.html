@@ -1,0 +1,98 @@
+---
+layout: home.njk
+title: CSS Animation - Free CSS tutorials and guides
+customCSS: flower.css
+---
+
+<section class="container">
+  <section class="row">
+    <section class="twelve columns">
+      <a href="/" class="svg-logo homepage">
+        <img src="/images/rocky.svg" alt="CSS Animation" />
+      </a>
+      {% include "nav.njk" %}
+    </section>
+  </section>
+  
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <section class="flower-container">
+        <section class="flower">
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <span class="part"></span>
+          <h1>CSS Animation</h1>
+          <p>
+            CSS animation articles, tips and tutorials.
+            <br />
+            <em>Level Up Your CSS Animation Skills</em><br />
+            <a
+              class="button button-primary"
+              href="https://www.udemy.com/course/level-up-your-css-animation-skills/?referralCode=D358C1EDAB25E718B07A"
+              >Try out my course on Udemy</a>
+          </p>
+        </section>
+      </section>
+    </section>
+  </section>
+  
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <h2>CSS Animation Tutorials</h2>
+      <section class="post-container">
+        {%- for post in collections.posts -%}
+          {%- if post.data.type == "tutorial" -%}
+        <article class="post row">
+          <a class="image-link" href="{{ post.url }}">
+            <img src="{{ post.data.home_image }}" />
+          </a>
+          <h3>
+            <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+        </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </section>
+    </section>
+  </section>
+  
+  <section class="row wow fadeIn">
+    <section class="twelve columns">
+      <h2>CSS Animation Updates</h2>
+      <section class="post-container">
+        <ul class="updates">
+          {%- for post in collections.posts -%}
+            {%- if post.data.type == "update" -%}
+          <li class="update">
+            <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
+          </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </section>
+    </section>
+  </section>
+  
+  <section class="row wow bounceIn" style="margin: 0 auto; max-width: 540px">
+    <section class="quote-container">
+      <section class="rocky">
+        <img src="/images/rocky.svg" class="rocky" />
+      </section>
+      <blockquote>
+        <p>
+          Sign up for
+          <a href="https://weekly.cssanimation.rocks">CSS Animation Weekly</a>!
+        </p>
+      </blockquote>
+    </section>
+  </section>
+</section>

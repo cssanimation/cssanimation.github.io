@@ -1,0 +1,63 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>
+    {% if title %}{{ title }} - {% endif %}CSS Animation
+  </title>
+  <meta
+    name="description"
+    content="{% if description %}{{ description }}{% else %}Learn to use CSS animation in your web projects. Tips, tutorials and examples.{% endif %}"
+  />
+  
+  <link rel="stylesheet" href="//fast.fonts.net/cssapi/ac2fb2fd-d7da-40b3-b713-85f23384b3af.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  {% if customCSS %}
+  <link rel="stylesheet" href="/css/custom/{{ customCSS }}" />
+  {% endif %}
+  
+  <link rel="canonical" href="{{ page.url }}" />
+  <link rel="alternate" type="application/rss+xml" title="CSS Animation" href="/feed.xml" />
+  
+  {% if imageURL %}
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="{% if title %}{{ title }} - CSS Animation{% else %}CSS Animation{% endif %}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="{{ imageURL }}" />
+  <meta property="og:url" content="{{ page.url }}" />
+  {% else %}
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@cssanimation" />
+  <meta property="twitter:creator" content="@donovanh" />
+  <meta property="og:title" content="{% if title %}{{ title }} - CSS Animation{% else %}CSS Animation{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Learn to use CSS animation in your web projects. Tips, tutorials and examples.{% endif %}" />
+  <meta property="og:url" content="{{ page.url }}" />
+  {% endif %}
+
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
+  <meta name="apple-mobile-web-app-title" content="CSS Animation" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" href="/images/favicons/apple-touch-icon-152x152.png" />
+  <meta name="msapplication-TileImage" content="/images/favicons/apple-touch-icon-144x144.png" />
+  <meta name="msapplication-TileColor" content="#fcf5f2" />
+
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  {% if hide %}
+  <meta name="robots" content="noindex" />
+  {% endif %}
+  <meta name="google-site-verification" content="5imT8mOKPjwxAqlEs9aU4uh4jBcsYQyMNdlKgU1Dja8" />
+
+  <style>
+    .wow {
+      visibility: hidden;
+    }
+  </style>
+</head>

@@ -1,0 +1,63 @@
+<div class="email-signup" id="email-signup" style="max-width: 500px; margin: 0 auto">
+  <h2>CSS Animation Weekly</h2>
+  <p>The latest tutorials and inspiration every week!</p>
+  <iframe
+    src="https://embeds.beehiiv.com/5c8b2503-5d81-4b56-8dd8-da3a39a1d3be?slim=true"
+    data-test-id="beehiiv-embed"
+    frameborder="0"
+    scrolling="no"
+    style="margin: 0; border-radius: 0px !important; background-color: transparent;"
+  ></iframe>
+</div>
+
+<footer class="footer">
+  <section class="container">
+    <section class="row">
+      <p>
+        <a href="mailto:hello@cssanimation.rocks">Get in touch</a>
+        •
+        <a href="/courses/">CSS Courses</a>
+      </p>
+    </section>
+    <section class="row" style="text-align: center">
+      <p>
+        {% if languages %}
+          {% for language in languages %}
+            {% if not loop.first %} | {% endif %}
+            <a href="/{{ language.iso }}/">{{ language.name }}</a>
+          {% endfor %}
+        {% else %}
+          <span style="color: red; font-size: 12px;">Debug: languages data not found</span>
+        {% endif %}
+      </p>
+    </section>
+    <section class="row">
+      <p>&copy; CSS Animation. Site by <a href="http://hop.ie">Donovan</a></p>
+    </section>
+  </section>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/javascript/site.js"></script>
+<script src="/javascript/vendor/wow.min.js"></script>
+
+{% if externalJS %}
+  {% for jsURL in externalJS %}
+    <script src="{{ jsURL }}"></script>
+  {% endfor %}
+{% endif %}
+
+{% if extraJS %}
+  {% for jsURL in extraJS %}
+    <script src="/javascript/{{ jsURL }}"></script>
+  {% endfor %}
+{% endif %}
+
+{% if customJS %}
+  <script src="/javascript/custom/{{ customJS }}"></script>
+{% endif %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>new WOW().init();</script>

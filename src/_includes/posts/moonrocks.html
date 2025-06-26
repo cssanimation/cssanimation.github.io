@@ -1,0 +1,158 @@
+<div class="post-header-container">
+  <header class="header rellax" data-rellax-speed="14">
+    <svg
+      class="example-logo"
+      width="2000px"
+      height="2000px"
+      viewBox="-400 -400 1000 1000"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        id="icon-1"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <circle
+          class="rellax"
+          data-rellax-speed="-1"
+          stroke="#000000"
+          stroke-width="3"
+          fill="#333333"
+          style="opacity:.5"
+          cx="100.5"
+          cy="100.5"
+          r="100.5"
+        ></circle>
+        <circle
+          class="rellax"
+          data-rellax-speed="-.5"
+          stroke="#000000"
+          stroke-width="3"
+          fill="#aaa"
+          style="opacity:.5"
+          opacity="0.9"
+          cx="100.5"
+          cy="99.225"
+          r="79.875"
+        ></circle>
+        <g class="rellax" data-rellax-speed="2">
+          <g class="large-boulder" transform="translate(33.000000, 57.000000)">
+            <polygon
+              fill="#E6E7E8"
+              points="36 0.15 83.025 0.15 99 12.525 102.6 24.9 134.1 68.775 106.275 78.6 61.275 73.425 8.625 75.45 0.9 61.125 0.9 44.475 12.225 37.8 23.625 16.2"
+            ></polygon>
+            <path
+              d="M8.25,74.325 L31.425,59.7 L47.85,58.5 L64.95,60.6 L83.025,50.325 L108.3,57.15 L134.1,68.775 L106.275,78.6 L61.275,73.425 L37.05,74.1 L8.25,74.325 Z M18.15,27.45 L34.425,28.125 L39.075,33.15 L22.05,39.375 L7.425,51.3 L0.9,45.45 L10.5,38.775 L18.15,27.45 Z M71.175,25.875 L73.875,19.2 L83.85,15.9 L97.5,27.225 L84.375,23.1 L75.825,27.225 L71.175,25.875 Z M37.425,38.85 L58.725,33.15 L70.95,36.375 L79.2,42.525 L74.55,48.225 L59.175,49.275 L45.75,51 L32.85,50.325 L27.225,56.4 L16.35,52.8 L37.425,38.85 Z"
+              fill="#D1D3D4"
+            ></path>
+            <polygon
+              id="body"
+              stroke="#000000"
+              stroke-width="3"
+              points="36 0.15 83.025 0.15 99 12.525 102.6 24.9 134.1 68.775 106.275 78.6 61.275 73.425 8.625 75.45 0.9 61.125 0.9 44.475 12.225 37.8 23.625 16.2"
+            ></polygon>
+          </g>
+        </g>
+        <g class="rellax" data-rellax-speed="1.5">
+          <g
+            class="medium-boulder"
+            transform="translate(108.750000, 125.250000)"
+          >
+            <polygon
+              fill="#F1F2F2"
+              points="0.525 14.025 10.5 3.3 30.675 0.15 38.925 7.05 43.05 20.85 24.45 27.375 4.575 24.75"
+            ></polygon>
+            <polygon
+              fill="#D1D3D4"
+              points="0.525 13.8 18.6 19.35 30.975 18.225 40.275 11.55 43.05 20.625 24.45 27.225 4.575 24.525"
+            ></polygon>
+            <polygon
+              stroke="#000000"
+              stroke-width="3"
+              points="0.525 13.8 10.5 3.075 30.675 0 38.925 6.9 43.05 20.625 24.45 27.225 4.575 24.525"
+            ></polygon>
+          </g>
+        </g>
+        <g class="rellax" data-rellax-speed="1.25">
+          <g class="small-boulder" transform="translate(70.500000, 123.750000)">
+            <polygon
+              fill="#F1F2F2"
+              points="8.85 2.925 20.025 0 31.125 8.475 33.9 19.425 11.025 26.1 0.225 16.725 5.1 3.825"
+            ></polygon>
+            <polygon
+              fill="#E6E7E8"
+              points="3.9 6.975 14.325 17.625 26.1 12 32.025 12.075 33.9 19.425 11.025 26.1 0.525 15.6"
+            ></polygon>
+            <polygon
+              stroke="#000000"
+              stroke-width="3"
+              points="8.85 2.925 20.025 0 31.125 8.475 33.9 19.425 11.025 26.1 0.225 16.725 5.1 3.825"
+            ></polygon>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </header>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.9.1/rellax.min.js"></script>
+<script>
+  var rellax = new Rellax(".rellax");
+</script>
+
+<style>
+  .post-header-container {
+    background: #000;
+  }
+  .post-header nav a {
+    color: #aaa !important;
+  }
+
+  .post-header nav a:hover {
+    color: #00194e !important;
+  }
+
+  header {
+    align-items: center;
+    background: #000
+      url(https://cssanimation.rocks/levelup/public/03/04-end/images/moon.jpg)
+      center no-repeat;
+    background-size: 100% auto;
+    display: flex;
+    height: 28em;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  header:after {
+    content: "";
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .example-logo {
+    z-index: 10;
+  }
+
+  .heading {
+    color: white;
+    font-size: 6em;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 10vh;
+    text-align: center;
+  }
+</style>

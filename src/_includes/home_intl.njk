@@ -1,0 +1,123 @@
+---
+layout: default.njk
+---
+
+{# Find the current language by filtering the languages array #}
+{% set current_language = null %}
+{% if languages %}
+  {% for lang in languages %}
+    {% if lang.iso == language %}
+      {% set current_language = lang %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<section class="home wrapper">
+  <section class="container">
+    <section class="row">
+      <section class="twelve columns">
+        <a href="/" class="svg-logo"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+        {% include "nav.njk" %}
+      </section>
+    </section>
+    <section class="row wow fadeIn">
+      <section class="twelve columns">
+        <section class="flower-container">
+          <section class="flower">
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <span class="part"></span>
+            <h1 style="font-size: 32px">CSS Animation Rocks: {{ current_language.name if current_language else language }}</h1>
+            <p>
+              Back to the <a href="/">English version</a>
+            </p>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section class="row wow fadeIn">
+      <section class="twelve columns">
+        <section class="post-container">
+          {# Show translated posts that actually exist in the file system #}
+          {% if collections.postsByLanguage and collections.postsByLanguage[language] %}
+            {% for post in collections.postsByLanguage[language] %}
+              <article class="post row">
+                <a class="image-link" href="{{ post.url }}">
+                  {% if post.data.home_image %}
+                    <img src="{{ post.data.home_image }}" alt="{{ post.data.title }}">
+                  {% elif post.data.imageURL %}
+                    <img src="{{ post.data.imageURL }}" alt="{{ post.data.title }}">
+                  {% endif %}
+                </a>
+                <div class="post-content">
+                  <h3><a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                  {% if post.data.description %}
+                    <p>{{ post.data.description }}</p>
+                  {% endif %}
+                  {% if post.data.translator %}
+                    <p class="translator"><em>Translated by {{ post.data.translator }}</em></p>
+                  {% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          {% else %}
+            {# Fallback: try to use translations mapping if no direct posts found #}
+            {% if translations %}
+              {% for article in translations %}
+                {% for article_language in article.translations %}
+                  {% if article_language.iso == language %}
+                    {% set foundPost = false %}
+                    {% if collections.posts %}
+                      {% for post in collections.posts %}
+                        {% if post.url == article.url %}
+                          {% set foundPost = true %}
+                          <article class="post row">
+                            <a class="image-link" href="/{{ language }}{{ article.url }}">
+                              {% if post.data.home_image %}
+                                <img src="{{ post.data.home_image }}" alt="{{ article_language.postTitle or post.data.title }}">
+                              {% endif %}
+                            </a>
+                            <div class="post-content">
+                              {% if article_language.postTitle %}
+                                <h3><a class="post-link" href="/{{ language }}{{ article.url }}">{{ article_language.postTitle }}</a></h3>
+                              {% else %}
+                                <h3><a class="post-link" href="/{{ language }}{{ article.url }}">{{ post.data.title }}</a></h3>
+                              {% endif %}
+                              {% if post.data.description %}
+                                <p>{{ post.data.description }}</p>
+                              {% endif %}
+                            </div>
+                          </article>
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                    {% if not foundPost %}
+                      {# Show article even if original post not found #}
+                      <article class="post row">
+                        <div class="post-content">
+                          <h3><a class="post-link" href="/{{ language }}{{ article.url }}">{{ article_language.postTitle or "Translated Article" }}</a></h3>
+                          <p>Available in {{ current_language.name if current_language else language }}</p>
+                        </div>
+                      </article>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            {% else %}
+              <p>No translated content available for this language yet.</p>
+            {% endif %}
+          {% endif %}
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

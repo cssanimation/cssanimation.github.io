@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  {% include "head.njk" %}
+
+  <body class="{{ bodyClass }}">
+    {{ content | safe }}
+    {% include "footer.njk" %}
+  </body>
+</html>

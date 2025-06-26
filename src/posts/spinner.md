@@ -1,0 +1,81 @@
+---
+layout: post.njk
+date: 2016-08-17
+type: tutorial
+title: SVG loading spinners
+bodyClass: shorter
+description: Create your own jQuery plugin loading spinner
+categories: [css, theory]
+imageURL: /images/posts/spinner/home.png
+home_image: /images/posts/spinner/home.png
+tweet_text: Build your own animated loading spinner
+source: https://raw.githubusercontent.com/cssanimation/cssanimation.github.io/master/_posts/2016-08-17-spinner.md
+published: false
+permalink: /spinner/
+---
+[INTRO] - why we have spinners, how they help. Sometimes you want to let people know that you're busy. If you want a generic spinner, services like [Spin.js](http://spin.js.org) are handy. But they're generic. Let's go further and make something we can tailor to our own brand.
+
+Let's create a spinner we can use on our web sites. The goal will be a single JavaScript file that contains our loading image, animation CSS and logic to switch it on and off as needed.
+
+FInished example: [Button demo with target regions]
+
+Download: generic starter plugin (add your own SVG code to customise)
+
+And: Tito animated ticket machine (check if ok to distribute)
+
+## Prepare your SVG
+
+Setting up the layers, adding classes, optimising the SVG size.
+
+[Generic SVG image in CodePen]
+
+## Plan some animations
+
+Considerations - what's the brand aiming for, does this animation have some UI concepts it could mirror? Like loading a grid of icons when preparing a grid-based layout.
+
+For example, here's a loader I recently put together for Tito
+
+[Tito animation example]
+
+## Browser compatibility
+
+...
+
+## Apply animation to the SVG
+
+For this example we'll draw our logo using the SVG line bnah blah technique
+
+[Generic logo drawing animation]
+
+## Showing / hiding
+
+To make it a loading spinner, we need to be able to show or hide it as needed. Let's set up some CSS to show and hide the content. We can then activate it using JavaScript.
+
+[Show / hide button demo]
+
+How the CSS works. How the JavaScript works.
+
+## Adding a target
+
+Currently the loading spinner takes over the entire page. What if we want to block out only a portion of the page? We can add a little logic to handle this.
+
+[Button demo with target regions]
+
+## Putting it all together
+
+How to assemble it into one file, reference the file in HTML, and call the spinner using JS.
+
+How to replace the SVG with your own.
+
+Link to a demo page, and a download link to get your own version.
+
+
+
+CodePens to build:
+
+[Generic SVG image in CodePen]
+[Tito animation example] 				http://codepen.io/donovanh/pen/RRdyQE
+[Tito example with area controls] 		http://codepen.io/donovanh/pen/LkamLd
+[Generic logo drawing animation]
+[Show / hide button demo]
+[Button demo with target regions]

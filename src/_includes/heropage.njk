@@ -1,0 +1,27 @@
+---
+layout: default.njk
+---
+
+<section class="post-header">
+  <section class="logo">
+    <a href="/">
+      <section class="svg-logo">
+        <a href="/"><img src="/images/rocky.svg" alt="CSS Animation"></a>
+      </section>
+    </a>
+  </section>
+  {% if custom_header %}
+    {% include custom_header %}
+  {% endif %}
+  <div class="absolute-nav">
+    {% include "nav.njk" %}
+  </div>
+</section>
+
+<section class="container page-content">
+  <section class="row">
+    <section class="twelve columns">
+      {{ content | safe }}
+    </section>
+  </section>
+</section>
