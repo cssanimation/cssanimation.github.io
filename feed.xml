@@ -3540,47 +3540,6 @@ a:hover {
 &lt;p&gt;Using animation takes judgement. If you want to be great at using animation to help your content stand out, improve conversions, or generally improve your brand, it&#39;s time to start.&lt;/p&gt;
 </content>
   </entry><entry>
-    <title>SVG loading spinners</title>
-    <link href="https://cssanimation.rocks/spinner/"/>
-    <updated>2016-08-17T00:00:00Z</updated>
-    <id>https://cssanimation.rocks/spinner/</id>
-    <content type="html">&lt;p&gt;[INTRO] - why we have spinners, how they help. Sometimes you want to let people know that you&#39;re busy. If you want a generic spinner, services like &lt;a href=&quot;http://spin.js.org/&quot;&gt;Spin.js&lt;/a&gt; are handy. But they&#39;re generic. Let&#39;s go further and make something we can tailor to our own brand.&lt;/p&gt;
-&lt;p&gt;Let&#39;s create a spinner we can use on our web sites. The goal will be a single JavaScript file that contains our loading image, animation CSS and logic to switch it on and off as needed.&lt;/p&gt;
-&lt;p&gt;FInished example: [Button demo with target regions]&lt;/p&gt;
-&lt;p&gt;Download: generic starter plugin (add your own SVG code to customise)&lt;/p&gt;
-&lt;p&gt;And: Tito animated ticket machine (check if ok to distribute)&lt;/p&gt;
-&lt;h2 id=&quot;prepare-your-svg&quot; tabindex=&quot;-1&quot;&gt;Prepare your SVG&lt;/h2&gt;
-&lt;p&gt;Setting up the layers, adding classes, optimising the SVG size.&lt;/p&gt;
-&lt;p&gt;[Generic SVG image in CodePen]&lt;/p&gt;
-&lt;h2 id=&quot;plan-some-animations&quot; tabindex=&quot;-1&quot;&gt;Plan some animations&lt;/h2&gt;
-&lt;p&gt;Considerations - what&#39;s the brand aiming for, does this animation have some UI concepts it could mirror? Like loading a grid of icons when preparing a grid-based layout.&lt;/p&gt;
-&lt;p&gt;For example, here&#39;s a loader I recently put together for Tito&lt;/p&gt;
-&lt;p&gt;[Tito animation example]&lt;/p&gt;
-&lt;h2 id=&quot;browser-compatibility&quot; tabindex=&quot;-1&quot;&gt;Browser compatibility&lt;/h2&gt;
-&lt;p&gt;...&lt;/p&gt;
-&lt;h2 id=&quot;apply-animation-to-the-svg&quot; tabindex=&quot;-1&quot;&gt;Apply animation to the SVG&lt;/h2&gt;
-&lt;p&gt;For this example we&#39;ll draw our logo using the SVG line bnah blah technique&lt;/p&gt;
-&lt;p&gt;[Generic logo drawing animation]&lt;/p&gt;
-&lt;h2 id=&quot;showing-%2F-hiding&quot; tabindex=&quot;-1&quot;&gt;Showing / hiding&lt;/h2&gt;
-&lt;p&gt;To make it a loading spinner, we need to be able to show or hide it as needed. Let&#39;s set up some CSS to show and hide the content. We can then activate it using JavaScript.&lt;/p&gt;
-&lt;p&gt;[Show / hide button demo]&lt;/p&gt;
-&lt;p&gt;How the CSS works. How the JavaScript works.&lt;/p&gt;
-&lt;h2 id=&quot;adding-a-target&quot; tabindex=&quot;-1&quot;&gt;Adding a target&lt;/h2&gt;
-&lt;p&gt;Currently the loading spinner takes over the entire page. What if we want to block out only a portion of the page? We can add a little logic to handle this.&lt;/p&gt;
-&lt;p&gt;[Button demo with target regions]&lt;/p&gt;
-&lt;h2 id=&quot;putting-it-all-together&quot; tabindex=&quot;-1&quot;&gt;Putting it all together&lt;/h2&gt;
-&lt;p&gt;How to assemble it into one file, reference the file in HTML, and call the spinner using JS.&lt;/p&gt;
-&lt;p&gt;How to replace the SVG with your own.&lt;/p&gt;
-&lt;p&gt;Link to a demo page, and a download link to get your own version.&lt;/p&gt;
-&lt;p&gt;CodePens to build:&lt;/p&gt;
-&lt;p&gt;[Generic SVG image in CodePen]
-[Tito animation example] 				http://codepen.io/donovanh/pen/RRdyQE
-[Tito example with area controls] 		http://codepen.io/donovanh/pen/LkamLd
-[Generic logo drawing animation]
-[Show / hide button demo]
-[Button demo with target regions]&lt;/p&gt;
-</content>
-  </entry><entry>
     <title>New course &amp;amp; competition</title>
     <link href="https://cssanimation.rocks/levelup-competition/"/>
     <updated>2017-03-01T00:00:00Z</updated>
