@@ -6,7 +6,7 @@
     "build": "eleventy",
     "dev": "eleventy --serve",
     "debug": "DEBUG=* eleventy",
-    "deploy": "git push origin main && yarn build && gh-pages -d _site"
+    "deploy": "git push origin main && yarn build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "Donovan Hutchinson",
